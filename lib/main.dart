@@ -283,7 +283,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
     final results=FoodSearchService.search(q,s.data!);
     final list=results.map((r)=>r.product).toList();
     final grams=selected==null?null:_toGrams(selected!);
-    final carbs=selected==null||grams==null?0:grams*selected!.carbs/100;
+    final carbs=selected==null||grams==null?0.0:(grams*selected!.carbs/100).toDouble();
     final units=selected==null?<QuantityUnit>[QuantityUnit.grams]:_unitsFor(selected!);
     final hasParsedAmount=parsed.amount!=null;
     return ListView(padding:const EdgeInsets.all(20),children:[
@@ -441,7 +441,7 @@ class _RecipesPageState extends State<RecipesPage>{
   Future<void> _showRecipe(BuildContext c,int id,String name,double weight)async{
     final ps=await loadProducts();final d=await AppDb.db;final rows=await d.query('recipe_ingredients',where:'recipe_id=?',whereArgs:[id]);
     final items=<FoodItem>[];for(final x in rows){final p=ps.firstWhere((z)=>z.id==x['product_id']);items.add(FoodItem(p,(x['grams'] as num).toDouble()));}
-    final total=items.fold<double>(0,(a,x)=>a+x.carbs);final per=weight>0?total/weight*100:0;
+    final total=items.fold<double>(0,(a,x)=>a+x.carbs);final per=weight>0?(total/weight*100).toDouble():0.0;
     if(!c.mounted)return;
     showDialog(context:c,builder:(_)=>PortionDialog(name:name,per100:per,total:total,onAdd:(grams)async{
       final carbs=per*grams/100;final prefs=await SharedPreferences.getInstance(); final xeGrams=prefs.getDouble('xe_grams')??10; await AppDb.addDiary(date:_dateKey(DateTime.now()),meal:'',name:name,grams:grams,amountValue:grams,amountUnit:'г',carbs:carbs,xe:_xeForCarbs(carbs,xeGrams));
@@ -640,7 +640,7 @@ class _ProductReviewDialogState extends State<ProductReviewDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   widget.customProductMode ? 'Змініть дані продукту. Після збереження оновлені значення використовуватимуться в пошуку.' : 'Перевірте дані перед використанням. За потреби їх можна виправити.',
