@@ -34,7 +34,9 @@ jobs:
           cache: true
 
       - name: Generate Android project
-        run: flutter create --platforms=android --project-name carbcalc_ua .
+        run: |
+          flutter create --platforms=android --project-name carbcalc_ua .
+          rm -f test/widget_test.dart
 
       - name: Resolve packages
         run: flutter pub get
