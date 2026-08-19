@@ -34,8 +34,8 @@ class FoodCalculationService {
   }) {
     final grams = toGrams(product, quantity);
     if (grams == null || grams < 0) return null;
-    final carbs = grams * product.carbs / 100;
-    final xe = xeGrams > 0 ? carbs / xeGrams : 0;
+    final carbs = (grams * product.carbs / 100).toDouble();
+    final xe = xeGrams > 0 ? (carbs / xeGrams).toDouble() : 0.0;
     return FoodCalculationResult(grams: grams, carbs: carbs, xe: xe);
   }
 }
