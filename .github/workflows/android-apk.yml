@@ -3,7 +3,7 @@ name: Android APK
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, mvp-0.6]
   pull_request:
     branches: [main]
 
@@ -15,45 +15,36 @@ jobs:
     name: Test and build release APK
     runs-on: ubuntu-24.04
     timeout-minutes: 30
-
     steps:
       - name: Check out source
         uses: actions/checkout@v4
-
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.35.7"
           channel: stable
           cache: true
-
       - name: Generate Android project
         run: |
           flutter create --platforms=android --project-name carbcalc_ua .
           rm -f test/widget_test.dart
-
       - name: Resolve packages
         run: flutter pub get
-
       - name: Analyze source
         run: flutter analyze --no-fatal-warnings --no-fatal-infos
-
       - name: Run tests
         run: flutter test
-
       - name: Build release APK
         run: flutter build apk --release
-
       - name: Publish APK
         uses: actions/upload-artifact@v4
         with:
-          name: CarbCalcUA-0.5.1-build-${{ github.run_number }}
+          name: CarbCalcUA-0.6.0-build-${{ github.run_number }}
           path: build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
           retention-days: 30
