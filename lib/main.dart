@@ -5,6 +5,9 @@ import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'dart:typed_data';
+import 'package:file_picker/file_picker.dart';
+import 'services/glucose_import_service.dart';
 import 'models/product.dart';
 import 'models/quantity.dart';
 import 'services/barcode_service.dart';
@@ -37,10 +40,11 @@ class AppDb {
   static Future<Database> get db async {
     if(_db!=null)return _db!;
     final path=p.join(await getDatabasesPath(),'carbcalc_ua.db');
-    _db=await openDatabase(path,version:5,onCreate:(d,v)async{
+    _db=await openDatabase(path,version:6,onCreate:(d,v)async{
       await d.execute('CREATE TABLE recipes(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,finished_weight REAL NOT NULL)');
       await d.execute('CREATE TABLE recipe_ingredients(id INTEGER PRIMARY KEY AUTOINCREMENT,recipe_id INTEGER NOT NULL,product_id TEXT NOT NULL,grams REAL NOT NULL)');
-      await d.execute("CREATE TABLE diary(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,meal TEXT NOT NULL,name TEXT NOT NULL,grams REAL NOT NULL,amount_value REAL NOT NULL DEFAULT 0,amount_unit TEXT NOT NULL DEFAULT 'г',carbs REAL NOT NULL,xe REAL NOT NULL)");
+      await d.execute("CREATE TABLE diary(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,meal TEXT NOT NULL,name TEXT NOT NULL,grams REAL NOT NULL,amount_value REAL NOT NULL DEFAULT 0,amount_unit TEXT NOT NULL DEFAULT 'г',carbs REAL NOT NULL,xe REAL NOT NULL,meal_group_id TEXT,meal_time TEXT,product_id TEXT)");
+      await d.execute('CREATE TABLE glucose(id INTEGER PRIMARY KEY AUTOINCREMENT,timestamp TEXT NOT NULL,value_mmol REAL NOT NULL,source TEXT,original_unit TEXT)');
       await d.execute('CREATE TABLE custom_products(id TEXT PRIMARY KEY,name TEXT NOT NULL,category TEXT NOT NULL,carbs REAL NOT NULL,protein REAL NOT NULL,fat REAL NOT NULL,fiber REAL NOT NULL,calories REAL NOT NULL,barcode TEXT,manufacturer TEXT,source TEXT,updated_at TEXT,grams_per_piece REAL,grams_per_ml REAL,serving_grams REAL)');
     },onUpgrade:(d,oldV,newV)async{
       if(oldV<2){
@@ -62,14 +66,25 @@ class AppDb {
         await d.execute('ALTER TABLE custom_products ADD COLUMN grams_per_ml REAL');
         await d.execute('ALTER TABLE custom_products ADD COLUMN serving_grams REAL');
       }
+      if(oldV<6){
+        await d.execute('ALTER TABLE diary ADD COLUMN meal_group_id TEXT');
+        await d.execute('ALTER TABLE diary ADD COLUMN meal_time TEXT');
+        await d.execute('ALTER TABLE diary ADD COLUMN product_id TEXT');
+        await d.execute('CREATE TABLE IF NOT EXISTS glucose(id INTEGER PRIMARY KEY AUTOINCREMENT,timestamp TEXT NOT NULL,value_mmol REAL NOT NULL,source TEXT,original_unit TEXT)');
+      }
     });
     return _db!;
   }
-  static Future<List<Map<String,dynamic>>> diary(String date) async=>(await db).query('diary',where:'date=?',whereArgs:[date],orderBy:'id DESC');
-  static Future<void> addDiary({required String date,required String meal,required String name,required double grams,required double amountValue,required String amountUnit,required double carbs,required double xe})async{
-    await (await db).insert('diary',{'date':date,'meal':meal,'name':name,'grams':grams,'amount_value':amountValue,'amount_unit':amountUnit,'carbs':carbs,'xe':xe});
+  static Future<List<Map<String,dynamic>>> diary(String date) async=>(await db).query('diary',where:'date=?',whereArgs:[date],orderBy:'id ASC');
+  static Future<void> addDiary({required String date,required String meal,required String name,required double grams,required double amountValue,required String amountUnit,required double carbs,required double xe,String? mealGroupId,String? mealTime,String? productId})async{
+    await (await db).insert('diary',{'date':date,'meal':meal,'name':name,'grams':grams,'amount_value':amountValue,'amount_unit':amountUnit,'carbs':carbs,'xe':xe,'meal_group_id':mealGroupId,'meal_time':mealTime,'product_id':productId});
   }
+  static Future<void> updateDiary({required int id,required double grams,required double amountValue,required String amountUnit,required double carbs,required double xe})async=> (await db).update('diary',{'grams':grams,'amount_value':amountValue,'amount_unit':amountUnit,'carbs':carbs,'xe':xe},where:'id=?',whereArgs:[id]);
   static Future<void> deleteDiary(int id)async=> (await db).delete('diary',where:'id=?',whereArgs:[id]);
+  static Future<List<Map<String,dynamic>>> glucose()async=>(await db).query('glucose',orderBy:'timestamp ASC');
+  static Future<int> countGlucoseDuplicates(List<GlucoseReading> rs)async{final rows=await glucose();return rs.where((r)=>rows.any((x)=>x['timestamp']==r.timestamp.toIso8601String()&&((x['value_mmol'] as num).toDouble()-r.valueMmol).abs()<0.01)).length;}
+  static Future<List<GlucoseReading>> onlyNewGlucose(List<GlucoseReading> rs)async{final rows=await glucose();return rs.where((r)=>!rows.any((x)=>x['timestamp']==r.timestamp.toIso8601String()&&((x['value_mmol'] as num).toDouble()-r.valueMmol).abs()<0.01)).toList();}
+  static Future<void> insertGlucoseBatch(List<GlucoseReading> rs)async{final d=await db;await d.transaction((t)async{for(final r in rs){await t.insert('glucose',{'timestamp':r.timestamp.toIso8601String(),'value_mmol':r.valueMmol,'source':r.source,'original_unit':r.originalUnit});}});}
   static Future<List<Map<String,dynamic>>> recipes()async=>(await db).query('recipes',orderBy:'id DESC');
   static Future<int> saveRecipe(String name,double weight,List<FoodItem> items)async{
     final d=await db;
@@ -175,8 +190,12 @@ class _AddFoodPageState extends State<AddFoodPage>{
   QuantityUnit unit=QuantityUnit.grams;
   String q='';
   String meal='Сніданок';
+  late final String mealGroupId;
+  late final String mealTime;
   ParsedFoodQuery parsed=const ParsedFoodQuery(original:'',productQuery:'');
   final controller=TextEditingController(text:'100');
+
+  @override void initState(){super.initState();final now=DateTime.now();mealGroupId='meal_${now.microsecondsSinceEpoch}';mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';}
 
   @override void dispose(){controller.dispose();super.dispose();}
 
@@ -290,6 +309,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
       DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x)=>setState(()=>meal=x!)),
+      const SizedBox(height:8),
+      Row(children:[const Icon(Icons.schedule,size:20),const SizedBox(width:8),Text('Час прийому: $mealTime')]),
       const SizedBox(height:12),
       TextField(
         decoration:const InputDecoration(labelText:'Що ви зʼїли?',hintText:'Наприклад: 150 г гречки вареної на воді',prefixIcon:Icon(Icons.search),border:OutlineInputBorder()),
@@ -343,7 +364,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         }),
         FilledButton(onPressed:amount>0&&grams!=null?()async{
           final xeGrams=await _xeGrams();
-          await AppDb.addDiary(date:_dateKey(DateTime.now()),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams));
+          await AppDb.addDiary(date:_dateKey(DateTime.now()),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:mealGroupId,mealTime:mealTime,productId:selected!.id);
           if(c.mounted)ScaffoldMessenger.of(c).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
           widget.onAdded();
         }:null,child:const Text('Додати до щоденника')),
@@ -386,38 +407,13 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
   );
 }
 
-class DiaryPage extends StatefulWidget{
-  final VoidCallback onChanged; const DiaryPage({super.key,required this.onChanged});
-  @override State<DiaryPage> createState()=>_DiaryPageState();
-}
+class DiaryPage extends StatefulWidget{final VoidCallback onChanged;const DiaryPage({super.key,required this.onChanged});@override State<DiaryPage> createState()=>_DiaryPageState();}
 class _DiaryPageState extends State<DiaryPage>{
-  DateTime date=DateTime.now();
-  String get key=>_dateKey(date);
-  Future<void> pick()async{
-    final d=await showDatePicker(context:context,firstDate:DateTime(2020),lastDate:DateTime(2100),initialDate:date,locale:const Locale('uk'));
-    if(d!=null)setState(()=>date=d);
-  }
-  @override Widget build(BuildContext c)=>FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.diary(key),builder:(c,s){
-    if(!s.hasData)return const Center(child:CircularProgressIndicator());
-    final rows=s.data!;
-    final carbs=rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());
-    final xe=rows.fold<double>(0,(a,x)=>a+(x['xe'] as num).toDouble());
-    return ListView(padding:const EdgeInsets.all(20),children:[
-      Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children:[
-        const Text('Щоденник',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
-        IconButton(onPressed:pick,icon:const Icon(Icons.calendar_month)),
-      ]),
-      Text(_prettyDate(date),style:const TextStyle(fontSize:17)),
-      const SizedBox(height:12),
-      Card(child:ListTile(title:const Text('Підсумок дня'),subtitle:Text('${rows.length} записів'),trailing:Text('${carbs.toStringAsFixed(1)} г\\n${xe.toStringAsFixed(2)} ХО',textAlign:TextAlign.right))),
-      if(rows.isEmpty)const Padding(padding:EdgeInsets.all(30),child:Center(child:Text('За цей день записів немає.'))),
-      ...rows.map((x)=>Card(child:ListTile(
-        title:Text(x['name']),subtitle:Text('${x['meal']} • ${_displayDiaryAmount(x)}'),trailing:Column(mainAxisAlignment:MainAxisAlignment.center,crossAxisAlignment:CrossAxisAlignment.end,children:[Text('${(x['carbs'] as num).toStringAsFixed(1)} г'),Text('${(x['xe'] as num).toStringAsFixed(2)} ХО')]),
-        onLongPress:()async{await AppDb.deleteDiary(x['id'] as int);setState((){});widget.onChanged();},
-      ))),
-      const Padding(padding:EdgeInsets.only(top:8),child:Text('Порада: довге натискання на запис видаляє його.')),
-    ]);
-  });
+ DateTime date=DateTime.now();String get key=>_dateKey(date);
+ Future<void> pick()async{final d=await showDatePicker(context:context,firstDate:DateTime(2020),lastDate:DateTime(2100),initialDate:date,locale:const Locale('uk'),helpText:'Оберіть дату');if(d!=null)setState(()=>date=d);}
+ Future<Product?> productFor(Map<String,dynamic>x)async{final id=x['product_id'] as String?;if(id!=null){final c=await AppDb.customProductById(id);if(c!=null)return c;}final ps=await loadAllProducts();for(final p in ps){if(p.name==x['name'])return p;}return null;}
+ Future<void> edit(Map<String,dynamic>x)async{final p=await productFor(x);if(p==null)return;final u=_unitFromLabel((x['amount_unit'] as String?)??'г');final ctrl=TextEditingController(text:_n((x['amount_value'] as num?)?.toDouble()??(x['grams'] as num).toDouble()));final v=await showDialog<double>(context:context,builder:(c)=>AlertDialog(title:Text('Змінити: ${p.name}'),content:TextField(controller:ctrl,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:InputDecoration(labelText:'Кількість',suffixText:u.label)),actions:[TextButton(onPressed:()=>Navigator.pop(c),child:const Text('Скасувати')),FilledButton(onPressed:()=>Navigator.pop(c,double.tryParse(ctrl.text.replaceAll(',','.'))),child:const Text('Зберегти'))]));ctrl.dispose();if(v==null||v<=0)return;final g=FoodCalculationService.toGrams(p,Quantity(v,u));if(g==null)return;final carbs=g*p.carbs/100;final prefs=await SharedPreferences.getInstance();final xe=prefs.getDouble('xe_grams')??10;await AppDb.updateDiary(id:x['id'] as int,grams:g,amountValue:v,amountUnit:u.label,carbs:carbs,xe:_xeForCarbs(carbs,xe));if(mounted)setState((){});widget.onChanged();}
+ @override Widget build(BuildContext c)=>FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.diary(key),builder:(c,s){if(!s.hasData)return const Center(child:CircularProgressIndicator());final rows=s.data!;final groups=<String,List<Map<String,dynamic>>>{};for(final x in rows){final id=(x['meal_group_id'] as String?)??'legacy_${x['meal']}_${x['meal_time']??''}';(groups[id]??=[]).add(x);}final total=rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());final xe=rows.fold<double>(0,(a,x)=>a+(x['xe'] as num).toDouble());return ListView(padding:const EdgeInsets.all(20),children:[Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children:[const Text('Щоденник',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),Row(children:[IconButton(tooltip:'Попередній день',onPressed:()=>setState(()=>date=date.subtract(const Duration(days:1))),icon:const Icon(Icons.chevron_left)),IconButton(tooltip:'Календар',onPressed:pick,icon:const Icon(Icons.calendar_month)),IconButton(tooltip:'Наступний день',onPressed:()=>setState(()=>date=date.add(const Duration(days:1))),icon:const Icon(Icons.chevron_right))])]),Text(_prettyDate(date),style:const TextStyle(fontSize:17)),const SizedBox(height:10),Card(child:ListTile(title:const Text('Підсумок дня'),subtitle:Text('${rows.length} продуктів'),trailing:Text('${total.toStringAsFixed(1)} г\n${xe.toStringAsFixed(2)} ХО',textAlign:TextAlign.right))),if(rows.isEmpty)const Padding(padding:EdgeInsets.all(30),child:Center(child:Text('За цей день записів немає.'))) else ...groups.values.map((items){final meal=(items.first['meal'] as String?)??'';final time=(items.first['meal_time'] as String?)??'';final gc=items.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());final gx=items.fold<double>(0,(a,x)=>a+(x['xe'] as num).toDouble());return Card(child:Padding(padding:const EdgeInsets.fromLTRB(10,8,4,8),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children:[Text(meal.isEmpty?'Прийом їжі':meal,style:const TextStyle(fontSize:18,fontWeight:FontWeight.bold)),Text(time)]),const Divider(),...items.map((x)=>ListTile(contentPadding:EdgeInsets.zero,title:Text(x['name']),subtitle:Text(_displayDiaryAmount(x)),trailing:Row(mainAxisSize:MainAxisSize.min,children:[Text('${(x['carbs'] as num).toStringAsFixed(1)} г'),PopupMenuButton<String>(onSelected:(v)async{if(v=='edit')await edit(x);if(v=='delete'){await AppDb.deleteDiary(x['id'] as int);if(mounted)setState((){});widget.onChanged();}},itemBuilder:(_)=>const[PopupMenuItem(value:'edit',child:Text('Змінити')),PopupMenuItem(value:'delete',child:Text('Видалити'))])])),Align(alignment:Alignment.centerRight,child:Text('Разом: ${gc.toStringAsFixed(1)} г • ${gx.toStringAsFixed(2)} ХО',style:const TextStyle(fontWeight:FontWeight.w600))])));}),const SizedBox(height:12),OutlinedButton.icon(onPressed:()=>Navigator.of(context).push(MaterialPageRoute(builder:(_)=>const ReportsPage())),icon:const Icon(Icons.table_chart),label:const Text('Звіти за день / тиждень / місяць'))]);});}
 }
 
 class RecipesPage extends StatefulWidget{
@@ -537,6 +533,12 @@ class _SettingsPageState extends State<SettingsPage>{
         ))).toList());
       },
     ),
+    const SizedBox(height:12),
+    FilledButton.icon(onPressed:()=>Navigator.of(context).push(MaterialPageRoute(builder:(_)=>const GlucoseImportPage())),icon:const Icon(Icons.upload_file),label:const Text('Імпорт глюкози (CSV / PDF)')),
+    const SizedBox(height:8),
+    OutlinedButton.icon(onPressed:()=>Navigator.of(context).push(MaterialPageRoute(builder:(_)=>const GlucoseHistoryPage())),icon:const Icon(Icons.bloodtype),label:const Text('Історія глюкози')),
+    const SizedBox(height:8),
+    OutlinedButton.icon(onPressed:()=>Navigator.of(context).push(MaterialPageRoute(builder:(_)=>const ReportsPage())),icon:const Icon(Icons.table_chart),label:const Text('Звіти харчування')),
     const SizedBox(height:12),
     const Card(child:Padding(padding:EdgeInsets.all(16),child:Text('Застосунок не визначає дозу інсуліну, не змінює лікування та не замінює рекомендації лікаря.'))),
   ]);
@@ -734,6 +736,15 @@ class _CustomProductDialogState extends State<CustomProductDialog>{
     protein:_num(p)??0,fat:_num(f)??0,fiber:_num(fi)??0,calories:_num(cal)??0,barcode:barcode.text.trim().isEmpty?null:barcode.text.trim(),source:'Користувач',
     gramsPerPiece:_num(gramsPerPiece),gramsPerMl:_num(gramsPerMl),servingGrams:_num(servingGrams))):null,child:const Text('Зберегти'))]);
 }
+
+class ReportsPage extends StatefulWidget{const ReportsPage({super.key});@override State<ReportsPage> createState()=>_ReportsPageState();}
+class _ReportsPageState extends State<ReportsPage>{int days=1;DateTime end=DateTime.now();DateTime get start=>DateTime(end.year,end.month,end.day).subtract(Duration(days:days-1));Future<List<Map<String,dynamic>>> load()async=>(await AppDb.db).query('diary',where:'date>=? AND date<?',whereArgs:[_dateKey(start),_dateKey(end.add(const Duration(days:1)))],orderBy:'date ASC,id ASC');@override Widget build(BuildContext c)=>Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<List<Map<String,dynamic>>>(future:load(),builder:(c,s){if(!s.hasData)return const Center(child:CircularProgressIndicator());final rows=s.data!;final total=rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());return ListView(padding:const EdgeInsets.all(16),children:[DropdownButtonFormField<int>(value:days,decoration:const InputDecoration(labelText:'Період',border:OutlineInputBorder()),items:const[DropdownMenuItem(value:1,child:Text('День')),DropdownMenuItem(value:7,child:Text('7 днів')),DropdownMenuItem(value:30,child:Text('30 днів'))],onChanged:(v){if(v!=null)setState(()=>days=v);}),const SizedBox(height:10),Text('${_prettyDate(start)} — ${_prettyDate(end)}'),Card(child:ListTile(title:const Text('Всього вуглеводів'),trailing:Text('${total.toStringAsFixed(1)} г',style:const TextStyle(fontSize:22,fontWeight:FontWeight.bold)))),if(rows.isNotEmpty)SingleChildScrollView(scrollDirection:Axis.horizontal,child:DataTable(columns:const[DataColumn(label:Text('Дата')),DataColumn(label:Text('Прийом')),DataColumn(label:Text('Час')),DataColumn(label:Text('Продукт')),DataColumn(label:Text('Кількість')),DataColumn(label:Text('Вуглеводи'))],rows:rows.map((r)=>DataRow(cells:[DataCell(Text(_prettyDate(DateTime.parse(r['date'] as String)))),DataCell(Text((r['meal'] as String?)??'')),DataCell(Text((r['meal_time'] as String?)??'')),DataCell(Text(r['name'] as String)),DataCell(Text(_displayDiaryAmount(r))),DataCell(Text('${(r['carbs'] as num).toStringAsFixed(1)} г'))])).toList()))else const Card(child:Padding(padding:EdgeInsets.all(18),child:Text('За вибраний період записів немає.'))),Text('Середнє за день: ${(total/days).toStringAsFixed(1)} г')]);}));}
+}
+class GlucoseImportPage extends StatefulWidget{const GlucoseImportPage({super.key});@override State<GlucoseImportPage> createState()=>_GlucoseImportPageState();}
+class _GlucoseImportPageState extends State<GlucoseImportPage>{bool busy=false;GlucoseImportResult? result;String? fileName;Future<void> pick()async{final p=await FilePicker.platform.pickFiles(type:FileType.custom,allowedExtensions:['csv','pdf'],withData:true);if(p==null||p.files.isEmpty)return;final f=p.files.single;if(f.bytes==null)return;setState((){busy=true;fileName=f.name;});try{final r=f.extension?.toLowerCase()=='pdf'?GlucoseImportService.fromPdf(f.bytes!,source:f.name):GlucoseImportService.fromCsv(utf8.decode(f.bytes!,allowMalformed:true),source:f.name);final fresh=await AppDb.onlyNewGlucose(r.readings);final dup=r.readings.length-fresh.length;setState(()=>result=GlucoseImportResult(fresh,[...r.warnings,'Дублікатів: $dup']));}catch(e){if(mounted)ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Помилка імпорту: $e')));}finally{if(mounted)setState(()=>busy=false);}}Future<void> save()async{final r=result;if(r==null||r.readings.isEmpty)return;await AppDb.insertGlucoseBatch(r.readings);if(mounted){ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Імпортовано ${r.readings.length} показників.')));setState(()=>result=null);}}@override Widget build(BuildContext c)=>Scaffold(appBar:AppBar(title:const Text('Імпорт глюкози')),body:ListView(padding:const EdgeInsets.all(20),children:[const Text('Універсальний імпорт',style:TextStyle(fontSize:26,fontWeight:FontWeight.bold)),const SizedBox(height:8),const Text('CSV — основний формат. PDF підтримується для текстових таблиць; для складних PDF краще використовувати CSV.'),const SizedBox(height:16),FilledButton.icon(onPressed:busy?null:pick,icon:const Icon(Icons.upload_file),label:Text(busy?'Обробка...':'Вибрати CSV або PDF')),if(fileName!=null)Text(fileName!),if(result!=null)...[const SizedBox(height:16),Text('Нових показників: ${result!.readings.length}'),...result!.readings.take(20).map((r)=>ListTile(leading:const Icon(Icons.bloodtype),title:Text('${r.valueMmol.toStringAsFixed(1)} ммоль/л'),subtitle:Text(_prettyDateTime(r.timestamp)))),FilledButton(onPressed:save,child:Text('Імпортувати ${result!.readings.length}'))]]));}}
+class GlucoseHistoryPage extends StatelessWidget{const GlucoseHistoryPage({super.key});@override Widget build(BuildContext c)=>Scaffold(appBar:AppBar(title:const Text('Історія глюкози')),body:FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.glucose(),builder:(c,s){if(!s.hasData)return const Center(child:CircularProgressIndicator());return ListView.builder(itemCount:s.data!.length,itemBuilder:(c,i){final r=s.data![i];final d=DateTime.parse(r['timestamp'] as String);return Card(child:ListTile(leading:const Icon(Icons.bloodtype),title:Text('${(r['value_mmol'] as num).toStringAsFixed(1)} ммоль/л'),subtitle:Text('${_prettyDateTime(d)} • ${r['source']??'імпорт'}')));});}));}}
+String _prettyDateTime(DateTime d)=>'${_prettyDate(d)} ${d.hour.toString().padLeft(2,'0')}:${d.minute.toString().padLeft(2,'0')}';
+String _n(double v)=>v%1==0?v.toStringAsFixed(0):v.toStringAsFixed(2);
 
 String _displayDiaryAmount(Map<String,dynamic> x){ final v=(x['amount_value'] as num?)?.toDouble() ?? (x['grams'] as num).toDouble(); final u=(x['amount_unit'] as String?) ?? 'г'; return '${Quantity(v, _unitFromLabel(u)).display}'; }
 QuantityUnit _unitFromLabel(String u){ switch(u){case 'мл':return QuantityUnit.milliliters;case 'шт':return QuantityUnit.pieces;case 'порція':return QuantityUnit.portion;default:return QuantityUnit.grams;} }
