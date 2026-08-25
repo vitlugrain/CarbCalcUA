@@ -1,0 +1,36 @@
+name: Fix MVP 0.6 syntax
+
+on:
+  push:
+    branches: [mvp-0.6]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: ${{ !contains(github.event.head_commit.message, 'Fix MVP 0.6 diary syntax') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: mvp-0.6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Repair diary code
+        run: python scripts/fix_mvp06_syntax.py
+      - name: Commit repair
+        run: |
+          if git diff --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lib/main.dart
+          git commit -m 'Fix MVP 0.6 diary syntax'
+          git push origin HEAD:mvp-0.6
