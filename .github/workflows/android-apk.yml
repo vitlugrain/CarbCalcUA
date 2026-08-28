@@ -18,6 +18,7 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+
       - name: Apply diary fixes
         run: |
           python3 scripts/apply_diary_fixes.py
@@ -32,6 +33,7 @@ jobs:
             echo "Diary fixes applied and committed; stop this run so the next run tests the fixed commit."
             exit 0
           fi
+
       - name: Repair MVP 0.6 source
         run: |
           python3 scripts/repair_mvp06_tail.py
@@ -46,21 +48,57 @@ jobs:
             echo "Source repaired and committed; stop this run so the next run tests the repaired commit."
             exit 0
           fi
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.35.7"
           channel: stable
           cache: true
+
       - name: Generate Android project
         run: |
           flutter create --platforms=android --project-name carbcalc_ua .
           rm -f test/widget_test.dart
+
+      - name: Configure release signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ]; then
+            echo "Required signing secrets are missing"
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 --decode > android/app/carbcalc-upload-key.jks
+          cat > android/key.properties <<EOF
+          storePassword=$KEYSTORE_PASSWORD
+          keyPassword=$KEYSTORE_PASSWORD
+          keyAlias=carbcalc
+          storeFile=carbcalc-upload-key.jks
+          EOF
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/build.gradle')
+          s = p.read_text()
+          marker = "def flutterVersionCode = localProperties.getProperty('flutter.versionCode')\n"
+          signing = """def keystoreProperties = new Properties()\ndef keystorePropertiesFile = rootProject.file('key.properties')\nif (keystorePropertiesFile.exists()) {\n    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))\n}\n\n"""
+          if 'keystorePropertiesFile' not in s:
+              s = s.replace(marker, signing + marker)
+          old = """buildTypes {\n        release {\n            // TODO: Add your own signing config for the release build.\n            // Signing with the debug keys for now, so `flutter run --release` works.\n            signingConfig = signingConfigs.debug\n        }\n    }"""
+          new = """signingConfigs {\n        release {\n            keyAlias keystoreProperties['keyAlias']\n            keyPassword keystoreProperties['keyPassword']\n            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null\n            storePassword keystoreProperties['storePassword']\n        }\n    }\n\n    buildTypes {\n        release {\n            signingConfig = signingConfigs.release\n        }\n    }"""
+          if old not in s and 'signingConfig = signingConfigs.release' not in s:
+              raise SystemExit('Unexpected generated Gradle structure')
+          s = s.replace(old, new)
+          p.write_text(s)
+          PY
+
       - name: Resolve packages
         run: flutter pub get
       - name: Analyze source
@@ -68,7 +106,7 @@ jobs:
       - name: Run tests
         run: flutter test
       - name: Build release APK
-        run: flutter build apk --release
+        run: flutter build apk --release --build-number=${{ github.run_number }}
       - name: Publish APK
         uses: actions/upload-artifact@v4
         with:
