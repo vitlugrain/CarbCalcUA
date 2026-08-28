@@ -18,6 +18,20 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+      - name: Apply diary fixes
+        run: |
+          python3 scripts/apply_diary_fixes.py
+          if git diff --quiet -- lib/main.dart pubspec.yaml; then
+            echo "Diary fixes already applied"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add lib/main.dart pubspec.yaml
+            git commit -m "Fix diary date time calendar and meal grouping"
+            git push
+            echo "Diary fixes applied and committed; stop this run so the next run tests the fixed commit."
+            exit 0
+          fi
       - name: Repair MVP 0.6 source
         run: |
           python3 scripts/repair_mvp06_tail.py
