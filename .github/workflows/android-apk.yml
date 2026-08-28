@@ -85,16 +85,17 @@ jobs:
           EOF
           python3 - <<'PY'
           from pathlib import Path
-          p = Path('android/app/build.gradle')
+          p = Path('android/app/build.gradle.kts')
+          if not p.exists():
+              raise SystemExit('Generated Android project does not contain android/app/build.gradle.kts')
           s = p.read_text()
-          marker = "def flutterVersionCode = localProperties.getProperty('flutter.versionCode')\n"
-          signing = """def keystoreProperties = new Properties()\ndef keystorePropertiesFile = rootProject.file('key.properties')\nif (keystorePropertiesFile.exists()) {\n    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))\n}\n\n"""
+          props = """\nimport java.util.Properties\nimport java.io.FileInputStream\n\nval keystoreProperties = Properties()\nval keystorePropertiesFile = rootProject.file(\"key.properties\")\nif (keystorePropertiesFile.exists()) {\n    keystoreProperties.load(FileInputStream(keystorePropertiesFile))\n}\n"""
           if 'keystorePropertiesFile' not in s:
-              s = s.replace(marker, signing + marker)
-          old = """buildTypes {\n        release {\n            // TODO: Add your own signing config for the release build.\n            // Signing with the debug keys for now, so `flutter run --release` works.\n            signingConfig = signingConfigs.debug\n        }\n    }"""
-          new = """signingConfigs {\n        release {\n            keyAlias keystoreProperties['keyAlias']\n            keyPassword keystoreProperties['keyPassword']\n            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null\n            storePassword keystoreProperties['storePassword']\n        }\n    }\n\n    buildTypes {\n        release {\n            signingConfig = signingConfigs.release\n        }\n    }"""
-          if old not in s and 'signingConfig = signingConfigs.release' not in s:
-              raise SystemExit('Unexpected generated Gradle structure')
+              s = props + s
+          old = 'buildTypes {\n        release {\n            // TODO: Add your own signing config for the release build.\n            // Signing with the debug keys for now, so `flutter run --release` works.\n            signingConfig = signingConfigs.getByName("debug")\n        }\n    }'
+          new = '''signingConfigs {\n        create("release") {\n            keyAlias = keystoreProperties["keyAlias"] as String\n            keyPassword = keystoreProperties["keyPassword"] as String\n            storeFile = keystoreProperties["storeFile"]?.let { file(it as String) }\n            storePassword = keystoreProperties["storePassword"] as String\n        }\n    }\n\n    buildTypes {\n        release {\n            signingConfig = signingConfigs.getByName("release")\n        }\n    }'''
+          if old not in s and 'signingConfig = signingConfigs.getByName("release")' not in s:
+              raise SystemExit('Unexpected generated Gradle Kotlin structure')
           s = s.replace(old, new)
           p.write_text(s)
           PY
