@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
@@ -74,6 +75,15 @@ class AppDb {
     return _db!;
   }
   static Future<List<Map<String,dynamic>>> diary(String date) async=>(await db).query('diary',where:'date=?',whereArgs:[date],orderBy:'id ASC');
+  static Future<List<Map<String,dynamic>>> mealGroups(String date) async {
+    final rows = await diary(date);
+    final groups = <String, Map<String,dynamic>>{};
+    for (final row in rows) {
+      final id = (row['meal_group_id'] as String?) ?? 'legacy_${row['meal']}_${row['meal_time'] ?? ''}';
+      groups.putIfAbsent(id, () => {'id': id, 'meal': row['meal'], 'time': row['meal_time'] ?? ''});
+    }
+    return groups.values.toList();
+  }
   static Future<void> addDiary({required String date,required String meal,required String name,required double grams,required double amountValue,required String amountUnit,required double carbs,required double xe,String? mealGroupId,String? mealTime,String? productId})async{
     await (await db).insert('diary',{'date':date,'meal':meal,'name':name,'grams':grams,'amount_value':amountValue,'amount_unit':amountUnit,'carbs':carbs,'xe':xe,'meal_group_id':mealGroupId,'meal_time':mealTime,'product_id':productId});
   }
@@ -120,6 +130,8 @@ class CarbCalcApp extends StatelessWidget{
   const CarbCalcApp({super.key});
   @override Widget build(BuildContext c)=>MaterialApp(
     title:'CarbCalc UA',debugShowCheckedModeBanner:false,
+    localizationsDelegates: const [GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate, GlobalCupertinoLocalizations.delegate],
+    supportedLocales: const [Locale('uk'), Locale('en')],
     theme:ThemeData(useMaterial3:true,colorSchemeSeed:Colors.teal,scaffoldBackgroundColor:const Color(0xFFF7F9F8)),
     home:const HomePage());
 }
@@ -188,12 +200,25 @@ class _AddFoodPageState extends State<AddFoodPage>{
   QuantityUnit unit=QuantityUnit.grams;
   String q='';
   String meal='Сніданок';
-  late final String mealGroupId;
-  late final String mealTime;
+  String? mealGroupId;
+  late String mealTime;
+  DateTime mealDate = DateTime.now();
   ParsedFoodQuery parsed=const ParsedFoodQuery(original:'',productQuery:'');
   final controller=TextEditingController(text:'100');
 
-  @override void initState(){super.initState();final now=DateTime.now();mealGroupId='meal_${now.microsecondsSinceEpoch}';mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';}
+  @override void initState(){super.initState();final now=DateTime.now();mealDate=DateTime(now.year,now.month,now.day);mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';}
+
+  Future<void> _pickMealDate() async {
+    final picked = await showDatePicker(context: context, firstDate: DateTime(2020), lastDate: DateTime(2100), initialDate: mealDate, locale: const Locale('uk'), helpText: 'Дата прийому їжі');
+    if (picked != null && mounted) setState(() { mealDate = DateTime(picked.year,picked.month,picked.day); mealGroupId = null; });
+  }
+
+  Future<void> _pickMealTime() async {
+    final parts = mealTime.split(':');
+    final initial = TimeOfDay(hour:int.tryParse(parts.first) ?? DateTime.now().hour, minute:int.tryParse(parts.length > 1 ? parts[1] : '') ?? DateTime.now().minute);
+    final picked = await showTimePicker(context: context, initialTime: initial, helpText: 'Час прийому їжі');
+    if (picked != null && mounted) setState(() { mealTime = '${picked.hour.toString().padLeft(2,'0')}:${picked.minute.toString().padLeft(2,'0')}'; });
+  }
 
   @override void dispose(){controller.dispose();super.dispose();}
 
@@ -306,9 +331,18 @@ class _AddFoodPageState extends State<AddFoodPage>{
     return ListView(padding:const EdgeInsets.all(20),children:[
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
-      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x)=>setState(()=>meal=x!)),
+      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x)=>setState((){meal=x!;mealGroupId=null;})),
       const SizedBox(height:8),
-      Row(children:[const Icon(Icons.schedule,size:20),const SizedBox(width:8),Text('Час прийому: $mealTime')]),
+      FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.mealGroups(_dateKey(mealDate)),builder:(context, snapshot){
+        final groups = snapshot.data ?? const <Map<String,dynamic>>[];
+        return DropdownButtonFormField<String>(value:mealGroupId,decoration:const InputDecoration(labelText:'Додати до існуючого прийому',hintText:'Не вибрано — створити новий',border:OutlineInputBorder()),items:groups.map((g)=>DropdownMenuItem<String>(value:g['id'] as String,child:Text('${g['meal']}${(g['time'] as String).isEmpty ? '' : ' • ${g['time']}'}'))).toList(),onChanged:(id){if(id==null)return;final g=groups.firstWhere((x)=>x['id']==id);setState((){mealGroupId=id;meal=g['meal'] as String;mealTime=(g['time'] as String).isEmpty?mealTime:g['time'] as String;});});
+      }),
+      const SizedBox(height:8),
+      Row(children:[
+        Expanded(child:OutlinedButton.icon(onPressed:_pickMealDate,icon:const Icon(Icons.calendar_today),label:Text(_prettyDate(mealDate)))),
+        const SizedBox(width:8),
+        Expanded(child:OutlinedButton.icon(onPressed:_pickMealTime,icon:const Icon(Icons.schedule),label:Text('Час: $mealTime'))),
+      ]),
       const SizedBox(height:12),
       TextField(
         decoration:const InputDecoration(labelText:'Що ви зʼїли?',hintText:'Наприклад: 150 г гречки вареної на воді',prefixIcon:Icon(Icons.search),border:OutlineInputBorder()),
@@ -362,7 +396,9 @@ class _AddFoodPageState extends State<AddFoodPage>{
         }),
         FilledButton(onPressed:amount>0&&grams!=null?()async{
           final xeGrams=await _xeGrams();
-          await AppDb.addDiary(date:_dateKey(DateTime.now()),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:mealGroupId,mealTime:mealTime,productId:selected!.id);
+          final groupId = mealGroupId ?? 'meal_${mealDate.microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
+          mealGroupId = groupId;
+          await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:mealTime,productId:selected!.id);
           if(c.mounted)ScaffoldMessenger.of(c).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
           widget.onAdded();
         }:null,child:const Text('Додати до щоденника')),
