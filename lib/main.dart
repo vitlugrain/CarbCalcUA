@@ -213,7 +213,16 @@ class _AddFoodPageState extends State<AddFoodPage>{
 
   Future<void> _pickMealDate() async {
     final picked = await showDatePicker(context: context, firstDate: DateTime(2020), lastDate: DateTime(2100), initialDate: mealDate, locale: const Locale('uk'), helpText: 'Дата прийому їжі');
-    if (picked != null && mounted) setState(() { mealDate = DateTime(picked.year,picked.month,picked.day); mealGroupId = null; });
+    if (picked != null && mounted) {
+      final now = DateTime.now();
+      setState(() {
+        mealDate = DateTime(picked.year,picked.month,picked.day);
+        mealGroupId = null;
+        if (picked.year == now.year && picked.month == now.month && picked.day == now.day) {
+          mealTime = '${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';
+        }
+      });
+    }
   }
 
   Future<void> _pickMealTime() async {
@@ -334,7 +343,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
     return ListView(padding:const EdgeInsets.all(20),children:[
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
-      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x)=>setState((){meal=x!;mealGroupId=null;})),
+      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
       const SizedBox(height:8),
       FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.mealGroups(_dateKey(mealDate)),builder:(context, snapshot){
         final groups = snapshot.data ?? const <Map<String,dynamic>>[];
