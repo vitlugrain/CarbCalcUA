@@ -130,6 +130,8 @@ def main():
     seen = set()
     for label, url in SOURCES:
         for food in read_source(label, url):
+            if not isinstance(food, dict):
+                continue
             fdc_id = food.get("fdcId") or food.get("fdc_id") or food.get("ndbNumber")
             name = str(food.get("description") or "").strip()
             if not fdc_id or not name:
