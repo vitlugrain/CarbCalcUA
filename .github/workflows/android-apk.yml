@@ -49,6 +49,9 @@ jobs:
             exit 0
           fi
 
+      - name: Build USDA offline food database
+        run: python3 scripts/build_usda_offline_db.py
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
