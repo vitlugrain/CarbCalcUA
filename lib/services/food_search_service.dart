@@ -116,11 +116,11 @@ class FoodSearchService {
       'сухі': 'сух',
       'суху': 'сух',
       'сухої': 'сух',
-      'сирий': 'сир',
-      'сира': 'сир',
-      'сире': 'сир',
-      'сирі': 'сир',
-      'сиру': 'сир',
+      'сирий': 'сирстан',
+      'сира': 'сирстан',
+      'сире': 'сирстан',
+      'сирі': 'сирстан',
+      'сиру': 'сирстан',
       'свіже': 'свіж',
       'свіжа': 'свіж',
       'свіжий': 'свіж',
@@ -248,6 +248,12 @@ class FoodSearchService {
     'арахіс': ['peanut'],
     'горіх': ['nut', 'nuts'],
     'насін': ['seed', 'seeds'],
+    'варен': ['cooked', 'boiled'],
+    'смажен': ['fried'],
+    'запечен': ['baked', 'roasted'],
+    'сух': ['dry', 'uncooked'],
+    'свіж': ['fresh'],
+    'сирстан': ['raw'],
   };
 
   static List<String> _translatedTokens(List<String> queryTokens) {
@@ -337,6 +343,9 @@ class FoodSearchService {
 
       // Додатково ранжуємо харчовий стан і спосіб приготування.
       score += _contextScore(qTokens, nameTokens);
+      if (p.source?.startsWith('USDA') == true) {
+        score += _usdaContextScore(qTokens, nameTokens);
+      }
 
       if (score > 20) results.add(FoodSearchResult(p, score));
     }
@@ -363,10 +372,25 @@ class FoodSearchService {
     // Якщо користувач явно сказав "варена", не даємо сухому продукту бути першим.
     if (has('варен')) score += productHas('варен') ? 42 : -35;
     if (has('сух')) score += productHas('сух') ? 42 : -35;
-    if (has('сир')) score += productHas('сир') ? 38 : -30;
+    if (has('сирстан')) score += productHas('сирстан') ? 38 : -30;
     if (has('свіж')) score += productHas('свіж') ? 32 : -22;
     if (has('вод')) score += productHas('вод') ? 36 : -12;
     if (has('молок')) score += productHas('молок') ? 36 : -12;
+    return score;
+  }
+
+  static double _usdaContextScore(List<String> query, List<String> name) {
+    double score = 0;
+    bool has(String s) => query.contains(s);
+    bool productHasAny(List<String> terms) => terms.any(name.contains);
+
+    if (has('варен')) score += productHasAny(['cooked', 'boiled']) ? 34 : 0;
+    if (has('смажен')) score += productHasAny(['fried']) ? 34 : 0;
+    if (has('запечен')) score += productHasAny(['baked', 'roasted']) ? 34 : 0;
+    if (has('сух')) score += productHasAny(['dry', 'uncooked']) ? 28 : 0;
+    if (has('свіж')) score += productHasAny(['fresh']) ? 24 : 0;
+    if (has('сирстан')) score += productHasAny(['raw']) ? 28 : 0;
+    if (has('молок')) score += productHasAny(['milk']) ? 24 : 0;
     return score;
   }
 
