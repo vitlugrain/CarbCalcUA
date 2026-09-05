@@ -41,4 +41,56 @@ void main() {
     final r = FoodSearchService.search('2 шт печива Марія', products);
     expect(r.first.product.id, 'cookie');
   });
+
+  test('Ukrainian alias finds USDA English product', () {
+    final usda = [
+      Product(
+        id: 'usda-rice',
+        name: 'Rice, white, cooked',
+        category: 'Cereal Grains and Pasta',
+        carbs: 28,
+        source: 'USDA SR Legacy',
+      ),
+    ];
+    final r = FoodSearchService.search('рис', usda);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'usda-rice');
+  });
+
+  test('Ukrainian cooking state boosts cooked USDA result', () {
+    final usda = [
+      Product(
+        id: 'usda-rice-raw',
+        name: 'Rice, white, long-grain, raw',
+        category: 'Cereal Grains and Pasta',
+        carbs: 80,
+        source: 'USDA SR Legacy',
+      ),
+      Product(
+        id: 'usda-rice-cooked',
+        name: 'Rice, white, long-grain, cooked',
+        category: 'Cereal Grains and Pasta',
+        carbs: 28,
+        source: 'USDA SR Legacy',
+      ),
+    ];
+    final r = FoodSearchService.search('рис варений', usda);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'usda-rice-cooked');
+  });
+
+  test('cheese query is not confused with raw-state adjective', () {
+    final usda = [
+      Product(
+        id: 'usda-cheese',
+        name: 'Cheese, cheddar',
+        category: 'Dairy and Egg Products',
+        carbs: 1.3,
+        source: 'USDA SR Legacy',
+      ),
+    ];
+    final r = FoodSearchService.search('сир', usda);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'usda-cheese');
+  });
 }
