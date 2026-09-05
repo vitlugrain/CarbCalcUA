@@ -165,6 +165,105 @@ class FoodSearchService {
     return t;
   }
 
+  /// Базовий українсько-англійський словник для пошуку в USDA.
+  /// Українські локальні продукти залишаються пріоритетними, а ці терміни
+  /// лише розширюють запит для англомовних записів USDA.
+  static const Map<String, List<String>> _ukToUsda = {
+    'хліб': ['bread'],
+    'батон': ['bread', 'loaf'],
+    'булк': ['bread', 'roll'],
+    'яйц': ['egg'],
+    'рис': ['rice'],
+    'гречк': ['buckwheat'],
+    'вівсянк': ['oatmeal', 'oats'],
+    'вівсян': ['oat', 'oats'],
+    'пластівц': ['flakes'],
+    'макарон': ['pasta', 'macaroni', 'noodles'],
+    'локшин': ['noodles'],
+    'картопл': ['potato'],
+    'моркв': ['carrot'],
+    'буряк': ['beet'],
+    'капуст': ['cabbage'],
+    'помідор': ['tomato'],
+    'томат': ['tomato'],
+    'огірок': ['cucumber'],
+    'цибул': ['onion'],
+    'часник': ['garlic'],
+    'гарбуз': ['pumpkin'],
+    'кабачок': ['squash', 'zucchini'],
+    'баклажан': ['eggplant'],
+    'кукурудз': ['corn'],
+    'горох': ['peas'],
+    'квасол': ['beans'],
+    'сочевиц': ['lentils'],
+    'нут': ['chickpeas', 'garbanzo'],
+    'яблук': ['apple'],
+    'груш': ['pear'],
+    'банан': ['banana'],
+    'апельсин': ['orange'],
+    'мандарин': ['tangerine', 'mandarin'],
+    'лимон': ['lemon'],
+    'виноград': ['grapes'],
+    'полуниц': ['strawberry'],
+    'малин': ['raspberry'],
+    'чорниц': ['blueberry'],
+    'слив': ['plum'],
+    'персик': ['peach'],
+    'абрикос': ['apricot'],
+    'кавун': ['watermelon'],
+    'дин': ['melon'],
+    'авокадо': ['avocado'],
+    'молок': ['milk'],
+    'кефір': ['kefir'],
+    'йогурт': ['yogurt'],
+    'сметан': ['sour cream'],
+    'вершк': ['cream'],
+    'масл': ['butter'],
+    'сир': ['cheese'],
+    'творог': ['cottage cheese'],
+    'кисломолоч': ['cottage cheese'],
+    'курк': ['chicken'],
+    'індич': ['turkey'],
+    'ялович': ['beef'],
+    'свинин': ['pork'],
+    'риб': ['fish'],
+    'лосос': ['salmon'],
+    'тунец': ['tuna'],
+    'оселед': ['herring'],
+    'кревет': ['shrimp'],
+    'печив': ['cookie', 'cookies'],
+    'шоколад': ['chocolate'],
+    'цукер': ['candy'],
+    'цукор': ['sugar'],
+    'мед': ['honey'],
+    'борошн': ['flour'],
+    'манк': ['semolina'],
+    'пшон': ['millet'],
+    'перлов': ['barley'],
+    'ячн': ['barley'],
+    'булгур': ['bulgur'],
+    'кускус': ['couscous'],
+    'кіноа': ['quinoa'],
+    'мигдал': ['almond'],
+    'арахіс': ['peanut'],
+    'горіх': ['nut', 'nuts'],
+    'насін': ['seed', 'seeds'],
+  };
+
+  static List<String> _translatedTokens(List<String> queryTokens) {
+    final out = <String>[];
+    for (final token in queryTokens) {
+      for (final entry in _ukToUsda.entries) {
+        if (token == entry.key || token.startsWith(entry.key) || entry.key.startsWith(token)) {
+          for (final phrase in entry.value) {
+            out.addAll(normalize(phrase).split(' ').where((x) => x.isNotEmpty));
+          }
+        }
+      }
+    }
+    return out.toSet().toList();
+  }
+
   static List<String> _tokens(String text) {
     const stop = {
       'і', 'й', 'та', 'на', 'з', 'зі', 'із', 'у', 'в', 'для', 'по', 'до',
@@ -183,6 +282,7 @@ class FoodSearchService {
     final q = normalize(parsed.productQuery);
     if (q.isEmpty) return [];
     final qTokens = _tokens(q);
+    final translatedTokens = _translatedTokens(qTokens);
 
     final results = <FoodSearchResult>[];
     for (final p in products) {
@@ -217,6 +317,22 @@ class FoodSearchService {
         score += 45 * matched / qTokens.length;
         // Якщо в запиті є уточнення, пропущені токени суттєво знижують результат.
         if (matched < qTokens.length) score -= 20 * (qTokens.length - matched);
+      }
+
+      // Для USDA дозволяємо українському запиту збігатися з англійською назвою.
+      // Локальні українські назви отримують вищі бали через звичайний точний пошук вище.
+      if (translatedTokens.isNotEmpty) {
+        var translatedMatched = 0;
+        for (final token in translatedTokens) {
+          if (nameTokens.contains(token)) {
+            score += 24;
+            translatedMatched++;
+          } else if (nameTokens.any((n) => n.startsWith(token) || token.startsWith(n))) {
+            score += 12;
+            translatedMatched++;
+          }
+        }
+        if (translatedMatched > 0) score += 18;
       }
 
       // Додатково ранжуємо харчовий стан і спосіб приготування.
