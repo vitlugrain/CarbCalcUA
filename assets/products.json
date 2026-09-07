@@ -21,7 +21,12 @@
     "fiber": 1.8,
     "calories": 87,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "картопля",
+      "картошка",
+      "варена картопля"
+    ]
   },
   {
     "id": "p003",
@@ -45,7 +50,11 @@
     "fiber": 2.8,
     "calories": 43,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "буряк",
+      "сирий буряк"
+    ]
   },
   {
     "id": "p005",
@@ -117,7 +126,12 @@
     "fiber": 2.7,
     "calories": 92,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "гречка",
+      "гречана каша",
+      "гречка варена"
+    ]
   },
   {
     "id": "p011",
@@ -141,7 +155,12 @@
     "fiber": 0.4,
     "calories": 130,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "рис",
+      "білий рис",
+      "рис варений"
+    ]
   },
   {
     "id": "p013",
@@ -165,7 +184,12 @@
     "fiber": 0,
     "calories": 52,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "молоко",
+      "молоко 2.5",
+      "молоко 2,5"
+    ]
   },
   {
     "id": "p015",
@@ -177,7 +201,14 @@
     "fiber": 0,
     "calories": 120,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "курка",
+      "курятина",
+      "куряча грудка",
+      "грудка курки",
+      "філе курки"
+    ]
   },
   {
     "id": "p016",
@@ -191,7 +222,12 @@
     "state": "raw",
     "barcode": "",
     "gramsPerPiece": 50,
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "яйце",
+      "яйця",
+      "куряче яйце"
+    ]
   },
   {
     "id": "p017",
@@ -203,7 +239,12 @@
     "fiber": 2.7,
     "calories": 265,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "хліб",
+      "білий хліб",
+      "пшеничний хліб"
+    ]
   },
   {
     "id": "p018",
@@ -252,7 +293,11 @@
     "calories": 92,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "гречка на воді",
+      "гречана каша на воді"
+    ]
   },
   {
     "id": "p022",
@@ -308,7 +353,12 @@
     "calories": 259,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб",
+      "чорний хліб",
+      "житній хліб"
+    ]
   },
   {
     "id": "p026",
@@ -468,7 +518,13 @@
     "fiber": 1.8,
     "calories": 158,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "макарони",
+      "паста",
+      "ріжки",
+      "вермішель"
+    ]
   },
   {
     "id": "p039",
@@ -624,7 +680,12 @@
     "fiber": 0,
     "calories": 121,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "сир кисломолочний",
+      "творог",
+      "домашній сир"
+    ]
   },
   {
     "id": "p052",
@@ -637,7 +698,12 @@
     "calories": 53,
     "state": "raw",
     "barcode": "",
-    "gramsPerMl": 1.03
+    "gramsPerMl": 1.03,
+    "aliases": [
+      "кефір",
+      "кефір 2.5",
+      "кефір 2,5"
+    ]
   },
   {
     "id": "p053",
@@ -661,7 +727,12 @@
     "fiber": 0,
     "calories": 384,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "сир твердий",
+      "твердий сир",
+      "сир"
+    ]
   },
   {
     "id": "p055",
@@ -685,7 +756,12 @@
     "fiber": 0,
     "calories": 250,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "яловичина",
+      "говядина",
+      "варена яловичина"
+    ]
   },
   {
     "id": "p057",
@@ -697,7 +773,11 @@
     "fiber": 0,
     "calories": 242,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "свинина",
+      "свинина варена"
+    ]
   },
   {
     "id": "p058",
@@ -709,7 +789,13 @@
     "fiber": 0,
     "calories": 209,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "курка",
+      "курятина",
+      "куряче стегно",
+      "стегно курки"
+    ]
   },
   {
     "id": "p059",
@@ -721,7 +807,12 @@
     "fiber": 0,
     "calories": 135,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "індичка",
+      "індичатина",
+      "філе індички"
+    ]
   },
   {
     "id": "p060",
@@ -757,7 +848,12 @@
     "fiber": 0,
     "calories": 90,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "риба",
+      "хек",
+      "риба хек"
+    ]
   },
   {
     "id": "p063",
@@ -769,7 +865,12 @@
     "fiber": 0,
     "calories": 208,
     "state": "cooked",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "риба",
+      "лосось",
+      "сьомга"
+    ]
   },
   {
     "id": "p064",
@@ -781,7 +882,12 @@
     "fiber": 0,
     "calories": 116,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "риба",
+      "тунець",
+      "консервований тунець"
+    ]
   },
   {
     "id": "p065",
@@ -994,7 +1100,12 @@
     "state": "cooked",
     "barcode": "",
     "gramsPerPiece": 50,
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "яйце варене",
+      "варене яйце",
+      "яйця варені"
+    ]
   },
   {
     "id": "p082",
@@ -1254,7 +1365,12 @@
     "calories": 111,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "рис",
+      "бурий рис",
+      "коричневий рис"
+    ]
   },
   {
     "id": "p102",
@@ -1267,7 +1383,12 @@
     "calories": 121,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "рис",
+      "басматі",
+      "рис басматі"
+    ]
   },
   {
     "id": "p103",
@@ -1280,7 +1401,12 @@
     "calories": 157,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "макарони твердих сортів",
+      "паста з твердих сортів",
+      "макарони дурум"
+    ]
   },
   {
     "id": "p104",
@@ -1517,7 +1643,11 @@
     "calories": 44,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "буряк",
+      "буряк варений"
+    ]
   },
   {
     "id": "p122",
@@ -1530,24 +1660,10 @@
     "calories": 45,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "ua_chicken_breast_raw",
-    "name": "Куряче філе, сире",
-    "category": "М'ясо та птиця",
-    "carbs": 0,
-    "protein": 23.1,
-    "fat": 1.9,
-    "fiber": 0,
-    "calories": 110,
-    "state": "raw",
+    "source": "Generic food data",
     "aliases": [
-      "курка",
-      "курятина",
-      "куряча грудка",
-      "куряче філе",
-      "філе курки"
+      "буряк",
+      "буряк запечений"
     ]
   },
   {
@@ -1564,7 +1680,9 @@
       "курка варена",
       "курятина варена",
       "варене куряче філе",
-      "куряча грудка варена"
+      "куряча грудка варена",
+      "варена куряча грудка",
+      "варене філе курки"
     ]
   },
   {
@@ -1581,7 +1699,9 @@
       "курка запечена",
       "курятина запечена",
       "запечене куряче філе",
-      "куряча грудка запечена"
+      "куряча грудка запечена",
+      "запечена куряча грудка",
+      "запечене філе курки"
     ]
   },
   {
@@ -1599,6 +1719,42 @@
       "курятина",
       "куряче стегно",
       "стегно курки"
+    ]
+  },
+  {
+    "id": "ua_spaghetti_cooked",
+    "name": "Спагетті, варені",
+    "category": "Макарони",
+    "carbs": 30.9,
+    "protein": 5.8,
+    "fat": 0.9,
+    "fiber": 1.8,
+    "calories": 158,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "спагетті",
+      "паста спагетті",
+      "варені спагетті"
+    ]
+  },
+  {
+    "id": "ua_spaghetti_dry",
+    "name": "Спагетті, сухі",
+    "category": "Макарони",
+    "carbs": 74.7,
+    "protein": 13,
+    "fat": 1.5,
+    "fiber": 3.2,
+    "calories": 371,
+    "state": "raw",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "спагетті",
+      "сухі спагетті",
+      "паста спагетті суха"
     ]
   }
 ]
