@@ -179,6 +179,7 @@ class FoodSearchService {
     'вівсян': ['oat', 'oats'],
     'пластівц': ['flakes'],
     'макарон': ['pasta', 'macaroni', 'noodles'],
+    'спагетті': ['spaghetti'],
     'локшин': ['noodles'],
     'картопл': ['potato'],
     'моркв': ['carrot'],
