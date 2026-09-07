@@ -214,6 +214,12 @@ class FoodSearchService {
     'апельсин': ['orange'],
     'мандарин': ['tangerine', 'mandarin'],
     'лимон': ['lemon'],
+    'кола': ['cola', 'coca cola', 'pepsi'],
+    'кока': ['coca cola', 'coke'],
+    'пепсі': ['pepsi'],
+    'зеро': ['zero', 'zero sugar', 'sugar free'],
+    'нуль': ['zero', 'zero sugar', 'sugar free'],
+    'безцукру': ['zero sugar', 'sugar free'],
     'виноград': ['grapes'],
     'полуниц': ['strawberry'],
     'малин': ['raspberry'],
@@ -338,6 +344,10 @@ class FoodSearchService {
       if (name.contains(q)) score += 70;
       if (aliasText.isNotEmpty && normalize(aliasText).contains(q)) score += 58;
       if (manufacturer.isNotEmpty && manufacturer.contains(q)) score += 48;
+      if (qTokens.contains('зеро') || qTokens.contains('нуль') || qTokens.contains('безцукру')) {
+        final zeroLike = name.contains('zero') || name.contains('нуль') || name.contains('без цукру') || name.contains('sugar free') || p.carbs == 0;
+        score += zeroLike ? 70 : -55;
+      }
       if (category == q) score += 95;
       else if (category.isNotEmpty && category.contains(q)) score += 55;
 
