@@ -345,6 +345,7 @@ class FoodSearchService {
       score += _contextScore(qTokens, nameTokens);
       if (p.source?.startsWith('USDA') == true) {
         score += _usdaContextScore(qTokens, nameTokens);
+        score += _usdaSimplicityScore(qTokens, nameTokens, p.name);
       }
 
       if (score > 20) results.add(FoodSearchResult(p, score));
@@ -376,6 +377,33 @@ class FoodSearchService {
     if (has('свіж')) score += productHas('свіж') ? 32 : -22;
     if (has('вод')) score += productHas('вод') ? 36 : -12;
     if (has('молок')) score += productHas('молок') ? 36 : -12;
+    return score;
+  }
+
+  static double _usdaSimplicityScore(
+    List<String> query,
+    List<String> nameTokens,
+    String originalName,
+  ) {
+    double score = 0;
+    final lower = originalName.toLowerCase();
+
+    // Простий запит на кшталт "курка", "риба", "рис" має спочатку
+    // показувати базовий продукт, а не ресторанну/готову американську страву.
+    if (query.length <= 2) {
+      if (nameTokens.length <= 5) score += 22;
+      if (nameTokens.length >= 10) score -= 18;
+
+      const noisy = [
+        'applebee', 'burger king', 'mcdonald', 'restaurant',
+        'fast food', 'babyfood', 'platter', 'sandwich',
+        'biscuit', 'microwaveable', 'packaged mix', 'with cheese',
+        'with sauce', 'native', 'agutu',
+      ];
+      for (final term in noisy) {
+        if (lower.contains(term)) score -= 38;
+      }
+    }
     return score;
   }
 
