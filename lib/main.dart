@@ -443,7 +443,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         }),
         FilledButton(onPressed:amount>0&&grams!=null?()async{
           final xeGrams=await _xeGrams();
-          final groupId = mealGroupId ?? 'meal_${mealDate.microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
+          final groupId = mealGroupId ?? 'meal_${DateTime.now().microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
           mealGroupId = groupId;
           await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:mealTime,productId:selected!.id);
           if(c.mounted)ScaffoldMessenger.of(c).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
