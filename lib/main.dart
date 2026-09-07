@@ -206,6 +206,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
   String q='';
   String meal='Сніданок';
   String? mealGroupId;
+  bool mealGroupExplicitSelection=false;
   late String mealTime;
   DateTime mealDate = DateTime.now();
   ParsedFoodQuery parsed=const ParsedFoodQuery(original:'',productQuery:'');
@@ -370,15 +371,15 @@ class _AddFoodPageState extends State<AddFoodPage>{
     return ListView(padding:const EdgeInsets.all(20),children:[
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
-      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
+      DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealGroupExplicitSelection=false;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
       const SizedBox(height:8),
       FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.mealGroups(_dateKey(mealDate)),builder:(context, snapshot){
         final groups = snapshot.data ?? const <Map<String,dynamic>>[];
         return Column(children:[
-          DropdownButtonFormField<String>(value:mealGroupId,decoration:const InputDecoration(labelText:'Додати до існуючого прийому',hintText:'Не вибрано — створити новий',border:OutlineInputBorder()),items:groups.map((g)=>DropdownMenuItem<String>(value:g['id'] as String,child:Text('${g['meal']}${(g['time'] as String).isEmpty ? '' : ' • ${g['time']}'}'))).toList(),onChanged:(id){if(id==null)return;final g=groups.firstWhere((x)=>x['id']==id);setState((){mealGroupId=id;meal=g['meal'] as String;mealTime=(g['time'] as String).isEmpty?mealTime:g['time'] as String;});}),
+          DropdownButtonFormField<String>(value:mealGroupId,decoration:const InputDecoration(labelText:'Додати до існуючого прийому',hintText:'Не вибрано — створити новий',border:OutlineInputBorder()),items:groups.map((g)=>DropdownMenuItem<String>(value:g['id'] as String,child:Text('${g['meal']}${(g['time'] as String).isEmpty ? '' : ' • ${g['time']}'}'))).toList(),onChanged:(id){if(id==null)return;final g=groups.firstWhere((x)=>x['id']==id);setState((){mealGroupId=id;mealGroupExplicitSelection=true;meal=g['meal'] as String;mealTime=(g['time'] as String).isEmpty?mealTime:g['time'] as String;});}),
           const SizedBox(height:8),
           SizedBox(width:double.infinity,child:OutlinedButton.icon(
-            onPressed:(){final now=DateTime.now();setState((){mealGroupId=null;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});},
+            onPressed:(){final now=DateTime.now();setState((){mealGroupId=null;mealGroupExplicitSelection=false;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});},
             icon:const Icon(Icons.add_circle_outline),
             label:const Text('Створити новий прийом їжі'),
           )),
@@ -443,9 +444,38 @@ class _AddFoodPageState extends State<AddFoodPage>{
         }),
         FilledButton(onPressed:amount>0&&grams!=null?()async{
           final xeGrams=await _xeGrams();
-          final groupId = mealGroupId ?? 'meal_${DateTime.now().microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
+          var effectiveGroupId = mealGroupId;
+          var effectiveMealTime = mealTime;
+
+          // Якщо група залишилась від попереднього додавання автоматично,
+          // не тягнемо новий прийом їжі в старий безкінечно.
+          // Перекуси розділяємо через 15 хв, основні прийоми — через 60 хв.
+          if (effectiveGroupId != null && !mealGroupExplicitSelection) {
+            final now = DateTime.now();
+            final isToday = mealDate.year == now.year &&
+                mealDate.month == now.month &&
+                mealDate.day == now.day;
+            if (isToday) {
+              final parts = mealTime.split(':');
+              final oldHour = int.tryParse(parts.first) ?? now.hour;
+              final oldMinute = int.tryParse(parts.length > 1 ? parts[1] : '') ?? now.minute;
+              final oldTime = DateTime(now.year, now.month, now.day, oldHour, oldMinute);
+              final minutes = now.difference(oldTime).inMinutes.abs();
+              final threshold = meal == 'Перекус' ? 15 : 60;
+              if (minutes >= threshold) {
+                effectiveGroupId = null;
+                effectiveMealTime =
+                    '${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';
+              }
+            }
+          }
+
+          final groupId = effectiveGroupId ??
+              'meal_${DateTime.now().microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
           mealGroupId = groupId;
-          await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:mealTime,productId:selected!.id);
+          mealGroupExplicitSelection = false;
+          mealTime = effectiveMealTime;
+          await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:effectiveMealTime,productId:selected!.id);
           if(c.mounted)ScaffoldMessenger.of(c).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
           widget.onAdded();
         }:null,child:const Text('Додати до щоденника')),
