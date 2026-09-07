@@ -1756,5 +1756,91 @@
       "сухі спагетті",
       "паста спагетті суха"
     ]
+  },
+  {
+    "id": "ua_fish_herring",
+    "name": "Оселедець, солоний",
+    "category": "Риба",
+    "carbs": 0,
+    "protein": 18,
+    "fat": 9,
+    "fiber": 0,
+    "calories": 158,
+    "state": "prepared",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "риба",
+      "оселедець",
+      "сельдь"
+    ]
+  },
+  {
+    "id": "ua_fish_mackerel",
+    "name": "Скумбрія, запечена",
+    "category": "Риба",
+    "carbs": 0,
+    "protein": 24,
+    "fat": 14,
+    "fiber": 0,
+    "calories": 230,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "риба",
+      "скумбрія"
+    ]
+  },
+  {
+    "id": "ua_fish_trout",
+    "name": "Форель, запечена",
+    "category": "Риба",
+    "carbs": 0,
+    "protein": 26,
+    "fat": 9,
+    "fiber": 0,
+    "calories": 190,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "риба",
+      "форель"
+    ]
+  },
+  {
+    "id": "ua_fish_carp",
+    "name": "Короп, запечений",
+    "category": "Риба",
+    "carbs": 0,
+    "protein": 23,
+    "fat": 8,
+    "fiber": 0,
+    "calories": 162,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "риба",
+      "короп"
+    ]
+  },
+  {
+    "id": "ua_fish_cod",
+    "name": "Тріска, запечена",
+    "category": "Риба",
+    "carbs": 0,
+    "protein": 23,
+    "fat": 1,
+    "fiber": 0,
+    "calories": 105,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data",
+    "aliases": [
+      "риба",
+      "тріска"
+    ]
   }
 ]
