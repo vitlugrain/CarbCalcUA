@@ -444,7 +444,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         }),
         FilledButton(onPressed:amount>0&&grams!=null?()async{
           final xeGrams=await _xeGrams();
-          var effectiveGroupId = mealGroupId;
+          String? effectiveGroupId = mealGroupId;
           var effectiveMealTime = mealTime;
 
           // Якщо група залишилась від попереднього додавання автоматично,
