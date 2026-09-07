@@ -240,6 +240,7 @@ class FoodSearchService {
     'свинин': ['pork'],
     'риб': ['fish'],
     'лосос': ['salmon'],
+    'форел': ['trout'],
     'тунец': ['tuna'],
     'оселед': ['herring'],
     'кревет': ['shrimp'],
