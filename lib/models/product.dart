@@ -15,6 +15,7 @@ class Product {
   final double? gramsPerPiece;
   final double? gramsPerMl;
   final double? servingGrams;
+  final List<String> aliases;
 
   Product({
     required this.id,
@@ -33,6 +34,7 @@ class Product {
     this.gramsPerPiece,
     this.gramsPerMl,
     this.servingGrams,
+    this.aliases = const [],
   });
 
   factory Product.fromJson(Map<String, dynamic> j) => Product(
@@ -52,6 +54,7 @@ class Product {
         gramsPerPiece: _numberOrNull(j['gramsPerPiece'] ?? j['grams_per_piece']),
         gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
         servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
+        aliases: _stringList(j['aliases']),
       );
 
   factory Product.fromCustomDb(Map<String, dynamic> j) => Product(
@@ -71,6 +74,14 @@ class Product {
         gramsPerMl: _numberOrNull(j['grams_per_ml']),
         servingGrams: _numberOrNull(j['serving_grams']),
       );
+
+  static List<String> _stringList(dynamic value) {
+    if (value is! List) return const [];
+    return value
+        .map((x) => _decodeHtmlEntities(x.toString().trim()))
+        .where((x) => x.isNotEmpty)
+        .toList(growable: false);
+  }
 
   static double? _numberOrNull(dynamic value) {
     if (value == null) return null;
