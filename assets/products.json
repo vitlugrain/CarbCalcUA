@@ -1505,5 +1505,31 @@
     "barcode": "",
     "gramsPerPiece": 10,
     "source": "Generic food data"
+  },
+  {
+    "id": "p121",
+    "name": "Буряк, варений",
+    "category": "Овочі",
+    "carbs": 10,
+    "protein": 1.7,
+    "fat": 0.2,
+    "fiber": 2,
+    "calories": 44,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data"
+  },
+  {
+    "id": "p122",
+    "name": "Буряк, запечений",
+    "category": "Овочі",
+    "carbs": 10.5,
+    "protein": 1.7,
+    "fat": 0.2,
+    "fiber": 2,
+    "calories": 45,
+    "state": "cooked",
+    "barcode": "",
+    "source": "Generic food data"
   }
 ]
