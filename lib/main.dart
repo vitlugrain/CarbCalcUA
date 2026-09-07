@@ -473,7 +473,6 @@ class _AddFoodPageState extends State<AddFoodPage>{
           final groupId = effectiveGroupId ??
               'meal_${DateTime.now().microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
           mealGroupId = groupId;
-          mealGroupExplicitSelection = false;
           mealTime = effectiveMealTime;
           await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:effectiveMealTime,productId:selected!.id);
           if(c.mounted)ScaffoldMessenger.of(c).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
