@@ -310,7 +310,9 @@ class FoodSearchService {
       final aliasTokens = _tokens(aliasText);
       final manufacturer = normalize(p.manufacturer ?? '');
       final manufacturerTokens = _tokens(p.manufacturer ?? '');
-      final searchableTokens = <String>{...nameTokens, ...aliasTokens, ...manufacturerTokens}.toList();
+      final category = normalize(p.category);
+      final categoryTokens = _tokens(p.category);
+      final searchableTokens = <String>{...nameTokens, ...aliasTokens, ...manufacturerTokens, ...categoryTokens}.toList();
       var score = 0.0;
 
       // Точна назва має максимальний пріоритет.
@@ -318,6 +320,8 @@ class FoodSearchService {
       if (name.contains(q)) score += 70;
       if (aliasText.isNotEmpty && normalize(aliasText).contains(q)) score += 58;
       if (manufacturer.isNotEmpty && manufacturer.contains(q)) score += 48;
+      if (category == q) score += 95;
+      else if (category.isNotEmpty && category.contains(q)) score += 55;
 
       // Кожен токен запиту має бути корисним. За повний збіг — більше балів.
       var matched = 0;
