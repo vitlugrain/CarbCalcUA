@@ -6,7 +6,7 @@ value are kept. The result stays separate from USDA/local data for provenance.
 Open Food Facts data is ODbL licensed; keep attribution/source metadata.
 """
 from __future__ import annotations
-import json, time, urllib.parse, urllib.request
+import json, time, urllib.parse, urllib.request, urllib.error
 from pathlib import Path
 
 OUT=Path("assets/ua_branded_products.json")
@@ -28,8 +28,19 @@ def fetch(page):
     }
     url=API+"?"+urllib.parse.urlencode(params)
     req=urllib.request.Request(url,headers={"User-Agent":"CarbCalc-UA/0.7 (offline database builder)"})
-    with urllib.request.urlopen(req,timeout=60) as r:
-        return json.load(r)
+    last_error=None
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req,timeout=60) as r:
+                return json.load(r)
+        except (urllib.error.HTTPError, urllib.error.URLError) as e:
+            last_error=e
+            if isinstance(e, urllib.error.HTTPError) and e.code not in (429, 500, 502, 503, 504):
+                raise
+            wait=2 ** attempt
+            print(f"Open Food Facts temporary error ({e}); retrying in {wait}s...")
+            time.sleep(wait)
+    raise last_error
 
 def clean(p):
     code=str(p.get("code") or "").strip()
