@@ -24,9 +24,11 @@ class FoodItem {
 Future<List<Product>> loadProducts() async {
   final raw=await rootBundle.loadString('assets/products.json');
   final usdaRaw=await rootBundle.loadString('assets/usda_products.json');
+  final brandedRaw=await rootBundle.loadString('assets/ua_branded_products.json');
   final local=(jsonDecode(raw) as List).map((e)=>Product.fromJson(e)).toList();
+  final branded=(jsonDecode(brandedRaw) as List).map((e)=>Product.fromJson(e)).toList();
   final usda=(jsonDecode(usdaRaw) as List).map((e)=>Product.fromJson(e)).toList();
-  return [...local,...usda];
+  return [...local,...branded,...usda];
 }
 Future<List<Product>> loadAllProducts() async {
   final base = await loadProducts();
