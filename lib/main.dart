@@ -208,6 +208,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
   DateTime mealDate = DateTime.now();
   ParsedFoodQuery parsed=const ParsedFoodQuery(original:'',productQuery:'');
   final controller=TextEditingController(text:'100');
+  final amountFocusNode=FocusNode();
+  final quantitySectionKey=GlobalKey();
 
   @override void initState(){super.initState();final now=DateTime.now();mealDate=DateTime(now.year,now.month,now.day);mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';}
 
@@ -232,7 +234,28 @@ class _AddFoodPageState extends State<AddFoodPage>{
     if (picked != null && mounted) setState(() { mealTime = '${picked.hour.toString().padLeft(2,'0')}:${picked.minute.toString().padLeft(2,'0')}'; });
   }
 
-  @override void dispose(){controller.dispose();super.dispose();}
+  @override void dispose(){controller.dispose();amountFocusNode.dispose();super.dispose();}
+
+  void _focusQuantitySection() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      final ctx = quantitySectionKey.currentContext;
+      if (ctx != null) {
+        await Scrollable.ensureVisible(
+          ctx,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+          alignment: 0.18,
+        );
+      }
+      if (!mounted) return;
+      amountFocusNode.requestFocus();
+      controller.selection = TextSelection(
+        baseOffset: 0,
+        extentOffset: controller.text.length,
+      );
+    });
+  }
 
   double? _toGrams(Product p)=>FoodCalculationService.toGrams(p, Quantity(amount, unit));
 
@@ -259,7 +282,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
     final parsedUnit=_mapParsedUnit(parsed.unit);
     var nextUnit=unit;
     if(parsedUnit!=null && units.contains(parsedUnit)) nextUnit=parsedUnit;
-    else if(!units.contains(nextUnit)) nextUnit=units.first;
+    else nextUnit=QuantityUnit.grams;
     final nextAmount=parsed.amount ?? (nextUnit==QuantityUnit.grams?100:1);
     setState((){
       selected=p;
@@ -267,6 +290,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
       amount=nextAmount;
       controller.text=FoodSearchService.parseQuery(q).amount?.toString() ?? nextAmount.toString();
     });
+    _focusQuantitySection();
   }
 
   Future<void> _lookupBarcode(String barcode) async {
@@ -317,6 +341,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         amount = verifiedUnit == QuantityUnit.grams ? 100 : 1;
         controller.text = amount.toString();
       });
+      _focusQuantitySection();
     } catch (e) {
       if (mounted) Navigator.of(context, rootNavigator: true).pop();
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Помилка пошуку за штрихкодом: $e')));
@@ -401,7 +426,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         if(parsed.amount!=null)Text('З вашого запиту: ${parsed.amount!.toStringAsFixed(parsed.amount==parsed.amount!.roundToDouble()?0:2)} ${_mapParsedUnit(parsed.unit)?.label ?? ''}',style:const TextStyle(color:Colors.teal)),
         const SizedBox(height:8),
         Row(crossAxisAlignment:CrossAxisAlignment.start,children:[
-          Expanded(child:TextFormField(controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
+          Expanded(child:TextFormField(key:quantitySectionKey,focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
           const SizedBox(width:10),
           Expanded(child:DropdownButtonFormField<QuantityUnit>(value:unit,decoration:const InputDecoration(labelText:'Одиниця',border:OutlineInputBorder()),items:units.map((u)=>DropdownMenuItem(value:u,child:Text(u.label))).toList(),onChanged:(u){if(u==null)return;setState((){unit=u;amount=u==QuantityUnit.grams?100:1;controller.text=amount.toString();});})),
         ]),
