@@ -241,6 +241,7 @@ class FoodSearchService {
     'риб': ['fish'],
     'лосос': ['salmon'],
     'форел': ['trout'],
+    'скумбр': ['mackerel'],
     'тунец': ['tuna'],
     'оселед': ['herring'],
     'кревет': ['shrimp'],
