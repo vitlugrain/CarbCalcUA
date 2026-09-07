@@ -1531,5 +1531,74 @@
     "state": "cooked",
     "barcode": "",
     "source": "Generic food data"
+  },
+  {
+    "id": "ua_chicken_breast_raw",
+    "name": "Куряче філе, сире",
+    "category": "М'ясо та птиця",
+    "carbs": 0,
+    "protein": 23.1,
+    "fat": 1.9,
+    "fiber": 0,
+    "calories": 110,
+    "state": "raw",
+    "aliases": [
+      "курка",
+      "курятина",
+      "куряча грудка",
+      "куряче філе",
+      "філе курки"
+    ]
+  },
+  {
+    "id": "ua_chicken_breast_cooked",
+    "name": "Куряче філе, варене",
+    "category": "М'ясо та птиця",
+    "carbs": 0,
+    "protein": 30.5,
+    "fat": 3.5,
+    "fiber": 0,
+    "calories": 165,
+    "state": "prepared",
+    "aliases": [
+      "курка варена",
+      "курятина варена",
+      "варене куряче філе",
+      "куряча грудка варена"
+    ]
+  },
+  {
+    "id": "ua_chicken_breast_baked",
+    "name": "Куряче філе, запечене",
+    "category": "М'ясо та птиця",
+    "carbs": 0,
+    "protein": 30.5,
+    "fat": 3.6,
+    "fiber": 0,
+    "calories": 165,
+    "state": "prepared",
+    "aliases": [
+      "курка запечена",
+      "курятина запечена",
+      "запечене куряче філе",
+      "куряча грудка запечена"
+    ]
+  },
+  {
+    "id": "ua_chicken_thigh",
+    "name": "Куряче стегно, приготоване",
+    "category": "М'ясо та птиця",
+    "carbs": 0,
+    "protein": 25,
+    "fat": 10.9,
+    "fiber": 0,
+    "calories": 209,
+    "state": "prepared",
+    "aliases": [
+      "курка",
+      "курятина",
+      "куряче стегно",
+      "стегно курки"
+    ]
   }
 ]
