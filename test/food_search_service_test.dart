@@ -124,4 +124,19 @@ void main() {
     expect(r, isNotEmpty);
     expect(r.first.product.id, 'off-veres');
   });
+
+  test('partial Ukrainian spaghetti query finds local spaghetti', () {
+    final local = [
+      Product(
+        id: 'ua-spaghetti',
+        name: 'Спагетті, варені',
+        category: 'Макарони',
+        carbs: 30.9,
+        aliases: const ['спагетті', 'паста спагетті'],
+      ),
+    ];
+    final r = FoodSearchService.search('спаге', local);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'ua-spaghetti');
+  });
 }
