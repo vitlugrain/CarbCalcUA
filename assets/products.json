@@ -1061,7 +1061,14 @@
     "state": "raw",
     "barcode": "",
     "gramsPerMl": 1,
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "кола",
+      "кока кола",
+      "кока-кола",
+      "coca cola",
+      "кола з цукром"
+    ]
   },
   {
     "id": "p079",
@@ -1841,6 +1848,50 @@
     "aliases": [
       "риба",
       "тріска"
+    ]
+  },
+  {
+    "id": "ua_coca_cola_zero",
+    "name": "Coca-Cola Zero Sugar",
+    "category": "Напої",
+    "carbs": 0,
+    "protein": 0,
+    "fat": 0,
+    "fiber": 0,
+    "calories": 0,
+    "state": "prepared",
+    "barcode": "",
+    "gramsPerMl": 1,
+    "source": "Generic food data",
+    "aliases": [
+      "кока кола зеро",
+      "кока-кола зеро",
+      "кола зеро",
+      "coca cola zero",
+      "без цукру",
+      "zero sugar"
+    ]
+  },
+  {
+    "id": "ua_pepsi_zero",
+    "name": "Pepsi Zero Sugar",
+    "category": "Напої",
+    "carbs": 0,
+    "protein": 0,
+    "fat": 0,
+    "fiber": 0,
+    "calories": 0,
+    "state": "prepared",
+    "barcode": "",
+    "gramsPerMl": 1,
+    "source": "Generic food data",
+    "aliases": [
+      "пепсі зеро",
+      "pepsi zero",
+      "пепсі без цукру",
+      "pepsi zero sugar",
+      "без цукру",
+      "zero sugar"
     ]
   }
 ]
