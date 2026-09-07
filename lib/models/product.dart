@@ -59,15 +59,15 @@ class Product {
 
   factory Product.fromCustomDb(Map<String, dynamic> j) => Product(
         id: '${j['id']}',
-        name: '${j['name']}',
-        category: '${j['category']}',
+        name: _decodeHtmlEntities('${j['name']}'),
+        category: _decodeHtmlEntities('${j['category']}'),
         carbs: (j['carbs'] as num).toDouble(),
         protein: (j['protein'] as num).toDouble(),
         fat: (j['fat'] as num).toDouble(),
         fiber: (j['fiber'] as num).toDouble(),
         calories: (j['calories'] as num).toDouble(),
         barcode: _stringOrNull(j['barcode']),
-        manufacturer: _stringOrNull(j['manufacturer']),
+        manufacturer: _decodedStringOrNull(j['manufacturer']),
         source: _stringOrNull(j['source']),
         updatedAt: _stringOrNull(j['updated_at']),
         gramsPerPiece: _numberOrNull(j['grams_per_piece']),
