@@ -93,4 +93,35 @@ void main() {
     expect(r, isNotEmpty);
     expect(r.first.product.id, 'usda-cheese');
   });
+
+  test('searches local aliases', () {
+    final local = [
+      Product(
+        id: 'ua-chicken',
+        name: 'Куряче філе, сире',
+        category: 'М\'ясо та птиця',
+        carbs: 0,
+        aliases: const ['курка', 'курятина', 'куряча грудка'],
+      ),
+    ];
+    final r = FoodSearchService.search('курка', local);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'ua-chicken');
+  });
+
+  test('searches branded products by manufacturer', () {
+    final branded = [
+      Product(
+        id: 'off-veres',
+        name: 'Зелений горошок',
+        category: 'Овочеві консерви',
+        carbs: 6.5,
+        manufacturer: 'Верес',
+        source: 'Open Food Facts (ODbL)',
+      ),
+    ];
+    final r = FoodSearchService.search('верес', branded);
+    expect(r, isNotEmpty);
+    expect(r.first.product.id, 'off-veres');
+  });
 }
