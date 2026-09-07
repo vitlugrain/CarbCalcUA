@@ -64,7 +64,18 @@ def clean(p):
 def main():
     out=[]; seen=set()
     for page in range(1,MAX_PAGES+1):
-        payload=fetch(page)
+        try:
+            payload=fetch(page)
+        except urllib.error.HTTPError as e:
+            if out and e.code in (401, 403, 429, 500, 502, 503, 504):
+                print(f"Stopping import after {len(out)} accepted products because API returned HTTP {e.code}.")
+                break
+            raise
+        except urllib.error.URLError as e:
+            if out:
+                print(f"Stopping import after {len(out)} accepted products because API is unavailable: {e}")
+                break
+            raise
         products=payload.get("products") or []
         if not products: break
         for p in products:
