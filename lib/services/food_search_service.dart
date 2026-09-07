@@ -295,26 +295,33 @@ class FoodSearchService {
     for (final p in products) {
       final name = normalize(p.name);
       final nameTokens = _tokens(p.name);
+      final aliasText = p.aliases.join(' ');
+      final aliasTokens = _tokens(aliasText);
+      final manufacturer = normalize(p.manufacturer ?? '');
+      final manufacturerTokens = _tokens(p.manufacturer ?? '');
+      final searchableTokens = <String>{...nameTokens, ...aliasTokens, ...manufacturerTokens}.toList();
       var score = 0.0;
 
       // Точна назва має максимальний пріоритет.
       if (name == q) score += 160;
       if (name.contains(q)) score += 70;
+      if (aliasText.isNotEmpty && normalize(aliasText).contains(q)) score += 58;
+      if (manufacturer.isNotEmpty && manufacturer.contains(q)) score += 48;
 
       // Кожен токен запиту має бути корисним. За повний збіг — більше балів.
       var matched = 0;
       for (final token in qTokens) {
-        if (nameTokens.contains(token)) {
-          score += 34;
+        if (searchableTokens.contains(token)) {
+          score += nameTokens.contains(token) ? 34 : 26;
           matched++;
           continue;
         }
-        if (nameTokens.any((n) => n.startsWith(token) || token.startsWith(n))) {
+        if (searchableTokens.any((n) => n.startsWith(token) || token.startsWith(n))) {
           score += 18;
           matched++;
           continue;
         }
-        if (_similar(token, nameTokens) >= 0.78) {
+        if (_similar(token, searchableTokens) >= 0.78) {
           score += 8;
           matched++;
         }
@@ -341,6 +348,10 @@ class FoodSearchService {
         }
         if (translatedMatched > 0) score += 18;
       }
+
+      // Українське локальне ядро має бути вище за зовнішні каталоги,
+      // якщо релевантність запиту однакова.
+      if (!p.id.startsWith('usda_') && !p.id.startsWith('off_')) score += 20;
 
       // Додатково ранжуємо харчовий стан і спосіб приготування.
       score += _contextScore(qTokens, nameTokens);
