@@ -25,6 +25,9 @@ jobs:
       - name: Build Ukrainian Food Database 1.0 core
         run: python3 scripts/build_ua_core_db.py
 
+      - name: Merge Ukrainian core into local products
+        run: python3 scripts/merge_ua_core_db.py
+
       - name: Build Ukrainian branded offline database
         run: python3 scripts/build_ua_branded_db.py
 
