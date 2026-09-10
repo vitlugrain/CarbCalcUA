@@ -26,6 +26,12 @@ class BarcodeService {
     return text.isEmpty ? null : text;
   }
 
+  static bool hasBarcode(Product product, String rawBarcode) {
+    final wanted = normalize(rawBarcode);
+    if (wanted.isEmpty) return false;
+    return product.allBarcodes.any((code) => normalize(code) == wanted);
+  }
+
   static Future<Product?> findLocal(String rawBarcode, {CustomProductLookup? customProductLookup}) async {
     final barcode = normalize(rawBarcode);
     if (barcode.isEmpty) return null;
@@ -35,7 +41,9 @@ class BarcodeService {
     }
     final raw = await rootBundle.loadString('assets/products.json');
     final products = (jsonDecode(raw) as List).map((e) => Product.fromJson(e as Map<String, dynamic>));
-    for (final product in products) { if (product.barcode == barcode) return product; }
+    for (final product in products) {
+      if (hasBarcode(product, barcode)) return product;
+    }
     return null;
   }
 
@@ -51,7 +59,7 @@ class BarcodeService {
     final n = p['nutriments'] is Map ? p['nutriments'] as Map<String, dynamic> : <String, dynamic>{};
     final name = _firstNonEmpty([cleanName(p['product_name_uk']),cleanName(p['product_name'])]);
     if (name == null) return null;
-    return Product(id:'off_$barcode',name:name,category:_firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null]) ?? 'Зовнішні дані',carbs:_number(n['carbohydrates_100g']),protein:_number(n['proteins_100g']),fat:_number(n['fat_100g']),fiber:_number(n['fiber_100g']),calories:_number(n['energy-kcal_100g']),barcode:barcode,manufacturer:_firstNonEmpty([cleanName(p['brands'])]),source:'Open Food Facts',updatedAt:DateTime.now().toIso8601String());
+    return Product(id:'off_$barcode',name:name,category:_firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null]) ?? 'Зовнішні дані',carbs:_number(n['carbohydrates_100g']),protein:_number(n['proteins_100g']),fat:_number(n['fat_100g']),fiber:_number(n['fiber_100g']),calories:_number(n['energy-kcal_100g']),barcode:barcode,barcodes:[barcode],manufacturer:_firstNonEmpty([cleanName(p['brands'])]),source:'Open Food Facts',updatedAt:DateTime.now().toIso8601String());
   }
 
   static Future<Product?> find(String barcode, {CustomProductLookup? customProductLookup}) async {
@@ -71,8 +79,9 @@ class BarcodeService {
       if(item is! Map) continue;
       final p=item.cast<String,dynamic>(); final n=p['nutriments'] is Map ? (p['nutriments'] as Map).cast<String,dynamic>() : <String,dynamic>{};
       final name=_firstNonEmpty([cleanName(p['product_name_uk']),cleanName(p['product_name'])]); if(name==null)continue;
-      final carbs=_number(n['carbohydrates_100g']); if(carbs<=0)continue;
-      out.add(Product(id:'off_${p['code']??name.hashCode}',name:name,category:_firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null])??'Онлайн-база',carbs:carbs,protein:_number(n['proteins_100g']),fat:_number(n['fat_100g']),fiber:_number(n['fiber_100g']),calories:_number(n['energy-kcal_100g']),barcode:_firstNonEmpty([cleanName(p['code'])]),manufacturer:_firstNonEmpty([cleanName(p['brands'])]),source:'Open Food Facts',updatedAt:DateTime.now().toIso8601String()));
+      final carbs=_number(n['carbohydrates_100g']);
+      final code=_firstNonEmpty([cleanName(p['code'])]);
+      out.add(Product(id:'off_${p['code']??name.hashCode}',name:name,category:_firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null])??'Онлайн-база',carbs:carbs,protein:_number(n['proteins_100g']),fat:_number(n['fat_100g']),fiber:_number(n['fiber_100g']),calories:_number(n['energy-kcal_100g']),barcode:code,barcodes:code == null ? const [] : [code],manufacturer:_firstNonEmpty([cleanName(p['brands'])]),source:'Open Food Facts',updatedAt:DateTime.now().toIso8601String()));
     }
     return out;
   }

@@ -9,6 +9,7 @@ class Product {
   final double fiber;
   final double calories;
   final String? barcode;
+  final List<String> barcodes;
   final String? manufacturer;
   final String? source;
   final String? updatedAt;
@@ -28,6 +29,7 @@ class Product {
     this.calories = 0,
     this.state = 'raw',
     this.barcode,
+    this.barcodes = const [],
     this.manufacturer,
     this.source,
     this.updatedAt,
@@ -36,6 +38,11 @@ class Product {
     this.servingGrams,
     this.aliases = const [],
   });
+
+  List<String> get allBarcodes => <String>{
+        if (barcode != null && barcode!.trim().isNotEmpty) barcode!.trim(),
+        ...barcodes.map((x) => x.trim()).where((x) => x.isNotEmpty),
+      }.toList(growable: false);
 
   factory Product.fromJson(Map<String, dynamic> j) => Product(
         id: '${j['id']}',
@@ -48,6 +55,7 @@ class Product {
         calories: ((j['calories'] ?? 0) as num).toDouble(),
         state: j['state'] ?? 'raw',
         barcode: _stringOrNull(j['barcode']),
+        barcodes: _stringList(j['barcodes']),
         manufacturer: _decodedStringOrNull(j['manufacturer']),
         source: _stringOrNull(j['source']),
         updatedAt: _stringOrNull(j['updatedAt'] ?? j['updated_at']),
@@ -62,17 +70,20 @@ class Product {
         name: _decodeHtmlEntities('${j['name']}'),
         category: _decodeHtmlEntities('${j['category']}'),
         carbs: (j['carbs'] as num).toDouble(),
-        protein: (j['protein'] as num).toDouble(),
-        fat: (j['fat'] as num).toDouble(),
-        fiber: (j['fiber'] as num).toDouble(),
-        calories: (j['calories'] as num).toDouble(),
+        protein: ((j['protein'] ?? 0) as num).toDouble(),
+        fat: ((j['fat'] ?? 0) as num).toDouble(),
+        fiber: ((j['fiber'] ?? 0) as num).toDouble(),
+        calories: ((j['calories'] ?? 0) as num).toDouble(),
+        state: j['state'] ?? 'raw',
         barcode: _stringOrNull(j['barcode']),
+        barcodes: _stringList(j['barcodes']),
         manufacturer: _decodedStringOrNull(j['manufacturer']),
         source: _stringOrNull(j['source']),
-        updatedAt: _stringOrNull(j['updated_at']),
-        gramsPerPiece: _numberOrNull(j['grams_per_piece']),
-        gramsPerMl: _numberOrNull(j['grams_per_ml']),
-        servingGrams: _numberOrNull(j['serving_grams']),
+        updatedAt: _stringOrNull(j['updated_at'] ?? j['updatedAt']),
+        gramsPerPiece: _numberOrNull(j['grams_per_piece'] ?? j['gramsPerPiece']),
+        gramsPerMl: _numberOrNull(j['grams_per_ml'] ?? j['gramsPerMl']),
+        servingGrams: _numberOrNull(j['serving_grams'] ?? j['servingGrams']),
+        aliases: _stringList(j['aliases']),
       );
 
   static List<String> _stringList(dynamic value) {
