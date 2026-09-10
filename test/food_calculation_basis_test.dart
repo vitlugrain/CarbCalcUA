@@ -12,7 +12,10 @@ void main() {
       xeGrams: 10,
     );
     expect(r, isNotNull);
-    expect(r!.carbs, 20);
+    expect(r!.grams, 40);
+    expect(r.nutritionAmount, 40);
+    expect(r.nutritionUnit, QuantityUnit.grams);
+    expect(r.carbs, 20);
     expect(r.xe, 2);
   });
 
@@ -32,7 +35,31 @@ void main() {
       xeGrams: 10,
     );
     expect(r, isNotNull);
-    expect(r!.carbs, closeTo(26.5, 0.001));
+    expect(r!.grams, closeTo(260, 0.001));
+    expect(r.nutritionAmount, 250);
+    expect(r.nutritionUnit, QuantityUnit.milliliters);
+    expect(r.carbs, closeTo(26.5, 0.001));
+  });
+
+  test('100 ml basis works directly from ml even without density', () {
+    final p = Product(
+      id: 'drink',
+      name: 'Напій',
+      category: 'Напої',
+      carbs: 10.6,
+      nutritionBasis: '100ml',
+      quantityUnits: const ['мл'],
+    );
+    final r = FoodCalculationService.calculate(
+      product: p,
+      quantity: const Quantity(250, QuantityUnit.milliliters),
+      xeGrams: 10,
+    );
+    expect(r, isNotNull);
+    expect(r!.grams, isNull);
+    expect(r.nutritionAmount, 250);
+    expect(r.nutritionUnit, QuantityUnit.milliliters);
+    expect(r.carbs, closeTo(26.5, 0.001));
   });
 
   test('100 ml basis does not silently assume density for grams', () {
