@@ -12,6 +12,7 @@ import 'models/product.dart';
 import 'models/quantity.dart';
 import 'services/food_search_service.dart';
 import 'services/food_calculation_service.dart';
+import 'services/product_unit_service.dart';
 import 'services/meal_group_service.dart';
 import 'widgets/meal_header_menu.dart';
 double _xeForCarbs(double carbs, double xeGrams) => xeGrams > 0 ? carbs / xeGrams : 0;
@@ -46,12 +47,12 @@ class AppDb {
   static Future<Database> get db async {
     if(_db!=null)return _db!;
     final path=p.join(await getDatabasesPath(),'carbcalc_ua.db');
-    _db=await openDatabase(path,version:6,onCreate:(d,v)async{
+    _db=await openDatabase(path,version:7,onCreate:(d,v)async{
       await d.execute('CREATE TABLE recipes(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,finished_weight REAL NOT NULL)');
       await d.execute('CREATE TABLE recipe_ingredients(id INTEGER PRIMARY KEY AUTOINCREMENT,recipe_id INTEGER NOT NULL,product_id TEXT NOT NULL,grams REAL NOT NULL)');
       await d.execute("CREATE TABLE diary(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,meal TEXT NOT NULL,name TEXT NOT NULL,grams REAL NOT NULL,amount_value REAL NOT NULL DEFAULT 0,amount_unit TEXT NOT NULL DEFAULT 'г',carbs REAL NOT NULL,xe REAL NOT NULL,meal_group_id TEXT,meal_time TEXT,product_id TEXT)");
       await d.execute('CREATE TABLE glucose(id INTEGER PRIMARY KEY AUTOINCREMENT,timestamp TEXT NOT NULL,value_mmol REAL NOT NULL,source TEXT,original_unit TEXT)');
-      await d.execute('CREATE TABLE custom_products(id TEXT PRIMARY KEY,name TEXT NOT NULL,category TEXT NOT NULL,carbs REAL NOT NULL,protein REAL NOT NULL,fat REAL NOT NULL,fiber REAL NOT NULL,calories REAL NOT NULL,barcode TEXT,manufacturer TEXT,source TEXT,updated_at TEXT,grams_per_piece REAL,grams_per_ml REAL,serving_grams REAL)');
+      await d.execute('CREATE TABLE custom_products(id TEXT PRIMARY KEY,name TEXT NOT NULL,category TEXT NOT NULL,carbs REAL NOT NULL,protein REAL NOT NULL,fat REAL NOT NULL,fiber REAL NOT NULL,calories REAL NOT NULL,barcode TEXT,manufacturer TEXT,source TEXT,updated_at TEXT,grams_per_piece REAL,grams_per_ml REAL,serving_grams REAL,barcodes TEXT,nutrition_basis TEXT,quantity_units TEXT)');
     },onUpgrade:(d,oldV,newV)async{
       if(oldV<2){
         await d.execute('CREATE TABLE IF NOT EXISTS diary(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,meal TEXT NOT NULL,name TEXT NOT NULL,grams REAL NOT NULL,carbs REAL NOT NULL,xe REAL NOT NULL)');
@@ -77,6 +78,11 @@ class AppDb {
         await d.execute('ALTER TABLE diary ADD COLUMN meal_time TEXT');
         await d.execute('ALTER TABLE diary ADD COLUMN product_id TEXT');
         await d.execute('CREATE TABLE IF NOT EXISTS glucose(id INTEGER PRIMARY KEY AUTOINCREMENT,timestamp TEXT NOT NULL,value_mmol REAL NOT NULL,source TEXT,original_unit TEXT)');
+      }
+      if(oldV<7){
+        await d.execute('ALTER TABLE custom_products ADD COLUMN barcodes TEXT');
+        await d.execute('ALTER TABLE custom_products ADD COLUMN nutrition_basis TEXT');
+        await d.execute('ALTER TABLE custom_products ADD COLUMN quantity_units TEXT');
       }
     });
     return _db!;
@@ -118,11 +124,18 @@ class AppDb {
   }
   static Future<List<Map<String,dynamic>>> customProducts()async=>(await db).query('custom_products',orderBy:'name');
   static Future<Map<String,dynamic>?> customProductByBarcode(String barcode) async {
-    final rows=await (await db).query('custom_products',where:'barcode=?',whereArgs:[barcode],limit:1);
-    return rows.isEmpty?null:rows.first;
+    final d=await db;
+    final rows=await d.query('custom_products',where:'barcode=?',whereArgs:[barcode],limit:1);
+    if(rows.isNotEmpty)return rows.first;
+    final all=await d.query('custom_products',where:'barcodes IS NOT NULL');
+    for(final row in all){
+      final codes='${row['barcodes'] ?? ''}'.split(',').map((x)=>x.trim());
+      if(codes.contains(barcode))return row;
+    }
+    return null;
   }
   static Future<void> saveCustomProduct(Product x)async=> (await db).insert('custom_products',{
-    'id':x.id,'name':x.name,'category':x.category,'carbs':x.carbs,'protein':x.protein,'fat':x.fat,'fiber':x.fiber,'calories':x.calories,'barcode':x.barcode,'manufacturer':x.manufacturer,'source':x.source,'updated_at':x.updatedAt,'grams_per_piece':x.gramsPerPiece,'grams_per_ml':x.gramsPerMl,'serving_grams':x.servingGrams},
+    'id':x.id,'name':x.name,'category':x.category,'carbs':x.carbs,'protein':x.protein,'fat':x.fat,'fiber':x.fiber,'calories':x.calories,'barcode':x.barcode,'manufacturer':x.manufacturer,'source':x.source,'updated_at':x.updatedAt,'grams_per_piece':x.gramsPerPiece,'grams_per_ml':x.gramsPerMl,'serving_grams':x.servingGrams,'barcodes':x.allBarcodes.join(','),'nutrition_basis':x.nutritionBasis,'quantity_units':x.quantityUnits.join(',')},
     conflictAlgorithm:ConflictAlgorithm.replace);
   static Future<void> deleteCustomProduct(String id)async=>(await db).delete('custom_products',where:'id=?',whereArgs:[id]);
   static Future<Product?> customProductById(String id) async {
@@ -276,13 +289,10 @@ class _AddFoodPageState extends State<AddFoodPage>{
 
   double? _toGrams(Product p)=>FoodCalculationService.toGrams(p, Quantity(amount, unit));
 
-  List<QuantityUnit> _unitsFor(Product p){
-    final units=<QuantityUnit>[QuantityUnit.grams];
-    if(p.gramsPerMl!=null) units.add(QuantityUnit.milliliters);
-    if(p.gramsPerPiece!=null) units.add(QuantityUnit.pieces);
-    if(p.servingGrams!=null) units.add(QuantityUnit.portion);
-    return units;
-  }
+  List<QuantityUnit> _unitsFor(Product p)=>ProductUnitService.unitsFor(p);
+
+  double _defaultAmount(QuantityUnit u)=>
+      (u==QuantityUnit.grams || u==QuantityUnit.milliliters)?100:1;
 
   QuantityUnit? _mapParsedUnit(ParsedQuantityUnit? u){
     switch(u){
@@ -299,8 +309,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
     final parsedUnit=_mapParsedUnit(parsed.unit);
     var nextUnit=unit;
     if(parsedUnit!=null && units.contains(parsedUnit)) nextUnit=parsedUnit;
-    else nextUnit=QuantityUnit.grams;
-    final nextAmount=parsed.amount ?? (nextUnit==QuantityUnit.grams?100:1);
+    else nextUnit=units.first;
+    final nextAmount=parsed.amount ?? _defaultAmount(nextUnit);
     setState((){
       selected=p;
       unit=nextUnit;
@@ -355,7 +365,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         parsed = ParsedFoodQuery(original: barcode, productQuery: verifiedProduct.name);
         selected = verifiedProduct;
         unit = verifiedUnit!;
-        amount = verifiedUnit == QuantityUnit.grams ? 100 : 1;
+        amount = _defaultAmount(verifiedUnit);
         controller.text = amount.toString();
       });
       _focusQuantitySection();
@@ -378,8 +388,9 @@ class _AddFoodPageState extends State<AddFoodPage>{
     if(!s.hasData)return const Center(child:CircularProgressIndicator());
     final results=FoodSearchService.search(q,s.data!);
     final list=results.map((r)=>r.product).toList();
-    final grams=selected==null?null:_toGrams(selected!);
-    final carbs=selected==null||grams==null?0.0:(grams*selected!.carbs/100).toDouble();
+    final preview=selected==null?null:FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:10);
+    final grams=preview?.grams;
+    final carbs=preview?.carbs??0.0;
     final units=selected==null?<QuantityUnit>[QuantityUnit.grams]:_unitsFor(selected!);
     final hasParsedAmount=parsed.amount!=null;
     return ListView(padding:const EdgeInsets.all(20),children:[
@@ -428,7 +439,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         ...list.take(10).map((p)=>Card(child:ListTile(
           leading:Icon(p.state=='cooked'?Icons.restaurant:Icons.inventory_2_outlined),
           title:Text(p.name),
-          subtitle:Text('${p.carbs.toStringAsFixed(1)} г вуглеводів / 100 г${p.manufacturer==null?'':' • ${p.manufacturer}'}'),
+          subtitle:Text('${p.carbs.toStringAsFixed(1)} г вуглеводів / ${ProductUnitService.nutritionBasisLabel(p)}${p.manufacturer==null?'':' • ${p.manufacturer}'}'),
           trailing:const Icon(Icons.chevron_right),
           onTap:()=>_select(p),
         ))),
@@ -445,10 +456,10 @@ class _AddFoodPageState extends State<AddFoodPage>{
         Row(crossAxisAlignment:CrossAxisAlignment.start,children:[
           Expanded(child:TextFormField(key:quantitySectionKey,focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
           const SizedBox(width:10),
-          Expanded(child:DropdownButtonFormField<QuantityUnit>(value:unit,decoration:const InputDecoration(labelText:'Одиниця',border:OutlineInputBorder()),items:units.map((u)=>DropdownMenuItem(value:u,child:Text(u.label))).toList(),onChanged:(u){if(u==null)return;setState((){unit=u;amount=u==QuantityUnit.grams?100:1;controller.text=amount.toString();});})),
+          Expanded(child:DropdownButtonFormField<QuantityUnit>(value:unit,decoration:const InputDecoration(labelText:'Одиниця',border:OutlineInputBorder()),items:units.map((u)=>DropdownMenuItem(value:u,child:Text(u.label))).toList(),onChanged:(u){if(u==null)return;setState((){unit=u;amount=_defaultAmount(u);controller.text=amount.toString();});})),
         ]),
         const SizedBox(height:8),
-        if(grams==null)const Text('Для цієї одиниці немає даних для перерахунку. Оберіть грами або додайте вагу/обʼєм одиниці до даних продукту.',style:TextStyle(color:Colors.orange)),
+        if(preview==null)const Text('Для цієї одиниці немає достатніх даних для коректного розрахунку. Оберіть доступну одиницю або додайте потрібну вагу/щільність.',style:TextStyle(color:Colors.orange)),
         FutureBuilder<double>(future:_xeGrams(),builder:(context,xeSnap){
           final xeGrams=xeSnap.data??10;
           final result=selected==null?null:FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:xeGrams);
@@ -456,7 +467,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
           final displayXe=result?.xe??0;
           return Card(child:ListTile(title:const Text('Вуглеводи'),subtitle:Text('${displayXe.toStringAsFixed(2)} ХО'),trailing:Text('${displayCarbs.toStringAsFixed(1)} г',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold))));
         }),
-        FilledButton(onPressed:amount>0&&grams!=null?()async{
+        FilledButton(onPressed:amount>0&&preview!=null?()async{
           final xeGrams=await _xeGrams();
           String? effectiveGroupId = mealGroupId;
           var effectiveMealTime = mealTime;
@@ -488,7 +499,9 @@ class _AddFoodPageState extends State<AddFoodPage>{
               'meal_${DateTime.now().microsecondsSinceEpoch}_${meal.replaceAll(' ','_')}';
           mealGroupId = groupId;
           mealTime = effectiveMealTime;
-          await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:grams!,amountValue:amount,amountUnit:unit.label,carbs:carbs,xe:_xeForCarbs(carbs,xeGrams),mealGroupId:groupId,mealTime:effectiveMealTime,productId:selected!.id);
+          final finalResult=FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:xeGrams);
+          if(finalResult==null)return;
+          await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:finalResult.grams??0,amountValue:amount,amountUnit:unit.label,carbs:finalResult.carbs,xe:finalResult.xe,mealGroupId:groupId,mealTime:effectiveMealTime,productId:selected!.id);
           if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
           widget.onAdded();
         }:null,child:const Text('Додати до щоденника')),
@@ -610,20 +623,18 @@ class _DiaryPageState extends State<DiaryPage> {
     controller.dispose();
 
     if (value == null || value <= 0) return;
-    final grams = FoodCalculationService.toGrams(product, Quantity(value, unit));
-    if (grams == null) return;
-
-    final carbs = grams * product.carbs / 100;
     final prefs = await SharedPreferences.getInstance();
     final xeGrams = prefs.getDouble('xe_grams') ?? 10;
+    final result = FoodCalculationService.calculate(product: product, quantity: Quantity(value, unit), xeGrams: xeGrams);
+    if (result == null) return;
 
     await AppDb.updateDiary(
       id: row['id'] as int,
-      grams: grams,
+      grams: result.grams ?? 0,
       amountValue: value,
       amountUnit: unit.label,
-      carbs: carbs,
-      xe: _xeForCarbs(carbs, xeGrams),
+      carbs: result.carbs,
+      xe: result.xe,
     );
 
     if (mounted) setState(() {});
@@ -982,7 +993,7 @@ class _SettingsPageState extends State<SettingsPage>{
         return Column(children:items.map((product)=>Card(child:ListTile(
           leading:const Icon(Icons.star_outline),
           title:Text(product.name),
-          subtitle:Text('${product.carbs.toStringAsFixed(1)} г вуглеводів / 100 г${product.barcode==null?'':' • ${product.barcode}'}'),
+          subtitle:Text('${product.carbs.toStringAsFixed(1)} г вуглеводів / ${ProductUnitService.nutritionBasisLabel(product)}${product.barcode==null?'':' • ${product.barcode}'}'),
           onTap:()async{
             final result=await showDialog<ProductReviewResult>(context:context,builder:(_)=>ProductReviewDialog(product:product,customProductMode:true));
             if(result==null)return;
