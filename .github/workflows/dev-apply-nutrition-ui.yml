@@ -1,0 +1,38 @@
+name: Dev apply nutrition basis UI integration
+
+on:
+  push:
+    branches:
+      - dev-large-update
+    paths:
+      - scripts/apply_nutrition_basis_ui.py
+      - .github/workflows/dev-apply-nutrition-ui.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development branch
+        uses: actions/checkout@v4
+        with:
+          ref: dev-large-update
+          fetch-depth: 0
+
+      - name: Apply integration patch
+        run: python3 scripts/apply_nutrition_basis_ui.py
+
+      - name: Commit integrated main.dart
+        run: |
+          if git diff --quiet -- lib/main.dart; then
+            echo "No main.dart changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lib/main.dart
+          git commit -m "Integrate nutrition basis and product units into UI"
+          git push origin HEAD:dev-large-update
