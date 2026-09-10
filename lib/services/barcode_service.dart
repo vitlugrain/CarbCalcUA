@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import '../models/product.dart';
+import 'barcode_alias_store.dart';
 import 'product_identity_service.dart';
 typedef CustomProductLookup = Future<Map<String, dynamic>?> Function(String barcode);
 
@@ -55,6 +56,12 @@ class BarcodeService {
   static Future<Product?> findLocal(String rawBarcode, {CustomProductLookup? customProductLookup}) async {
     final barcode = normalize(rawBarcode);
     if (barcode.isEmpty) return null;
+
+    // First check package aliases learned from previous scans. This makes a
+    // newly attached EAN survive app restarts and future APK updates.
+    final aliased = await BarcodeAliasStore.find(barcode);
+    if (aliased != null) return aliased;
+
     if (customProductLookup != null) {
       final custom = await customProductLookup(barcode);
       if (custom != null) return Product.fromCustomDb(custom);
@@ -106,13 +113,14 @@ class BarcodeService {
     final external = await findExternal(barcode);
     if (external == null) return null;
 
-    // If Open Food Facts returned a different EAN for a package size of a
-    // product already present in our bundled Ukrainian/branded catalog, reuse
-    // the existing record instead of offering a duplicate as a new product.
+    // If Open Food Facts returned another package size of a product already in
+    // the bundled catalog, reuse the canonical record and persist the new EAN.
     final candidates = await _loadBundledBarcodeProducts();
     final analogue = ProductIdentityService.findAnalogue(external, candidates);
     if (analogue != null) {
-      return ProductIdentityService.mergeBarcode(analogue, barcode);
+      final merged = ProductIdentityService.mergeBarcode(analogue, barcode);
+      await BarcodeAliasStore.save(merged);
+      return merged;
     }
     return external;
   }
