@@ -49,11 +49,11 @@ class MealHeaderMenu extends StatelessWidget {
           tooltip: 'Дії з прийомом їжі',
           onSelected: (value) async {
             switch (value) {
-              case 'add':
-                onAddProduct();
-                break;
               case 'edit':
                 await onEdit();
+                break;
+              case 'add':
+                onAddProduct();
                 break;
               case 'delete':
                 await onDelete();
@@ -61,6 +61,15 @@ class MealHeaderMenu extends StatelessWidget {
             }
           },
           itemBuilder: (_) => const [
+            PopupMenuItem(
+              value: 'edit',
+              child: ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: Icon(Icons.edit_outlined),
+                title: Text('Редагувати'),
+              ),
+            ),
             PopupMenuItem(
               value: 'add',
               child: ListTile(
@@ -71,21 +80,12 @@ class MealHeaderMenu extends StatelessWidget {
               ),
             ),
             PopupMenuItem(
-              value: 'edit',
-              child: ListTile(
-                dense: true,
-                contentPadding: EdgeInsets.zero,
-                leading: Icon(Icons.edit_outlined),
-                title: Text('Змінити прийом'),
-              ),
-            ),
-            PopupMenuItem(
               value: 'delete',
               child: ListTile(
                 dense: true,
                 contentPadding: EdgeInsets.zero,
                 leading: Icon(Icons.delete_outline),
-                title: Text('Видалити прийом'),
+                title: Text('Видалити весь прийом їжі'),
               ),
             ),
           ],
@@ -114,7 +114,7 @@ Future<MealHeaderEditResult?> showMealHeaderEditDialog(
     context: context,
     builder: (dialogContext) => StatefulBuilder(
       builder: (context, setState) => AlertDialog(
-        title: const Text('Змінити прийом їжі'),
+        title: const Text('Редагувати прийом їжі'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -140,6 +140,7 @@ Future<MealHeaderEditResult?> showMealHeaderEditDialog(
                   lastDate: DateTime(2100),
                   initialDate: date,
                   locale: const Locale('uk'),
+                  helpText: 'Дата прийому їжі',
                 );
                 if (picked != null) setState(() => date = picked);
               },
@@ -154,6 +155,7 @@ Future<MealHeaderEditResult?> showMealHeaderEditDialog(
                 final picked = await showTimePicker(
                   context: context,
                   initialTime: time,
+                  helpText: 'Час прийому їжі',
                 );
                 if (picked != null) setState(() => time = picked);
               },
