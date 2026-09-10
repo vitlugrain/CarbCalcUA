@@ -2,14 +2,28 @@ import '../models/product.dart';
 import '../models/quantity.dart';
 
 class FoodCalculationResult {
-  final double grams;
+  /// Physical mass when it is known. For a liquid entered directly in ml,
+  /// this can legitimately be null when no measured density is available.
+  final double? grams;
+
+  /// Amount used against the nutrition label basis: grams for a 100g product,
+  /// milliliters for a 100ml product.
+  final double nutritionAmount;
+  final QuantityUnit nutritionUnit;
   final double carbs;
   final double xe;
-  const FoodCalculationResult({required this.grams, required this.carbs, required this.xe});
+
+  const FoodCalculationResult({
+    required this.grams,
+    required this.nutritionAmount,
+    required this.nutritionUnit,
+    required this.carbs,
+    required this.xe,
+  });
 }
 
-/// Єдина математична точка для перетворення введеної кількості у грами
-/// та розрахунку вуглеводів/ХО. Тут немає жодних рекомендацій щодо інсуліну.
+/// Єдина математична точка для перетворення введеної кількості та розрахунку
+/// вуглеводів/ХО. Тут немає жодних рекомендацій щодо інсуліну.
 class FoodCalculationService {
   static double? toGrams(Product product, Quantity quantity) {
     switch (quantity.unit) {
@@ -17,29 +31,13 @@ class FoodCalculationService {
         return quantity.value;
       case QuantityUnit.milliliters:
         final k = product.gramsPerMl;
-        return k == null ? null : quantity.value * k;
+        return k == null || k <= 0 ? null : quantity.value * k;
       case QuantityUnit.pieces:
         final k = product.gramsPerPiece;
-        return k == null ? null : quantity.value * k;
+        return k == null || k <= 0 ? null : quantity.value * k;
       case QuantityUnit.portion:
         final k = product.servingGrams;
-        return k == null ? null : quantity.value * k;
-    }
-  }
-
-  static double? _nutritionBaseAmount(Product product, Quantity quantity, double grams) {
-    if (!product.nutritionPer100Ml) return grams;
-
-    switch (quantity.unit) {
-      case QuantityUnit.milliliters:
-        return quantity.value;
-      case QuantityUnit.grams:
-        final density = product.gramsPerMl;
-        return density == null || density <= 0 ? null : grams / density;
-      case QuantityUnit.pieces:
-      case QuantityUnit.portion:
-        final density = product.gramsPerMl;
-        return density == null || density <= 0 ? null : grams / density;
+        return k == null || k <= 0 ? null : quantity.value * k;
     }
   }
 
@@ -48,12 +46,43 @@ class FoodCalculationService {
     required Quantity quantity,
     required double xeGrams,
   }) {
-    final grams = toGrams(product, quantity);
-    if (grams == null || grams < 0) return null;
-    final baseAmount = _nutritionBaseAmount(product, quantity, grams);
-    if (baseAmount == null || baseAmount < 0) return null;
-    final carbs = (baseAmount * product.carbs / 100).toDouble();
+    if (quantity.value < 0) return null;
+
+    double? grams;
+    double nutritionAmount;
+    QuantityUnit nutritionUnit;
+
+    if (product.nutritionPer100Ml) {
+      nutritionUnit = QuantityUnit.milliliters;
+
+      if (quantity.unit == QuantityUnit.milliliters) {
+        // A label expressed per 100 ml can be calculated directly from the
+        // entered volume. Do not invent a 1 g/ml density just to fill `grams`.
+        nutritionAmount = quantity.value;
+        grams = toGrams(product, quantity);
+      } else {
+        grams = toGrams(product, quantity);
+        if (grams == null) return null;
+        final density = product.gramsPerMl;
+        if (density == null || density <= 0) return null;
+        nutritionAmount = grams / density;
+      }
+    } else {
+      nutritionUnit = QuantityUnit.grams;
+      grams = toGrams(product, quantity);
+      if (grams == null) return null;
+      nutritionAmount = grams;
+    }
+
+    final carbs = (nutritionAmount * product.carbs / 100).toDouble();
     final xe = xeGrams > 0 ? (carbs / xeGrams).toDouble() : 0.0;
-    return FoodCalculationResult(grams: grams, carbs: carbs, xe: xe);
+
+    return FoodCalculationResult(
+      grams: grams,
+      nutritionAmount: nutritionAmount,
+      nutritionUnit: nutritionUnit,
+      carbs: carbs,
+      xe: xe,
+    );
   }
 }
