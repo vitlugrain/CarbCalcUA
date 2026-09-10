@@ -36,6 +36,7 @@ class MealGroupService {
 
   static Future<int> moveLegacyGroup(
     DatabaseExecutor db, {
+    required String date,
     required String meal,
     required String time,
     required String newGroupId,
@@ -43,8 +44,8 @@ class MealGroupService {
     return db.update(
       'diary',
       {'meal_group_id': newGroupId},
-      where: 'meal_group_id IS NULL AND meal=? AND COALESCE(meal_time,\'\')=?',
-      whereArgs: [meal, time],
+      where: 'date=? AND meal_group_id IS NULL AND meal=? AND COALESCE(meal_time,\'\')=?',
+      whereArgs: [date, meal, time],
     );
   }
 
