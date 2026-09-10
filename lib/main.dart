@@ -12,6 +12,8 @@ import 'models/product.dart';
 import 'models/quantity.dart';
 import 'services/food_search_service.dart';
 import 'services/food_calculation_service.dart';
+import 'services/meal_group_service.dart';
+import 'widgets/meal_header_menu.dart';
 double _xeForCarbs(double carbs, double xeGrams) => xeGrams > 0 ? carbs / xeGrams : 0;
 
 class FoodItem {
@@ -195,7 +197,11 @@ class Dashboard extends StatelessWidget{
 
 class AddFoodPage extends StatefulWidget{
   final VoidCallback onAdded;
-  const AddFoodPage({super.key,required this.onAdded});
+  final String? initialMealGroupId;
+  final String? initialMeal;
+  final String? initialMealTime;
+  final DateTime? initialMealDate;
+  const AddFoodPage({super.key,required this.onAdded,this.initialMealGroupId,this.initialMeal,this.initialMealTime,this.initialMealDate});
   @override State<AddFoodPage> createState()=>_AddFoodPageState();
 }
 
@@ -214,7 +220,15 @@ class _AddFoodPageState extends State<AddFoodPage>{
   final amountFocusNode=FocusNode();
   final quantitySectionKey=GlobalKey();
 
-  @override void initState(){super.initState();final now=DateTime.now();mealDate=DateTime(now.year,now.month,now.day);mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';}
+  @override void initState(){
+    super.initState();
+    final now=DateTime.now();
+    mealDate=widget.initialMealDate ?? DateTime(now.year,now.month,now.day);
+    mealTime=widget.initialMealTime ?? '${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';
+    meal=widget.initialMeal ?? 'Сніданок';
+    mealGroupId=widget.initialMealGroupId;
+    mealGroupExplicitSelection=widget.initialMealGroupId!=null;
+  }
 
   Future<void> _pickMealDate() async {
     final picked = await showDatePicker(context: context, firstDate: DateTime(2020), lastDate: DateTime(2100), initialDate: mealDate, locale: const Locale('uk'), helpText: 'Дата прийому їжі');
@@ -622,6 +636,88 @@ class _DiaryPageState extends State<DiaryPage> {
     widget.onChanged();
   }
 
+  Future<String> _persistentGroupId(
+    String groupKey,
+    List<Map<String, dynamic>> items,
+  ) async {
+    final current=(items.first['meal_group_id'] as String?);
+    if(current!=null && current.isNotEmpty)return current;
+    final meal=(items.first['meal'] as String?)??'';
+    final time=(items.first['meal_time'] as String?)??'';
+    final id=MealGroupService.newGroupId(meal);
+    await MealGroupService.moveLegacyGroup(
+      await AppDb.db,
+      date:key,
+      meal:meal,
+      time:time,
+      newGroupId:id,
+    );
+    return id;
+  }
+
+  Future<void> editMealGroup(
+    String groupKey,
+    List<Map<String, dynamic>> items,
+  ) async {
+    final meal=(items.first['meal'] as String?)??'';
+    final time=(items.first['meal_time'] as String?)??'';
+    final result=await showMealHeaderEditDialog(
+      context,
+      initialMeal:meal,
+      initialDate:date,
+      initialTime:time,
+    );
+    if(result==null || !mounted)return;
+    final id=await _persistentGroupId(groupKey,items);
+    await MealGroupService.updateGroup(
+      await AppDb.db,
+      groupId:id,
+      date:_dateKey(result.date),
+      meal:result.meal,
+      time:result.time,
+    );
+    if(mounted)setState((){});
+    widget.onChanged();
+  }
+
+  Future<void> deleteMealGroup(
+    String groupKey,
+    List<Map<String, dynamic>> items,
+  ) async {
+    final meal=(items.first['meal'] as String?)??'';
+    final ok=await confirmDeleteMeal(context,meal);
+    if(!ok || !mounted)return;
+    final id=await _persistentGroupId(groupKey,items);
+    await MealGroupService.deleteGroup(await AppDb.db,groupId:id);
+    if(mounted)setState((){});
+    widget.onChanged();
+  }
+
+  Future<void> addProductToMealGroup(
+    String groupKey,
+    List<Map<String, dynamic>> items,
+  ) async {
+    final id=await _persistentGroupId(groupKey,items);
+    if(!mounted)return;
+    final meal=(items.first['meal'] as String?)??'Сніданок';
+    final time=(items.first['meal_time'] as String?)??'';
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder:(_)=>Scaffold(
+          appBar:AppBar(title:const Text('Додати продукт')),
+          body:AddFoodPage(
+            onAdded:widget.onChanged,
+            initialMealGroupId:id,
+            initialMeal:meal.isEmpty?'Сніданок':meal,
+            initialMealTime:time,
+            initialMealDate:date,
+          ),
+        ),
+      ),
+    );
+    if(mounted)setState((){});
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Map<String, dynamic>>>(
@@ -701,7 +797,9 @@ class _DiaryPageState extends State<DiaryPage> {
                 child: Center(child: Text('За цей день записів немає.')),
               )
             else
-              ...groups.values.map((items) {
+              ...groups.entries.map((entry) {
+                final groupKey=entry.key;
+                final items=entry.value;
                 final meal = (items.first['meal'] as String?) ?? '';
                 final time = (items.first['meal_time'] as String?) ?? '';
                 final groupCarbs = items.fold<double>(
@@ -719,18 +817,12 @@ class _DiaryPageState extends State<DiaryPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              meal.isEmpty ? 'Прийом їжі' : meal,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(time),
-                          ],
+                        MealHeaderMenu(
+                          meal:meal,
+                          time:time,
+                          onEdit:()=>editMealGroup(groupKey,items),
+                          onAddProduct:(){addProductToMealGroup(groupKey,items);},
+                          onDelete:()=>deleteMealGroup(groupKey,items),
                         ),
                         const Divider(),
                         ...items.map(
