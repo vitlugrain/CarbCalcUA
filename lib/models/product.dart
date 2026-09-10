@@ -17,6 +17,8 @@ class Product {
   final double? gramsPerMl;
   final double? servingGrams;
   final List<String> aliases;
+  final String nutritionBasis;
+  final List<String> quantityUnits;
 
   Product({
     required this.id,
@@ -37,12 +39,16 @@ class Product {
     this.gramsPerMl,
     this.servingGrams,
     this.aliases = const [],
+    this.nutritionBasis = '100g',
+    this.quantityUnits = const [],
   });
 
   List<String> get allBarcodes => <String>{
         if (barcode != null && barcode!.trim().isNotEmpty) barcode!.trim(),
         ...barcodes.map((x) => x.trim()).where((x) => x.isNotEmpty),
       }.toList(growable: false);
+
+  bool get nutritionPer100Ml => nutritionBasis.toLowerCase() == '100ml';
 
   factory Product.fromJson(Map<String, dynamic> j) => Product(
         id: '${j['id']}',
@@ -63,6 +69,8 @@ class Product {
         gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
         servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
         aliases: _stringList(j['aliases']),
+        nutritionBasis: _stringOrNull(j['nutritionBasis'] ?? j['nutrition_basis']) ?? '100g',
+        quantityUnits: _stringList(j['quantityUnits'] ?? j['quantity_units']),
       );
 
   factory Product.fromCustomDb(Map<String, dynamic> j) => Product(
@@ -84,9 +92,14 @@ class Product {
         gramsPerMl: _numberOrNull(j['grams_per_ml'] ?? j['gramsPerMl']),
         servingGrams: _numberOrNull(j['serving_grams'] ?? j['servingGrams']),
         aliases: _stringList(j['aliases']),
+        nutritionBasis: _stringOrNull(j['nutrition_basis'] ?? j['nutritionBasis']) ?? '100g',
+        quantityUnits: _stringList(j['quantity_units'] ?? j['quantityUnits']),
       );
 
   static List<String> _stringList(dynamic value) {
+    if (value is String) {
+      return value.split(',').map((x) => _decodeHtmlEntities(x.trim())).where((x) => x.isNotEmpty).toList(growable: false);
+    }
     if (value is! List) return const [];
     return value
         .map((x) => _decodeHtmlEntities(x.toString().trim()))
