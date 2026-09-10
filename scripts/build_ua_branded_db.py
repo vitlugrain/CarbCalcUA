@@ -4,6 +4,10 @@
 Only products with barcode, name, brand and a plausible carbohydrates_100g
 value are kept. The result stays separate from USDA/local data for provenance.
 Open Food Facts data is ODbL licensed; keep attribution/source metadata.
+
+For obvious beverages we preserve the user-facing nutrition basis as 100 ml.
+We do not invent liquid density: grams_per_ml is intentionally omitted unless a
+source actually provides one.
 """
 from __future__ import annotations
 import json, time, urllib.parse, urllib.request, urllib.error
@@ -24,7 +28,7 @@ def fetch(page):
       "countries_tags_en":"ukraine",
       "page":str(page),"page_size":str(PAGE_SIZE),
       "sort_by":"popularity_key",
-      "fields":"code,product_name,product_name_uk,brands,categories,nutriments,serving_size,quantity",
+      "fields":"code,product_name,product_name_uk,brands,categories,categories_tags,nutriments,serving_size,quantity,product_quantity_unit",
     }
     url=API+"?"+urllib.parse.urlencode(params)
     req=urllib.request.Request(url,headers={"User-Agent":"CarbCalc-UA/0.7 (offline database builder)"})
@@ -42,6 +46,19 @@ def fetch(page):
             time.sleep(wait)
     raise last_error
 
+def is_beverage(p):
+    text=" ".join([
+        str(p.get("product_name") or ""),
+        str(p.get("product_name_uk") or ""),
+        str(p.get("categories") or ""),
+        " ".join(p.get("categories_tags") or []),
+    ]).lower()
+    markers=(
+        "beverage","drink","soft-drink","soda","cola","water","juice","nectar",
+        "напій","напої","вода","сік","нектар","квас","лимонад","cola","pepsi","coca-cola",
+    )
+    return any(m in text for m in markers)
+
 def clean(p):
     code=str(p.get("code") or "").strip()
     name=str(p.get("product_name_uk") or p.get("product_name") or "").strip()
@@ -54,12 +71,16 @@ def clean(p):
     fat=num(n.get("fat_100g")) or 0
     fiber=num(n.get("fiber_100g")) or 0
     kcal=num(n.get("energy-kcal_100g")) or 0
-    return {
+    beverage=is_beverage(p)
+    result={
       "id":"off_"+code,"name":name,"category":str(p.get("categories") or "Брендовані продукти"),
       "carbs":round(carbs,3),"protein":round(protein,3),"fat":round(fat,3),
       "fiber":round(fiber,3),"calories":round(kcal,1),"state":"prepared",
-      "barcode":code,"manufacturer":brand,"source":"Open Food Facts (ODbL)",
+      "barcode":code,"barcodes":[code],"manufacturer":brand,"source":"Open Food Facts (ODbL)",
+      "nutrition_basis":"100ml" if beverage else "100g",
+      "quantity_units":["мл"] if beverage else ["г"],
     }
+    return result
 
 def main():
     out=[]; seen=set()
