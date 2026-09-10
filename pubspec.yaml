@@ -30,5 +30,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/products.json
+    - assets/ua_core_products.json
     - assets/usda_products.json
     - assets/ua_branded_products.json
