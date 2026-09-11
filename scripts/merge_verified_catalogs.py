@@ -26,6 +26,7 @@ CATALOGS = [
     ROOT / 'assets' / 'milkalliance_yagotynske_verified_part6.json',
     ROOT / 'assets' / 'milkalliance_pyriatyn_verified.json',
     ROOT / 'assets' / 'milkalliance_pyriatyn_verified_part2.json',
+    ROOT / 'assets' / 'milkalliance_slavia_verified.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
