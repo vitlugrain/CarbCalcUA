@@ -10,6 +10,7 @@ CATALOGS = [
     ROOT / 'assets' / 'ua_dishes.json',
     ROOT / 'assets' / 'bonduelle_diabetes_table_verified.json',
     ROOT / 'assets' / 'bonduelle_ua_verified.json',
+    ROOT / 'assets' / 'prodiabet_ua_verified.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
