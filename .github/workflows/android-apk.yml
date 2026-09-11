@@ -28,6 +28,12 @@ jobs:
       - name: Merge Ukrainian core into local products
         run: python3 scripts/merge_ua_core_db.py
 
+      - name: Validate verified Ukrainian dishes
+        run: python3 scripts/validate_ua_dishes.py
+
+      - name: Merge verified dishes and restaurant catalogs
+        run: python3 scripts/merge_verified_catalogs.py
+
       - name: Build Ukrainian branded offline database
         run: python3 scripts/build_ua_branded_db.py
 
