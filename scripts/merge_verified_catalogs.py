@@ -16,6 +16,7 @@ CATALOGS = [
     ROOT / 'assets' / 'mcdonalds_ua_coffee.json',
     ROOT / 'assets' / 'mcdonalds_ua_final_verified.json',
 ]
+CORRECTIONS = ROOT / 'assets' / 'mcdonalds_ua_corrections.json'
 
 
 def load(path):
@@ -66,17 +67,29 @@ def equivalent(a, b):
 
 
 base = load(BASE)
+corrections = {str(x.get('id', '')).strip(): x for x in load(CORRECTIONS)}
+if '' in corrections:
+    raise SystemExit('Missing id in McDonald corrections')
+
 verified = []
 seen_verified = set()
+applied_corrections = set()
 for path in CATALOGS:
-    for item in load(path):
-        product_id = str(item.get('id', '')).strip()
+    for original in load(path):
+        product_id = str(original.get('id', '')).strip()
         if not product_id:
             raise SystemExit(f'Missing id in {path.relative_to(ROOT)}')
+        item = corrections.get(product_id, original)
+        if product_id in corrections:
+            applied_corrections.add(product_id)
         if product_id in seen_verified:
             raise SystemExit(f'Duplicate verified id: {product_id}')
         seen_verified.add(product_id)
         verified.append(item)
+
+unused = set(corrections) - applied_corrections
+if unused:
+    raise SystemExit(f'Correction ids not found in verified catalogs: {sorted(unused)}')
 
 remaining = []
 skipped_equivalent = 0
@@ -92,6 +105,6 @@ for item in base:
 merged = verified + remaining
 BASE.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(
-    f'Merged {len(verified)} verified records; skipped {skipped_equivalent} equivalent base records; '
-    f'products.json now has {len(merged)} records.'
+    f'Merged {len(verified)} verified records; applied {len(applied_corrections)} audited corrections; '
+    f'skipped {skipped_equivalent} equivalent base records; products.json now has {len(merged)} records.'
 )
