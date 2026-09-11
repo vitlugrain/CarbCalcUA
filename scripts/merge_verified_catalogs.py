@@ -14,6 +14,7 @@ CATALOGS = [
     ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks.json',
     ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks_2.json',
     ROOT / 'assets' / 'mcdonalds_ua_coffee.json',
+    ROOT / 'assets' / 'mcdonalds_ua_final_verified.json',
 ]
 
 
