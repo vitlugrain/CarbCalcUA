@@ -18,6 +18,7 @@ CATALOGS = [
     ROOT / 'assets' / 'torchyn_ua_verified_part4.json',
     ROOT / 'assets' / 'torchyn_ua_verified_part5.json',
     ROOT / 'assets' / 'prostonashe_ua_verified.json',
+    ROOT / 'assets' / 'milkalliance_yagotynske_verified.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
