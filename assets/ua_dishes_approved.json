@@ -1,11 +1,12 @@
 {
-  "schema_version": 1,
-  "status": "approved_names_pending_nutrition_verification",
+  "schema_version": 2,
+  "status": "approved_scope_with_verified_and_pending_nutrition",
   "rules": {
     "user_facing_names": "simple Ukrainian names users actually search for",
-    "nutrition": "add only after verification against a reliable technological card/source",
+    "nutrition": "add to ua_dishes.json only after verification against a reliable technological card/source",
     "no_estimated_values": true,
-    "nutrition_basis": "100g unless the verified source requires another explicit basis"
+    "nutrition_basis": "100g unless the verified source requires another explicit basis",
+    "new_soups": "do not expand before the next review because solid/liquid proportions can materially change carbohydrate values"
   },
   "approved": [
     "Борщ український",
@@ -52,6 +53,46 @@
     "Омлет",
     "Яєчня",
     "Налисники з сиром",
-    "Запіканка сирна"
+    "Запіканка сирна",
+    "Запіканка сирна з бананом",
+    "Запіканка сирна з яблуком та морквою",
+    "Львівський сирник з морквою",
+    "Запіканка рисова",
+    "Гречана каша з вершковим маслом",
+    "Вермішель з томатами",
+    "Пшенична каша класична",
+    "Мамалига",
+    "Омлет з пряними травами (безглютеновий, безлактозний)",
+    "Омлет з твердим сиром",
+    "Ліниві голубці з яловичиною",
+    "Млинці безглютенові (безлактозні)",
+    "Овочеве рагу з зеленим горошком",
+    "Яєчня з помідорами",
+    "Гречаники зі свинини",
+    "Котлета натуральна з філе курки панірована в сухарях",
+    "Курячий шніцель",
+    "Печеня по-домашньому з куркою"
+  ],
+  "deferred_before_apk": [
+    "Суп з рисом",
+    "Суп з вермішеллю",
+    "Розсольник",
+    "Картопляне пюре",
+    "Вареники з картоплею",
+    "Вареники з сиром",
+    "Плов з куркою"
+  ],
+  "rejected_variants": [
+    "Вареники ліниві безглютенові",
+    "Юшка з перловою крупою та томатом",
+    "Юшка з рисовою крупою та томатом",
+    "Юшка з рисовою крупою та томатом безлактозна",
+    "Каша гречана з чебрецем",
+    "Картопляне пюре з орегано",
+    "Картопляний крем-суп",
+    "Морквяний крем-суп",
+    "Січеники м'ясні",
+    "Котлета по-міланськи з сиром",
+    "Гречаник м'ясний"
   ]
 }
