@@ -1,0 +1,30 @@
+[
+  {
+    "brand": "Галичина",
+    "name": "Сметана 15%",
+    "category": "Сметана",
+    "carbs_100g": 3.0,
+    "protein_100g": 3.0,
+    "fat_100g": 15.0,
+    "kcal_100g": 159.0,
+    "package_g": 300,
+    "duplicate_of": "ua_yagotynske_sour_cream_15",
+    "reason": "Ідентичний підтверджений харчовий профіль стандартної сметани; зберігати Галичина як brand/SKU variant, не створювати новий основний nutrition record.",
+    "source": "https://galychyna.com.ua/products/сметана-15/",
+    "source_type": "official_manufacturer"
+  },
+  {
+    "brand": "Галичина",
+    "name": "Масло солодковершкове екстра 82,5%",
+    "category": "Масло",
+    "carbs_100g": 0.8,
+    "protein_100g": 0.5,
+    "fat_100g": 82.5,
+    "kcal_100g": 748.0,
+    "packages_g": [180, 5000],
+    "duplicate_of": "ua_yagotynske_lactose_free_butter_825",
+    "reason": "Харчовий профіль збігається. Не переносити ознаку lactose_free з базового запису Яготинського на звичайне масло Галичина; бренд/фасування мають зберігатися як SKU metadata.",
+    "source": "https://dostavka.galychyna.com.ua/maslo-solodkovershkove-ekstra-825-zhyru-tm-halychyna-180h/",
+    "source_type": "official_manufacturer_store"
+  }
+]
