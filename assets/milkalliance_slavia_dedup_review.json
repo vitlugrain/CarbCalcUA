@@ -1,0 +1,50 @@
+[
+  {
+    "brand": "Славія",
+    "name": "Молоко ультрапастеризоване 2,6%",
+    "status": "duplicate_nutrition",
+    "duplicate_of": "ua_yagotynske_milk_26",
+    "nutrition_basis": "100g",
+    "carbs": 4.7,
+    "protein": 2.8,
+    "fat": 2.6,
+    "calories": 53,
+    "reason": "Харчові характеристики збігаються з базовим молоком 2,6% Яготинське. За новим правилом CarbCalc UA не створювати окремий харчовий запис; бренд/фасування/штрихкод зберігати як варіант.",
+    "source_url": "https://milkalliance.com.ua/moloko-ultrapasterizovane-2-6-zh-4/"
+  },
+  {
+    "brand": "Славія",
+    "name": "Сметана 15%",
+    "status": "duplicate_nutrition",
+    "duplicate_of": "ua_yagotynske_sour_cream_15",
+    "nutrition_basis": "100g",
+    "carbs": 3.0,
+    "protein": 2.9,
+    "fat": 15.0,
+    "calories": 159,
+    "reason": "Повний збіг Б/Ж/В і калорійності з Яготинське Сметана 15%. Окремий харчовий запис не потрібен.",
+    "source_url": "https://milkalliance.com.ua/smetana-15-zhiru-9/tm-slavia/"
+  },
+  {
+    "brand": "Славія",
+    "name": "Сметана 20%",
+    "status": "duplicate_nutrition",
+    "duplicate_of": "ua_yagotynske_sour_cream_20",
+    "nutrition_basis": "100g",
+    "carbs": 3.0,
+    "protein": 2.8,
+    "fat": 20.0,
+    "calories": 203,
+    "reason": "Повний збіг Б/Ж/В і калорійності з Яготинське Сметана 20%. Окремий харчовий запис не потрібен; фасування 350 г і бренд Славія зберігати як варіант.",
+    "source_url": "https://milkalliance.com.ua/smetana-20-zhiru-7/"
+  },
+  {
+    "brand": "Славія",
+    "name": "Кефір 2,5%",
+    "status": "pending_dedup",
+    "candidate_duplicate_of": "ua_yagotynske_kefir_25",
+    "package_variants_g": [400, 850],
+    "reason": "Актуальний каталог Славія підтверджує два фасування 2,5%, але індивідуальні офіційні картки тимчасово недоступні. Не копіювати значення Яготинського без прямого підтвердження Б/Ж/В.",
+    "source_url": "https://milkalliance.com.ua/products/tm-slavia/"
+  }
+]
