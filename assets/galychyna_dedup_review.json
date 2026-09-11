@@ -26,5 +26,47 @@
     "reason": "Харчовий профіль збігається. Не переносити ознаку lactose_free з базового запису Яготинського на звичайне масло Галичина; бренд/фасування мають зберігатися як SKU metadata.",
     "source": "https://dostavka.galychyna.com.ua/maslo-solodkovershkove-ekstra-825-zhyru-tm-halychyna-180h/",
     "source_type": "official_manufacturer_store"
+  },
+  {
+    "brand": "Галичина",
+    "name": "Масло солодковершкове селянське 72,6%",
+    "category": "Масло",
+    "carbs_100g": 1.3,
+    "protein_100g": 0.8,
+    "fat_100g": 72.6,
+    "kcal_100g": 661.8,
+    "packages_g": [180, 5000],
+    "duplicate_of": "ua_yagotynske_lactose_free_butter_73",
+    "reason": "Профіль Б/Ж/В практично відповідає стандартному маслу ~73%. Зберігати як бренд/SKU-варіант; не переносити lactose_free. Точну жирність 72,6% та енергетичність залишити в metadata варіанта.",
+    "source": "https://dostavka.galychyna.com.ua/maslo-solodkovershkove-selianske-726-zhyru-tm-halychyna-180h/",
+    "source_type": "official_manufacturer_store"
+  },
+  {
+    "brand": "ҐоКарпати",
+    "name": "Ложковий кефір 1%",
+    "category": "Кефір",
+    "carbs_100g": 3.9,
+    "protein_100g": 3.0,
+    "fat_100g": 1.0,
+    "kcal_100g": 37.0,
+    "package_g": 800,
+    "duplicate_of": "ua_milkalliance_yagotynske_kefir_1",
+    "reason": "Стандартний кефір 1% з однаковим підтвердженим Б/Ж/В; форма упаковки/консистенція зберігається як SKU metadata.",
+    "source": "https://galychyna.com.ua/production/gokarpaty/",
+    "source_type": "official_manufacturer"
+  },
+  {
+    "brand": "ҐоКарпати",
+    "name": "Питний кефір 1%",
+    "category": "Кефір",
+    "carbs_100g": 3.9,
+    "protein_100g": 3.0,
+    "fat_100g": 1.0,
+    "kcal_100g": 37.0,
+    "packages_g": [420, 800],
+    "duplicate_of": "ua_milkalliance_yagotynske_kefir_1",
+    "reason": "Ідентичний підтверджений харчовий профіль стандартного кефіру 1%; окремий nutrition record не потрібен.",
+    "source": "https://galychyna.com.ua/production/gokarpaty/",
+    "source_type": "official_manufacturer"
   }
 ]
