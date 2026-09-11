@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ua_galychyna_spoon_yogurt_cherry_15_115",
+    "name": "Карпатський йогурт десертний Вишня 1,5%",
+    "brand": "Галичина",
+    "category": "Йогурти",
+    "carbs_100g": 14.0,
+    "protein_100g": 2.9,
+    "fat_100g": 1.5,
+    "kcal_100g": 81.0,
+    "package_g": 115,
+    "source": "https://dostavka.galychyna.com.ua/yohurt-karpatskyi-st.-desertnyi-15-115-h-vyshnia-halychyna/",
+    "source_type": "official_manufacturer_store"
+  },
+  {
+    "id": "ua_galychyna_carpathian_yogurt_lactose_free_3_280",
+    "name": "Карпатський йогурт безлактозний без цукру 3%",
+    "brand": "Галичина",
+    "category": "Йогурти",
+    "carbs_100g": 3.7,
+    "protein_100g": 4.1,
+    "fat_100g": 3.0,
+    "kcal_100g": 58.0,
+    "package_g": 280,
+    "lactose_free": true,
+    "no_added_sugar": true,
+    "source": "https://dostavka.galychyna.com.ua/yohurt-karpatskyi-st.-bezlaktoznyi-3-zhyru-bez-tsukru-280-h/",
+    "source_type": "official_manufacturer_store"
+  },
+  {
+    "id": "ua_galychyna_carpathian_yogurt_apricot_22",
+    "name": "Карпатський йогурт Абрикос 2,2%",
+    "brand": "Галичина",
+    "category": "Йогурти",
+    "carbs_100g": 14.7,
+    "protein_100g": 2.2,
+    "fat_100g": 2.2,
+    "kcal_100g": 97.4,
+    "package_g": 800,
+    "source": "https://dostavka.galychyna.com.ua/yohurt-karpatskyi-pet-22-800-h-abrykos-halychyna/",
+    "source_type": "official_manufacturer_store",
+    "source_note": "Official store currently prints 97.4 kcal together with 366 kJ; values are internally inconsistent. Carbohydrate/protein/fat values are imported as printed; energy value is retained verbatim and flagged for later audit."
+  }
+]
