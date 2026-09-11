@@ -1,0 +1,14 @@
+[
+  {"target_id":"p086","glycemic_index":20,"glycemic_load_source_100g":1.8,"source_carbs_100g":9.0,"source_calories_100g":41,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Абрикоси свіжі"},
+  {"target_id":"p044","glycemic_index":35,"glycemic_load_source_100g":2.8,"source_carbs_100g":8.1,"source_calories_100g":40,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Апельсини"},
+  {"target_id":"p008","glycemic_index":65,"glycemic_load_source_100g":13.7,"source_carbs_100g":21.0,"source_calories_100g":89,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Банани"},
+  {"target_id":"p046","glycemic_index":40,"glycemic_load_source_100g":6.0,"source_carbs_100g":15.0,"source_calories_100g":65,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Виноград"},
+  {"target_id":"p084","glycemic_index":22,"glycemic_load_source_100g":1.4,"source_carbs_100g":6.5,"source_calories_100g":35,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Грейпфрут"},
+  {"target_id":"p043","glycemic_index":34,"glycemic_load_source_100g":3.2,"source_carbs_100g":9.5,"source_calories_100g":42,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Груші"},
+  {"target_id":"p048","glycemic_index":75,"glycemic_load_source_100g":6.6,"source_carbs_100g":8.8,"source_calories_100g":38,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Кавун"},
+  {"target_id":"p083","glycemic_index":50,"glycemic_load_source_100g":2.0,"source_carbs_100g":4.0,"source_calories_100g":51,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Ківі"},
+  {"target_id":"p049","glycemic_index":30,"glycemic_load_source_100g":2.9,"source_carbs_100g":9.5,"source_calories_100g":43,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Персики"},
+  {"target_id":"p047","glycemic_index":32,"glycemic_load_source_100g":2.0,"source_carbs_100g":6.3,"source_calories_100g":34,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Полуниця"},
+  {"target_id":"p050","glycemic_index":22,"glycemic_load_source_100g":2.1,"source_carbs_100g":9.6,"source_calories_100g":43,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Слива"},
+  {"target_id":"p007","glycemic_index":30,"glycemic_load_source_100g":2.4,"source_carbs_100g":8.0,"source_calories_100g":37,"source":"ProDiabet.ua — Таблиця глікемічного індексу продуктів","source_name":"Яблука"}
+]
