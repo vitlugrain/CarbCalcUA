@@ -41,10 +41,16 @@
   {
     "brand": "Славія",
     "name": "Кефір 2,5%",
-    "status": "pending_dedup",
-    "candidate_duplicate_of": "ua_yagotynske_kefir_25",
+    "status": "duplicate_nutrition",
+    "duplicate_of": "ua_yagotynske_kefir_25",
+    "nutrition_basis": "100g",
+    "carbs": 4.0,
+    "protein": 3.0,
+    "fat": 2.5,
+    "calories": 51,
     "package_variants_g": [400, 850],
-    "reason": "Актуальний каталог Славія підтверджує два фасування 2,5%, але індивідуальні офіційні картки тимчасово недоступні. Не копіювати значення Яготинського без прямого підтвердження Б/Ж/В.",
-    "source_url": "https://milkalliance.com.ua/products/tm-slavia/"
+    "barcode_850g": "4823005209829",
+    "reason": "Актуальна офіційна картка Славія 850 г прямо підтверджує В4,0/Б3,0/Ж2,5/51 ккал — повний збіг з Яготинське Кефір 2,5%. Окремий харчовий запис не створювати; Славія, фасування і штрихкод зберігати як брендовий варіант.",
+    "source_url": "https://milkalliance.com.ua/en/kefir-2-5-zhiru-20/tm-slavia/"
   }
 ]
