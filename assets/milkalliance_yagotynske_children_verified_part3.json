@@ -1,0 +1,41 @@
+[
+  {
+    "id": "ua_yagotynske_children_curd_paste_apple_strawberry_39",
+    "name": "Яготинське для дітей Паста сиркова Яблуко-полуниця 3,9%",
+    "brand": "Яготинське для дітей",
+    "manufacturer_group": "Молочний Альянс",
+    "category": "Сиркові пасти",
+    "state": "prepared",
+    "carbs": 11.5,
+    "protein": 7.0,
+    "fat": 3.9,
+    "calories": 109,
+    "nutrition_basis": "100g",
+    "package_weight_g": 90,
+    "barcode": "4823005210443",
+    "quantity_units": ["г"],
+    "source": "Офіційний сайт Молочний Альянс",
+    "source_url": "https://milkalliance.com.ua/pasta-sirkova-yabluko-polunitsya/tm-slaviya/",
+    "verified": true,
+    "note": "Офіційна сторінка має URL з /tm-slaviya/, але заголовок і бренд на сторінці прямо вказують ТМ «Яготинське для дітей»."
+  },
+  {
+    "id": "ua_yagotynske_children_lactose_free_oat_banana_porridge_20",
+    "name": "Яготинське для дітей Каша безлактозна молочно-вівсяна Банан 2,0%",
+    "brand": "Яготинське для дітей",
+    "manufacturer_group": "Молочний Альянс",
+    "category": "Дитячі молочні каші",
+    "state": "prepared",
+    "carbs": 10.0,
+    "protein": 3.3,
+    "fat": 2.0,
+    "calories": 71,
+    "nutrition_basis": "100g",
+    "package_weight_g": 500,
+    "barcode": "4823005212690",
+    "quantity_units": ["г"],
+    "source": "Офіційний сайт Молочний Альянс",
+    "source_url": "https://milkalliance.com.ua/kasha-bezlaktozna-molochno-vivsy-0/tm-yagotynske-dlya-ditej/",
+    "verified": true
+  }
+]
