@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate curated Ukrainian prepared dishes before they enter the app catalog."""
+"""Validate curated Ukrainian dishes and verified cereal products."""
 from __future__ import annotations
 import json
 import sys
@@ -7,6 +7,7 @@ from pathlib import Path
 
 ALLOWED_BASES = {"100g", "100ml"}
 REQUIRED = {"id", "name", "category", "carbs", "source", "nutrition_basis"}
+ALLOWED_PREFIXES = ("ua_dish_", "ua_znaimo_", "ua_skviryanka_")
 
 
 def fail(message: str) -> None:
@@ -17,8 +18,9 @@ def validate_item(item: dict, index: int) -> None:
     missing = [key for key in REQUIRED if key not in item or item[key] in (None, "")]
     if missing:
         fail(f"row {index}: missing {', '.join(missing)}")
-    if not str(item["id"]).startswith("ua_dish_"):
-        fail(f"row {index}: prepared dish id must start with ua_dish_")
+    item_id = str(item["id"])
+    if not item_id.startswith(ALLOWED_PREFIXES):
+        fail(f"row {index}: unsupported curated id {item_id}")
     basis = str(item["nutrition_basis"]).lower()
     if basis not in ALLOWED_BASES:
         fail(f"row {index}: unsupported nutrition_basis {basis}")
@@ -27,8 +29,9 @@ def validate_item(item: dict, index: int) -> None:
         if value < 0:
             fail(f"row {index}: negative {key}")
     source = str(item["source"])
-    if "znaimo.gov.ua" not in source and "ЗНАЇМО" not in source.upper():
-        fail(f"row {index}: source is not traceable to the approved Ukrainian source")
+    approved = "znaimo.gov.ua" in source or "ЗНАЇМО" in source.upper() or "СКВИРЯНКА" in source.upper()
+    if not approved:
+        fail(f"row {index}: source is not traceable to an approved curated source")
     aliases = item.get("aliases", [])
     if aliases is not None and not isinstance(aliases, list):
         fail(f"row {index}: aliases must be a list")
@@ -36,13 +39,13 @@ def validate_item(item: dict, index: int) -> None:
     if units is not None and not isinstance(units, list):
         fail(f"row {index}: quantity_units must be a list")
     if basis == "100ml" and units and not any(str(x).lower() in {"мл", "ml"} for x in units):
-        fail(f"row {index}: 100ml dish must expose ml")
+        fail(f"row {index}: 100ml item must expose ml")
 
 
 def main() -> int:
     path = Path(sys.argv[1] if len(sys.argv) > 1 else "assets/ua_dishes.json")
     if not path.exists():
-        print(f"No curated dishes file yet: {path}. Validator ready for the next import batch.")
+        print(f"No curated catalog yet: {path}. Validator ready for the next import batch.")
         return 0
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, list):
@@ -55,7 +58,7 @@ def main() -> int:
         if item["id"] in ids:
             fail(f"row {i}: duplicate id {item['id']}")
         ids.add(item["id"])
-    print(f"Validated {len(data)} Ukrainian prepared dishes")
+    print(f"Validated {len(data)} curated Ukrainian foods")
     return 0
 
 
