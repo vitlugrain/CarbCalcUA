@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +21,46 @@ def load(path):
     return data
 
 
+def norm(text):
+    text = unicodedata.normalize('NFKD', str(text or '')).lower().replace('’', "'")
+    text = re.sub(r"\bmcdonald'?s\b|\bмакдональдс\b|\bмакдональдз\b", ' ', text)
+    text = re.sub(r'\b(мал(а|ий)|середн(я|ій)|велик(а|ий))\b', ' ', text)
+    text = re.sub(r'\b\d+\s*(мл|ml|г|g)\b', ' ', text)
+    text = re.sub(r'[^a-zа-яіїєґ0-9]+', ' ', text)
+    return ' '.join(text.split())
+
+
+def names(item):
+    values = [item.get('name', '')] + list(item.get('aliases') or [])
+    return {norm(v) for v in values if norm(v)}
+
+
+def same_nutrition(a, b):
+    basis_a = a.get('nutrition_basis', a.get('nutritionBasis', '100g'))
+    basis_b = b.get('nutrition_basis', b.get('nutritionBasis', '100g'))
+    if basis_a != basis_b:
+        return False
+    for key in ('carbs', 'protein', 'fat'):
+        try:
+            if abs(float(a.get(key, 0) or 0) - float(b.get(key, 0) or 0)) > 0.35:
+                return False
+        except (TypeError, ValueError):
+            return False
+    return True
+
+
+def equivalent(a, b):
+    # Never collapse distinct preparation/recipe states. This check is intended
+    # for the same packaged/beverage product appearing in several source catalogs.
+    state_a = str(a.get('state', '')).strip().lower()
+    state_b = str(b.get('state', '')).strip().lower()
+    if state_a and state_b and state_a != state_b:
+        return False
+    if not (names(a) & names(b)):
+        return False
+    return same_nutrition(a, b)
+
+
 base = load(BASE)
 verified = []
 seen_verified = set()
@@ -32,8 +74,24 @@ for path in CATALOGS:
         seen_verified.add(product_id)
         verified.append(item)
 
-# Replace only records with the exact same stable id. Names are deliberately not
-# deduplicated here: raw/cooked/water/milk/recipe variants must remain separate.
-merged = verified + [item for item in base if str(item.get('id', '')).strip() not in seen_verified]
+# Stable IDs replace exact records. Equivalent generic products already present
+# in the base catalog are also kept only once. Restaurant-specific portion sizes
+# remain represented by servingGrams/aliases on the verified record, while
+# different preparation states/recipes remain separate products.
+remaining = []
+skipped_equivalent = 0
+for item in base:
+    product_id = str(item.get('id', '')).strip()
+    if product_id in seen_verified:
+        continue
+    if any(equivalent(item, v) for v in verified):
+        skipped_equivalent += 1
+        continue
+    remaining.append(item)
+
+merged = verified + remaining
 BASE.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f'Merged {len(verified)} verified records; products.json now has {len(merged)} records.')
+print(
+    f'Merged {len(verified)} verified records; skipped {skipped_equivalent} equivalent base records; '
+    f'products.json now has {len(merged)} records.'
+)
