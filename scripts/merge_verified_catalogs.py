@@ -17,6 +17,7 @@ CATALOGS = [
     ROOT / 'assets' / 'torchyn_ua_verified_part3.json',
     ROOT / 'assets' / 'torchyn_ua_verified_part4.json',
     ROOT / 'assets' / 'torchyn_ua_verified_part5.json',
+    ROOT / 'assets' / 'prostonashe_ua_verified.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
@@ -81,8 +82,6 @@ def equivalent(a, b):
 
 base = load(BASE)
 
-# Enrich existing CarbCalc products by stable id. Source nutrition is retained only
-# as audit metadata; it must not overwrite the product's verified nutrition values.
 gi_rows = load(GI_ENRICHMENT)
 base_by_id = {str(x.get('id', '')).strip(): x for x in base}
 applied_gi = 0
