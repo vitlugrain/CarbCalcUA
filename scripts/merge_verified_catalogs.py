@@ -23,6 +23,7 @@ CATALOGS = [
     ROOT / 'assets' / 'kfc_ua_desserts_verified.json',
 ]
 CORRECTIONS = ROOT / 'assets' / 'mcdonalds_ua_corrections.json'
+GI_ENRICHMENT = ROOT / 'assets' / 'prodiabet_gi_enrichment.json'
 
 
 def load(path):
@@ -73,6 +74,25 @@ def equivalent(a, b):
 
 
 base = load(BASE)
+
+# Enrich existing CarbCalc products by stable id. Source nutrition is retained only
+# as audit metadata; it must not overwrite the product's verified nutrition values.
+gi_rows = load(GI_ENRICHMENT)
+base_by_id = {str(x.get('id', '')).strip(): x for x in base}
+applied_gi = 0
+for row in gi_rows:
+    target_id = str(row.get('target_id', '')).strip()
+    if not target_id or target_id not in base_by_id:
+        raise SystemExit(f'GI enrichment target not found in base catalog: {target_id!r}')
+    item = base_by_id[target_id]
+    item['glycemic_index'] = row['glycemic_index']
+    item['glycemic_index_source'] = row['source']
+    item['glycemic_index_source_name'] = row.get('source_name', '')
+    item['glycemic_load_source_100g'] = row.get('glycemic_load_source_100g')
+    item['glycemic_source_carbs_100g'] = row.get('source_carbs_100g')
+    item['glycemic_source_calories_100g'] = row.get('source_calories_100g')
+    applied_gi += 1
+
 corrections = {str(x.get('id', '')).strip(): x for x in load(CORRECTIONS)}
 if '' in corrections:
     raise SystemExit('Missing id in McDonald corrections')
@@ -112,5 +132,6 @@ merged = verified + remaining
 BASE.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(
     f'Merged {len(verified)} verified records; applied {len(applied_corrections)} audited corrections; '
-    f'skipped {skipped_equivalent} equivalent base records; products.json now has {len(merged)} records.'
+    f'applied GI enrichment to {applied_gi} existing products; skipped {skipped_equivalent} equivalent base records; '
+    f'products.json now has {len(merged)} records.'
 )
