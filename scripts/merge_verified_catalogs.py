@@ -13,6 +13,7 @@ CATALOGS = [
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
     ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks.json',
     ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks_2.json',
+    ROOT / 'assets' / 'mcdonalds_ua_coffee.json',
 ]
 
 
@@ -54,8 +55,6 @@ def same_nutrition(a, b):
 
 
 def equivalent(a, b):
-    # Never collapse distinct preparation/recipe states. This check is intended
-    # for the same packaged/beverage product appearing in several source catalogs.
     state_a = str(a.get('state', '')).strip().lower()
     state_b = str(b.get('state', '')).strip().lower()
     if state_a and state_b and state_a != state_b:
@@ -78,10 +77,6 @@ for path in CATALOGS:
         seen_verified.add(product_id)
         verified.append(item)
 
-# Stable IDs replace exact records. Equivalent generic products already present
-# in the base catalog are also kept only once. Restaurant-specific portion sizes
-# remain represented by servingGrams/servingMl/aliases on the verified record,
-# while different preparation states/recipes remain separate products.
 remaining = []
 skipped_equivalent = 0
 for item in base:
