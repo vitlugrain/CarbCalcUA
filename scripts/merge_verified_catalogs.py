@@ -9,6 +9,10 @@ BASE = ROOT / 'assets' / 'products.json'
 CATALOGS = [
     ROOT / 'assets' / 'ua_dishes.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
+    ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
+    ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
+    ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks.json',
+    ROOT / 'assets' / 'mcdonalds_ua_desserts_drinks_2.json',
 ]
 
 
@@ -76,8 +80,8 @@ for path in CATALOGS:
 
 # Stable IDs replace exact records. Equivalent generic products already present
 # in the base catalog are also kept only once. Restaurant-specific portion sizes
-# remain represented by servingGrams/aliases on the verified record, while
-# different preparation states/recipes remain separate products.
+# remain represented by servingGrams/servingMl/aliases on the verified record,
+# while different preparation states/recipes remain separate products.
 remaining = []
 skipped_equivalent = 0
 for item in base:
