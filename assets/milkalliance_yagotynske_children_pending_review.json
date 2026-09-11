@@ -1,50 +1,18 @@
 [
-  {
-    "name": "Яготинське для дітей Каша молочно-пшенична 2,0%",
-    "brand": "Яготинське для дітей",
-    "category": "Дитячі молочні каші",
-    "package_weight_g": 200,
-    "barcode": "4823005206293",
-    "status": "pending",
-    "reason": "Офіційна картка підтверджує актуальний продукт, фасування та штрихкод, але в доступній версії сторінки поживна цінність не наведена. Не переносити Б/Ж/В з рисової або гречаної каші.",
-    "source_url": "https://milkalliance.com.ua/kasha-molochno-pshenichna-2-0-zh-0/"
-  },
-  {
-    "name": "Яготинське для дітей Йогурт Яблуко-груша",
-    "brand": "Яготинське для дітей",
-    "category": "Йогурти",
-    "package_weight_g": 185,
-    "status": "pending",
-    "reason": "Поточний офіційний каталог підтверджує позицію, але індивідуальну картку з надійним Б/Ж/В у цьому проході не отримано.",
-    "source_url": "https://milkalliance.com.ua/products/tm-yagotynske-dlya-ditej/page-2/"
-  },
-  {
-    "name": "Яготинське для дітей Коктейль молочний Полуниця",
-    "brand": "Яготинське для дітей",
-    "category": "Молочні коктейлі",
-    "package_weight_g": 200,
-    "status": "pending",
-    "reason": "Поточний офіційний каталог підтверджує позицію, але точну офіційну поживну цінність у цьому проході не отримано. Не переносити значення з інших смаків коктейлю.",
-    "source_url": "https://milkalliance.com.ua/products/tm-yagotynske-dlya-ditej/page-2/"
-  },
-  {
-    "name": "Яготинське для дітей Молоко безлактозне ультрапастеризоване 2,5%",
-    "brand": "Яготинське для дітей",
-    "category": "Безлактозна продукція",
-    "package_weight_g": 950,
-    "barcode": "4823005208020",
-    "status": "pending",
-    "reason": "Офіційна сторінка підтверджує продукт, фасування і штрихкод, але не відображає Б/Ж/В. Не вважати автоматично дублікатом дорослого безлактозного молока без прямого підтвердження поживної цінності.",
-    "source_url": "https://milkalliance.com.ua/moloko-bezlaktozne-2-5-zhiru-0/tm-yagotynske-dlya-ditej/"
-  },
-  {
-    "name": "Яготинське для дітей Молоко безлактозне ультрапастеризоване 3,2%",
-    "brand": "Яготинське для дітей",
-    "category": "Безлактозна продукція",
-    "package_weight_g": 950,
-    "barcode": "4823005207344",
-    "status": "pending",
-    "reason": "Офіційна сторінка підтверджує продукт, фасування і штрихкод, але не відображає Б/Ж/В. Не переносити значення зі звичайного молока 3,2% без прямого підтвердження.",
-    "source_url": "https://milkalliance.com.ua/moloko-bezlaktozne-3-2-zhiru-0/tm-yagotynske-dlya-ditej/"
-  }
+  {"name":"Яготинське для дітей Каша молочно-пшенична 2,0%","brand":"Яготинське для дітей","category":"Дитячі молочні каші","package_weight_g":200,"barcode":"4823005206293","status":"pending","reason":"Офіційний каталог підтверджує актуальний продукт, але повне Б/Ж/В у доступній картці не підтверджено. Не переносити значення з рисової або гречаної каші.","source_url":"https://milkalliance.com.ua/products/tm-yagotynske-dlya-ditej/page-2/"},
+  {"name":"Яготинське для дітей Йогурт Яблуко-груша 1,5%","brand":"Яготинське для дітей","category":"Дитячі йогурти","package_weight_g":185,"status":"pending","reason":"Поточний офіційний каталог підтверджує позицію, але повне надійне Б/Ж/В не отримано.","source_url":"https://milkalliance.com.ua/en/jogurt/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Коктейль молочний Полуниця","brand":"Яготинське для дітей","category":"Молочні коктейлі","package_weight_g":200,"status":"pending","reason":"Поточний офіційний каталог підтверджує позицію, але точну офіційну поживну цінність не отримано. Не переносити значення з інших смаків.","source_url":"https://milkalliance.com.ua/products/tm-yagotynske-dlya-ditej/page-2/"},
+  {"name":"Яготинське для дітей Молоко безлактозне ультрапастеризоване 2,5%","brand":"Яготинське для дітей","category":"Безлактозна продукція","package_weight_g":950,"barcode":"4823005208020","status":"pending","reason":"Офіційна сторінка підтверджує продукт, фасування і штрихкод, але не відображає повне Б/Ж/В. Не вважати автоматично дублікатом дорослого молока.","source_url":"https://milkalliance.com.ua/moloko-bezlaktozne-2-5-zhiru-0/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Молоко безлактозне ультрапастеризоване 3,2%","brand":"Яготинське для дітей","category":"Безлактозна продукція","package_weight_g":950,"barcode":"4823005207344","status":"pending","reason":"Офіційна сторінка підтверджує продукт, фасування і штрихкод, але не відображає повне Б/Ж/В. Не переносити значення зі звичайного молока 3,2%.","source_url":"https://milkalliance.com.ua/moloko-bezlaktozne-3-2-zhiru-0/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Паста сиркова Малина 3,9%","brand":"Яготинське для дітей","category":"Дитячі сиркові пасти","package_weight_g":90,"status":"pending","reason":"Поточна офіційна категорія підтверджує продукт; повне Б/Ж/В не підтверджено в цьому проході.","source_url":"https://milkalliance.com.ua/en/sirki-solodki/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Молоко вітамінізоване 2,5%","brand":"Яготинське для дітей","category":"Дитяче молочне харчування","package_weight_g":950,"status":"pending","reason":"Поточний офіційний каталог підтверджує продукт і фасування; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/products/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Сир кисломолочний 4,5%","brand":"Яготинське для дітей","category":"Сир кисломолочний","package_weight_g":90,"status":"pending","reason":"Поточний офіційний каталог підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/products/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Сир кисломолочний безлактозний 4,5%","brand":"Яготинське для дітей","category":"Безлактозна продукція","package_weight_g":90,"status":"pending","reason":"Поточна офіційна безлактозна категорія підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/lactose-free/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Паста сиркова безлактозна Абрикос-банан 3,9%","brand":"Яготинське для дітей","category":"Безлактозна продукція","package_weight_g":90,"status":"pending","reason":"Поточна офіційна безлактозна категорія підтверджує продукт; не переносити Б/Ж/В зі звичайної пасти Абрикос-банан без прямого підтвердження.","source_url":"https://milkalliance.com.ua/en/lactose-free/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Паста сиркова Чорниця 3,9%","brand":"Яготинське для дітей","category":"Дитячі сиркові пасти","package_weight_g":90,"status":"pending","reason":"Поточна офіційна категорія підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/sirki-solodki/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Паста сиркова Банан 3,9%","brand":"Яготинське для дітей","category":"Дитячі сиркові пасти","package_weight_g":90,"status":"pending","reason":"Поточна офіційна категорія підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/sirki-solodki/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Йогурт Чорниця 1,5%","brand":"Яготинське для дітей","category":"Дитячі йогурти","package_weight_g":185,"status":"pending","reason":"Поточна офіційна категорія підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/en/jogurt/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Паста сиркова Малина-слива 3,9%","brand":"Яготинське для дітей","category":"Дитячі сиркові пасти","package_weight_g":90,"status":"pending","reason":"Поточний офіційний каталог підтверджує продукт; повне Б/Ж/В не підтверджено.","source_url":"https://milkalliance.com.ua/products/tm-yagotynske-dlya-ditej/page-2/"},
+  {"name":"Яготинське для дітей Йогурт натуральний з вітамінами та пробіотиком 1,7%","brand":"Яготинське для дітей","category":"Дитячі йогурти","package_weight_g":185,"barcode":"4823005212157","status":"pending","reason":"Офіційна картка підтверджує продукт, фасування і штрихкод, але доступна версія сторінки не показує повне Б/Ж/В.","source_url":"https://milkalliance.com.ua/en/jogurt-z-vitaminami-ta-probiotik/tm-yagotynske-dlya-ditej/"},
+  {"name":"Яготинське для дітей Йогурт Манго 1,5%","brand":"Яготинське для дітей","category":"Дитячі йогурти","package_weight_g":185,"status":"pending","reason":"Головний офіційний каталог сторінки 3 підтверджує позицію; окрема поточна категорія йогуртів її не показує, тому продукт не імпортується без надійної індивідуальної картки Б/Ж/В.","source_url":"https://milkalliance.com.ua/en/products/tm-yagotynske-dlya-ditej/page-3/"}
 ]
