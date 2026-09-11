@@ -1,0 +1,17 @@
+[
+  {
+    "brand": "Яготинське для дітей",
+    "name": "Молоко питне ультрапастеризоване 3,2%",
+    "status": "duplicate_nutrition",
+    "duplicate_of": "ua_yagotynske_milk_32",
+    "nutrition_basis": "100g",
+    "carbs": 4.7,
+    "protein": 2.8,
+    "fat": 3.2,
+    "calories": 59,
+    "package_weight_g": 900,
+    "barcode": "4823005208242",
+    "reason": "Повний збіг Б/Ж/В і калорійності з базовим Яготинське Молоко 3,2%. За правилом CarbCalc UA не створювати окремий харчовий запис; дитячу ТМ, фасування та штрихкод зберігати як брендовий варіант.",
+    "source_url": "https://milkalliance.com.ua/moloko-ultrapasterizovane-3-2-zh-3/tm-yagotynske-dlya-ditej/"
+  }
+]
