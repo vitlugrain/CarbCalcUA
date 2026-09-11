@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ua_slavia_processed_yantar_60",
+    "name": "Славія Сир плавлений пастоподібний Янтар 60%",
+    "brand": "Славія",
+    "manufacturer_group": "Молочний Альянс",
+    "category": "Сири плавлені",
+    "state": "spread",
+    "carbs": 1.88,
+    "protein": 10.2,
+    "fat": 22.8,
+    "calories": 254,
+    "nutrition_basis": "100g",
+    "package_weight_g": 90,
+    "barcode": "4820023266162",
+    "quantity_units": ["г"],
+    "source": "Офіційний сайт Молочний Альянс",
+    "source_url": "https://milkalliance.com.ua/yantar-60-zhiru-0/",
+    "verified": true
+  }
+]
