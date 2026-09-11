@@ -7,7 +7,7 @@ from pathlib import Path
 
 ALLOWED_BASES = {"100g", "100ml"}
 REQUIRED = {"id", "name", "category", "carbs", "source", "nutrition_basis"}
-ALLOWED_PREFIXES = ("ua_dish_", "ua_znaimo_", "ua_skviryanka_")
+ALLOWED_PREFIXES = ("ua_dish_", "ua_znaimo_", "ua_skviryanka_", "ua_konotop_")
 
 
 def fail(message: str) -> None:
@@ -29,7 +29,13 @@ def validate_item(item: dict, index: int) -> None:
         if value < 0:
             fail(f"row {index}: negative {key}")
     source = str(item["source"])
-    approved = "znaimo.gov.ua" in source or "ЗНАЇМО" in source.upper() or "СКВИРЯНКА" in source.upper()
+    source_upper = source.upper()
+    approved = (
+        "znaimo.gov.ua" in source
+        or "ЗНАЇМО" in source_upper
+        or "СКВИРЯНКА" in source_upper
+        or "КОНОТОПСЬКИЙ ЗДО" in source_upper
+    )
     if not approved:
         fail(f"row {index}: source is not traceable to an approved curated source")
     aliases = item.get("aliases", [])
