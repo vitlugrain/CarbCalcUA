@@ -1,0 +1,65 @@
+name: Merge verified catalogs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev-large-update
+    paths:
+      - '.github/workflows/catalog-merge.yml'
+      - 'scripts/merge_verified_catalogs.py'
+      - 'assets/ua_dishes.json'
+      - 'assets/*verified*.json'
+      - 'assets/mcdonalds_ua_*.json'
+      - 'assets/prodiabet_gi_enrichment.json'
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: dev-large-update
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Merge verified catalogs
+        run: python scripts/merge_verified_catalogs.py
+
+      - name: Verify merged catalog contains recent verified blocks
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          products = json.loads(Path('assets/products.json').read_text(encoding='utf-8'))
+          ids = {str(x.get('id', '')).strip() for x in products}
+          required = {
+              'ua_bonduelle_product_03083680001663',
+              'ua_pyriatyn_processed_druzhba_38',
+              'ua_yagotynske_children_milk_vitaminized_32',
+          }
+          missing = sorted(required - ids)
+          if missing:
+              raise SystemExit(f'Merged products.json is missing verified IDs: {missing}')
+          print(f'products.json verified: {len(products)} records')
+          PY
+
+      - name: Commit regenerated products.json
+        run: |
+          if git diff --quiet -- assets/products.json; then
+            echo 'products.json already up to date'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/products.json
+          git commit -m 'data: regenerate products from verified catalogs'
+          git push origin HEAD:dev-large-update
