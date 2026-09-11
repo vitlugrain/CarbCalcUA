@@ -1,0 +1,19 @@
+[
+  {
+    "brand": "Галичина",
+    "name": "Сметана 20% 300 г",
+    "category": "Сметана",
+    "status": "pending_conflicting_official_data",
+    "reason": "Офіційна картка магазину має внутрішню невідповідність: назва товару вказує 20%, але опис/БЖВ показує жир 15%, 159 ккал, Б 3.0, В 3.0. Не імпортувати до уточнення.",
+    "source": "https://dostavka.galychyna.com.ua/smetana-st.-20-300h-tm-halychyna/"
+  },
+  {
+    "brand": "Галичина",
+    "name": "Сметана 15% 300 г — конфлікт картки магазину",
+    "category": "Сметана",
+    "status": "pending_conflicting_official_data",
+    "reason": "Офіційна сторінка виробника для сметани 15% дає Б3.0/Ж15/В3.0/159 ккал, тоді як картка офіційного магазину з назвою 15% містить Б2.8/Ж20/В3.0/206 ккал. Основний verified-профіль 15% взято з офіційної продуктової сторінки; конфлікт магазину зафіксовано для аудиту.",
+    "source_primary": "https://galychyna.com.ua/products/сметана-15/",
+    "source_conflict": "https://dostavka.galychyna.com.ua/smetana-st.-15-300h-tm-halychyna/"
+  }
+]
