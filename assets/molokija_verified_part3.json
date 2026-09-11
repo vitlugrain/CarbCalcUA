@@ -1,0 +1,63 @@
+[
+  {
+    "id": "ua_molokija_yogurt_white_lactose_free_thick_25",
+    "brand": "Молокія",
+    "name": "Йогурт Білий безлактозний густий 2,5%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 2.5,
+    "kcal_100g": 57.0,
+    "package_g": 300,
+    "lactose_free": true,
+    "no_added_sugar": true,
+    "source": "https://silpo.ua/product/yogurt-molokiia-bilyi-bezlaktoznyi-gustyi-2-5-stakan-839545",
+    "source_catalog": "https://molokija.com/storage/files/produkciya_1606313213.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_white_probiotic_thick_25",
+    "brand": "Молокія",
+    "name": "Йогурт Білий з пробіотиками густий 2,5%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 2.5,
+    "kcal_100g": 57.0,
+    "package_g": 300,
+    "no_added_sugar": true,
+    "probiotic": true,
+    "source": "https://silpo.ua/product/yogurt-molokiia-bilyi-z-probiotykamy-gustyi-2-5-stakan-839327",
+    "source_catalog": "https://molokija.com/storage/files/produkciya_1606313213.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційний каталог вказує Lactobacillus acidophilus і Bifidobacterium lactis."
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_5",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний 5%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 5.0,
+    "kcal_100g": 116.0,
+    "packages_g": [200, 350],
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-5-838497",
+    "source_type": "current_retail_nutrition",
+    "source_note": "Профіль 350 г підтверджено актуальною карткою; 200 г еколін має той самий Б/Ж/В і 116 ккал."
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_lactose_free_5",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний безлактозний 5%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 5.0,
+    "kcal_100g": 116.0,
+    "package_g": 350,
+    "lactose_free": true,
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-bezlaktoznyi-5-957188",
+    "source_type": "current_retail_nutrition"
+  }
+]
