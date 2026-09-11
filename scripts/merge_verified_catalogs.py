@@ -14,6 +14,7 @@ CATALOGS = [
     ROOT / 'assets' / 'prodiabet_ua_verified_part2.json',
     ROOT / 'assets' / 'torchyn_ua_verified.json',
     ROOT / 'assets' / 'torchyn_ua_verified_part2.json',
+    ROOT / 'assets' / 'torchyn_ua_verified_part3.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
