@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ua_rud_millennium_pistachio_raspberry_macaron_80",
+    "name": "Морозиво ескімо MILLENNIUM «Фісташка – малина» у молочному шоколаді з макарон",
+    "brand": "Рудь",
+    "line": "MILLENNIUM",
+    "category": "Морозиво",
+    "package_g": 80,
+    "ean": "4823097817100",
+    "nutrition_100g": {"protein_g": 3.4, "fat_g": 16.8, "carbs_g": 27.8, "kcal": 276.0},
+    "source": "https://rud.ua/products/ice-cream/eskimo_standard/millennium-fistashka-malyna-u-molochnomu-shokoladi-z-makaruns/",
+    "retail_source": "https://zakaz.ua/uk/products/morozivo-rud-80g-ukrayina--04823097817100/",
+    "verification": "official_manufacturer_and_retail"
+  },
+  {
+    "id": "ua_rud_mochi_plombir_mango_240",
+    "name": "Морозиво десерт MOCHI «Пломбір – манго»",
+    "brand": "Рудь",
+    "line": "MOCHI",
+    "category": "Морозиво",
+    "package_g": 240,
+    "ean": "4823097815236",
+    "nutrition_100g": {"protein_g": 3.3, "fat_g": 6.2, "carbs_g": 30.6, "kcal": 191.7},
+    "source": "https://rud.ua/products/ice-cream/roll/mochi-plombir-manho-240g/",
+    "retail_source": "https://zakaz.ua/uk/products/morozivo-rud-240g-ukrayina--04823097815236/",
+    "verification": "official_manufacturer_and_retail",
+    "dedup_note": "Official 50 g and 240 g versions have identical nutrition; combine as one base recipe with package/EAN variants during final deduplication. Zakaz.ua currently appears to transpose protein/fat and report sugars as carbohydrates for the 240 g listing; official manufacturer nutrition is authoritative."
+  },
+  {
+    "id": "ua_rud_mochi_plombir_mango_50",
+    "name": "Морозиво десерт MOCHI «Пломбір – манго»",
+    "brand": "Рудь",
+    "line": "MOCHI",
+    "category": "Морозиво",
+    "package_g": 50,
+    "ean": "4823097815175",
+    "nutrition_100g": {"protein_g": 3.3, "fat_g": 6.2, "carbs_g": 30.6, "kcal": 191.7},
+    "source": "https://rud.ua/products/ice-cream/roll/mochi-plombir-manho-50g/",
+    "verification": "official_manufacturer",
+    "limited_edition": true,
+    "dedup_note": "Same official nutrition profile as 240 g multipack; represent as packaging/EAN variant if recipe identity remains confirmed."
+  },
+  {
+    "id": "ua_rud_no_added_sugar_vanilla_eskimo_60",
+    "name": "Морозиво «Ваніль» без доданого цукру в глазурі",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 60,
+    "ean": "4823097807194",
+    "nutrition_100g": {"protein_g": 4.1, "fat_g": 16.6, "carbs_g": 16.1, "kcal": 230.0},
+    "retail_source": "https://zakaz.ua/uk/products/morozivo-rud-60g-ukrayina--04823097807194/",
+    "verification": "retail_verified_zakaz",
+    "audit_note": "Current Zakaz.ua retail listing provides complete nutrition and EAN. Keep retail verification flag until an active official manufacturer product card is matched."
+  },
+  {
+    "id": "ua_rud_no_added_sugar_chocolate_eskimo_60",
+    "name": "Морозиво «Шоколадне» без доданого цукру в глазурі",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 60,
+    "ean": "4823097807217",
+    "nutrition_100g": {"protein_g": 3.4, "fat_g": 16.8, "carbs_g": 16.1, "kcal": 229.0},
+    "retail_source": "https://tavriav.zakaz.ua/uk/products/morozivo-rud-ukrayina--04823097807217/",
+    "verification": "retail_verified_zakaz",
+    "audit_note": "Current Zakaz.ua retail listing provides complete nutrition and EAN. Keep retail verification flag until an active official manufacturer product card is matched."
+  }
+]
