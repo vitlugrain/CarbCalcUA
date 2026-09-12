@@ -1,0 +1,5 @@
+[
+  {"id":"ua_rud_vegetable_mix_california","name_uk":"Суміш овочева «Каліфорнійська суміш» Рудь","brand":"Рудь","category":"Заморожені овочі та суміші","carbs_100g":6.4,"protein_100g":3.7,"fat_100g":0.3,"kcal_100g":50.0,"package_g":400,"barcode":"4823097815403","source_type":"official_manufacturer","source_url":"https://rud.ua/products/frozen/vegetables/sumish-ovocheva-kaliforniiska-sumish/"},
+  {"id":"ua_rud_vegetable_mix_childrens","name_uk":"Овочева суміш «Дитячий мікс» Рудь","brand":"Рудь","category":"Заморожені овочі та суміші","carbs_100g":4.3,"protein_100g":1.7,"fat_100g":0.2,"kcal_100g":33.0,"package_g":400,"barcode":"5903154544497","source_type":"official_manufacturer","source_url":"https://rud.ua/products/frozen/blends/ovocheva-sumish-dityachiy-miks/"},
+  {"id":"ua_rud_vegetable_mix_tsarskyi","name_uk":"Овочева суміш «Царський салат» Рудь","brand":"Рудь","category":"Заморожені овочі та суміші","carbs_100g":5.4,"protein_100g":2.1,"fat_100g":0.2,"kcal_100g":32.0,"package_g":400,"barcode":"5903154543896","source_type":"official_manufacturer","source_url":"https://rud.ua/products/frozen/blends/tsarskyi-salat/"}
+]
