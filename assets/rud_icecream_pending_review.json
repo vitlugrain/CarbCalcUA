@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Морозиво IMPERIUM MINI",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 222,
+    "ean": "4823097819852",
+    "source": "https://rud.ua/products/ice-cream/roll/imperium-mini/",
+    "status": "pending_review",
+    "reason": "Official manufacturer page does not provide a complete protein/fat/carbohydrate nutrition profile. Do not infer values."
+  },
+  {
+    "name": "Морозиво MILLENNIUM MINI",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "source": "https://rud.ua/products/ice-cream/roll/",
+    "status": "pending_review",
+    "reason": "Current official catalog lists the product, but a complete verified nutrition profile was not available during this audit pass. Do not infer values."
+  },
+  {
+    "name": "Морозиво-десерт Fruit Bites «Лохина»",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "source": "https://rud.ua/products/ice-cream/roll/",
+    "status": "pending_review",
+    "reason": "Current official catalog lists the product, but complete verified nutrition and EAN data were not available during this audit pass. Do not infer values."
+  }
+]
