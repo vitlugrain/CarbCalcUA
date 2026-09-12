@@ -1,0 +1,27 @@
+[
+  {
+    "id": "ua_rud_blueberry_blackberry_eskimo_85",
+    "name": "Морозиво ескімо «Чорниця – ожина»",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 85,
+    "ean": "4820154720823",
+    "nutrition_100g": {"protein_g": 1.7, "fat_g": 5.9, "carbs_g": 24.8, "kcal": 159.0},
+    "source": "https://rud.ua/products/ice-cream/eskimo_standard/eskimo-chornytsia-ozhyna/",
+    "retail_source": "https://zakaz.ua/uk/products/morozivo-rud-85g-ukrayina--04820154720823/",
+    "verification": "official_manufacturer_and_retail"
+  },
+  {
+    "id": "ua_rud_eskimos_curd_vanilla_xl_45",
+    "name": "Сирок глазурований Рудь Ескімос XL зі смаком ванілі 23%",
+    "brand": "Рудь",
+    "line": "Ескімос XL",
+    "category": "Сирки глазуровані",
+    "package_g": 45,
+    "ean": "4823097818947",
+    "nutrition_100g": {"protein_g": 14.0, "fat_g": 24.0, "carbs_g": 29.0, "kcal": 388.0},
+    "source": "https://auchan.zakaz.ua/uk/products/sirok-glazurovanii-rud-45g-ukrayina--04823097818947/",
+    "verification": "current_retail_zakaz",
+    "audit_note": "Zakaz.ua currently lists manufacturer as TOV Zhytomyrskyi molochnyi zavod and frozen storage; retain as Rud-branded retail SKU and recheck physical label/manufacturer metadata before any manufacturer-level analytics."
+  }
+]
