@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ua_rud_broccoli_frozen_400",
+    "brand": "Рудь",
+    "name": "Броколі заморожена",
+    "category": "Заморожені овочі",
+    "protein_100g": 3.3,
+    "fat_100g": 0.2,
+    "carbs_100g": 4.6,
+    "kcal_100g": 33.0,
+    "package_g": 400,
+    "barcode": "5903154543841",
+    "source": "https://rud.ua/products/frozen/vegetables/brokkoli/",
+    "source_type": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_green_beans_cut_frozen_400",
+    "brand": "Рудь",
+    "name": "Стручкова квасоля порізана заморожена",
+    "category": "Заморожені овочі",
+    "protein_100g": 2.5,
+    "fat_100g": 0.3,
+    "carbs_100g": 5.6,
+    "kcal_100g": 35.0,
+    "package_g": 400,
+    "barcode": "5903154543865",
+    "source": "https://rud.ua/products/frozen/vegetables/struchkova-kvasolia-porizana/",
+    "source_type": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_asian_vegetable_mix_400",
+    "brand": "Рудь",
+    "name": "Суміш овочева Азіатська суміш",
+    "category": "Заморожені овочеві суміші",
+    "protein_100g": 2.0,
+    "fat_100g": 0.2,
+    "carbs_100g": 4.2,
+    "kcal_100g": 32.0,
+    "package_g": 400,
+    "barcode": "4823097815366",
+    "source": "https://rud.ua/products/frozen/vegetables/sumish-ovocheva-aziatska-sumish/",
+    "source_type": "official_manufacturer"
+  }
+]
