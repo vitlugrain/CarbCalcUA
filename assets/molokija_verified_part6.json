@@ -28,20 +28,5 @@
     "source_catalog": "https://molokija.com/storage/files/produkciya-onovlena-1.pdf",
     "source_type": "official_catalog_plus_current_retail_nutrition",
     "source_note": "Не зливається з іншими брендами без окремої перевірки точного Б/Ж/В."
-  },
-  {
-    "id": "ua_molokija_kefir_nonfat",
-    "brand": "Молокія",
-    "name": "Кефір нежирний",
-    "category": "Кефір",
-    "carbs_100g": 4.0,
-    "protein_100g": 3.0,
-    "fat_100g": 0.05,
-    "kcal_100g": 29.0,
-    "packages_g": [400, 870],
-    "source": "https://silpo.ua/product/kefir-molokiia-nezhyrnyi",
-    "source_catalog": "https://horeca.molokija.com/products/34",
-    "source_type": "official_catalog_plus_current_retail_nutrition",
-    "source_note": "Для нежирного продукту fat_100g=0.05 використано як технічне значення для заявленого <0.1 г; не трактувати як точне лабораторне значення."
   }
 ]
