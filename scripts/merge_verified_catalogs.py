@@ -37,6 +37,13 @@ CATALOGS = [
     ROOT / 'assets' / 'galychyna_verified_part4.json',
     ROOT / 'assets' / 'galychyna_verified_part5.json',
     ROOT / 'assets' / 'galychyna_verified_part6.json',
+    ROOT / 'assets' / 'molokija_verified_part1.json',
+    ROOT / 'assets' / 'molokija_verified_part2.json',
+    ROOT / 'assets' / 'molokija_verified_part3.json',
+    ROOT / 'assets' / 'molokija_verified_part4.json',
+    ROOT / 'assets' / 'molokija_verified_part5.json',
+    ROOT / 'assets' / 'molokija_verified_part6.json',
+    ROOT / 'assets' / 'molokija_verified_part7.json',
     ROOT / 'assets' / 'mcdonalds_ua_products.json',
     ROOT / 'assets' / 'mcdonalds_ua_chicken_rolls_supplement.json',
     ROOT / 'assets' / 'mcdonalds_ua_sides_sauces.json',
@@ -50,6 +57,7 @@ CATALOGS = [
 ]
 CORRECTIONS = ROOT / 'assets' / 'mcdonalds_ua_corrections.json'
 GI_ENRICHMENT = ROOT / 'assets' / 'prodiabet_gi_enrichment.json'
+BRAND_VARIANTS = ROOT / 'assets' / 'molokija_brand_variants.json'
 
 
 def load(path):
@@ -117,6 +125,13 @@ for row in gi_rows:
     item['glycemic_source_calories_100g'] = row.get('source_calories_100g')
     applied_gi += 1
 
+variant_rows = load(BRAND_VARIANTS)
+variant_source_ids = {
+    str(row.get('source_id', '')).strip()
+    for row in variant_rows
+    if str(row.get('source_id', '')).strip()
+}
+
 corrections = {str(x.get('id', '')).strip(): x for x in load(CORRECTIONS)}
 if '' in corrections:
     raise SystemExit('Missing id in McDonald corrections')
@@ -135,11 +150,37 @@ for path in CATALOGS:
         if product_id in seen_verified:
             raise SystemExit(f'Duplicate verified id: {product_id}')
         seen_verified.add(product_id)
+        if product_id in variant_source_ids:
+            continue
         verified.append(item)
 
 unused = set(corrections) - applied_corrections
 if unused:
     raise SystemExit(f'Correction ids not found in verified catalogs: {sorted(unused)}')
+
+# Explicit brand/SKU variants let identical generic nutrition profiles share one
+# canonical nutrition record without losing brand, package, source or functional
+# attributes. A variant may point at a verified record or an existing base record.
+all_by_id = {str(x.get('id', '')).strip(): x for x in base}
+all_by_id.update({str(x.get('id', '')).strip(): x for x in verified})
+applied_variants = 0
+for row in variant_rows:
+    target_id = str(row.get('target_id', '')).strip()
+    if not target_id or target_id not in all_by_id:
+        raise SystemExit(f'Brand variant target not found: {target_id!r}')
+    variant = row.get('variant')
+    if not isinstance(variant, dict) or not variant.get('brand') or not variant.get('name'):
+        raise SystemExit(f'Invalid brand variant for target {target_id!r}')
+    target = all_by_id[target_id]
+    variants = target.setdefault('brand_variants', [])
+    signature = (str(variant.get('brand', '')).strip(), str(variant.get('name', '')).strip())
+    exists = any(
+        (str(v.get('brand', '')).strip(), str(v.get('name', '')).strip()) == signature
+        for v in variants if isinstance(v, dict)
+    )
+    if not exists:
+        variants.append(variant)
+        applied_variants += 1
 
 remaining = []
 skipped_equivalent = 0
@@ -156,6 +197,6 @@ merged = verified + remaining
 BASE.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(
     f'Merged {len(verified)} verified records; applied {len(applied_corrections)} audited corrections; '
-    f'applied GI enrichment to {applied_gi} existing products; skipped {skipped_equivalent} equivalent base records; '
-    f'products.json now has {len(merged)} records.'
+    f'applied GI enrichment to {applied_gi} existing products; applied {applied_variants} brand/SKU variants; '
+    f'skipped {skipped_equivalent} equivalent base records; products.json now has {len(merged)} records.'
 )
