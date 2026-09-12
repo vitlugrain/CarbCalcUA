@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ua_rud_imperium_eskimo_nougat_caramel_peanut_70",
+    "name": "Морозиво ескімо IMPERIUM «Нуга – карамель – арахіс»",
+    "brand": "Рудь",
+    "line": "IMPERIUM",
+    "category": "Морозиво",
+    "package_g": 70,
+    "ean": "4823097817391",
+    "nutrition_100g": {"protein_g": 4.9, "fat_g": 15.7, "carbs_g": 31.0, "kcal": 285},
+    "source": "https://rud.ua/products/ice-cream/eskimo_standard/imperium-nuha-karamel-arakhis/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_family_500",
+    "name": "Морозиво «100% морозиво» сімейна упаковка",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 500,
+    "ean": "4820015167101",
+    "nutrition_100g": {"protein_g": 3.9, "fat_g": 12.1, "carbs_g": 20.5, "kcal": 206},
+    "source": "https://rud.ua/products/ice-cream/bulk/100-morozyvo/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_family_1000",
+    "name": "Морозиво «100% морозиво» сімейна упаковка",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 1000,
+    "ean": "4820015167354",
+    "nutrition_100g": {"protein_g": 3.9, "fat_g": 12.1, "carbs_g": 20.5, "kcal": 206},
+    "source": "https://rud.ua/products/ice-cream/bulk/100-morozyvo-1kg/",
+    "verification": "official_manufacturer",
+    "dedup_note": "Same nutrition as current 500 g family pack; combine as one base product with SKU/package variants during final deduplication."
+  },
+  {
+    "id": "ua_rud_100_icecream_pail_500",
+    "name": "Морозиво «100% морозиво» у відрі",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 500,
+    "ean": "4820015166036",
+    "nutrition_100g": {"protein_g": 3.7, "fat_g": 12.1, "carbs_g": 20.2, "kcal": 204},
+    "source": "https://rud.ua/products/ice-cream/pail/100-morozyvo-vidro/",
+    "verification": "official_manufacturer"
+  }
+]
