@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ua_rud_imperium_tray_tiramisu_500",
+    "name": "Морозиво IMPERIUM «Тірамісу» лоток",
+    "brand": "Рудь",
+    "line": "IMPERIUM",
+    "category": "Морозиво",
+    "package_g": 500,
+    "ean": "4823097807668",
+    "nutrition_100g": {"protein_g": 4.5, "fat_g": 8.5, "carbs_g": 26.2, "kcal": 199},
+    "limited_edition": true,
+    "source": "https://rud.ua/products/ice-cream/tray/imperium-tiramisu/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_imperium_tray_red_velvet_500",
+    "name": "Морозиво IMPERIUM «Червоний бархат» лоток",
+    "brand": "Рудь",
+    "line": "IMPERIUM",
+    "category": "Морозиво",
+    "package_g": 500,
+    "ean": "4823097807620",
+    "nutrition_100g": {"protein_g": 3.5, "fat_g": 7.5, "carbs_g": 30.9, "kcal": 205},
+    "limited_edition": true,
+    "source": "https://rud.ua/products/ice-cream/tray/imperium-chervonyi-barkhat/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_imperium_tray_prazkyi_500",
+    "name": "Морозиво IMPERIUM «Празький» лоток",
+    "brand": "Рудь",
+    "line": "IMPERIUM",
+    "category": "Морозиво",
+    "package_g": 500,
+    "ean": "4803097807644",
+    "nutrition_100g": {"protein_g": 3.1, "fat_g": 7.2, "carbs_g": 29.4, "kcal": 195},
+    "limited_edition": true,
+    "ean_audit_note": "Official manufacturer page currently displays EAN 4803097807644; preserve as published and recheck before final merge because prefix differs from usual Rud EANs.",
+    "source": "https://rud.ua/products/ice-cream/tray/imperium-prazkyi/",
+    "verification": "official_manufacturer_with_ean_recheck"
+  }
+]
