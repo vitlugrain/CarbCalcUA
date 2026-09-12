@@ -1,0 +1,11 @@
+{
+  "source": "official Rud product catalog",
+  "source_url": "https://rud.ua/products/ice-cream/",
+  "status": "verified",
+  "products": [
+    {"id":"ua_rud_icecream_imperium_lemon_curd_meringue_150","name":"IMPERIUM «Лимонний курд — меренга»","brand":"Рудь / IMPERIUM","category":"ice_cream","carbs_100g":32.1,"protein_100g":3.3,"fat_100g":11.4,"kcal_100g":244.0,"package_g":150,"ean":"2823097817124","source_url":"https://rud.ua/products/ice-cream/cone/imperium-lymonnyi-kurd/"},
+    {"id":"ua_rud_icecream_imperium_cream_cheese_pear_150","name":"IMPERIUM «Крем-сир – груша»","brand":"Рудь / IMPERIUM","category":"ice_cream","carbs_100g":34.7,"protein_100g":3.2,"fat_100g":10.8,"kcal_100g":249.0,"package_g":150,"ean":"4823097815113","source_url":"https://rud.ua/products/ice-cream/cone/imperium-filadelfiia-hrusha/"},
+    {"id":"ua_rud_icecream_imperium_pineapple_coconut_100","name":"IMPERIUM «Ананас – кокос»","brand":"Рудь / IMPERIUM","category":"ice_cream","carbs_100g":34.4,"protein_100g":3.7,"fat_100g":18.1,"kcal_100g":315.0,"package_g":100,"ean":"4823097819272","source_url":"https://rud.ua/products/ice-cream/cone/imperium-ananas-kokos/"},
+    {"id":"ua_rud_icecream_imperium_three_chocolates_100","name":"IMPERIUM «Три шоколади»","brand":"Рудь / IMPERIUM","category":"ice_cream","carbs_100g":30.1,"protein_100g":3.9,"fat_100g":20.2,"kcal_100g":318.0,"package_g":100,"ean":"4820154723442","source_url":"https://rud.ua/products/ice-cream/cone/morozyvo-rizhok-imperium-try-shokolada/"}
+  ]
+}
