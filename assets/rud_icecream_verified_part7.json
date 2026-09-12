@@ -1,0 +1,76 @@
+[
+  {
+    "id": "ua_rud_100_icecream_brick_90",
+    "name": "Морозиво брикет «100% морозиво»",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 90,
+    "ean": "4820015166340",
+    "nutrition_100g": {"protein_g": 3.5, "fat_g": 11.7, "carbs_g": 22.5, "kcal": 209},
+    "source": "https://rud.ua/products/ice-cream/brick/100-morozyvo-bryket/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_wafer_cup_70",
+    "name": "Морозиво «100% морозиво» у вафельному стаканчику",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 70,
+    "ean": "4820015166357",
+    "nutrition_100g": {"protein_g": 3.6, "fat_g": 11.5, "carbs_g": 23.4, "kcal": 212},
+    "source": "https://rud.ua/products/ice-cream/cup/100-morozuvo-vafelnuy-stakan/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_polystyrene_cup_120",
+    "name": "Морозиво «100% морозиво» у полістирольному стакані",
+    "brand": "Рудь",
+    "line": "100% морозиво",
+    "category": "Морозиво",
+    "package_g": 120,
+    "ean": "4820154728256",
+    "nutrition_100g": {"protein_g": 3.9, "fat_g": 12.1, "carbs_g": 20.5, "kcal": 206},
+    "source": "https://rud.ua/products/ice-cream/polystyrene-cups/100-vidsotkiv-polistyrolnyy-stakan/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_mochi_plombir_strawberry_240",
+    "name": "Морозиво десерт MOCHI «Пломбір – полуниця»",
+    "brand": "Рудь",
+    "line": "MOCHI",
+    "category": "Морозиво",
+    "package_g": 240,
+    "ean": "4823097813621",
+    "nutrition_100g": {"protein_g": 2.9, "fat_g": 5.3, "carbs_g": 30.6, "kcal": 181.5},
+    "limited_edition": true,
+    "source": "https://rud.ua/products/ice-cream/roll/mochi-plombir-polunytsia-240g/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_mochi_chocolate_cherry_240",
+    "name": "Морозиво десерт MOCHI «Шоколад – вишня» мультипак",
+    "brand": "Рудь",
+    "line": "MOCHI",
+    "category": "Морозиво",
+    "package_g": 240,
+    "ean": "4823097813645",
+    "nutrition_100g": {"protein_g": 3.2, "fat_g": 6.9, "carbs_g": 33.4, "kcal": 208},
+    "source": "https://rud.ua/products/ice-cream/roll/mochi-shokolad-vyshnia-240g/",
+    "verification": "official_manufacturer",
+    "dedup_note": "Same recipe/nutrition as verified 50 g SKU in part1; combine as one base product with package/SKU variants during final deduplication."
+  },
+  {
+    "id": "ua_rud_mochi_coconut_50",
+    "name": "Морозиво десерт MOCHI «Кокос»",
+    "brand": "Рудь",
+    "line": "MOCHI",
+    "category": "Морозиво",
+    "package_g": 50,
+    "ean": "4823097815151",
+    "nutrition_100g": {"protein_g": 3.7, "fat_g": 7.8, "carbs_g": 28.7, "kcal": 199.2},
+    "source": "https://rud.ua/products/ice-cream/roll/mochi-kokos/",
+    "verification": "official_manufacturer"
+  }
+]
