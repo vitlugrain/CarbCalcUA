@@ -1,0 +1,35 @@
+[
+  {
+    "brand": "Молокія",
+    "name": "Вершки питні 10%",
+    "category": "Вершки",
+    "carbs_100g": 4.0,
+    "protein_100g": 3.0,
+    "fat_100g": 10.0,
+    "kcal_100g": 118.0,
+    "duplicate_of": "ua_galychyna_lactose_free_cream_10",
+    "reason": "Ідентичний харчовий профіль. Зберігати Молокія як brand/SKU variant; не переносити lactose_free з базового запису."
+  },
+  {
+    "brand": "Молокія",
+    "name": "Йогурт Білий безлактозний густий 2,5%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 2.5,
+    "kcal_100g": 57.0,
+    "duplicate_of": "ua_molokija_yogurt_white_probiotic_thick_25",
+    "reason": "Харчовий профіль збігається, але lactose_free і probiotic є різними функціональними атрибутами; зберігати окремі SKU metadata."
+  },
+  {
+    "brand": "Молокія",
+    "name": "Сир кисломолочний безлактозний 5%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 5.0,
+    "kcal_100g": 116.0,
+    "duplicate_of": "ua_molokija_cottage_cheese_5",
+    "reason": "Харчовий профіль збігається; lactose_free зберігати як функціональну ознаку SKU."
+  }
+]
