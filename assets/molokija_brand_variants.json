@@ -1,0 +1,52 @@
+[
+  {
+    "source_id": "ua_molokija_cream_10",
+    "target_id": "ua_galychyna_lactose_free_cream_10",
+    "variant": {
+      "brand": "Молокія",
+      "name": "Вершки питні 10%",
+      "category": "Вершки",
+      "carbs_100g": 4.0,
+      "protein_100g": 3.0,
+      "fat_100g": 10.0,
+      "kcal_100g": 118.0,
+      "package_g": 500,
+      "lactose_free": false,
+      "source": "https://silpo.ua/product/vershky-molokiia-10-500g",
+      "source_catalog": "https://molokija.com/storage/files/produkciya-onovlena-1.pdf"
+    },
+    "reason": "Ідентичний харчовий профіль до базового профілю вершків 10%; Молокія зберігається як brand/SKU variant без перенесення lactose_free."
+  },
+  {
+    "source_id": "ua_molokija_butter_selyanske_725",
+    "target_id": "ua_yagotynske_lactose_free_butter_73",
+    "variant": {
+      "brand": "Молокія",
+      "name": "Масло солодковершкове селянське 72,5%",
+      "category": "Масло вершкове",
+      "carbs_100g": 1.3,
+      "protein_100g": 0.8,
+      "fat_100g": 72.5,
+      "kcal_100g": 661.0,
+      "package_g": 180,
+      "lactose_free": false,
+      "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-72-5-878788",
+      "source_catalog": "https://www.molokija.com/storage/files/produkciya-molokiya_1736777386.pdf"
+    },
+    "reason": "Стандартний профіль масла близько 73%; точні 72,5% і 661 ккал зберігаються на рівні SKU, без перенесення lactose_free."
+  },
+  {
+    "target_id": "ua_molokija_kefir_drinking_25",
+    "variant": {
+      "brand": "Молокія",
+      "name": "Кефір густий 2,5%",
+      "category": "Кефір",
+      "carbs_100g": 3.9,
+      "protein_100g": 2.9,
+      "fat_100g": 2.5,
+      "kcal_100g": 50.0,
+      "source_catalog": "https://horeca.molokija.com/products/34"
+    },
+    "reason": "Густий і питний SKU мають однаковий харчовий профіль; консистенція зберігається як SKU variant."
+  }
+]
