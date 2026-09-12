@@ -1,0 +1,28 @@
+[
+  {
+    "id": "ua_molokija_kefir_nonfat",
+    "brand": "Молокія",
+    "name": "Кефір нежирний питний",
+    "category": "Кефір",
+    "kcal_100g": 29.0,
+    "status": "pending_conflicting_nutrition",
+    "official_catalog": "https://horeca.molokija.com/products/34",
+    "candidate_profiles": [
+      {
+        "protein_100g": 3.2,
+        "fat_100g": 0.1,
+        "carbs_100g": 3.9,
+        "kcal_100g": 29.0,
+        "source": "https://www.tablycjakalorijnosti.com.ua/stravy/kefir-molokiya-pytnyy"
+      },
+      {
+        "protein_100g": 3.4,
+        "fat_100g": 0.0,
+        "carbs_100g": 4.5,
+        "kcal_100g": 29.0,
+        "source": "https://calorize.com.ua/uk/product/kefir-molokiya-nezhirniy-pittyeviy"
+      }
+    ],
+    "reason": "Два доступні джерела погоджуються щодо 29 ккал, але суттєво розходяться у Б/Ж/В. Попередній verified-профіль 3.0/0.05/4.0 не має достатньої опори. До отримання однозначної актуальної етикетки продукт не включати у verified/merge."
+  }
+]
