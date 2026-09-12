@@ -7,93 +7,84 @@ Branch: `dev-large-update`
 
 Audit and expansion of the product catalog using `zakaz.ua` as the discovery source, with nutrition values and EANs verified against official manufacturer pages whenever available.
 
-Current manufacturer: **Рудь**.
-Current phase: **final cross-check before closing TM Рудь**.
+## TM Рудь — CLOSED
 
-## Completed: frozen vegetables / berries — Рудь
+The current Zakaz.ua-driven audit of TM Рудь is closed. The pass covered frozen vegetables/berries, ice cream and frozen desserts, dairy/butter/glazed curds, bakery and the current frozen-semi-finished retail gaps found during the final cross-check.
 
-Core frozen vegetables and berries block is considered closed for now.
+Important: CLOSED means the current systematic Zakaz.ua audit is complete; it does not mean every historical or every manufacturer-only Horeca SKU has been imported. Products marked by the manufacturer as temporarily not produced remain excluded. Incomplete/ambiguous products remain in pending-review files and must not be given invented nutrition values.
 
-Latest verified batch:
+### Verified Rud audit files
+
+Frozen vegetables/berries:
 - `assets/rud_verified_part7.json`
-- commit: `493bb67561430c727d1676ca16cf85b0bcaaf2a5`
+- pending: `assets/rud_pending_review.json`
 
-Pending review items with incomplete official nutrition data are kept separately:
-- `assets/rud_pending_review.json`
-- commit: `e7e537124c72222c8a5e64292cd82804883e9cf1`
+Ice cream / desserts:
+- `assets/rud_icecream_verified_part1.json`
+- `assets/rud_icecream_verified_part2.json`
+- `assets/rud_icecream_verified_part3.json`
+- `assets/rud_icecream_verified_part4.json`
+- `assets/rud_icecream_verified_part5.json`
+- `assets/rud_icecream_verified_part6.json`
+- `assets/rud_icecream_verified_part7.json`
+- `assets/rud_icecream_verified_part8.json`
+- `assets/rud_icecream_verified_part9.json`
+- `assets/rud_icecream_verified_part10.json`
+- `assets/rud_icecream_verified_part11.json`
+- `assets/rud_final_verified_supplement.json`
+- `assets/rud_final_retail_verified.json`
+- pending: `assets/rud_icecream_pending_review.json`
 
-Rule: do not invent missing protein / fat / carbohydrate values.
-
-## Ice cream — Рудь
-
-Verified/audited batches created so far:
-- `assets/rud_icecream_verified_part1.json` — initial Ескімос / 100% МОРОЗИВО / IMPERIUM / MOCHI; commit `36336cd096f1ac6c9bced490f94c63b58ba2d8bc`
-- `assets/rud_icecream_verified_part2.json` — additional Ескімос; commit `fbdd59826696c341bd4433966fbe344df07ca906`
-- `assets/rud_icecream_verified_part3.json` — IMPERIUM cones; commit `ad843df689ac1e4571777d28afc26cbc481bf946`
-- `assets/rud_icecream_verified_part4.json` — 100% МОРОЗИВО verified items
-- `assets/rud_icecream_verified_part5.json` — IMPERIUM tray products including Тірамісу, Червоний бархат, Празький
-- `assets/rud_icecream_verified_part6.json` — additional IMPERIUM / 100% МОРОЗИВО; commit `bd8b3a62bbc1daa0638803847dcd8b30a9838fc0`
-- `assets/rud_icecream_verified_part7.json` — additional 100% МОРОЗИВО / MOCHI; commit `696237c240e753041159eb9a9528e302369cbf4e`
-- `assets/rud_icecream_verified_part8.json` — large dessert/new-products batch; commit `3747cecf7b6791aaefe937d1daf180ece2dab409`
-- `assets/rud_icecream_verified_part9.json` — ESKIMOS CANDY BUBBLES, MINI MOCHI multipack, Galactic freeze-dried products, Ice Fashion, cups and other current SKUs; commit `b52599fbe90b0257a986a5bd06bd700c46815cbd`
-- `assets/rud_icecream_verified_part10.json` — final official-site gap batch including ЕСКІМОС у шоколаді, cylindrical Ескімос, fruit/berry eskimo, Тоффі cone, МОРОЗИВО РУДЬ brick, ЕСКІМОС ПАНКЕЙК, ЕСКІМОС vanilla-strawberry-chocolate brick, MILLENNIUM VERY PERI, СЕЛЯНСЬКЕ, Цукрова вата, Супершоколад, Полуниця-ківі, Чорниця-ожина, Дитяче бажання; commit `e373cbc4562d3bfe288fbd2fcba6725fffe30bca`
-
-Ice-cream pending review:
-- `assets/rud_icecream_pending_review.json`
-- includes IMPERIUM MINI, MILLENNIUM MINI, Fruit Bites Лохина where complete verified data was not available during the audit pass
-- commit `d5d308e6145d7383c0a9807f8af10f491864cfea`
-
-### Important audit notes
-
-- IMPERIUM «Празький» 500 g: official manufacturer page shows EAN `4803097807644`; preserve as published but recheck before final merge because prefix differs from typical Rud EANs.
-- «СЕЛЯНСЬКЕ» family pack: official URL contains `600g`, but current product card states 500 g; preserve the card value and recheck before merge.
-- «ЕСКІМОС» ВАНІЛЬ — ПОЛУНИЦЯ — ШОКОЛАД: official card displays sugars higher than total carbohydrates; keep total carbohydrates as published but flag the card inconsistency.
-- Zakaz.ua and manufacturer pages can occasionally disagree on nutrition for the same apparent SKU; manufacturer values have priority unless the retail item clearly represents another recipe/EAN.
-
-## Non-ice-cream Rud products discovered on Zakaz.ua
-
-The final cross-check confirmed that TM Рудь on Zakaz.ua is not limited to ice cream/frozen products. Current retail listings also include dairy/butter/glazed curds.
-
-First verified retail batch:
+Non-ice-cream / curds / retail:
 - `assets/rud_non_icecream_verified_part1.json`
-- includes milk 3.2% 1 L, sweet-cream butter extra 82.5% 200 g, and three current Ескімос glazed curds (strawberry, boiled condensed milk, vanilla)
-- commit `0ad37a1c2196b60511e4f5a5b17901d6722f1975`
+- `assets/rud_curds_verified_part2.json`
+- `assets/rud_frozen_semis_verified_final.json`
 
-Before TM Рудь is marked fully closed, finish the Zakaz.ua cross-check for any remaining current Rud dairy / butter / glazed-curd / frozen-semi-finished / dough listings and compare against existing CarbCalc UA data.
+### Final retail-gap additions
 
-### Deduplication rule
+Final cross-check added verified/current retail records for:
+- DOCHI «Вершкове тістечко» and «Лимонне тістечко»;
+- Fruit Bites Лохина в молочному шоколаді;
+- Kochubey's Oaks Фісташка, Гарбузове насіння та мед, Мигдаль, Кокос-Шоколад;
+- frozen butter croissants;
+- Пельмені 100%, Ескімос, Супер, Imperium;
+- frozen pizza base;
+- current official potato vareniki retained in the Rud package.
 
-If the same recipe is sold in multiple package sizes with identical nutrition values, keep one base product and represent package/EAN variants as SKUs instead of creating duplicate products.
+Final batch commits:
+- `7ca63221cd18e6057724e401bfa3826497802316` — final dessert/bakery retail gaps
+- `af854cbe26a5419deb1946da01cc6bb0f3a5e053` — final frozen-semis batch
 
-Examples already identified:
-- `100% МОРОЗИВО` 500 g and 1000 g share the same nutrition profile and should be deduplicated at final merge.
-- MOCHI «Шоколад – вишня» 50 g and 240 g share the same nutrition profile and should be represented as packaging/SKU variants if recipe identity is confirmed at final review.
-- ЕСКІМОС у шоколаді 80 g and cylindrical Ескімос 70 g currently publish the same nutrition profile; verify recipe identity before combining package variants.
+### Audit flags preserved
 
-### Exclusions
+- IMPERIUM «Празький» 500 g: manufacturer-published EAN has an unusual prefix; preserve and recheck when merging.
+- «СЕЛЯНСЬКЕ» family pack: official URL/card weight mismatch remains flagged.
+- «ЕСКІМОС» ВАНІЛЬ — ПОЛУНИЦЯ — ШОКОЛАД: manufacturer page has an internal sugars/carbohydrates inconsistency; total carbohydrates remain as published and flagged.
+- Some Zakaz.ua cards disagree with manufacturer nutrition; manufacturer data has priority when the EAN/recipe match.
+- Croissants have an alternate older Zakaz EAN; current manufacturer EAN `4823097809549` is canonical.
+- Kochubey's Oaks retail cards are sold under Rud branding while Zakaz lists producer АТ Полтавхолод; preserve this provenance.
 
-Do not add products that the official Rud site marks as **«тимчасово не виробляється»** to the current verified catalog.
-Do not add an item to verified data if reliable nutrition data is incomplete; keep such items pending instead.
+### Deduplication rule for final catalog merge
+
+If the same recipe is sold in multiple package sizes with identical nutrition, keep one base product and attach packaging/EAN variants as SKUs rather than duplicate foods. Known candidates include 100% МОРОЗИВО 500/1000 g, MOCHI «Шоколад–вишня» 50/240 g, and other explicitly matching package variants.
 
 ## Next exact step
 
-1. Finish remaining current non-ice-cream TM Рудь products found on Zakaz.ua.
-2. Run one final Zakaz.ua vs current Rud files gap check, including any retail-only ice-cream SKUs.
-3. Resolve or explicitly preserve audit flags / pending-review items.
-4. Final deduplication by recipe + SKU packaging.
-5. Prepare the complete Rud package for merge into the main CarbCalc UA product catalog.
-6. Mark TM Рудь CLOSED in this file.
-7. Immediately return to Zakaz.ua and continue auditing other manufacturers/products systematically.
+1. Treat TM Рудь as CLOSED for the current Zakaz.ua manufacturer audit.
+2. Keep Rud pending-review records separate; never infer missing B/F/C or EAN values.
+3. During the eventual catalog merge, deduplicate Rud records by recipe + nutrition + packaging SKU and preserve audit flags.
+4. Return to Zakaz.ua and begin the next manufacturer/product block systematically.
+5. Continue working in large verified batches where practical.
 
 ## Working rules
 
-- Discovery source: `https://zakaz.ua/uk/`
+- Discovery source: Zakaz.ua.
 - Verification priority: official manufacturer page.
 - Verify EAN where available.
-- Never infer missing B/F/C values.
-- Keep uncertain items in `pending_review` rather than in verified data.
-- Do not perform final merge until the manufacturer/category pass is complete and duplicates are reviewed.
-- Work in larger verified batches where practical, but never trade verification quality for batch size.
+- Never infer missing protein/fat/carbohydrate values.
+- Keep uncertain items in pending review.
+- Official `тимчасово не виробляється` products are excluded from the current verified catalog.
+- GitHub branch for this audit: `dev-large-update`.
 
 ## Chat continuity rule
 
