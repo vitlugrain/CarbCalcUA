@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ua_rud_100_icecream_cup_70",
+    "name": "Морозиво «100% морозиво» у вафельному стаканчику",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 70,
+    "ean": "4820015166357",
+    "nutrition_100g": {"protein_g": 3.6, "fat_g": 11.5, "carbs_g": 23.4, "kcal": 212},
+    "source": "https://rud.ua/products/ice-cream/cup/100-morozuvo-vafelnuy-stakan/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_brick_90",
+    "name": "Морозиво «100% морозиво» брикет",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 90,
+    "ean": "4820015166340",
+    "nutrition_100g": {"protein_g": 3.5, "fat_g": 11.7, "carbs_g": 22.5, "kcal": 209},
+    "source": "https://rud.ua/products/ice-cream/brick/100-morozyvo-bryket/",
+    "verification": "official_manufacturer"
+  },
+  {
+    "id": "ua_rud_100_icecream_ps_cup_120",
+    "name": "Морозиво «100% морозиво» у полістирольному стакані",
+    "brand": "Рудь",
+    "category": "Морозиво",
+    "package_g": 120,
+    "ean": "4820154728256",
+    "nutrition_100g": {"protein_g": 3.9, "fat_g": 12.1, "carbs_g": 20.5, "kcal": 206},
+    "source": "https://rud.ua/products/ice-cream/polystyrene-cups/100-vidsotkiv-polistyrolnyy-stakan/",
+    "verification": "official_manufacturer"
+  }
+]
