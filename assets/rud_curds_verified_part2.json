@@ -1,0 +1,43 @@
+[
+  {
+    "id": "ua_rud_eskimos_xl_chocolate_45",
+    "name": "Сирок глазурований Рудь ESKIMOS XL зі смаком шоколаду",
+    "brand": "Рудь",
+    "line": "ESKIMOS XL",
+    "category": "Сирки глазуровані",
+    "package_g": 45,
+    "ean": "4823097818978",
+    "nutrition_100g": {"protein_g": 7.8, "fat_g": 26.5, "carbs_g": 28.3, "kcal": 383.0},
+    "source": "https://rud.ua/products/cheese-curd/glazurovani-surki/eskimos-xl-zi-smakom-shokoladu/",
+    "verification": "official_manufacturer",
+    "new_product": true
+  },
+  {
+    "id": "ua_rud_eskimos_xl_chocolate_multipack_450",
+    "name": "Сирки глазуровані Рудь ESKIMOS XL зі смаком шоколаду, мультипак",
+    "brand": "Рудь",
+    "line": "ESKIMOS XL",
+    "category": "Сирки глазуровані",
+    "package_g": 450,
+    "ean": "4823097818985",
+    "nutrition_100g": {"protein_g": 7.8, "fat_g": 26.5, "carbs_g": 28.3, "kcal": 383.0},
+    "source": "https://rud.ua/products/cheese-curd/glazurovani-surki/eskimos-xl-zi-smakom-shokoladu-multypak/",
+    "verification": "official_manufacturer",
+    "new_product": true,
+    "dedup_note": "Same recipe/nutrition as 45 g unit; represent as package/EAN variant during final deduplication."
+  },
+  {
+    "id": "ua_rud_eskimos_xl_vanilla_multipack_450",
+    "name": "Сирки глазуровані Рудь ESKIMOS XL зі смаком ванілі, мультипак",
+    "brand": "Рудь",
+    "line": "ESKIMOS XL",
+    "category": "Сирки глазуровані",
+    "package_g": 450,
+    "ean": "4823097818954",
+    "nutrition_100g": {"protein_g": 7.3, "fat_g": 26.6, "carbs_g": 31.9, "kcal": 396.0},
+    "source": "https://rud.ua/products/cheese-curd/glazurovani-surki/eskimos-xl-zi-smakom-vanili-multypak/",
+    "verification": "official_manufacturer",
+    "new_product": true,
+    "audit_note": "Current official nutrition differs from the current Zakaz.ua 45 g vanilla listing; do not deduplicate 45 g and 450 g solely by product name until physical-label/version reconciliation."
+  }
+]
