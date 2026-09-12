@@ -1,0 +1,49 @@
+[
+  {
+    "id": "ua_molokija_butter_extra_82",
+    "brand": "Молокія",
+    "name": "Масло солодковершкове екстра 82%",
+    "category": "Масло вершкове",
+    "carbs_100g": 0.8,
+    "protein_100g": 0.5,
+    "fat_100g": 82.0,
+    "kcal_100g": 743.0,
+    "package_g": 180,
+    "barcode": "4820045705106",
+    "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-ekstra-82-878789",
+    "source_catalog": "https://horeca.molokija.com/products/25",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційна HoReCa-сторінка підтверджує актуальний продукт 82% у фользі 180 г; точний Б/Ж/В та енергію підтверджено актуальною карткою Сільпо і Zakaz."
+  },
+  {
+    "id": "ua_molokija_butter_selyanske_725",
+    "brand": "Молокія",
+    "name": "Масло солодковершкове селянське 72,5%",
+    "category": "Масло вершкове",
+    "carbs_100g": 1.3,
+    "protein_100g": 0.8,
+    "fat_100g": 72.5,
+    "kcal_100g": 661.0,
+    "package_g": 180,
+    "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-72-5-878788",
+    "source_catalog": "https://www.molokija.com/storage/files/produkciya-molokiya_1736777386.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційний PDF підтверджує селянське масло 73%/180 г у поточній лінійці; споживча картка конкретного SKU маркує 72,5% та дає Б0,8/Ж72,5/В1,3/661 ккал. Збережено точне маркування SKU, без округлення до 73%."
+  },
+  {
+    "id": "ua_molokija_butter_sandwich_62",
+    "brand": "Молокія",
+    "name": "Масло солодковершкове бутербродне 62%",
+    "category": "Масло вершкове",
+    "carbs_100g": 2.5,
+    "protein_100g": 1.0,
+    "fat_100g": 62.0,
+    "kcal_100g": 572.0,
+    "package_g": 180,
+    "barcode": "4820045706134",
+    "source": "https://zakaz.ua/uk/products/maslo-molokiia-180g--04820045706134/",
+    "source_catalog": "https://www.molokija.com/storage/files/produkciya-molokiya_1736777386.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційний PDF підтверджує масло 62% 180 г; актуальна картка Zakaz підтверджує Б1,0/Ж62/В2,5/572 ккал і штрихкод."
+  }
+]
