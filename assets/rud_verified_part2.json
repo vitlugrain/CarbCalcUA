@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ua_rud_frozen_cauliflower_400",
+    "brand": "Рудь",
+    "name": "Цвітна капуста заморожена",
+    "category": "Заморожені овочі",
+    "carbs_100g": 4.5,
+    "protein_100g": 2.4,
+    "fat_100g": 0.2,
+    "kcal_100g": 29.0,
+    "package_g": 400,
+    "barcode": "5903154543834",
+    "source_type": "official_manufacturer",
+    "source": "https://rud.ua/products/frozen/vegetables/tsvitna-kapusta/"
+  },
+  {
+    "id": "ua_rud_mix_vesniana_7_400",
+    "brand": "Рудь",
+    "name": "Овочева суміш Весняна семикомпонентна",
+    "category": "Заморожені овочеві суміші",
+    "carbs_100g": 3.5,
+    "protein_100g": 2.5,
+    "fat_100g": 0.2,
+    "kcal_100g": 27.0,
+    "package_g": 400,
+    "barcode": "5903154545623",
+    "source_type": "official_manufacturer",
+    "source": "https://rud.ua/products/frozen/blends/vesniana-semykomponentna/"
+  },
+  {
+    "id": "ua_rud_mix_mexykanka_400",
+    "brand": "Рудь",
+    "name": "Суміш для жарки Мексиканка",
+    "category": "Заморожені овочеві суміші",
+    "carbs_100g": 9.4,
+    "protein_100g": 2.5,
+    "fat_100g": 0.5,
+    "kcal_100g": 52.0,
+    "package_g": 400,
+    "barcode": "5903154544558",
+    "source_type": "official_manufacturer",
+    "source": "https://rud.ua/products/frozen/blends/meksykanka/"
+  },
+  {
+    "id": "ua_rud_mix_italian_400",
+    "brand": "Рудь",
+    "name": "Овочі по-італійськи",
+    "category": "Заморожені овочеві суміші",
+    "carbs_100g": 5.0,
+    "protein_100g": 2.3,
+    "fat_100g": 0.3,
+    "kcal_100g": 38.0,
+    "package_g": 400,
+    "barcode": "5903154540321",
+    "source_type": "official_manufacturer",
+    "source": "https://rud.ua/products/frozen/blends/ovochi-po-italiisky/"
+  },
+  {
+    "id": "ua_rud_mix_rice_mushrooms_400",
+    "brand": "Рудь",
+    "name": "Овочі з рисом та шампіньйонами",
+    "category": "Заморожені овочеві суміші",
+    "carbs_100g": 16.0,
+    "protein_100g": 3.6,
+    "fat_100g": 0.5,
+    "kcal_100g": 83.0,
+    "package_g": 400,
+    "barcode": "5903154543902",
+    "source_type": "official_manufacturer",
+    "source": "https://rud.ua/products/frozen/blends/ovochi-z-rysom-shampinionamy/"
+  }
+]
