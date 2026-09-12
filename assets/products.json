@@ -6052,7 +6052,22 @@
     ],
     "source": "Офіційний сайт Молочний Альянс",
     "source_url": "https://milkalliance.com.ua/en/maslo-bezlaktozne-73-zhiru/",
-    "verified": true
+    "verified": true,
+    "brand_variants": [
+      {
+        "brand": "Молокія",
+        "name": "Масло солодковершкове селянське 72,5%",
+        "category": "Масло вершкове",
+        "carbs_100g": 1.3,
+        "protein_100g": 0.8,
+        "fat_100g": 72.5,
+        "kcal_100g": 661.0,
+        "package_g": 180,
+        "lactose_free": false,
+        "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-72-5-878788",
+        "source_catalog": "https://www.molokija.com/storage/files/produkciya-molokiya_1736777386.pdf"
+      }
+    ]
   },
   {
     "id": "ua_yagotynske_lactose_free_cottage_cheese_5",
@@ -6933,7 +6948,22 @@
     "package_g": 200,
     "lactose_free": true,
     "source": "https://galychyna.com.ua/products/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "brand_variants": [
+      {
+        "brand": "Молокія",
+        "name": "Вершки питні 10%",
+        "category": "Вершки",
+        "carbs_100g": 4.0,
+        "protein_100g": 3.0,
+        "fat_100g": 10.0,
+        "kcal_100g": 118.0,
+        "package_g": 500,
+        "lactose_free": false,
+        "source": "https://silpo.ua/product/vershky-molokiia-10-500g",
+        "source_catalog": "https://molokija.com/storage/files/produkciya-onovlena-1.pdf"
+      }
+    ]
   },
   {
     "id": "ua_galychyna_lactose_free_sour_cream_15",
@@ -7874,6 +7904,515 @@
     "source": "https://dostavka.galychyna.com.ua/yohurt-karpatskyi-pet-22-800-h-abrykos-halychyna/",
     "source_type": "official_manufacturer_store",
     "source_note": "Official store currently prints 97.4 kcal together with 366 kJ; values are internally inconsistent. Carbohydrate/protein/fat values are imported as printed; energy value is retained verbatim and flagged for later audit."
+  },
+  {
+    "id": "ua_molokija_milk_pasteurized_25",
+    "name": "Молоко пастеризоване 2,5%",
+    "brand": "Молокія",
+    "category": "Молоко",
+    "carbs_100g": 4.7,
+    "protein_100g": 2.9,
+    "fat_100g": 2.5,
+    "kcal_100g": 53.0,
+    "packages_g": [
+      500,
+      870,
+      900
+    ],
+    "source": "https://horeca.molokija.com/products/22",
+    "nutrition_source": "https://silpo.ua/product/moloko-pasteryzovane-molokiia-2-5-pliashka-917218",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_milk_uht_25",
+    "name": "Молоко ультрапастеризоване 2,5% Молокія Ультра",
+    "brand": "Молокія",
+    "category": "Молоко",
+    "carbs_100g": 4.7,
+    "protein_100g": 3.2,
+    "fat_100g": 2.5,
+    "kcal_100g": 54.0,
+    "packages_g": [
+      900,
+      950
+    ],
+    "source": "https://horeca.molokija.com/products/11",
+    "nutrition_source": "https://silpo.ua/product/moloko-ultrapasteryzovane-molokiia-ultra-2-5-t-p-957116",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_milk_lactose_free_uht_25",
+    "name": "Молоко безлактозне ультрапастеризоване 2,5% Молокія Ультра",
+    "brand": "Молокія",
+    "category": "Молоко",
+    "carbs_100g": 4.7,
+    "protein_100g": 3.1,
+    "fat_100g": 2.5,
+    "kcal_100g": 54.0,
+    "package_g": 950,
+    "lactose_free": true,
+    "source": "https://horeca.molokija.com/products/11",
+    "nutrition_source": "https://torba.zakaz.ua/uk/products/moloko-molokiia-950g--04820045707339/",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_kefir_drinking_25",
+    "name": "Кефір питний 2,5%",
+    "brand": "Молокія",
+    "category": "Кефір",
+    "carbs_100g": 3.9,
+    "protein_100g": 2.9,
+    "fat_100g": 2.5,
+    "kcal_100g": 50.0,
+    "packages_g": [
+      400,
+      870,
+      900
+    ],
+    "source": "https://horeca.molokija.com/products/34",
+    "nutrition_source": "https://silpo.ua/product/kefir-molokiia-pytnyi-2-5-820341",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label",
+    "brand_variants": [
+      {
+        "brand": "Молокія",
+        "name": "Кефір густий 2,5%",
+        "category": "Кефір",
+        "carbs_100g": 3.9,
+        "protein_100g": 2.9,
+        "fat_100g": 2.5,
+        "kcal_100g": 50.0,
+        "source_catalog": "https://horeca.molokija.com/products/34"
+      }
+    ]
+  },
+  {
+    "id": "ua_molokija_yogurt_white_thick_16",
+    "name": "Йогурт Білий густий 1,6%",
+    "brand": "Молокія",
+    "category": "Йогурти",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 1.6,
+    "kcal_100g": 49.0,
+    "package_g": 300,
+    "no_added_sugar": true,
+    "source": "https://www.molokija.com/storage/files/produkciya-nova1.pdf",
+    "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-gustyi-1-6-stakan-839328",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_yogurt_white_drinking_16",
+    "name": "Йогурт Білий питний 1,6%",
+    "brand": "Молокія",
+    "category": "Йогурти",
+    "carbs_100g": 4.9,
+    "protein_100g": 3.7,
+    "fat_100g": 1.6,
+    "kcal_100g": 49.0,
+    "packages_g": [
+      250,
+      400,
+      870,
+      900
+    ],
+    "no_added_sugar": true,
+    "source": "https://www.molokija.com/storage/files/produkciya-nova1.pdf",
+    "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-pytnyi-1-6-p-p-823883",
+    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_kefir_1",
+    "brand": "Молокія",
+    "name": "Кефір питний 1%",
+    "category": "Кефір",
+    "carbs_100g": 3.9,
+    "protein_100g": 2.9,
+    "fat_100g": 1.0,
+    "kcal_100g": 36.0,
+    "packages_g": [
+      870,
+      900
+    ],
+    "source": "https://horeca.molokija.com/products/34",
+    "nutrition_source": "https://silpo.ua/product/kefir-molokiia-1-0-p-e-702983",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_yogurt_white_thick_3",
+    "brand": "Молокія",
+    "name": "Йогурт Білий густий 3%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.8,
+    "fat_100g": 3.0,
+    "kcal_100g": 65.0,
+    "package_g": 1000,
+    "no_added_sugar": true,
+    "source": "https://horeca.molokija.com/products/21",
+    "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-gustyi-3-939585",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_yogurt_greek_8",
+    "brand": "Молокія",
+    "name": "Йогурт Білий по-грецьки густий 8%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 8.0,
+    "kcal_100g": 107.0,
+    "package_g": 300,
+    "no_added_sugar": true,
+    "source": "https://horeca.molokija.com/products/21",
+    "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-po-gretsky-gustyi-8-stakan-839326",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_sour_cream_15",
+    "brand": "Молокія",
+    "name": "Сметана 15%",
+    "category": "Сметана",
+    "carbs_100g": 3.0,
+    "protein_100g": 2.7,
+    "fat_100g": 15.0,
+    "kcal_100g": 158.0,
+    "packages_g": [
+      300,
+      370
+    ],
+    "source": "https://horeca.molokija.com/products/2",
+    "nutrition_source": "https://silpo.ua/product/smetana-molokiia-15-838948",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_sour_cream_20",
+    "brand": "Молокія",
+    "name": "Сметана 20%",
+    "category": "Сметана",
+    "carbs_100g": 3.1,
+    "protein_100g": 2.7,
+    "fat_100g": 20.0,
+    "kcal_100g": 203.0,
+    "package_g": 370,
+    "source": "https://horeca.molokija.com/products/2",
+    "nutrition_source": "https://silpo.ua/product/smetana-molokiia-20-838947",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_ayran_white_18",
+    "brand": "Молокія",
+    "name": "Айран Білий 1,8%",
+    "category": "Кисломолочний напій",
+    "carbs_100g": 4.1,
+    "protein_100g": 3.0,
+    "fat_100g": 1.8,
+    "kcal_100g": 45.0,
+    "packages_g": [
+      250,
+      770
+    ],
+    "barcodes": [
+      "4820045707568",
+      "4820045707582"
+    ],
+    "source": "https://horeca.molokija.com/products/35",
+    "nutrition_source": "https://silpo.ua/product/airan-molokiia-bilyi-1-8-pet-997196",
+    "source_type": "official_catalog_plus_current_retail_label"
+  },
+  {
+    "id": "ua_molokija_yogurt_white_lactose_free_thick_25",
+    "brand": "Молокія",
+    "name": "Йогурт Білий безлактозний густий 2,5%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 2.5,
+    "kcal_100g": 57.0,
+    "package_g": 300,
+    "lactose_free": true,
+    "no_added_sugar": true,
+    "source": "https://silpo.ua/product/yogurt-molokiia-bilyi-bezlaktoznyi-gustyi-2-5-stakan-839545",
+    "source_catalog": "https://molokija.com/storage/files/produkciya_1606313213.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_white_probiotic_thick_25",
+    "brand": "Молокія",
+    "name": "Йогурт Білий з пробіотиками густий 2,5%",
+    "category": "Йогурт",
+    "carbs_100g": 4.7,
+    "protein_100g": 4.0,
+    "fat_100g": 2.5,
+    "kcal_100g": 57.0,
+    "package_g": 300,
+    "no_added_sugar": true,
+    "probiotic": true,
+    "source": "https://silpo.ua/product/yogurt-molokiia-bilyi-z-probiotykamy-gustyi-2-5-stakan-839327",
+    "source_catalog": "https://molokija.com/storage/files/produkciya_1606313213.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційний каталог вказує Lactobacillus acidophilus і Bifidobacterium lactis."
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_5",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний 5%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 5.0,
+    "kcal_100g": 116.0,
+    "packages_g": [
+      200,
+      350
+    ],
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-5-838497",
+    "source_type": "current_retail_nutrition",
+    "source_note": "Профіль 350 г підтверджено актуальною карткою; 200 г еколін має той самий Б/Ж/В і 116 ккал."
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_lactose_free_5",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний безлактозний 5%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 5.0,
+    "kcal_100g": 116.0,
+    "package_g": 350,
+    "lactose_free": true,
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-bezlaktoznyi-5-957188",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_strawberry_14_current",
+    "brand": "Молокія",
+    "name": "Йогурт Полуниця 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.5,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "packages_g": [
+      250,
+      770
+    ],
+    "source": "https://silpo.ua/product/yogurt-molokiia-polunytsia-1-4-pliashka-905468",
+    "source_catalog": "https://horeca.molokija.com/products/21",
+    "source_type": "official_current_catalog_plus_current_retail_nutrition",
+    "source_note": "Актуальні пляшки 250 г і PET 770 г мають однаковий профіль. Старіша плівка 400 г має іншу рецептуру 9.7/2.8/1.4 і не об'єднана з поточним записом."
+  },
+  {
+    "id": "ua_molokija_yogurt_apricot_14_current",
+    "brand": "Молокія",
+    "name": "Йогурт Абрикос 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.5,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "package_g": 250,
+    "source": "https://novus.zakaz.ua/uk/products/molokiia-ukrayina--04820045705465/",
+    "source_type": "current_retail_nutrition",
+    "source_note": "Не об'єднувати автоматично зі старішими фасуваннями 290/770 г, для яких у роздрібних картках трапляється профіль 10.7/2.9/1.4 та 67 ккал."
+  },
+  {
+    "id": "ua_molokija_yogurt_forest_berry_14_current",
+    "brand": "Молокія",
+    "name": "Йогурт Лісова ягода 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.5,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "package_g": 250,
+    "source": "https://silpo.ua/product/yogurt-molokiia-lisova-iagoda-1-4-pliashka-905471",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_cereals_14_current",
+    "brand": "Молокія",
+    "name": "Йогурт Злаки 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.5,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "packages_g": [
+      250,
+      770
+    ],
+    "source": "https://silpo.ua/product/yogurt-molokiia-zlaky-1-4-pliashka-905470",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_wild_strawberry_mint_14",
+    "brand": "Молокія",
+    "name": "Йогурт Суниця-м'ята 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.6,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "packages_g": [
+      250,
+      770
+    ],
+    "source": "https://silpo.ua/product/yogurt-molokiia-sunytsia-m-iata-pytnyi-1-4-pet-995853",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_blueberry_lavender_14",
+    "brand": "Молокія",
+    "name": "Йогурт Чорниця-лаванда 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.6,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "packages_g": [
+      250,
+      770
+    ],
+    "source": "https://silpo.ua/product/yogurt-molokiia-chornytsia-lavanda-pytnyi-1-4-pet-995850",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_yogurt_pear_vanilla_14",
+    "brand": "Молокія",
+    "name": "Йогурт Груша-ваніль 1,4%",
+    "category": "Йогурт",
+    "carbs_100g": 10.6,
+    "protein_100g": 2.6,
+    "fat_100g": 1.4,
+    "kcal_100g": 65.0,
+    "package_g": 770,
+    "source": "https://silpo.ua/product/yogurt-molokiia-z-napovniuvachem-grusha-vanil-1-4-pliashka-1002664",
+    "source_type": "current_retail_nutrition"
+  },
+  {
+    "id": "ua_molokija_butter_extra_82",
+    "brand": "Молокія",
+    "name": "Масло солодковершкове екстра 82%",
+    "category": "Масло вершкове",
+    "carbs_100g": 0.8,
+    "protein_100g": 0.5,
+    "fat_100g": 82.0,
+    "kcal_100g": 743.0,
+    "package_g": 180,
+    "barcode": "4820045705106",
+    "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-ekstra-82-878789",
+    "source_catalog": "https://horeca.molokija.com/products/25",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційна HoReCa-сторінка підтверджує актуальний продукт 82% у фользі 180 г; точний Б/Ж/В та енергію підтверджено актуальною карткою Сільпо і Zakaz."
+  },
+  {
+    "id": "ua_molokija_butter_sandwich_62",
+    "brand": "Молокія",
+    "name": "Масло солодковершкове бутербродне 62%",
+    "category": "Масло вершкове",
+    "carbs_100g": 2.5,
+    "protein_100g": 1.0,
+    "fat_100g": 62.0,
+    "kcal_100g": 572.0,
+    "package_g": 180,
+    "barcode": "4820045706134",
+    "source": "https://zakaz.ua/uk/products/maslo-molokiia-180g--04820045706134/",
+    "source_catalog": "https://www.molokija.com/storage/files/produkciya-molokiya_1736777386.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Офіційний PDF підтверджує масло 62% 180 г; актуальна картка Zakaz підтверджує Б1,0/Ж62/В2,5/572 ккал і штрихкод."
+  },
+  {
+    "id": "ua_molokija_ryazhenka_4",
+    "brand": "Молокія",
+    "name": "Ряжанка 4%",
+    "category": "Ряжанка",
+    "carbs_100g": 4.2,
+    "protein_100g": 3.0,
+    "fat_100g": 4.0,
+    "kcal_100g": 65.0,
+    "packages_g": [
+      400,
+      870
+    ],
+    "source": "https://silpo.ua/product/riazhanka-molokiia-4",
+    "source_catalog": "https://molokija.com/storage/files/produkciya-onovlena-1.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Не зливається з іншими брендами без окремої перевірки точного Б/Ж/В."
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_02",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний 0,2%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 0.2,
+    "kcal_100g": 73.0,
+    "packages_g": [
+      200,
+      350
+    ],
+    "barcode_200g": "4820045702044",
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-0-2-708021",
+    "source_secondary": "https://auchan.zakaz.ua/uk/products/sir-molokiia-350g--04820045704543/",
+    "source_catalog": "https://horeca.molokija.com/products/20",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_molokija_cottage_cheese_9",
+    "brand": "Молокія",
+    "name": "Сир кисломолочний 9%",
+    "category": "Сир кисломолочний",
+    "carbs_100g": 1.8,
+    "protein_100g": 16.0,
+    "fat_100g": 9.0,
+    "kcal_100g": 152.0,
+    "packages_g": [
+      200,
+      350
+    ],
+    "barcode_350g": "4820045704536",
+    "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-9-838498",
+    "source_secondary": "https://metro.zakaz.ua/uk/products/sir-molokiia-350g-ukrayina--04820045704536/",
+    "source_catalog": "https://horeca.molokija.com/products/20",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_molokija_milk_kazkove_lactose_free_pasteurized_25",
+    "brand": "Молокія",
+    "name": "Молоко Казкове пастеризоване безлактозне 2,5%",
+    "category": "Молоко",
+    "carbs_100g": 4.7,
+    "protein_100g": 3.2,
+    "fat_100g": 2.5,
+    "kcal_100g": 54.0,
+    "package_g": 870,
+    "lactose_free": true,
+    "source": "https://silpo.ua/product/moloko-pasteryzov-molokiia-kazkove-bezlaktozne-2-5-950477",
+    "source_catalog": "https://molokija.com/storage/files/produkciya-molokiya_1736777386.pdf",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Не плутати з UHT безлактозним 2,5% з part1: у пастеризованого Казкового білок 3,2 г/100 г, у UHT запису — 3,1 г/100 г.",
+    "verified": true
+  },
+  {
+    "id": "ua_molokija_sour_cream_30",
+    "brand": "Молокія",
+    "name": "Сметана 30%",
+    "category": "Сметана",
+    "carbs_100g": 3.1,
+    "protein_100g": 2.4,
+    "fat_100g": 30.0,
+    "kcal_100g": 292.0,
+    "package_g": 370,
+    "barcode": "4820045704499",
+    "source": "https://metro.zakaz.ua/uk/products/smetana-molokiia-400g-ukrayina--04820045700118/",
+    "source_secondary": "https://listex.info/uk/product/smetana-30-pe-plivka-037kg-molokiya-ua-4820045704499",
+    "source_catalog": "https://horeca.molokija.com/products/2",
+    "source_type": "official_catalog_plus_current_retail_nutrition",
+    "source_note": "Поточні Metro/Zakaz і Listex узгоджуються: Б2,4/Ж30/В3,1/292 ккал. Сторонній Calorize має інший профіль і не використаний.",
+    "verified": true
   },
   {
     "id": "ua_mcd_hamburger",
