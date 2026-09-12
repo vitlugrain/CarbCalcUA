@@ -1,0 +1,7 @@
+[
+  {"name":"Овочева суміш «Гавайська»","brand":"Рудь","reason":"Official current product card exposes energy value but not complete protein/fat/carbohydrate values. Do not infer carbs.","status":"pending_nutrition"},
+  {"name":"Обліпиха, перетерта із цукром","brand":"Рудь","ean":"4823097805237","package_g":350,"reason":"Official card exposes 204.8 kcal/100g but not complete protein/fat/carbohydrate values.","status":"pending_nutrition"},
+  {"name":"Журавлина-лимон, перетерті із цукром","brand":"Рудь","ean":"4823097805275","package_g":350,"reason":"Official card exposes 208.1 kcal/100g but not complete protein/fat/carbohydrate values.","status":"pending_nutrition"},
+  {"name":"Малина-апельсин, перетерті із цукром","brand":"Рудь","ean":"4823097805299","package_g":350,"reason":"Official card exposes 215.4 kcal/100g but not complete protein/fat/carbohydrate values.","status":"pending_nutrition"},
+  {"name":"Кріп швидкозаморожений","brand":"Рудь","ean":"4823097805534","package_g":50,"reason":"Official card identifies current SKU but does not expose complete nutrition values.","status":"pending_nutrition"}
+]
