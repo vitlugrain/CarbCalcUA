@@ -8,6 +8,8 @@ Repository: `vitlugrain/CarbCalcUA`
 
 Systematic expansion of the product catalog using Zakaz.ua as discovery source and official manufacturer data as the preferred nutrition/EAN verification source. GitHub is the source of truth; chat history is not the persistence layer.
 
+Active category: **Крупи та бобові**. Work is category-first and gap-first: compare current CarbCalc UA coverage before adding retail SKUs, avoid low-value branded duplicates, and isolate conflicting records before runtime integration.
+
 ## APK / runtime checkpoint — #112 VERIFIED STABLE
 
 Android APK workflow **#112 is GREEN / SUCCESS and verified on the user's Android device**.
@@ -72,7 +74,24 @@ Important integration/build commits from 2026-09-13 include:
 
 - `Рудь` — CLOSED.
 - `Danone` — STOPPED / SKIPPED for now. The current Danone discovery was predominantly dairy variants belonging to product groups already represented in the database. Do not spend time exhaustively auditing Danone unless a genuinely new product group or a concrete missing high-value SKU is identified.
-- Next active work: broaden the database systematically from **Zakaz.ua**, prioritizing product groups and Ukrainian retail products that add useful coverage rather than duplicating already well-covered near-identical variants.
+- `Zakaz.ua — Крупи та бобові` — IN PROGRESS and is the active category.
+
+### Крупи та бобові checkpoint
+
+Existing runtime comparison confirms that common generic dry buckwheat, millet, pearl barley, corn grits and couscous are already represented, alongside many cooked cereal variants. These should not be duplicated merely because Zakaz.ua lists another brand or package size.
+
+First verified gap batch:
+- file: `assets/zakaz_grains_legumes_verified_part1.json`
+- commit: `67fef156035931916e608e1eeb7e4feb03c9b8f5`
+- 7 verified retail gaps: red lentils, green lentils, dry chickpeas, dry bulgur, dry semolina, spelt and Artek wheat groats.
+
+Pending review:
+- file: `assets/zakaz_grains_legumes_pending_review.json`
+- commit: `25c83bdb9f6ba9a971ed01affc321753feb029aa`
+- mung beans: conflicting nutrition values across current retail sources for the same EAN/SKU;
+- quinoa mix: identical consumer-facing 200 g product/nutrition appears under multiple EANs and needs package-variant confirmation.
+
+The verified Zakaz grains file is **not yet wired into the canonical runtime merge**. Finish a broader category gap pass first, then integrate the category batch once through the canonical merge and runtime parse test rather than rebuilding after each small discovery batch.
 
 ## Zakaz.ua expansion strategy
 
@@ -91,11 +110,12 @@ For each candidate product/group:
 ## Exact next actions
 
 1. Treat **APK #112 as the current stable Android checkpoint**. Do not use #105 as a runtime baseline.
-2. Preserve the #112 catalog parser/cache behavior while continuing data expansion.
-3. Begin systematic Zakaz.ua category discovery, compare against existing CarbCalc UA coverage, and select the next underrepresented product group/manufacturer.
-4. Add verified products in manageable batches with EAN and nutrition validation; pending records stay out of runtime integration.
-5. Periodically rebuild/test APK after meaningful catalog growth so performance regressions are detected early.
-6. Later, after catalog work is at a convenient checkpoint, fold the already-tested runtime performance patch directly into `lib/main.dart` and remove the build-time patch step without changing behavior.
+2. Continue the **Крупи та бобові** gap map: dry rice variants (basmati, jasmine, parboiled, round/sushi where nutritionally useful), wheat/barley variants, lentils/beans, quinoa/mung and less-common grains.
+3. Do not duplicate already-covered generic staples merely for another brand/package.
+4. Verify new gaps in manageable files; conflicting records remain pending.
+5. After the category pass is broad enough, add the verified Zakaz grains files to the canonical runtime merge, run the full runtime catalog parse test, build one APK checkpoint and device-test search/performance.
+6. Then move to the next Zakaz.ua category, expected to be pasta.
+7. Later, after catalog work is at a convenient checkpoint, fold the already-tested runtime performance patch directly into `lib/main.dart` and remove the build-time patch step without changing behavior.
 
 ## Working rules
 
