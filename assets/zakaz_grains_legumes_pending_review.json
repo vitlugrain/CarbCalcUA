@@ -19,5 +19,16 @@
     "source_a": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-200g-peru--04820168887543/",
     "source_b": "https://zakaz.ua/uk/products/krupa-sto-pudov-200g--04820168884061/",
     "next_action": "Confirm whether EANs are old/new packaging variants of one recipe; then store as one base product with package/barcode variants if appropriate."
+  },
+  {
+    "candidate": "Квасоля Сто Пудів біла 200г",
+    "barcode": "4820168883002",
+    "status": "pending_review",
+    "reason": "Different Zakaz.ua retailer pages show materially different nutrition for the same EAN/SKU.",
+    "source_a": "https://megamarket.zakaz.ua/uk/products/krupa-kvasolia-sto-pudov-200g--04820168883002/",
+    "nutrition_a_100g": {"protein": 22.3, "fat": 1.7, "carbs": 54.5, "calories": 309.0},
+    "source_b": "https://zakaz.ua/uk/products/krupa-kvasolia-sto-pudov-200g--04820168883002/",
+    "nutrition_b_100g": {"protein": 21.0, "fat": 2.0, "carbs": 47.0, "calories": 298.0},
+    "next_action": "Verify current package label or manufacturer product page before runtime inclusion; do not overwrite existing generic white-bean record based on conflicting retail data."
   }
 ]
