@@ -50,51 +50,57 @@ class Product {
 
   bool get nutritionPer100Ml => nutritionBasis.toLowerCase() == '100ml';
 
-  factory Product.fromJson(Map<String, dynamic> j) => Product(
-        id: '${j['id']}',
-        name: _decodeHtmlEntities('${j['name']}'),
-        category: _decodeHtmlEntities('${j['category']}'),
-        carbs: (j['carbs'] as num).toDouble(),
-        protein: ((j['protein'] ?? 0) as num).toDouble(),
-        fat: ((j['fat'] ?? 0) as num).toDouble(),
-        fiber: ((j['fiber'] ?? 0) as num).toDouble(),
-        calories: ((j['calories'] ?? 0) as num).toDouble(),
-        state: j['state'] ?? 'raw',
-        barcode: _stringOrNull(j['barcode']),
-        barcodes: _stringList(j['barcodes']),
-        manufacturer: _decodedStringOrNull(j['manufacturer']),
-        source: _stringOrNull(j['source']),
-        updatedAt: _stringOrNull(j['updatedAt'] ?? j['updated_at']),
-        gramsPerPiece: _numberOrNull(j['gramsPerPiece'] ?? j['grams_per_piece']),
-        gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
-        servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
-        aliases: _stringList(j['aliases']),
-        nutritionBasis: _stringOrNull(j['nutritionBasis'] ?? j['nutrition_basis']) ?? '100g',
-        quantityUnits: _stringList(j['quantityUnits'] ?? j['quantity_units']),
-      );
+  factory Product.fromJson(Map<String, dynamic> j) {
+    final id = '${j['id']}';
+    return Product(
+      id: id,
+      name: _decodeHtmlEntities('${j['name']}'),
+      category: _decodeHtmlEntities('${j['category']}'),
+      carbs: _requiredNumber(j['carbs'], field: 'carbs', productId: id),
+      protein: _numberOrZero(j['protein'], field: 'protein', productId: id),
+      fat: _numberOrZero(j['fat'], field: 'fat', productId: id),
+      fiber: _numberOrZero(j['fiber'], field: 'fiber', productId: id),
+      calories: _numberOrZero(j['calories'], field: 'calories', productId: id),
+      state: j['state'] ?? 'raw',
+      barcode: _stringOrNull(j['barcode']),
+      barcodes: _stringList(j['barcodes']),
+      manufacturer: _decodedStringOrNull(j['manufacturer']),
+      source: _stringOrNull(j['source']),
+      updatedAt: _stringOrNull(j['updatedAt'] ?? j['updated_at']),
+      gramsPerPiece: _numberOrNull(j['gramsPerPiece'] ?? j['grams_per_piece']),
+      gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
+      servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
+      aliases: _stringList(j['aliases']),
+      nutritionBasis: _stringOrNull(j['nutritionBasis'] ?? j['nutrition_basis']) ?? '100g',
+      quantityUnits: _stringList(j['quantityUnits'] ?? j['quantity_units']),
+    );
+  }
 
-  factory Product.fromCustomDb(Map<String, dynamic> j) => Product(
-        id: '${j['id']}',
-        name: _decodeHtmlEntities('${j['name']}'),
-        category: _decodeHtmlEntities('${j['category']}'),
-        carbs: (j['carbs'] as num).toDouble(),
-        protein: ((j['protein'] ?? 0) as num).toDouble(),
-        fat: ((j['fat'] ?? 0) as num).toDouble(),
-        fiber: ((j['fiber'] ?? 0) as num).toDouble(),
-        calories: ((j['calories'] ?? 0) as num).toDouble(),
-        state: j['state'] ?? 'raw',
-        barcode: _stringOrNull(j['barcode']),
-        barcodes: _stringList(j['barcodes']),
-        manufacturer: _decodedStringOrNull(j['manufacturer']),
-        source: _stringOrNull(j['source']),
-        updatedAt: _stringOrNull(j['updated_at'] ?? j['updatedAt']),
-        gramsPerPiece: _numberOrNull(j['grams_per_piece'] ?? j['gramsPerPiece']),
-        gramsPerMl: _numberOrNull(j['grams_per_ml'] ?? j['gramsPerMl']),
-        servingGrams: _numberOrNull(j['serving_grams'] ?? j['servingGrams']),
-        aliases: _stringList(j['aliases']),
-        nutritionBasis: _stringOrNull(j['nutrition_basis'] ?? j['nutritionBasis']) ?? '100g',
-        quantityUnits: _stringList(j['quantity_units'] ?? j['quantityUnits']),
-      );
+  factory Product.fromCustomDb(Map<String, dynamic> j) {
+    final id = '${j['id']}';
+    return Product(
+      id: id,
+      name: _decodeHtmlEntities('${j['name']}'),
+      category: _decodeHtmlEntities('${j['category']}'),
+      carbs: _requiredNumber(j['carbs'], field: 'carbs', productId: id),
+      protein: _numberOrZero(j['protein'], field: 'protein', productId: id),
+      fat: _numberOrZero(j['fat'], field: 'fat', productId: id),
+      fiber: _numberOrZero(j['fiber'], field: 'fiber', productId: id),
+      calories: _numberOrZero(j['calories'], field: 'calories', productId: id),
+      state: j['state'] ?? 'raw',
+      barcode: _stringOrNull(j['barcode']),
+      barcodes: _stringList(j['barcodes']),
+      manufacturer: _decodedStringOrNull(j['manufacturer']),
+      source: _stringOrNull(j['source']),
+      updatedAt: _stringOrNull(j['updated_at'] ?? j['updatedAt']),
+      gramsPerPiece: _numberOrNull(j['grams_per_piece'] ?? j['gramsPerPiece']),
+      gramsPerMl: _numberOrNull(j['grams_per_ml'] ?? j['gramsPerMl']),
+      servingGrams: _numberOrNull(j['serving_grams'] ?? j['servingGrams']),
+      aliases: _stringList(j['aliases']),
+      nutritionBasis: _stringOrNull(j['nutrition_basis'] ?? j['nutritionBasis']) ?? '100g',
+      quantityUnits: _stringList(j['quantity_units'] ?? j['quantityUnits']),
+    );
+  }
 
   static List<String> _stringList(dynamic value) {
     if (value is String) {
@@ -110,7 +116,26 @@ class Product {
   static double? _numberOrNull(dynamic value) {
     if (value == null) return null;
     if (value is num) return value.toDouble();
-    return double.tryParse(value.toString().replaceAll(',', '.'));
+    final normalized = value.toString().trim().replaceAll(',', '.');
+    if (normalized.isEmpty) return null;
+    return double.tryParse(normalized);
+  }
+
+  static double _requiredNumber(dynamic value, {required String field, required String productId}) {
+    final parsed = _numberOrNull(value);
+    if (parsed == null) {
+      throw FormatException('Invalid or missing $field for product $productId: $value');
+    }
+    return parsed;
+  }
+
+  static double _numberOrZero(dynamic value, {required String field, required String productId}) {
+    if (value == null || value.toString().trim().isEmpty) return 0;
+    final parsed = _numberOrNull(value);
+    if (parsed == null) {
+      throw FormatException('Invalid $field for product $productId: $value');
+    }
+    return parsed;
   }
 
   static String _decodeHtmlEntities(String value) {
