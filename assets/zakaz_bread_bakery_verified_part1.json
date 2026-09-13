@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ua_zakaz_borodinsky_bread",
+    "name": "Хліб Бородинський заварний",
+    "aliases": ["бородинський хліб", "хліб бородинський", "заварний бородинський хліб"],
+    "category": "Хліб",
+    "state": "prepared",
+    "carbs": 45.86,
+    "protein": 5.59,
+    "fat": 0.72,
+    "calories": 312.88,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "скибка"],
+    "source": "Zakaz.ua — current retail representative for Borodinsky custard bread",
+    "source_url": "https://megamarket.zakaz.ua/uk/products/khlib--megamarket02136910000000/",
+    "source_ref": "Бородінський заварний; 100 г: Б 5.59, Ж 0.72, В 45.86, 312.88 ккал. Existing runtime catalog had no Borodinsky bread entry.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_burger_bun_classic",
+    "name": "Булочка для бургера, класична",
+    "aliases": ["булочка для гамбургера", "булка для бургера", "burger bun"],
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 58.6,
+    "protein": 7.7,
+    "fat": 2.5,
+    "calories": 270.4,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "шт"],
+    "serving_grams": 50,
+    "source": "Zakaz.ua — representative classic wheat burger bun",
+    "source_url": "https://zakaz.ua/uk/products/burger-300g-ukrayina--04820155742862/",
+    "source_ref": "La Brio Burger 50 г: Б 7.7, Ж 2.5, В 58.6, 270.4 ккал. Cross-check current classic burger buns: Metro Chef 58.0 г В; Хлібо 59.3 г В; Кулиничі 60.3–62.0 г В. Brioche and rye/sesame variants are not collapsed into this generic record.",
+    "verified": true
+  }
+]
