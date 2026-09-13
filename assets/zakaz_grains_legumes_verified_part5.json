@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ua_zakaz_sto_pudiv_colored_beans_200g",
+    "name": "Квасоля кольорова Сто Пудів",
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 54.5,
+    "protein": 22.3,
+    "fat": 1.7,
+    "calories": 309,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "package_g": 200,
+    "barcode": "4820168881114",
+    "brand": "Сто Пудів",
+    "manufacturer": "ТОВ \"Проденерго\"",
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/cereals-beans-kharkiv--04820168881114/",
+    "source_ref": "Matching nutrition and EAN across multiple Zakaz.ua retailer pages for current 200 g SKU",
+    "verified": true
+  }
+]
