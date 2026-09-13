@@ -1,0 +1,67 @@
+{
+  "audit_brand": "Danone",
+  "audit_date": "2026-09-13",
+  "discovery_source": "Zakaz.ua",
+  "verification_note": "Zakaz.ua current retail product cards used for nutrition and EAN; official Danone Ukraine used to confirm current brand/range identity. No missing nutrition values inferred.",
+  "products": [
+    {
+      "id": "danone_yogurt_strawberry_3_2_260g",
+      "brand": "Danone",
+      "manufacturer": "Danone",
+      "name_uk": "Йогурт Danone полуниця 3,2% 260 г",
+      "category": "yogurt",
+      "weight_g": 260,
+      "fat_percent": 3.2,
+      "nutrition_100g": {"calories_kcal": 100.0, "protein_g": 3.3, "fat_g": 3.2, "carbs_g": 14.4},
+      "ean": "4820226168782",
+      "country": "Україна",
+      "source": "https://auchan.zakaz.ua/uk/products/iogurt-danon-260g-ukrayina--04820226168782/",
+      "status": "verified"
+    },
+    {
+      "id": "actimel_wild_berries_1_5_100g",
+      "brand": "Actimel",
+      "manufacturer": "Danone",
+      "name_uk": "Продукт кисломолочний Actimel лісові ягоди 1,5% 100 г",
+      "category": "fermented_milk_drink",
+      "weight_g": 100,
+      "fat_percent": 1.5,
+      "nutrition_100g": {"calories_kcal": 77.0, "protein_g": 2.8, "fat_g": 1.5, "carbs_g": 12.0},
+      "ean": "4820226163114",
+      "country": "Україна",
+      "source": "https://auchan.zakaz.ua/uk/products/iogurt-aktimel-100g--04820226163114/",
+      "official_range_source": "https://danone.ua/milk-product/products/aktimel/",
+      "status": "verified"
+    },
+    {
+      "id": "delissimo_fantasia_salted_caramel_6_8_99g",
+      "brand": "Деліссімо",
+      "manufacturer": "Danone",
+      "name_uk": "Йогурт Деліссімо Fantasia з кульками зі смаком солоної карамелі 6,8% 99 г",
+      "category": "dessert_yogurt",
+      "weight_g": 99,
+      "fat_percent": 6.8,
+      "nutrition_100g": {"calories_kcal": 144.0, "protein_g": 3.4, "fat_g": 7.9, "carbs_g": 14.8},
+      "ean": "4820226167242",
+      "country": "Польща",
+      "source": "https://auchan.zakaz.ua/uk/products/iogurt-delissimo-99g--04820226167242/",
+      "official_range_source": "https://www.danone.ua/milk-product/products/delissimo/?query=all",
+      "status": "verified"
+    },
+    {
+      "id": "danissimo_fantasia_chocolate_balls_6_8_100g",
+      "brand": "Даніссімо",
+      "manufacturer": "Danone",
+      "name_uk": "Йогурт Даніссімо Фантазія шоколадні кульки 6,8% 100 г",
+      "category": "dessert_yogurt",
+      "weight_g": 100,
+      "fat_percent": 6.8,
+      "nutrition_100g": {"calories_kcal": 148.0, "protein_g": 3.1, "fat_g": 8.3, "carbs_g": 15.5},
+      "ean": "5900643030226",
+      "source": "https://zakaz.ua/uk/products/iogurt-danissimo-100g-polshcha--05900643030226/",
+      "official_range_source": "https://www.danone.ua/milk-product/products/delissimo/?query=all",
+      "status": "verified",
+      "audit_note": "Zakaz pages show inconsistent country metadata across store cards; nutrition/EAN are retained, country intentionally omitted pending packaging-level confirmation."
+    }
+  ]
+}
