@@ -6,7 +6,11 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-Active workstream: **Zakaz.ua — Крупи та бобові**, now at the **FINAL GAP CHECK / FINAL DEDUP** stage. GitHub is the source of truth.
+Two catalog workstreams are now intentionally grouped before the next Android APK:
+1. **Крупи та бобові** — FINAL GAP CHECK / FINAL DEDUP;
+2. **Хліб та випічка** — new category pass, GAP REVIEW in progress.
+
+GitHub is the source of truth.
 
 ### Governing catalog rule
 
@@ -14,41 +18,54 @@ Do not collect brands. Brand, package size or EAN alone is not a reason for a ne
 
 ## APK checkpoint
 
-**APK #112 remains VERIFIED / STABLE on the user's Android device.** Workflow run `34754770248`, head `c1d3169450b4d1a9c63e72798ef6582ad5f8ba39`, artifact `CarbCalcUA-0.6.0-build-112`. Add Food, Diary add flow, search and performance were device-verified. The tested performance optimization is still applied at build time by `scripts/apply_runtime_catalog_performance_fix.py`; later it can be folded into `lib/main.dart` without behavior changes.
+**APK #112 remains VERIFIED / STABLE on the user's Android device.** Workflow run `34754770248`, head `c1d3169450b4d1a9c63e72798ef6582ad5f8ba39`, artifact `CarbCalcUA-0.6.0-build-112`.
 
-## Catalog workstreams
+Do not build the next APK yet. First finish grains/legumes final dedup and the bread/bakery gap pass, then integrate both in one checkpoint build.
 
-- Рудь — CLOSED and runtime integrated.
-- Danone — SKIPPED unless a genuinely new product group is discovered.
-- Zakaz.ua / Крупи та бобові — FINAL GAP CHECK; no runtime merge yet.
+## Крупи та бобові
 
-## Крупи та бобові audit
+Prepared candidate batches cover useful gaps across lentils, chickpeas, bulgur, semolina, spelt, wheat groats, selected rice types, barley/yachna, bean subtypes, split peas, dried broad beans, oat groats and adzuki. Conflicting/uncertain records remain pending (mung beans, white-bean conflicting labels, quinoa variants, red/black rice, Poltava №3 and conflicting wheat/yachna profiles).
 
-Prepared generic candidate batches cover the useful gaps discovered across lentils, chickpeas, bulgur, semolina, spelt, wheat groats, selected rice types, barley/yachna, bean subtypes, split peas, dried broad beans, oat groats and adzuki. All batches remain audit inputs until final dedup against `assets/products.json`.
+Brown-rice candidate part3 was corrected to `duplicate_not_for_runtime` because `assets/products.json` already contains generic dry brown rice.
 
-Conflicting/uncertain products remain pending rather than receiving invented values: mung beans, white-bean conflicting labels, quinoa variants, red/black rice, Poltava №3 and conflicting wheat/yachna profiles.
+Zakaz grains/legumes files are still **not wired into the canonical runtime merge**.
 
-### Brown-rice correction
+## Хліб та випічка — new pass
 
-The previously created `assets/zakaz_grains_legumes_verified_part3.json` candidate was a duplicate. Runtime already contains `ua_bonduelle_brown_rice_dry` (`Рис коричневий, сухий`, alias `бурий рис сухий`). Part3 has therefore been converted to `duplicate_not_for_runtime` and must never be included by the canonical merge. Correction commit: `16057941d6aa4ef70092b04848ffe6cf72bcee72`.
+Initial current-database comparison confirms existing generic coverage for:
+- Хліб пшеничний;
+- Хліб житній;
+- Хліб житньо-пшеничний;
+- Хліб гречаний;
+- Хліб цільнозерновий;
+- Хліб з висівками;
+- Лаваш пшеничний;
+- Батон нарізний;
+- Сушки прості;
+- Бублики;
+- Пиріжки печені.
 
-This correction illustrates the mandatory rule: representative branded/Zakaz data may verify a generic food, but must not create a second runtime record when that generic food already exists.
+These must not be re-added merely because Zakaz lists branded versions.
 
-## Runtime integration state
+Initial candidate gaps are recorded in `assets/zakaz_bread_bakery_gap_review.json` (commit `736c51c0e603c905ac833d631ffff2b301350d52`):
+- Бородинський / житній заварний хліб;
+- тостовий хліб subtypes;
+- пшеничний багет;
+- чіабата (currently pending because retail carb values differ materially);
+- булочка для бургера;
+- хлібці/crispbread as a separate group.
 
-The Zakaz grains/legumes audit files are **NOT yet wired into `scripts/merge_verified_catalogs.py`**. Do not claim these products are in the app yet.
+Next bread steps: audit current Zakaz examples across these groups plus common buns/rolls, verify cross-brand macro agreement, and create generic verified entries only where defensible. Sweet pastries/croissants should be treated separately because recipe-specific fat/sugar makes generic collapse less reliable.
 
-Before integration:
-1. compare every candidate in all `zakaz_grains_legumes_verified_part*.json` files against current `assets/products.json`;
-2. exclude duplicate/held/pending records, including brown-rice part3 and any yachna/wheat candidate whose subtype is not defensible;
-3. add only surviving generic gaps to the canonical merge;
-4. run the full runtime catalog parse validation/test gate;
-5. build one Android APK checkpoint and have the user test search/Add Food/performance;
-6. only after a successful device test mark Крупи та бобові CLOSED.
+## Runtime integration plan before next APK
 
-## Next category
-
-After grains/legumes integration is device-verified, move to **Макаронні вироби**. Use the same category-first, gap-first, cross-brand generic nutritional dedup method instead of SKU-by-SKU importing.
+1. Finish grains/legumes final dedup against `assets/products.json`.
+2. Finish a practical bread/bakery gap pass and isolate conflicts.
+3. Add only surviving generic gaps from both categories to the canonical merge.
+4. Run full runtime catalog parse validation/tests.
+5. Build one Android APK checkpoint.
+6. User device-tests Add Food, search, Diary add flow and performance.
+7. If stable, close both category checkpoints and continue to the next category (likely pasta).
 
 ## Working rules
 
