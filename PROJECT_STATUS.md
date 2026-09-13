@@ -8,6 +8,31 @@ Repository: `vitlugrain/CarbCalcUA`
 
 Systematic expansion of the product catalog using Zakaz.ua as discovery source and official manufacturer data as the preferred nutrition/EAN verification source. GitHub is the source of truth; chat history is not the persistence layer.
 
+## APK / runtime checkpoint — #112 VERIFIED STABLE
+
+Android APK workflow **#112 is GREEN / SUCCESS and verified on the user's Android device**.
+- Workflow run ID: `34754770248`
+- Head commit: `c1d3169450b4d1a9c63e72798ef6582ad5f8ba39`
+- Artifact: `CarbCalcUA-0.6.0-build-112`
+- Installed successfully over the previous build without removing local app data.
+- User verified: Add Food opens without hanging; adding works both from the Add menu and from Diary; search works for old and newly added products; performance is normal.
+
+### #105 regression and fix
+
+APK #105 was green in CI but hung on the Add Food screen with a white screen and spinner. Investigation found two issues:
+1. verified catalog records can use audit nutrition fields such as `carbs_100g`, `protein_100g`, `fat_100g`, `kcal_100g`, while the older runtime parser expected `carbs`, `protein`, `fat`, `calories`; this could make a single newly merged record abort catalog loading;
+2. the large catalog was repeatedly loaded/parsing from `FutureBuilder` during rebuilds, causing increasing slowdown as the database grew.
+
+Fixes completed before #112:
+- runtime Product parser accepts the verified/audit nutrition field variants safely;
+- full runtime catalog parsing is covered by CI tests;
+- base product catalog is cached for the app session;
+- the three asset catalogs are loaded in parallel;
+- Add Food keeps one product-loading Future instead of restarting full loading on each rebuild;
+- Add Food now displays a concrete load error and retry action instead of an endless spinner.
+
+The performance optimization used by APK #112 is currently applied by `scripts/apply_runtime_catalog_performance_fix.py` in the Android APK workflow. It has been device-verified. A later cleanup should fold the same tested code directly into `lib/main.dart` and then remove the build-time patch step; do not change behavior during that cleanup.
+
 ## TM Рудь — CLOSED
 
 The current Zakaz.ua-driven TM Рудь audit is complete. Covered frozen vegetables/berries, ice cream/frozen desserts, dairy/butter/glazed curds, bakery/desserts and current frozen semi-finished retail gaps. Products officially marked `тимчасово не виробляється` are excluded. Incomplete/ambiguous records remain in pending-review files; missing nutrition values must never be invented.
@@ -23,59 +48,54 @@ Verified source files include:
 
 Pending files are intentionally excluded from runtime integration.
 
-Important final Rud commits:
-- `7ca63221cd18e6057724e401bfa3826497802316` — final dessert/bakery retail gaps
-- `af854cbe26a5419deb1946da01cc6bb0f3a5e053` — final frozen-semis batch
+## Runtime catalog integration
 
-Preserved audit flags include unusual/ambiguous manufacturer EAN or nutrition/weight cases; do not silently normalize them without re-verification.
+The app consumes `assets/products.json` with runtime fields such as `carbs`, `protein`, `fat`, `calories`, `barcode`. Audit files can use several source schemas, so direct concatenation is unsafe.
 
-## Runtime catalog integration — COMPLETED FOR APK BUILD
-
-The app consumes `assets/products.json` with runtime fields such as `carbs`, `protein`, `fat`, `calories`, `barcode`. Rud audit files use several source schemas, so direct concatenation is unsafe.
-
-Integration path:
+Integration path includes:
+- `scripts/merge_verified_catalogs.py`
 - `scripts/merge_rud_catalog.py`
-- `.github/workflows/rud-catalog-merge.yml`
-- `scripts/merge_verified_catalogs.py` invokes the Rud merge automatically.
-- `.github/workflows/android-apk.yml` builds `dev-large-update` and runs the verified catalog merges before APK creation.
+- `scripts/build_ua_branded_db.py`
+- `.github/workflows/android-apk.yml`
+- runtime catalog validation tests before APK creation.
 
-Key integration/build fixes made on 2026-09-13:
+Important integration/build commits from 2026-09-13 include:
 - `7cc0cdde7f4387706eb30f0ba5a70a3ddbf64eec` — safe Rud runtime merge script.
-- `4957a9cf5c3f597f8bbb08659a45c6b24db58caa` — Rud catalog merge workflow.
-- `757fcc087f66a77cae13cdc4b599ef2516ae8ca0` — dev APK build with Rud integration.
-- `0f423080b48b84157c1f06aa8ef86d9059ee206d` — Rud integration made part of canonical verified merge.
-- `a13c79c08eaf5aa1caac7852f73f6771cf624d16` — stale GI enrichment targets no longer abort canonical merge; 21 stale IDs are skipped with warning.
-- `0d42d448a3909bd3048cd88ad8eac4aec5dde39a` — Rud loader accepts alternate verified field names (`name_uk`, `barcode`, etc.).
-- `74a36f0e2c55eb7ca48e2416267db4559427f513` — Rud loader accepts wrapped verified files (`products`/`items`/`records`).
-- `644a9f1963baeb62b193e44106a138c2719653f7` — batch Rud deduplication/normalization, including nested `nutrition_100g`; equivalent duplicate IDs/EANs are collapsed in one pass instead of failing one-by-one.
+- `0f423080b48b84157c1f06aa8ef86d9059ee206d` — Rud integration in canonical verified merge.
+- `644a9f1963baeb62b193e44106a138c2719653f7` — batch Rud deduplication/normalization.
+- `642092f74a87968ceb2274e789e1d12a9ca799d8` — safer runtime numeric parsing diagnostics.
+- `25c8e6b6b9079f702a87eef32688ef3d5e7f7b98` — runtime support for verified catalog nutrition schemas and full-catalog parsing protection.
+- `9e975e2374ff5572e72f26e30c91ba4f31388fb6` — runtime catalog performance patch script.
+- `c1d3169450b4d1a9c63e72798ef6582ad5f8ba39` — APK workflow applies the device-verified catalog cache/performance fix; APK #112.
 
-### APK checkpoint
+## Catalog audit direction
 
-Android APK workflow **#105 is GREEN / SUCCESS**.
-- Workflow run ID: `34748087483`
-- Head commit: `644a9f1963baeb62b193e44106a138c2719653f7`
-- This is the first confirmed successful APK build after the Sep 11–13 Rud integration/fix cycle.
-
-Previous red runs in this cycle were diagnostic and fixed progressively: stale GI targets, alternate Rud field names, wrapped JSON catalog files, and conflicting/duplicate Rud EAN representations.
-
-Note: the separate `Merge Rud verified catalog` workflow triggered at the same head may have its own persistence/commit behavior and is not equivalent to APK success. APK #105 itself is confirmed green and proves the build-time merge path succeeds.
-
-## Catalog audit registry
-
-`CATALOG_AUDIT_STATUS.md` is the durable brand-level registry.
 - `Рудь` — CLOSED.
-- `Danone` — IN PROGRESS and is the next active manufacturer.
+- `Danone` — STOPPED / SKIPPED for now. The current Danone discovery was predominantly dairy variants belonging to product groups already represented in the database. Do not spend time exhaustively auditing Danone unless a genuinely new product group or a concrete missing high-value SKU is identified.
+- Next active work: broaden the database systematically from **Zakaz.ua**, prioritizing product groups and Ukrainian retail products that add useful coverage rather than duplicating already well-covered near-identical variants.
 
-Danone scope discovered under the Zakaz.ua Danone filter includes yogurt, Greek-style yogurt, milk drinks/cocktails, ayran/fermented drinks, desserts and child-oriented dairy sub-brands. Preserve consumer sub-brand identity (including Danonino, Ростишка, Actimel, Даніссімо) while retaining manufacturer relationship; do not flatten every consumer-facing brand name to Danone. At the selection checkpoint Zakaz.ua Kyiv exposed 26 products.
+## Zakaz.ua expansion strategy
 
-## Exact next actions for a new chat
+Use Zakaz.ua for current retail discovery. Work category-first and gap-first rather than blindly importing every SKU.
 
-1. Treat APK #105 as the successful build checkpoint. If needed, fetch its artifact and install/test it on Android.
-2. Test several representative TM Рудь products by both name and barcode, especially final-batch items such as DOCHI, croissants, Pelmeni 100%, Eskimos dumplings and pizza base.
-3. If runtime testing is satisfactory, do not reopen TM Рудь unless a concrete defect/gap is found.
-4. Resume **Danone** from `CATALOG_AUDIT_STATUS.md`: Zakaz.ua discovery → category/SKU inventory → official nutrition/EAN verification → verified batch files → pending isolation → dedup → final gap check.
-5. Commit each significant Danone batch to `dev-large-update`, update `CATALOG_AUDIT_STATUS.md`, then update this file after major checkpoints.
-6. After Danone is CLOSED, select the next Zakaz.ua manufacturer and repeat the same brand-first process.
+For each candidate product/group:
+1. check whether the product/group is already represented in the runtime/audit catalog;
+2. prefer new product groups and high-value/common Ukrainian retail items;
+3. capture exact consumer-facing name/brand and EAN/barcode where available;
+4. verify nutrition from the official manufacturer when available; otherwise retain a clearly identified current retail source;
+5. never invent missing protein/fat/carbohydrate values;
+6. isolate incomplete, conflicting or uncertain records in pending review;
+7. deduplicate same recipe/nutrition across package sizes where the schema permits;
+8. commit significant verified batches to `dev-large-update` and keep audit/status files current.
+
+## Exact next actions
+
+1. Treat **APK #112 as the current stable Android checkpoint**. Do not use #105 as a runtime baseline.
+2. Preserve the #112 catalog parser/cache behavior while continuing data expansion.
+3. Begin systematic Zakaz.ua category discovery, compare against existing CarbCalc UA coverage, and select the next underrepresented product group/manufacturer.
+4. Add verified products in manageable batches with EAN and nutrition validation; pending records stay out of runtime integration.
+5. Periodically rebuild/test APK after meaningful catalog growth so performance regressions are detected early.
+6. Later, after catalog work is at a convenient checkpoint, fold the already-tested runtime performance patch directly into `lib/main.dart` and remove the build-time patch step without changing behavior.
 
 ## Working rules
 
@@ -88,7 +108,8 @@ Danone scope discovered under the Zakaz.ua Danone filter includes yogurt, Greek-
 - Active audit branch: `dev-large-update`.
 - Do not perform catalog-audit work on `main`.
 - Preserve existing app behavior and signing/update continuity while expanding catalog data.
+- GitHub is the durable source of truth for audit state.
 
 ## Chat continuity rule
 
-This file plus `CATALOG_AUDIT_STATUS.md` is the canonical handoff point for the next ChatGPT conversation. On a new chat, ask ChatGPT to read both files from branch `dev-large-update` and continue from the `Exact next actions` section. Do not rely on reconstructing the project from chat memory alone.
+This file plus `CATALOG_AUDIT_STATUS.md` is the canonical handoff point for the next ChatGPT conversation. On a new chat, read both files from branch `dev-large-update` and continue from the `Exact next actions` section.
