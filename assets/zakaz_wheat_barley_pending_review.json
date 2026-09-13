@@ -1,0 +1,42 @@
+[
+  {
+    "candidate": "Крупа пшенична Полтавська, суха",
+    "status": "pending_review",
+    "reason": "Current Zakaz.ua listings show materially different carbohydrate values for products sold as Poltavska wheat groats; do not choose one value arbitrarily.",
+    "examples": [
+      {
+        "name": "Крупа пшенична Полтавська №4 Козацький Стандарт",
+        "nutrition_100g": {"protein": 11.5, "fat": 1.3, "carbs": 62.1, "calories": 316.0},
+        "source_url": "https://ideal.zakaz.ua/uk/products/krupa-kozatskii-standart-900g--04820186250114/"
+      },
+      {
+        "name": "Крупа пшенична Полтавка Крупторг",
+        "nutrition_100g": {"protein": 11.0, "fat": 1.3, "carbs": 62.5, "calories": 316.0},
+        "source_url": "https://zakaz.ua/uk/products/krupa-kruptorg-ukrayina--04820128840267/"
+      }
+    ],
+    "next_action": "Verify Poltavska No.2/No.3/No.4 grading and current manufacturer labels before deciding whether one generic entry or separate grades are justified."
+  },
+  {
+    "candidate": "Крупа ячна, суха",
+    "status": "pending_review",
+    "reason": "Zakaz.ua has two stable but materially different nutrition clusters for yachna/barley groats, so the already prepared generic value requires grade/fraction verification before runtime integration.",
+    "clusters": [
+      {
+        "nutrition_100g": {"protein": 10.0, "fat": 1.3, "carbs": 65.2, "calories": 320.0},
+        "examples": ["Козацький Стандарт ячнева", "Крупторг ячна №3"]
+      },
+      {
+        "nutrition_100g": {"protein": 10.4, "fat": 1.3, "carbs": 71.7, "calories": 322.0},
+        "examples": ["Екород ячна органічна", "Marka Promo ячна"]
+      }
+    ],
+    "source_urls": [
+      "https://ideal.zakaz.ua/uk/products/krupa-kozatskii-standart-900g--04820186250152/",
+      "https://zakaz.ua/uk/products/krupa-kruptorg-5000g-ukrayina--04820128840281/",
+      "https://novus.zakaz.ua/uk/products/krupa-ekorod-400g--04820153600058/",
+      "https://novus.zakaz.ua/uk/products/krupa-marka-promo-800g--04820153260764/"
+    ],
+    "next_action": "Resolve whether fraction/grade explains the clusters; do not integrate a generic yachna value until resolved."
+  }
+]
