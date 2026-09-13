@@ -3,57 +3,38 @@
 Updated: 2026-09-13
 Branch: `dev-large-update`
 
-This is the durable registry for the Zakaz.ua catalog audit. GitHub is the source of truth; chat history is not the persistence layer.
+GitHub is the source of truth. Workflow: `Zakaz.ua discovery → existing-catalog gap check → nutrition verification → pending review → cross-brand generic dedup → runtime integration → parse test`.
 
-## Workflow
+## Governing dedup rule
 
-`Zakaz.ua discovery → category/group gap check → brand/SKU selection → EAN + nutrition verification → pending review for uncertainty → dedup → runtime integration → final gap check`
+Brand/package/EAN alone never creates a new food. Compare food type, preparation/state and nutrition per 100 g. If an existing generic/base food is nutritionally equivalent or practically equivalent, do not add a branded duplicate. Small label differences caused by rounding/raw-material variation are not enough. Add a new runtime food only for a genuine food/state gap or a nutritionally/culinarily meaningful subtype.
 
-Verification priority: official manufacturer source when available; Zakaz.ua is the discovery/current-retail source. Never infer missing nutrition values.
+## Workstream registry
 
-## Brand / workstream registry
+| Workstream | Status | Checkpoint |
+|---|---|---|
+| Рудь | CLOSED | Runtime integrated and device-tested. |
+| Danone | SKIPPED | Predominantly dairy groups already covered; reopen only for a genuinely new group. |
+| Zakaz.ua — крупи та бобові | FINAL GAP CHECK | Generic gap batches prepared; conflicts isolated; no Zakaz grains runtime merge yet. |
 
-| Brand / workstream | Status | Scope / categories | Last checkpoint | Notes |
-|---|---|---|---|---|
-| Рудь | CLOSED | ice cream; frozen vegetables/berries; dairy; butter; glazed curds; frozen semi-finished; dough/bakery; desserts | 2026-09-12 | Completed final audit; unresolved/incomplete records retained in pending/audit files rather than invented. |
-| Danone | SKIPPED | predominantly yogurt/dairy variants already represented as product groups | 2026-09-13 | Partial discovery exists, but exhaustive audit stopped by project decision. Reopen only for a genuinely new product group or a concrete high-value gap. |
-| Zakaz.ua category expansion | IN PROGRESS | category-first/gap-first discovery across Ukrainian retail | 2026-09-13 | New active workstream after stable APK #112. Prioritize underrepresented product groups and common products; avoid low-value duplication of near-identical SKUs. |
-| Zakaz.ua — крупи та бобові | IN PROGRESS | dry cereals, rice variants, legumes and pseudocereals | 2026-09-13 | Existing runtime coverage checked before additions. Part 1 verified gaps committed in `assets/zakaz_grains_legumes_verified_part1.json`; ambiguous mash/quinoa SKU data isolated in `assets/zakaz_grains_legumes_pending_review.json`. Runtime merge deferred until the category gap pass is broader. |
+## Крупи та бобові checkpoint
 
-## Current Zakaz.ua discovery priorities
+Verified/generic audit batches currently include: red and green lentils, dry chickpeas, dry bulgur, dry semolina, spelt, Artek wheat groats, parboiled rice, sushi rice, barley/yachna candidate, Bandolia/coloured bean candidates, green split peas, dried Vicia faba, Poltava wheat variants, whole oat groats and adzuki beans. Each candidate must still pass final runtime dedup before canonical merge.
 
-### Крупи та бобові — active
+Important correction: `assets/zakaz_grains_legumes_verified_part3.json` is now explicitly `duplicate_not_for_runtime` because `assets/products.json` already contains `ua_bonduelle_brown_rice_dry` (`Рис коричневий, сухий`, alias `бурий рис сухий`). Brown rice must therefore not be added again.
 
-Existing catalog already covers core dry buckwheat, millet, pearl barley, corn grits and couscous plus many cooked variants. Do not add ordinary branded duplicates solely for package/brand changes when nutrition is effectively generic.
+Pending/held groups include mung beans, white-bean conflicting labels, quinoa variants, red/black rice, Poltava №3 and wheat/yachna profiles where current retail labels disagree materially. Do not select an arbitrary brand value for these.
 
-Current high-value dry-product gaps include lentils, chickpeas, dry bulgur, dry semolina, wheat groats/Artek, spelt, mung beans and selected dry rice/pseudocereal variants. The first verified gap batch contains red lentils, green lentils, chickpeas, bulgur, semolina, spelt and Artek wheat groats. Mung bean nutrition conflicts across retail sources and quinoa currently has ambiguous multiple EAN representations, so both remain pending until clarified.
+Existing staples such as ordinary dry buckwheat, millet, pearl barley, corn grits, couscous, soybeans and brown rice are not to be duplicated by another trademark.
 
-Next: complete the category-wide gap map (rice variants, barley/wheat types, beans/lentils, quinoa/mung and less-common grains), then integrate verified files through the canonical runtime merge with parse tests as a gate.
+### Runtime state
 
-### Later category families
+Zakaz grains/legumes files are **not yet included in `scripts/merge_verified_catalogs.py`**. APK #112 remains the stable device checkpoint. Next gate: final dedup of every verified batch against `assets/products.json`; only surviving generic gaps enter the canonical merge, followed by full runtime parse validation and one APK checkpoint.
 
-- pasta;
-- breakfast cereals/flakes;
-- instant foods;
-- baking ingredients;
-- ready/instant foods where recipe-specific carbohydrate values matter;
-- meat products and delicatessen where added starch/sugar can make generic meat values inaccurate;
-- ready meals and semi-finished products with manufacturer nutrition;
-- other packaged categories discovered on Zakaz.ua that are not yet represented well in CarbCalc UA.
+### Next category
 
-## Status definitions
-
-- `NOT STARTED` — identified but not audited.
-- `IN PROGRESS` — active audit; partial verified batches may exist.
-- `PENDING` — main pass complete but unresolved data prevents closure.
-- `SKIPPED` — intentionally not exhaustively audited because it adds little new group coverage; can be reopened for a concrete gap.
-- `CLOSED` — current Zakaz.ua/official-source pass completed, duplicates reviewed, uncertainty isolated in pending/audit records.
+After successful grains/legumes runtime integration and device test, continue with **Макаронні вироби**, using the same generic nutritional dedup rule.
 
 ## Persistence rule
 
-After every significant verified batch:
-1. Commit the data file to `dev-large-update`.
-2. Update this registry with the category/brand checkpoint.
-3. Update `PROJECT_STATUS.md` after major checkpoints.
-
-If a chat reaches its limit, resume from `PROJECT_STATUS.md` plus this registry, not from memory alone.
+Commit significant audit changes to `dev-large-update`, keep this registry and `PROJECT_STATUS.md` current, and never infer missing nutrition values.
