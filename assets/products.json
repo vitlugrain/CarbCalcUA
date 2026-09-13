@@ -16969,5 +16969,970 @@
     "manufacturer": "Рудь",
     "nutritionBasis": "100g",
     "barcode": "4823097812778"
+  },
+  {
+    "id": "ua_zakaz_red_lentils_raw",
+    "name": "Сочевиця червона, суха",
+    "aliases": [
+      "сочевиця червона",
+      "червона сочевиця"
+    ],
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 46.3,
+    "protein": 24.0,
+    "fat": 1.5,
+    "calories": 295.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Сто Пудів / Zakaz.ua",
+    "source_url": "https://100pudiv.in.ua/shop/sochevitsya-chervona_-350g-p1132",
+    "retail_source_url": "https://megamarket.zakaz.ua/uk/products/krupa-chechevitsia-sto-pudov-350g--04820168880018/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 24.0, Ж 1.5, В 46.3, 295 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_green_lentils_raw",
+    "name": "Сочевиця зелена, суха",
+    "aliases": [
+      "сочевиця зелена",
+      "зелена сочевиця"
+    ],
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 46.3,
+    "protein": 24.0,
+    "fat": 1.5,
+    "calories": 295.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-350g--04820168880056/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 24.0, Ж 1.5, В 46.3, 295 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_chickpeas_raw",
+    "name": "Нут, сухий",
+    "aliases": [
+      "нут сухий",
+      "турецький горох сухий"
+    ],
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 54.2,
+    "protein": 20.1,
+    "fat": 5.0,
+    "calories": 328.6,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Сто Пудів / Zakaz.ua",
+    "source_url": "https://100pudiv.in.ua/shop/nut_-0_2-kg-p106",
+    "retail_source_url": "https://zakaz.ua/uk/products/krupa-sto-pudov-200g--04820168881701/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 20.1, Ж 5.0, В 54.2, 328.6 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_bulgur_raw",
+    "name": "Булгур, сухий",
+    "aliases": [
+      "булгур сухий",
+      "крупа булгур суха"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 75.9,
+    "protein": 12.29,
+    "fat": 1.33,
+    "calories": 342.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-1000g-ukrayina--04820235610463/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 12.29, Ж 1.33, В 75.90, 342 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_semolina_raw",
+    "name": "Крупа манна, суха",
+    "aliases": [
+      "манка суха",
+      "манна крупа суха"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 74.0,
+    "protein": 8.7,
+    "fat": 1.3,
+    "calories": 348.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudiv-700g-ukrayina--04820168880117/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 8.7, Ж 1.3, В 74.0, 348 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_spelt_raw",
+    "name": "Спельта, суха",
+    "aliases": [
+      "спельта суха",
+      "антична пшениця"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 70.0,
+    "protein": 15.0,
+    "fat": 2.4,
+    "calories": 338.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/krupa-sto-pudov-500g-ukrayina--04820235615154/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 15.0, Ж 2.4, В 70.0, 338 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_wheat_artek_raw",
+    "name": "Крупа пшенична Артек, суха",
+    "aliases": [
+      "артек сухий",
+      "пшенична крупа артек"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 71.8,
+    "protein": 12.5,
+    "fat": 0.7,
+    "calories": 326.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-ashan-280g--04823090118884/",
+    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 12.5, Ж 0.7, В 71.8, 326 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_parboiled_rice_raw",
+    "name": "Рис пропарений, сухий",
+    "aliases": [
+      "рис пропарений",
+      "пропарений рис сухий",
+      "рис довгозернистий пропарений"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 77.7,
+    "protein": 7.0,
+    "fat": 0.4,
+    "calories": 342.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua — representative unbranded retail product",
+    "source_ref": "Generic entry; representative current retail nutrition Б 7.0, Ж 0.4, В 77.7, 342 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_sushi_rice_raw",
+    "name": "Рис для суші, сухий",
+    "aliases": [
+      "рис суші сухий",
+      "рис для суші",
+      "рис круглозернистий для суші"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 74.0,
+    "protein": 7.0,
+    "fat": 1.0,
+    "calories": 333.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua — representative retail product",
+    "source_ref": "Generic entry; representative sushi rice nutrition Б 7.0, Ж 1.0, В 74.0, 333 kcal.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_sto_pudiv_bandolya_beans_200g",
+    "name": "Квасоля Бандоля Сто Пудів",
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 54.5,
+    "protein": 22.3,
+    "fat": 1.7,
+    "calories": 309.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "package_g": 200,
+    "barcode": "4820168882098",
+    "brand": "Сто Пудів",
+    "manufacturer": "ТОВ \"Проденерго\"",
+    "source": "Сто Пудів + Zakaz.ua",
+    "source_url": "https://100pudiv.in.ua/shop/fasol-_bandolya_-0_2-kg-p208",
+    "source_ref": "Official nutrition per 100 g; retail identity/EAN confirmed by Zakaz.ua product 4820168882098",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_sto_pudiv_dried_fava_200g",
+    "name": "Боби Vicia Faba сушені Сто Пудів",
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 33.26,
+    "protein": 26.1,
+    "fat": 1.53,
+    "calories": 341.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "package_g": 200,
+    "barcode": "4820168883682",
+    "brand": "Сто Пудів",
+    "manufacturer": "ТОВ \"Проденерго\"",
+    "source": "Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-bobovi-sto-pudov-200g--04820168883682/",
+    "source_ref": "Zakaz.ua nutrition and EAN for current 200 g dried Vicia Faba SKU",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_wheat_poltava2_raw",
+    "name": "Крупа пшенична Полтавська №2, суха",
+    "aliases": [
+      "Полтавська №2",
+      "пшенична крупа Полтавська 2",
+      "пшенична крупа №2"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs_100g": 70.6,
+    "protein_100g": 12.7,
+    "fat_100g": 1.1,
+    "kcal_100g": 325.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua / Сто Пудів representative SKU",
+    "source_url": "https://zakaz.ua/uk/products/krupa-sto-pudiv-700g-ukrayina--04820168880735/",
+    "source_note": "Generic food entry. Representative retail label: wheat groats Poltavska No.2 from hard spring wheat. Same nutrition confirmed on current 700 g and 800 g Sto Pudiv listings and Silpo: P 12.7, F 1.1, C 70.6 per 100 g. Brand/package is verification evidence only, not runtime identity.",
+    "verified": true,
+    "carbs": 70.6,
+    "protein": 12.7,
+    "fat": 1.1,
+    "calories": 325.0
+  },
+  {
+    "id": "ua_zakaz_wheat_poltava4_raw",
+    "name": "Крупа пшенична Полтавська №4, суха",
+    "aliases": [
+      "Полтавська №4",
+      "пшенична крупа Полтавська 4",
+      "пшенична крупа №4"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs_100g": 62.1,
+    "protein_100g": 11.5,
+    "fat_100g": 1.3,
+    "kcal_100g": 316.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua / representative Poltavska No.4 SKU",
+    "source_url": "https://zakaz.ua/uk/products/krupa-kozatskii-standart-900g--04820186250114/",
+    "source_note": "Generic food entry. Current Zakaz composition explicitly identifies Poltavska No.4; nutrition P 11.5, F 1.3, C 62.1, 316 kcal per 100 g. This is materially different from Poltavska No.2 and Artek, so retained as a separate food type.",
+    "verified": true,
+    "carbs": 62.1,
+    "protein": 11.5,
+    "fat": 1.3,
+    "calories": 316.0
+  },
+  {
+    "id": "ua_zakaz_whole_oat_groats_raw",
+    "name": "Крупа вівсяна цільнозернова, суха",
+    "aliases": [
+      "вівсяна крупа цільнозернова",
+      "овес лущений",
+      "вівсяна крупа неподрібнена"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs_100g": 60.0,
+    "protein_100g": 12.0,
+    "fat_100g": 6.1,
+    "kcal_100g": 358.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Козуб Продукт / ТОВ Фірма Діамант ЛТД + Zakaz.ua",
+    "source_url": "https://diamantltd.com.ua/krupa-vivsjana-cilnozernova-600/",
+    "retail_source_url": "https://zakaz.ua/uk/products/krupa-kozub-produkt-600g--04820094537604/",
+    "source_note": "Generic food entry for processed whole oat groats (hulled, uncrushed), not raw agricultural oat grain and not flakes. Manufacturer confirms whole oat groats product and 358 kcal; current Zakaz label supplies P 12.0, F 6.1, C 60.0 per 100 g. Brand/package is verification evidence only.",
+    "verified": true,
+    "carbs": 60.0,
+    "protein": 12.0,
+    "fat": 6.1,
+    "calories": 358.0
+  },
+  {
+    "id": "ua_zakaz_adzuki_beans_raw",
+    "name": "Квасоля адзукі, суха",
+    "aliases": [
+      "квасоля адзукі",
+      "адзукі",
+      "боби адзукі"
+    ],
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 62.9,
+    "protein": 19.9,
+    "fat": 0.5,
+    "calories": 329.0,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — representative retail product",
+    "source_url": "https://winetime.zakaz.ua/uk/products/krupa--04820153600515/",
+    "source_ref": "Екород квасоля Адзукі органічна 400 г; retail label used only as verification source. Generic food identity retained; brand/package/EAN omitted to avoid branded duplication.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_borodinsky_bread",
+    "name": "Хліб Бородинський заварний",
+    "aliases": [
+      "бородинський хліб",
+      "хліб бородинський",
+      "заварний бородинський хліб"
+    ],
+    "category": "Хліб",
+    "state": "prepared",
+    "carbs": 45.86,
+    "protein": 5.59,
+    "fat": 0.72,
+    "calories": 312.88,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "скибка"
+    ],
+    "source": "Zakaz.ua — current retail representative for Borodinsky custard bread",
+    "source_url": "https://megamarket.zakaz.ua/uk/products/khlib--megamarket02136910000000/",
+    "source_ref": "Бородінський заварний; 100 г: Б 5.59, Ж 0.72, В 45.86, 312.88 ккал. Existing runtime catalog had no Borodinsky bread entry.",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_burger_bun_classic",
+    "name": "Булочка для бургера, класична",
+    "aliases": [
+      "булочка для гамбургера",
+      "булка для бургера",
+      "burger bun"
+    ],
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 58.6,
+    "protein": 7.7,
+    "fat": 2.5,
+    "calories": 270.4,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 50,
+    "source": "Zakaz.ua — representative classic wheat burger bun",
+    "source_url": "https://zakaz.ua/uk/products/burger-300g-ukrayina--04820155742862/",
+    "source_ref": "La Brio Burger 50 г: Б 7.7, Ж 2.5, В 58.6, 270.4 ккал. Cross-check current classic burger buns: Metro Chef 58.0 г В; Хлібо 59.3 г В; Кулиничі 60.3–62.0 г В. Brioche and rye/sesame variants are not collapsed into this generic record.",
+    "verified": true
+  },
+  {
+    "id": "ua_kyivkhlib_big_toast_original_500",
+    "name": "Хліб тостовий Big Toast Original Київхліб",
+    "category": "Хліб",
+    "state": "prepared",
+    "brand": "Київхліб",
+    "package_grams": 500,
+    "ean": "4820212491368",
+    "nutrition_100g": {
+      "protein": 8.4,
+      "fat": 4.9,
+      "carbs": 53.8,
+      "calories": 294.0
+    },
+    "aliases": [
+      "Big Toast Original",
+      "Київхліб Big Toast",
+      "тостовий хліб Київхліб"
+    ],
+    "source": "Zakaz.ua / Auchan current retail card",
+    "source_url": "https://auchan.zakaz.ua/uk/products/khlib-kiyivkhlib-500g-ukrayina--04820212491368/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 53.8,
+    "protein": 8.4,
+    "fat": 4.9,
+    "calories": 294.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_metrochef_maxi_toast_500",
+    "name": "Хліб тостовий Maxi Metro Chef",
+    "category": "Хліб",
+    "state": "prepared",
+    "brand": "Metro Chef",
+    "package_grams": 500,
+    "ean": "4337182070597",
+    "serving_grams": 50,
+    "nutrition_100g": {
+      "protein": 8.0,
+      "fat": 3.4,
+      "carbs": 49.7,
+      "calories": 267.0
+    },
+    "aliases": [
+      "Metro Chef максі тостовий",
+      "Metro Chef Maxi Toast",
+      "тостовий хліб Metro Chef"
+    ],
+    "source": "Zakaz.ua / METRO current retail card",
+    "source_url": "https://metro.zakaz.ua/uk/products/metro-shef--04337182070597/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 49.7,
+    "protein": 8.0,
+    "fat": 3.4,
+    "calories": 267.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_kyivkhlib_super_toast_cereal_350",
+    "name": "Хліб Супер Тост злаковий Київхліб",
+    "category": "Хліб",
+    "state": "prepared",
+    "brand": "Київхліб",
+    "package_grams": 350,
+    "ean": "4820212490293",
+    "nutrition_100g": {
+      "protein": 10.1,
+      "fat": 7.0,
+      "carbs": 54.3,
+      "calories": 320.0
+    },
+    "aliases": [
+      "Київхліб Супер Тост",
+      "Супер Тост злаковий",
+      "злаковий тостовий хліб Київхліб"
+    ],
+    "source": "Zakaz.ua / METRO + Auchan current retail cards",
+    "source_url": "https://metro.zakaz.ua/uk/products/khlib-kiyivkhlib-350g--04820212490293/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 54.3,
+    "protein": 10.1,
+    "fat": 7.0,
+    "calories": 320.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_kulynychi_european_toast_grain_350",
+    "name": "Хліб Європейський Тостовий зерновий Кулиничі",
+    "category": "Хліб",
+    "state": "prepared",
+    "brand": "Кулиничі",
+    "package_grams": 350,
+    "ean": "4820174301804",
+    "nutrition_100g": {
+      "protein": 9.1,
+      "fat": 5.6,
+      "carbs": 49.8,
+      "calories": 278.0
+    },
+    "aliases": [
+      "Кулиничі Європейський Тостовий",
+      "Європейський Тостовий зерновий",
+      "зерновий тостовий хліб Кулиничі"
+    ],
+    "source": "Zakaz.ua / NOVUS current retail card",
+    "source_url": "https://novus.zakaz.ua/uk/products/khlib-kulinichi-350g--04820174301804/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 49.8,
+    "protein": 9.1,
+    "fat": 5.6,
+    "calories": 278.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_galleti_rye_crispbread_100",
+    "name": "Хлібці хрусткі житні Galleti",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "brand": "Galleti",
+    "package_grams": 100,
+    "ean": "4820149520193",
+    "nutrition_100g": {
+      "protein": 10.14,
+      "fat": 2.1,
+      "carbs": 60.0,
+      "calories": 312.01
+    },
+    "aliases": [
+      "Galleti житні",
+      "хлібці Galleti",
+      "житні хрусткі хлібці"
+    ],
+    "source": "Zakaz.ua / METRO + EKO current retail cards",
+    "source_url": "https://metro.zakaz.ua/uk/products/khlibtsi-galeti-100g--04820149520193/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 60.0,
+    "protein": 10.14,
+    "fat": 2.1,
+    "calories": 312.01,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_udaltsi_borodino_rye_crispbread_100",
+    "name": "Хлібці Бородинські житні Хлібці-Удальці",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "brand": "Хлібці-Удальці",
+    "package_grams": 100,
+    "ean": "4820110990260",
+    "nutrition_100g": {
+      "protein": 10.38,
+      "fat": 2.31,
+      "carbs": 58.5,
+      "calories": 296.0
+    },
+    "aliases": [
+      "Хлібці-Удальці Бородинські",
+      "бородинські хлібці",
+      "житні хлібці з коріандром"
+    ],
+    "source": "Zakaz.ua / Auchan current retail card",
+    "source_url": "https://auchan.zakaz.ua/uk/products/khlibtsi-khlibtsi-udaltsi-100g--04820110990260/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 58.5,
+    "protein": 10.38,
+    "fat": 2.31,
+    "calories": 296.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_finn_crisp_original_rye_300",
+    "name": "Хлібці житні Original Finn Crisp",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "brand": "Finn Crisp",
+    "package_grams": 300,
+    "ean": "6437005070617",
+    "nutrition_100g": {
+      "protein": 11.0,
+      "fat": 1.9,
+      "carbs": 61.0,
+      "calories": 348.0
+    },
+    "aliases": [
+      "Finn Crisp Original",
+      "Finn Crisp житні",
+      "фін крісп житні"
+    ],
+    "source": "Zakaz.ua / NOVUS current retail card",
+    "source_url": "https://novus.zakaz.ua/uk/products/khlibtsi-fin-krisp-300g--06437005070617/",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "carbs": 61.0,
+    "protein": 11.0,
+    "fat": 1.9,
+    "calories": 348.0,
+    "nutrition_basis": "100g"
+  },
+  {
+    "id": "ua_zakaz_maistry_french_baguette_300",
+    "name": "Багет Французький Майстри Смаку на заквасці",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 44.5,
+    "protein": 8.2,
+    "fat": 0.9,
+    "calories": 223.35,
+    "nutrition_basis": "100g",
+    "package_g": 300,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 300,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "source_url": "https://novus.zakaz.ua/uk/products/maistri-smaku-ukrayina--novus02842533000000/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_maistry_wholegrain_baguette_270",
+    "name": "Багет цільнозерновий Майстри Смаку на заквасці",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 55.68,
+    "protein": 8.01,
+    "fat": 0.77,
+    "calories": 267.24,
+    "nutrition_basis": "100g",
+    "package_g": 270,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 270,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "source_url": "https://novus.zakaz.ua/uk/products/baget-maistri-smaku-270g-ukrayina--novus02842414000000/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_auchan_ciabat_baguette_250",
+    "name": "Чіабата Auchan пшенична на заквасці",
+    "brand": "Auchan",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 53.69,
+    "protein": 9.55,
+    "fat": 5.6,
+    "calories": 308.73,
+    "nutrition_basis": "100g",
+    "package_g": 250,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 250,
+    "source": "Auchan / Zakaz.ua — current retail nutrition",
+    "source_url": "https://auchan.zakaz.ua/uk/products/baget-250g--auchan02000005197789/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_metrochef_brioche_burger_bun_50",
+    "name": "Булочка Metro Chef Бріош для бургера",
+    "brand": "Metro Chef",
+    "category": "Хліб та випічка",
+    "state": "frozen",
+    "carbs": 59.0,
+    "protein": 9.2,
+    "fat": 8.6,
+    "calories": 351.0,
+    "nutrition_basis": "100g",
+    "package_g": 300,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 50,
+    "package_count": 6,
+    "source": "METRO / Zakaz.ua — current packaged-product nutrition",
+    "source_url": "https://metro.zakaz.ua/uk/products/bulka-metro-shef-ukrayina--04820284561679/",
+    "ean": "4820284561679",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_metrochef_brioche_hotdog_bun_60",
+    "name": "Булочка Metro Chef Бріош для хот-догу",
+    "brand": "Metro Chef",
+    "category": "Хліб та випічка",
+    "state": "frozen",
+    "carbs": 61.0,
+    "protein": 8.5,
+    "fat": 8.1,
+    "calories": 353.0,
+    "nutrition_basis": "100g",
+    "package_g": 360,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 60,
+    "package_count": 6,
+    "source": "METRO / Zakaz.ua — current packaged-product nutrition",
+    "source_url": "https://metro.zakaz.ua/uk/products/bulka-metro-shef-360g-ukrayina--04820293125329/",
+    "ean": "4820293125329",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_7days_croissant_cocoa_65",
+    "name": "Круасан 7Days з кремом какао 65 г",
+    "brand": "7Days",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 43.0,
+    "protein": 5.6,
+    "fat": 28.0,
+    "calories": 453.0,
+    "nutrition_basis": "100g",
+    "package_g": 65,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 65,
+    "source": "Auchan / Zakaz.ua — current retail nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_7days_croissant_vanilla_65",
+    "name": "Круасан 7Days з ванільним кремом 65 г",
+    "brand": "7Days",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 43.0,
+    "protein": 5.6,
+    "fat": 29.0,
+    "calories": 457.0,
+    "nutrition_basis": "100g",
+    "package_g": 65,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 65,
+    "source": "METRO/Auchan / Zakaz.ua — current retail nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_7days_croissant_strawberry_65",
+    "name": "Круасан 7Days із полуничною начинкою 65 г",
+    "brand": "7Days",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 49.0,
+    "protein": 5.0,
+    "fat": 21.0,
+    "calories": 413.0,
+    "nutrition_basis": "100g",
+    "package_g": 65,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 65,
+    "source": "METRO/NOVUS / Zakaz.ua — current retail nutrition",
+    "verified": true,
+    "note": "Materially different carbohydrate profile from cocoa/vanilla recipe."
+  },
+  {
+    "id": "ua_zakaz_7days_croissant_vanilla_cookie_60",
+    "name": "Круасан 7Days з ванільним кремом та шоколадним печивом 60 г",
+    "brand": "7Days",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 47.0,
+    "protein": 6.0,
+    "fat": 30.0,
+    "calories": 485.0,
+    "nutrition_basis": "100g",
+    "package_g": 60,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 60,
+    "source": "Auchan / Zakaz.ua — retail nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_chipicao_croissant_cocoa_60",
+    "name": "Круасан Chipicao з какао начинкою 60 г",
+    "brand": "Chipicao",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 42.0,
+    "protein": 7.0,
+    "fat": 28.0,
+    "calories": 452.0,
+    "nutrition_basis": "100g",
+    "package_g": 60,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 60,
+    "source": "Auchan / Zakaz.ua — retail nutrition",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_brioche_burger_maysry_smaku_80",
+    "name": "Булочка Бріош для бургера Майстри Смаку 80 г",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 44.4,
+    "protein": 3.2,
+    "fat": 3.5,
+    "calories": 226.3,
+    "nutrition_basis": "100g",
+    "package_g": 80,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 80,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "verified": true,
+    "note": "Distinct brioche recipe and materially lower carbohydrates than classic burger-bun cluster."
+  },
+  {
+    "id": "ua_zakaz_maistry_vatrushka_cottage_cheese_100",
+    "name": "Ватрушка Майстри Смаку з кисломолочним сиром",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 52.2,
+    "protein": 11.4,
+    "fat": 13.45,
+    "calories": 381.0,
+    "nutrition_basis": "100g",
+    "package_g": 100,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 100,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "source_url": "https://novus.zakaz.ua/uk/products/vatrushka-maistri-smaku-100g--novus02841296000000/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_maistry_vatrushka_berries_100",
+    "name": "Ватрушка Майстри Смаку з ягодами",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 51.4,
+    "protein": 11.2,
+    "fat": 9.7,
+    "calories": 337.7,
+    "nutrition_basis": "100g",
+    "package_g": 100,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 100,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "source_url": "https://novus.zakaz.ua/uk/products/vatrushka-maistri-smaku-100g-ukrayina--novus02843599000000/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_2go_croissant_vanilla_60",
+    "name": "Круасан 2go з ванільною начинкою",
+    "brand": "2go",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 56.7,
+    "protein": 5.7,
+    "fat": 16.1,
+    "calories": 396.0,
+    "nutrition_basis": "100g",
+    "package_g": 60,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 60,
+    "source": "Auchan / Zakaz.ua — current packaged-product nutrition",
+    "source_url": "https://auchan.zakaz.ua/uk/products/kruasan-tu-gou-60g--04820182334757/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_agrobiznes_croissant_condensed_milk_75",
+    "name": "Круасан Агробізнес зі згущеним молоком",
+    "brand": "Агробізнес",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 51.5,
+    "protein": 6.8,
+    "fat": 24.7,
+    "calories": 455.0,
+    "nutrition_basis": "100g",
+    "package_g": 75,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 75,
+    "source": "Zakaz.ua — current packaged-product nutrition",
+    "source_url": "https://zakaz.ua/uk/products/ukrayina--04820079872058/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_auchan_croissant_pistachio_100",
+    "name": "Круасан Auchan з фісташковою начинкою",
+    "brand": "Auchan",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 47.1,
+    "protein": 8.6,
+    "fat": 31.6,
+    "calories": 570.0,
+    "nutrition_basis": "100g",
+    "package_g": 100,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 100,
+    "source": "Auchan / Zakaz.ua — current retail nutrition",
+    "source_url": "https://auchan.zakaz.ua/uk/products/kruasan-ashan-100g-ukrayina--auchan02000000842226/",
+    "verified": true
+  },
+  {
+    "id": "ua_zakaz_maistry_croissant_almond_100",
+    "name": "Круасан Майстри Смаку на маслі з мигдальним кремом",
+    "brand": "Майстри Смаку",
+    "category": "Хліб та випічка",
+    "state": "prepared",
+    "carbs": 58.2,
+    "protein": 7.9,
+    "fat": 17.8,
+    "calories": 430.42,
+    "nutrition_basis": "100g",
+    "package_g": 100,
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "serving_grams": 100,
+    "source": "NOVUS / Zakaz.ua — current retail nutrition",
+    "source_url": "https://novus.zakaz.ua/uk/products/kruasan-maistri-smaku-100g--novus02841297000000/",
+    "verified": true
   }
 ]
