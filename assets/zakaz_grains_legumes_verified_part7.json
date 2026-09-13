@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ua_zakaz_adzuki_beans_raw",
+    "name": "Квасоля адзукі, суха",
+    "aliases": ["квасоля адзукі", "адзукі", "боби адзукі"],
+    "category": "Бобові",
+    "state": "raw",
+    "carbs": 62.9,
+    "protein": 19.9,
+    "fat": 0.5,
+    "calories": 329.0,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — representative retail product",
+    "source_url": "https://winetime.zakaz.ua/uk/products/krupa--04820153600515/",
+    "source_ref": "Екород квасоля Адзукі органічна 400 г; retail label used only as verification source. Generic food identity retained; brand/package/EAN omitted to avoid branded duplication.",
+    "verified": true
+  }
+]
