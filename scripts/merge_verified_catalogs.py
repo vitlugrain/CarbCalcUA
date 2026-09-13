@@ -115,10 +115,12 @@ base = load(BASE)
 gi_rows = load(GI_ENRICHMENT)
 base_by_id = {str(x.get('id', '')).strip(): x for x in base}
 applied_gi = 0
+skipped_gi = []
 for row in gi_rows:
     target_id = str(row.get('target_id', '')).strip()
     if not target_id or target_id not in base_by_id:
-        raise SystemExit(f'GI enrichment target not found in base catalog: {target_id!r}')
+        skipped_gi.append(target_id or '<missing>')
+        continue
     item = base_by_id[target_id]
     item['glycemic_index'] = row['glycemic_index']
     item['glycemic_index_source'] = row['source']
@@ -127,6 +129,8 @@ for row in gi_rows:
     item['glycemic_source_carbs_100g'] = row.get('source_carbs_100g')
     item['glycemic_source_calories_100g'] = row.get('source_calories_100g')
     applied_gi += 1
+if skipped_gi:
+    print(f'Warning: skipped stale GI enrichment targets not present in base catalog: {sorted(skipped_gi)}')
 
 variant_rows = load(BRAND_VARIANTS)
 variant_source_ids = {
@@ -197,8 +201,9 @@ merged = verified + remaining
 BASE.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(
     f'Merged {len(verified)} verified records; applied {len(applied_corrections)} audited corrections; '
-    f'applied GI enrichment to {applied_gi} existing products; applied {applied_variants} brand/SKU variants; '
-    f'skipped {skipped_equivalent} equivalent base records; products.json now has {len(merged)} records.'
+    f'applied GI enrichment to {applied_gi} existing products; skipped {len(skipped_gi)} stale GI targets; '
+    f'applied {applied_variants} brand/SKU variants; skipped {skipped_equivalent} equivalent base records; '
+    f'products.json now has {len(merged)} records.'
 )
 
 if RUD_MERGE.exists():
