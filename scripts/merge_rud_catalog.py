@@ -27,22 +27,37 @@ def load(path):
     raise SystemExit(f'Expected JSON list or object with products/items/records list: {path.relative_to(ROOT)}')
 
 
-def num(row, *keys, default=0.0):
-    for key in keys:
-        if row.get(key) is not None:
-            try:
-                return float(row[key])
-            except (TypeError, ValueError):
-                raise SystemExit(f'Invalid numeric {key} for {row.get("id")}: {row.get(key)!r}')
-    return float(default)
-
-
 def text(row, *keys):
     for key in keys:
         value = row.get(key)
         if value is not None and str(value).strip():
             return str(value).strip()
     return None
+
+
+def direct_num(row, *keys):
+    for key in keys:
+        if row.get(key) is not None:
+            try:
+                return float(row[key])
+            except (TypeError, ValueError):
+                raise SystemExit(f'Invalid numeric {key} for {row.get("id")}: {row.get(key)!r}')
+    return None
+
+
+def nutrition_num(row, direct_keys, nested_keys, default=0.0):
+    value = direct_num(row, *direct_keys)
+    if value is not None:
+        return value
+    nested = row.get('nutrition_100g')
+    if isinstance(nested, dict):
+        for key in nested_keys:
+            if nested.get(key) is not None:
+                try:
+                    return float(nested[key])
+                except (TypeError, ValueError):
+                    raise SystemExit(f'Invalid nutrition_100g.{key} for {row.get("id")}: {nested.get(key)!r}')
+    return float(default)
 
 
 def canonical(row):
@@ -52,10 +67,10 @@ def canonical(row):
     if not pid or not name:
         raise SystemExit(f'Missing id/name in Rud row: {row!r}')
 
-    carbs = num(row, 'carbs', 'carbs_100g')
-    protein = num(row, 'protein', 'protein_100g')
-    fat = num(row, 'fat', 'fat_100g')
-    calories = num(row, 'calories', 'kcal_100g')
+    carbs = nutrition_num(row, ('carbs', 'carbs_100g'), ('carbs_g', 'carbs'))
+    protein = nutrition_num(row, ('protein', 'protein_100g'), ('protein_g', 'protein'))
+    fat = nutrition_num(row, ('fat', 'fat_100g'), ('fat_g', 'fat'))
+    calories = nutrition_num(row, ('calories', 'kcal_100g'), ('kcal', 'calories'))
     barcode = text(row, 'barcode', 'ean')
     manufacturer = text(row, 'manufacturer', 'brand') or 'Рудь'
     source = text(row, 'source', 'source_url')
@@ -82,6 +97,13 @@ def canonical(row):
     return out
 
 
+def same_nutrition(a, b, tol=0.05):
+    return all(
+        abs(float(a.get(k, 0)) - float(b.get(k, 0))) <= tol
+        for k in ('carbs', 'protein', 'fat', 'calories')
+    )
+
+
 base = load(BASE)
 base_by_id = {str(x.get('id', '')).strip(): x for x in base if str(x.get('id', '')).strip()}
 base_barcodes = {}
@@ -98,6 +120,9 @@ for item in base:
 rud_by_id = {}
 rud_ean_to_id = {}
 duplicate_rows = 0
+duplicate_details = []
+conflicts = []
+
 for path in RUD_FILES:
     if not path.exists():
         raise SystemExit(f'Missing Rud verified file: {path.relative_to(ROOT)}')
@@ -105,24 +130,41 @@ for path in RUD_FILES:
         item = canonical(raw)
         pid = item['id']
         ean = str(item.get('barcode', '')).strip()
+
         if pid in rud_by_id:
             prev = rud_by_id[pid]
-            keys = ('carbs', 'protein', 'fat', 'calories', 'barcode')
-            if any(str(prev.get(k, '')) != str(item.get(k, '')) for k in keys):
-                raise SystemExit(f'Conflicting duplicate Rud id: {pid}')
-            duplicate_rows += 1
+            same_barcode = str(prev.get('barcode', '')).strip() == ean
+            if same_barcode and same_nutrition(prev, item):
+                duplicate_rows += 1
+                duplicate_details.append(f'ID {pid}')
+                continue
+            conflicts.append(f'ID {pid}: conflicting records')
             continue
+
         if ean and ean in rud_ean_to_id and rud_ean_to_id[ean] != pid:
             prev_id = rud_ean_to_id[ean]
             prev = rud_by_id[prev_id]
-            keys = ('carbs', 'protein', 'fat', 'calories')
-            if any(abs(float(prev.get(k, 0)) - float(item.get(k, 0))) > 0.01 for k in keys):
-                raise SystemExit(f'Conflicting Rud EAN {ean}: {prev_id} vs {pid}')
-            duplicate_rows += 1
+            if same_nutrition(prev, item):
+                duplicate_rows += 1
+                duplicate_details.append(f'EAN {ean}: {prev_id} == {pid}')
+                continue
+            conflicts.append(f'EAN {ean}: {prev_id} vs {pid}')
             continue
+
         rud_by_id[pid] = item
         if ean:
             rud_ean_to_id[ean] = pid
+
+if duplicate_details:
+    print('Collapsed equivalent Rud duplicates:')
+    for detail in duplicate_details:
+        print(f' - {detail}')
+
+if conflicts:
+    print('Conflicting Rud duplicates found:')
+    for conflict in conflicts:
+        print(f' - {conflict}')
+    raise SystemExit(f'Found {len(conflicts)} conflicting Rud duplicate groups; resolve them before merge.')
 
 added = []
 skipped_id = 0
