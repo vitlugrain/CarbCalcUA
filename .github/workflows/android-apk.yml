@@ -3,7 +3,7 @@ name: Android APK
 on:
   workflow_dispatch:
   push:
-    branches: [main, mvp-0.6]
+    branches: [main, mvp-0.6, dev-large-update]
   pull_request:
     branches: [main]
 
@@ -33,6 +33,9 @@ jobs:
 
       - name: Merge verified dishes and restaurant catalogs
         run: python3 scripts/merge_verified_catalogs.py
+
+      - name: Merge verified Rud catalog
+        run: python3 scripts/merge_rud_catalog.py
 
       - name: Build Ukrainian branded offline database
         run: python3 scripts/build_ua_branded_db.py
