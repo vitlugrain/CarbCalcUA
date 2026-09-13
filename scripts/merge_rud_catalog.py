@@ -42,7 +42,7 @@ def text(row, *keys):
 
 def canonical(row):
     pid = text(row, 'id')
-    name = text(row, 'name')
+    name = text(row, 'name', 'name_uk')
     category = text(row, 'category') or 'Продукти'
     if not pid or not name:
         raise SystemExit(f'Missing id/name in Rud row: {row!r}')
@@ -53,6 +53,7 @@ def canonical(row):
     calories = num(row, 'calories', 'kcal_100g')
     barcode = text(row, 'barcode', 'ean')
     manufacturer = text(row, 'manufacturer', 'brand') or 'Рудь'
+    source = text(row, 'source', 'source_url')
 
     out = dict(row)
     out.update({
@@ -68,6 +69,8 @@ def canonical(row):
     })
     if barcode:
         out['barcode'] = barcode
+    if source:
+        out['source'] = source
     aliases = row.get('aliases')
     if aliases is not None:
         out['aliases'] = aliases
