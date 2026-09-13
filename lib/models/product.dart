@@ -52,24 +52,57 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> j) {
     final id = '${j['id']}';
+    final nutrition = j['nutrition_100g'] is Map<String, dynamic>
+        ? j['nutrition_100g'] as Map<String, dynamic>
+        : const <String, dynamic>{};
+    dynamic pick(List<String> directKeys, List<String> nestedKeys) {
+      for (final key in directKeys) {
+        if (j[key] != null) return j[key];
+      }
+      for (final key in nestedKeys) {
+        if (nutrition[key] != null) return nutrition[key];
+      }
+      return null;
+    }
+
     return Product(
       id: id,
       name: _decodeHtmlEntities('${j['name']}'),
       category: _decodeHtmlEntities('${j['category']}'),
-      carbs: _requiredNumber(j['carbs'], field: 'carbs', productId: id),
-      protein: _numberOrZero(j['protein'], field: 'protein', productId: id),
-      fat: _numberOrZero(j['fat'], field: 'fat', productId: id),
-      fiber: _numberOrZero(j['fiber'], field: 'fiber', productId: id),
-      calories: _numberOrZero(j['calories'], field: 'calories', productId: id),
+      carbs: _requiredNumber(
+        pick(const ['carbs', 'carbs_100g'], const ['carbs_g', 'carbs']),
+        field: 'carbs',
+        productId: id,
+      ),
+      protein: _numberOrZero(
+        pick(const ['protein', 'protein_100g'], const ['protein_g', 'protein']),
+        field: 'protein',
+        productId: id,
+      ),
+      fat: _numberOrZero(
+        pick(const ['fat', 'fat_100g'], const ['fat_g', 'fat']),
+        field: 'fat',
+        productId: id,
+      ),
+      fiber: _numberOrZero(
+        pick(const ['fiber', 'fiber_100g'], const ['fiber_g', 'fiber']),
+        field: 'fiber',
+        productId: id,
+      ),
+      calories: _numberOrZero(
+        pick(const ['calories', 'kcal_100g'], const ['kcal', 'calories']),
+        field: 'calories',
+        productId: id,
+      ),
       state: j['state'] ?? 'raw',
-      barcode: _stringOrNull(j['barcode']),
+      barcode: _stringOrNull(j['barcode'] ?? j['ean']),
       barcodes: _stringList(j['barcodes']),
-      manufacturer: _decodedStringOrNull(j['manufacturer']),
-      source: _stringOrNull(j['source']),
+      manufacturer: _decodedStringOrNull(j['manufacturer'] ?? j['brand']),
+      source: _stringOrNull(j['source'] ?? j['source_url']),
       updatedAt: _stringOrNull(j['updatedAt'] ?? j['updated_at']),
       gramsPerPiece: _numberOrNull(j['gramsPerPiece'] ?? j['grams_per_piece']),
       gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
-      servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
+      servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams'] ?? j['package_g']),
       aliases: _stringList(j['aliases']),
       nutritionBasis: _stringOrNull(j['nutritionBasis'] ?? j['nutrition_basis']) ?? '100g',
       quantityUnits: _stringList(j['quantityUnits'] ?? j['quantity_units']),
