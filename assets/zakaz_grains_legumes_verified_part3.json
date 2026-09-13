@@ -1,19 +1,9 @@
-[
-  {
-    "id": "ua_zakaz_brown_rice_raw",
-    "name": "Рис бурий нешліфований, сухий",
-    "aliases": ["рис бурий сухий", "рис коричневий сухий", "рис нешліфований сухий", "рис натурал сухий"],
-    "category": "Крупи",
-    "state": "raw",
-    "carbs": 72.0,
-    "protein": 7.4,
-    "fat": 2.2,
-    "calories": 337.0,
-    "nutrition_basis": "100g",
-    "quantity_units": ["г"],
-    "source": "Zakaz.ua — representative retail nutrition for generic brown/unpolished rice",
-    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-ris-vorldc-rais-500g--04820009100213/",
-    "source_ref": "World's Rice unpolished Natural: 100 g Б 7.4, Ж 2.2, В 72.0, 337 kcal. Cross-check: Август unpolished rice lists Б 7.0, Ж 1.0, В 71.8, 330 kcal. Treated as one generic food, not separate brand SKUs.",
-    "verified": true
-  }
-]
+{
+  "status": "duplicate_not_for_runtime",
+  "candidate": "Рис бурий нешліфований, сухий",
+  "duplicate_of": "ua_bonduelle_brown_rice_dry",
+  "reason": "Current runtime catalog already contains generic dry brown rice ('Рис коричневий, сухий'; aliases include 'бурий рис сухий'). Under the cross-brand generic nutritional dedup rule, a second Zakaz-derived brown-rice runtime product must not be added.",
+  "original_candidate_nutrition_100g": {"protein": 7.4, "fat": 2.2, "carbs": 72.0, "calories": 337.0},
+  "source_url": "https://auchan.zakaz.ua/uk/products/krupa-ris-vorldc-rais-500g--04820009100213/",
+  "runtime_merge": false
+}
