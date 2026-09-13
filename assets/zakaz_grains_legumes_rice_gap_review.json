@@ -1,0 +1,43 @@
+[
+  {
+    "group": "Рис басматі, сухий",
+    "decision": "candidate_gap",
+    "existing": "У runtime знайдено рис басматі лише варений; окремого сухого басматі не знайдено.",
+    "representative_sources": [
+      {"nutrition_100g":{"protein":7.0,"fat":0.6,"carbs":78.4,"kcal":368},"url":"https://metro.zakaz.ua/uk/products/krupa-basmati-metro-shef-1000g--04820086630191/"},
+      {"nutrition_100g":{"protein":7.1,"fat":0.2,"carbs":71.2,"kcal":322},"url":"https://zakaz.ua/uk/products/krupa-basmati-zernovita-1000g-ukrayina--04820038920271/"}
+    ],
+    "note": "Retail labels vary materially. Do not create a brand-specific record and do not choose one label as universal until a defensible generic value/source is selected."
+  },
+  {
+    "group": "Рис жасмін, сухий",
+    "decision": "candidate_gap",
+    "existing": "Окремого сухого жасміну в поточній базі не знайдено.",
+    "representative_sources": [
+      {"nutrition_100g":{"protein":7.0,"fat":0.6,"carbs":78.4,"kcal":368},"url":"https://metro.zakaz.ua/uk/products/krupa-ris-metro-shef-1000g--04820086630207/"},
+      {"nutrition_100g":{"protein":7.0,"fat":0.6,"carbs":77.3,"kcal":323},"url":"https://zakaz.ua/uk/products/krupa-ris-khutorok-panskii-400g-ukrayina--04820101711089/"},
+      {"nutrition_100g":{"protein":6.7,"fat":0.4,"carbs":80.4,"kcal":363},"url":"https://zakaz.ua/uk/products/krupa-ris-trapeza-500g-tayiland--04820179680140/"}
+    ],
+    "note": "Same food type has varying label values; hold for generic-value selection rather than adding multiple brands."
+  },
+  {
+    "group": "Рис довгозернистий пропарений, сухий",
+    "decision": "candidate_gap",
+    "existing": "Базовий сухий білий рис є, але окремий пропарений тип треба звірити як харчово/технологічно відмінний.",
+    "representative_sources": [
+      {"nutrition_100g":{"protein":7.0,"fat":0.4,"carbs":77.7,"kcal":342},"url":"https://metro.zakaz.ua/uk/products/krupa-ris-aro-1000g--04820086630177/"},
+      {"nutrition_100g":{"protein":7.0,"fat":0.4,"carbs":77.7,"kcal":342.32},"url":"https://metro.zakaz.ua/uk/products/krupa-metro-shef-1000g--04820086630399/"}
+    ],
+    "note": "Two brands have effectively identical B/J/V; if added, create one generic propared-rice food, not two brands."
+  },
+  {
+    "group": "Рис круглозернистий для суші, сухий",
+    "decision": "candidate_gap",
+    "existing": "Окремого сухого рису для суші в поточній базі не знайдено.",
+    "representative_sources": [
+      {"nutrition_100g":{"protein":7.0,"fat":1.0,"carbs":74.0,"kcal":333},"url":"https://metro.zakaz.ua/uk/products/ris-metro-shef-1000g--04820086630900/"},
+      {"nutrition_100g":{"protein":7.0,"fat":1.0,"carbs":74.0,"kcal":333},"url":"https://metro.zakaz.ua/uk/products/krupa-rozan-25000g--04820293120928/"}
+    ],
+    "note": "Independent retail SKUs show identical B/J/V; strong candidate for one generic dry sushi-rice record."
+  }
+]
