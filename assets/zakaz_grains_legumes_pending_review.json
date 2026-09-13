@@ -1,0 +1,23 @@
+[
+  {
+    "candidate": "Маш Сто Пудів 200г",
+    "barcode": "4820168881695",
+    "status": "pending_review",
+    "reason": "Conflicting nutrition values across current retail sources for the same 200 g SKU.",
+    "source_a": "https://zakaz.ua/uk/products/krupa-bobovi-sto-pudov-200g--04820168881695/",
+    "nutrition_a_100g": {"protein": 24.6, "fat": 1.4, "carbs": 52.7, "calories": 308.7},
+    "source_b": "https://varus.ua/mash-sto-pudiv-200g",
+    "nutrition_b_100g": {"protein": 23.0, "fat": 1.6, "carbs": 57.7, "calories": 323.0},
+    "next_action": "Verify current package label or manufacturer product page before runtime inclusion."
+  },
+  {
+    "candidate": "Кіноа Сто Пудів мікс 200г",
+    "status": "pending_review",
+    "reason": "Same consumer-facing product and nutrition appears on Zakaz.ua under at least two EANs; package/SKU relationship needs confirmation before deduplication.",
+    "candidate_eans": ["4820168887543", "4820168884061"],
+    "nutrition_100g": {"protein": 13.6, "fat": 4.5, "carbs": 67.5, "calories": 378.5},
+    "source_a": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-200g-peru--04820168887543/",
+    "source_b": "https://zakaz.ua/uk/products/krupa-sto-pudov-200g--04820168884061/",
+    "next_action": "Confirm whether EANs are old/new packaging variants of one recipe; then store as one base product with package/barcode variants if appropriate."
+  }
+]
