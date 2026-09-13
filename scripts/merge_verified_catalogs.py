@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import json
 import re
+import subprocess
+import sys
 import unicodedata
 from pathlib import Path
 
@@ -58,6 +60,7 @@ CATALOGS = [
 CORRECTIONS = ROOT / 'assets' / 'mcdonalds_ua_corrections.json'
 GI_ENRICHMENT = ROOT / 'assets' / 'prodiabet_gi_enrichment.json'
 BRAND_VARIANTS = ROOT / 'assets' / 'molokija_brand_variants.json'
+RUD_MERGE = ROOT / 'scripts' / 'merge_rud_catalog.py'
 
 
 def load(path):
@@ -158,9 +161,6 @@ unused = set(corrections) - applied_corrections
 if unused:
     raise SystemExit(f'Correction ids not found in verified catalogs: {sorted(unused)}')
 
-# Explicit brand/SKU variants let identical generic nutrition profiles share one
-# canonical nutrition record without losing brand, package, source or functional
-# attributes. A variant may point at a verified record or an existing base record.
 all_by_id = {str(x.get('id', '')).strip(): x for x in base}
 all_by_id.update({str(x.get('id', '')).strip(): x for x in verified})
 applied_variants = 0
@@ -200,3 +200,6 @@ print(
     f'applied GI enrichment to {applied_gi} existing products; applied {applied_variants} brand/SKU variants; '
     f'skipped {skipped_equivalent} equivalent base records; products.json now has {len(merged)} records.'
 )
+
+if RUD_MERGE.exists():
+    subprocess.run([sys.executable, str(RUD_MERGE)], cwd=ROOT, check=True)
