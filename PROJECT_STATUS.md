@@ -6,72 +6,50 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-Two catalog workstreams are now intentionally grouped before the next Android APK:
-1. **Крупи та бобові** — FINAL GAP CHECK / FINAL DEDUP;
-2. **Хліб та випічка** — new category pass, GAP REVIEW in progress.
+Before the next Android APK we are grouping two catalog workstreams:
+1. **Крупи та бобові** — FINAL DEDUP;
+2. **Хліб та випічка** — audit in progress.
 
-GitHub is the source of truth.
+GitHub is the source of truth. APK #112 remains VERIFIED / STABLE.
 
-### Governing catalog rule
+## MANDATORY catalog identity policy for future chats
 
-Do not collect brands. Brand, package size or EAN alone is not a reason for a new runtime food. Compare food type + preparation/state + P/F/C per 100 g. If an existing generic/base food is equivalent or practically equivalent, skip the branded candidate. Small label/rounding/raw-material differences do not justify duplication. New runtime records are only for genuine food/state gaps or nutritionally/culinarily meaningful subtypes.
+CarbCalc UA uses a **hybrid generic + branded catalog**.
 
-## APK checkpoint
+**Simple/raw foods** (plain rice, buckwheat, millet, basic dry legumes/grains, etc.): use generic-first cross-brand dedup. Another trademark/package/EAN does not justify another runtime food when food type/state and nutrition are practically equivalent.
 
-**APK #112 remains VERIFIED / STABLE on the user's Android device.** Workflow run `34754770248`, head `c1d3169450b4d1a9c63e72798ef6582ad5f8ba39`, artifact `CarbCalcUA-0.6.0-build-112`.
+**Manufactured / recipe-dependent foods** (toast bread, crispbread, bakery, cookies, cereals/granola, yogurts/desserts, sauces, ready foods, etc.): multiple trademark-specific products MAY and SHOULD coexist when the verified nutrition is meaningfully different for carbohydrate counting or the recipe/subtype is distinct. Keep a generic item as fallback where useful, but exact branded products are valuable when a user knows/scans the package.
 
-Do not build the next APK yet. First finish grains/legumes final dedup and the bread/bakery gap pass, then integrate both in one checkpoint build.
+Practical review threshold: a branded variant is normally justified when carbohydrate content differs by roughly **5 g/100 g or more** from the closest equivalent, or whenever the recipe/subtype is materially different. This is a catalog heuristic, not a medical threshold; use judgment around the boundary.
+
+Near-identical branded products should still be deduplicated. Same recipe/nutrition in multiple package sizes should preferably be one product identity with package/barcode variants where schema allows.
+
+This policy supersedes the earlier overly broad rule that branded duplicates should always be avoided. Full wording is persisted in `CATALOG_AUDIT_STATUS.md`.
 
 ## Крупи та бобові
 
-Prepared candidate batches cover useful gaps across lentils, chickpeas, bulgur, semolina, spelt, wheat groats, selected rice types, barley/yachna, bean subtypes, split peas, dried broad beans, oat groats and adzuki. Conflicting/uncertain records remain pending (mung beans, white-bean conflicting labels, quinoa variants, red/black rice, Poltava №3 and conflicting wheat/yachna profiles).
+Mostly simple/raw foods, so generic-first dedup applies. Prepared candidate batches cover useful gaps across lentils, chickpeas, bulgur, semolina, spelt, wheat/rice variants, legumes, oat groats and adzuki. Conflicting records remain pending. Brown-rice Zakaz part3 is `duplicate_not_for_runtime` because generic dry brown rice already exists. No Zakaz grains runtime merge yet.
 
-Brown-rice candidate part3 was corrected to `duplicate_not_for_runtime` because `assets/products.json` already contains generic dry brown rice.
+## Хліб та випічка
 
-Zakaz grains/legumes files are still **not wired into the canonical runtime merge**.
+Recipe-dependent category: use generic fallback plus exact branded variants where B/F/C materially differ.
 
-## Хліб та випічка — new pass
+Existing generic coverage includes wheat, rye, rye-wheat, buckwheat, wholegrain and bran bread, wheat lavash, sliced loaf/baton, simple sushki/bubliki and baked pirozhki. Do not create brand copies automatically when nutrition is effectively the same.
 
-Initial current-database comparison confirms existing generic coverage for:
-- Хліб пшеничний;
-- Хліб житній;
-- Хліб житньо-пшеничний;
-- Хліб гречаний;
-- Хліб цільнозерновий;
-- Хліб з висівками;
-- Лаваш пшеничний;
-- Батон нарізний;
-- Сушки прості;
-- Бублики;
-- Пиріжки печені.
+Current audit covers Borodinsky/custard rye, toast bread, baguette, ciabatta, burger buns and crispbread. Toast bread specifically demonstrates why branded variants are needed: products sold under the same broad name can have materially different carbohydrate values. Do not force these into one universal value.
 
-These must not be re-added merely because Zakaz lists branded versions.
+Sweet pastries/croissants are recipe-specific and should be audited separately rather than collapsed into generic bread.
 
-Initial candidate gaps are recorded in `assets/zakaz_bread_bakery_gap_review.json` (commit `736c51c0e603c905ac833d631ffff2b301350d52`):
-- Бородинський / житній заварний хліб;
-- тостовий хліб subtypes;
-- пшеничний багет;
-- чіабата (currently pending because retail carb values differ materially);
-- булочка для бургера;
-- хлібці/crispbread as a separate group.
+## Runtime plan before next APK
 
-Next bread steps: audit current Zakaz examples across these groups plus common buns/rolls, verify cross-brand macro agreement, and create generic verified entries only where defensible. Sweet pastries/croissants should be treated separately because recipe-specific fat/sugar makes generic collapse less reliable.
-
-## Runtime integration plan before next APK
-
-1. Finish grains/legumes final dedup against `assets/products.json`.
-2. Finish a practical bread/bakery gap pass and isolate conflicts.
-3. Add only surviving generic gaps from both categories to the canonical merge.
+1. Finish useful bread/bakery pass using the hybrid policy.
+2. Final-dedup grains/legumes using generic-first policy.
+3. Integrate only verified runtime-safe records through the canonical merge.
 4. Run full runtime catalog parse validation/tests.
 5. Build one Android APK checkpoint.
-6. User device-tests Add Food, search, Diary add flow and performance.
-7. If stable, close both category checkpoints and continue to the next category (likely pasta).
+6. User tests Add Food, search, Diary add flow and performance.
+7. If stable, continue with the next category.
 
 ## Working rules
 
-- Zakaz.ua is the discovery/current-retail source; official manufacturer data is preferred for verification.
-- Never invent missing P/F/C.
-- Uncertain/incomplete/conflicting records stay pending and out of runtime.
-- Active branch is `dev-large-update`; do not audit on `main`.
-- Preserve app behavior, signing/update continuity and local-data upgrade path.
-- `CATALOG_AUDIT_STATUS.md` plus this file are the canonical chat handoff.
+Zakaz.ua is the discovery/current-retail source; official manufacturer data is preferred. Never invent missing P/F/C. Conflicting/incomplete data remains pending. Work only on `dev-large-update`. Preserve app behavior, signing/update continuity and local data. On every new chat, read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md` before continuing catalog work.
