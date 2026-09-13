@@ -17,9 +17,14 @@ RUD_FILES = [
 
 def load(path):
     data = json.loads(path.read_text(encoding='utf-8'))
-    if not isinstance(data, list):
-        raise SystemExit(f'Expected JSON list: {path.relative_to(ROOT)}')
-    return data
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        for key in ('products', 'items', 'records'):
+            rows = data.get(key)
+            if isinstance(rows, list):
+                return rows
+    raise SystemExit(f'Expected JSON list or object with products/items/records list: {path.relative_to(ROOT)}')
 
 
 def num(row, *keys, default=0.0):
