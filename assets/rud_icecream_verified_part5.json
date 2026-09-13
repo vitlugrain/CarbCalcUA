@@ -24,19 +24,5 @@
     "limited_edition": true,
     "source": "https://rud.ua/products/ice-cream/tray/imperium-chervonyi-barkhat/",
     "verification": "official_manufacturer"
-  },
-  {
-    "id": "ua_rud_imperium_tray_prazkyi_500",
-    "name": "Морозиво IMPERIUM «Празький» лоток",
-    "brand": "Рудь",
-    "line": "IMPERIUM",
-    "category": "Морозиво",
-    "package_g": 500,
-    "ean": "4803097807644",
-    "nutrition_100g": {"protein_g": 3.1, "fat_g": 7.2, "carbs_g": 29.4, "kcal": 195},
-    "limited_edition": true,
-    "ean_audit_note": "Official manufacturer page currently displays EAN 4803097807644; preserve as published and recheck before final merge because prefix differs from usual Rud EANs.",
-    "source": "https://rud.ua/products/ice-cream/tray/imperium-prazkyi/",
-    "verification": "official_manufacturer_with_ean_recheck"
   }
 ]
