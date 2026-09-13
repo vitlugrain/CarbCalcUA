@@ -1,0 +1,20 @@
+[
+  {
+    "candidate": "Рис чорний довгозернистий нешліфований, сухий",
+    "status": "pending_review",
+    "reason": "Current Zakaz.ua labels disagree materially on protein/fat for the same generic food type; do not choose a brand value arbitrarily.",
+    "sources": [
+      {"name":"Metro Chef 500g","protein":16.4,"fat":7.8,"carbs":68.4,"calories":409,"url":"https://metro.zakaz.ua/uk/products/krupa-metro-shef-500g--04820086630429/"},
+      {"name":"World's Rice 500g","protein":7.8,"fat":2.7,"carbs":68.9,"calories":314,"url":"https://auchan.zakaz.ua/uk/products/krupa-ris-vorldc-rais-500g--04820009102125/"}
+    ]
+  },
+  {
+    "candidate": "Рис червоний довгозернистий нешліфований, сухий",
+    "status": "pending_review",
+    "reason": "Current Zakaz.ua labels disagree materially in Б/Ж/В; keep out of verified runtime until a reliable generic value is established.",
+    "sources": [
+      {"name":"Metro Chef 500g","protein":15.5,"fat":7.4,"carbs":62.5,"calories":380,"url":"https://metro.zakaz.ua/uk/products/krupa-metro-shef-500g--04820086630412/"},
+      {"name":"World's Rice 500g","protein":7.6,"fat":2.9,"carbs":76.9,"url":"https://auchan.zakaz.ua/uk/products/krupa-ris-vorldc-rais-500g--04820009102132/"}
+    ]
+  }
+]
