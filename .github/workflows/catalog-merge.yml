@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/catalog-merge.yml'
       - 'scripts/merge_verified_catalogs.py'
+      - 'scripts/merge_zakaz_checkpoint.py'
       - 'assets/ua_dishes.json'
       - 'assets/*verified*.json'
       - 'assets/mcdonalds_ua_*.json'
@@ -30,25 +31,49 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Merge verified catalogs
+      - name: Merge canonical verified catalogs
         run: python scripts/merge_verified_catalogs.py
 
-      - name: Verify merged catalog contains recent verified blocks
+      - name: Merge verified Zakaz category checkpoint
+        run: python scripts/merge_zakaz_checkpoint.py
+
+      - name: Verify merged catalog contains checkpoint blocks
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
           products = json.loads(Path('assets/products.json').read_text(encoding='utf-8'))
-          ids = {str(x.get('id', '')).strip() for x in products}
+          by_id = {str(x.get('id', '')).strip(): x for x in products}
           required = {
               'ua_bonduelle_product_03083680001663',
               'ua_pyriatyn_processed_druzhba_38',
               'ua_yagotynske_children_milk_vitaminized_32',
+              'ua_zakaz_red_lentils_raw',
+              'ua_zakaz_wheat_poltava2_raw',
+              'ua_zakaz_adzuki_beans_raw',
+              'ua_zakaz_borodinsky_bread',
+              'ua_kyivkhlib_big_toast_original_500',
+              'ua_zakaz_maistry_french_baguette_300',
+              'ua_zakaz_maistry_vatrushka_cottage_cheese_100',
           }
-          missing = sorted(required - ids)
+          missing = sorted(required - set(by_id))
           if missing:
               raise SystemExit(f'Merged products.json is missing verified IDs: {missing}')
+
+          excluded = {
+              'ua_zakaz_barley_groats_raw',
+              'ua_zakaz_sto_pudiv_green_split_peas_400g',
+          }
+          leaked = sorted(excluded & set(by_id))
+          if leaked:
+              raise SystemExit(f'Excluded audit IDs leaked into runtime: {leaked}')
+
+          for product_id in required:
+              row = by_id[product_id]
+              for key in ('carbs', 'protein', 'fat'):
+                  if row.get(key) is None:
+                      raise SystemExit(f'{product_id} missing normalized {key}')
           print(f'products.json verified: {len(products)} records')
           PY
 
