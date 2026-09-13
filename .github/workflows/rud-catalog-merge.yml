@@ -37,7 +37,6 @@ jobs:
           from pathlib import Path
           products = json.loads(Path('assets/products.json').read_text(encoding='utf-8'))
           ids = set()
-          barcodes = set()
           rud = 0
           for p in products:
               for key in ('id','name','category','carbs'):
@@ -49,12 +48,9 @@ jobs:
               ids.add(pid)
               if str(p.get('manufacturer','')).strip().lower() in {'рудь','rud'} or pid.startswith('ua_rud_'):
                   rud += 1
-              code = str(p.get('barcode','')).strip()
-              if code:
-                  barcodes.add(code)
           if rud < 20:
               raise SystemExit(f'Unexpectedly low Rud count after merge: {rud}')
-          print(f'Validated {len(products)} products; Rud records: {rud}; barcodes: {len(barcodes)}')
+          print(f'Validated {len(products)} products; Rud records: {rud}')
           PY
 
       - name: Commit merged products.json
