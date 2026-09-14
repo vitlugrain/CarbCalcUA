@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-APK **#148** remains the verified/stable Android checkpoint after successful device testing on 2026-09-14. GitHub is the source of truth. APK #148 supersedes APK #112.
+APK **#148** remains the verified/stable Android checkpoint after successful device testing on 2026-09-14. GitHub is the source of truth.
 
 Closed/integrated checkpoints:
 1. **Крупи та бобові**;
@@ -14,7 +14,9 @@ Closed/integrated checkpoints:
 
 Closed audit checkpoints awaiting dedicated runtime whitelist validation:
 3. **Макаронні вироби**;
-4. **Пластівці та сухі сніданки**.
+4. **Пластівці та сухі сніданки**;
+5. **Продукти швидкого приготування**;
+6. **Солодощі**.
 
 ## MANDATORY catalog identity policy
 
@@ -28,27 +30,25 @@ Practical review threshold: a branded variant is normally justified when carbohy
 
 Near-identical branded products should still be deduplicated. Same recipe/nutrition in multiple package sizes should preferably be one product identity.
 
-## Макаронні вироби — audit checkpoint closed
+## Продукти швидкого приготування — audit checkpoint closed
 
-Verified pasta audit parts are retained. Ordinary durum pasta remains generic-first; useful specialty subtypes remain separate candidates. Conflicting Udon/Soba records remain pending and outside runtime. **Legume pasta was explicitly skipped by user decision.** Runtime merge has not been forced; dedicated whitelist validation is still required.
+Final review is persisted in `assets/zakaz_instant_final_review.json`. The mandatory dry-product basis rule remains in force: if verified nutrition is given for the dry packaged product, calculations must use dry-product basis unless a verified prepared-product basis or final yield is known. Do not invent water absorption/yield coefficients. Runtime merge has not been forced; dedicated whitelist validation is still required.
 
-## Пластівці та сухі сніданки — audit checkpoint closed
+## Солодощі — audit checkpoint closed
 
-Five verified audit parts have been completed and final dedup decisions are persisted in `assets/zakaz_breakfast_final_review.json`.
+Verified audit blocks cover the current useful checkpoint across chocolate, bars, candies, caramel, toffee, marshmallow, jelly and gummies. Final decisions are persisted in `assets/zakaz_sweets_final_review.json`. Conflicting recipe/nutrition versions remain pending and outside runtime. Audit candidates remain `runtime_merge:false` until dedicated whitelist validation.
 
-Simple/plain flakes remain generic-first. Recipe-dependent cereals, muesli and granola remain branded where nutrition or recipe meaningfully differs. Package-size duplicates are one product identity. Conflicting recipe/label versions are not automatically merged. Audit candidates remain outside runtime until whitelist validation.
-
-## Current active category — Продукти швидкого приготування
+## Current active category — Снеки
 
 Next workflow:
 `Zakaz.ua discovery → existing-catalog gap check → nutrition verification → recipe/dedup decision → pending review where needed → verified audit parts → final review`.
 
-Include instant noodles/pasta with seasoning or sauce, instant porridges/cereals, instant mashed potato and comparable ready-by-adding-water products. Keep plain dry pasta/noodles in the pasta category and ordinary ready meals in their appropriate category. Recipe-dependent instant products should normally retain exact branded identity when nutrition differs materially.
+Audit order: chips → corn snacks → croutons/toasts → crackers and other salty snacks.
 
 ## Next category order
 
-After instant products: **солодощі → снеки → соуси → консерви → напої → заморожені напівфабрикати**.
+After snacks: **соуси → консерви → напої → заморожені напівфабрикати**.
 
 ## Working rules
 
-Zakaz.ua is the discovery/current-retail source; official manufacturer data is preferred. Never invent missing P/F/C. Conflicting/incomplete data remains pending. Work only on `dev-large-update`. Preserve app behavior, signing/update continuity and local data. On every new chat, read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md` before continuing catalog work.
+Zakaz.ua is the discovery/current-retail source; official manufacturer data is preferred. Never invent missing P/F/C. Conflicting/incomplete data remains pending. Work only on `dev-large-update`. Preserve app behavior, signing/update continuity and local data. Before runtime merge: verify → dedup → whitelist → merge → parse/test → APK. On every new chat, read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md` before continuing catalog work.
