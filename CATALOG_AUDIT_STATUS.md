@@ -22,8 +22,8 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Продукти швидкого приготування | CLOSED AUDIT CHECKPOINT | Dry-basis rule mandatory; runtime whitelist validation still required. |
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
-| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves audit active; part1 = 2 verified + 4 pending; part2 = 3 verified; part3 = 2 verified + 5 pending; part4 = 1 verified mushroom identity + 2 pending mushroom identities. |
+| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin sauce block preserved and not duplicated. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom audit parts1–4 complete as checkpoints; fish-preserve audit started in part5 with retailer discovery and conservative pending review. |
 
 ## Sauces runtime checkpoint
 
@@ -38,35 +38,37 @@ Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Ще
 
 ## Canned foods audit checkpoint
 
-Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Current broad category map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes. Audit order begins with vegetable/legume preserves because they are carbohydrate-relevant and overlap existing Bonduelle runtime data.
+Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Broad category map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes.
 
-Existing-runtime gap check confirmed that several Bonduelle canned legumes/vegetables are already present in `assets/products.json`; they must not be duplicated merely because Zakaz lists another package size. Candidate barcodes are checked against `assets/products.json` before audit-file creation.
+Existing-runtime gap check confirmed several Bonduelle canned legumes/vegetables already present in `assets/products.json`; package-size variants must not be duplicated. Candidate barcodes are checked against repository/runtime before audit-file creation.
 
-Part1 files:
-- `assets/canned_verified_part1.json` — 2 verified Veres products: beans in tomato sauce and canned chickpeas. Both have matching official Veres and Zakaz P/F/C and were absent from runtime by checked barcode.
-- `assets/canned_pending_review_part1.json` — green peas, standard sweet corn, premium tender corn, and beans with vegetables. These remain outside runtime because official Veres and current/historical Zakaz nutrition values conflict or indicate label/recipe generations.
+### Part1 — legumes/vegetables
+- `assets/canned_verified_part1.json` — 2 verified Veres products: beans in tomato sauce and canned chickpeas.
+- `assets/canned_pending_review_part1.json` — green peas, standard sweet corn, premium tender corn, beans with vegetables; conflicts/label generations keep them outside runtime.
+- commits: verified `8689c5ffdcb524399970c4fd726285aefe24c49f`; pending `4e0463284c32f067ba462c1710f713a8f4385f6f`.
 
-Part1 commits:
-- verified: `8689c5ffdcb524399970c4fd726285aefe24c49f`
-- pending: `4e0463284c32f067ba462c1710f713a8f4385f6f`
+### Part2 — recipe-dependent vegetable preserves
+- `assets/canned_verified_part2.json` — 3 verified Veres identities: zucchini caviar, zucchini caviar with pepper, eggplants in adjika.
+- Recipe-generation warning retained for zucchini caviar; package/name alone does not establish equivalence.
+- commit `6f105aefe2adb95d1f807047e2852215ae45c2da`.
 
-Part2:
-- `assets/canned_verified_part2.json` — 3 verified Veres recipe-dependent vegetable preserves absent from runtime by checked barcode: zucchini caviar, zucchini caviar with pepper, and eggplants in adjika.
-- Official Veres and Zakaz nutrition agree for all three selected identities.
-- Important identity note: Veres has evidence of label/recipe generations for zucchini caviar (including a newer 310 g variant with different P/F/calories despite same 7 g carbs). Part2 therefore pins the verified 440 g barcode identities and does not infer equivalence across changed recipes merely from product name.
-- part2 commit: `6f105aefe2adb95d1f807047e2852215ae45c2da`.
+### Part3 — pickled vegetables
+- `assets/canned_verified_part3.json` — 2 verified Veres preserves: classic pickled cucumbers 435 g and pickled tomatoes 760 g.
+- `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska appetizer, vegetable stew, Bulgarian lecho, pickled cherry tomatoes.
+- commits: verified `d6d211579dd3c222f744a0eb738a7452c18cb999`; pending `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`.
 
-Part3:
-- `assets/canned_verified_part3.json` — 2 verified Veres preserves absent from runtime by checked barcode: classic pickled cucumbers 435 g and pickled tomatoes 760 g. Official Veres and current Zakaz values match for both: В 4.0, Б 0.3, Ж 0.0, 17 ккал / 100 г.
-- `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska vegetable appetizer, vegetable stew, Bulgarian lecho, and pickled cherry tomatoes remain outside runtime because of official-vs-retailer nutrition conflicts, multiple barcode/label generations, or insufficient manufacturer-level confirmation.
-- verified commit: `d6d211579dd3c222f744a0eb738a7452c18cb999`.
-- pending commit: `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`.
+### Part4 — mushroom preserves
+- `assets/canned_verified_part4.json` — 1 verified Veres identity: sterilized champignons 410 g, barcode `04823105400140`.
+- `assets/canned_pending_review_part4.json` — snack-marinated and delicatessen-marinated champignons remain outside runtime pending manufacturer/identity resolution.
+- commits: verified `c70314ce43b04902150eee3ec1f7a1953bfb9f2b`; pending `a446bdfe9fd009ceca407329635eac7904d92a6e`.
 
-Part4 — mushroom preserves:
-- `assets/canned_verified_part4.json` — 1 verified Veres identity absent from runtime by checked barcode: sterilized champignons 410 g, barcode `04823105400140`. Official Veres and current Zakaz match: В 5.3, Б 2.2, Ж 0.5, 35 ккал / 100 г.
-- `assets/canned_pending_review_part4.json` — snack-marinated champignons and delicatessen marinated champignons remain outside runtime. For the snack-marinated line Zakaz is internally consistent at В 7.1 / Б 2.2 / Ж 0.5 / 42 ккал, but the current official Veres category page does not expose a matching nutrition panel and multiple barcode generations are visible. The delicatessen 460 g official Veres recipe has materially different nutrition and must not be merged with the snack-marinated line by name.
-- verified commit: `c70314ce43b04902150eee3ec1f7a1953bfb9f2b`.
-- pending commit: `a446bdfe9fd009ceca407329635eac7904d92a6e`.
+### Part5 — fish preserves, discovery/pending
+- Fish-preserve audit started with tuna in own juice and sprats in oil. Variants are kept recipe-specific (`own juice/brine`, `oil`, `tomato`) because carbohydrate values can differ.
+- `assets/canned_pending_review_part5_fish.json` records 4 retailer-discovered identities/groups. Fish Line tuna 160 g, Calvo tuna 160 g and Baltic Fish sprats 160 g have complete Zakaz nutrition but are not promoted without manufacturer-level confirmation. Fish Line tuna barcode `04820104250509` has conflicting Zakaz nutrition across retailer pages and is explicitly quarantined.
+- Barcode repository searches for `04820235630591`, `08410090031549`, and `04751007739368` returned no matches before audit-file creation.
+- pending commit: `4b9a2249003df5c3783b5888eb3a1c8368bbae62`.
+
+Current canned verified count remains 8 across parts1–4. Part5 intentionally adds no verified runtime candidate yet.
 
 No canned-food runtime whitelist or merge has been created yet.
 
