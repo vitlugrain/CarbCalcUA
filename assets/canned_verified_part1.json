@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ua_veres_canned_beans_tomato_04823105400256",
+    "name": "Квасоля Верес в томатному соусі",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 25.6,
+    "protein": 9.0,
+    "fat": 0.8,
+    "calories": 145,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105400256",
+    "manufacturer": "Верес",
+    "source": "Veres official product page + Zakaz.ua product page",
+    "source_ref": "Veres: Квасоля в томатному соусі — 100 г: В 25.6, Б 9.0, Ж 0.8, 145 ккал; Zakaz barcode 04823105400256 reports identical P/F/C",
+    "verified": true
+  },
+  {
+    "id": "ua_veres_canned_chickpeas_04823105400645",
+    "name": "Нут Верес консервований",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 27.4,
+    "protein": 8.9,
+    "fat": 2.6,
+    "calories": 164,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105400645",
+    "manufacturer": "Верес",
+    "source": "Veres official product page + Zakaz.ua product page",
+    "source_ref": "Veres: Нут — 100 г: В 27.4, Б 8.9, Ж 2.6, 164 ккал; Zakaz barcode 04823105400645 reports identical P/F/C",
+    "verified": true
+  }
+]
