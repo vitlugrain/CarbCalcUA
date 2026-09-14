@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#224** remains the current USER-TESTED STABLE Android checkpoint. APK **#226** was tested by the user and did not fully solve the add-food navigation issue: the keyboard closed, but the screen did not scroll to the quantity/portion controls.
+GitHub is the source of truth. APK **#224** remains the current USER-TESTED STABLE Android checkpoint. APK **#226** was tested by the user and did not fully solve the add-food navigation issue: the keyboard closed, but the screen did not scroll to the quantity/portion controls. APK **#233** is the current TEST CANDIDATE with the explicit quantity-navigation fix and has passed CI; device verification is required.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -53,6 +53,22 @@ Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b
 - keyboard closes after product selection, but list does not scroll to quantity/portion controls.
 - do not promote to stable.
 
+**APK #233 — BUILD SUCCESS / AWAITING DEVICE TEST**
+- Android APK run #233
+- run ID: `34860877221`
+- head: `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
+- UI source fix: `579efe7c00d8e3564a33164c171e052e19613c6a`
+- CI performance-fix compatibility: `2d05bc63773aff34b5c2b823b2699722e180e6cb`
+- Open Food Facts fallback: `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
+- artifact: `CarbCalcUA-0.6.0-build-233`
+- artifact ID: `10354139918`
+- artifact archive digest: `sha256:2fe83151372a88c1adf596388665e047dc8868e7aaafdcc3a17aacaa29d39588`
+- analyze: success
+- tests: success
+- release APK build: success
+- artifact publication: success
+- device verification required before promotion to stable.
+
 ## UI fix v2 — explicit quantity navigation
 
 User feedback after APK #226: after selecting a product, the keyboard closes but the list still does not move to the quantity/portion controls.
@@ -64,7 +80,7 @@ Second fix applied in `lib/main.dart` at commit `579efe7c00d8e3564a33164c171e052
 - after selection, the page explicitly animates its `ListView` to that row;
 - no automatic re-opening of the keyboard; the goal is to show the quantity/unit controls immediately.
 
-This checkpoint commit exists to trigger an Android APK build from the corrected post-patch branch state. Device verification is required before promoting the resulting APK to stable.
+CI was also hardened so a temporary Open Food Facts outage does not block an unrelated UI APK build: the workflow preserves and reuses the checked-in `assets/ua_branded_products.json` if the live refresh fails.
 
 ## Next catalog category
 
