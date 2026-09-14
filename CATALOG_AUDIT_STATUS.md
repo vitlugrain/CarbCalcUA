@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume preserves audit active; part1 = 2 verified + 4 pending conflict groups; part2 = 3 verified Veres vegetable preserves. |
+| Консерви | IN PROGRESS | Vegetable/legume preserves audit active; part1 = 2 verified + 4 pending; part2 = 3 verified; part3 = 2 verified + 5 pending conflict/label-generation groups. |
 
 ## Sauces runtime checkpoint
 
@@ -55,6 +55,12 @@ Part2:
 - Official Veres and Zakaz nutrition agree for all three selected identities.
 - Important identity note: Veres has evidence of label/recipe generations for zucchini caviar (including a newer 310 g variant with different P/F/calories despite same 7 g carbs). Part2 therefore pins the verified 440 g barcode identities and does not infer equivalence across changed recipes merely from product name.
 - part2 commit: `6f105aefe2adb95d1f807047e2852215ae45c2da`.
+
+Part3:
+- `assets/canned_verified_part3.json` — 2 verified Veres preserves absent from runtime by checked barcode: classic pickled cucumbers 435 g and pickled tomatoes 760 g. Official Veres and current Zakaz values match for both: В 4.0, Б 0.3, Ж 0.0, 17 ккал / 100 г.
+- `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska vegetable appetizer, vegetable stew, Bulgarian lecho, and pickled cherry tomatoes remain outside runtime because of official-vs-retailer nutrition conflicts, multiple barcode/label generations, or insufficient manufacturer-level confirmation.
+- verified commit: `d6d211579dd3c222f744a0eb738a7452c18cb999`.
+- pending commit: `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`.
 
 No canned-food runtime whitelist or merge has been created yet.
 
