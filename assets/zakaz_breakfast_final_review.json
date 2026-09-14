@@ -1,0 +1,28 @@
+{
+  "category": "Пластівці та сухі сніданки",
+  "status": "CLOSED_AUDIT_CHECKPOINT",
+  "reviewed_parts": [
+    "assets/zakaz_breakfast_verified_part1.json",
+    "assets/zakaz_breakfast_verified_part2.json",
+    "assets/zakaz_breakfast_verified_part3.json",
+    "assets/zakaz_breakfast_verified_part4.json",
+    "assets/zakaz_breakfast_verified_part5.json"
+  ],
+  "runtime_merge": false,
+  "policy": {
+    "plain_flakes": "generic-first; do not average materially conflicting labels; compare processing/type before runtime integration",
+    "recipe_cereals_granola_muesli": "retain branded identities when recipe/subtype or carbohydrate values are meaningfully different",
+    "package_variants": "same recipe and nutrition in several package sizes remain one product identity",
+    "conflicts": "conflicting or obsolete-looking labels remain outside runtime until resolved"
+  },
+  "dedup_decisions": [
+    "Plain oat flakes remain generic-first; Elovena gluten-free oats remain a distinct branded candidate.",
+    "Start package-size duplicates with identical nutrition are one product identity.",
+    "Lion regular and Lion Protein remain separate because recipe and nutrition differ materially.",
+    "CINI-MINIS regular and Protein remain separate subtypes.",
+    "Muesli Mania Fruit 300 g and 350 g are not automatically merged because recipe and carbohydrate values differ materially.",
+    "All verified audit candidates remain outside runtime until a dedicated whitelist/merge validation step."
+  ],
+  "next_category": "Продукти швидкого приготування",
+  "note": "Audit checkpoint finalized before runtime integration. This file records dedup decisions and prevents accidental merging of all audit candidates."
+}
