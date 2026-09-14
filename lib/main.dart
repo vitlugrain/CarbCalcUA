@@ -280,6 +280,18 @@ class _AddFoodPageState extends State<AddFoodPage>{
       }
       if (!mounted) return;
       amountFocusNode.requestFocus();
+      // Re-align after the keyboard changes the viewport.
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+      if (!mounted) return;
+      final focusedCtx = quantitySectionKey.currentContext;
+      if (focusedCtx != null) {
+        await Scrollable.ensureVisible(
+          focusedCtx,
+          duration: const Duration(milliseconds: 220),
+          curve: Curves.easeOut,
+          alignment: 0.12,
+        );
+      }
       controller.selection = TextSelection(
         baseOffset: 0,
         extentOffset: controller.text.length,
