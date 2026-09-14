@@ -1,0 +1,5 @@
+[
+{"id":"ua_korona_milk_chocolate","name":"Шоколад Корона молочний","brand":"Корона","category":"Солодощі","state":"ready_to_eat","carbs":60.0,"protein":5.7,"fat":29.0,"calories":527,"nutrition_basis":"100g","package_g":85,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_korona_milk_hazelnut_chocolate","name":"Шоколад Корона молочний з подрібненими лісовими горіхами","brand":"Корона","category":"Солодощі","state":"ready_to_eat","carbs":58.0,"protein":6.1,"fat":30.0,"calories":533,"nutrition_basis":"100g","package_g":85,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_milka_oreo_chocolate","name":"Шоколад Milka молочний з начинкою та печивом Oreo","brand":"Milka","category":"Солодощі","state":"ready_to_eat","carbs":56.0,"protein":4.8,"fat":35.0,"calories":564,"nutrition_basis":"100g","package_g":100,"source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
