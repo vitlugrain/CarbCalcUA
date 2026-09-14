@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#148** remains the last user-tested stable Android checkpoint until the new post-sauce APK is installed and tested.
+GitHub is the source of truth. APK **#148** remains the last USER-TESTED stable Android checkpoint. APK **#224** has now BUILT SUCCESSFULLY after the sauces runtime merge and is ready for device testing; do not call it user-verified/stable until the user installs and tests it.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -36,13 +36,25 @@ Whitelist commit: `4fdadb009977e6cdf87592dad0f5e93161e44ccf`.
 Merge-script commit: `13211d27d99b78f35d589b553357ba6ffa373350`.
 Generated `products.json` commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
 Merge verified catalogs run #110 completed successfully.
-Post-merge checkpoint commit: `d5ce632273c7c648513a9613386e90b57da39678`.
+Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da39678`.
 
-New Android APK build: run #224, run ID `34852026300`, head `d5ce632273c7c648513a9613386e90b57da39678`. Mark it verified/stable only after successful build and user device test.
+## APK checkpoints
 
-## Last stable APK
+**APK #224 — BUILD SUCCESS / AWAITING DEVICE TEST**
+- Android APK run #224
+- run ID: `34852026300`
+- head: `d5ce632273c7c648513a9613386e90b57da39678`
+- artifact: `CarbCalcUA-0.6.0-build-224`
+- artifact ID: `10350169458`
+- artifact archive digest: `sha256:55cdc1440fd12570dd2ad0a7752ec98b9693b3c0414607ecc662c54efd66698a`
+- analyze: success
+- tests: success
+- release APK build: success
+- artifact publication: success
 
-APK #148 — run ID `34769645259`, head `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`; user tested successfully.
+**APK #148 — USER-TESTED STABLE**
+- run ID: `34769645259`
+- head: `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`
 
 ## Next catalog category
 
