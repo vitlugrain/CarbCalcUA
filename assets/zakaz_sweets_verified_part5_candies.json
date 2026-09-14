@@ -1,0 +1,5 @@
+[
+{"id":"ua_roshen_koko_choco","name":"Цукерки Roshen Ko-Ko Choco","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":49.2,"protein":6.3,"fat":37.6,"calories":564,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_koko_choco_white","name":"Цукерки Roshen Ko-Ko Choco White","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":46.8,"protein":6.4,"fat":37.6,"calories":556,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_johnny_krocker_coconut","name":"Цукерки Roshen Johnny Krocker Coconut","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":56.3,"protein":5.0,"fat":33.7,"calories":553,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
