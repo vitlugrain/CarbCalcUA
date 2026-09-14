@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#224** is now the USER-TESTED STABLE Android checkpoint after successful installation and normal operation on the user's device on 2026-09-14.
+GitHub is the source of truth. APK **#224** is the current USER-TESTED STABLE Android checkpoint after successful installation and normal operation on the user's device on 2026-09-14.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -36,7 +36,7 @@ Whitelist commit: `4fdadb009977e6cdf87592dad0f5e93161e44ccf`.
 Merge-script commit: `13211d27d99b78f35d589b553357ba6ffa373350`.
 Generated `products.json` commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
 Merge verified catalogs run #110 completed successfully.
-Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da39678`.
+Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b57da39678`.
 
 ## APK checkpoints
 
@@ -46,7 +46,6 @@ Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da3
 - head: `d5ce632273c7c648513a9613386e90b57da39678`
 - artifact: `CarbCalcUA-0.6.0-build-224`
 - artifact ID: `10350169458`
-- artifact archive digest: `sha256:55cdc1440fd12570dd2ad0a7752ec98b9693b3c0414607ecc662c54efd66698a`
 - analyze: success
 - tests: success
 - release APK build: success
@@ -55,11 +54,17 @@ Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da3
 
 Previous stable checkpoint: APK #148, run ID `34769645259`, head `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`.
 
-## UI feedback / next UX fix
+## UI fix — add-food quantity autoscroll
 
-When adding a product, the user enters a name and selects a product from the search-result list. The app already changes to the quantity/portion controls, but those controls may remain below the current scroll position, forcing the user to scroll manually through the dish/product screen.
+User feedback: after typing a product name and selecting a result, the app switches to the quantity controls but may leave them below the current visible scroll area, so the user has to scroll manually.
 
-Desired behavior: immediately after selecting a product from search results, automatically scroll/focus the screen to the quantity input area (grams / pieces or other applicable units) so the quantity controls are visible without manual scrolling. Preserve the selected product and existing add-product flow; this is a navigation/scroll UX improvement, not a catalog change.
+Fix applied in `lib/main.dart` at commit `2ee4713f7b1c659632b3f2b82e18f5ea05eff6c1`:
+- keep the existing first `Scrollable.ensureVisible` after selecting a product;
+- focus the quantity field;
+- after the keyboard changes the viewport, wait briefly and perform a second `Scrollable.ensureVisible` so the quantity controls remain visible;
+- selected product and current add-food flow are preserved.
+
+This UI fix is now awaiting a new APK build and device verification. APK #224 remains the stable fallback until the user confirms the new build.
 
 ## Next catalog category
 
