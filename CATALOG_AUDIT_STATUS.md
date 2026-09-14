@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Category-first audit started with vegetable/legume preserves; part1 has 2 verified Veres identities and 4 conflict groups in pending review. |
+| Консерви | IN PROGRESS | Vegetable/legume preserves audit active; part1 = 2 verified + 4 pending conflict groups; part2 = 3 verified Veres vegetable preserves. |
 
 ## Sauces runtime checkpoint
 
@@ -40,7 +40,7 @@ Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Ще
 
 Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Current broad category map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes. Audit order begins with vegetable/legume preserves because they are carbohydrate-relevant and overlap existing Bonduelle runtime data.
 
-Existing-runtime gap check confirmed that several Bonduelle canned legumes/vegetables are already present in `assets/products.json`; they must not be duplicated merely because Zakaz lists another package size. Initial Veres barcode candidates were checked against `assets/products.json` before audit-file creation.
+Existing-runtime gap check confirmed that several Bonduelle canned legumes/vegetables are already present in `assets/products.json`; they must not be duplicated merely because Zakaz lists another package size. Candidate barcodes are checked against `assets/products.json` before audit-file creation.
 
 Part1 files:
 - `assets/canned_verified_part1.json` — 2 verified Veres products: beans in tomato sauce and canned chickpeas. Both have matching official Veres and Zakaz P/F/C and were absent from runtime by checked barcode.
@@ -49,6 +49,12 @@ Part1 files:
 Part1 commits:
 - verified: `8689c5ffdcb524399970c4fd726285aefe24c49f`
 - pending: `4e0463284c32f067ba462c1710f713a8f4385f6f`
+
+Part2:
+- `assets/canned_verified_part2.json` — 3 verified Veres recipe-dependent vegetable preserves absent from runtime by checked barcode: zucchini caviar, zucchini caviar with pepper, and eggplants in adjika.
+- Official Veres and Zakaz nutrition agree for all three selected identities.
+- Important identity note: Veres has evidence of label/recipe generations for zucchini caviar (including a newer 310 g variant with different P/F/calories despite same 7 g carbs). Part2 therefore pins the verified 440 g barcode identities and does not infer equivalence across changed recipes merely from product name.
+- part2 commit: `6f105aefe2adb95d1f807047e2852215ae45c2da`.
 
 No canned-food runtime whitelist or merge has been created yet.
 
