@@ -1,0 +1,9 @@
+id,name,brand,state,carbs,protein,fat,calories,nutrition_basis,package_g,verified,runtime_merge
+ua_axa_instant_oatmeal_apple_cinnamon_dry,Каша вівсяна AXA яблуко-кориця,AXA,dry,60.0,8.0,4.0,310,100g_dry,40,true,false
+ua_axa_instant_oatmeal_cream_strawberry_dry,Каша вівсяна AXA з вершками та полуницею,AXA,dry,62.4,10.6,8.8,381,100g_dry,40,true,false
+ua_axa_instant_oatmeal_tropical_dry,Каша вівсяна AXA з тропічними фруктами,AXA,dry,66.3,10.0,5.7,366,100g_dry,40,true,false
+ua_axa_instant_oatmeal_protein_raspberry_strawberry_dry,Каша вівсяна AXA Protein малина та полуниця,AXA,dry,58.9,20.1,7.4,455,100g_dry,40,true,false
+ua_doctor_benner_instant_buckwheat_dry,Каша гречана Doctor Benner Легка безмолочна,Doctor Benner,dry,60.4,9.5,2.3,300.3,100g_dry,125,true,false
+ua_doctor_benner_instant_5_grain_dry,Каша Doctor Benner Легка 5 злаків безмолочна,Doctor Benner,dry,67.0,10.3,2.0,327.5,100g_dry,125,true,false
+ua_dobrodiya_instant_oatmeal_apple_cinnamon_dry,Каша вівсяна Добродія з яблуком та корицею,Добродія,dry,70.0,10.0,4.6,384,100g_dry,40,true,false
+ua_novus_instant_oatmeal_apple_cinnamon_dry,Каша вівсяна Novus з яблуком та корицею,Novus,dry,66.0,8.0,4.0,332,100g_dry,40,true,false
