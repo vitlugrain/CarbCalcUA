@@ -1,0 +1,5 @@
+[
+{"id":"ua_lays_salt_chips","name":"Чипси Lay's з сіллю","brand":"Lay's","category":"Снеки","state":"ready_to_eat","carbs":51.0,"protein":6.6,"fat":32.0,"calories":526,"nutrition_basis":"100g","package_g":120,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_lays_cheese_chips","name":"Чипси Lay's зі смаком сиру","brand":"Lay's","category":"Снеки","state":"ready_to_eat","carbs":52.0,"protein":6.5,"fat":30.0,"calories":516,"nutrition_basis":"100g","package_g":120,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_lays_green_onion_chips","name":"Чипси Lay's зі смаком зеленої цибулі","brand":"Lay's","category":"Снеки","state":"ready_to_eat","carbs":53.0,"protein":6.2,"fat":33.0,"calories":545,"nutrition_basis":"100g","package_g":120,"source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
