@@ -16,6 +16,7 @@ CATALOGS = [
     'zakaz_bread_bakery_verified_part3.json',
     'zakaz_sweet_bakery_verified_part1.json',
     'zakaz_sweet_bakery_verified_part2.json',
+    'zakaz_sauces_runtime_verified.json',
 ]
 
 EXCLUDED_IDS = {
