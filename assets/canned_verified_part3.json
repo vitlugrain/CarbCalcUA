@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ua_veres_pickled_cucumbers_04823105408481",
+    "name": "Огірки мариновані Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 4.0,
+    "protein": 0.3,
+    "fat": 0.0,
+    "calories": 17,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105408481",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "435 г; both sources: 100 г = В 4.0, Б 0.3, Ж 0.0, 17 ккал",
+    "verified": true
+  },
+  {
+    "id": "ua_veres_pickled_tomatoes_04823105405824",
+    "name": "Томати мариновані Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 4.0,
+    "protein": 0.3,
+    "fat": 0.0,
+    "calories": 17,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105405824",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "760 г; both sources: 100 г = В 4.0, Б 0.3, Ж 0.0, 17 ккал",
+    "verified": true
+  }
+]
