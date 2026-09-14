@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count is 10 after part7 added 2 manufacturer-confirmed Brivais Vilnis fish identities. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count is 13 after part8 added 3 manufacturer-confirmed Brivais Vilnis tomato-sauce fish identities. |
 
 ## Sauces runtime checkpoint
 
@@ -85,7 +85,15 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - both barcodes were absent from current `assets/products.json` in this pass.
 - part7 commit: `c034cdaba67262c6a20ae5049f9de125bafb6ce1`
 
-Current canned verified count: **10** (parts1–4 + part7). No canned-food runtime whitelist or merge has been created.
+### Part8 — verified Brivais Vilnis tomato-sauce fish
+- `assets/canned_verified_part8_fish.json` — 3 manufacturer-confirmed Brivais Vilnis identities absent from current runtime by checked barcode.
+- Sardines in tomato sauce 240 g, barcode `04750616001439`: official Brivais Vilnis and Zakaz agree exactly — В 5.2 / Б 16.0 / Ж 3.2 / 111 ккал per 100 g.
+- Mackerel in tomato sauce 240 g, barcode `04750616001446`: official Brivais Vilnis and Zakaz agree exactly — В 7.1 / Б 12.0 / Ж 16.0 / 217 ккал per 100 g.
+- Roasted Riga sprats in tomato sauce 240 g: Zakaz barcodes `04750616002337` and `04750616002344` show the same weight, recipe and В 6.9 / Б 8.5 / Ж 9.6 / 148 ккал; official Brivais Vilnis matches the same recipe/nutrition. They are recorded as one recipe identity with an alternate barcode for dedup.
+- all checked part8 barcodes were absent from current `assets/products.json` in this pass.
+- part8 commit: `8c2d442c3fa8e86a0489b97ee9dc7ba3c9b73c77`
+
+Current canned verified count: **13** (parts1–4 + part7–8). No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
