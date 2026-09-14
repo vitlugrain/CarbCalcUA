@@ -1,0 +1,39 @@
+[
+  {
+    "id": "ua_metrochef_rice_noodles_dry",
+    "name": "Локшина рисова Metro Chef, суха",
+    "brand": "Metro Chef",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 78.5,
+    "protein": 6.4,
+    "fat": 0.8,
+    "calories": 351,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "source": "Zakaz.ua / METRO — Metro Chef Локшина рисова 1 кг та плоска 600 г",
+    "source_ref": "Rice 89% + drinking water 11%; same nutrition for regular and flat forms",
+    "verified": true,
+    "runtime_merge": false,
+    "dedup_note": "Regular and flat forms have identical recipe/macros; keep one nutrition identity. Katana wide rice noodles 78.0 g carbs/100 g are within 0.5 g and do not justify another branded nutrition identity under current heuristic."
+  },
+  {
+    "id": "ua_wheat_udon_dry_generic",
+    "name": "Локшина удон пшенична, суха",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 62.8,
+    "protein": 9.4,
+    "fat": 1.3,
+    "calories": 301,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — JS Udon / Katana Udon / Wheatsun Udon",
+    "source_ref": "Three current listings converge on 62.8 g carbs, 9.4 g protein, 1.3 g fat per 100 g; wheat flour + water + salt (JS additionally lists baking soda)",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Materially different from standard dry durum pasta (71 g carbs/100 g). Treat as separate wheat-udon subtype. Metro Chef Udon 1.05 kg lists 76 g carbs/100 g and is therefore not merged into this baseline pending separate recipe/source review."
+  }
+]
