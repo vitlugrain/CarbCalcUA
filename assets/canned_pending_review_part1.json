@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Горошок зелений Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "status": "pending_review",
+    "reason": "Official Veres page reports 100 g: В 6.5, Б 3.1, Ж 0, 38.4 ккал; current Zakaz product pages for 420 g report В 9.7, Б 3.0, Ж 0.4, 54 ккал. Do not choose one value without resolving recipe/label generation.",
+    "known_barcodes": ["04823105405817", "04820008093073"]
+  },
+  {
+    "name": "Кукурудза Верес цукрова",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "status": "pending_review",
+    "reason": "Official Veres page reports 100 g: В 11.2, Б 2.2, Ж 0, 54 ккал for 170/340 g identity. Zakaz listings show multiple barcode/label generations including 170 g with matching 11.2/2.2/0 and 340 g variants with 11.3/2.2/0.45 or 15.6/1.8/0.4. Same-recipe/package identity cannot be safely normalized yet.",
+    "known_barcodes": ["04820076280573", "04823105400812", "04823105408016", "04820008093004", "04823105403639"]
+  },
+  {
+    "name": "Кукурудза Верес Преміум ніжна",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "status": "pending_review",
+    "reason": "Official Veres page reports 100 g: В 11.2, Б 2.2, Ж 0, 54 ккал; Zakaz reports В 11.1, Б 2.1, Ж 0.32, 60 ккал. Conflict must be resolved before runtime.",
+    "known_barcodes": ["04823105406302", "04823105407996"]
+  },
+  {
+    "name": "Квасоля Верес з овочами",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "status": "pending_review",
+    "reason": "Official Veres page reports 100 g: В 13.0, Б 2.6, Ж 5.0, 108 ккал; Zakaz current listings report В 16.0, Б 5.6, Ж 5.0, 131 ккал. Possible recipe/label change; keep outside runtime.",
+    "known_barcodes": ["04823105408788", "04823105402069"]
+  }
+]
