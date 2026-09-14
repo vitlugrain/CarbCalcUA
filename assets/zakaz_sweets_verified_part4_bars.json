@@ -1,0 +1,6 @@
+[
+{"id":"ua_snickers_bar","name":"Батончик Snickers з арахісом, карамеллю та нугою","brand":"Snickers","category":"Солодощі","state":"ready_to_eat","carbs":60.0,"protein":8.7,"fat":23.0,"calories":489,"nutrition_basis":"100g","package_g":50,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_bounty_bar","name":"Батончик Bounty з кокосовою начинкою в молочному шоколаді","brand":"Bounty","category":"Солодощі","state":"ready_to_eat","carbs":60.0,"protein":3.8,"fat":26.0,"calories":487,"nutrition_basis":"100g","package_g":57,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_twix_bar","name":"Twix печиво з карамеллю в молочному шоколаді","brand":"Twix","category":"Солодощі","state":"ready_to_eat","carbs":65.0,"protein":4.6,"fat":24.0,"calories":493,"nutrition_basis":"100g","package_g":50,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_mars_bar","name":"Батончик Mars з нугою та карамеллю в молочному шоколаді","brand":"Mars","category":"Солодощі","state":"ready_to_eat","carbs":70.0,"protein":4.4,"fat":16.0,"calories":443,"nutrition_basis":"100g","package_g":51,"source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
