@@ -1,0 +1,5 @@
+[
+{"id":"ua_roshen_jelly_mix","name":"Цукерки Roshen Jelly желейні","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":82.2,"protein":0.1,"fat":0.0,"calories":327,"nutrition_basis":"100g","package_g":200,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_bonny_fruit_citrus_mix","name":"Цукерки Roshen Bonny Fruit Citrus Mix желейні","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":81.2,"protein":0.1,"fat":0.0,"calories":330,"nutrition_basis":"100g","package_g":200,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_yummi_gummi_banana_land","name":"Цукерки Roshen Yummi Gummi Banana Land","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":77.5,"protein":6.0,"fat":0.0,"calories":333,"nutrition_basis":"100g","package_g":70,"source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
