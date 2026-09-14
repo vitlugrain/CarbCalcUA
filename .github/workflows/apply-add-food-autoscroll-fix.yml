@@ -1,0 +1,32 @@
+name: Apply add-food autoscroll fix
+
+on:
+  push:
+    branches: [dev-large-update]
+    paths:
+      - '.github/workflows/apply-add-food-autoscroll-fix.yml'
+      - 'scripts/apply_add_food_autoscroll_fix.py'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev-large-update
+      - name: Apply fix
+        run: python3 scripts/apply_add_food_autoscroll_fix.py
+      - name: Commit fix
+        run: |
+          if git diff --quiet -- lib/main.dart; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lib/main.dart
+          git commit -m 'ui: keep quantity controls visible after product selection'
+          git push origin HEAD:dev-large-update
