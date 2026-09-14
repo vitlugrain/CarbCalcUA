@@ -1,0 +1,40 @@
+[
+  {
+    "barcode": "04820235630591",
+    "name": "Тунець Fish Line у власному соку 160 г",
+    "brand": "Fish Line",
+    "subcategory": "рибні консерви / тунець у власному соку",
+    "retailer_nutrition_per_100g": {"carbs": 0.0, "protein": 26.8, "fat": 0.7, "calories": 114},
+    "source": "Zakaz.ua / METRO",
+    "status": "pending_review",
+    "reason": "Retailer data is complete and barcode was not found in repository search, but manufacturer-level nutrition confirmation has not yet been obtained. Do not promote to runtime from retailer-only evidence."
+  },
+  {
+    "barcode": "08410090031549",
+    "name": "Тунець Calvo у власному соку 160 г",
+    "brand": "Calvo",
+    "subcategory": "рибні консерви / тунець у власному соку",
+    "retailer_nutrition_per_100g": {"carbs": 0.0, "protein": 22.0, "fat": 0.9, "calories": 97},
+    "source": "Zakaz.ua",
+    "status": "pending_review",
+    "reason": "Complete retailer nutrition and distinct barcode, but manufacturer-level confirmation is still required before verified/runtime status."
+  },
+  {
+    "barcode": "04751007739368",
+    "name": "Шпроти Baltic Fish в олії 160 г",
+    "brand": "BALTIC FISH",
+    "subcategory": "рибні консерви / шпроти в олії",
+    "retailer_nutrition_per_100g": {"carbs": 0.1, "protein": 21.0, "fat": 10.2, "calories": 176},
+    "source": "Zakaz.ua / Auchan",
+    "status": "pending_review",
+    "reason": "Zakaz also lists a 190 g barcode with identical nutrition, suggesting a possible same-recipe package-size family. Manufacturer confirmation and identity dedup are required before runtime."
+  },
+  {
+    "barcode": "04820104250509",
+    "name": "Тунець Fish Line у власному соку 185 г",
+    "brand": "Fish Line",
+    "subcategory": "рибні консерви / тунець у власному соку",
+    "status": "pending_review",
+    "reason": "Current Zakaz retailer pages conflict for the same barcode: one page reports В 0.0 / Б 26.8 / Ж 0.7 / 114 ккал while another reports В 0.5 / Б 23.0 / Ж 0.5 / 100 ккал. Keep outside runtime until label/manufacturer generation is resolved."
+  }
+]
