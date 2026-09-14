@@ -38,7 +38,12 @@ jobs:
         run: python3 scripts/merge_rud_catalog.py
 
       - name: Build Ukrainian branded offline database
-        run: python3 scripts/build_ua_branded_db.py
+        run: |
+          cp assets/ua_branded_products.json /tmp/ua_branded_products.json
+          if ! python3 scripts/build_ua_branded_db.py; then
+            echo "Open Food Facts is temporarily unavailable; using checked-in branded database."
+            cp /tmp/ua_branded_products.json assets/ua_branded_products.json
+          fi
 
       - name: Apply runtime catalog performance fix
         run: python3 scripts/apply_runtime_catalog_performance_fix.py
