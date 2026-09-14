@@ -6,49 +6,48 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-APK **#148** remains the verified/stable Android checkpoint after successful device testing on 2026-09-14. GitHub is the source of truth.
+GitHub is the source of truth. APK **#148** remains the last user-tested stable Android checkpoint until the new post-sauce APK is installed and tested.
 
-Closed/integrated checkpoints:
-1. **Крупи та бобові**;
-2. **Хліб та випічка**.
+### Runtime integrated
+1. Крупи та бобові — safe checkpoint merge.
+2. Хліб та випічка — safe checkpoint merge.
+3. Соуси — 8 explicitly whitelisted verified ketchup products integrated; existing Torchin sauce block preserved without duplication.
 
-Closed audit checkpoints awaiting dedicated runtime whitelist validation:
-3. **Макаронні вироби**;
-4. **Пластівці та сухі сніданки**;
-5. **Продукти швидкого приготування**;
-6. **Солодощі**.
+### Closed audit checkpoints awaiting dedicated runtime whitelist/revalidation
+4. Макаронні вироби.
+5. Пластівці та сухі сніданки.
+6. Продукти швидкого приготування.
+7. Солодощі — some earlier audit parts require revalidation before runtime.
+8. Снеки — revalidate part5/part12 and verify part9/10/11 before runtime.
 
-## MANDATORY catalog identity policy
+## Mandatory catalog policy
 
-CarbCalc UA uses a **hybrid generic + branded catalog**.
+Use a hybrid generic + branded catalog. Simple/raw foods are generic-first and deduplicated across brands. Recipe/manufactured foods may have separate branded identities when verified nutrition materially differs or recipe/subtype is distinct. Same recipe with different package sizes should normally be one identity. Before adding any SKU, check `assets/products.json`. Never invent nutrition values. Conflicts/incomplete data stay pending and outside runtime.
 
-**Simple/raw foods:** generic-first cross-brand dedup. Another trademark/package/EAN does not justify another runtime food when food type/state and nutrition are practically equivalent.
+## Instant foods rule
 
-**Manufactured / recipe-dependent foods:** multiple trademark-specific products may and should coexist when verified nutrition is meaningfully different for carbohydrate counting or recipe/subtype is distinct.
+When nutrition is given for dry product, calculate/store on dry basis. Added water changes weight, not total carbohydrates. Never invent water absorption or yield coefficients. Rule file: `assets/INSTANT_FOODS_RULES.md`.
 
-Practical review threshold: a branded variant is normally justified when carbohydrate content differs by roughly **5 g/100 g or more** from the closest equivalent, or whenever recipe/subtype is materially different. This is a catalog heuristic, not a medical threshold.
+## Sauces checkpoint
 
-Near-identical branded products should still be deduplicated. Same recipe/nutrition in multiple package sizes should preferably be one product identity.
+Audit checkpoint: `assets/sauces_checkpoint.json`.
+Runtime whitelist: `assets/zakaz_sauces_runtime_verified.json`.
+Whitelist commit: `4fdadb009977e6cdf87592dad0f5e93161e44ccf`.
+Merge-script commit: `13211d27d99b78f35d589b553357ba6ffa373350`.
+Generated `products.json` commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
+Merge verified catalogs run #110 completed successfully.
+Post-merge checkpoint commit: `d5ce632273c7c648513a9613386e90b57da39678`.
 
-## Продукти швидкого приготування — audit checkpoint closed
+New Android APK build: run #224, run ID `34852026300`, head `d5ce632273c7c648513a9613386e90b57da39678`. Mark it verified/stable only after successful build and user device test.
 
-Final review is persisted in `assets/zakaz_instant_final_review.json`. The mandatory dry-product basis rule remains in force: if verified nutrition is given for the dry packaged product, calculations must use dry-product basis unless a verified prepared-product basis or final yield is known. Do not invent water absorption/yield coefficients. Runtime merge has not been forced; dedicated whitelist validation is still required.
+## Last stable APK
 
-## Солодощі — audit checkpoint closed
+APK #148 — run ID `34769645259`, head `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`; user tested successfully.
 
-Verified audit blocks cover the current useful checkpoint across chocolate, bars, candies, caramel, toffee, marshmallow, jelly and gummies. Final decisions are persisted in `assets/zakaz_sweets_final_review.json`. Conflicting recipe/nutrition versions remain pending and outside runtime. Audit candidates remain `runtime_merge:false` until dedicated whitelist validation.
+## Next catalog category
 
-## Current active category — Снеки
+**Консерви**, then **напої → заморожені напівфабрикати**.
 
-Next workflow:
-`Zakaz.ua discovery → existing-catalog gap check → nutrition verification → recipe/dedup decision → pending review where needed → verified audit parts → final review`.
+## Working rule for continuation
 
-Audit order: chips → corn snacks → croutons/toasts → crackers and other salty snacks.
-
-## Next category order
-
-After snacks: **соуси → консерви → напої → заморожені напівфабрикати**.
-
-## Working rules
-
-Zakaz.ua is the discovery/current-retail source; official manufacturer data is preferred. Never invent missing P/F/C. Conflicting/incomplete data remains pending. Work only on `dev-large-update`. Preserve app behavior, signing/update continuity and local data. Before runtime merge: verify → dedup → whitelist → merge → parse/test → APK. On every new chat, read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md` before continuing catalog work.
+At the start of every new chat, read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md`. Before each runtime merge: verify → check existing runtime → dedup → explicit whitelist → merge → parse/test → APK. Do not bulk-merge audit files merely because their filenames contain `verified`.
