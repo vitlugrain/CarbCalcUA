@@ -1,0 +1,5 @@
+[
+{"id":"ua_roshen_bim_bom_caramel","name":"Карамель Roshen Бім-Бом","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":92.0,"protein":0.0,"fat":0.1,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_sweet_drop_caramel","name":"Карамель Roshen Sweet Drop","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":96.0,"protein":0.0,"fat":0.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_barbaris_caramel","name":"Карамель Roshen Барбарис","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":96.0,"protein":0.0,"fat":0.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
