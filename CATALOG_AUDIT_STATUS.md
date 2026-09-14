@@ -38,14 +38,15 @@ Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Ще
 
 ## APK/runtime checkpoint
 
-APK **#224** built successfully from post-sauce checkpoint commit `d5ce632273c7c648513a9613386e90b57da39678`.
-- run ID `34852026300`
-- artifact `CarbCalcUA-0.6.0-build-224`
-- artifact ID `10350169458`
+APK **#233** is the current USER-TESTED STABLE Android checkpoint.
+- run ID `34860877221`
+- head `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
+- artifact `CarbCalcUA-0.6.0-build-233`
 - analyze/tests/release build/publish all succeeded
-- awaiting user Android device test
+- user Android test on 2026-09-14 confirmed product-selection navigation works correctly
+- remaining UI follow-up: final `Додати до щоденника` button needs bottom safe-area/scroll clearance so it cannot be obscured by app or Android navigation.
 
-APK **#148** remains the last USER-TESTED stable checkpoint until #224 is installed and verified by the user.
+APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested but its navigation fix was incomplete.
 
 ## Planned category sequence
 
