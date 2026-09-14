@@ -1,0 +1,5 @@
+[
+{"id":"ua_roshen_classic_milk_chocolate","name":"Шоколад Roshen Classic молочний","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":52.1,"protein":7.2,"fat":30.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_classic_milk_hazelnut_chocolate","name":"Шоколад Roshen Classic молочний з цілим фундуком","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":42.0,"protein":8.2,"fat":38.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_brut_80_chocolate","name":"Шоколад Roshen Brut 80% чорний","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":22.8,"protein":10.2,"fat":46.2,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
