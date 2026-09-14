@@ -1,0 +1,4 @@
+[
+{"id":"ua_zefir_vanilla_generic_branded","name":"Зефір ванільний","category":"Солодощі","state":"ready_to_eat","carbs":80.0,"protein":0.8,"fat":0.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_zefir_chocolate_glazed","name":"Зефір у шоколадній глазурі","category":"Солодощі","state":"ready_to_eat","carbs":70.0,"protein":2.0,"fat":10.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
