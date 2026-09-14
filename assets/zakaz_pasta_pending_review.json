@@ -1,0 +1,35 @@
+[
+  {
+    "candidate": "Barilla Protein+ Spaghetti 400 г",
+    "category": "Макаронні вироби",
+    "status": "pending_review",
+    "runtime_merge": false,
+    "reason": "Nutrition conflict between current Ukrainian Zakaz listing and current official Barilla pages.",
+    "zakaz": {
+      "carbs": 60.0,
+      "protein": 20.0,
+      "fat": 1.8,
+      "calories": 354,
+      "source_ref": "Zakaz.ua METRO, EAN 8076809585880"
+    },
+    "official_barilla": {
+      "carbs": 63.0,
+      "protein": 20.0,
+      "fat": 1.7,
+      "calories": 354,
+      "source_ref": "Current Barilla Protein+ Spaghetti pages; durum wheat semolina + pea protein 10.8%"
+    },
+    "decision": "Do not merge until Ukrainian pack label/current market formulation is confirmed."
+  },
+  {
+    "candidate": "Tricolore / vegetable-coloured durum pasta",
+    "category": "Макаронні вироби",
+    "status": "pending_dedup_decision",
+    "runtime_merge": false,
+    "reason": "Current products differ by brand/recipe but carbohydrate values remain close to ordinary durum pasta; assess whether search/recipe distinction justifies separate runtime identity.",
+    "examples": [
+      "Barilla Collezione Mezze Penne Tricolore — 71.2 g carbs/100 g",
+      "Pasta Reggia Fusilli Tricolore — 73.0 g carbs/100 g"
+    ]
+  }
+]
