@@ -10,8 +10,9 @@ if old_loader not in s:
     raise SystemExit('Expected loader block not found; refusing unsafe patch')
 s = s.replace(old_loader, new_loader, 1)
 
-old_fields = """  final quantitySectionKey=GlobalKey();\n\n  @override void initState(){\n    super.initState();\n"""
-new_fields = """  final quantitySectionKey=GlobalKey();\n  late Future<List<Product>> productsFuture;\n\n  @override void initState(){\n    super.initState();\n    productsFuture=loadAllProducts();\n"""
+# AddFoodPage now owns pageScrollController as part of the quantity-navigation UX.
+old_fields = """  final quantitySectionKey=GlobalKey();\n  final pageScrollController=ScrollController();\n\n  @override void initState(){\n    super.initState();\n"""
+new_fields = """  final quantitySectionKey=GlobalKey();\n  final pageScrollController=ScrollController();\n  late Future<List<Product>> productsFuture;\n\n  @override void initState(){\n    super.initState();\n    productsFuture=loadAllProducts();\n"""
 if old_fields not in s:
     raise SystemExit('Expected AddFood state field block not found; refusing unsafe patch')
 s = s.replace(old_fields, new_fields, 1)
