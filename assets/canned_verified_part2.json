@@ -1,0 +1,53 @@
+[
+  {
+    "id": "ua_veres_zucchini_caviar_04823105408580",
+    "name": "Ікра з кабачків Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 7.0,
+    "protein": 2.0,
+    "fat": 5.5,
+    "calories": 86,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105408580",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "440 г current recipe; both sources: 100 г = В 7.0, Б 2.0, Ж 5.5, 86 ккал",
+    "verified": true
+  },
+  {
+    "id": "ua_veres_zucchini_caviar_pepper_04823105408641",
+    "name": "Ікра кабачкова з перчиком Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 7.0,
+    "protein": 2.0,
+    "fat": 5.5,
+    "calories": 86,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105408641",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "440 г; both sources: 100 г = В 7.0, Б 2.0, Ж 5.5, 86 ккал",
+    "verified": true
+  },
+  {
+    "id": "ua_veres_eggplant_adjika_04823105409013",
+    "name": "Баклажани в аджиці Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 10.6,
+    "protein": 0.9,
+    "fat": 5.5,
+    "calories": 96,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105409013",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "440 г; both sources: 100 г = В 10.6, Б 0.9, Ж 5.5, 96 ккал",
+    "verified": true
+  }
+]
