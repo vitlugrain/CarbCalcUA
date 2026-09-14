@@ -1,0 +1,5 @@
+[
+{"id":"ua_roshen_aerated_dark_chocolate","name":"Шоколад Roshen чорний пористий","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":50.0,"protein":6.0,"fat":34.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_lacmi_black_white_caramel","name":"Шоколад Roshen Lacmi Black White & Caramel","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":55.7,"protein":6.0,"fat":32.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_mintex_mint","name":"Цукерки Roshen Mintex Mint","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":97.9,"protein":0.0,"fat":0.0,"nutrition_basis":"100g","source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
