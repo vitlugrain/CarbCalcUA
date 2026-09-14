@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ua_veres_champignons_sterilized_04823105400140",
+    "name": "Шампіньйони стерилізовані Верес",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 5.3,
+    "protein": 2.2,
+    "fat": 0.5,
+    "calories": 35,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04823105400140",
+    "manufacturer": "Верес",
+    "source": "Veres official + Zakaz.ua",
+    "source_ref": "410 г; official Veres and current Zakaz agree: 100 г = В 5.3, Б 2.2, Ж 0.5, 35 ккал",
+    "verified": true
+  }
+]
