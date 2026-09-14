@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#148** remains the last USER-TESTED stable Android checkpoint. APK **#224** has now BUILT SUCCESSFULLY after the sauces runtime merge and is ready for device testing; do not call it user-verified/stable until the user installs and tests it.
+GitHub is the source of truth. APK **#224** is now the USER-TESTED STABLE Android checkpoint after successful installation and normal operation on the user's device on 2026-09-14.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -40,7 +40,7 @@ Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da3
 
 ## APK checkpoints
 
-**APK #224 — BUILD SUCCESS / AWAITING DEVICE TEST**
+**APK #224 — USER-TESTED STABLE**
 - Android APK run #224
 - run ID: `34852026300`
 - head: `d5ce632273c7c648513a9613386e90b57da39678`
@@ -51,10 +51,15 @@ Post-merge checkpoint commit used for APK: `d5ce632273c7c648513a9613386e90b57da3
 - tests: success
 - release APK build: success
 - artifact publication: success
+- installed on Android and reported working normally by user on 2026-09-14.
 
-**APK #148 — USER-TESTED STABLE**
-- run ID: `34769645259`
-- head: `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`
+Previous stable checkpoint: APK #148, run ID `34769645259`, head `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`.
+
+## UI feedback / next UX fix
+
+When adding a product, the user enters a name and selects a product from the search-result list. The app already changes to the quantity/portion controls, but those controls may remain below the current scroll position, forcing the user to scroll manually through the dish/product screen.
+
+Desired behavior: immediately after selecting a product from search results, automatically scroll/focus the screen to the quantity input area (grams / pieces or other applicable units) so the quantity controls are visible without manual scrolling. Preserve the selected product and existing add-product flow; this is a navigation/scroll UX improvement, not a catalog change.
 
 ## Next catalog category
 
