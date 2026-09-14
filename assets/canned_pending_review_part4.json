@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Шампіньйони мариновані закусочні Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "candidate_barcodes": ["04823105400164", "04820008091543"],
+    "zakaz_nutrition_100g": {"carbs": 7.1, "protein": 2.2, "fat": 0.5, "calories": 42},
+    "status": "pending_review",
+    "reason": "Current Zakaz cards are internally consistent, but the current official Veres category page does not expose a matching nutrition panel for the snack-marinated product; multiple barcode generations are visible for the same 260 g identity. Keep outside runtime until an official current product panel/label confirms P/F/C and barcode identity."
+  },
+  {
+    "name": "Шампіньйони мариновані делікатесні Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "official_nutrition_100g": {"carbs": 0.1, "protein": 4.2, "fat": 1.0, "calories": 26.0},
+    "status": "pending_review",
+    "reason": "Official Veres page exposes nutrition for a 460 g delicatessen recipe, but current Zakaz discovery primarily surfaces the distinct 'закусочні' line in 260/425/730 g. Do not merge these recipe identities or infer barcode equivalence without a matching retailer/label identity."
+  }
+]
