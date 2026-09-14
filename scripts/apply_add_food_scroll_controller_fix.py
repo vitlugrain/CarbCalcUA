@@ -1,5 +1,6 @@
 from pathlib import Path
 
+# Trigger workflow after the patch workflow exists.
 p = Path('lib/main.dart')
 s = p.read_text()
 
@@ -40,7 +41,6 @@ s = s[:start] + replacement + s[end:]
 
 old = "    return ListView(padding:const EdgeInsets.all(20),children:["
 new = "    return ListView(controller:pageScrollController,padding:const EdgeInsets.all(20),children:["
-# replace only AddFoodPage occurrence after build marker
 build_anchor = s.index('  @override Widget build(BuildContext c)=>FutureBuilder<List<Product>>')
 pos = s.index(old, build_anchor)
 s = s[:pos] + new + s[pos+len(old):]
@@ -51,7 +51,6 @@ if old not in s:
     raise SystemExit('quantity row start anchor not found')
 s = s.replace(old, new, 1)
 
-# close Container after the quantity/unit Row. Find the first matching row terminator following the new anchor.
 anchor = s.index("Container(key:quantitySectionKey,child:Row")
 needle = "        ]),\n        const SizedBox(height:8),"
 pos = s.index(needle, anchor)
