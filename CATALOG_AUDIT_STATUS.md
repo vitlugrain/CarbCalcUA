@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | NEXT | Next catalog category. |
+| Консерви | IN PROGRESS | Category-first audit started with vegetable/legume preserves; part1 has 2 verified Veres identities and 4 conflict groups in pending review. |
 
 ## Sauces runtime checkpoint
 
@@ -35,6 +35,22 @@ Generated runtime commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
 Merge workflow `Merge verified catalogs #110` completed successfully.
 
 Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Щедро and Чумак. Audit-only sauce files remain separate. Conflicting Torchin retailer values were not used to overwrite existing runtime products.
+
+## Canned foods audit checkpoint
+
+Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Current broad category map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes. Audit order begins with vegetable/legume preserves because they are carbohydrate-relevant and overlap existing Bonduelle runtime data.
+
+Existing-runtime gap check confirmed that several Bonduelle canned legumes/vegetables are already present in `assets/products.json`; they must not be duplicated merely because Zakaz lists another package size. Initial Veres barcode candidates were checked against `assets/products.json` before audit-file creation.
+
+Part1 files:
+- `assets/canned_verified_part1.json` — 2 verified Veres products: beans in tomato sauce and canned chickpeas. Both have matching official Veres and Zakaz P/F/C and were absent from runtime by checked barcode.
+- `assets/canned_pending_review_part1.json` — green peas, standard sweet corn, premium tender corn, and beans with vegetables. These remain outside runtime because official Veres and current/historical Zakaz nutrition values conflict or indicate label/recipe generations.
+
+Part1 commits:
+- verified: `8689c5ffdcb524399970c4fd726285aefe24c49f`
+- pending: `4e0463284c32f067ba462c1710f713a8f4385f6f`
+
+No canned-food runtime whitelist or merge has been created yet.
 
 ## APK/runtime checkpoint
 
@@ -50,7 +66,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Next: **консерви → напої → заморожені напівфабрикати**.
+Current: **консерви**. Then: **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
