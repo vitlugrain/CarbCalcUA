@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume preserves audit active; part1 = 2 verified + 4 pending; part2 = 3 verified; part3 = 2 verified + 5 pending conflict/label-generation groups. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves audit active; part1 = 2 verified + 4 pending; part2 = 3 verified; part3 = 2 verified + 5 pending; part4 = 1 verified mushroom identity + 2 pending mushroom identities. |
 
 ## Sauces runtime checkpoint
 
@@ -61,6 +61,12 @@ Part3:
 - `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska vegetable appetizer, vegetable stew, Bulgarian lecho, and pickled cherry tomatoes remain outside runtime because of official-vs-retailer nutrition conflicts, multiple barcode/label generations, or insufficient manufacturer-level confirmation.
 - verified commit: `d6d211579dd3c222f744a0eb738a7452c18cb999`.
 - pending commit: `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`.
+
+Part4 — mushroom preserves:
+- `assets/canned_verified_part4.json` — 1 verified Veres identity absent from runtime by checked barcode: sterilized champignons 410 g, barcode `04823105400140`. Official Veres and current Zakaz match: В 5.3, Б 2.2, Ж 0.5, 35 ккал / 100 г.
+- `assets/canned_pending_review_part4.json` — snack-marinated champignons and delicatessen marinated champignons remain outside runtime. For the snack-marinated line Zakaz is internally consistent at В 7.1 / Б 2.2 / Ж 0.5 / 42 ккал, but the current official Veres category page does not expose a matching nutrition panel and multiple barcode generations are visible. The delicatessen 460 g official Veres recipe has materially different nutrition and must not be merged with the snack-marinated line by name.
+- verified commit: `c70314ce43b04902150eee3ec1f7a1953bfb9f2b`.
+- pending commit: `a446bdfe9fd009ceca407329635eac7904d92a6e`.
 
 No canned-food runtime whitelist or merge has been created yet.
 
