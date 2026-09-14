@@ -433,7 +433,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         icon: const Icon(Icons.qr_code_scanner),
         label: const Text('Сканувати штрихкод'),
       ),
-      if(q.trim().isNotEmpty && list.isNotEmpty)...[
+      if(selected==null && q.trim().isNotEmpty && list.isNotEmpty)...[
         const SizedBox(height:8),
         Text(hasParsedAmount?'Знайдено для «${parsed.productQuery}»':'Оберіть продукт',style:const TextStyle(fontWeight:FontWeight.w600)),
         ...list.take(10).map((p)=>Card(child:ListTile(
@@ -443,7 +443,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
           trailing:const Icon(Icons.chevron_right),
           onTap:()=>_select(p),
         ))),
-      ] else if(q.trim().isNotEmpty && list.isEmpty)
+      ] else if(selected==null && q.trim().isNotEmpty && list.isEmpty)
         const Padding(padding:EdgeInsets.symmetric(vertical:18),child:Text('У локальній базі продукт не знайдено. Спробуйте іншу назву або пізніше використайте пошук за штрихкодом.')),
       if(selected!=null)...[
         const Divider(height:24),
