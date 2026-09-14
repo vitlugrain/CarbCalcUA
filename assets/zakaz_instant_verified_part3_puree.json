@@ -1,0 +1,6 @@
+[
+{"id":"ua_reeva_mashed_potato_cream_dry","name":"Пюре картопляне Reeva зі смаком вершків","brand":"Reeva","category":"Продукти швидкого приготування","state":"dry","carbs":62.7,"protein":9.7,"fat":8.0,"calories":373,"nutrition_basis":"100g_dry","package_variants_g":[40,60],"verified":true,"runtime_merge":false},
+{"id":"ua_reeva_mashed_potato_chicken_dry","name":"Пюре картопляне Reeva зі смаком курки","brand":"Reeva","category":"Продукти швидкого приготування","state":"dry","carbs":63.1,"protein":9.3,"fat":7.1,"calories":366,"nutrition_basis":"100g_dry","package_variants_g":[40,60],"verified":true,"runtime_merge":false},
+{"id":"ua_reeva_mashed_potato_mushroom_dry","name":"Пюре картопляне Reeva Білий гриб","brand":"Reeva","category":"Продукти швидкого приготування","state":"dry","carbs":64.7,"protein":8.6,"fat":4.9,"calories":350,"nutrition_basis":"100g_dry","package_g":40,"verified":true,"runtime_merge":false},
+{"id":"ua_reeva_mashed_potato_classic_dry","name":"Пюре картопляне Reeva класичне","brand":"Reeva","category":"Продукти швидкого приготування","state":"dry","carbs":62.8,"protein":9.4,"fat":7.4,"calories":368,"nutrition_basis":"100g_dry","package_g":40,"verified":true,"runtime_merge":false}
+]
