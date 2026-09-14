@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ua_brivais_vilnis_riga_sprats_oil_04750616001132",
+    "name": "Шпроти Brivais Vilnis Ризькі в олії",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 0.0,
+    "protein": 17.0,
+    "fat": 32.0,
+    "calories": 356,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04750616001132",
+    "manufacturer": "Brivais Vilnis",
+    "source": "Brivais Vilnis official + Zakaz.ua",
+    "source_ref": "160 g exact product identity. Official manufacturer and Zakaz both report per 100 g: В 0.0, Б 17.0, Ж 32.0, 356 ккал; ingredients also match smoked sprats 70% + rapeseed/vegetable oil 29% + salt.",
+    "verified": true
+  },
+  {
+    "id": "ua_brivais_vilnis_sprat_pate_04750616002634",
+    "name": "Паштет шпротний Brivais Vilnis",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 5.7,
+    "protein": 8.9,
+    "fat": 12.0,
+    "calories": 165,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "barcode": "04750616002634",
+    "manufacturer": "Brivais Vilnis",
+    "source": "Brivais Vilnis official + Zakaz.ua",
+    "source_ref": "Zakaz 160 g barcode identity matches the manufacturer's current sprat pate recipe by full nutrition and ingredient profile: В 5.7, Б 8.9, Ж 12.0, 165 ккал per 100 g. Manufacturer page currently shows another package size; per catalog rule package size alone does not create a separate identity when recipe/nutrition match.",
+    "verified": true
+  }
+]
