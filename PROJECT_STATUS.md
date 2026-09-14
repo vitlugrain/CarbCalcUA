@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#224** remains the current USER-TESTED STABLE Android checkpoint. APK **#226** was tested by the user and did not fully solve the add-food navigation issue: the keyboard closed, but the screen did not scroll to the quantity/portion controls. APK **#233** is the current TEST CANDIDATE with the explicit quantity-navigation fix and has passed CI; device verification is required.
+GitHub is the source of truth. APK **#233** is the current USER-TESTED STABLE Android checkpoint. The user verified on Android that the add-food navigation fix works: after selecting a product the keyboard closes, search results disappear, and the screen moves to the quantity/unit section. A remaining UI issue was observed: the `Додати до щоденника` action can be partially hidden behind the app bottom navigation or Android system navigation, so bottom safe-area/scroll padding needs a follow-up fix.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -40,7 +40,7 @@ Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b
 
 ## APK checkpoints
 
-**APK #224 — USER-TESTED STABLE**
+**APK #224 — PREVIOUS USER-TESTED STABLE**
 - Android APK run #224
 - run ID: `34852026300`
 - head: `d5ce632273c7c648513a9613386e90b57da39678`
@@ -53,7 +53,7 @@ Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b
 - keyboard closes after product selection, but list does not scroll to quantity/portion controls.
 - do not promote to stable.
 
-**APK #233 — BUILD SUCCESS / AWAITING DEVICE TEST**
+**APK #233 — USER-TESTED STABLE**
 - Android APK run #233
 - run ID: `34860877221`
 - head: `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
@@ -63,24 +63,19 @@ Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b
 - artifact: `CarbCalcUA-0.6.0-build-233`
 - artifact ID: `10354139918`
 - artifact archive digest: `sha256:2fe83151372a88c1adf596388665e047dc8868e7aaafdcc3a17aacaa29d39588`
-- analyze: success
-- tests: success
-- release APK build: success
-- artifact publication: success
-- device verification required before promotion to stable.
+- analyze/tests/release build/artifact publication: success
+- user device test on 2026-09-14: core add-food selection/navigation scenario works correctly.
+- remaining non-blocking UI issue: `Додати до щоденника` can sit under bottom app/system navigation; follow-up safe-area/scroll-padding fix required.
 
 ## UI fix v2 — explicit quantity navigation
 
-User feedback after APK #226: after selecting a product, the keyboard closes but the list still does not move to the quantity/portion controls.
+Verified by user in APK #233. After product selection:
+- keyboard closes;
+- search-result cards collapse;
+- page scrolls to `Кількість + Одиниця`;
+- keyboard does not automatically reopen.
 
-Second fix applied in `lib/main.dart` at commit `579efe7c00d8e3564a33164c171e052e19613c6a`:
-- AddFoodPage now owns an explicit `ScrollController`;
-- selecting a product collapses/hides the search-result cards;
-- the `GlobalKey` is attached to the whole `Кількість + Одиниця` row;
-- after selection, the page explicitly animates its `ListView` to that row;
-- no automatic re-opening of the keyboard; the goal is to show the quantity/unit controls immediately.
-
-CI was also hardened so a temporary Open Food Facts outage does not block an unrelated UI APK build: the workflow preserves and reuses the checked-in `assets/ua_branded_products.json` if the live refresh fails.
+Follow-up UI task: ensure the final `Додати до щоденника` button always has sufficient bottom scroll/safe-area clearance above both CarbCalc UA bottom navigation and Android system navigation.
 
 ## Next catalog category
 
