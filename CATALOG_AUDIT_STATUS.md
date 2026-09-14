@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count remains 8. Fish part5–6 are pending-only until manufacturer/label confirmation. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count is 10 after part7 added 2 manufacturer-confirmed Brivais Vilnis fish identities. |
 
 ## Sauces runtime checkpoint
 
@@ -78,7 +78,14 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - all checked part6 barcodes were absent from current `assets/products.json` in this pass.
 - part6 commit: `3e95bc32190a8fdf7b8fc5b53d8e6b0416018320`
 
-Current canned verified count: **8** (parts1–4). No fish item is verified yet. No canned-food runtime whitelist or merge has been created.
+### Part7 — first verified fish identities
+- `assets/canned_verified_part7_fish.json` — 2 Brivais Vilnis products promoted to verified after manufacturer + Zakaz cross-check and runtime barcode gap check.
+- Riga sprats in oil 160 g, barcode `04750616001132`: official Brivais Vilnis and Zakaz agree exactly on recipe and nutrition — В 0.0 / Б 17.0 / Ж 32.0 / 356 ккал per 100 g.
+- Sprat pâté, barcode `04750616002634`: Zakaz 160 g barcode identity matches the current Brivais Vilnis manufacturer recipe by full P/F/C and ingredients — В 5.7 / Б 8.9 / Ж 12.0 / 165 ккал per 100 g. Manufacturer page currently shows another package size; same recipe/package-size rule applies.
+- both barcodes were absent from current `assets/products.json` in this pass.
+- part7 commit: `c034cdaba67262c6a20ae5049f9de125bafb6ce1`
+
+Current canned verified count: **10** (parts1–4 + part7). No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
