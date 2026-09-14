@@ -6,7 +6,7 @@ Repository: `vitlugrain/CarbCalcUA`
 
 ## Current checkpoint
 
-GitHub is the source of truth. APK **#224** remains the current USER-TESTED STABLE Android checkpoint. APK **#226** has been built successfully with the add-food quantity autoscroll UX fix and is awaiting device verification.
+GitHub is the source of truth. APK **#224** remains the current USER-TESTED STABLE Android checkpoint. APK **#226** was tested by the user and did not fully solve the add-food navigation issue: the keyboard closed, but the screen did not scroll to the quantity/portion controls.
 
 ### Runtime integrated
 1. Крупи та бобові — safe checkpoint merge.
@@ -40,39 +40,31 @@ Post-merge checkpoint commit used for APK #224: `d5ce632273c7c648513a9613386e90b
 
 ## APK checkpoints
 
-**APK #226 — BUILD SUCCESS / AWAITING DEVICE TEST**
-- Android APK run #226
-- run ID: `34855752440`
-- head: `df4d81e320341048156cfd6c1555cb5b770c8bac`
-- UI code commit: `2ee4713f7b1c659632b3f2b82e18f5ea05eff6c1`
-- artifact: `CarbCalcUA-0.6.0-build-226`
-- artifact ID: `10352364258`
-- artifact archive digest: `sha256:6349e80ca33ad8a40b5a4e155fb91d9d574651ee136435627f1b18ba9bd66810`
-- analyze: success
-- tests: success
-- release APK build: success
-- artifact publication: success
-- device verification still required before promoting to stable.
-
 **APK #224 — USER-TESTED STABLE**
 - Android APK run #224
 - run ID: `34852026300`
 - head: `d5ce632273c7c648513a9613386e90b57da39678`
 - installed on Android and reported working normally by user on 2026-09-14.
 
-Previous stable checkpoint: APK #148, run ID `34769645259`, head `6aa3f719e8653b66fc6bce2ce3c25d445d7ddee3`.
+**APK #226 — TESTED / UX FIX INCOMPLETE**
+- Android APK run #226
+- run ID: `34855752440`
+- head: `df4d81e320341048156cfd6c1555cb5b770c8bac`
+- keyboard closes after product selection, but list does not scroll to quantity/portion controls.
+- do not promote to stable.
 
-## UI fix — add-food quantity autoscroll
+## UI fix v2 — explicit quantity navigation
 
-User feedback: after typing a product name and selecting a result, the app switches to the quantity controls but may leave them below the visible scroll area, so the user has to scroll manually.
+User feedback after APK #226: after selecting a product, the keyboard closes but the list still does not move to the quantity/portion controls.
 
-Fix applied in `lib/main.dart` at commit `2ee4713f7b1c659632b3f2b82e18f5ea05eff6c1`:
-- keep the first `Scrollable.ensureVisible` after selecting a product;
-- focus the quantity field;
-- after the keyboard changes the viewport, wait briefly and perform a second `Scrollable.ensureVisible` so the quantity controls remain visible;
-- selected product and existing add-food flow are preserved.
+Second fix applied in `lib/main.dart` at commit `579efe7c00d8e3564a33164c171e052e19613c6a`:
+- AddFoodPage now owns an explicit `ScrollController`;
+- selecting a product collapses/hides the search-result cards;
+- the `GlobalKey` is attached to the whole `Кількість + Одиниця` row;
+- after selection, the page explicitly animates its `ListView` to that row;
+- no automatic re-opening of the keyboard; the goal is to show the quantity/unit controls immediately.
 
-APK #226 contains this fix. If user confirms the behavior is correct, promote APK #226 to USER-TESTED STABLE.
+This checkpoint commit exists to trigger an Android APK build from the corrected post-patch branch state. Device verification is required before promoting the resulting APK to stable.
 
 ## Next catalog category
 
