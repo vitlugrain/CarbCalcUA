@@ -1,0 +1,3 @@
+[
+{"id":"ua_lux_sourcream_onion_chips_pending","name":"Чипси Люкс зі смаком сметани та цибулі","brand":"Люкс","category":"Снеки","state":"ready_to_eat","reported":{"carbs":5.3,"protein":6.0,"fat":29.0,"calories":505,"sugars":6.4,"package_g":125},"reason":"Zakaz.ua reports carbohydrates lower than sugars on the same label; probable data/decimal error. Exclude from verified until exact current label is resolved.","source":"Zakaz.ua","verified":false,"runtime_merge":false}
+]
