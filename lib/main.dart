@@ -232,6 +232,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
   final controller=TextEditingController(text:'100');
   final amountFocusNode=FocusNode();
   final quantitySectionKey=GlobalKey();
+  final pageScrollController=ScrollController();
 
   @override void initState(){
     super.initState();
@@ -264,37 +265,24 @@ class _AddFoodPageState extends State<AddFoodPage>{
     if (picked != null && mounted) setState(() { mealTime = '${picked.hour.toString().padLeft(2,'0')}:${picked.minute.toString().padLeft(2,'0')}'; });
   }
 
-  @override void dispose(){controller.dispose();amountFocusNode.dispose();super.dispose();}
+  @override void dispose(){controller.dispose();amountFocusNode.dispose();pageScrollController.dispose();super.dispose();}
 
   void _focusQuantitySection() {
     FocusManager.instance.primaryFocus?.unfocus();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await Future<void>.delayed(const Duration(milliseconds: 80));
+      if (!mounted || !pageScrollController.hasClients) return;
       final ctx = quantitySectionKey.currentContext;
-      if (ctx != null) {
-        await Scrollable.ensureVisible(
-          ctx,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-          alignment: 0.18,
-        );
-      }
-      if (!mounted) return;
-      amountFocusNode.requestFocus();
-      // Re-align after the keyboard changes the viewport.
-      await Future<void>.delayed(const Duration(milliseconds: 250));
-      if (!mounted) return;
-      final focusedCtx = quantitySectionKey.currentContext;
-      if (focusedCtx != null) {
-        await Scrollable.ensureVisible(
-          focusedCtx,
-          duration: const Duration(milliseconds: 220),
-          curve: Curves.easeOut,
-          alignment: 0.12,
-        );
-      }
-      controller.selection = TextSelection(
-        baseOffset: 0,
-        extentOffset: controller.text.length,
+      final box = ctx?.findRenderObject() as RenderBox?;
+      if (box == null) return;
+      final globalTop = box.localToGlobal(Offset.zero).dy;
+      final target = (pageScrollController.offset + globalTop - 170.0)
+          .clamp(0.0, pageScrollController.position.maxScrollExtent)
+          .toDouble();
+      await pageScrollController.animateTo(
+        target,
+        duration: const Duration(milliseconds: 360),
+        curve: Curves.easeOutCubic,
       );
     });
   }
@@ -405,7 +393,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
     final carbs=preview?.carbs??0.0;
     final units=selected==null?<QuantityUnit>[QuantityUnit.grams]:_unitsFor(selected!);
     final hasParsedAmount=parsed.amount!=null;
-    return ListView(padding:const EdgeInsets.all(20),children:[
+    return ListView(controller:pageScrollController,padding:const EdgeInsets.all(20),children:[
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
       DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealGroupExplicitSelection=false;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
@@ -465,11 +453,11 @@ class _AddFoodPageState extends State<AddFoodPage>{
         const SizedBox(height:8),
         if(parsed.amount!=null)Text('З вашого запиту: ${parsed.amount!.toStringAsFixed(parsed.amount==parsed.amount!.roundToDouble()?0:2)} ${_mapParsedUnit(parsed.unit)?.label ?? ''}',style:const TextStyle(color:Colors.teal)),
         const SizedBox(height:8),
-        Row(crossAxisAlignment:CrossAxisAlignment.start,children:[
-          Expanded(child:TextFormField(key:quantitySectionKey,focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
+        Container(key:quantitySectionKey,child:Row(crossAxisAlignment:CrossAxisAlignment.start,children:[
+          Expanded(child:TextFormField(focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
           const SizedBox(width:10),
           Expanded(child:DropdownButtonFormField<QuantityUnit>(value:unit,decoration:const InputDecoration(labelText:'Одиниця',border:OutlineInputBorder()),items:units.map((u)=>DropdownMenuItem(value:u,child:Text(u.label))).toList(),onChanged:(u){if(u==null)return;setState((){unit=u;amount=_defaultAmount(u);controller.text=amount.toString();});})),
-        ]),
+        ])),
         const SizedBox(height:8),
         if(preview==null)const Text('Для цієї одиниці немає достатніх даних для коректного розрахунку. Оберіть доступну одиницю або додайте потрібну вагу/щільність.',style:TextStyle(color:Colors.orange)),
         FutureBuilder<double>(future:_xeGrams(),builder:(context,xeSnap){
