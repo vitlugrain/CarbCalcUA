@@ -1,0 +1,4 @@
+[
+{"id":"ua_roshen_yummi_gummi_sour_sticks","name":"Цукерки Roshen Yummi Gummi Sour Sticks","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":80.7,"protein":2.6,"fat":3.6,"calories":368,"nutrition_basis":"100g","package_g":70,"source":"Zakaz.ua","verified":true,"runtime_merge":false},
+{"id":"ua_roshen_yummi_gummi_cherry","name":"Цукерки Roshen Yummi Gummi Cherry","brand":"Roshen","category":"Солодощі","state":"ready_to_eat","carbs":75.2,"protein":6.5,"fat":0.1,"calories":327,"nutrition_basis":"100g","package_g":70,"source":"Zakaz.ua","verified":true,"runtime_merge":false}
+]
