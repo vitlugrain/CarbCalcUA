@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Закуска Соте Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "barcode": "04823105400751",
+    "reason": "nutrition_conflict",
+    "official_ref": "Veres official 440 г: В 10.0, Б 0.9, Ж 5.0, 89 ккал / 100 г",
+    "retailer_ref": "Zakaz current/historical cards for the same product/barcode report В 8.48, Ж 5.6 and inconsistent protein (1.1 or 5.6), 88.7 ккал / 100 г",
+    "runtime": false
+  },
+  {
+    "name": "Закуска овочева Закарпатська Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "barcode": "04823105409136",
+    "reason": "nutrition_conflict",
+    "official_ref": "Veres official 445 г: В 11.0, Б 1.0, Ж 5.5, 98 ккал / 100 г",
+    "retailer_ref": "Zakaz current card: В 4.6, Б 0.9, Ж 4.0, 58 ккал / 100 г",
+    "runtime": false
+  },
+  {
+    "name": "Рагу овочеве Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "barcodes": ["04823105400744", "04823105409075", "04820008094360"],
+    "reason": "multiple_label_generations_and_official_nutrition_not_exposed_on_current_page",
+    "retailer_ref": "Zakaz cards consistently show 500 г and В 10.5, Б 3.7, Ж 3.0, 83 ккал / 100 г, but multiple barcodes/label generations exist and current Veres page does not expose nutrition values in retrieved content",
+    "runtime": false
+  },
+  {
+    "name": "Лечо болгарське Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "barcodes": ["04823105409037", "04820008092540"],
+    "reason": "multiple_label_generations_and_official_nutrition_not_exposed_on_current_page",
+    "retailer_ref": "Zakaz cards show В 10.0, Б 0.7, Ж 0.0, 44 ккал / 100 г, while current Veres page retrieved in audit did not expose nutrition values; keep outside runtime until manufacturer-level confirmation",
+    "runtime": false
+  },
+  {
+    "name": "Томати мариновані черрі Верес",
+    "category": "Консерви",
+    "manufacturer": "Верес",
+    "barcodes": ["04820008093998", "04823105409174"],
+    "reason": "nutrition_and_label_generation_conflict",
+    "official_ref": "Veres official current page: 440 г, В 10.0, Б 0.9, Ж 0.2, 47 ккал / 100 г",
+    "retailer_ref": "Zakaz has at least two barcode generations: older card В 4.0, Б 0.3, Ж 0.0, 17 ккал; newer card В 8.0, Б 0.6 with fat omitted, 34 ккал",
+    "runtime": false
+  }
+]
