@@ -22,8 +22,8 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Продукти швидкого приготування | CLOSED AUDIT CHECKPOINT | Dry-basis rule mandatory; runtime whitelist validation still required. |
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
-| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin sauce block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom audit parts1–4 complete as checkpoints; fish-preserve audit started in part5 with retailer discovery and conservative pending review. |
+| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count remains 8. Fish part5–6 are pending-only until manufacturer/label confirmation. |
 
 ## Sauces runtime checkpoint
 
@@ -38,39 +38,47 @@ Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Ще
 
 ## Canned foods audit checkpoint
 
-Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Broad category map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes.
+Audit started 2026-09-14 from Zakaz.ua top-level `Консерви` with category-first scope. Broad map includes vegetable preserves, fish preserves, olives, hummus, jams/preserves, meat preserves, fruit preserves, mushroom preserves, pâtés, and retailer-specific canned soups/garnishes.
 
-Existing-runtime gap check confirmed several Bonduelle canned legumes/vegetables already present in `assets/products.json`; package-size variants must not be duplicated. Candidate barcodes are checked against repository/runtime before audit-file creation.
+Existing-runtime gap check confirmed that several Bonduelle canned legumes/vegetables are already present in `assets/products.json`; they must not be duplicated merely because Zakaz lists another package size. Candidate barcodes are checked against `assets/products.json` before audit-file creation.
 
 ### Part1 — legumes/vegetables
 - `assets/canned_verified_part1.json` — 2 verified Veres products: beans in tomato sauce and canned chickpeas.
-- `assets/canned_pending_review_part1.json` — green peas, standard sweet corn, premium tender corn, beans with vegetables; conflicts/label generations keep them outside runtime.
-- commits: verified `8689c5ffdcb524399970c4fd726285aefe24c49f`; pending `4e0463284c32f067ba462c1710f713a8f4385f6f`.
+- `assets/canned_pending_review_part1.json` — green peas, standard sweet corn, premium tender corn, and beans with vegetables; conflicts/label generations keep them outside runtime.
+- verified commit: `8689c5ffdcb524399970c4fd726285aefe24c49f`
+- pending commit: `4e0463284c32f067ba462c1710f713a8f4385f6f`
 
 ### Part2 — recipe-dependent vegetable preserves
-- `assets/canned_verified_part2.json` — 3 verified Veres identities: zucchini caviar, zucchini caviar with pepper, eggplants in adjika.
-- Recipe-generation warning retained for zucchini caviar; package/name alone does not establish equivalence.
-- commit `6f105aefe2adb95d1f807047e2852215ae45c2da`.
+- `assets/canned_verified_part2.json` — 3 verified Veres products: zucchini caviar, zucchini caviar with pepper, eggplants in adjika.
+- Different label/recipe generations are not merged merely by product name.
+- commit: `6f105aefe2adb95d1f807047e2852215ae45c2da`
 
 ### Part3 — pickled vegetables
-- `assets/canned_verified_part3.json` — 2 verified Veres preserves: classic pickled cucumbers 435 g and pickled tomatoes 760 g.
-- `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska appetizer, vegetable stew, Bulgarian lecho, pickled cherry tomatoes.
-- commits: verified `d6d211579dd3c222f744a0eb738a7452c18cb999`; pending `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`.
+- `assets/canned_verified_part3.json` — 2 verified Veres products: pickled cucumbers 435 g and pickled tomatoes 760 g.
+- `assets/canned_pending_review_part3.json` — Sauté, Zakarpatska vegetable appetizer, vegetable stew, Bulgarian lecho, pickled cherry tomatoes.
+- verified commit: `d6d211579dd3c222f744a0eb738a7452c18cb999`
+- pending commit: `f6bdaa210d4772eeeac77960c9a52e4f03d5235f`
 
 ### Part4 — mushroom preserves
-- `assets/canned_verified_part4.json` — 1 verified Veres identity: sterilized champignons 410 g, barcode `04823105400140`.
-- `assets/canned_pending_review_part4.json` — snack-marinated and delicatessen-marinated champignons remain outside runtime pending manufacturer/identity resolution.
-- commits: verified `c70314ce43b04902150eee3ec1f7a1953bfb9f2b`; pending `a446bdfe9fd009ceca407329635eac7904d92a6e`.
+- `assets/canned_verified_part4.json` — 1 verified Veres sterilized champignons identity, barcode `04823105400140`, В 5.3 / Б 2.2 / Ж 0.5 / 35 ккал.
+- `assets/canned_pending_review_part4.json` — snack-marinated and delicatessen marinated champignon lines remain outside runtime because of missing matching primary nutrition confirmation / materially different recipes.
+- verified commit: `c70314ce43b04902150eee3ec1f7a1953bfb9f2b`
+- pending commit: `a446bdfe9fd009ceca407329635eac7904d92a6e`
 
-### Part5 — fish preserves, discovery/pending
-- Fish-preserve audit started with tuna in own juice and sprats in oil. Variants are kept recipe-specific (`own juice/brine`, `oil`, `tomato`) because carbohydrate values can differ.
-- `assets/canned_pending_review_part5_fish.json` records 4 retailer-discovered identities/groups. Fish Line tuna 160 g, Calvo tuna 160 g and Baltic Fish sprats 160 g have complete Zakaz nutrition but are not promoted without manufacturer-level confirmation. Fish Line tuna barcode `04820104250509` has conflicting Zakaz nutrition across retailer pages and is explicitly quarantined.
-- Barcode repository searches for `04820235630591`, `08410090031549`, and `04751007739368` returned no matches before audit-file creation.
-- pending commit: `4b9a2249003df5c3783b5888eb3a1c8368bbae62`.
+### Part5 — fish preserves initial pass
+- `assets/canned_pending_review_part5_fish.json` — pending-only fish candidates; no fish item promoted to verified because current retailer data is conflicting or lacks manufacturer-level confirmation.
+- commit: `4b9a2249003df5c3783b5888eb3a1c8368bbae62`
 
-Current canned verified count remains 8 across parts1–4. Part5 intentionally adds no verified runtime candidate yet.
+### Part6 — fish preserves expansion
+- `assets/canned_pending_review_part6_fish.json` created as pending-only.
+- Baltic Fish sprats in oil: 160 g (`04751007739368`), 240 g (`04751007739375`) and 190 g (`04751007739382`) show the same recipe and identical Zakaz nutrition across current cards: В 0.1 / Б 21.0 / Ж 10.2 / 176 ккал. Per identity rule these package sizes are one recipe identity, but primary manufacturer/label nutrition is still required before verified/runtime status.
+- Aquamarine sardine in tomato sauce `04650067810195`: current Zakaz card has complete В 4.0 / Б 18.0 / Ж 12.0 / 196 ккал and a carbohydrate-containing tomato sauce recipe, but no matching primary manufacturer nutrition source was located, so it stays pending.
+- Ukrainian Star sardine in tomato sauce `04823071341676`: current card gives В 4.0 / Ж 12.0 / 196 ккал but protein is missing in the indexed data; incomplete P/F/C means mandatory pending.
+- Fish Line tuna in own juice `04820235630591`: identity confirmed but complete primary-source nutrition not obtained; zero-carbohydrate inference is not enough for runtime inclusion.
+- all checked part6 barcodes were absent from current `assets/products.json` in this pass.
+- part6 commit: `3e95bc32190a8fdf7b8fc5b53d8e6b0416018320`
 
-No canned-food runtime whitelist or merge has been created yet.
+Current canned verified count: **8** (parts1–4). No fish item is verified yet. No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
