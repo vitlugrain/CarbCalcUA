@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Fish audit near closure; olives/black olives audit active. Current verified count remains 18; part13 isolated Delphi green-olive label/source conflicts as pending. |
+| Консерви | IN PROGRESS | Olives/black olives audit active. Current verified count remains 18; parts13–14 keep unresolved green/black olive identities pending. |
 
 ## Sauces runtime checkpoint
 
@@ -67,9 +67,17 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 
 ### Part13 — Delphi green olives conflict pass
 - `assets/canned_pending_review_part13_olives.json` — pending-only; no new verified identities.
-- Delphi green pitted olives in brine 350 g: Zakaz EAN cards `05201306700419` and `05201306821053` agree on В 1.0 / Б 0.8 / Ж 14.8 / 139 ккал, but Auchan Express currently exposes the same named 350 g product with В 1.1 / Б 1.2 / Ж 14.3 / 144 ккал and contradictory ingredient wording. Manufacturer catalog confirms Delphi green-pitted formats but no exact EAN-linked nutrition panel was found. Both EANs are absent from current runtime; keep pending until label generation is resolved.
-- Delphi green olives stuffed with almonds 350 g, barcode `05201306821091`: multiple Zakaz storefronts agree on В 2.7 / Б 3.0 / Ж 19.8 / 209 ккал and the same 47.6% olives + 9.5% almond recipe, but matching primary manufacturer/label nutrition for the exact EAN was not located. Recipe-dependent product therefore remains pending. Barcode absent from current runtime.
+- Delphi green pitted olives in brine 350 g: Zakaz EAN cards `05201306700419` and `05201306821053` agree on В 1.0 / Б 0.8 / Ж 14.8 / 139 ккал, but another current retailer card exposes a materially different nutrition/ingredient generation. Keep pending until exact label generation is resolved.
+- Delphi green olives stuffed with almonds 350 g, barcode `05201306821091`: multiple retailer cards agree on В 2.7 / Б 3.0 / Ж 19.8 / 209 ккал and recipe, but matching primary manufacturer/label nutrition for the exact EAN was not located.
 - part13 commit: `2503d4056ccc8ccc6ea108ae80feeac339795998`.
+
+### Part14 — black olives Iberica / Maestro de Oliva / Oscar
+- `assets/canned_pending_review_part14_black_olives.json` — pending-only; no new verified identities.
+- Iberica black pitted olives 420 g, barcode `08436024290592`: current Zakaz exact-EAN card gives В 0 / Б 0.5 / Ж 14 / 134 ккал; current Silpo Iberica black pitted olives independently matches the same profile. Exact primary manufacturer nutrition tied to this EAN was not resolved, so it stays pending.
+- Maestro de Oliva black pitted olives 432 g, barcode `08436024299045`: multiple current Zakaz cards agree on В 0 / Б 0.5 / Ж 14 / 134 ккал and the same recipe, but manufacturer-label confirmation for the exact EAN is still missing.
+- Oscar black pitted olives 300 g, barcode `08413552051475`: exact-EAN Zakaz cards agree on В 0 / Б 0.5 / Ж 13 / 129 ккал, but the Oscar range currently exposes multiple manufacturer/recipe generations with materially different nutrition across EANs; exact manufacturer-label confirmation required.
+- checked candidate barcodes are absent from current runtime where exact lookup was performed; none is promoted to runtime.
+- part14 commit: `f3f36770449ab6a2b90e7fdb92d819c69566af27`.
 
 Current canned verified count: **18**. No canned-food runtime whitelist or merge has been created.
 
@@ -87,7 +95,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви → оливки/маслини**. Continue black olives and other well-sourced olive identities, then remaining canned subcategories, followed by **напої → заморожені напівфабрикати**.
+Current: **консерви → оливки/маслини**. Continue manufacturer/label resolution for black olives and audit stuffed/seasoned olives; then remaining canned subcategories, followed by **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
