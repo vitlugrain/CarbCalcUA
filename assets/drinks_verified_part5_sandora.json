@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ua_sandora_apple_4823063132114",
+    "name": "Sandora Сік Яблуко",
+    "brand": "Sandora",
+    "manufacturer": "ТОВ Сандора",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "4823063132114",
+    "carbs": 12.0,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 47,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "verification_level": "B",
+    "source": "PepsiCo Україна product identity + exact-EAN retail/product-data card",
+    "source_ref": "Current PepsiCo Ukraine assortment identifies Sandora Apple 0.2 L GTIN 4823063132114. Exact-EAN product-data card for 4823063132114 gives В 12 / Б 0 / Ж 0 / 47 kcal per 100 ml and identifies manufacturer TOV Sandora.",
+    "verified": true,
+    "audit_note": "Exact EAN absent from current assets/products.json before creation. Nutrition also matches current Ukrainian retail listing for Sandora apple 0.95 L, supporting same-recipe package identity."
+  }
+]
