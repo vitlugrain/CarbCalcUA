@@ -23,8 +23,8 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | CLOSED AUDIT CHECKPOINT | Category-first audit closed at 21 verified identities. Olives/hummus skipped after low verification yield; jams/fruit limited-pass by user decision. Runtime whitelist still required before merge. |
-| Напої | IN PROGRESS | Next category. Start category-first with carbohydrate-relevant drinks; check existing runtime before each branded SKU. |
+| Консерви | CLOSED AUDIT CHECKPOINT | Category-first audit closed at 21 verified identities. Runtime whitelist still required before merge. |
+| Напої | IN PROGRESS | Part1: 2 verified identities (Sprite, Schweppes Indian Tonic). Coca-Cola/Pepsi families must always be checked for existing runtime identity before any addition. |
 
 ## Sauces runtime checkpoint
 
@@ -35,50 +35,25 @@ Merge-script commit: `13211d27d99b78f35d589b553357ba6ffa373350`.
 Generated runtime commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
 Merge workflow `Merge verified catalogs #110` completed successfully.
 
-Integrated sauce whitelist contains 8 verified ketchup products from Heinz, Щедро and Чумак. Audit-only sauce files remain separate. Conflicting Torchin retailer values were not used to overwrite existing runtime products.
-
 ## Canned foods audit checkpoint — CLOSED
 
-Audit ran 2026-09-14 through 2026-09-16 from Zakaz.ua top-level `Консерви` using category-first hybrid generic+branded policy. Candidate barcodes were checked against `assets/products.json` before audit-file creation. No canned-food runtime whitelist or merge has yet been created.
+Audit ran 2026-09-14 through 2026-09-16 from Zakaz.ua top-level `Консерви` using category-first hybrid generic+branded policy. Final canned audit verified count: **21**. No canned-food runtime whitelist or merge has yet been created. Olives/hummus were skipped after poor verification yield; jams and fruit preserves used the user-approved limited-pass rule.
 
-### Parts1–4 — vegetable/legume/mushroom preserves
-- part1: 2 verified Veres products; conflicting peas/corn/beans variants pending.
-- part2: 3 verified Veres recipe-dependent vegetable preserves.
-- part3: 2 verified Veres pickled vegetable identities; 5 conflict groups pending.
-- part4: 1 verified Veres sterilized champignon identity; marinated variants pending.
+Before any canned runtime integration: revalidate verified files → check current runtime again → deduplicate identities/package variants → create explicit canned runtime whitelist → merge only whitelist → parse/test → combine with deferred bottom-safe-area UI fix in the next meaningful APK.
 
-### Parts5–11 — fish preserves
-- parts5–6 pending-only Fish Line, Calvo, Baltic Fish, Aquamarine and Ukrainian Star candidates where manufacturer confirmation is missing/conflicting/incomplete.
-- part7: 2 verified Brivais Vilnis identities — Riga sprats in oil and sprat pâté.
-- part8: 3 verified Brivais Vilnis tomato-sauce identities — sardines, mackerel and roasted Riga sprats.
-- part9 remains pending due conflicts.
-- part10: 1 verified Brivais Vilnis mackerel in oil.
-- part11: 1 verified Brivais Vilnis smoked Baltic herring in oil.
+## Drinks audit checkpoint — IN PROGRESS
 
-### Parts12–14 — olives / black olives — SKIPPED
-- part12 contains 3 verified Delphi Kalamata identities.
-- parts13–14 pending-only.
-- User decision 2026-09-16: stop further olive audit; no pending olive identity promoted.
+Start 2026-09-16 after canned audit closure. Prioritize carbohydrate-relevant packaged drinks: regular carbonated soft drinks, juices/nectars/juice drinks, kvass, sweetened iced tea, energy drinks and other sugar-containing beverages. Zero/sugar-free drinks are selective; plain water low priority.
 
-### Part15 — hummus — SKIPPED
-- 2 Yofi candidates remain pending because of recipe-generation conflict / missing exact manufacturer nutrition.
-- User-approved limited-pass rule triggered skip.
+Mandatory drinks duplicate rule reinforced by user: before every candidate check current `assets/products.json` by EAN plus brand/name/aliases/recipe identity. Do not add a package-size duplicate merely because the exact EAN is new. Coca-Cola and Pepsi families are known to have existing runtime representation and must not be blindly re-added.
 
-### Part16 — jams limited pass
-- 1 verified Veres strawberry jam identity, exact EAN `04823105400348`, В 62.0 / Б 0.3 / Ж 0 / 249 ккал.
-- Veres apricot jam remains pending due material retailer/manufacturer conflict.
+### Drinks part1 — carbonated soft drinks
+- `assets/drinks_verified_part1.json` contains 2 verified identities; commit `c1226792a10dcbf89c99bfd5bc3a4fb7e20e430d`.
+- **Sprite**, exact current Zakaz EAN `05449000027368`: current official Coca-Cola Ukraine recipe gives В 9.0 / Б 0 / Ж 0 / 37 kcal per 100 ml. Zakaz exact-EAN card identifies Ukrainian 0.5 L Sprite but its displayed 7 g carbs / 29 kcal conflicts internally with its 9 g sugar field and with current official Ukrainian recipe; official current manufacturer nutrition is used. No Sprite packaged-drink identity or exact EAN found in current runtime before audit-file creation.
+- **Schweppes Indian Tonic**, EAN `05449000312105`: official Coca-Cola Ukraine and current exact-EAN Zakaz card agree on В 8.9 / Б 0 / Ж 0 / 37 kcal per 100 ml. No Schweppes identity or exact EAN found in current runtime before creation.
+- Mirinda / 7UP / other Schweppes variants remain for subsequent passes; do not add until runtime gap and exact recipe/EAN are verified.
 
-### Part17 — fruit preserves limited pass
-- 2 verified Iberica canned pineapple identities: rings EAN `08436024298925` and pieces EAN `08436024298918`, both В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал.
-- User decision: do not broadly expand fruit preserves.
-
-Final canned audit verified count: **21**.
-
-Before any canned runtime integration: revalidate the verified files → check current runtime again → deduplicate identities/package variants → create an explicit canned runtime whitelist → merge only whitelist → parse/test → combine with deferred bottom-safe-area UI fix in the next meaningful APK.
-
-## Drinks audit checkpoint — STARTED
-
-Start after canned audit closure on 2026-09-16. Prioritize carbohydrate-relevant packaged drinks where exact nutrition matters: regular carbonated soft drinks, juices/nectars/juice drinks, kvass, sweetened iced tea, energy drinks and other sugar-containing beverages. Zero/sugar-free drinks can be represented selectively where barcode scanning is useful, but should not crowd the catalog. Plain water is low priority. Apply exact EAN + manufacturer/label + retailer corroboration where possible and check `assets/products.json` before every addition.
+Current drinks verified count: **2**. No drinks runtime whitelist or merge yet.
 
 ## APK/runtime checkpoint
 
@@ -94,7 +69,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **напої**. Then **заморожені напівфабрикати**. Canned foods are closed at audit checkpoint and await later explicit runtime-whitelist validation, not further broad discovery.
+Current: **напої**. Then **заморожені напівфабрикати**. Canned foods are closed at audit checkpoint and await later explicit runtime-whitelist validation.
 
 ## Persistence rule
 
