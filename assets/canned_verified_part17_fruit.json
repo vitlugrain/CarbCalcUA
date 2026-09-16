@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ua_iberica_pineapple_rings_syrup_08436024298925",
+    "name": "Ананас Iberica кільцями в сиропі",
+    "brand": "Iberica",
+    "category": "Консерви",
+    "state": "canned",
+    "barcode": "08436024298925",
+    "carbs": 15.4,
+    "protein": 0.3,
+    "fat": 0.1,
+    "calories": 64,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "source": "Zakaz.ua exact-EAN + Auchan Ukraine + independent product passport",
+    "source_ref": "EAN 8436024298925; 565 g; pineapple rings in syrup; sources agree on В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал per 100 g",
+    "verified": true
+  },
+  {
+    "id": "ua_iberica_pineapple_pieces_syrup_08436024298918",
+    "name": "Ананас Iberica шматочками в сиропі",
+    "brand": "Iberica",
+    "category": "Консерви",
+    "state": "canned",
+    "barcode": "08436024298918",
+    "carbs": 15.4,
+    "protein": 0.3,
+    "fat": 0.1,
+    "calories": 64,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "source": "Auchan Ukraine exact-EAN + Ukrainian verified product passport",
+    "source_ref": "EAN 8436024298918; 565 g; pineapple pieces in syrup; product passport and retailer data identify same recipe and В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал per 100 g",
+    "verified": true
+  }
+]
