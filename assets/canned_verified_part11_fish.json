@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ua_brivais_vilnis_smoked_baltic_herring_oil_04750616001163",
+    "name": "Салака Brivais Vilnis копчена в олії 240 г",
+    "brand": "Brivais Vilnis",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 0.0,
+    "protein": 16.0,
+    "fat": 23.0,
+    "calories": 271,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "barcode": "04750616001163",
+    "source": "Brivais Vilnis official current product page + Silpo current product card + barcode/product passport cross-check",
+    "source_ref": "Official Brivais Vilnis Large sprats 240 g: smoked Baltic herring 68%, rapeseed oil 31%, salt 1%; per 100 g В 0 / Б 16 / Ж 23 / 271 kcal. Silpo current 240 g Brivais Vilnis smoked herring card matches exactly. EAN 4750616001163 is confirmed by current product-passport sources. Barcode absent from current assets/products.json during audit.",
+    "verified": true
+  }
+]
