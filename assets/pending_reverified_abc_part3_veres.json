@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ua_veres_vegetable_stew_4823105400744",
+    "name": "Верес Рагу овочеве",
+    "brand": "Верес",
+    "manufacturer": "ТОВ Віджи Продакшн",
+    "category": "Консерви",
+    "state": "ready",
+    "barcode": "4823105400744",
+    "carbs": 10.5,
+    "protein": 3.7,
+    "fat": 3.0,
+    "calories": 83,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "B",
+    "source": "Silpo + Auchan + Rozetka + Listex exact-EAN/current retail",
+    "source_ref": "Current Ukrainian sources consistently identify the 500 g Veres vegetable stew recipe with 10.5 g carbs, 3.7 g protein, 3.0 g fat and 83 kcal per 100 g. Listex identifies exact EAN 4823105400744; current retail cards independently match nutrition.",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part3 under A/B/C. Older/current alternate EAN generations exist, but exact EAN 4823105400744 has coherent current identity and nutrition; no need to block this exact identity."
+  },
+  {
+    "id": "ua_veres_bulgarian_lecho_4823105409037",
+    "name": "Верес Лечо болгарське",
+    "brand": "Верес",
+    "manufacturer": "ТОВ Віджи Продакшн",
+    "category": "Консерви",
+    "state": "ready",
+    "barcode": "4823105409037",
+    "carbs": 10.0,
+    "protein": 0.7,
+    "fat": 0.0,
+    "calories": 44,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "B",
+    "source": "Listex exact-EAN + Silpo + VARUS + Zakaz",
+    "source_ref": "Exact EAN 4823105409037 is verified by Listex with data current 2026-08-04: 10 g carbs, 0.7 g protein, 0 g fat, 44 kcal/100 g. Silpo, VARUS and multiple Zakaz stores independently report the same nutrition for the current 440 g product.",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part3 under A/B/C. Earlier concern was lack of manufacturer nutrition; exact-EAN current retailer/product-passport evidence is now coherent enough for Level B."
+  }
+]
