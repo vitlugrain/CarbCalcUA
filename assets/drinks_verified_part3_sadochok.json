@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ua_sadochok_multifruit_drink_04823063130318",
+    "name": "Садочок Мультифрукт, напій соковий",
+    "brand": "Садочок",
+    "manufacturer": "ТОВ Сандора",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "04823063130318",
+    "carbs": 11.0,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 45,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "source": "PepsiCo Україна + Zakaz.ua/Auchan exact-EAN",
+    "source_ref": "Current PepsiCo Ukraine catalog identifies Sadochok Multifruit drink 0.95 L as GTIN 4823063130318. Current exact-EAN Auchan/Zakaz retail card gives В 11.0 / Б 0 / Ж 0 / 45 kcal per 100 g and identifies manufacturer TOV Sandora. Exact EAN and Sadochok name were absent from current assets/products.json before audit-file creation.",
+    "verified": true
+  }
+]
