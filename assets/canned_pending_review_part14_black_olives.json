@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ua_iberica_black_olives_pitted_08436024290592",
+    "name": "Маслини Iberica без кісточки 420 г",
+    "category": "Консерви",
+    "subcategory": "Оливки та маслини",
+    "brand": "Iberica",
+    "barcode": "08436024290592",
+    "carbs": 0.0,
+    "protein": 0.5,
+    "fat": 14.0,
+    "calories": 134,
+    "nutrition_basis": "100g",
+    "status": "pending_review",
+    "reason": "Current Zakaz exact-EAN card and current Silpo Iberica black pitted olives independently show the same 0/0.5/14/134 profile, but a primary manufacturer nutrition source tied to this exact EAN has not yet been resolved. Keep outside runtime until manufacturer/label confirmation.",
+    "sources": [
+      "https://zakaz.ua/uk/products/olivka-iberika-420g--08436024290592/",
+      "https://silpo.ua/product/maslyny-iberica-chorni-bez-kistochky-776945"
+    ],
+    "runtime_check": "Exact barcode absent from current dev-large-update assets/products.json before file creation."
+  },
+  {
+    "id": "ua_maestro_de_oliva_black_olives_pitted_08436024299045",
+    "name": "Маслини Maestro de Oliva без кісточки 432 г",
+    "category": "Консерви",
+    "subcategory": "Оливки та маслини",
+    "brand": "Maestro de Oliva",
+    "barcode": "08436024299045",
+    "carbs": 0.0,
+    "protein": 0.5,
+    "fat": 14.0,
+    "calories": 134,
+    "nutrition_basis": "100g",
+    "status": "pending_review",
+    "reason": "Multiple current Zakaz retailer cards agree exactly on recipe and 0/0.5/14/134 nutrition, but no primary manufacturer nutrition evidence tied to this exact EAN was obtained in this pass. Keep pending under strict catalog policy.",
+    "sources": [
+      "https://auchan.zakaz.ua/uk/products/ovochi-olivka-432g-ispaniia--08436024299045/",
+      "https://megamarket.zakaz.ua/uk/products/ovochi-olivka-432g-ispaniia--08436024299045/"
+    ],
+    "runtime_check": "Exact barcode absent from current dev-large-update assets/products.json before file creation."
+  },
+  {
+    "id": "ua_oscar_black_olives_pitted_08413552051475",
+    "name": "Маслини Oscar без кісточки 300 г",
+    "category": "Консерви",
+    "subcategory": "Оливки та маслини",
+    "brand": "Oscar",
+    "barcode": "08413552051475",
+    "carbs": 0.0,
+    "protein": 0.5,
+    "fat": 13.0,
+    "calories": 129,
+    "nutrition_basis": "100g",
+    "status": "pending_review",
+    "reason": "Current Zakaz exact-EAN cards agree on 0/0.5/13/129, but Oscar black-olive listings expose multiple manufacturers/recipe generations and materially different nutrition profiles across package/EAN variants. Exact manufacturer-label confirmation is required before verified/runtime status.",
+    "sources": [
+      "https://zakaz.ua/uk/products/ovochi-olivka-oskar-300g--08413552051475/",
+      "https://megamarket.zakaz.ua/uk/products/ovochi-olivka-oskar-300g--08413552051475/"
+    ],
+    "runtime_check": "Checked current dev-large-update assets/products.json in this pass; candidate is audit-only and not promoted to runtime."
+  }
+]
