@@ -1,0 +1,24 @@
+[
+  {
+    "barcodes": ["05201306700419", "05201306821053"],
+    "name": "Оливки Delphi зелені без кісточки в розсолі 350 г",
+    "brand": "Delphi",
+    "manufacturer": "Intercomm Foods S.A.",
+    "subcategory": "оливки та маслини / зелені оливки без кісточки",
+    "retailer_nutrition_per_100g": {"carbs": 1.0, "protein": 0.8, "fat": 14.8, "calories": 139},
+    "alternate_retailer_nutrition_per_100g": {"carbs": 1.1, "protein": 1.2, "fat": 14.3, "calories": 144},
+    "status": "pending_review",
+    "reason": "Two current/recent EAN cards on Zakaz show the same 350 g Delphi green pitted olive identity and 1.0/0.8/14.8/139, while Auchan Express exposes the same named 350 g product with 1.1/1.2/14.3/144 and contradictory ingredient wording. Manufacturer catalog confirms Delphi green pitted olive formats but does not expose an exact EAN-linked nutrition panel. Keep outside runtime until label generation/EAN identity is resolved. Both checked EANs are absent from current assets/products.json."
+  },
+  {
+    "barcode": "05201306821091",
+    "name": "Оливки Delphi зелені фаршировані мигдалем 350 г",
+    "brand": "Delphi",
+    "manufacturer": "Intercomm Foods S.A.",
+    "subcategory": "оливки та маслини / фаршировані мигдалем",
+    "retailer_nutrition_per_100g": {"carbs": 2.7, "protein": 3.0, "fat": 19.8, "calories": 209},
+    "ingredients_summary": "Оливки без кісточок 47.6%, вода, цілі ядра мигдалю 9.5%, морська сіль, молочна та лимонна кислоти.",
+    "status": "pending_review",
+    "reason": "Multiple Zakaz storefronts agree exactly on barcode-linked nutrition and ingredients, but a matching manufacturer/label nutrition panel for EAN 5201306821091 was not located in this pass. Recipe-dependent stuffed olives require primary confirmation before verified/runtime status. Barcode is absent from current assets/products.json."
+  }
+]
