@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ua_delphi_green_olives_almond_05201306821091",
+    "name": "Оливки Delphi зелені фаршировані мигдалем 350 г",
+    "brand": "Delphi",
+    "manufacturer": "Intercomm Foods S.A.",
+    "category": "Консерви",
+    "subcategory": "Оливки та маслини",
+    "barcode": "05201306821091",
+    "carbs": 2.7,
+    "protein": 3.0,
+    "fat": 19.8,
+    "calories": 209,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Zakaz exact-EAN retailer cards",
+    "source_ref": "Multiple Ukrainian Zakaz storefronts agree on exact EAN 5201306821091, recipe ingredients and nutrition: carbohydrates 2.7 g, protein 3.0 g, fat 19.8 g, 209 kcal per 100 g. Under the current A/B/C policy, manufacturer nutrition is not mandatory when exact-EAN retailer evidence is coherent.",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part13_olives.json under Level B. Exact barcode was absent from runtime at the original pending audit."
+  },
+  {
+    "id": "ua_maestro_de_oliva_black_olives_pitted_08436024299045",
+    "name": "Маслини Maestro de Oliva без кісточки 432 г",
+    "brand": "Maestro de Oliva",
+    "manufacturer": "Iberica Olive Line S.L.U.",
+    "category": "Консерви",
+    "subcategory": "Оливки та маслини",
+    "barcode": "08436024299045",
+    "carbs": 0.0,
+    "protein": 0.5,
+    "fat": 14.0,
+    "calories": 134,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Listex exact-EAN + Ukrainian retailer corroboration",
+    "source_ref": "Exact EAN 8436024299045 product-data card reports carbohydrates 0 g, protein 0.5 g, fat 14 g, 134 kcal per 100 g; multiple Ukrainian retail cards corroborate the zero-carbohydrate recipe identity. Under A/B/C, this is sufficient Level B evidence.",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part14_black_olives.json. Package naming varies between 420 g and 432 g / 432 ml, but exact EAN and recipe identity are stable."
+  }
+]
