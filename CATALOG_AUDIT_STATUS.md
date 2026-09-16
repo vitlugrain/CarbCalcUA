@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Olives/black olives intentionally SKIPPED after low verification yield. Continue with remaining canned subcategories. Current verified count remains 18. |
+| Консерви | IN PROGRESS | Olives and hummus intentionally SKIPPED after low verification yield. Continue with jams/preserves and fruit preserves. Current verified count remains 18. |
 
 ## Sauces runtime checkpoint
 
@@ -61,8 +61,16 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 ### Parts12–14 — olives / black olives — SKIPPED
 - part12 contains 3 verified Delphi Kalamata identities and remains available for later whitelist consideration.
 - parts13–14 are pending-only because exact manufacturer/label resolution was poor for green/black olives.
-- User decision 2026-09-16: stop further olive/black-olive audit and move on; do not spend more audit time on stuffed/seasoned olives.
+- User decision 2026-09-16: stop further olive/black-olive audit and move on.
 - No pending olive identity is promoted to runtime.
+
+### Part15 — hummus limited pass — SKIPPED
+- `assets/canned_pending_review_part15_hummus.json` contains 2 Yofi candidates; no new verified identities.
+- Yofi Classic 250 g, barcode `04820146820111`: current exact-EAN retailer data is В 13.3 / Б 7.4 / Ж 19.6 / 259 ккал with 68% cooked chickpeas, while the current official Yofi product page gives a materially different 60%-chickpea recipe and В 3.9 / Б 11.5 / Ж 27.8 / 312 ккал. This is a clear label/recipe-generation conflict.
+- Yofi Truffle 250 g, barcode `04820146820586`: multiple current Zakaz cards agree on В 16.7 / Б 8.1 / Ж 18.2 / 263 ккал, but exact manufacturer nutrition tied to the EAN was not resolved.
+- Both exact barcodes were absent from current runtime before audit-file creation.
+- User-approved rule for this pass: try only a couple of products; if verification is poor, skip the subcategory. Therefore hummus is now SKIPPED and no further time is spent on it.
+- part15 commit: `5a437ede5061ea1e81d9c34f0a6be155deecaf1a`.
 
 Current canned verified count: **18**. No canned-food runtime whitelist or merge has been created.
 
@@ -80,7 +88,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви — remaining subcategories after skipping olives**. Next: hummus/pâtés and other carbohydrate-relevant canned spreads, then jams/preserves and fruit preserves; avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
+Current: **консерви → джеми/варення → фруктові консерви** after skipping olives and hummus. Avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
