@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ua_sadochok_tomato_salt_4823063107303",
+    "name": "Садочок Томат з сіллю",
+    "brand": "Садочок",
+    "manufacturer": "ТОВ Сандора",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "4823063107303",
+    "carbs": 5.2,
+    "protein": 0.7,
+    "fat": 0.0,
+    "calories": 24,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "source": "PepsiCo Україна + verified product passport",
+    "source_ref": "Current PepsiCo Ukraine assortment identifies Sadochok Tomato-Salt 0.95 L with GTIN 4823063107303. Current verified product passport for exact GTIN gives В 5.2 / Б 0.7 / Ж 0 / 24 kcal per 100 ml, manufacturer TOV Sandora.",
+    "verified": true,
+    "audit_note": "Exact EAN and Sadochok identity absent from current assets/products.json before audit-file creation."
+  }
+]
