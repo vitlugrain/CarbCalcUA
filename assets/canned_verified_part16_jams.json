@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ua_veres_strawberry_jam_04823105400348",
+    "name": "Джем Верес полуничний",
+    "brand": "Верес",
+    "category": "Консерви",
+    "state": "ready",
+    "barcode": "04823105400348",
+    "carbs": 62.0,
+    "protein": 0.3,
+    "fat": 0.0,
+    "calories": 249,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "source": "Верес official product page + current Zakaz exact-EAN cards",
+    "source_ref": "Official Veres: 385/555 g, В 62.0 / Б 0.3 / Ж 0 / 249 kcal. Current Zakaz exact EAN 4823105400348 identifies 385 g strawberry jam and independently confirms 62 g carbs/100 g; retailer protein/calorie rounding differs slightly, so primary manufacturer values are retained.",
+    "verified": true
+  }
+]
