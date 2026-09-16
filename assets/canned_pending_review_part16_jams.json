@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Джем Верес абрикосовий 370 г",
+    "brand": "Верес",
+    "category": "Консерви",
+    "candidate_barcodes": ["04823105402120", "04820008091116"],
+    "retailer_nutrition_per_100g": {"carbs": 57.0, "protein": 0.0, "fat": 0.0, "calories": 228},
+    "manufacturer_current_nutrition_per_100g": {"carbs": 62.0, "protein": 0.7, "fat": 0.0, "calories": 251},
+    "reason": "Current Zakaz exact-EAN cards for 370 g describe a 49% apricot recipe at 57 g carbs/100 g, while the current official Veres page for 370/550 g gives 62 g carbs, 0.7 g protein and 251 kcal. Material recipe/label-generation conflict; do not promote without exact manufacturer-label resolution.",
+    "verified": false
+  }
+]
