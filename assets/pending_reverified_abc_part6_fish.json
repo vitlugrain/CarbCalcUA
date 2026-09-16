@@ -1,0 +1,53 @@
+[
+  {
+    "id": "ua_fish_line_tuna_own_juice_4820235630591",
+    "name": "Тунець Fish Line у власному соку 160 г",
+    "brand": "Fish Line",
+    "category": "Консерви",
+    "subcategory": "Рибні консерви / тунець у власному соку",
+    "barcode": "4820235630591",
+    "carbs": 0.0,
+    "protein": 26.8,
+    "fat": 0.7,
+    "calories": 114,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN Ukrainian retailer evidence (Zakaz/METRO)",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part5_fish.json under A/B/C policy. Previous pending reason was manufacturer-level confirmation only; exact-EAN retailer nutrition is complete and coherent."
+  },
+  {
+    "id": "ua_calvo_tuna_own_juice_8410090031549",
+    "name": "Тунець Calvo у власному соку 160 г",
+    "brand": "Calvo",
+    "category": "Консерви",
+    "subcategory": "Рибні консерви / тунець у власному соку",
+    "barcode": "8410090031549",
+    "carbs": 0.0,
+    "protein": 22.0,
+    "fat": 0.9,
+    "calories": 97,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN Ukrainian retailer evidence (Zakaz)",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part5_fish.json under A/B/C policy. Complete exact-EAN retailer nutrition satisfies Level B; absence of manufacturer nutrition alone is no longer a blocking reason."
+  },
+  {
+    "id": "ua_baltic_fish_sprats_oil_4751007739368",
+    "name": "Шпроти Baltic Fish в олії 160 г",
+    "brand": "BALTIC FISH",
+    "category": "Консерви",
+    "subcategory": "Рибні консерви / шпроти в олії",
+    "barcode": "4751007739368",
+    "carbs": 0.1,
+    "protein": 21.0,
+    "fat": 10.2,
+    "calories": 176,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN Ukrainian retailer evidence (Zakaz/Auchan)",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part5_fish.json under A/B/C policy. Exact-EAN retailer data is coherent; identical nutrition on another package size is compatible with the same-recipe family but this entry retains its exact 160 g EAN identity pending final runtime dedup."
+  }
+]
