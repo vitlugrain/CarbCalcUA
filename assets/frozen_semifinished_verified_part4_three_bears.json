@@ -1,0 +1,24 @@
+[
+  {
+    "id": "ua_three_bears_pelmeni_firmovi",
+    "name": "Пельмені «Фірмові» Три Ведмеді",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcodes": [
+      "4820039464279",
+      "4823086108011"
+    ],
+    "carbs": 27.5,
+    "protein": 9.7,
+    "fat": 14.8,
+    "calories": 282.5,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційний сайт виробника; Сільпо",
+    "source_ref": "Official current product pages: Фірмові 800 г EAN 4820039464279 and 400 г EAN 4823086108011 have identical nutrition (27.5 g carbs, 9.7 g protein, 14.8 g fat, 282.5 kcal per 100 g); current Silpo cards confirm the same nutrition. Package-size variants are represented as one recipe identity.",
+    "audit_note": "Selected representative SKU under category-first popular-brand policy. Branch-specific assets/products.json checked before audit inclusion: no Three Bears identity or EAN 4820039464279 found. Not runtime-merged yet; explicit whitelist still required."
+  }
+]
