@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ua_schweppes_bitter_lemon_05449000064110",
+    "name": "Schweppes Original Bitter Lemon",
+    "brand": "Schweppes",
+    "manufacturer": "ІП Кока-Кола Беверіджиз Україна Лімітед",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "05449000064110",
+    "carbs": 9.1,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 38,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл"],
+    "source": "Coca-Cola Україна + Zakaz.ua exact-EAN",
+    "source_ref": "Official Schweppes Ukraine: Bitter Lemon 9.1 g carbs, 0 protein, 0 fat, 38 kcal/100 ml; Zakaz exact EAN 05449000064110 matches recipe and nutrition.",
+    "verified": true
+  },
+  {
+    "id": "ua_schweppes_pomegranate_05449000030856",
+    "name": "Schweppes Pomegranate",
+    "brand": "Schweppes",
+    "manufacturer": "ІП Кока-Кола Беверіджиз Україна Лімітед",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "05449000030856",
+    "carbs": 10.1,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 41,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл"],
+    "source": "Coca-Cola Україна + Zakaz.ua exact-EAN",
+    "source_ref": "Official Schweppes Ukraine: Pomegranate 10.1 g carbs, 0 protein, 0 fat, 41 kcal/100 ml; Zakaz exact EAN 05449000030856 matches recipe and nutrition.",
+    "verified": true
+  }
+]
