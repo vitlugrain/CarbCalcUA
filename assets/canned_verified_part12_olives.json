@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ua_delphi_kalamata_brine_05201306700396",
+    "name": "Маслини Delphi Каламата з кісточкою в розсолі",
+    "brand": "Delphi",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcode": "05201306700396",
+    "carbs": 2.7,
+    "protein": 1.5,
+    "fat": 25.2,
+    "calories": 249,
+    "source": "Zakaz.ua exact barcode + Intercomm Foods/Delphi product-family label evidence",
+    "status": "verified",
+    "notes": "Zakaz exact barcode 5201306700396 identifies Delphi Kalamata olives with stone in brine, 350 g, manufacturer Intercomm Foods S.A., ingredients Kalamata olives 57.1%, water, sea salt, wine vinegar, nutrition 2.7/1.5/25.2/249 per 100 g. Independent Delphi/Intercomm Foods label/product evidence matches the same Kalamata nutrition profile. Exact barcode absent from current assets/products.json."
+  },
+  {
+    "id": "ua_delphi_kalamata_pitted_marinated_05201306822074",
+    "name": "Маслини Delphi Каламата без кісточки мариновані",
+    "brand": "Delphi",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcode": "05201306822074",
+    "carbs": 2.7,
+    "protein": 1.5,
+    "fat": 25.2,
+    "calories": 249,
+    "source": "Zakaz.ua exact barcode + Ukrainian product passport",
+    "status": "verified",
+    "notes": "NOVUS/Auchan Zakaz exact barcode 5201306822074 identifies Delphi Kalamata pitted marinated olives 60 g and gives 2.7/1.5/25.2/249 per 100 g. Ukrainian product passport for the same EAN independently confirms the identity and nutrition. Exact barcode absent from current assets/products.json."
+  },
+  {
+    "id": "ua_delphi_kalamata_marinated_oil_05201306810316",
+    "name": "Маслини Delphi Каламата з кісточкою мариновані з оливковою олією",
+    "brand": "Delphi",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcode": "05201306810316",
+    "carbs": 2.7,
+    "protein": 1.5,
+    "fat": 25.2,
+    "calories": 249,
+    "source": "Zakaz.ua exact barcode + Intercomm Foods/Delphi product evidence",
+    "status": "verified",
+    "notes": "Zakaz exact barcode 5201306810316 identifies Delphi Kalamata olives with stone marinated with extra virgin olive oil, 250 g, manufacturer Intercomm Foods S.A., nutrition 2.7/1.5/25.2/249 per 100 g. Independent product evidence for the same Delphi/Intercomm Foods recipe matches the profile. Exact barcode absent from current assets/products.json."
+  }
+]
