@@ -1,6 +1,6 @@
 # CarbCalc UA — Catalog Audit Registry
 
-Updated: 2026-09-14
+Updated: 2026-09-16
 Branch: `dev-large-update`
 
 GitHub is the source of truth. Workflow: `Zakaz.ua discovery → existing-catalog gap check → nutrition verification → pending review → dedup → explicit runtime whitelist → merge → parse/test → APK`.
@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed as audit checkpoints; fish preserves audit active. Current verified count is 13 after part8 added 3 manufacturer-confirmed Brivais Vilnis tomato-sauce fish identities. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed; fish preserves audit active. Current verified count remains 13. Part9 isolated current Brivais Vilnis oil/cod-liver conflicts as pending. |
 
 ## Sauces runtime checkpoint
 
@@ -93,6 +93,12 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - all checked part8 barcodes were absent from current `assets/products.json` in this pass.
 - part8 commit: `8c2d442c3fa8e86a0489b97ee9dc7ba3c9b73c77`
 
+### Part9 — Brivais Vilnis oil fish / cod liver conflict pass
+- `assets/canned_pending_review_part9_fish.json` — 2 pending identities; no promotion to verified.
+- Cod liver 121 g, barcode `04750616003655`: absent from runtime. Current official Brivais Vilnis page gives В 0.38 / Б 8.5 / Ж 36 / 361 ккал, while current Zakaz barcode card gives В 0.4 / Б 8.5 / Ж 39 / 386 ккал. Material fat/calorie mismatch means label/production generation must be resolved.
+- Riga sardines in oil 240 g, barcode `04750616008865`: absent from runtime. Zakaz gives В 0 / Б 15 / Ж 18 / 225 ккал, but current manufacturer catalog exposes multiple distinct sardine/herring-in-oil recipes and the exact barcode-linked primary nutrition was not resolved. Keep pending.
+- part9 commit: `b31dc67dde01edeb48616fee410617fbece7e2f7`
+
 Current canned verified count: **13** (parts1–4 + part7–8). No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
@@ -109,7 +115,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви**. Then: **напої → заморожені напівфабрикати**.
+Current: **консерви**. Continue fish audit, then **оливки/маслини**, followed by **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
