@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ua_bonduelle_chili_mix_3083681043815",
+    "name": "Bonduelle Овочева суміш Чилі Мікс",
+    "brand": "Bonduelle",
+    "category": "Консерви",
+    "state": "ready",
+    "barcode": "3083681043815",
+    "carbs": 13.1,
+    "protein": 2.2,
+    "fat": 1.0,
+    "calories": 76,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "B",
+    "source": "Bonduelle UA identity + exact-EAN Ukrainian retail/product-data sources",
+    "source_ref": "Bonduelle UA pending identity EAN 3083681043815. Exact-EAN Rozetka and Listex product records agree on carbohydrates 13.1 g, protein 2.2 g, fat 1.0 g, 76 kcal per 100 g.",
+    "verified": true,
+    "audit_note": "Promoted from bonduelle_ua_pending.json under A/B/C policy. Previous pending reason was absence of official nutrition; exact-EAN Ukrainian sources now satisfy Level B. Runtime products.json checked before promotion."
+  },
+  {
+    "id": "ua_bonduelle_mexican_mix_3083680585903",
+    "name": "Bonduelle Овочева суміш Мексиканська з рисом і шампіньйонами",
+    "brand": "Bonduelle",
+    "category": "Заморожені овочі",
+    "state": "frozen",
+    "barcode": "3083680585903",
+    "carbs": 15.0,
+    "protein": 2.6,
+    "fat": 0.3,
+    "calories": 81,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "B",
+    "source": "Bonduelle UA identity + exact-EAN Ukrainian retail/product-data sources",
+    "source_ref": "Bonduelle UA pending identity EAN 3083680585903. Exact-EAN Epicentr product card reports carbohydrates 15 g, protein 2.6 g, fat 0.3 g and 81 kcal per 100 g; Ukrainian product-data sources confirm the same EAN/product identity.",
+    "verified": true,
+    "audit_note": "Promoted from bonduelle_ua_pending.json under A/B/C policy. Runtime products.json checked before promotion."
+  }
+]
