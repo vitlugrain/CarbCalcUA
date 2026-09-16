@@ -1,0 +1,53 @@
+[
+  {
+    "id": "ua_baltic_fish_sprats_oil_family",
+    "name": "Шпроти в олії Baltic Fish",
+    "brand": "BALTIC FISH",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcodes": ["4751007739368", "4751007739375", "4751007739382"],
+    "carbs": 0.1,
+    "protein": 21.0,
+    "fat": 10.2,
+    "calories": 176,
+    "nutrition_basis": "100g",
+    "verification_level": "C",
+    "source": "Multiple Ukrainian retailer exact-EAN cards across 160 g / 240 g / 190 g package sizes",
+    "verified": true,
+    "audit_note": "Promoted under A/B/C recipe-identity policy. All three package EANs expose the same smoked-sprat 70% recipe and identical nutrition. This supersedes treating package sizes as separate nutrition identities; final runtime whitelist must deduplicate against the 160 g Level-B candidate."
+  },
+  {
+    "id": "ua_aquamarine_sardines_tomato_4650067810195",
+    "name": "Сардина в томатному соусі Аквамарин",
+    "brand": "Аквамарин",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcode": "4650067810195",
+    "carbs": 4.0,
+    "protein": 18.0,
+    "fat": 12.0,
+    "calories": 196,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN current Ukrainian retailer card",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part6_fish.json. Exact-EAN identity and complete nutrition are available; lack of manufacturer nutrition alone is not a blocker under Level B."
+  },
+  {
+    "id": "ua_ukrainian_star_sardines_tomato_4823071341676",
+    "name": "Сардина атлантична обсмажена в томатному соусі Українська Зірка",
+    "brand": "Українська Зірка",
+    "category": "Консерви",
+    "state": "prepared",
+    "barcode": "4823071341676",
+    "carbs": 4.0,
+    "protein": null,
+    "fat": 12.0,
+    "calories": 196,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN current Ukrainian retailer card",
+    "verified": true,
+    "audit_note": "Promoted under the revised A/B/C policy: carbohydrates are reliably established for the exact product, while unavailable protein is stored as null rather than invented. Missing protein no longer blocks catalog inclusion."
+  }
+]
