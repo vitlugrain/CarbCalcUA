@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Olives/black olives audit active. Current verified count remains 18; parts13–14 keep unresolved green/black olive identities pending. |
+| Консерви | IN PROGRESS | Olives/black olives intentionally SKIPPED after low verification yield. Continue with remaining canned subcategories. Current verified count remains 18. |
 
 ## Sauces runtime checkpoint
 
@@ -58,26 +58,11 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - part11: 1 verified Brivais Vilnis smoked Baltic herring in oil identity, barcode `04750616001163`, В 0 / Б 16 / Ж 23 / 271 ккал.
 - fish verified commits: `c034cdaba67262c6a20ae5049f9de125bafb6ce1`, `8c2d442c3fa8e86a0489b97ee9dc7ba3c9b73c77`, `6dd0d4d4adb42cea85fbbdd788582af9ee53846c`, `fb5207eb15417744da44483b1e5d2c8dfc640c84`.
 
-### Part12 — Delphi Kalamata olives
-- `assets/canned_verified_part12_olives.json` — 3 verified Delphi / Intercomm Foods Kalamata identities; all exact barcodes absent from current `assets/products.json` before creation.
-- Kalamata olives with stone in brine 350 g, barcode `05201306700396`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
-- Kalamata pitted marinated olives 60 g, barcode `05201306822074`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
-- Kalamata olives with stone marinated with extra virgin olive oil 250 g, barcode `05201306810316`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
-- part12 commit: `12423fa84b2ca978ad2d3b9d98c9fc1bc017c789`.
-
-### Part13 — Delphi green olives conflict pass
-- `assets/canned_pending_review_part13_olives.json` — pending-only; no new verified identities.
-- Delphi green pitted olives in brine 350 g: Zakaz EAN cards `05201306700419` and `05201306821053` agree on В 1.0 / Б 0.8 / Ж 14.8 / 139 ккал, but another current retailer card exposes a materially different nutrition/ingredient generation. Keep pending until exact label generation is resolved.
-- Delphi green olives stuffed with almonds 350 g, barcode `05201306821091`: multiple retailer cards agree on В 2.7 / Б 3.0 / Ж 19.8 / 209 ккал and recipe, but matching primary manufacturer/label nutrition for the exact EAN was not located.
-- part13 commit: `2503d4056ccc8ccc6ea108ae80feeac339795998`.
-
-### Part14 — black olives Iberica / Maestro de Oliva / Oscar
-- `assets/canned_pending_review_part14_black_olives.json` — pending-only; no new verified identities.
-- Iberica black pitted olives 420 g, barcode `08436024290592`: current Zakaz exact-EAN card gives В 0 / Б 0.5 / Ж 14 / 134 ккал; current Silpo Iberica black pitted olives independently matches the same profile. Exact primary manufacturer nutrition tied to this EAN was not resolved, so it stays pending.
-- Maestro de Oliva black pitted olives 432 g, barcode `08436024299045`: multiple current Zakaz cards agree on В 0 / Б 0.5 / Ж 14 / 134 ккал and the same recipe, but manufacturer-label confirmation for the exact EAN is still missing.
-- Oscar black pitted olives 300 g, barcode `08413552051475`: exact-EAN Zakaz cards agree on В 0 / Б 0.5 / Ж 13 / 129 ккал, but the Oscar range currently exposes multiple manufacturer/recipe generations with materially different nutrition across EANs; exact manufacturer-label confirmation required.
-- checked candidate barcodes are absent from current runtime where exact lookup was performed; none is promoted to runtime.
-- part14 commit: `f3f36770449ab6a2b90e7fdb92d819c69566af27`.
+### Parts12–14 — olives / black olives — SKIPPED
+- part12 contains 3 verified Delphi Kalamata identities and remains available for later whitelist consideration.
+- parts13–14 are pending-only because exact manufacturer/label resolution was poor for green/black olives.
+- User decision 2026-09-16: stop further olive/black-olive audit and move on; do not spend more audit time on stuffed/seasoned olives.
+- No pending olive identity is promoted to runtime.
 
 Current canned verified count: **18**. No canned-food runtime whitelist or merge has been created.
 
@@ -95,7 +80,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви → оливки/маслини**. Continue manufacturer/label resolution for black olives and audit stuffed/seasoned olives; then remaining canned subcategories, followed by **напої → заморожені напівфабрикати**.
+Current: **консерви — remaining subcategories after skipping olives**. Next: hummus/pâtés and other carbohydrate-relevant canned spreads, then jams/preserves and fruit preserves; avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
