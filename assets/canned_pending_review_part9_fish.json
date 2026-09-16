@@ -1,0 +1,23 @@
+[
+  {
+    "barcode": "04750616003655",
+    "name": "Печінка тріски Brivais Vilnis 121 г",
+    "brand": "Brivais Vilnis",
+    "subcategory": "рибні консерви / печінка тріски",
+    "retailer_nutrition_per_100g": {"carbs": 0.4, "protein": 8.5, "fat": 39.0, "calories": 386},
+    "manufacturer_current_nutrition_per_100g": {"carbs": 0.38, "protein": 8.5, "fat": 36.0, "calories": 361},
+    "source": "Zakaz.ua / Auchan + official Brivais Vilnis current product page",
+    "status": "pending_review",
+    "reason": "Barcode is absent from current assets/products.json, and carbs/protein are near-identical, but current manufacturer fat/calories (36 g / 361 kcal) conflict materially with Zakaz barcode card (39 g / 386 kcal). This likely represents label/production-generation drift; do not promote until exact barcode-label nutrition is resolved."
+  },
+  {
+    "barcode": "04750616008865",
+    "name": "Сардина Brivais Vilnis Ризька в олії 240 г",
+    "brand": "Brivais Vilnis",
+    "subcategory": "рибні консерви / сардина в олії",
+    "retailer_nutrition_per_100g": {"carbs": 0.0, "protein": 15.0, "fat": 18.0, "calories": 225},
+    "source": "Zakaz.ua / Auchan",
+    "status": "pending_review",
+    "reason": "Barcode is absent from current assets/products.json. Retailer card is complete, but the current official Brivais Vilnis catalog exposes a different Riga sardines-in-olive-oil 160 g recipe (Clupea harengus membras; 0/16/12/172) and also a separate 240 g Sardines in oil line. Exact manufacturer nutrition for barcode 04750616008865 was not obtained, so identity/recipe generation must be resolved before verified/runtime status."
+  }
+]
