@@ -1,0 +1,39 @@
+[
+  {
+    "id": "ua_nash_sik_tomato_4820264290681",
+    "name": "Наш Сік Томатний з м'якоттю",
+    "brand": "Наш Сік",
+    "manufacturer": "Vitmark-Ukraine",
+    "category": "Напої",
+    "state": "liquid",
+    "barcode": "4820264290681",
+    "carbs": 4.5,
+    "protein": 0.5,
+    "fat": 0.0,
+    "calories": 20,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "verification_level": "B",
+    "source": "Rozetka exact-EAN + Silpo current recipe corroboration",
+    "source_ref": "Exact EAN 4820264290681 retail card gives В 4.5 / Б 0.5 / Ж 0 / 20 kcal per 100 g. Current Silpo cards for 0.95 L and 1.93 L show the same recipe nutrition, supporting one nutrition identity across package sizes.",
+    "verified": true
+  },
+  {
+    "id": "ua_nash_sik_multifruit_nectar",
+    "name": "Наш Сік Мультифрукт, нектар",
+    "brand": "Наш Сік",
+    "manufacturer": "Vitmark-Ukraine",
+    "category": "Напої",
+    "state": "liquid",
+    "carbs": 9.5,
+    "protein": 0.1,
+    "fat": 0.0,
+    "calories": 38,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "verification_level": "C",
+    "source": "Silpo current multi-size cards + Listex recipe identity",
+    "source_ref": "Current Silpo 0.33 L and 0.5 L cards agree on В 9.5 / Б 0.1 / Ж 0 / 38 kcal per 100 g. Listex 1.93 L card shows the same nutrition, supporting one recipe identity across package sizes. Barcode intentionally omitted because multiple package EANs exist.",
+    "verified": true
+  }
+]
