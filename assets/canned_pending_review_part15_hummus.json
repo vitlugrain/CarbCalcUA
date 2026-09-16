@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ua_yofi_hummus_classic_04820146820111",
+    "name": "Хумус Yofi! Класичний 250 г",
+    "brand": "YOFI!",
+    "category": "Консерви",
+    "barcode": "04820146820111",
+    "status": "pending_review",
+    "retailer_nutrition_per_100g": {
+      "carbs": 13.3,
+      "protein": 7.4,
+      "fat": 19.6,
+      "calories": 259
+    },
+    "manufacturer_site_nutrition_per_100g": {
+      "carbs": 3.9,
+      "protein": 11.5,
+      "fat": 27.8,
+      "calories": 312
+    },
+    "reason": "Exact EAN retailer/current retail label generation (68% cooked chickpeas) materially conflicts with current official Yofi product page (60% chickpeas). Do not promote until exact manufacturer label generation is resolved.",
+    "runtime_check": "Exact barcode absent from current assets/products.json before audit-file creation."
+  },
+  {
+    "id": "ua_yofi_hummus_truffle_04820146820586",
+    "name": "Хумус Yofi! з трюфельним соусом 250 г",
+    "brand": "YOFI!",
+    "category": "Консерви",
+    "barcode": "04820146820586",
+    "status": "pending_review",
+    "retailer_nutrition_per_100g": {
+      "carbs": 16.7,
+      "protein": 8.1,
+      "fat": 18.2,
+      "calories": 263
+    },
+    "reason": "Multiple current Zakaz storefronts agree on exact-EAN nutrition and recipe, but exact manufacturer nutrition panel tied to this EAN was not resolved. Keep pending under strict manufacturer/label verification policy.",
+    "runtime_check": "Exact barcode absent from current assets/products.json before audit-file creation."
+  }
+]
