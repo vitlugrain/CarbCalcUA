@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ua_veres_champignons_snack_4823105400164",
+    "name": "Верес Шампіньйони мариновані закусочні",
+    "brand": "Верес",
+    "manufacturer": "ТОВ Віджи Продакшн",
+    "category": "Консерви",
+    "state": "preserved",
+    "barcode": "4823105400164",
+    "carbs": 7.1,
+    "protein": 2.2,
+    "fat": 0.5,
+    "calories": 42,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "B",
+    "source": "Listex exact-EAN product passport",
+    "source_ref": "Exact EAN 4823105400164 product passport identifies Veres snack pickled champignons 260 g and reports C 7.1 / P 2.2 / F 0.5 / 42 kcal per 100 g. Product identity is also current in Ukrainian retail.",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part4 under A/B/C policy. Kept separate from the distinct Veres delicatessen recipe. Runtime products.json checked before creation."
+  },
+  {
+    "id": "ua_veres_champignons_delicatessen",
+    "name": "Верес Шампіньйони мариновані делікатесні",
+    "brand": "Верес",
+    "manufacturer": "Верес",
+    "category": "Консерви",
+    "state": "preserved",
+    "barcode": null,
+    "carbs": 0.1,
+    "protein": 4.2,
+    "fat": 1.0,
+    "calories": 26,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "verification_level": "A",
+    "source": "Veres official product page",
+    "source_ref": "Current official Veres page for marinated delicatessen champignons, net weight 460 g: C 0.1 / P 4.2 / F 1.0 / 26 kcal per 100 g. Current VARUS card independently matches the recipe and nutrition.",
+    "verified": true,
+    "audit_note": "Promoted as a separate recipe identity from snack-marinated champignons. No EAN attached because exact current package barcode was not established from the official page. Runtime products.json checked before creation."
+  }
+]
