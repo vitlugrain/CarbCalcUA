@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ua_brivais_vilnis_cod_liver_4750616003655",
+    "name": "Печінка тріски Brivais Vilnis 121 г",
+    "brand": "Brivais Vilnis",
+    "category": "Консерви",
+    "subcategory": "Рибні консерви / печінка тріски",
+    "barcode": "4750616003655",
+    "carbs": 0.4,
+    "protein": 8.5,
+    "fat": 39.0,
+    "calories": 386,
+    "nutrition_basis": "100g",
+    "verification_level": "B",
+    "source": "Exact-EAN Ukrainian retailer card; official manufacturer current product family used as corroboration",
+    "verified": true,
+    "audit_note": "Promoted from canned_pending_review_part9_fish.json under revised A/B/C policy. Exact-EAN retailer data establishes 0.4 g carbs/100 g. Manufacturer current page gives essentially the same carbohydrate value (0.38) and protein (8.5) but different fat/calories, consistent with label-generation drift. For CarbCalc UA the carbohydrate value is not materially conflicting; retain exact-EAN retailer P/F/kcal for this barcode rather than mixing generations."
+  }
+]
