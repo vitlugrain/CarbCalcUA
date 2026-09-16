@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Olives and hummus skipped; limited jam pass completed. Move to fruit preserves. Current verified count 19. |
+| Консерви | IN PROGRESS | Olives and hummus skipped; limited jam and fruit-preserve passes completed. Current verified count 21. Next: close remaining high-value canned scope, then drinks. |
 
 ## Sauces runtime checkpoint
 
@@ -74,10 +74,18 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 
 ### Part16 — jams limited pass
 - `assets/canned_verified_part16_jams.json`: 1 verified identity — Veres strawberry jam, exact EAN `04823105400348`, official manufacturer В 62.0 / Б 0.3 / Ж 0 / 249 ккал; current exact-EAN Zakaz cards independently confirm the 385 g product and 62 g carbs. Barcode absent from current runtime before creation. Commit `0607d2013af06c846871a8c0b771313cfe27b40b`.
-- `assets/canned_pending_review_part16_jams.json`: Veres apricot jam 370 g kept pending. Current exact-EAN retailer cards (`04823105402120`, `04820008091116`) give В 57 / Б 0 / Ж 0 / 228 ккал, while current official Veres page for 370/550 g gives В 62 / Б 0.7 / Ж 0 / 251 ккал. Material label/recipe-generation conflict. Commit `0497d68dd423a5761e370f30aaf4651821a8797b`.
+- `assets/canned_pending_review_part16_jams.json`: Veres apricot jam 370 g kept pending because current retailer and official manufacturer nutrition materially conflict. Commit `0497d68dd423a5761e370f30aaf4651821a8797b`.
 - Per user rule, stop after this small sample and move on rather than expanding the jam audit.
 
-Current canned verified count: **19**. No canned-food runtime whitelist or merge has been created.
+### Part17 — fruit preserves limited pass
+- `assets/canned_verified_part17_fruit.json`: 2 verified Iberica canned pineapple identities.
+- Iberica pineapple rings in syrup 565 g, EAN `08436024298925`: В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал. Exact EAN and nutrition agree across current Zakaz, Auchan Ukraine and independent product-passport evidence.
+- Iberica pineapple pieces in syrup 565 g, EAN `08436024298918`: В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал. Exact EAN, recipe and nutrition corroborated by current retail and Ukrainian product-passport evidence.
+- Both exact EANs were absent from current `assets/products.json` before creation.
+- part17 commit: `e5303cc7006182637cefb467b24435300fc6e19e`.
+- Per user limited-pass rule, do not expand fruit preserves broadly; move on after this successful sample.
+
+Current canned verified count: **21**. No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
@@ -93,7 +101,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви → фруктові консерви**. Use the same limited-pass principle: test a couple of high-value products, continue only if verification quality is good. Avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
+Current: **консерви — close remaining high-value scope without broad expansion**. Then **напої → заморожені напівфабрикати**. Before any canned runtime merge: revalidate verified identities, dedup, create explicit whitelist, then merge/test. Avoid low-value meat-only identities unless carbohydrate-relevant.
 
 ## Persistence rule
 
