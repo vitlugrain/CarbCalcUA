@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Fish audit near closure; olives/black olives audit started. Current verified count is 18 after part12 added 3 Delphi Kalamata identities. |
+| Консерви | IN PROGRESS | Fish audit near closure; olives/black olives audit active. Current verified count remains 18; part13 isolated Delphi green-olive label/source conflicts as pending. |
 
 ## Sauces runtime checkpoint
 
@@ -60,10 +60,16 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 
 ### Part12 — Delphi Kalamata olives
 - `assets/canned_verified_part12_olives.json` — 3 verified Delphi / Intercomm Foods Kalamata identities; all exact barcodes absent from current `assets/products.json` before creation.
-- Kalamata olives with stone in brine 350 g, barcode `05201306700396`: Zakaz exact barcode identifies Intercomm Foods S.A. and gives В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал. Independent Delphi/Intercomm Foods product evidence matches the same Kalamata profile.
-- Kalamata pitted marinated olives 60 g, barcode `05201306822074`: NOVUS/Auchan Zakaz and a Ukrainian product passport for the same EAN independently agree on В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
-- Kalamata olives with stone marinated with extra virgin olive oil 250 g, barcode `05201306810316`: Zakaz exact barcode identifies Delphi/Intercomm Foods and gives В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал; independent same-recipe evidence matches.
+- Kalamata olives with stone in brine 350 g, barcode `05201306700396`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
+- Kalamata pitted marinated olives 60 g, barcode `05201306822074`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
+- Kalamata olives with stone marinated with extra virgin olive oil 250 g, barcode `05201306810316`: В 2.7 / Б 1.5 / Ж 25.2 / 249 ккал.
 - part12 commit: `12423fa84b2ca978ad2d3b9d98c9fc1bc017c789`.
+
+### Part13 — Delphi green olives conflict pass
+- `assets/canned_pending_review_part13_olives.json` — pending-only; no new verified identities.
+- Delphi green pitted olives in brine 350 g: Zakaz EAN cards `05201306700419` and `05201306821053` agree on В 1.0 / Б 0.8 / Ж 14.8 / 139 ккал, but Auchan Express currently exposes the same named 350 g product with В 1.1 / Б 1.2 / Ж 14.3 / 144 ккал and contradictory ingredient wording. Manufacturer catalog confirms Delphi green-pitted formats but no exact EAN-linked nutrition panel was found. Both EANs are absent from current runtime; keep pending until label generation is resolved.
+- Delphi green olives stuffed with almonds 350 g, barcode `05201306821091`: multiple Zakaz storefronts agree on В 2.7 / Б 3.0 / Ж 19.8 / 209 ккал and the same 47.6% olives + 9.5% almond recipe, but matching primary manufacturer/label nutrition for the exact EAN was not located. Recipe-dependent product therefore remains pending. Barcode absent from current runtime.
+- part13 commit: `2503d4056ccc8ccc6ea108ae80feeac339795998`.
 
 Current canned verified count: **18**. No canned-food runtime whitelist or merge has been created.
 
@@ -81,7 +87,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви → оливки/маслини**. Continue olives audit, then remaining canned subcategories, followed by **напої → заморожені напівфабрикати**.
+Current: **консерви → оливки/маслини**. Continue black olives and other well-sourced olive identities, then remaining canned subcategories, followed by **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
