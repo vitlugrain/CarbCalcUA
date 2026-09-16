@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ua_levada_varenyky_potato_800",
+    "name": "Вареники Levada з картоплею",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "carbs": 35.6,
+    "protein": 5.2,
+    "fat": 2.0,
+    "calories": 182,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "порція"],
+    "verification_level": "C",
+    "source": "Current Ukrainian retail cards (Silpo + VARUS); current Levada manufacturer assortment corroborates product identity",
+    "verified": true,
+    "audit_note": "Current 800 g retail cards independently agree on 35.6 g carbs, 5.2 g protein, 2.0 g fat and 182 kcal per 100 g. Exact current 800 g EAN was not established reliably enough in this pass, so no barcode is attached. Branch-specific assets/products.json search found no Levada/name identity match."
+  },
+  {
+    "id": "ua_levada_varenyky_potato_mushroom_4823074611141",
+    "name": "Вареники Levada з картоплею та грибами",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611141",
+    "carbs": 37.2,
+    "protein": 5.9,
+    "fat": 2.2,
+    "calories": 192,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "порція"],
+    "verification_level": "B",
+    "source": "Listex exact-EAN 4823074611141 + current Silpo and VARUS 800 g cards",
+    "verified": true,
+    "audit_note": "Exact EAN and current 800 g retailer cards agree on 37.2 g carbs, 5.9 g protein, 2.2 g fat and 192 kcal per 100 g. A distinct 900 g EAN 4823074600404 has inconsistent retailer nutrition and is not merged into this identity. Branch-specific assets/products.json search found no exact EAN or Levada/name identity match."
+  }
+]
