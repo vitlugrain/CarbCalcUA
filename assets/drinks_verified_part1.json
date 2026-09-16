@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ua_sprite_original_05449000027368",
+    "name": "Sprite",
+    "brand": "Sprite",
+    "category": "Напої",
+    "state": "liquid",
+    "carbs": 9.0,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 37,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "barcode": "05449000027368",
+    "source": "Coca-Cola Україна + Zakaz.ua",
+    "source_ref": "Current official Ukrainian Sprite page gives В 9.0 / Б 0 / Ж 0 / 37 kcal per 100 ml. Current Zakaz exact-EAN 0.5 L card identifies Ukrainian Sprite; retailer nutrition currently shows an internally inconsistent older 7 g carbs / 29 kcal while also showing 9 g sugar, so official current Ukrainian manufacturer nutrition is authoritative.",
+    "verified": true,
+    "audit_note": "Exact EAN and Sprite identity absent from current assets/products.json before audit-file creation. Existing ua_mcd_fanta_small/Coca-Cola restaurant entries are separate prepared McDonald's identities."
+  },
+  {
+    "id": "ua_schweppes_indian_tonic_05449000312105",
+    "name": "Schweppes Indian Tonic",
+    "brand": "Schweppes",
+    "category": "Напої",
+    "state": "liquid",
+    "carbs": 8.9,
+    "protein": 0.0,
+    "fat": 0.0,
+    "calories": 37,
+    "nutrition_basis": "100ml",
+    "quantity_units": ["мл", "л"],
+    "barcode": "05449000312105",
+    "source": "Coca-Cola Україна + Zakaz.ua",
+    "source_ref": "Current official Ukrainian Schweppes page and current exact-EAN Zakaz 0.75 L card agree: В 8.9 / Б 0 / Ж 0 / 37 kcal per 100 ml; manufacturer Coca-Cola Beverages Ukraine.",
+    "verified": true,
+    "audit_note": "Exact EAN and Schweppes name absent from current assets/products.json before audit-file creation."
+  }
+]
