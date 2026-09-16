@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed; fish preserves audit active. Current verified count remains 13. Part9 isolated current Brivais Vilnis oil/cod-liver conflicts as pending. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed; fish preserves audit active. Current verified count is 14 after part10 added Brivais Vilnis mackerel in oil. |
 
 ## Sauces runtime checkpoint
 
@@ -99,7 +99,12 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - Riga sardines in oil 240 g, barcode `04750616008865`: absent from runtime. Zakaz gives В 0 / Б 15 / Ж 18 / 225 ккал, but current manufacturer catalog exposes multiple distinct sardine/herring-in-oil recipes and the exact barcode-linked primary nutrition was not resolved. Keep pending.
 - part9 commit: `b31dc67dde01edeb48616fee410617fbece7e2f7`
 
-Current canned verified count: **13** (parts1–4 + part7–8). No canned-food runtime whitelist or merge has been created.
+### Part10 — Brivais Vilnis mackerel in oil
+- `assets/canned_verified_part10_fish.json` — 1 verified identity.
+- Mackerel in oil 240 g, barcode `04750616001255`: exact barcode/name absent from current `assets/products.json`. Current Ukrainian product passport identifies JSC Brivais Vilnis and gives В 0 / Б 16 / Ж 33 / 358 ккал; current Silpo card independently matches 0/16/33/358. Official Brivais Vilnis current mackerel range exposes the same nutrition profile for the corresponding mackerel/oil recipe family. Recorded as verified audit identity; no runtime merge yet.
+- part10 commit: `6dd0d4d4adb42cea85fbbdd788582af9ee53846c`
+
+Current canned verified count: **14** (parts1–4 + part7–8 + part10). No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
@@ -108,7 +113,7 @@ APK **#233** is the current USER-TESTED STABLE Android checkpoint.
 - head `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
 - artifact `CarbCalcUA-0.6.0-build-233`
 - analyze/tests/release build/publish all succeeded
-- user Android test on 2026-09-14 confirmed product-selection navigation works correctly
+- user Android test 2026-09-14 confirmed product-selection navigation works correctly
 - remaining UI follow-up: final `Додати до щоденника` button needs bottom safe-area/scroll clearance so it cannot be obscured by app or Android navigation.
 
 APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested but its navigation fix was incomplete.
