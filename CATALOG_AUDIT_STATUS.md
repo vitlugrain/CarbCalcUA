@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Olives and hummus intentionally SKIPPED after low verification yield. Continue with jams/preserves and fruit preserves. Current verified count remains 18. |
+| Консерви | IN PROGRESS | Olives and hummus skipped; limited jam pass completed. Move to fruit preserves. Current verified count 19. |
 
 ## Sauces runtime checkpoint
 
@@ -66,13 +66,18 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 
 ### Part15 — hummus limited pass — SKIPPED
 - `assets/canned_pending_review_part15_hummus.json` contains 2 Yofi candidates; no new verified identities.
-- Yofi Classic 250 g, barcode `04820146820111`: current exact-EAN retailer data is В 13.3 / Б 7.4 / Ж 19.6 / 259 ккал with 68% cooked chickpeas, while the current official Yofi product page gives a materially different 60%-chickpea recipe and В 3.9 / Б 11.5 / Ж 27.8 / 312 ккал. This is a clear label/recipe-generation conflict.
-- Yofi Truffle 250 g, barcode `04820146820586`: multiple current Zakaz cards agree on В 16.7 / Б 8.1 / Ж 18.2 / 263 ккал, but exact manufacturer nutrition tied to the EAN was not resolved.
+- Yofi Classic 250 g, barcode `04820146820111`: retailer/manufacturer recipe generations conflict materially.
+- Yofi Truffle 250 g, barcode `04820146820586`: retailer values agree, but exact manufacturer nutrition tied to EAN was not resolved.
 - Both exact barcodes were absent from current runtime before audit-file creation.
-- User-approved rule for this pass: try only a couple of products; if verification is poor, skip the subcategory. Therefore hummus is now SKIPPED and no further time is spent on it.
+- User-approved rule: only a couple of products; poor verification means skip. Hummus is SKIPPED.
 - part15 commit: `5a437ede5061ea1e81d9c34f0a6be155deecaf1a`.
 
-Current canned verified count: **18**. No canned-food runtime whitelist or merge has been created.
+### Part16 — jams limited pass
+- `assets/canned_verified_part16_jams.json`: 1 verified identity — Veres strawberry jam, exact EAN `04823105400348`, official manufacturer В 62.0 / Б 0.3 / Ж 0 / 249 ккал; current exact-EAN Zakaz cards independently confirm the 385 g product and 62 g carbs. Barcode absent from current runtime before creation. Commit `0607d2013af06c846871a8c0b771313cfe27b40b`.
+- `assets/canned_pending_review_part16_jams.json`: Veres apricot jam 370 g kept pending. Current exact-EAN retailer cards (`04823105402120`, `04820008091116`) give В 57 / Б 0 / Ж 0 / 228 ккал, while current official Veres page for 370/550 g gives В 62 / Б 0.7 / Ж 0 / 251 ккал. Material label/recipe-generation conflict. Commit `0497d68dd423a5761e370f30aaf4651821a8797b`.
+- Per user rule, stop after this small sample and move on rather than expanding the jam audit.
+
+Current canned verified count: **19**. No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
@@ -88,7 +93,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви → джеми/варення → фруктові консерви** after skipping olives and hummus. Avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
+Current: **консерви → фруктові консерви**. Use the same limited-pass principle: test a couple of high-value products, continue only if verification quality is good. Avoid low-value meat-only identities unless carbohydrate-relevant. After canned foods: **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
