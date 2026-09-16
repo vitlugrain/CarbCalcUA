@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ua_hercules_pelmeni_firmovi_4820020715465",
+    "name": "Пельмені Геркулес Фірмові",
+    "brand": "Геркулес",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820020715465",
+    "carbs": 25.5,
+    "protein": 10.5,
+    "fat": 12.3,
+    "calories": 255,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "порція"],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "B",
+    "source": "Silpo + Auchan/Zakaz + Listex exact-EAN identity",
+    "source_ref": "Current 800 g product: Silpo reports C25.5/P10.5/F12.3/255; Auchan/Zakaz exact EAN 4820020715465 reports the same profile. Listex verifies EAN 4820020715465 as Hercules Firmovi 800 g. Older EAN 4820020712204 with C26.3 belongs to an older recipe/generation and is not merged into this identity.",
+    "audit_note": "A/B/C audit candidate. Runtime merge requires final branch-specific duplicate/identity whitelist check. Do not attach older recipe EAN 4820020712204."
+  }
+]
