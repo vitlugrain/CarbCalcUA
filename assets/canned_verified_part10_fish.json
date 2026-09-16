@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ua_brivais_vilnis_mackerel_oil_04750616001255",
+    "name": "Скумбрія Brivais Vilnis в олії",
+    "brand": "Brivais Vilnis",
+    "category": "Консерви",
+    "state": "prepared",
+    "carbs": 0.0,
+    "protein": 16.0,
+    "fat": 33.0,
+    "calories": 358,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г", "банка"],
+    "serving_grams": 240,
+    "barcode": "04750616001255",
+    "verified": true,
+    "source": "Brivais Vilnis official current mackerel range + current Ukrainian retail label data",
+    "source_ref": "Official manufacturer current mackerel pages show the same 0/16/33/358 nutrition profile for the relevant mackerel-oil recipe family; Silpo current card and verified Ukrainian product passport for EAN 4750616001255 match 0/16/33/358 and identify JSC Brivais Vilnis. Exact EAN and name were absent from assets/products.json before creation."
+  }
+]
