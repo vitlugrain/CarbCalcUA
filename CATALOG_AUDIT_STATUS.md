@@ -23,7 +23,7 @@ CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-
 | Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
 | Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed; fish preserves audit active. Current verified count is 14 after part10 added Brivais Vilnis mackerel in oil. |
+| Консерви | IN PROGRESS | Vegetable/legume/mushroom preserves part1–4 completed; fish preserves audit active. Current verified count is 15 after part11 added manufacturer-confirmed Brivais Vilnis smoked Baltic herring in oil. |
 
 ## Sauces runtime checkpoint
 
@@ -104,7 +104,12 @@ Existing-runtime gap check confirmed that several Bonduelle canned legumes/veget
 - Mackerel in oil 240 g, barcode `04750616001255`: exact barcode/name absent from current `assets/products.json`. Current Ukrainian product passport identifies JSC Brivais Vilnis and gives В 0 / Б 16 / Ж 33 / 358 ккал; current Silpo card independently matches 0/16/33/358. Official Brivais Vilnis current mackerel range exposes the same nutrition profile for the corresponding mackerel/oil recipe family. Recorded as verified audit identity; no runtime merge yet.
 - part10 commit: `6dd0d4d4adb42cea85fbbdd788582af9ee53846c`
 
-Current canned verified count: **14** (parts1–4 + part7–8 + part10). No canned-food runtime whitelist or merge has been created.
+### Part11 — Brivais Vilnis smoked Baltic herring in oil
+- `assets/canned_verified_part11_fish.json` — 1 verified identity.
+- Smoked Baltic herring in oil 240 g, barcode `04750616001163`: barcode absent from current `assets/products.json`. Official Brivais Vilnis current `Large sprats` product page identifies the recipe as smoked Baltic herring 68%, rapeseed oil 31%, salt 1% and gives В 0 / Б 16 / Ж 23 / 271 ккал per 100 g. Current Silpo card for Brivais Vilnis smoked herring 240 g matches the same nutrition exactly; independent barcode/product-passport sources tie EAN 4750616001163 to this 240 g identity.
+- part11 commit: `fb5207eb15417744da44483b1e5d2c8dfc640c84`
+
+Current canned verified count: **15** (parts1–4 + part7–8 + part10–11). No canned-food runtime whitelist or merge has been created.
 
 ## APK/runtime checkpoint
 
@@ -120,7 +125,7 @@ APK **#224** is the previous USER-TESTED stable checkpoint. APK #226 was tested 
 
 ## Planned category sequence
 
-Current: **консерви**. Continue fish audit, then **оливки/маслини**, followed by **напої → заморожені напівфабрикати**.
+Current: **консерви**. Fish audit is near closure; next subcategory is **оливки/маслини**, followed by **напої → заморожені напівфабрикати**.
 
 ## Persistence rule
 
