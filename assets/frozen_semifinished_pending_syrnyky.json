@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pending_ua_makey_premium_syrnyky_classic_4820277112451",
+    "name": "Сирники Makey Premium класичні смажені заморожені",
+    "brand": "Makey",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820277112451",
+    "verification_status": "pending",
+    "reason": "Material carbohydrate conflict for the same exact EAN/current identity: Auchan official online store reports C17.4/P15.9/F8.4/211.5 per 100 g, while current Auchan/Zakaz and Vostorg/Zakaz cards report C24.16/P11.6/F5.4/194.13. Do not average or choose a profile until recipe generation/label evidence resolves the conflict.",
+    "source": "Auchan official store exact EAN vs Auchan/Zakaz and Vostorg/Zakaz exact EAN",
+    "audit_note": "Exact EAN identity is established, but the carbohydrate difference is material. Kept pending by policy. Branch-specific assets/products.json was checked for Makey identity/EAN before recording; no matching runtime identity was found."
+  }
+]
