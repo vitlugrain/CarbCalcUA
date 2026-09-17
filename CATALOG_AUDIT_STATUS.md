@@ -1,6 +1,6 @@
 # CarbCalc UA — Catalog Audit Registry
 
-Updated: 2026-09-16
+Updated: 2026-09-17
 Branch: `dev-large-update`
 
 GitHub is the source of truth. Workflow: `discovery → existing-catalog gap check → A/B/C nutrition verification → pending only for material conflicts → dedup → explicit runtime whitelist → merge → parse/test → APK`.
@@ -9,17 +9,15 @@ GitHub is the source of truth. Workflow: `discovery → existing-catalog gap che
 
 CarbCalc UA uses a hybrid generic + branded model. Simple/raw foods are generic-first and deduplicated across brands. Manufactured/recipe-dependent foods may coexist when nutrition materially differs or recipe/subtype is distinct. Same recipe with different package sizes should be one nutrition identity where practical, with multiple EANs attachable to that identity. Before every new SKU, check `assets/products.json`. Never invent nutrition values.
 
+For crowded manufactured categories, do not exhaustively add every brand/flavour. Prefer a compact set of popular/relevant representatives with materially different carbohydrate profiles, then move to the next product type to improve catalog breadth.
+
 ## A/B/C verification policy — adopted 2026-09-16
 
-Goal: safely grow a useful carbohydrate-counting catalog without requiring unnecessary proof for secondary nutrients.
-
-- **Level A — manufacturer/label verified.** Exact EAN/product identity plus official manufacturer or readable label data for carbohydrates. Carbohydrates are the critical CarbCalc UA field. Missing protein/fat does not block the product; unknown values must be stored as `null`, never invented as zero.
-- **Level B — retailer verified.** Exact EAN plus nutrition from one reliable Ukrainian retailer; prefer corroboration from a second independent source when practical. Manufacturer page is not mandatory when exact-EAN retailer evidence is coherent.
-- **Level C — recipe identity verified.** Current product identity/EAN is established and nutrition belongs to the same recipe in another package size or equivalent current package. Package-size-only differences do not create separate nutrition identities.
-- **Pending review is reserved for material uncertainty:** conflicting carbohydrate values from credible sources, unclear recipe generation/change, uncertain EAN-to-product identity, or obviously inconsistent data.
-- Do not block a product merely because protein/fat are unavailable. Do not convert missing protein/fat to 0 unless a source explicitly establishes 0.
-- Audit in useful batches of roughly 10–20 common products rather than trying to exhaustively perfect one brand before adding anything.
-- Existing pending files are not automatically promoted. Promote only those that qualify under A/B/C after revalidation.
+- **Level A — manufacturer/label verified.** Exact/current product identity plus manufacturer or readable label data for carbohydrates. Missing secondary nutrients may be `null`; never invent zero.
+- **Level B — retailer verified.** Exact EAN plus nutrition from a reliable Ukrainian retailer; second-source corroboration preferred where practical.
+- **Level C — recipe identity verified.** Current identity is established and nutrition belongs to the same recipe in another/equivalent current package size.
+- **Pending** is reserved for material carb conflicts, unclear recipe generations, uncertain EAN mapping or obviously inconsistent data.
+- Audit useful batches rather than exhaustively perfecting one brand.
 
 ## Workstream registry
 
@@ -27,65 +25,65 @@ Goal: safely grow a useful carbohydrate-counting catalog without requiring unnec
 |---|---|---|
 | Рудь | CLOSED | Runtime integrated and device-tested. |
 | Danone | SKIPPED | Reopen only for a useful missing group. |
-| Крупи та бобові | CLOSED CHECKPOINT | Runtime integrated; unresolved conflicts excluded. |
+| Крупи та бобові | CLOSED CHECKPOINT | Runtime integrated. |
 | Хліб та випічка | CLOSED CHECKPOINT | Runtime integrated. |
 | Макаронні вироби | CLOSED AUDIT CHECKPOINT | Runtime whitelist validation still required. |
 | Пластівці та сухі сніданки | CLOSED AUDIT CHECKPOINT | Runtime whitelist validation still required. |
-| Продукти швидкого приготування | CLOSED AUDIT CHECKPOINT | Dry-basis rule mandatory; runtime whitelist validation still required. |
-| Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation before runtime. |
-| Снеки | CLOSED AUDIT CHECKPOINT | Revalidate part5/part12 and verify part9/10/11 before runtime. |
-| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted verified ketchup products integrated. Existing Torchin runtime block preserved and not duplicated. |
-| Консерви | CLOSED AUDIT CHECKPOINT | Baseline 21 verified identities; pending sweep under A/B/C produced additional candidates. Runtime whitelist still required before merge. |
-| Напої | CLOSED AUDIT CHECKPOINT | 27 confirmed audit identities after part11 revalidation. Runtime dedup/explicit whitelist still required. |
-| Заморожені напівфабрикати | NEXT | Start category-first audit under A/B/C after drinks checkpoint. |
+| Продукти швидкого приготування | CLOSED AUDIT CHECKPOINT | Dry-basis rule mandatory; runtime whitelist required. |
+| Солодощі | CLOSED AUDIT CHECKPOINT | Some earlier parts require revalidation. |
+| Снеки | CLOSED AUDIT CHECKPOINT | Revalidate weak earlier parts before runtime. |
+| Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted ketchups integrated. |
+| Консерви | CLOSED AUDIT CHECKPOINT | Baseline 21 verified + A/B/C candidates; runtime whitelist required. |
+| Напої | CLOSED AUDIT CHECKPOINT | 27 confirmed audit identities; runtime whitelist required. |
+| Заморожені напівфабрикати | ACTIVE | Pelmeni + varenyky + pancakes representative audit completed; continue with other product types. |
 
 ## Sauces runtime checkpoint
 
-Audit checkpoint: `assets/sauces_checkpoint.json`.
-Runtime whitelist: `assets/zakaz_sauces_runtime_verified.json`.
-Whitelist commit: `4fdadb009977e6cdf87592dad0f5e93161e44ccf`.
-Merge-script commit: `13211d27d99b78f35d589b553357ba6ffa373350`.
-Generated runtime commit: `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
-Merge workflow `Merge verified catalogs #110` completed successfully.
+Audit checkpoint: `assets/sauces_checkpoint.json`. Runtime whitelist: `assets/zakaz_sauces_runtime_verified.json`. Whitelist commit `4fdadb009977e6cdf87592dad0f5e93161e44ccf`; merge-script `13211d27d99b78f35d589b553357ba6ffa373350`; generated runtime `c5a784ece1de2b1e7f15a99447ebc92259fa414d`.
 
 ## Canned foods audit checkpoint — CLOSED
 
-Audit ran 2026-09-14 through 2026-09-16. Baseline canned audit verified count: **21**. A subsequent A/B/C pending sweep promoted additional retailer/recipe-verified candidates; these remain audit candidates until final runtime duplicate/whitelist validation. No canned-food runtime whitelist or merge has yet been created.
+Baseline canned audit verified count: **21**. A/B/C pending sweep produced additional audit candidates. They are not runtime-ready until fresh revalidation, branch-specific duplicate checks, dedup and explicit whitelist.
 
-Before canned runtime integration: revalidate candidate files → check current runtime → deduplicate identities/package variants → create explicit whitelist → merge only whitelist → parse/test → combine with deferred bottom-safe-area UI fix in next meaningful APK.
+## Drinks audit checkpoint — CLOSED
 
-## Drinks audit checkpoint — CLOSED AUDIT CHECKPOINT
+Confirmed drinks audit count: **27**. Zhivchyk was explicitly skipped. Coca-Cola/Pepsi already have runtime representation and must not be blindly re-added. Galicia tomato and old Sandora orange recipe/EAN conflicts remain excluded. No drinks runtime whitelist/merge yet.
 
-Audit ran 2026-09-16. Scope prioritized carbohydrate-relevant packaged drinks: regular carbonated soft drinks, juices/nectars/juice drinks and other sugar-containing beverages. Zhivchyk was explicitly skipped by user. Coca-Cola and Pepsi families are known to have runtime representation and must not be blindly re-added.
+## Frozen convenience foods — ACTIVE CHECKPOINT 2026-09-17
 
-Verified audit files:
-- `assets/drinks_verified_part1.json`: Sprite + Schweppes Indian Tonic.
-- `assets/drinks_verified_part2_schweppes.json`: Schweppes Original Bitter Lemon + Schweppes Pomegranate.
-- `assets/drinks_verified_part3_sadochok.json`: Sadochok Multifruit.
-- `assets/drinks_verified_part4_sadochok.json`: Sadochok Tomato with salt.
-- `assets/drinks_verified_part5_sandora.json` through `assets/drinks_verified_part10_nash_sik.json`: Sandora, Jaffa, Galicia, Biola and Nash Sik juice/nectar identities audited under A/B/C.
-- `assets/drinks_verified_part11_ua_juices.json`: revalidated 2026-09-16; Nash Sik Orange corrected to 10.0 g carbs/100 ml with uncertain secondary fields stored as null; Biola Tomato exact EAN 4820209111217 corrected to 3.3 g carbs/100 ml; the previously unsupported Nash Sik Peach 11.5 g identity was removed from verified.
+Category-first strategy was refined during the audit: do **not** fill the database with many near-identical pelmeni/varenyky from every brand. Use representative popular brands and materially different fillings/profiles, then broaden into other frozen convenience-food types.
 
-Confirmed drinks audit count after part11 revalidation: **27**. This is an audit checkpoint, not a runtime count. No drinks runtime whitelist or merge yet. Before runtime integration perform branch-specific `assets/products.json` duplicate/identity check, revalidate any weak earlier files if encountered, create an explicit whitelist, then parse/test.
+Audit files created so far:
+- `assets/frozen_semifinished_verified_part1_levada.json` — 4 Levada pelmeni identities; commit `b698fbb132d6035eeadfe6d8c8923660eb458517`.
+- `assets/frozen_semifinished_verified_part2_levada_varenyky.json` — Levada potato + potato/mushroom varenyky; commit `578848d6cc0167ec1c238e2d0275e7734fddd335`.
+- `assets/frozen_semifinished_verified_part3_hercules.json` — representative Hercules pelmeni; commit `10ad61210f185fe08d464c3b48288a8be83ad83e`. Current recipe C25.5 must not be mixed with older C26.3 generation.
+- `assets/frozen_semifinished_verified_part4_three_bears.json` — representative Three Bears pelmeni; commit `4b2324f1d5d6deb6da6dd8c4635631d113e53747`.
+- `assets/frozen_semifinished_verified_part5_three_bears_varenyky.json` — cherry + sweet cottage-cheese varenyky; commit `75c982fc893d641185c5f2b8e4ae3c9a404f0b2b`.
+- `assets/frozen_semifinished_verified_part6_levada_pancakes.json` — representative pancakes: sweet cottage cheese, chicken, sweet unfilled; commit `555e8d833528eec6b9ad4e433ac0c32b9f3686f7`.
 
-Known unresolved/excluded drink cases include Galicia tomato recipe/EAN generations with conflicting carbohydrate values and old Sandora orange generations with conflicting exact-EAN nutrition. Keep such cases pending rather than averaging values.
+Pelmeni block is intentionally stopped. Varenyky block is intentionally stopped after distinct fillings. Pancake/nalysnyky block is considered sufficiently represented after the three Levada profiles above; do not exhaustively add more brands unless a materially different/common product is identified.
+
+Important frozen notes:
+- Three Bears cherry varenyky: manufacturer/exact identity profile retained; retailer discrepancy documented, never averaged.
+- Levada sweet-cottage-cheese pancakes exact EAN `4823074611448`, C25.1/P7.9/F8.1/205.
+- Levada chicken pancakes current 310 g, C23.1/P7.5/F11.4/225; exact current EAN not established, so barcode is null.
+- Levada sweet unfilled pancakes EAN `4823074611851`, exact-EAN Auchan profile C19.5/P4.4/F10.2/188.65; small retailer generation/profile drift documented.
+- Branch-specific `assets/products.json` was checked for these identities before creating audit entries; no matching Levada pancake identities/EANs were found.
+
+**Next frozen groups:** сирники → нагетси/панірована курка → заморожена піца/тісто та інші common carbohydrate-relevant frozen prepared foods. Also revisit/revalidate the existing Bonduelle frozen A/B/C candidate files rather than duplicating them.
+
+No frozen audit files have been runtime-merged yet. Before runtime: revalidate weak candidates → branch-specific runtime check → dedup → explicit whitelist → merge → parse/test.
 
 ## APK/runtime checkpoint
 
-APK **#233** is current USER-TESTED STABLE Android checkpoint.
-- run ID `34860877221`
-- head `7be9e02ab0f21caba4f247f4658eb1529edf72b3`
-- artifact `CarbCalcUA-0.6.0-build-233`
-- analyze/tests/release build/publish succeeded
-- user Android test 2026-09-14 confirmed product-selection navigation works correctly
-- remaining UI follow-up: final `Додати до щоденника` button needs bottom safe-area/scroll clearance so it cannot be obscured by app or Android navigation.
+APK **#233** remains USER-TESTED STABLE. Run ID `34860877221`, head `7be9e02ab0f21caba4f247f4658eb1529edf72b3`, artifact `CarbCalcUA-0.6.0-build-233`. Core product-selection navigation works on device.
 
-APK **#224** is previous USER-TESTED stable checkpoint. APK #226 was tested but its navigation fix was incomplete.
+Deferred non-blocking UI fix: ensure final `Додати до щоденника` button has sufficient bottom safe-area/scroll clearance above app and Android navigation. Do **not** build a standalone APK for this; bundle it with the next meaningful catalog APK.
 
-## Planned category sequence
+## Planned continuation
 
-Current checkpoint: **напої — CLOSED AUDIT CHECKPOINT (27 confirmed)**. Next: **заморожені напівфабрикати**. Canned and drinks candidates await later explicit runtime-whitelist validation. The next meaningful catalog APK should combine a safely whitelisted catalog batch with the deferred bottom-safe-area UI fix.
+Continue frozen breadth-first audit: **сирники → нагетси/панірована курка → піца/тісто → other useful frozen prepared foods → repair/revalidate Bonduelle frozen candidates**. Then perform explicit runtime whitelist/dedup across a meaningful catalog batch. The next meaningful APK should combine safe catalog integration with the deferred bottom-safe-area UI fix.
 
 ## Persistence rule
 
-On a new chat, read `PROJECT_STATUS.md` and this file first. Before runtime merge always use: verify → dedup → explicit whitelist → merge → full validation → APK.
+At the start of every new chat, read `PROJECT_STATUS.md` and this file first. Before runtime merge always use: verify → runtime gap check → dedup → explicit whitelist → merge → full validation → APK.
