@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ua_three_bears_varenyky_cherry_4823086101920",
+    "name": "Вареники Три Ведмеді з вишнею",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823086101920",
+    "carbs": 49.1,
+    "protein": 5.0,
+    "fat": 1.1,
+    "calories": 226.6,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційна сторінка продукту",
+    "source_ref": "Current manufacturer page: 400 g; EAN 4823086101920; per 100 g C 49.1 / P 5.0 / F 1.1 / 226.6 kcal. VARUS independently matches the same nutrition profile.",
+    "audit_note": "Representative fruit-filled varenyky identity. Branch-specific assets/products.json checked 2026-09-17 by exact EAN and brand; no existing runtime match found. Silpo currently shows a conflicting 46 g C / 4.7 P / 1.8 F / 223 kcal profile, so manufacturer exact-EAN/current product data is used and the retailer discrepancy is recorded rather than averaged."
+  },
+  {
+    "id": "ua_three_bears_varenyky_sweet_cottage_cheese_4823086101944",
+    "name": "Вареники Три Ведмеді з кисломолочним сиром солодкі",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823086101944",
+    "carbs": 35.0,
+    "protein": 11.0,
+    "fat": 2.8,
+    "calories": 208,
+    "nutrition_basis": "100g",
+    "quantity_units": ["г"],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційна сторінка продукту",
+    "source_ref": "Current manufacturer page: 400 g; EAN 4823086101944; per 100 g C 35 / P 11 / F 2.8 / 208 kcal.",
+    "audit_note": "Representative sweet cottage-cheese varenyky identity. Branch-specific assets/products.json checked 2026-09-17 by exact EAN and brand; no existing runtime match found."
+  }
+]
