@@ -1,6 +1,6 @@
 # CarbCalc UA — Catalog Audit Registry
 
-Updated: 2026-09-17
+Updated: 2026-09-18
 Branch: `dev-large-update`
 
 GitHub is the source of truth. Workflow: `discovery → existing-catalog gap check → A/B/C nutrition verification → pending only for material conflicts → dedup → explicit runtime whitelist → merge → parse/test → APK`.
@@ -35,7 +35,8 @@ For crowded manufactured categories, do not exhaustively add every brand/flavour
 | Соуси | CLOSED + RUNTIME CHECKPOINT | 8 explicitly whitelisted ketchups integrated. |
 | Консерви | CLOSED AUDIT CHECKPOINT | Baseline 21 verified + A/B/C candidates; runtime whitelist required. |
 | Напої | CLOSED AUDIT CHECKPOINT | 27 confirmed audit identities; runtime whitelist required. |
-| Заморожені напівфабрикати | ACTIVE | Pelmeni + varenyky + pancakes representative audit completed; continue with other product types. |
+| Заморожені напівфабрикати | CLOSED AUDIT CHECKPOINT | Parts 1–10 retained; user stopped further frozen discovery. No runtime merge yet. |
+| Наступна загальна категорія | ACTIVE | Start category-first audit after frozen checkpoint. |
 
 ## Sauces runtime checkpoint
 
@@ -49,30 +50,31 @@ Baseline canned audit verified count: **21**. A/B/C pending sweep produced addit
 
 Confirmed drinks audit count: **27**. Zhivchyk was explicitly skipped. Coca-Cola/Pepsi already have runtime representation and must not be blindly re-added. Galicia tomato and old Sandora orange recipe/EAN conflicts remain excluded. No drinks runtime whitelist/merge yet.
 
-## Frozen convenience foods — ACTIVE CHECKPOINT 2026-09-17
+## Frozen convenience foods — CLOSED AUDIT CHECKPOINT 2026-09-18
 
-Category-first strategy was refined during the audit: do **not** fill the database with many near-identical pelmeni/varenyky from every brand. Use representative popular brands and materially different fillings/profiles, then broaden into other frozen convenience-food types.
+The user explicitly stopped further frozen discovery after the pizza block. Keep the completed work, but do not continue into frozen dough/bases, additional frozen prepared foods, or Bonduelle frozen repair unless the category is explicitly reopened.
 
-Audit files created so far:
-- `assets/frozen_semifinished_verified_part1_levada.json` — 4 Levada pelmeni identities; commit `b698fbb132d6035eeadfe6d8c8923660eb458517`.
-- `assets/frozen_semifinished_verified_part2_levada_varenyky.json` — Levada potato + potato/mushroom varenyky; commit `578848d6cc0167ec1c238e2d0275e7734fddd335`.
-- `assets/frozen_semifinished_verified_part3_hercules.json` — representative Hercules pelmeni; commit `10ad61210f185fe08d464c3b48288a8be83ad83e`. Current recipe C25.5 must not be mixed with older C26.3 generation.
-- `assets/frozen_semifinished_verified_part4_three_bears.json` — representative Three Bears pelmeni; commit `4b2324f1d5d6deb6da6dd8c4635631d113e53747`.
-- `assets/frozen_semifinished_verified_part5_three_bears_varenyky.json` — cherry + sweet cottage-cheese varenyky; commit `75c982fc893d641185c5f2b8e4ae3c9a404f0b2b`.
-- `assets/frozen_semifinished_verified_part6_levada_pancakes.json` — representative pancakes: sweet cottage cheese, chicken, sweet unfilled; commit `555e8d833528eec6b9ad4e433ac0c32b9f3686f7`.
+Verified audit files:
+- `assets/frozen_semifinished_verified_part1_levada.json` — Levada pelmeni; commit `b698fbb132d6035eeadfe6d8c8923660eb458517`.
+- `assets/frozen_semifinished_verified_part2_levada_varenyky.json` — Levada varenyky; commit `578848d6cc0167ec1c238e2d0275e7734fddd335`.
+- `assets/frozen_semifinished_verified_part3_hercules.json` — Hercules pelmeni; commit `10ad61210f185fe08d464c3b48288a8be83ad83e`.
+- `assets/frozen_semifinished_verified_part4_three_bears.json` — Three Bears pelmeni; commit `4b2324f1d5d6deb6da6dd8c4635631d113e53747`.
+- `assets/frozen_semifinished_verified_part5_three_bears_varenyky.json` — Three Bears varenyky; commit `75c982fc893d641185c5f2b8e4ae3c9a404f0b2b`.
+- `assets/frozen_semifinished_verified_part6_levada_pancakes.json` — pancakes; commit `555e8d833528eec6b9ad4e433ac0c32b9f3686f7`.
+- `assets/frozen_semifinished_verified_part7_syrnyky.json` — 3 representative frozen syrnyky identities; commit `9d802c9c075ee86641dd4dc0a3120cc989b1f564`.
+- `assets/frozen_semifinished_verified_part8_nuggets.json` — 3 representative frozen nugget profiles; commit `ad55dcdd87f5a6d83b3b97e628bd9ee9c2a72488`.
+- `assets/frozen_semifinished_verified_part9_breaded_chicken.json` — 3 frozen chicken-strip profiles; commit `5bfd71e65c9a8511813ff2933ebb5c714d08ac64`.
+- `assets/frozen_semifinished_verified_part10_pizza.json` — 4 representative ready frozen pizzas; commit `36253c6cc67aac77eca59f3c6b5c36cb9b00a380`.
 
-Pelmeni block is intentionally stopped. Varenyky block is intentionally stopped after distinct fillings. Pancake/nalysnyky block is considered sufficiently represented after the three Levada profiles above; do not exhaustively add more brands unless a materially different/common product is identified.
+Pending:
+- `assets/frozen_semifinished_pending_syrnyky.json` — Makey Premium classic syrnyky, exact-EAN material carbohydrate conflict. Keep pending; do not average or promote without resolving recipe/label generation.
 
-Important frozen notes:
-- Three Bears cherry varenyky: manufacturer/exact identity profile retained; retailer discrepancy documented, never averaged.
-- Levada sweet-cottage-cheese pancakes exact EAN `4823074611448`, C25.1/P7.9/F8.1/205.
-- Levada chicken pancakes current 310 g, C23.1/P7.5/F11.4/225; exact current EAN not established, so barcode is null.
-- Levada sweet unfilled pancakes EAN `4823074611851`, exact-EAN Auchan profile C19.5/P4.4/F10.2/188.65; small retailer generation/profile drift documented.
-- Branch-specific `assets/products.json` was checked for these identities before creating audit entries; no matching Levada pancake identities/EANs were found.
-
-**Next frozen groups:** сирники → нагетси/панірована курка → заморожена піца/тісто та інші common carbohydrate-relevant frozen prepared foods. Also revisit/revalidate the existing Bonduelle frozen A/B/C candidate files rather than duplicating them.
-
-No frozen audit files have been runtime-merged yet. Before runtime: revalidate weak candidates → branch-specific runtime check → dedup → explicit whitelist → merge → parse/test.
+Close decisions:
+- pelmeni/varenyky/pancakes/syrnyky/nuggets/breaded chicken/pizza are sufficiently represented for this audit pass;
+- frozen dough, pizza bases and preparations: **SKIP**;
+- all further frozen foods: **SKIP**;
+- Bonduelle frozen candidate revalidation: **SKIP FOR NOW**;
+- no frozen runtime whitelist/merge yet.
 
 ## APK/runtime checkpoint
 
@@ -82,7 +84,7 @@ Deferred non-blocking UI fix: ensure final `Додати до щоденника
 
 ## Planned continuation
 
-Continue frozen breadth-first audit: **сирники → нагетси/панірована курка → піца/тісто → other useful frozen prepared foods → repair/revalidate Bonduelle frozen candidates**. Then perform explicit runtime whitelist/dedup across a meaningful catalog batch. The next meaningful APK should combine safe catalog integration with the deferred bottom-safe-area UI fix.
+Frozen discovery is closed. Move to the **next general catalog category** using the standard category-first/hybrid generic+branded policy. Continue accumulating a meaningful catalog batch before runtime integration. Before any runtime merge: fresh revalidation where required → branch-specific runtime check → dedup → explicit whitelist → merge → full validation → APK. Bundle the deferred bottom-safe-area fix with that meaningful APK.
 
 ## Persistence rule
 
