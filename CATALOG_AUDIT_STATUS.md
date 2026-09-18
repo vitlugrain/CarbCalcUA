@@ -36,7 +36,7 @@ For crowded manufactured categories, do not exhaustively add every brand/flavour
 | Консерви | CLOSED AUDIT CHECKPOINT | Baseline 21 verified + A/B/C candidates; runtime whitelist required. |
 | Напої | CLOSED AUDIT CHECKPOINT | 27 confirmed audit identities; runtime whitelist required. |
 | Заморожені напівфабрикати | CLOSED AUDIT CHECKPOINT | Parts 1–10 retained; user stopped further frozen discovery. No runtime merge yet. |
-| Наступна загальна категорія | ACTIVE | Start category-first audit after frozen checkpoint. |
+| Молочні продукти | CLOSED AUDIT CHECKPOINT | 6 compact verified parts; generic-first + representative branded recipe-dependent products. No runtime merge yet. |\n| Наступна загальна категорія | ACTIVE | Start category-first audit after dairy checkpoint. |
 
 ## Sauces runtime checkpoint
 
@@ -76,6 +76,23 @@ Close decisions:
 - Bonduelle frozen candidate revalidation: **SKIP FOR NOW**;
 - no frozen runtime whitelist/merge yet.
 
+## Dairy products — CLOSED AUDIT CHECKPOINT 2026-09-18
+
+Six compact audit parts completed:
+- `assets/dairy_verified_part1_basic.json` — generic milk 2.5%, kefir 2.5%, ryazhanka 4%; commit `aaaa09ddda9a92511f364b1ba23b96d0da1900a8`.
+- `assets/dairy_verified_part2_yogurts.json` — plain yogurt generic + representative branded sweet/fruit/grain profiles; commit `d5b3be6e3e4556f229fea60e5399e5d588be8d90`.
+- `assets/dairy_verified_part3_cottage_sourcream_cream.json` — cottage cheese, sour cream and cream generic-first; commit `d7976bae84cd6fe2a16992e458569cdccf66f51a`.
+- `assets/dairy_verified_part4_sweet_desserts.json` — representative glazed curd/dessert profiles; commit `d6be611137f04a998f16d83cd9879259fa319448`.
+- `assets/dairy_verified_part5_cheese.json` — compact hard cheese/mozzarella/feta/processed-cheese coverage; commit `db435b3614327d11ad3adf9791010dfc81b0f42d`.
+- `assets/dairy_verified_part6_butter_condensed_drinks.json` — butter, sweetened condensed milk, chocolate milk drink; commit `60762bf6ccf5179915dfed7607fa160b05be13dd`.
+
+Close decisions:
+- simple/plain dairy remains generic-first;
+- recipe-dependent sweet/fruit dairy may be branded when carbohydrate differences are meaningful;
+- do not exhaustively add every flavour/brand;
+- no dairy runtime whitelist/merge yet;
+- continue to the next general catalog category and accumulate a meaningful cross-category batch before APK.
+
 ## APK/runtime checkpoint
 
 APK **#233** remains USER-TESTED STABLE. Run ID `34860877221`, head `7be9e02ab0f21caba4f247f4658eb1529edf72b3`, artifact `CarbCalcUA-0.6.0-build-233`. Core product-selection navigation works on device.
@@ -84,7 +101,7 @@ Deferred non-blocking UI fix: ensure final `Додати до щоденника
 
 ## Planned continuation
 
-Frozen discovery is closed. Move to the **next general catalog category** using the standard category-first/hybrid generic+branded policy. Continue accumulating a meaningful catalog batch before runtime integration. Before any runtime merge: fresh revalidation where required → branch-specific runtime check → dedup → explicit whitelist → merge → full validation → APK. Bundle the deferred bottom-safe-area fix with that meaningful APK.
+Frozen and dairy breadth audits are closed. Move to the **next general catalog category** using the standard category-first/hybrid generic+branded policy. Continue accumulating a meaningful catalog batch before runtime integration. Before any runtime merge: fresh revalidation where required → branch-specific runtime check → dedup → explicit whitelist → merge → full validation → APK. Bundle the deferred bottom-safe-area fix with that meaningful APK.
 
 ## Persistence rule
 
