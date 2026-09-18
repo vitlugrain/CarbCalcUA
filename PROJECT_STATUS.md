@@ -1,6 +1,6 @@
 # CarbCalc UA — Project Status
 
-Updated: 2026-09-17
+Updated: 2026-09-18
 Branch: `dev-large-update`
 Repository: `vitlugrain/CarbCalcUA`
 
@@ -21,19 +21,36 @@ GitHub is the source of truth. APK **#233** remains the current USER-TESTED STAB
 - Снеки — weak earlier parts need revalidation.
 - Консерви — baseline 21 verified + A/B/C audit candidates.
 - Напої — 27 confirmed audit identities.
+- Заморожені напівфабрикати — breadth-first audit intentionally stopped after part10; no further frozen discovery now.
 
 ### Current active audit
-**Заморожені напівфабрикати.** Category-first, breadth-first. Do not exhaustively add every brand/SKU. Prefer popular representative products and materially different recipes/fillings.
+**Наступна загальна категорія каталогу.** Frozen workstream is closed for discovery by user decision. Continue category-first using the same hybrid generic + branded policy and branch-specific runtime checks before every candidate.
 
-Completed frozen audit blocks as of 2026-09-17:
-- Levada pelmeni: `assets/frozen_semifinished_verified_part1_levada.json`, commit `b698fbb132d6035eeadfe6d8c8923660eb458517`.
-- Levada varenyky: `assets/frozen_semifinished_verified_part2_levada_varenyky.json`, commit `578848d6cc0167ec1c238e2d0275e7734fddd335`.
-- Hercules representative pelmeni: `assets/frozen_semifinished_verified_part3_hercules.json`, commit `10ad61210f185fe08d464c3b48288a8be83ad83e`.
-- Three Bears representative pelmeni: `assets/frozen_semifinished_verified_part4_three_bears.json`, commit `4b2324f1d5d6deb6da6dd8c4635631d113e53747`.
-- Three Bears cherry + sweet-cottage-cheese varenyky: `assets/frozen_semifinished_verified_part5_three_bears_varenyky.json`, commit `75c982fc893d641185c5f2b8e4ae3c9a404f0b2b`.
-- Levada pancakes: `assets/frozen_semifinished_verified_part6_levada_pancakes.json`, commit `555e8d833528eec6b9ad4e433ac0c32b9f3686f7`.
+## Frozen convenience foods — CLOSED AUDIT CHECKPOINT 2026-09-18
 
-Pelmeni and varenyky blocks are intentionally stopped to avoid brand/SKU bloat. Pancake/nalysnyky coverage is now representative: sweet cottage cheese, chicken, and unfilled sweet pancakes. Next: **сирники → нагетси/панірована курка → заморожена піца/тісто → other useful frozen prepared foods → revalidate existing Bonduelle frozen candidates**.
+Frozen discovery is intentionally stopped. Do not continue with frozen dough/bases, other frozen prepared foods, or Bonduelle frozen candidates unless the user explicitly reopens this category.
+
+Completed verified audit files:
+- part1 Levada pelmeni — `assets/frozen_semifinished_verified_part1_levada.json`, commit `b698fbb132d6035eeadfe6d8c8923660eb458517`.
+- part2 Levada varenyky — `assets/frozen_semifinished_verified_part2_levada_varenyky.json`, commit `578848d6cc0167ec1c238e2d0275e7734fddd335`.
+- part3 Hercules pelmeni — `assets/frozen_semifinished_verified_part3_hercules.json`, commit `10ad61210f185fe08d464c3b48288a8be83ad83e`.
+- part4 Three Bears pelmeni — `assets/frozen_semifinished_verified_part4_three_bears.json`, commit `4b2324f1d5d6deb6da6dd8c4635631d113e53747`.
+- part5 Three Bears varenyky — `assets/frozen_semifinished_verified_part5_three_bears_varenyky.json`, commit `75c982fc893d641185c5f2b8e4ae3c9a404f0b2b`.
+- part6 Levada pancakes — `assets/frozen_semifinished_verified_part6_levada_pancakes.json`, commit `555e8d833528eec6b9ad4e433ac0c32b9f3686f7`.
+- part7 syrnyky — `assets/frozen_semifinished_verified_part7_syrnyky.json`, commit `9d802c9c075ee86641dd4dc0a3120cc989b1f564`.
+- part8 nuggets — `assets/frozen_semifinished_verified_part8_nuggets.json`, commit `ad55dcdd87f5a6d83b3b97e628bd9ee9c2a72488`.
+- part9 breaded chicken — `assets/frozen_semifinished_verified_part9_breaded_chicken.json`, commit `5bfd71e65c9a8511813ff2933ebb5c714d08ac64`.
+- part10 frozen pizza — `assets/frozen_semifinished_verified_part10_pizza.json`, commit `36253c6cc67aac77eca59f3c6b5c36cb9b00a380`.
+
+Known pending frozen conflict remains isolated in `assets/frozen_semifinished_pending_syrnyky.json` (Makey Premium classic syrnyky exact-EAN carb conflict). Do not silently promote it.
+
+User decisions at close:
+- frozen dough and pizza bases/preparations: SKIP;
+- other frozen foods: SKIP;
+- Bonduelle frozen candidate repair/revalidation: SKIP for now;
+- retain all completed audit work; no deletion.
+
+No frozen audit files have been runtime-merged yet.
 
 ## Mandatory catalog policy
 
@@ -57,7 +74,7 @@ Deferred UI fix for next meaningful APK: dynamic bottom padding/safe-area so `Д
 
 ## Next integration plan
 
-Finish a meaningful breadth-first frozen-food audit batch. Then: revalidate weak candidates → branch-specific runtime duplicate check → dedup → explicit whitelist → merge only whitelist → validate/parse/tests → apply deferred bottom-safe-area UI fix → one meaningful APK for Android testing.
+Do not build a frozen-only APK. Continue the next general catalog category and accumulate a meaningful cross-category batch. Later: revalidate weak candidates → branch-specific runtime duplicate check → dedup → explicit whitelist → merge only whitelist → validate/parse/tests → apply deferred bottom-safe-area UI fix → one meaningful APK for Android testing.
 
 ## Working rule for continuation
 
