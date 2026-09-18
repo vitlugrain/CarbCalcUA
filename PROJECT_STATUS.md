@@ -22,9 +22,26 @@ GitHub is the source of truth. APK **#233** remains the current USER-TESTED STAB
 - Консерви — baseline 21 verified + A/B/C audit candidates.
 - Напої — 27 confirmed audit identities.
 - Заморожені напівфабрикати — breadth-first audit intentionally stopped after part10; no further frozen discovery now.
+- **Молочні продукти — breadth-first audit CLOSED 2026-09-18; 6 verified audit parts, no runtime merge yet.**
 
 ### Current active audit
-**Наступна загальна категорія каталогу.** Frozen workstream is closed for discovery by user decision. Continue category-first using the same hybrid generic + branded policy and branch-specific runtime checks before every candidate.
+**Наступна загальна категорія каталогу.** Dairy breadth audit is closed. Continue category-first using the same hybrid generic + branded policy and branch-specific runtime checks before every candidate.
+
+## Dairy products — CLOSED AUDIT CHECKPOINT 2026-09-18
+
+Completed compact breadth-first dairy audit:
+- part1 basic dairy — milk 2.5%, kefir 2.5%, ryazhanka 4% generic-first; `assets/dairy_verified_part1_basic.json`, commit `aaaa09ddda9a92511f364b1ba23b96d0da1900a8`.
+- part2 yogurts — plain generic + representative materially different branded fruit/grain yogurts; `assets/dairy_verified_part2_yogurts.json`, commit `d5b3be6e3e4556f229fea60e5399e5d588be8d90`.
+- part3 cottage cheese/sour cream/cream — generic-first; `assets/dairy_verified_part3_cottage_sourcream_cream.json`, commit `d7976bae84cd6fe2a16992e458569cdccf66f51a`.
+- part4 sweet dairy desserts — representative glazed curds + high-protein pudding; `assets/dairy_verified_part4_sweet_desserts.json`, commit `d6be611137f04a998f16d83cd9879259fa319448`.
+- part5 cheeses — compact generic hard cheese/mozzarella/feta/processed cheese set; `assets/dairy_verified_part5_cheese.json`, commit `db435b3614327d11ad3adf9791010dfc81b0f42d`.
+- part6 butter/condensed milk/drinks — `assets/dairy_verified_part6_butter_condensed_drinks.json`, commit `60762bf6ccf5179915dfed7607fa160b05be13dd`.
+
+Dairy policy outcome:
+- ordinary milk/fermented dairy/cottage cheese/sour cream/cream/plain cheese: generic-first;
+- sweet/fruit/recipe-dependent dairy: branded only where carbohydrate profile is materially useful;
+- avoid flavour/SKU proliferation;
+- no dairy runtime whitelist/merge yet.
 
 ## Frozen convenience foods — CLOSED AUDIT CHECKPOINT 2026-09-18
 
@@ -74,7 +91,7 @@ Deferred UI fix for next meaningful APK: dynamic bottom padding/safe-area so `Д
 
 ## Next integration plan
 
-Do not build a frozen-only APK. Continue the next general catalog category and accumulate a meaningful cross-category batch. Later: revalidate weak candidates → branch-specific runtime duplicate check → dedup → explicit whitelist → merge only whitelist → validate/parse/tests → apply deferred bottom-safe-area UI fix → one meaningful APK for Android testing.
+Do not build a dairy-only APK. Continue the next general catalog category and accumulate a meaningful cross-category batch. Later: revalidate weak candidates → branch-specific runtime duplicate check → dedup → explicit whitelist → merge only whitelist → validate/parse/tests → apply deferred bottom-safe-area UI fix → one meaningful APK for Android testing.
 
 ## Working rule for continuation
 
