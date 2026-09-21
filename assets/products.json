@@ -20708,31 +20708,6 @@
     "catalog_policy": "gap_only_generic"
   },
   {
-    "id": "ua_generic_wild_strawberry_raw",
-    "name": "Суниця свіжа",
-    "aliases": [
-      "суниця",
-      "суниця лісова"
-    ],
-    "category": "Ягоди",
-    "state": "raw",
-    "brand": null,
-    "barcode": null,
-    "carbs": 7.68,
-    "protein": 0.67,
-    "fat": 0.3,
-    "calories": 32,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "USDA FoodData Central strawberry raw reference; used as generic Fragaria nutrition baseline",
-    "verification_level": "B generic reference",
-    "verified": true,
-    "catalog_policy": "gap_only_generic",
-    "note": "Cultivar/species can vary; keep separate from sweetened or processed strawberry products."
-  },
-  {
     "id": "ua_generic_mulberry_raw",
     "name": "Шовковиця свіжа",
     "aliases": [
@@ -21258,5 +21233,51 @@
     "verified": true,
     "catalog_policy": "branded_first",
     "note": "Dry-basis nutrition; water used for preparation changes final weight, not carbohydrate amount from dry cereal."
+  },
+  {
+    "id": "ua_yatran_milk_sausages",
+    "name": "Сосиски Ятрань Молочні",
+    "category": "М'ясо та м'ясні продукти",
+    "state": "ready",
+    "brand": "Ятрань",
+    "barcode": null,
+    "carbs": 0.9,
+    "protein": 11,
+    "fat": 28,
+    "calories": 296,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт",
+      "порція"
+    ],
+    "source": "Ятрань manufacturer current product page + Silpo corroboration",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "audit_note": "Manufacturer and current Silpo card agree C0.9/P11/F28/296. Exact consumer EAN not established in this pass."
+  },
+  {
+    "id": "ua_yatran_sausages_crust",
+    "name": "Сосиски Ятрань зі смачною скоринкою",
+    "category": "М'ясо та м'ясні продукти",
+    "state": "ready",
+    "brand": "Ятрань",
+    "barcode": null,
+    "carbs": 3.6,
+    "protein": 10,
+    "fat": 22,
+    "calories": 251,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт",
+      "порція"
+    ],
+    "source": "Ятрань manufacturer current product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "recipe_dependent_branded_variant",
+    "audit_note": "Selected because C3.6 materially differs from classic milk sausages C0.9, demonstrating recipe-dependent carbohydrate variation."
   }
 ]
