@@ -118,3 +118,10 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Pending/material-conflict records were not promoted.
 - No new broad catalog-expansion cycle is required before the next APK.
 - Remaining pre-APK work is engineering: bottom safe-area UI fix, validation/tests, release APK build.
+
+
+## APK #295 validation — 2026-09-21
+- Integrated catalog reached Android device successfully in APK #295.
+- User confirmed product addition works and existing diary survives in-place upgrade.
+- Catalog integration remains closed for this checkpoint; next work is performance profiling/optimization, not another broad catalog audit.
+- Runtime checkpoint: **1135 products**, whitelist normalized, pending/conflicting audit records remain excluded.
