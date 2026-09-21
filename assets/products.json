@@ -19035,5 +19035,210 @@
     "source_ref": "Exact EAN 4820209111217 and current Ukrainian retailer cards consistently identify Biola tomato juice with pulp and salt and report 3.3 g carbohydrates, 0.95 g protein, 0 g fat and 18 kcal per 100 ml/g.",
     "verified": true,
     "audit_note": "Revalidated 2026-09-16. Previous 4.2/0.8/0/21 profile was not supported by current exact-EAN evidence and was corrected to the current 3.3/0.95/0/18 profile. Runtime duplicate check remains required before whitelist/merge."
+  },
+  {
+    "id": "ua_pasta_wholegrain_durum_dry_generic",
+    "name": "Макарони цільнозернові з твердих сортів пшениці, сухі",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 65.7,
+    "protein": 13,
+    "fat": 2.5,
+    "calories": 350,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Barilla official — Spaghetti Integrale",
+    "source_ref": "Whole-grain durum wheat semolina + water; 65.7 g carbohydrate/100 g",
+    "verified": true,
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_barilla_emiliane_egg_pasta_dry",
+    "name": "Макарони яєчні Barilla Emiliane, сухі",
+    "brand": "Barilla",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 67,
+    "protein": 13.5,
+    "fat": 4,
+    "calories": 366,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Barilla official — Emiliane Farfalline/Filini",
+    "source_ref": "Durum wheat semolina + fresh eggs; Zakaz.ua Ukrainian listings corroborate 67 g carbs, 14 g protein, 4 g fat for egg Filini/Fettuccine",
+    "verified": true,
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_barilla_gluten_free_corn_rice_pasta_dry",
+    "name": "Макарони Barilla без глютену з кукурудзи та рису, сухі",
+    "brand": "Barilla",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 78.7,
+    "protein": 6.5,
+    "fat": 1.8,
+    "calories": 359,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Barilla official + Zakaz.ua — Gluten Free Spaghetti №5",
+    "source_ref": "White corn flour + yellow corn flour + rice flour + water; Zakaz EAN 8076809545440",
+    "verified": true,
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_akura_soba_buckwheat_wheat_noodles_dry",
+    "name": "Локшина соба гречано-пшенична Akura, суха",
+    "brand": "Akura",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 59.2,
+    "protein": 12.3,
+    "fat": 1.4,
+    "calories": 357,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — Akura локшина Соба гречана 300 г",
+    "source_ref": "EAN 4820178461900; buckwheat flour + durum wheat flour + water + salt",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Materially different carbohydrate value and recipe from standard durum pasta; separate subtype justified. Zakaz description calls it gluten-free, but ingredient list contains wheat, therefore gluten-free claim is intentionally not carried into CarbCalc UA."
+  },
+  {
+    "id": "ua_metrochef_funchose_starch_noodles_dry",
+    "name": "Локшина фунчоза крохмальна Metro Chef, суха",
+    "brand": "Metro Chef",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 87.4,
+    "protein": 0.2,
+    "fat": 0,
+    "calories": 353,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua / METRO — Metro Chef Локшина Фунчоза 200 г",
+    "source_ref": "EAN 4895197930904; pea starch 50% + corn starch 35% + mung bean starch 10% + water 5%",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Distinct starch-noodle subtype; carbohydrate value is far above standard durum pasta, so must not be collapsed into generic pasta."
+  },
+  {
+    "id": "ua_metrochef_rice_noodles_dry",
+    "name": "Локшина рисова Metro Chef, суха",
+    "brand": "Metro Chef",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 78.5,
+    "protein": 6.4,
+    "fat": 0.8,
+    "calories": 351,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua / METRO — Metro Chef Локшина рисова 1 кг та плоска 600 г",
+    "source_ref": "Rice 89% + drinking water 11%; same nutrition for regular and flat forms",
+    "verified": true,
+    "runtime_merge": false,
+    "dedup_note": "Regular and flat forms have identical recipe/macros; keep one nutrition identity. Katana wide rice noodles 78.0 g carbs/100 g are within 0.5 g and do not justify another branded nutrition identity under current heuristic."
+  },
+  {
+    "id": "ua_wheat_udon_dry_generic",
+    "name": "Локшина удон пшенична, суха",
+    "category": "Макаронні вироби",
+    "state": "dry",
+    "carbs": 62.8,
+    "protein": 9.4,
+    "fat": 1.3,
+    "calories": 301,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — JS Udon / Katana Udon / Wheatsun Udon",
+    "source_ref": "Three current listings converge on 62.8 g carbs, 9.4 g protein, 1.3 g fat per 100 g; wheat flour + water + salt (JS additionally lists baking soda)",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Materially different from standard dry durum pasta (71 g carbs/100 g). Treat as separate wheat-udon subtype. Metro Chef Udon 1.05 kg lists 76 g carbs/100 g and is therefore not merged into this baseline pending separate recipe/source review."
+  },
+  {
+    "id": "ua_elovena_gluten_free_oat_flakes_dry",
+    "name": "Пластівці вівсяні Elovena без глютену, сухі",
+    "brand": "Elovena",
+    "category": "Пластівці та сухі сніданки",
+    "state": "dry",
+    "carbs": 55,
+    "protein": 14,
+    "fat": 8,
+    "calories": 370,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — Elovena без глютену 500 г",
+    "source_ref": "EAN 6411200107163; whole-grain gluten-free oat flakes",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Distinct labeled gluten-free product and carbohydrate value materially below the selected plain-oat baseline; retain as branded audit candidate pending final catalog dedup."
+  },
+  {
+    "id": "ua_muesli_mania_granola_fruit_300",
+    "name": "Гранола Muesli Mania з фруктами",
+    "brand": "Muesli Mania",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 72.9,
+    "protein": 11.3,
+    "fat": 12.1,
+    "calories": 456,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — Muesli Mania гранола з фруктами 300 г",
+    "source_ref": "EAN 4820217531298; oat flakes + honey + sunflower oil + dates 5% + coconut + freeze-dried strawberry 1%",
+    "verified": true,
+    "runtime_merge": false,
+    "audit_note": "Recipe-dependent product; keep exact branded identity. A separate Muesli Mania Fruit 350 g listing has a substantially different recipe and 58.8 g carbs/100 g, so package/name similarity must not be used for dedup."
+  },
+  {
+    "id": "ua_nestle_corn_flakes_honey_nut",
+    "name": "Пластівці кукурудзяні NESTLÉ CORN FLAKES Honey Nut",
+    "brand": "Nestle",
+    "category": "Пластівці та сухі сніданки",
+    "state": "dry",
+    "carbs": 79,
+    "protein": 7.6,
+    "fat": 4.4,
+    "calories": 396,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "source": "Zakaz.ua — NESTLÉ CORN FLAKES Honey Nut 250/450 г",
+    "source_ref": "corn grits 70.1%, sugar, peanuts 7.5%, honey 2%; 79.0C/7.6P/4.4F per 100g",
+    "verified": true,
+    "runtime_merge": false,
+    "dedup_note": "250 g and 450 g listings describe the same recipe/macros; keep one product identity."
   }
 ]
