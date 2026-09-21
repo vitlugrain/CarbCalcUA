@@ -21747,5 +21747,341 @@
     "source": "Три Ведмеді — офіційна сторінка продукту",
     "source_ref": "Current manufacturer page: 400 g; EAN 4823086101944; per 100 g C 35 / P 11 / F 2.8 / 208 kcal.",
     "audit_note": "Representative sweet cottage-cheese varenyky identity. Branch-specific assets/products.json checked 2026-09-17 by exact EAN and brand; no existing runtime match found."
+  },
+  {
+    "id": "ua_levada_pancakes_sweet_cottage_cheese_4823074611448",
+    "name": "Млинці Levada з солодким сиром",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611448",
+    "carbs": 25.1,
+    "protein": 7.9,
+    "fat": 8.1,
+    "calories": 205,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Levada current assortment + Silpo/VARUS/Epicentr nutrition + Listex exact EAN",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Current 310 g product. Exact EAN 4823074611448 established by Listex; current Ukrainian retailers agree on C25.1/P7.9/F8.1/205. One Kopiyka card shows an obviously inconsistent carbohydrate field 6.8 while keeping 205 kcal and same P/F, so it is treated as retailer metadata error rather than a separate recipe. Branch-specific runtime products.json checked by exact EAN and Levada pancake identity: no match found."
+  },
+  {
+    "id": "ua_levada_pancakes_chicken_310",
+    "name": "Млинці Levada з курячим м'ясом",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": null,
+    "carbs": 23.1,
+    "protein": 7.5,
+    "fat": 11.4,
+    "calories": 225,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Levada current assortment + Silpo + VARUS + Epicentr",
+    "verification_level": "A",
+    "verified": true,
+    "audit_note": "Current manufacturer assortment confirms the 310 g chicken-filled product. Silpo, VARUS and Epicentr independently agree on C23.1/P7.5/F11.4/225. Exact current EAN was not reliably established, therefore barcode remains null rather than invented. Branch-specific runtime products.json checked by Levada pancake identity: no match found."
+  },
+  {
+    "id": "ua_levada_pancakes_sweet_plain_4823074611851",
+    "name": "Млинці Levada солодкі без начинки",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611851",
+    "carbs": 19.5,
+    "protein": 4.4,
+    "fat": 10.2,
+    "calories": 188.65,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan exact EAN + Listex identity",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Exact EAN 4823074611851 for current/recent 400 g sweet unfilled frozen pancakes. Auchan exact-EAN nutrition C19.5/P4.4/F10.2/188.65; other retailer cards for this identity show small secondary/profile drift (e.g. C19.1), so runtime integration should preserve this exact-EAN profile and not merge blindly with other generations. Branch-specific runtime products.json checked by exact EAN and Levada pancake identity: no match found."
+  },
+  {
+    "id": "ua_valesto_syrnyky_baked_350_4820300030653",
+    "name": "Сирники Valesto випечені заморожені",
+    "brand": "Valesto",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820300030653",
+    "carbs": 14.8,
+    "protein": 13.6,
+    "fat": 5.9,
+    "calories": 167,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan/Zakaz exact EAN + Silpo + Listex exact EAN",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Representative baked frozen syrnyky, current 350 g identity. Exact EAN 4820300030653. Auchan/Zakaz, Silpo and Listex agree on C14.8/P13.6/F5.9/167. Older/different 280 g Valesto EAN 4820196526889 has a slightly different C15.2/P13.8/F4.2/154 profile and is intentionally not duplicated in the breadth-first catalog. Branch-specific assets/products.json was checked for Valesto identity/EAN before creation; no matching runtime identity was found."
+  },
+  {
+    "id": "ua_makey_premium_syrnyky_chocolate_4820277113137",
+    "name": "Сирники Makey Premium з шоколадом",
+    "brand": "Makey",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820277113137",
+    "carbs": 28.54,
+    "protein": 10.9,
+    "fat": 6.9,
+    "calories": 222.5,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan official store exact EAN + Auchan/Zakaz + Vostorg/Zakaz",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Materially different chocolate syrnyky profile retained as a useful representative. Exact EAN 4820277113137. Multiple current retailer cards agree on approximately C28.54/P10.9/F6.9/222.5. Branch-specific assets/products.json was checked for Makey identity/EAN before creation; no matching runtime identity was found."
+  },
+  {
+    "id": "ua_frozen_dozen_syrnyky_sweet_300",
+    "name": "Сирники Frozen Dozen солодкі",
+    "brand": "Frozen Dozen",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": null,
+    "carbs": 18.2,
+    "protein": 18.6,
+    "fat": 9,
+    "calories": 235,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Frozen Dozen current manufacturer product page + WINETIME/Zakaz identity corroboration",
+    "verification_level": "A",
+    "verified": true,
+    "audit_note": "Current manufacturer page for the 300 g sweet frozen syrnyky gives C18.2/P18.6/F9/235. WINETIME/Zakaz confirms the current 300 g identity but shows a modest profile difference (C18.0/P15/F7.7/205); manufacturer data is retained as Level A rather than averaged. Exact retail EAN was not reliably established, therefore barcode is null. Branch-specific assets/products.json was checked for Frozen Dozen identity before creation; no matching runtime identity was found."
+  },
+  {
+    "id": "ua_legko_chicken_nuggets_4820085601079",
+    "name": "Нагетси Легко! курячі заморожені",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820085601079",
+    "carbs": 18.6,
+    "protein": 12.6,
+    "fat": 8.7,
+    "calories": 203,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "VARUS + Zakaz/Tavria/Kosmos + Frianna Foods exact EAN",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Representative mainstream retail frozen chicken nugget. Exact EAN 4820085601079 established for the bulk/current identity; retailer nutrition consistently gives C18.6/P12.6 with small fat metadata drift 8.4-8.7, while VARUS/MyIМО report F8.7 and 203 kcal. This is a frozen retail product and is not deduplicated against prepared McDonald's/KFC nuggets. Branch-specific assets/products.json checked for brand/name/EAN: no Легко! or exact-EAN runtime match found."
+  },
+  {
+    "id": "ua_khodoriv_nuggets_4822005002713",
+    "name": "Нагетси Ходорівський м'ясокомбінат заморожені",
+    "brand": "Ходорівський м'ясокомбінат",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4822005002713",
+    "carbs": 11,
+    "protein": 18,
+    "fat": 10,
+    "calories": 208,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan/Zakaz exact EAN + Silpo + Costless",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Current 390 g identity. Exact EAN 4822005002713 from Auchan/Zakaz; independent current retailer sources agree on C11/P18/F10/208. Recipe is materially lower-carb and higher-meat (retailer ingredient data: 85% chicken fillet) than the mainstream Легко! representative, so it is useful breadth rather than brand-only duplication. Branch-specific assets/products.json checked by brand/name/EAN: no match found."
+  },
+  {
+    "id": "ua_povna_chasha_figured_nuggets_400",
+    "name": "Нагетси Повна Чаша фігурні заморожені",
+    "brand": "Повна Чаша",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": null,
+    "carbs": 4.5,
+    "protein": 13,
+    "fat": 8,
+    "calories": 142,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Silpo current product + De Deshevshe corroboration",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Current 400 g figured frozen nugget identity. Silpo reports C4.5/P13/F8/142 and a second current product index corroborates C4.5/P13/F8 (minor calorie display drift elsewhere is not a carbohydrate conflict). Exact EAN was not reliably established, therefore barcode remains null. Very low carbohydrate profile is materially distinct and useful for CarbCalc breadth. Branch-specific assets/products.json checked by brand/name: no match found."
+  },
+  {
+    "id": "ua_legko_chicken_strips_4820227763283",
+    "name": "Філе куряче Легко! Chicken Strips",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820227763283",
+    "carbs": 13.3,
+    "protein": 15.1,
+    "fat": 8.4,
+    "calories": 189,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan/Zakaz + Tavria V/Zakaz + METRO/Zakaz + MyIМO",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Current/recent 400 g frozen Chicken Strips identity. Exact EAN 4820227763283 is shown by Zakaz retailer cards; multiple retailers agree on C13.3/P15.1/F8.4/189. This is distinct from the older/different 300 g Легко! strips identity EAN 4820085609884 with C21.4 and must not be merged across recipe generations. Branch-specific runtime products.json was checked before adding; restaurant McDonald's/KFC strips exist, but no matching Легко! frozen Chicken Strips identity was found."
+  },
+  {
+    "id": "ua_khodoriv_chicken_strips_4822005006186",
+    "name": "Стріпси курячі Ходорівський м'ясокомбінат",
+    "brand": "Ходорівський м'ясокомбінат",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4822005006186",
+    "carbs": 11,
+    "protein": 18,
+    "fat": 10,
+    "calories": 206,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan/Zakaz exact EAN + Silpo",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "390 g frozen breaded chicken strips. Exact EAN 4822005006186 and nutrition C11/P18/F10/206 from Auchan/Zakaz; Silpo independently matches the same nutrition profile. Recipe uses 85% chicken fillet and breading. Branch-specific runtime products.json checked before adding; no matching frozen Khodoriv strips identity found."
+  },
+  {
+    "id": "ua_hodivnytsia_fried_chicken_strips_500",
+    "name": "Стріпси Годівниця курячі смажені",
+    "brand": "Годівниця",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": null,
+    "carbs": 16,
+    "protein": 10,
+    "fat": 15,
+    "calories": 239,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Silpo current product card",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Current 500 g fried frozen chicken strips with a materially different prepared/fried profile C16/P10/F15/239. Exact EAN was not reliably established, therefore barcode remains null. Branch-specific runtime products.json checked before adding; no matching Годівниця frozen strips identity found."
+  },
+  {
+    "id": "ua_legko_pizza_cheese_370_4820227762965",
+    "name": "Піца Легко! Сирна заморожена",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820227762965",
+    "carbs": 31.4,
+    "protein": 12.8,
+    "fat": 11.5,
+    "calories": 281,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "VARUS + Listex + retail exact EAN",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Representative cheese/four-cheese frozen pizza. Exact consumer EAN 4820227762965; current retailer and product-index sources agree on C31.4/P12.8/F11.5/281. Branch-specific assets/products.json checked by EAN and name: no runtime match found."
+  },
+  {
+    "id": "ua_legko_pizza_meat_400_4820227762989",
+    "name": "Піца Легко! М'ясна заморожена",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820227762989",
+    "carbs": 31.4,
+    "protein": 11.2,
+    "fat": 8.4,
+    "calories": 246,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Zakaz + Listex + Obzhora exact EAN",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Representative classic meat frozen pizza. Exact consumer EAN 4820227762989; independent current sources agree on C31.4/P11.2/F8.4/246. Branch-specific assets/products.json checked by EAN and name: no runtime match found."
+  },
+  {
+    "id": "ua_legko_pizza_americana_420_4820227764013",
+    "name": "Піца Легко! Американа заморожена",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820227764013",
+    "carbs": 33.4,
+    "protein": 10.3,
+    "fat": 9.7,
+    "calories": 263,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Auchan current exact EAN + current retail listing",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Distinct Americana recipe with salami, smoked sausages, jalapeno, corn and BBQ-style sauce; C33.4 is materially useful relative to other selected pizza profiles. Exact EAN 4820227764013. Branch-specific assets/products.json checked by EAN and name: no runtime match found."
+  },
+  {
+    "id": "ua_legko_pizza_urban_pepperoni_450_4820227764907",
+    "name": "Піца Легко! Urban Pepperoni заморожена",
+    "brand": "Легко!",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820227764907",
+    "carbs": 29.7,
+    "protein": 10.3,
+    "fat": 14.4,
+    "calories": 289,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "source": "Listex exact EAN + current Ukrainian retail category listings",
+    "verification_level": "B",
+    "verified": true,
+    "audit_note": "Representative pepperoni-style frozen pizza and lower-carb/higher-fat profile within the compact pizza set. Exact consumer EAN 4820227764907; nutrition C29.7/P10.3/F14.4/289. Branch-specific assets/products.json checked by EAN and name: no runtime match found."
   }
 ]
