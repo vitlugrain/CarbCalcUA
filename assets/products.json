@@ -7469,20 +7469,6 @@
     "source_type": "official_manufacturer"
   },
   {
-    "id": "ua_galychyna_exotic_yogurt_mango_300_22",
-    "name": "Йогурт Манго 2,2% (300 г)",
-    "brand": "Галичина",
-    "category": "Йогурти",
-    "carbs_100g": 12,
-    "protein_100g": 2.2,
-    "fat_100g": 2.2,
-    "kcal_100g": 77,
-    "package_g": 300,
-    "source": "https://galychyna.com.ua/production/exotic-yogurts/",
-    "source_type": "official_manufacturer",
-    "source_note": "Official page has kcal/kJ labels reversed; 77 is treated as kcal because the same page prints 323 kcal / 77 kJ."
-  },
-  {
     "id": "ua_galychyna_spoon_yogurt_cherry_15_115",
     "name": "Карпатський йогурт десертний Вишня 1,5%",
     "brand": "Галичина",
