@@ -1553,22 +1553,6 @@
     "verified": true
   },
   {
-    "id": "ua_bonduelle_turnip",
-    "name": "Ріпа",
-    "category": "Овочі",
-    "state": "raw",
-    "carbs": 8.2,
-    "protein": 1.1,
-    "fat": 0.3,
-    "calories": 26,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
-  },
-  {
     "id": "ua_bonduelle_celery_greens",
     "name": "Селера, зелень",
     "category": "Зелень",
@@ -3294,23 +3278,6 @@
     "nutrition_basis": "100g",
     "quantity_units": [
       "мл",
-      "г"
-    ],
-    "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
-  },
-  {
-    "id": "ua_prodiabet_turnip",
-    "name": "Ріпа",
-    "category": "Овочі",
-    "state": "raw",
-    "carbs": 5.3,
-    "protein": 1.5,
-    "fat": 0,
-    "calories": 27,
-    "glycemic_index": 15,
-    "nutrition_basis": "100g",
-    "quantity_units": [
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
