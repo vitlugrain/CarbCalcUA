@@ -14407,29 +14407,6 @@
     "barcode": "4820015166340"
   },
   {
-    "id": "ua_rud_100_icecream_ps_cup_120",
-    "name": "Морозиво «100% морозиво» у полістирольному стакані",
-    "brand": "Рудь",
-    "category": "Морозиво",
-    "package_g": 120,
-    "ean": "4820154728256",
-    "nutrition_100g": {
-      "protein_g": 3.9,
-      "fat_g": 12.1,
-      "carbs_g": 20.5,
-      "kcal": 206
-    },
-    "source": "https://rud.ua/products/ice-cream/polystyrene-cups/100-vidsotkiv-polistyrolnyy-stakan/",
-    "verification": "official_manufacturer",
-    "carbs": 20.5,
-    "protein": 3.9,
-    "fat": 12.1,
-    "calories": 206,
-    "manufacturer": "Рудь",
-    "nutritionBasis": "100g",
-    "barcode": "4820154728256"
-  },
-  {
     "id": "ua_rud_imperium_tray_tiramisu_500",
     "name": "Морозиво IMPERIUM «Тірамісу» лоток",
     "brand": "Рудь",
@@ -14528,7 +14505,11 @@
     "barcode": "4820015167101",
     "barcodes": [
       "4820015167101",
+      "4820154728256",
       "4820015167354"
+    ],
+    "aliases": [
+      "морозиво 100% морозиво у полістирольному стакані"
     ]
   },
   {
@@ -15850,33 +15831,14 @@
     "calories": 383,
     "manufacturer": "Рудь",
     "nutritionBasis": "100g",
-    "barcode": "4823097818978"
-  },
-  {
-    "id": "ua_rud_eskimos_xl_chocolate_multipack_450",
-    "name": "Сирки глазуровані Рудь ESKIMOS XL зі смаком шоколаду, мультипак",
-    "brand": "Рудь",
-    "line": "ESKIMOS XL",
-    "category": "Сирки глазуровані",
-    "package_g": 450,
-    "ean": "4823097818985",
-    "nutrition_100g": {
-      "protein_g": 7.8,
-      "fat_g": 26.5,
-      "carbs_g": 28.3,
-      "kcal": 383
-    },
-    "source": "https://rud.ua/products/cheese-curd/glazurovani-surki/eskimos-xl-zi-smakom-shokoladu-multypak/",
-    "verification": "official_manufacturer",
-    "new_product": true,
-    "dedup_note": "Same recipe/nutrition as 45 g unit; represent as package/EAN variant during final deduplication.",
-    "carbs": 28.3,
-    "protein": 7.8,
-    "fat": 26.5,
-    "calories": 383,
-    "manufacturer": "Рудь",
-    "nutritionBasis": "100g",
-    "barcode": "4823097818985"
+    "barcode": "4823097818978",
+    "barcodes": [
+      "4823097818978",
+      "4823097818985"
+    ],
+    "aliases": [
+      "сирки глазуровані Рудь ESKIMOS XL зі смаком шоколаду мультипак"
+    ]
   },
   {
     "id": "ua_rud_eskimos_xl_vanilla_multipack_450",
