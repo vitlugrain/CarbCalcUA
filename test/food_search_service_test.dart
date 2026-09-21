@@ -139,4 +139,35 @@ void main() {
     expect(r, isNotEmpty);
     expect(r.first.product.id, 'ua-spaghetti');
   });
+
+  test('base potato query includes fried potato variant', () {
+    final local = [
+      Product(id: 'raw-potato', name: 'Картопля, сира', category: 'Овочі', carbs: 17, state: 'raw'),
+      Product(id: 'fried-potato', name: 'Картопля смажена', category: 'Страви з картоплі', carbs: 23.4, state: 'prepared'),
+      Product(id: 'boiled-potato', name: 'Картопля відварена', category: 'Страви з картоплі', carbs: 17.6, state: 'cooked'),
+    ];
+    final r = FoodSearchService.search('картопля', local);
+    expect(r.any((x) => x.product.id == 'raw-potato'), isTrue);
+    expect(r.any((x) => x.product.id == 'fried-potato'), isTrue);
+    expect(r.any((x) => x.product.id == 'boiled-potato'), isTrue);
+  });
+
+  test('common Ukrainian base food names find their variants', () {
+    final local = [
+      Product(id: 'carrot', name: 'Морква, сира', category: 'Овочі', carbs: 9.6),
+      Product(id: 'onion', name: 'Цибуля ріпчаста, сира', category: 'Овочі', carbs: 9.3),
+      Product(id: 'cabbage', name: 'Капуста білокачанна, сира', category: 'Овочі', carbs: 5.8),
+      Product(id: 'eggplant', name: 'Баклажан, запечений', category: 'Овочі', carbs: 8.7),
+      Product(id: 'cucumber', name: 'Огірок сирий зі шкіркою', category: 'Овочі', carbs: 3.6),
+      Product(id: 'tomato', name: 'Помідор сирий', category: 'Овочі', carbs: 3.9),
+      Product(id: 'beet', name: 'Буряк, варений', category: 'Овочі', carbs: 10),
+      Product(id: 'zucchini', name: 'Кабачок, сирий', category: 'Овочі', carbs: 3.1),
+      Product(id: 'pumpkin', name: 'Гарбуз, запечений', category: 'Овочі', carbs: 10.5),
+    ];
+    for (final q in ['морква','цибуля','капуста','баклажан','огірок','помідор','буряк','кабачок','гарбуз']) {
+      final r = FoodSearchService.search(q, local);
+      expect(r, isNotEmpty, reason: 'Base query should work: $q');
+    }
+  });
+
 }
