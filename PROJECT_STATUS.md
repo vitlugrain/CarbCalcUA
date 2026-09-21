@@ -72,3 +72,15 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Integrated in this cycle include canned foods, drinks, pasta, breakfast cereals, instant foods, produce gaps, nuts/seeds/dried fruit, baby food, strong meat candidates, revalidated dairy candidates, and verified frozen semifinished foods.
 - Deferred/conflicting records remain outside runtime (including pending instant-food conflicts, weak meat generics, unresolved USDA/FDC-reference gaps, recipe-dependent ready meals, weak early sweets/snacks, and pending frozen syrnyky conflict).
 - Next engineering step: implement the deferred bottom safe-area/scroll-padding fix for `Додати до щоденника`, preserving APK #233 quantity auto-scroll behavior; then run parse/analyze/tests and build the next APK.
+
+
+## Android checkpoint — APK #295 USER VERIFIED — 2026-09-21
+- GitHub Actions run: `35598700845`; artifact: `CarbCalcUA-0.6.0-build-295`; artifact ID: `10637504288`.
+- Head commit: `e9b7bb2a0a3b156455a69678861e7a48c8b867a1`.
+- SHA-256: `0bbf41395886ef624d47a29ae4d50705ec006effadd1951e4dcd1a0a714bdc67`.
+- User installed #295 over the previous app: existing diary data was preserved.
+- Product addition works.
+- Bottom `Додати до щоденника` action is now displayed correctly and no longer hidden by app/system navigation.
+- Initial user impression: the app feels slower / has noticeable lag. This is the primary next engineering investigation; do not change catalog data merely to mask performance.
+- Runtime catalog checkpoint remains **1135 products**, with the completed controlled pre-APK integration and no known duplicate IDs/barcodes at the integration checkpoint.
+- Treat APK #295 as the new tested Android functional checkpoint while performance investigation begins.
