@@ -20,6 +20,41 @@ class FoodSearchResult {
 
 class FoodSearchService {
   static final Expando<_PreparedProduct> _preparedCache = Expando<_PreparedProduct>('food-search');
+  static List<Product>? _indexedProducts;
+  static Map<String,List<Product>> _tokenIndex = const {};
+
+  static void _ensureIndex(List<Product> products) {
+    if (identical(_indexedProducts, products)) return;
+    final index=<String,List<Product>>{};
+    for (final p in products) {
+      final prepared=_preparedCache[p] ??= _PreparedProduct.fromProduct(p);
+      for (final token in prepared.searchableTokens) {
+        (index[token] ??= <Product>[]).add(p);
+      }
+    }
+    _indexedProducts=products;
+    _tokenIndex=index;
+  }
+
+  static List<Product> _candidates(List<Product> products,List<String> qTokens,List<String> translatedTokens) {
+    if (qTokens.isEmpty) return products;
+    _ensureIndex(products);
+    final out=<Product>{};
+    final wanted=<String>{...qTokens,...translatedTokens};
+    for (final token in wanted) {
+      final exact=_tokenIndex[token];
+      if (exact!=null) out.addAll(exact);
+      // Prefix matching keeps partial typing useful without fuzzy-scanning the full catalog.
+      if (token.length>=3) {
+        for (final entry in _tokenIndex.entries) {
+          if (entry.key.startsWith(token) || token.startsWith(entry.key)) out.addAll(entry.value);
+        }
+      }
+    }
+    // Preserve fuzzy typo tolerance: only fall back to the full catalog when the
+    // cheap index could not find a useful candidate set.
+    return out.isEmpty ? products : out.toList(growable:false);
+  }
 
   static ParsedFoodQuery parseQuery(String input) {
     final original = input.trim();
@@ -95,7 +130,8 @@ class FoodSearchService {
   static List<FoodSearchResult> search(String query,List<Product> products,{int limit=10}){
     final parsed=parseQuery(query); final q=normalize(parsed.productQuery); if(q.isEmpty)return [];
     final qTokens=_tokens(q); final translatedTokens=_translatedTokens(qTokens); final results=<FoodSearchResult>[];
-    for(final p in products){
+    final candidates=_candidates(products,qTokens,translatedTokens);
+    for(final p in candidates){
       final prepared=_preparedCache[p] ??= _PreparedProduct.fromProduct(p);
       final name=prepared.name; final nameTokens=prepared.nameTokens; final aliasText=prepared.aliasText;
       final manufacturer=prepared.manufacturer; final category=prepared.category;
