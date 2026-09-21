@@ -1,0 +1,3 @@
+[
+  {"id":"ua_generic_potato_baked_plain","name":"Картопля запечена без олії","aliases":["картопля печена","печена картопля","запечена картопля"],"category":"Готові страви","state":"cooked","brand":null,"barcode":null,"carbs":21.15,"protein":2.5,"fat":0.13,"calories":93,"nutrition_basis":"100g","quantity_units":["г","шт"],"source":"USDA FoodData Central standard baked potato flesh and skin without salt reference","verification_level":"A reference","verified":true,"catalog_policy":"gap_only_generic","note":"Plain baked potato without added oil; dishes with oil/sauces require separate nutrition."}
+]
