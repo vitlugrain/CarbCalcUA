@@ -7205,30 +7205,6 @@
     "source_type": "official_manufacturer"
   },
   {
-    "id": "ua_galychyna_yogurt_drink_cherry_lingonberry_22",
-    "name": "Йогурт Вишня-Брусниця 2,2%",
-    "brand": "Галичина",
-    "category": "Йогурти",
-    "carbs_100g": 11.3,
-    "protein_100g": 2.2,
-    "fat_100g": 2.2,
-    "kcal_100g": 73.8,
-    "source": "https://galychyna.com.ua/production/yogurts_potable/",
-    "source_type": "official_manufacturer"
-  },
-  {
-    "id": "ua_galychyna_yogurt_drink_raspberry_pomegranate_22",
-    "name": "Йогурт Малина-Гранат 2,2%",
-    "brand": "Галичина",
-    "category": "Йогурти",
-    "carbs_100g": 10.9,
-    "protein_100g": 2.2,
-    "fat_100g": 2.2,
-    "kcal_100g": 72.2,
-    "source": "https://galychyna.com.ua/production/yogurts_potable/",
-    "source_type": "official_manufacturer"
-  },
-  {
     "id": "ua_galychyna_yogurt_drink_cherry_22",
     "name": "Карпатський йогурт Вишня 2,2%",
     "brand": "Галичина",
@@ -14237,27 +14213,6 @@
     "barcode": "4823097819531"
   },
   {
-    "id": "ua_rud_icecream_mochi_chocolate_cherry_50",
-    "name": "Морозиво десерт MOCHI «Шоколад – вишня»",
-    "brand": "Рудь",
-    "category": "Морозиво",
-    "carbs_100g": 33.4,
-    "protein_100g": 3.2,
-    "fat_100g": 6.9,
-    "kcal_100g": 208,
-    "package_g": 50,
-    "ean": "4823097813676",
-    "source": "https://rud.ua/products/ice-cream/roll/mochi-shokolad-vyshnia-50g/",
-    "verification": "official",
-    "carbs": 33.4,
-    "protein": 3.2,
-    "fat": 6.9,
-    "calories": 208,
-    "manufacturer": "Рудь",
-    "nutritionBasis": "100g",
-    "barcode": "4823097813676"
-  },
-  {
     "id": "ua_rud_icecream_eskimos_cream_plombir_80",
     "name": "Морозиво «Ескімос» крем-пломбір",
     "brand": "Рудь / Ескімос",
@@ -14690,7 +14645,11 @@
     "calories": 208,
     "manufacturer": "Рудь",
     "nutritionBasis": "100g",
-    "barcode": "4823097813645"
+    "barcode": "4823097813645",
+    "barcodes": [
+      "4823097813645",
+      "4823097813676"
+    ]
   },
   {
     "id": "ua_rud_mochi_coconut_50",
