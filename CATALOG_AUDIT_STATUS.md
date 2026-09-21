@@ -106,3 +106,15 @@ Frozen and dairy breadth audits are closed. Move to the **next general catalog c
 ## Persistence rule
 
 At the start of every new chat, read `PROJECT_STATUS.md` and this file first. Before runtime merge always use: verify → runtime gap check → dedup → explicit whitelist → merge → full validation → APK.
+
+
+## FINAL PRE-APK INTEGRATION CHECKPOINT — 2026-09-21
+Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
+
+- Explicit whitelist: `assets/runtime_whitelist_preintegration_2026-09-21.json`.
+- Runtime catalog: `assets/products.json` = **1135 products**.
+- Post-integration integrity check: **0 duplicate IDs; 0 cross-product duplicate barcodes**.
+- Approved audit blocks have been integrated using actual audit IDs; whitelist IDs were normalized after merge.
+- Pending/material-conflict records were not promoted.
+- No new broad catalog-expansion cycle is required before the next APK.
+- Remaining pre-APK work is engineering: bottom safe-area UI fix, validation/tests, release APK build.
