@@ -45,9 +45,6 @@ jobs:
             cp /tmp/ua_branded_products.json assets/ua_branded_products.json
           fi
 
-      - name: Apply runtime catalog performance fix
-        run: python3 scripts/apply_runtime_catalog_performance_fix.py
-
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
