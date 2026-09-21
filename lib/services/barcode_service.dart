@@ -8,6 +8,7 @@ typedef CustomProductLookup = Future<Map<String, dynamic>?> Function(String barc
 
 class BarcodeService {
   static final http.Client _client = http.Client();
+  static Future<List<Product>>? _bundledBarcodeProductsFuture;
 
   static String normalize(String value) => value.replaceAll(RegExp(r'\D'), '');
 
@@ -34,7 +35,11 @@ class BarcodeService {
     return product.allBarcodes.any((code) => normalize(code) == wanted);
   }
 
-  static Future<List<Product>> _loadBundledBarcodeProducts() async {
+  static Future<List<Product>> _loadBundledBarcodeProducts() {
+    return _bundledBarcodeProductsFuture ??= _loadBundledBarcodeProductsUncached();
+  }
+
+  static Future<List<Product>> _loadBundledBarcodeProductsUncached() async {
     final out = <Product>[];
     for (final asset in const [
       'assets/products.json',
@@ -50,7 +55,7 @@ class BarcodeService {
         // A missing optional generated asset must not break barcode scanning.
       }
     }
-    return out;
+    return List<Product>.unmodifiable(out);
   }
 
   static Future<Product?> findLocal(String rawBarcode, {CustomProductLookup? customProductLookup}) async {
