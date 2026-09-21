@@ -12011,18 +12011,6 @@
     "glycemic_source_calories_100g": 113
   },
   {
-    "id": "p013",
-    "name": "Вівсяні пластівці, сухі",
-    "category": "Крупи",
-    "carbs": 66.3,
-    "protein": 16.9,
-    "fat": 6.9,
-    "fiber": 10.6,
-    "calories": 389,
-    "state": "raw",
-    "barcode": ""
-  },
-  {
     "id": "p014",
     "name": "Молоко 2,5%",
     "category": "Молочні",
@@ -13414,19 +13402,6 @@
     "source": "Generic food data"
   },
   {
-    "id": "p105",
-    "name": "Борщ український",
-    "category": "Готові страви",
-    "carbs": 5.5,
-    "protein": 2,
-    "fat": 3,
-    "fiber": 1.5,
-    "calories": 60,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
     "id": "p106",
     "name": "Суп курячий з локшиною",
     "category": "Готові страви",
@@ -13435,19 +13410,6 @@
     "fat": 2,
     "fiber": 0.5,
     "calories": 55,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p107",
-    "name": "Сирники",
-    "category": "Готові страви",
-    "carbs": 18,
-    "protein": 14,
-    "fat": 9,
-    "fiber": 0.5,
-    "calories": 210,
     "state": "cooked",
     "barcode": "",
     "source": "Generic food data"
@@ -16972,28 +16934,6 @@
     "source": "Zakaz.ua",
     "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-1000g-ukrayina--04820235610463/",
     "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 12.29, Ж 1.33, В 75.90, 342 kcal.",
-    "verified": true
-  },
-  {
-    "id": "ua_zakaz_semolina_raw",
-    "name": "Крупа манна, суха",
-    "aliases": [
-      "манка суха",
-      "манна крупа суха"
-    ],
-    "category": "Крупи",
-    "state": "raw",
-    "carbs": 74,
-    "protein": 8.7,
-    "fat": 1.3,
-    "calories": 348,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Zakaz.ua",
-    "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudiv-700g-ukrayina--04820168880117/",
-    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 8.7, Ж 1.3, В 74.0, 348 kcal.",
     "verified": true
   },
   {
