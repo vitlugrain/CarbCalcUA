@@ -11897,35 +11897,6 @@
     "glycemic_source_calories_100g": 89
   },
   {
-    "id": "p009",
-    "name": "Гречка, суха",
-    "category": "Крупи",
-    "carbs": 71.5,
-    "protein": 13.3,
-    "fat": 3.4,
-    "fiber": 10,
-    "calories": 343,
-    "state": "raw",
-    "barcode": ""
-  },
-  {
-    "id": "p010",
-    "name": "Гречка, варена",
-    "category": "Крупи",
-    "carbs": 19.9,
-    "protein": 3.4,
-    "fat": 0.6,
-    "fiber": 2.7,
-    "calories": 92,
-    "state": "cooked",
-    "barcode": "",
-    "aliases": [
-      "гречка",
-      "гречана каша",
-      "гречка варена"
-    ]
-  },
-  {
     "id": "p011",
     "name": "Рис білий, сухий",
     "category": "Крупи",
@@ -12055,18 +12026,6 @@
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 99.8,
     "glycemic_source_calories_100g": 379
-  },
-  {
-    "id": "p019",
-    "name": "Масло вершкове",
-    "category": "Молочні",
-    "carbs": 0.1,
-    "protein": 0.9,
-    "fat": 81.1,
-    "fiber": 0,
-    "calories": 717,
-    "state": "raw",
-    "barcode": ""
   },
   {
     "id": "p021",
@@ -13187,32 +13146,6 @@
     "fat": 0.5,
     "fiber": 6.4,
     "calories": 127,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p098",
-    "name": "Булгур, варений",
-    "category": "Крупи",
-    "carbs": 18.6,
-    "protein": 3.1,
-    "fat": 0.2,
-    "fiber": 4.5,
-    "calories": 83,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p099",
-    "name": "Кускус, варений",
-    "category": "Крупи",
-    "carbs": 23.2,
-    "protein": 3.8,
-    "fat": 0.2,
-    "fiber": 1.4,
-    "calories": 112,
     "state": "cooked",
     "barcode": "",
     "source": "Generic food data"
