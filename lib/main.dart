@@ -265,6 +265,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
   final amountFocusNode=FocusNode();
   final quantitySectionKey=GlobalKey();
   final pageScrollController=ScrollController();
+  late Future<double> xeGramsFuture;
+  late Future<List<Map<String,dynamic>>> mealGroupsFuture;
 
   @override void initState(){
     super.initState();
@@ -274,6 +276,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
     meal=widget.initialMeal ?? 'Сніданок';
     mealGroupId=widget.initialMealGroupId;
     mealGroupExplicitSelection=widget.initialMealGroupId!=null;
+    xeGramsFuture=_xeGrams();
+    mealGroupsFuture=AppDb.mealGroups(_dateKey(mealDate));
   }
 
   Future<void> _pickMealDate() async {
@@ -283,6 +287,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
       setState(() {
         mealDate = DateTime(picked.year,picked.month,picked.day);
         mealGroupId = null;
+        mealGroupsFuture=AppDb.mealGroups(_dateKey(mealDate));
         if (picked.year == now.year && picked.month == now.month && picked.day == now.day) {
           mealTime = '${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';
         }
@@ -428,7 +433,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
       const SizedBox(height:14),
       DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealGroupExplicitSelection=false;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
       const SizedBox(height:8),
-      FutureBuilder<List<Map<String,dynamic>>>(future:AppDb.mealGroups(_dateKey(mealDate)),builder:(context, snapshot){
+      FutureBuilder<List<Map<String,dynamic>>>(future:mealGroupsFuture,builder:(context, snapshot){
         final groups = snapshot.data ?? const <Map<String,dynamic>>[];
         return Column(children:[
           DropdownButtonFormField<String>(value:mealGroupId,decoration:const InputDecoration(labelText:'Додати до існуючого прийому',hintText:'Не вибрано — створити новий',border:OutlineInputBorder()),items:groups.map((g)=>DropdownMenuItem<String>(value:g['id'] as String,child:Text('${g['meal']}${(g['time'] as String).isEmpty ? '' : ' • ${g['time']}'}'))).toList(),onChanged:(id){if(id==null)return;final g=groups.firstWhere((x)=>x['id']==id);setState((){mealGroupId=id;mealGroupExplicitSelection=true;meal=g['meal'] as String;mealTime=(g['time'] as String).isEmpty?mealTime:g['time'] as String;});}),
@@ -491,7 +496,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         ])),
         const SizedBox(height:8),
         if(preview==null)const Text('Для цієї одиниці немає достатніх даних для коректного розрахунку. Оберіть доступну одиницю або додайте потрібну вагу/щільність.',style:TextStyle(color:Colors.orange)),
-        FutureBuilder<double>(future:_xeGrams(),builder:(context,xeSnap){
+        FutureBuilder<double>(future:xeGramsFuture,builder:(context,xeSnap){
           final xeGrams=xeSnap.data??10;
           final result=selected==null?null:FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:xeGrams);
           final displayCarbs=result?.carbs??carbs;
@@ -501,7 +506,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         FilledButton(onPressed:amount>0&&preview!=null?()async{
           // Close the numeric keyboard immediately on submit, before any I/O.
           FocusManager.instance.primaryFocus?.unfocus();
-          final xeGrams=await _xeGrams();
+          final xeGrams=await xeGramsFuture;
           String? effectiveGroupId = mealGroupId;
           var effectiveMealTime = mealTime;
 
