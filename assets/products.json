@@ -14612,32 +14612,11 @@
     "calories": 206,
     "manufacturer": "Рудь",
     "nutritionBasis": "100g",
-    "barcode": "4820015167101"
-  },
-  {
-    "id": "ua_rud_100_icecream_family_1000",
-    "name": "Морозиво «100% морозиво» сімейна упаковка",
-    "brand": "Рудь",
-    "line": "100% морозиво",
-    "category": "Морозиво",
-    "package_g": 1000,
-    "ean": "4820015167354",
-    "nutrition_100g": {
-      "protein_g": 3.9,
-      "fat_g": 12.1,
-      "carbs_g": 20.5,
-      "kcal": 206
-    },
-    "source": "https://rud.ua/products/ice-cream/bulk/100-morozyvo-1kg/",
-    "verification": "official_manufacturer",
-    "dedup_note": "Same nutrition as current 500 g family pack; combine as one base product with SKU/package variants during final deduplication.",
-    "carbs": 20.5,
-    "protein": 3.9,
-    "fat": 12.1,
-    "calories": 206,
-    "manufacturer": "Рудь",
-    "nutritionBasis": "100g",
-    "barcode": "4820015167354"
+    "barcode": "4820015167101",
+    "barcodes": [
+      "4820015167101",
+      "4820015167354"
+    ]
   },
   {
     "id": "ua_rud_100_icecream_pail_500",
@@ -15758,33 +15737,11 @@
     "calories": 191.7,
     "manufacturer": "Рудь",
     "nutritionBasis": "100g",
-    "barcode": "4823097815236"
-  },
-  {
-    "id": "ua_rud_mochi_plombir_mango_50",
-    "name": "Морозиво десерт MOCHI «Пломбір – манго»",
-    "brand": "Рудь",
-    "line": "MOCHI",
-    "category": "Морозиво",
-    "package_g": 50,
-    "ean": "4823097815175",
-    "nutrition_100g": {
-      "protein_g": 3.3,
-      "fat_g": 6.2,
-      "carbs_g": 30.6,
-      "kcal": 191.7
-    },
-    "source": "https://rud.ua/products/ice-cream/roll/mochi-plombir-manho-50g/",
-    "verification": "official_manufacturer",
-    "limited_edition": true,
-    "dedup_note": "Same official nutrition profile as 240 g multipack; represent as packaging/EAN variant if recipe identity remains confirmed.",
-    "carbs": 30.6,
-    "protein": 3.3,
-    "fat": 6.2,
-    "calories": 191.7,
-    "manufacturer": "Рудь",
-    "nutritionBasis": "100g",
-    "barcode": "4823097815175"
+    "barcode": "4823097815236",
+    "barcodes": [
+      "4823097815236",
+      "4823097815175"
+    ]
   },
   {
     "id": "ua_rud_no_added_sugar_vanilla_eskimo_60",
