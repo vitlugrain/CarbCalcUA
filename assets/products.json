@@ -12170,18 +12170,6 @@
     "barcode": ""
   },
   {
-    "id": "p033",
-    "name": "Броколі, свіжа",
-    "category": "Овочі",
-    "carbs": 6.6,
-    "protein": 2.8,
-    "fat": 0.4,
-    "fiber": 2.6,
-    "calories": 34,
-    "state": "raw",
-    "barcode": ""
-  },
-  {
     "id": "p035",
     "name": "Горох зелений, варений",
     "category": "Бобові",
@@ -13065,19 +13053,6 @@
     "fiber": 2.5,
     "calories": 35,
     "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p094",
-    "name": "Шпинат, свіжий",
-    "category": "Овочі",
-    "carbs": 3.6,
-    "protein": 2.9,
-    "fat": 0.4,
-    "fiber": 2.2,
-    "calories": 23,
-    "state": "raw",
     "barcode": "",
     "source": "Generic food data"
   },
