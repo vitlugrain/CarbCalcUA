@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "created": "2026-09-21",
+  "branch": "dev-large-update",
+  "purpose": "Explicit pre-integration runtime whitelist after final catalog audit. Only approved IDs may be merged into assets/products.json; blocked/pending IDs remain audit-only.",
+  "rules": [
+    "Re-check assets/products.json immediately before merge and deduplicate by semantic identity, state, recipe and EAN.",
+    "Never invent nutrition values or barcodes; null is allowed for unavailable secondary nutrients.",
+    "Dry instant foods and dry baby cereals remain dry-basis identities; added water does not change total carbohydrates.",
+    "Same recipe across package sizes is one nutrition identity where practical.",
+    "Do not merge entries listed in blocked_or_pending until their stated issue is resolved."
+  ],
+  "approved_by_category": {
+    "pasta": [
+      "ua_pasta_wholegrain_durum_dry_generic",
+      "ua_barilla_emiliane_egg_pasta_dry",
+      "ua_barilla_gluten_free_corn_rice_pasta_dry",
+      "ua_akura_soba_buckwheat_wheat_noodles_dry",
+      "ua_metrochef_funchose_starch_noodles_dry",
+      "ua_metrochef_rice_noodles_dry",
+      "ua_wheat_udon_dry_generic"
+    ],
+    "breakfast": [
+      "ua_elovena_gluten_free_oat_flakes_dry",
+      "ua_muesli_mania_granola_fruit_300",
+      "ua_lion_caramel_chocolate",
+      "ua_lion_protein",
+      "ua_start_corn_flakes",
+      "ua_start_glazed_corn_flakes",
+      "ua_start_honey_glazed_corn_flakes",
+      "ua_start_cocoa_balls",
+      "ua_start_milk_filled_pillows",
+      "ua_axa_granola_chocolate_banana",
+      "ua_nesquik_cereal",
+      "ua_cini_minis_cinnamon",
+      "ua_cini_minis_protein",
+      "ua_fitness_original",
+      "ua_strawberry_minis",
+      "ua_nestle_corn_flakes_honey_nut",
+      "ua_start_strawberry_banana_rings",
+      "ua_start_veselyi_rodzher",
+      "ua_nesquik_mix",
+      "ua_doctor_benner_trio_mix",
+      "ua_muesli_mania_fruit_350",
+      "ua_muesli_mania_low_calorie",
+      "ua_muesli_mania_mango_chia",
+      "ua_doctor_benner_nuts_honey",
+      "ua_doctor_benner_chocolate_almond",
+      "ua_doctor_benner_tropic",
+      "ua_axa_strawberry_blueberry"
+    ],
+    "instant_foods": [
+      "ua_mivina_chicken_broth",
+      "ua_mivina_roasted_pork",
+      "ua_axa_blueberry_instant_oatmeal",
+      "ua_mivina_mushroom_noodles",
+      "ua_mivina_cheese_greens_noodles",
+      "ua_mivina_spicy_chicken_noodles",
+      "ua_mivina_generous_cheese_greens_noodles",
+      "ua_reeva_chicken_noodles",
+      "ua_reeva_mushroom_noodles",
+      "ua_reeva_pork_noodles",
+      "ua_reeva_egg_chicken_noodles",
+      "ua_reeva_egg_mushroom_noodles",
+      "ua_reeva_egg_cheese_greens_noodles",
+      "ua_reeva_spicy_chicken_vermicelli",
+      "ua_reeva_mashed_potato_cream",
+      "ua_reeva_mashed_potato_chicken",
+      "ua_reeva_mashed_potato_mushroom",
+      "ua_reeva_mashed_potato_classic",
+      "ua_reeva_mushroom_cream_soup_croutons",
+      "ua_reeva_chicken_cream_soup_croutons",
+      "ua_reeva_chicken_noodle_soup",
+      "ua_mivina_hot_mug_chicken_noodles",
+      "ua_mivina_hot_mug_pea_croutons",
+      "ua_mivina_hot_mug_mushroom_croutons",
+      "ua_mivina_hot_mug_chicken_croutons",
+      "ua_street_soup_lentil",
+      "ua_street_soup_pea",
+      "ua_street_soup_mushroom",
+      "ua_street_soup_chickpea",
+      "ua_street_soup_pea_smoked_chicken",
+      "ua_street_soup_ukrainian_borscht",
+      "ua_zhmenka_quick_lunch_couscous_tomato_chili",
+      "ua_zhmenka_couscous_ginger",
+      "ua_zhmenka_quick_lunch_moroccan"
+    ],
+    "vegetables": [
+      "ua_generic_blackberry",
+      "ua_generic_nectarine",
+      "ua_generic_pomelo",
+      "ua_generic_papaya",
+      "ua_generic_passionfruit",
+      "ua_generic_quince",
+      "ua_generic_mulberry"
+    ],
+    "nuts_seeds_driedfruit": [
+      "ua_generic_hazelnut",
+      "ua_generic_cashew",
+      "ua_generic_pistachio",
+      "ua_generic_pumpkin_seeds",
+      "ua_generic_sesame",
+      "ua_generic_flaxseed",
+      "ua_generic_chia",
+      "ua_generic_prunes",
+      "ua_generic_dried_figs",
+      "ua_generic_dried_apples",
+      "ua_generic_dried_pears"
+    ],
+    "canned": [
+      "ua_veres_canned_beans_tomato_04823105400256",
+      "ua_veres_canned_chickpeas_04823105400645",
+      "ua_veres_zucchini_caviar_04823105408580",
+      "ua_veres_zucchini_caviar_pepper_04823105408641",
+      "ua_veres_eggplant_adjika_04823105409013",
+      "ua_veres_pickled_cucumbers_04823105408481",
+      "ua_veres_pickled_tomatoes_04823105405824",
+      "ua_veres_champignons_sterilized_04823105400140",
+      "ua_brivais_vilnis_riga_sprats_oil_04750616001132",
+      "ua_brivais_vilnis_sprat_pate_04750616002634",
+      "ua_brivais_vilnis_sardines_tomato_04750616001439",
+      "ua_brivais_vilnis_mackerel_tomato_04750616001446",
+      "ua_brivais_vilnis_roasted_sprats_tomato_04750616002337",
+      "ua_brivais_vilnis_mackerel_oil_04750616001255",
+      "ua_brivais_vilnis_smoked_baltic_herring_oil_04750616001163",
+      "ua_delphi_kalamata_brine_05201306700396",
+      "ua_delphi_kalamata_pitted_marinated_05201306822074",
+      "ua_delphi_kalamata_marinated_oil_05201306810316",
+      "ua_veres_strawberry_jam_04823105400348",
+      "ua_iberica_pineapple_rings_syrup_08436024298925",
+      "ua_iberica_pineapple_pieces_syrup_08436024298918"
+    ],
+    "drinks": [
+      "ua_sprite_original_05449000027368",
+      "ua_schweppes_indian_tonic_05449000312105",
+      "ua_schweppes_bitter_lemon_05449000064110",
+      "ua_schweppes_pomegranate_05449000030856",
+      "ua_sadochok_multifruit_drink_04823063130318",
+      "ua_sadochok_tomato_salt_4823063107303",
+      "ua_sandora_apple_4823063132114",
+      "ua_sandora_peach_nectar_4823063132091",
+      "ua_sandora_cocktail_grapefruit_4823063129299",
+      "ua_sandora_cocktail_red_grape_4823063129275",
+      "ua_jaffa_orange_nectar_04820003689721",
+      "ua_jaffa_apple_juice",
+      "ua_jaffa_multifruit_juice",
+      "ua_jaffa_tomato_sea_salt_juice",
+      "ua_jaffa_pineapple_nectar",
+      "ua_jaffa_banana_strawberry_nectar",
+      "ua_galicia_apple_pear_direct",
+      "ua_nash_sik_apple_clarified",
+      "ua_biola_apple_juice",
+      "ua_galicia_multifruit_4820209563481",
+      "ua_biola_mango_orange_4820209111965",
+      "ua_biola_breakfast_orange_4820209114409",
+      "ua_biola_multivitamin_4820209113877",
+      "ua_nash_sik_tomato_4820264290681",
+      "ua_nash_sik_multifruit_nectar",
+      "ua_nash_sik_orange",
+      "ua_biola_tomato_4820209111217"
+    ],
+    "meat": [
+      "ua_yatran_milk_sausages",
+      "ua_yatran_sausages_crust"
+    ],
+    "baby_food": [
+      "ua_gerber_broccoli_puree_80",
+      "ua_milupa_buckwheat_dairyfree_170",
+      "ua_gerber_apple_puree",
+      "ua_gerber_apple_prune_puree",
+      "ua_gerber_apple_pumpkin_puree",
+      "ua_hipp_first_apple_125",
+      "ua_milupa_oat_dairyfree",
+      "ua_milupa_rice_dairyfree",
+      "ua_gerber_pear_puree",
+      "ua_gerber_carrot_puree",
+      "ua_milupa_corn_dairyfree"
+    ]
+  },
+  "approved_with_merge_time_dedup": [
+    {
+      "id": "ua_pasta_durum_dry_generic",
+      "reason": "Runtime already has ua_spaghetti_dry C74.7; do not add a competing generic dry durum identity unless semantic dedup selects one."
+    },
+    {
+      "id": "ua_oat_flakes_dry_generic",
+      "reason": "Plain oat-flake labels vary materially; keep one existing/runtime generic identity rather than averaging or duplicating."
+    },
+    {
+      "id": "ua_generic_pork_raw",
+      "reason": "Potentially useful raw generic; add only if no semantically equivalent raw runtime entry."
+    },
+    {
+      "id": "ua_generic_beef_raw",
+      "reason": "Potentially useful raw generic; add only if no semantically equivalent raw runtime entry."
+    },
+    {
+      "id": "ua_generic_turkey_breast_raw",
+      "reason": "Potentially useful raw generic; add only if no semantically equivalent raw runtime entry."
+    }
+  ],
+  "blocked_or_pending": [
+    {
+      "ids": [
+        "ua_generic_chicken_breast_raw"
+      ],
+      "reason": "Runtime already contains p015 Куряче філе, сире."
+    },
+    {
+      "ids": [
+        "ua_generic_potato_baked_plain",
+        "ua_generic_shrimp_cooked_plain",
+        "ua_generic_squid_cooked_plain",
+        "ua_generic_mussels_cooked_plain",
+        "ua_generic_octopus_cooked_plain"
+      ],
+      "reason": "Audit cites USDA FoodData Central generically but exact FDC identity was not captured; defer rather than merge on trust."
+    },
+    {
+      "ids": [
+        "ua_globino_likarska_boiled",
+        "ua_globino_ham_appetytna",
+        "ua_globino_ukrainian_dry_smoked",
+        "ua_yatran_sardelky_zvychayni",
+        "ua_globino_hunting_sausages",
+        "ua_generic_liver_pate",
+        "ua_generic_bacon",
+        "ua_generic_buzhenina",
+        "ua_generic_pork_balyk"
+      ],
+      "reason": "B/generic/vague or conflicting meat evidence; not required for this APK."
+    },
+    {
+      "ids": [
+        "ua_mivina_mashed_potato_cream_37_pending",
+        "ua_mivina_mashed_potato_cream_120_pending",
+        "ua_reeva_noodles_beef_85_pending",
+        "ua_mivina_noodles_chicken_alt_formula_pending"
+      ],
+      "reason": "Instant-food nutrition/basis conflicts or incomplete macros."
+    },
+    {
+      "ids": [
+        "ua_barilla_protein_plus_spaghetti",
+        "ua_metrochef_udon",
+        "ua_js_soba",
+        "ua_metrochef_soba"
+      ],
+      "reason": "Pasta nutrition/recipe conflicts unresolved."
+    },
+    {
+      "ids": [
+        "ua_generic_wild_strawberry",
+        "ua_generic_sea_buckthorn"
+      ],
+      "reason": "Wild-strawberry baseline mismatch; sea-buckthorn record not verified."
+    },
+    {
+      "ids": [
+        "ua_silpo_plov_chicken_culinary",
+        "ua_silpo_meat_meatballs_culinary",
+        "ua_silpo_olivier_905074",
+        "ua_silpo_herring_under_fur_coat_90740",
+        "ua_silpo_cabbage_rolls_meat_rice_910085",
+        "ua_silpo_pork_goulash_90761",
+        "ua_silpo_pasta_bolognese_962055",
+        "ua_silpo_rice_chicken_egg_oyster_919757"
+      ],
+      "reason": "Recipe-dependent retailer culinary products are B-level; defer to a later exact-page refresh rather than block this APK."
+    },
+    {
+      "ids": [
+        "sweets_early_audit_group",
+        "snacks_early_audit_group"
+      ],
+      "reason": "Older audit records often lack EAN/source_ref; require exact revalidation before runtime promotion."
+    },
+    {
+      "ids": [
+        "canned_pending_review_*"
+      ],
+      "reason": "Material recipe/EAN/label-generation conflicts remain documented in canned pending files."
+    },
+    {
+      "ids": [
+        "frozen_semifinished_pending_syrnyky"
+      ],
+      "reason": "Makey Premium classic syrnyky exact-EAN material carbohydrate conflict remains unresolved."
+    }
+  ],
+  "notes": [
+    "Frozen and dairy audit files remain eligible only according to their previously revalidated strong candidates; merge implementation must resolve exact IDs from source files before adding them.",
+    "Already integrated categories (grains/legumes, bread/bakery, sauces) are not repeated in this whitelist."
+  ]
+}
