@@ -24,22 +24,38 @@ class FoodItem {
   double get carbs=>grams*product.carbs/100;
 }
 
-Future<List<Product>> loadProducts() async {
+Future<List<Product>>? _bundledProductsFuture;
+Future<List<Product>>? _allProductsFuture;
+
+Future<List<Product>> loadProducts() {
+  return _bundledProductsFuture ??= _loadBundledProducts();
+}
+
+Future<List<Product>> _loadBundledProducts() async {
   final raw=await rootBundle.loadString('assets/products.json');
   final usdaRaw=await rootBundle.loadString('assets/usda_products.json');
   final brandedRaw=await rootBundle.loadString('assets/ua_branded_products.json');
   final local=(jsonDecode(raw) as List).map((e)=>Product.fromJson(e)).toList();
   final branded=(jsonDecode(brandedRaw) as List).map((e)=>Product.fromJson(e)).toList();
   final usda=(jsonDecode(usdaRaw) as List).map((e)=>Product.fromJson(e)).toList();
-  return [...local,...branded,...usda];
+  return List<Product>.unmodifiable([...local,...branded,...usda]);
 }
-Future<List<Product>> loadAllProducts() async {
+
+Future<List<Product>> loadAllProducts() {
+  return _allProductsFuture ??= _loadAllProductsUncached();
+}
+
+Future<List<Product>> _loadAllProductsUncached() async {
   final base = await loadProducts();
   final customRows = await AppDb.customProducts();
   final custom = customRows.map(Product.fromCustomDb).toList();
   final byId = <String, Product>{for (final x in base) x.id: x};
   for (final x in custom) { byId[x.id] = x; }
-  return byId.values.toList();
+  return List<Product>.unmodifiable(byId.values);
+}
+
+void invalidateAllProductsCache() {
+  _allProductsFuture = null;
 }
 
 class AppDb {
@@ -134,10 +150,16 @@ class AppDb {
     }
     return null;
   }
-  static Future<void> saveCustomProduct(Product x)async=> (await db).insert('custom_products',{
+  static Future<void> saveCustomProduct(Product x)async {
+    await (await db).insert('custom_products',{
     'id':x.id,'name':x.name,'category':x.category,'carbs':x.carbs,'protein':x.protein,'fat':x.fat,'fiber':x.fiber,'calories':x.calories,'barcode':x.barcode,'manufacturer':x.manufacturer,'source':x.source,'updated_at':x.updatedAt,'grams_per_piece':x.gramsPerPiece,'grams_per_ml':x.gramsPerMl,'serving_grams':x.servingGrams,'barcodes':x.allBarcodes.join(','),'nutrition_basis':x.nutritionBasis,'quantity_units':x.quantityUnits.join(',')},
     conflictAlgorithm:ConflictAlgorithm.replace);
-  static Future<void> deleteCustomProduct(String id)async=>(await db).delete('custom_products',where:'id=?',whereArgs:[id]);
+    invalidateAllProductsCache();
+  }
+  static Future<void> deleteCustomProduct(String id)async{
+    await (await db).delete('custom_products',where:'id=?',whereArgs:[id]);
+    invalidateAllProductsCache();
+  }
   static Future<Product?> customProductById(String id) async {
     final rows=await (await db).query('custom_products',where:'id=?',whereArgs:[id],limit:1);
     return rows.isEmpty ? null : Product.fromCustomDb(rows.first);
