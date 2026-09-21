@@ -1091,25 +1091,6 @@
     "verified": true
   },
   {
-    "id": "ua_bonduelle_cranberry",
-    "name": "Клюква",
-    "aliases": [
-      "журавлина"
-    ],
-    "category": "Ягоди",
-    "state": "raw",
-    "carbs": 3.8,
-    "protein": 0.5,
-    "fat": 0,
-    "calories": 26,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
-  },
-  {
     "id": "ua_bonduelle_kohlrabi",
     "name": "Кольрабі",
     "category": "Овочі",
@@ -2984,7 +2965,10 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "клюква"
+    ]
   },
   {
     "id": "ua_prodiabet_gooseberry",
