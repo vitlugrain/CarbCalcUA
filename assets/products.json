@@ -11830,23 +11830,6 @@
     "barcode": ""
   },
   {
-    "id": "p002",
-    "name": "Картопля, варена",
-    "category": "Овочі",
-    "carbs": 20,
-    "protein": 1.9,
-    "fat": 0.1,
-    "fiber": 1.8,
-    "calories": 87,
-    "state": "cooked",
-    "barcode": "",
-    "aliases": [
-      "картопля",
-      "картошка",
-      "варена картопля"
-    ]
-  },
-  {
     "id": "p003",
     "name": "Морква, сира",
     "category": "Овочі",
@@ -12119,24 +12102,6 @@
     "barcode": ""
   },
   {
-    "id": "p020",
-    "name": "Помідор, сирий",
-    "category": "Овочі",
-    "carbs": 3.9,
-    "protein": 0.9,
-    "fat": 0.2,
-    "fiber": 1.2,
-    "calories": 18,
-    "state": "raw",
-    "barcode": "",
-    "glycemic_index": 20,
-    "glycemic_index_source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "glycemic_index_source_name": "Томати",
-    "glycemic_load_source_100g": null,
-    "glycemic_source_carbs_100g": 3.8,
-    "glycemic_source_calories_100g": 31
-  },
-  {
     "id": "p021",
     "name": "Гречка варена на воді",
     "category": "Крупи",
@@ -12279,24 +12244,6 @@
     "source": "Generic food data"
   },
   {
-    "id": "p030",
-    "name": "Огірок, сирий",
-    "category": "Овочі",
-    "carbs": 3.6,
-    "protein": 0.7,
-    "fat": 0.1,
-    "fiber": 0.5,
-    "calories": 15,
-    "state": "raw",
-    "barcode": "",
-    "glycemic_index": 25,
-    "glycemic_index_source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "glycemic_index_source_name": "Огірки",
-    "glycemic_load_source_100g": null,
-    "glycemic_source_carbs_100g": 1.9,
-    "glycemic_source_calories_100g": 11
-  },
-  {
     "id": "p032",
     "name": "Кабачок, сирий",
     "category": "Овочі",
@@ -12317,18 +12264,6 @@
     "fat": 0.4,
     "fiber": 2.6,
     "calories": 34,
-    "state": "raw",
-    "barcode": ""
-  },
-  {
-    "id": "p034",
-    "name": "Цвітна капуста, свіжа",
-    "category": "Овочі",
-    "carbs": 5,
-    "protein": 1.9,
-    "fat": 0.3,
-    "fiber": 2,
-    "calories": 25,
     "state": "raw",
     "barcode": ""
   },
