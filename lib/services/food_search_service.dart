@@ -19,6 +19,8 @@ class FoodSearchResult {
 }
 
 class FoodSearchService {
+  static final Expando<_PreparedProduct> _preparedCache = Expando<_PreparedProduct>('food-search');
+
   static ParsedFoodQuery parseQuery(String input) {
     final original = input.trim();
     if (original.isEmpty) return const ParsedFoodQuery(original: '', productQuery: '');
@@ -94,9 +96,10 @@ class FoodSearchService {
     final parsed=parseQuery(query); final q=normalize(parsed.productQuery); if(q.isEmpty)return [];
     final qTokens=_tokens(q); final translatedTokens=_translatedTokens(qTokens); final results=<FoodSearchResult>[];
     for(final p in products){
-      final name=normalize(p.name); final nameTokens=_tokens(p.name); final aliasText=p.aliases.join(' '); final aliasTokens=_tokens(aliasText);
-      final manufacturer=normalize(p.manufacturer??''); final manufacturerTokens=_tokens(p.manufacturer??''); final category=normalize(p.category); final categoryTokens=_tokens(p.category);
-      final searchableTokens=<String>{...nameTokens,...aliasTokens,...manufacturerTokens,...categoryTokens}.toList(); var score=0.0; var matched=0;
+      final prepared=_preparedCache[p] ??= _PreparedProduct.fromProduct(p);
+      final name=prepared.name; final nameTokens=prepared.nameTokens; final aliasText=prepared.aliasText;
+      final manufacturer=prepared.manufacturer; final category=prepared.category;
+      final searchableTokens=prepared.searchableTokens; var score=0.0; var matched=0;
       if(name==q)score+=180; if(name.contains(q))score+=72; if(aliasText.isNotEmpty&&normalize(aliasText).contains(q))score+=60; if(manufacturer.isNotEmpty&&manufacturer.contains(q))score+=48;
       if(category==q)score+=95; else if(category.isNotEmpty&&category.contains(q))score+=50;
       for(final token in qTokens){
@@ -136,4 +139,35 @@ class FoodSearchService {
   static double _usdaContextScore(List<String> query,List<String> name){double score=0;bool has(String s)=>query.contains(s);bool any(List<String> t)=>t.any(name.contains);if(has('варен'))score+=any(['cooked','boiled'])?34:0;if(has('смажен'))score+=any(['fried'])?34:0;if(has('запечен'))score+=any(['baked','roasted'])?34:0;if(has('сух'))score+=any(['dry','uncooked'])?28:0;if(has('свіж'))score+=any(['fresh'])?24:0;if(has('сирстан'))score+=any(['raw'])?28:0;if(has('молок'))score+=any(['milk'])?24:0;return score;}
   static double _similar(String a,List<String> candidates){var best=0.0;for(final b in candidates){final maxLen=math.max(a.length,b.length);if(maxLen==0)continue;final d=_levenshtein(a,b);best=math.max(best,1-d/maxLen);}return best;}
   static int _levenshtein(String a,String b){final prev=List<int>.generate(b.length+1,(i)=>i);for(var i=0;i<a.length;i++){var left=i+1;var diag=i;for(var j=0;j<b.length;j++){final up=prev[j+1];final cost=a.codeUnitAt(i)==b.codeUnitAt(j)?0:1;prev[j+1]=math.min(math.min(up+1,left+1),diag+cost);diag=up;left=prev[j+1];}prev[0]=i+1;}return prev[b.length];}
+}
+
+
+class _PreparedProduct {
+  final String name;
+  final List<String> nameTokens;
+  final String aliasText;
+  final String manufacturer;
+  final String category;
+  final List<String> searchableTokens;
+
+  const _PreparedProduct({required this.name,required this.nameTokens,required this.aliasText,required this.manufacturer,required this.category,required this.searchableTokens});
+
+  factory _PreparedProduct.fromProduct(Product p) {
+    final name=FoodSearchService.normalize(p.name);
+    final nameTokens=FoodSearchService._tokens(p.name);
+    final aliasText=p.aliases.join(' ');
+    final aliasTokens=FoodSearchService._tokens(aliasText);
+    final manufacturer=FoodSearchService.normalize(p.manufacturer??'');
+    final manufacturerTokens=FoodSearchService._tokens(p.manufacturer??'');
+    final category=FoodSearchService.normalize(p.category);
+    final categoryTokens=FoodSearchService._tokens(p.category);
+    return _PreparedProduct(
+      name:name,
+      nameTokens:nameTokens,
+      aliasText:aliasText,
+      manufacturer:manufacturer,
+      category:category,
+      searchableTokens:<String>{...nameTokens,...aliasTokens,...manufacturerTokens,...categoryTokens}.toList(growable:false),
+    );
+  }
 }
