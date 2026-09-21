@@ -13220,32 +13220,6 @@
     "source": "Generic food data"
   },
   {
-    "id": "p109",
-    "name": "Вареники з картоплею",
-    "category": "Готові страви",
-    "carbs": 31,
-    "protein": 5,
-    "fat": 3,
-    "fiber": 2,
-    "calories": 175,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p110",
-    "name": "Пельмені, варені",
-    "category": "Готові страви",
-    "carbs": 25,
-    "protein": 10,
-    "fat": 10,
-    "fiber": 1.5,
-    "calories": 230,
-    "state": "cooked",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
     "id": "p111",
     "name": "Сир моцарела",
     "category": "Молочні",
