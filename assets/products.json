@@ -1923,7 +1923,14 @@
     "barcode": "03083680025881",
     "manufacturer": "Bonduelle",
     "source": "Bonduelle Україна — офіційна сторінка продукту",
-    "verified": true
+    "verified": true,
+    "barcodes": [
+      "03083680025881",
+      "03083681068184"
+    ],
+    "aliases": [
+      "кукурудза солодка Gold мініконсерва Bonduelle"
+    ]
   },
   {
     "id": "ua_bonduelle_product_03083680048774",
@@ -2092,25 +2099,6 @@
       "г"
     ],
     "barcode": "03083681063356",
-    "manufacturer": "Bonduelle",
-    "source": "Bonduelle Україна — офіційна сторінка продукту",
-    "verified": true
-  },
-  {
-    "id": "ua_bonduelle_product_03083681068184",
-    "name": "Кукурудза солодка Gold мініконсерва Bonduelle",
-    "category": "Bonduelle",
-    "state": "prepared",
-    "carbs": 11,
-    "protein": 2.7,
-    "fat": 1.4,
-    "fiber": 3,
-    "calories": 73,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "barcode": "03083681068184",
     "manufacturer": "Bonduelle",
     "source": "Bonduelle Україна — офіційна сторінка продукту",
     "verified": true
