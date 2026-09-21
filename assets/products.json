@@ -20250,5 +20250,1013 @@
     "package_g": 70,
     "verified": true,
     "runtime_merge": false
+  },
+  {
+    "id": "ua_generic_tomato_raw",
+    "name": "Помідор свіжий",
+    "aliases": [
+      "томат свіжий",
+      "помідори"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 3.9,
+    "protein": 0.9,
+    "fat": 0.2,
+    "calories": 18,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard raw-vegetable reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_cucumber_raw_with_peel",
+    "name": "Огірок свіжий зі шкіркою",
+    "aliases": [
+      "огірок свіжий",
+      "огірки"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 3.63,
+    "protein": 0.65,
+    "fat": 0.11,
+    "calories": 15,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central FDC 168409",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_garlic_raw",
+    "name": "Часник сирий",
+    "aliases": [
+      "часник свіжий"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 33.06,
+    "protein": 6.36,
+    "fat": 0.5,
+    "calories": 149,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "зубчик"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_red_bell_pepper_raw",
+    "name": "Перець солодкий червоний сирий",
+    "aliases": [
+      "перець болгарський червоний",
+      "червоний солодкий перець"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 6.03,
+    "protein": 0.99,
+    "fat": 0.3,
+    "calories": 31,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_broccoli_raw",
+    "name": "Броколі сирі",
+    "aliases": [
+      "броколі свіжі"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 6.64,
+    "protein": 2.82,
+    "fat": 0.37,
+    "calories": 34,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_cauliflower_raw",
+    "name": "Цвітна капуста сира",
+    "aliases": [
+      "капуста цвітна свіжа"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 4.97,
+    "protein": 1.92,
+    "fat": 0.28,
+    "calories": 25,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_spinach_raw",
+    "name": "Шпинат сирий",
+    "aliases": [
+      "шпинат свіжий"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 3.63,
+    "protein": 2.86,
+    "fat": 0.39,
+    "calories": 23,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_leaf_lettuce_raw",
+    "name": "Салат листовий свіжий",
+    "aliases": [
+      "листя салату",
+      "зелений салат"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 2.87,
+    "protein": 1.36,
+    "fat": 0.15,
+    "calories": 15,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_radish_raw",
+    "name": "Редиска сира",
+    "aliases": [
+      "редиска свіжа",
+      "редис"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 3.4,
+    "protein": 0.68,
+    "fat": 0.1,
+    "calories": 16,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_celery_stalk_raw",
+    "name": "Селера стеблова сира",
+    "aliases": [
+      "селера стеблова",
+      "стебло селери"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 2.97,
+    "protein": 0.69,
+    "fat": 0.17,
+    "calories": 14,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "стебло"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_green_onion_raw",
+    "name": "Цибуля зелена сира",
+    "aliases": [
+      "зелена цибуля",
+      "перо цибулі"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.34,
+    "protein": 1.83,
+    "fat": 0.19,
+    "calories": 32,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_dill_fresh",
+    "name": "Кріп свіжий",
+    "aliases": [
+      "кріп"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.02,
+    "protein": 3.46,
+    "fat": 1.12,
+    "calories": 43,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_parsley_fresh",
+    "name": "Петрушка свіжа",
+    "aliases": [
+      "петрушка",
+      "зелень петрушки"
+    ],
+    "category": "Овочі",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 6.33,
+    "protein": 2.97,
+    "fat": 0.79,
+    "calories": 36,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_blackberry_raw",
+    "name": "Ожина свіжа",
+    "aliases": [
+      "ожина",
+      "ожина сира"
+    ],
+    "category": "Ягоди",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 9.61,
+    "protein": 1.39,
+    "fat": 0.49,
+    "calories": 43,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_nectarine_raw",
+    "name": "Нектарин свіжий",
+    "aliases": [
+      "нектарин"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 10.55,
+    "protein": 1.06,
+    "fat": 0.32,
+    "calories": 44,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_pomelo_raw",
+    "name": "Помело свіже",
+    "aliases": [
+      "помело"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 9.62,
+    "protein": 0.76,
+    "fat": 0.04,
+    "calories": 38,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_papaya_raw",
+    "name": "Папая свіжа",
+    "aliases": [
+      "папая"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 10.82,
+    "protein": 0.47,
+    "fat": 0.26,
+    "calories": 43,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_passionfruit_raw",
+    "name": "Маракуйя свіжа",
+    "aliases": [
+      "маракуйя",
+      "плід пасифлори"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 23.38,
+    "protein": 2.2,
+    "fat": 0.7,
+    "calories": 97,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_quince_raw",
+    "name": "Айва свіжа",
+    "aliases": [
+      "айва"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 15.3,
+    "protein": 0.4,
+    "fat": 0.1,
+    "calories": 57,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_wild_strawberry_raw",
+    "name": "Суниця свіжа",
+    "aliases": [
+      "суниця",
+      "суниця лісова"
+    ],
+    "category": "Ягоди",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.68,
+    "protein": 0.67,
+    "fat": 0.3,
+    "calories": 32,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central strawberry raw reference; used as generic Fragaria nutrition baseline",
+    "verification_level": "B generic reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic",
+    "note": "Cultivar/species can vary; keep separate from sweetened or processed strawberry products."
+  },
+  {
+    "id": "ua_generic_mulberry_raw",
+    "name": "Шовковиця свіжа",
+    "aliases": [
+      "шовковиця"
+    ],
+    "category": "Ягоди",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 9.8,
+    "protein": 1.44,
+    "fat": 0.39,
+    "calories": 43,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard mulberry raw reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_hazelnut_raw",
+    "name": "Фундук сирий",
+    "aliases": [
+      "фундук",
+      "лісовий горіх"
+    ],
+    "category": "Горіхи",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 16.7,
+    "protein": 15,
+    "fat": 60.75,
+    "calories": 628,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_cashew_raw",
+    "name": "Кеш'ю сирий",
+    "aliases": [
+      "кеш'ю",
+      "кешью"
+    ],
+    "category": "Горіхи",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 30.19,
+    "protein": 18.22,
+    "fat": 43.85,
+    "calories": 553,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_pistachio_raw",
+    "name": "Фісташки сирі",
+    "aliases": [
+      "фісташки",
+      "фісташка"
+    ],
+    "category": "Горіхи",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 27.17,
+    "protein": 20.16,
+    "fat": 45.32,
+    "calories": 560,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_pumpkin_seeds_raw",
+    "name": "Насіння гарбуза сире",
+    "aliases": [
+      "гарбузове насіння",
+      "насіння гарбуза"
+    ],
+    "category": "Насіння",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 10.71,
+    "protein": 30.23,
+    "fat": 49.05,
+    "calories": 559,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_sesame_seeds",
+    "name": "Кунжут",
+    "aliases": [
+      "насіння кунжуту"
+    ],
+    "category": "Насіння",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 23.45,
+    "protein": 17.73,
+    "fat": 49.67,
+    "calories": 573,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_flaxseed",
+    "name": "Насіння льону",
+    "aliases": [
+      "льон насіння",
+      "лляне насіння"
+    ],
+    "category": "Насіння",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 28.88,
+    "protein": 18.29,
+    "fat": 42.16,
+    "calories": 534,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_chia_seeds",
+    "name": "Насіння чіа",
+    "aliases": [
+      "чіа"
+    ],
+    "category": "Насіння",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 42.12,
+    "protein": 16.54,
+    "fat": 30.74,
+    "calories": 486,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_prunes_dried",
+    "name": "Чорнослив",
+    "aliases": [
+      "слива сушена",
+      "сушені сливи"
+    ],
+    "category": "Сухофрукти",
+    "state": "prepared",
+    "brand": null,
+    "barcode": null,
+    "carbs": 63.88,
+    "protein": 2.18,
+    "fat": 0.38,
+    "calories": 240,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard dried prunes reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_figs_dried",
+    "name": "Інжир сушений",
+    "aliases": [
+      "сушений інжир",
+      "фіги сушені"
+    ],
+    "category": "Сухофрукти",
+    "state": "prepared",
+    "brand": null,
+    "barcode": null,
+    "carbs": 63.87,
+    "protein": 3.3,
+    "fat": 0.93,
+    "calories": 249,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "шт"
+    ],
+    "source": "USDA FoodData Central standard dried figs reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_apples_dried",
+    "name": "Яблука сушені",
+    "aliases": [
+      "сушені яблука",
+      "яблуко сушене"
+    ],
+    "category": "Сухофрукти",
+    "state": "prepared",
+    "brand": null,
+    "barcode": null,
+    "carbs": 65.89,
+    "protein": 0.93,
+    "fat": 0.32,
+    "calories": 243,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard dried apples reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_pears_dried",
+    "name": "Груші сушені",
+    "aliases": [
+      "сушені груші",
+      "груша сушена"
+    ],
+    "category": "Сухофрукти",
+    "state": "prepared",
+    "brand": null,
+    "barcode": null,
+    "carbs": 69.7,
+    "protein": 1.87,
+    "fat": 0.63,
+    "calories": 262,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central standard dried pears reference",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_gerber_broccoli_puree_80",
+    "name": "Gerber Пюре Броколі 80 г",
+    "aliases": [
+      "пюре Gerber броколі",
+      "дитяче пюре броколі Gerber"
+    ],
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 1.7,
+    "protein": 2,
+    "fat": 0.4,
+    "calories": 18,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product page; Silpo retailer cross-check",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first",
+    "note": "Official composition: broccoli puree 80%, drinking water 20%; no added salt or starch."
+  },
+  {
+    "id": "ua_milupa_buckwheat_dairyfree_170",
+    "name": "Milupa Каша безмолочна Гречана 170 г",
+    "aliases": [
+      "Milupa гречана безмолочна",
+      "каша дитяча гречана Milupa"
+    ],
+    "category": "Дитяче харчування",
+    "state": "dry",
+    "brand": "Milupa",
+    "barcode": "5900852039003",
+    "carbs": 73.9,
+    "protein": 13.9,
+    "fat": 3.5,
+    "calories": 396,
+    "nutrition_basis": "100g dry",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Milupa Ukraine official product page; Silpo/Rozetka cross-check",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first",
+    "note": "Dry-basis nutrition. Preparation with water changes weight, not total carbohydrate amount from the dry cereal."
+  },
+  {
+    "id": "ua_gerber_apple_puree",
+    "name": "Gerber Пюре Яблуко",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 10.9,
+    "protein": 0.3,
+    "fat": 0.2,
+    "calories": 46,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_gerber_apple_prune_puree",
+    "name": "Gerber Пюре Яблуко і чорнослив",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 15.2,
+    "protein": 0.5,
+    "fat": 0.2,
+    "calories": 64,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_gerber_apple_pumpkin_puree",
+    "name": "Gerber Пюре Яблуко і гарбуз",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 10,
+    "protein": 0.4,
+    "fat": 0.2,
+    "calories": 43,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_hipp_first_apple_125",
+    "name": "HiPP Органічне пюре Перше дитяче яблуко 125 г",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "HiPP",
+    "barcode": null,
+    "carbs": 11.2,
+    "protein": 0.3,
+    "fat": 0,
+    "calories": 50,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "HiPP Ukraine official product sheet AL4233-02-U",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_milupa_oat_dairyfree",
+    "name": "Milupa Каша безмолочна Вівсяна",
+    "category": "Дитяче харчування",
+    "state": "dry",
+    "brand": "Milupa",
+    "barcode": null,
+    "carbs": 65.7,
+    "protein": 15.4,
+    "fat": 6.9,
+    "calories": 400,
+    "nutrition_basis": "100g dry",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Milupa Ukraine official product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first",
+    "note": "Dry-basis nutrition; preparation with water changes weight, not total carbohydrates from dry cereal."
+  },
+  {
+    "id": "ua_milupa_rice_dairyfree",
+    "name": "Milupa Каша безмолочна Рисова",
+    "category": "Дитяче харчування",
+    "state": "dry",
+    "brand": "Milupa",
+    "barcode": null,
+    "carbs": 86.5,
+    "protein": 7.6,
+    "fat": 1.4,
+    "calories": 393,
+    "nutrition_basis": "100g dry",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Milupa Ukraine official product page",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first",
+    "note": "Dry-basis nutrition; preparation with water changes weight, not total carbohydrates from dry cereal."
+  },
+  {
+    "id": "ua_gerber_pear_puree",
+    "name": "Gerber Пюре Груша",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 11.6,
+    "protein": 0.4,
+    "fat": 0.2,
+    "calories": 49,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product reference",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_gerber_carrot_puree",
+    "name": "Gerber Пюре Морква",
+    "category": "Дитяче харчування",
+    "state": "prepared",
+    "brand": "Gerber",
+    "barcode": null,
+    "carbs": 5.7,
+    "protein": 0.8,
+    "fat": 0.2,
+    "calories": 29,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "баночка"
+    ],
+    "source": "Nestlé Baby Ukraine official product reference",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first"
+  },
+  {
+    "id": "ua_milupa_corn_dairyfree",
+    "name": "Milupa Каша безмолочна Кукурудзяна",
+    "category": "Дитяче харчування",
+    "state": "dry",
+    "brand": "Milupa",
+    "barcode": null,
+    "carbs": 82.7,
+    "protein": 8.2,
+    "fat": 2.7,
+    "calories": 390,
+    "nutrition_basis": "100g dry",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Milupa Ukraine official product reference",
+    "verification_level": "A",
+    "verified": true,
+    "catalog_policy": "branded_first",
+    "note": "Dry-basis nutrition; water used for preparation changes final weight, not carbohydrate amount from dry cereal."
   }
 ]
