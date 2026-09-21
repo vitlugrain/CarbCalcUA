@@ -21535,5 +21535,217 @@
     "verified": true,
     "catalog_policy": "generic_first",
     "audit_note": "Generic-first classic whole sweetened condensed milk. High carbohydrate density is clinically relevant for CarbCalc. Separate branded identities are unnecessary for ordinary GOST/DSTU-style whole condensed milk unless label carbohydrates materially differ."
+  },
+  {
+    "id": "ua_levada_pelmeni_homemade_butter_4823074611165",
+    "name": "Пельмені Levada По-домашньому з вершковим маслом",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611165",
+    "carbs": 32.8,
+    "protein": 10.1,
+    "fat": 5.6,
+    "calories": 222,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "verification_level": "B",
+    "verified": true,
+    "source": "Levada current manufacturer assortment + exact-EAN Ukrainian product data / Silpo nutrition",
+    "audit_note": "Current Levada assortment confirms this frozen product. Exact EAN 4823074611165 and nutrition 32.8C/10.1P/5.6F/222 kcal are corroborated by current Ukrainian product data; Silpo independently reports the same nutrition. Branch runtime products.json checked by brand and exact EAN before creation; no Levada/exact-EAN match found."
+  },
+  {
+    "id": "ua_levada_pelmeni_turkey_4823074606123",
+    "name": "Пельмені Levada з м'ясом індички",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074606123",
+    "carbs": 40.9,
+    "protein": 11.7,
+    "fat": 6,
+    "calories": 264,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "verification_level": "B",
+    "verified": true,
+    "source": "Exact-EAN Ukrainian product data + Silpo nutrition; Levada manufacturer assortment corroborates turkey dumpling family",
+    "audit_note": "Exact EAN 4823074606123 is established for the 400 g turkey product and current retailer/product-data sources agree on 40.9 g carbohydrates, 11.7 g protein and 6 g fat per 100 g. Branch runtime products.json checked by brand and exact EAN before creation; no match found."
+  },
+  {
+    "id": "ua_levada_pelmeni_young_veal_4823074611059",
+    "name": "Пельмені Levada з молодою телятиною",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611059",
+    "carbs": 31.4,
+    "protein": 10,
+    "fat": 3.7,
+    "calories": 199,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "verification_level": "B",
+    "verified": true,
+    "source": "Levada current manufacturer assortment + exact-EAN Ukrainian product data",
+    "audit_note": "Current manufacturer assortment includes young-veal dumplings. Exact EAN 4823074611059 product data gives 31.4C/10P/3.7F/199 kcal per 100 g. Branch runtime products.json checked by brand and exact EAN before creation; no match found."
+  },
+  {
+    "id": "ua_levada_pelmeni_firm_beef_pork_4823074611158",
+    "name": "Пельмені Levada Фірмові з яловичиною та свининою",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611158",
+    "carbs": 28,
+    "protein": 11,
+    "fat": 12,
+    "calories": 265,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "verification_level": "B",
+    "verified": true,
+    "source": "Levada current manufacturer assortment + exact-EAN Ukrainian product data",
+    "audit_note": "Current Levada assortment confirms the Firmovi beef-and-pork product. Exact EAN 4823074611158 carries complete nutrition 28C/11P/12F/265 kcal per 100 g. Branch runtime products.json checked by brand and exact EAN before creation; no match found."
+  },
+  {
+    "id": "ua_levada_varenyky_potato_800",
+    "name": "Вареники Levada з картоплею",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "carbs": 35.6,
+    "protein": 5.2,
+    "fat": 2,
+    "calories": 182,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "verification_level": "C",
+    "source": "Current Ukrainian retail cards (Silpo + VARUS); current Levada manufacturer assortment corroborates product identity",
+    "verified": true,
+    "audit_note": "Current 800 g retail cards independently agree on 35.6 g carbs, 5.2 g protein, 2.0 g fat and 182 kcal per 100 g. Exact current 800 g EAN was not established reliably enough in this pass, so no barcode is attached. Branch-specific assets/products.json search found no Levada/name identity match."
+  },
+  {
+    "id": "ua_levada_varenyky_potato_mushroom_4823074611141",
+    "name": "Вареники Levada з картоплею та грибами",
+    "brand": "Levada",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823074611141",
+    "carbs": 37.2,
+    "protein": 5.9,
+    "fat": 2.2,
+    "calories": 192,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "verification_level": "B",
+    "source": "Listex exact-EAN 4823074611141 + current Silpo and VARUS 800 g cards",
+    "verified": true,
+    "audit_note": "Exact EAN and current 800 g retailer cards agree on 37.2 g carbs, 5.9 g protein, 2.2 g fat and 192 kcal per 100 g. A distinct 900 g EAN 4823074600404 has inconsistent retailer nutrition and is not merged into this identity. Branch-specific assets/products.json search found no exact EAN or Levada/name identity match."
+  },
+  {
+    "id": "ua_hercules_pelmeni_firmovi_4820020715465",
+    "name": "Пельмені Геркулес Фірмові",
+    "brand": "Геркулес",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4820020715465",
+    "carbs": 25.5,
+    "protein": 10.5,
+    "fat": 12.3,
+    "calories": 255,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г",
+      "порція"
+    ],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "B",
+    "source": "Silpo + Auchan/Zakaz + Listex exact-EAN identity",
+    "source_ref": "Current 800 g product: Silpo reports C25.5/P10.5/F12.3/255; Auchan/Zakaz exact EAN 4820020715465 reports the same profile. Listex verifies EAN 4820020715465 as Hercules Firmovi 800 g. Older EAN 4820020712204 with C26.3 belongs to an older recipe/generation and is not merged into this identity.",
+    "audit_note": "A/B/C audit candidate. Runtime merge requires final branch-specific duplicate/identity whitelist check. Do not attach older recipe EAN 4820020712204."
+  },
+  {
+    "id": "ua_three_bears_pelmeni_firmovi",
+    "name": "Пельмені «Фірмові» Три Ведмеді",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcodes": [
+      "4820039464279",
+      "4823086108011"
+    ],
+    "carbs": 27.5,
+    "protein": 9.7,
+    "fat": 14.8,
+    "calories": 282.5,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційний сайт виробника; Сільпо",
+    "source_ref": "Official current product pages: Фірмові 800 г EAN 4820039464279 and 400 г EAN 4823086108011 have identical nutrition (27.5 g carbs, 9.7 g protein, 14.8 g fat, 282.5 kcal per 100 g); current Silpo cards confirm the same nutrition. Package-size variants are represented as one recipe identity.",
+    "audit_note": "Selected representative SKU under category-first popular-brand policy. Branch-specific assets/products.json checked before audit inclusion: no Three Bears identity or EAN 4820039464279 found. Not runtime-merged yet; explicit whitelist still required."
+  },
+  {
+    "id": "ua_three_bears_varenyky_cherry_4823086101920",
+    "name": "Вареники Три Ведмеді з вишнею",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823086101920",
+    "carbs": 49.1,
+    "protein": 5,
+    "fat": 1.1,
+    "calories": 226.6,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційна сторінка продукту",
+    "source_ref": "Current manufacturer page: 400 g; EAN 4823086101920; per 100 g C 49.1 / P 5.0 / F 1.1 / 226.6 kcal. VARUS independently matches the same nutrition profile.",
+    "audit_note": "Representative fruit-filled varenyky identity. Branch-specific assets/products.json checked 2026-09-17 by exact EAN and brand; no existing runtime match found. Silpo currently shows a conflicting 46 g C / 4.7 P / 1.8 F / 223 kcal profile, so manufacturer exact-EAN/current product data is used and the retailer discrepancy is recorded rather than averaged."
+  },
+  {
+    "id": "ua_three_bears_varenyky_sweet_cottage_cheese_4823086101944",
+    "name": "Вареники Три Ведмеді з кисломолочним сиром солодкі",
+    "brand": "Три Ведмеді",
+    "category": "Заморожені напівфабрикати",
+    "state": "frozen",
+    "barcode": "4823086101944",
+    "carbs": 35,
+    "protein": 11,
+    "fat": 2.8,
+    "calories": 208,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "serving_grams": 100,
+    "verified": true,
+    "verification_level": "A",
+    "source": "Три Ведмеді — офіційна сторінка продукту",
+    "source_ref": "Current manufacturer page: 400 g; EAN 4823086101944; per 100 g C 35 / P 11 / F 2.8 / 208 kcal.",
+    "audit_note": "Representative sweet cottage-cheese varenyky identity. Branch-specific assets/products.json checked 2026-09-17 by exact EAN and brand; no existing runtime match found."
   }
 ]
