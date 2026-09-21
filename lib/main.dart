@@ -393,7 +393,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
     final carbs=preview?.carbs??0.0;
     final units=selected==null?<QuantityUnit>[QuantityUnit.grams]:_unitsFor(selected!);
     final hasParsedAmount=parsed.amount!=null;
-    return ListView(controller:pageScrollController,padding:const EdgeInsets.all(20),children:[
+    final bottomSafePadding=MediaQuery.viewPaddingOf(c).bottom;
+    return ListView(controller:pageScrollController,padding:EdgeInsets.fromLTRB(20,20,20,20+bottomSafePadding+96),children:[
       const Text('Додати їжу',style:TextStyle(fontSize:28,fontWeight:FontWeight.bold)),
       const SizedBox(height:14),
       DropdownButtonFormField<String>(value:meal,decoration:const InputDecoration(labelText:'Прийом їжі',border:OutlineInputBorder()),items:['Сніданок','Обід','Вечеря','Перекус'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(x){if(x==null)return;final now=DateTime.now();setState((){meal=x;mealGroupId=null;mealGroupExplicitSelection=false;mealTime='${now.hour.toString().padLeft(2,'0')}:${now.minute.toString().padLeft(2,'0')}';});}),
