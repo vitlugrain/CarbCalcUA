@@ -26,6 +26,7 @@ class FoodItem {
 
 Future<List<Product>>? _bundledProductsFuture;
 Future<List<Product>>? _allProductsFuture;
+Future<Map<String,Product>>? _productsByIdFuture;
 
 Future<List<Product>> loadProducts() {
   return _bundledProductsFuture ??= _loadBundledProducts();
@@ -54,8 +55,15 @@ Future<List<Product>> _loadAllProductsUncached() async {
   return List<Product>.unmodifiable(byId.values);
 }
 
+Future<Map<String,Product>> loadProductsById() {
+  return _productsByIdFuture ??= loadAllProducts().then(
+    (products)=>Map<String,Product>.unmodifiable({for(final product in products) product.id:product}),
+  );
+}
+
 void invalidateAllProductsCache() {
   _allProductsFuture = null;
+  _productsByIdFuture = null;
 }
 
 class AppDb {
@@ -616,12 +624,11 @@ class _DiaryPageState extends State<DiaryPage> {
 
   Future<Product?> productFor(Map<String, dynamic> row) async {
     final productId = row['product_id'] as String?;
-    final products = await loadAllProducts();
     if (productId != null) {
-      for (final product in products) {
-        if (product.id == productId) return product;
-      }
+      final product=(await loadProductsById())[productId];
+      if(product!=null)return product;
     }
+    final products = await loadAllProducts();
     for (final product in products) {
       if (product.name == row['name']) return product;
     }
