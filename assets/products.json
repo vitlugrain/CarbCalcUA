@@ -12073,21 +12073,6 @@
     "source": "Generic food data"
   },
   {
-    "id": "p024",
-    "name": "Йогурт натуральний",
-    "category": "Молочні",
-    "carbs": 4.5,
-    "protein": 4,
-    "fat": 2.5,
-    "fiber": 0,
-    "calories": 60,
-    "state": "raw",
-    "barcode": "",
-    "gramsPerMl": 1.03,
-    "servingGrams": 150,
-    "source": "Generic food data"
-  },
-  {
     "id": "p025",
     "name": "Хліб житній",
     "category": "Хліб",
@@ -12167,7 +12152,10 @@
     "calories": 235,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб висівковий"
+    ]
   },
   {
     "id": "p032",
@@ -12692,19 +12680,6 @@
     "fat": 4,
     "fiber": 4,
     "calories": 240,
-    "state": "raw",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p067",
-    "name": "Хліб висівковий",
-    "category": "Хліб",
-    "carbs": 39,
-    "protein": 9,
-    "fat": 3,
-    "fiber": 9,
-    "calories": 230,
     "state": "raw",
     "barcode": "",
     "source": "Generic food data"
@@ -20991,7 +20966,12 @@
     "verification_level": "A generic reference",
     "verified": true,
     "catalog_policy": "generic_first",
-    "audit_note": "Generic-first plain unsweetened yogurt reference. Current manufacturer profile C3.7/P4.1/F3.0/58.2. Lactose-free 3% version reports the same profile, so it is not duplicated as a separate carbohydrate identity."
+    "audit_note": "Generic-first plain unsweetened yogurt reference. Current manufacturer profile C3.7/P4.1/F3.0/58.2. Lactose-free 3% version reports the same profile, so it is not duplicated as a separate carbohydrate identity.",
+    "aliases": [
+      "йогурт натуральний",
+      "натуральний йогурт",
+      "йогурт без цукру"
+    ]
   },
   {
     "id": "ua_galychyna_yogurt_strawberry_wildstrawberry_2_2",
