@@ -61,3 +61,14 @@ Finish the five user-approved categories before the next APK: vegetables, fruit/
 
 ## Working rule for continuation
 At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDIT_STATUS.md` from `dev-large-update`. Before updating/deleting an existing GitHub file, refetch its current blob SHA. Do not bulk-merge audit files just because filenames contain `verified`.
+
+
+## Runtime integration checkpoint — 2026-09-21
+- Stable tested Android checkpoint remains APK #233.
+- Final catalog audit/revalidation is complete for the pre-APK integration scope.
+- `assets/runtime_whitelist_preintegration_2026-09-21.json` is the explicit integration gate.
+- `assets/products.json` now contains **1135 products** after controlled integration of approved audited blocks.
+- Validation checkpoint: **0 duplicate IDs** and **0 duplicate barcodes across different product IDs**.
+- Integrated in this cycle include canned foods, drinks, pasta, breakfast cereals, instant foods, produce gaps, nuts/seeds/dried fruit, baby food, strong meat candidates, revalidated dairy candidates, and verified frozen semifinished foods.
+- Deferred/conflicting records remain outside runtime (including pending instant-food conflicts, weak meat generics, unresolved USDA/FDC-reference gaps, recipe-dependent ready meals, weak early sweets/snacks, and pending frozen syrnyky conflict).
+- Next engineering step: implement the deferred bottom safe-area/scroll-padding fix for `Додати до щоденника`, preserving APK #233 quantity auto-scroll behavior; then run parse/analyze/tests and build the next APK.
