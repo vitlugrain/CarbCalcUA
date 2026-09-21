@@ -1178,22 +1178,6 @@
     "verified": true
   },
   {
-    "id": "ua_bonduelle_dill",
-    "name": "Кріп",
-    "category": "Зелень",
-    "state": "raw",
-    "carbs": 7.7,
-    "protein": 1.3,
-    "fat": 0.3,
-    "calories": 28,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
-  },
-  {
     "id": "ua_bonduelle_rabbit_boiled",
     "name": "Кролик, відварений",
     "category": "М'ясо",
@@ -1601,22 +1585,6 @@
     "verified": true
   },
   {
-    "id": "ua_bonduelle_radish",
-    "name": "Редиска",
-    "category": "Овочі",
-    "state": "raw",
-    "carbs": 4.4,
-    "protein": 1,
-    "fat": 0.2,
-    "calories": 14,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
-  },
-  {
     "id": "ua_bonduelle_turnip",
     "name": "Ріпа",
     "category": "Овочі",
@@ -1871,22 +1839,6 @@
     "nutrition_basis": "100ml",
     "quantity_units": [
       "мл"
-    ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
-  },
-  {
-    "id": "ua_bonduelle_garlic",
-    "name": "Часник",
-    "category": "Овочі",
-    "state": "raw",
-    "carbs": 32.6,
-    "protein": 6.4,
-    "fat": 0.5,
-    "calories": 146,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
     "verified": true
@@ -12357,18 +12309,6 @@
     "glycemic_source_calories_100g": 11
   },
   {
-    "id": "p031",
-    "name": "Перець солодкий червоний",
-    "category": "Овочі",
-    "carbs": 6,
-    "protein": 1,
-    "fat": 0.3,
-    "fiber": 2.1,
-    "calories": 31,
-    "state": "raw",
-    "barcode": ""
-  },
-  {
     "id": "p032",
     "name": "Кабачок, сирий",
     "category": "Овочі",
@@ -13336,19 +13276,6 @@
     "source": "Generic food data"
   },
   {
-    "id": "p095",
-    "name": "Салат листовий",
-    "category": "Овочі",
-    "carbs": 2.9,
-    "protein": 1.4,
-    "fat": 0.2,
-    "fiber": 1.3,
-    "calories": 15,
-    "state": "raw",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
     "id": "p096",
     "name": "Нут, варений",
     "category": "Бобові",
@@ -13666,19 +13593,6 @@
     "fat": 51.5,
     "fiber": 8.6,
     "calories": 584,
-    "state": "raw",
-    "barcode": "",
-    "source": "Generic food data"
-  },
-  {
-    "id": "p119",
-    "name": "Насіння гарбуза",
-    "category": "Насіння",
-    "carbs": 10.7,
-    "protein": 30.2,
-    "fat": 49.1,
-    "fiber": 6,
-    "calories": 559,
     "state": "raw",
     "barcode": "",
     "source": "Generic food data"
