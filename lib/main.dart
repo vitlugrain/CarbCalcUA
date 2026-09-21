@@ -185,7 +185,7 @@ class _HomePageState extends State<HomePage>{
   @override Widget build(BuildContext c){
     final pages=[
       Dashboard(onNavigate:(i)=>setState(()=>tab=i)),
-      AddFoodPage(onAdded:refresh),
+      AddFoodPage(onAdded:(){},onOpenDiary:()=>setState(()=>tab=3)),
       RecipesPage(onAdded:refresh),
       DiaryPage(onChanged:refresh),
       SettingsPage(onChanged:refresh),
@@ -232,11 +232,12 @@ class Dashboard extends StatelessWidget{
 
 class AddFoodPage extends StatefulWidget{
   final VoidCallback onAdded;
+  final VoidCallback? onOpenDiary;
   final String? initialMealGroupId;
   final String? initialMeal;
   final String? initialMealTime;
   final DateTime? initialMealDate;
-  const AddFoodPage({super.key,required this.onAdded,this.initialMealGroupId,this.initialMeal,this.initialMealTime,this.initialMealDate});
+  const AddFoodPage({super.key,required this.onAdded,this.onOpenDiary,this.initialMealGroupId,this.initialMeal,this.initialMealTime,this.initialMealDate});
   @override State<AddFoodPage> createState()=>_AddFoodPageState();
 }
 
@@ -252,6 +253,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
   DateTime mealDate = DateTime.now();
   ParsedFoodQuery parsed=const ParsedFoodQuery(original:'',productQuery:'');
   final controller=TextEditingController(text:'100');
+  final searchController=TextEditingController();
   final amountFocusNode=FocusNode();
   final quantitySectionKey=GlobalKey();
   final pageScrollController=ScrollController();
@@ -287,24 +289,21 @@ class _AddFoodPageState extends State<AddFoodPage>{
     if (picked != null && mounted) setState(() { mealTime = '${picked.hour.toString().padLeft(2,'0')}:${picked.minute.toString().padLeft(2,'0')}'; });
   }
 
-  @override void dispose(){controller.dispose();amountFocusNode.dispose();pageScrollController.dispose();super.dispose();}
+  @override void dispose(){controller.dispose();searchController.dispose();amountFocusNode.dispose();pageScrollController.dispose();super.dispose();}
 
   void _focusQuantitySection() {
     FocusManager.instance.primaryFocus?.unfocus();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await Future<void>.delayed(const Duration(milliseconds: 80));
-      if (!mounted || !pageScrollController.hasClients) return;
+      // Give Android a moment to start closing the keyboard before scrolling.
+      await Future<void>.delayed(const Duration(milliseconds: 160));
+      if (!mounted) return;
       final ctx = quantitySectionKey.currentContext;
-      final box = ctx?.findRenderObject() as RenderBox?;
-      if (box == null) return;
-      final globalTop = box.localToGlobal(Offset.zero).dy;
-      final target = (pageScrollController.offset + globalTop - 170.0)
-          .clamp(0.0, pageScrollController.position.maxScrollExtent)
-          .toDouble();
-      await pageScrollController.animateTo(
-        target,
-        duration: const Duration(milliseconds: 360),
-        curve: Curves.easeOutCubic,
+      if (ctx == null) return;
+      await Scrollable.ensureVisible(
+        ctx,
+        alignment:0.32,
+        duration:const Duration(milliseconds:260),
+        curve:Curves.easeOutCubic,
       );
     });
   }
@@ -441,6 +440,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
       ]),
       const SizedBox(height:12),
       TextField(
+        controller:searchController,
         decoration:const InputDecoration(labelText:'Що ви зʼїли?',hintText:'Наприклад: 150 г гречки вареної на воді',prefixIcon:Icon(Icons.search),border:OutlineInputBorder()),
         onChanged:_updateQuery,
       ),
@@ -491,6 +491,8 @@ class _AddFoodPageState extends State<AddFoodPage>{
           return Card(child:ListTile(title:const Text('Вуглеводи'),subtitle:Text('${displayXe.toStringAsFixed(2)} ХО'),trailing:Text('${displayCarbs.toStringAsFixed(1)} г',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold))));
         }),
         FilledButton(onPressed:amount>0&&preview!=null?()async{
+          // Close the numeric keyboard immediately on submit, before any I/O.
+          FocusManager.instance.primaryFocus?.unfocus();
           final xeGrams=await _xeGrams();
           String? effectiveGroupId = mealGroupId;
           var effectiveMealTime = mealTime;
@@ -525,7 +527,26 @@ class _AddFoodPageState extends State<AddFoodPage>{
           final finalResult=FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:xeGrams);
           if(finalResult==null)return;
           await AppDb.addDiary(date:_dateKey(mealDate),meal:meal,name:selected!.name,grams:finalResult.grams??0,amountValue:amount,amountUnit:unit.label,carbs:finalResult.carbs,xe:finalResult.xe,mealGroupId:groupId,mealTime:effectiveMealTime,productId:selected!.id);
-          if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Додано до щоденника')));
+          if(!mounted)return;
+          setState((){
+            selected=null;
+            q='';
+            parsed=const ParsedFoodQuery(original:'',productQuery:'');
+            amount=100;
+            unit=QuantityUnit.grams;
+            controller.text='100';
+          });
+          searchController.clear();
+          if(pageScrollController.hasClients){
+            pageScrollController.animateTo(0,duration:const Duration(milliseconds:220),curve:Curves.easeOutCubic);
+          }
+          final messenger=ScaffoldMessenger.of(context);
+          messenger.hideCurrentSnackBar();
+          messenger.showSnackBar(SnackBar(
+            duration:const Duration(milliseconds:1400),
+            content:const Text('✓ Додано до щоденника'),
+            action:widget.onOpenDiary==null?null:SnackBarAction(label:'Щоденник',onPressed:widget.onOpenDiary!),
+          ));
           widget.onAdded();
         }:null,child:const Text('Додати до щоденника')),
       ]
