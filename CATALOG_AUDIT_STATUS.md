@@ -239,3 +239,9 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Runtime count after this part: **1108 products**.
 - Commit: `a6d1760f547583c47ab88333a8f7ff4e8c8cb187`.
 - Continue Yarych only with current official products that have complete reliable nutrition; then move to ROSHEN → КОНТІ → Lukas. Do not add every pack size as a separate SKU.
+
+## Yarych branded expansion — PART 2 2026-09-22
+- Continued official-site verification. Added 3 products with complete current nutrition: `Матусине з какао` (70.6 g carbs/100 g), `Матусине з кокосом` (70.3 g/100 g), and `Crunch Time з маком` cracker (71.1 g/100 g).
+- Official category pages show many additional Maria, Petit Beurre and cracker variants, but category-list presence alone is not enough for runtime integration. Variants without a current official page exposing complete nutrition remain unadded until verified; do not infer nutrition from neighboring products.
+- Runtime count after Part 2: **1111 products**.
+- Commit: `98b157b544df51b93f7eaafe1dac68c3e2da2c5a`.
