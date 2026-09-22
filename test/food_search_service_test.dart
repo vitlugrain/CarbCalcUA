@@ -152,6 +152,17 @@ void main() {
     expect(r.any((x) => x.product.id == 'boiled-potato'), isTrue);
   });
 
+  test('base potato query is not truncated before fried variant in a larger result set', () {
+    final local = <Product>[
+      for (var i = 0; i < 12; i++)
+        Product(id: 'potato-$i', name: 'Картопля варіант $i', category: 'Овочі', carbs: 15 + i / 10),
+      Product(id: 'fried-potato-many', name: 'Картопля смажена', category: 'Готові страви', carbs: 23.4, state: 'prepared'),
+    ];
+    final r = FoodSearchService.search('картопля', local);
+    expect(r.any((x) => x.product.id == 'fried-potato-many'), isTrue);
+    expect(r.length, greaterThan(10));
+  });
+
   test('common Ukrainian base food names find their variants', () {
     final local = [
       Product(id: 'carrot', name: 'Морква, сира', category: 'Овочі', carbs: 9.6),
