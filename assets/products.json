@@ -22378,5 +22378,30 @@
       "борошно рисове",
       "мука рисова"
     ]
+  },
+  {
+    "id": "generic_pork_salo",
+    "name": "Сало свиняче",
+    "category": "М'ясо та м'ясні продукти",
+    "state": "raw",
+    "carbs": 0,
+    "protein": 2.9,
+    "fat": 88.7,
+    "calories": 810,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Сільпо — Свиняче сало 100%, харчова цінність на 100 г",
+    "source_url": "https://silpo.ua/product/svyniache-salo-32788",
+    "verification_level": "B retailer verified",
+    "verified": true,
+    "catalog_policy": "generic_first",
+    "aliases": [
+      "сало",
+      "свиняче сало",
+      "сало свиняче",
+      "сало свіже"
+    ]
   }
 ]
