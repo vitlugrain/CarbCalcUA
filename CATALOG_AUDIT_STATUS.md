@@ -164,3 +164,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Full structural audit of all **1079 products** passed: 1079 unique IDs, no cross-product barcode collisions, no invalid/missing carbohydrate values, no `шт` without a valid `gramsPerPiece`, no stale serving field on gram-only/non-piece/non-portion products, and no non-McDonald's/KFC explicit portions.
 - Explicit quantity-unit counts at this checkpoint: `г` 643, `мл` 134, `порція` 147, `шт` 22. Drinks remain intentionally unchanged per user decision.
 - Technical unit/serving cleanup is closed. Resume category-first catalog breadth/quality work; do not build/request a new user-test APK after every small change.
+
+
+## Category-first breadth checkpoint — 2026-09-22
+- Runtime catalog: **1085 products** at branch head `9decd38855860500e1b449536bd608bd798b9555` before this status update.
+- **Fruit/berries: CLOSED FOR THIS PASS.** Reviewed generic block: 43 positions (Фрукти 20; Фрукти та ягоди 15; Ягоди 8), 0 obvious semantic duplicates, 0 reviewed positions missing aliases. Added blueberries, lime, and wild strawberry/reference-proxy entry in commit `713cfdcdabd4b8927a8ac4e28f9fa60424ac35bc`.
+- **Dried fruit / nuts / seeds: BASELINE PASS COMPLETE.** Current breadth reviewed as 7 dried fruits, 6 nuts, 5 seeds. Core missing aliases repaired in `782e7853035ff02871fa105c8c1282c8b8ba7c79`. Pecan and Brazil nut explicitly skipped by user for now.
+- **Grains / porridges / side dishes: CLOSED FOR THIS PASS.** Reviewed 51-position block has search aliases completed (`d43fb4802a45ca765d7d03c1c3b97e99ca0b0d2d`, `946e216f3d7d156925aa6d74d1dfa6aa2ab20d50`). Dry spelt removed; boiled sweet corn/corn-on-cob identity clarified in `c1056f3a045ca765d7d03c1c3b97e99ca0b0d2d`. Dry quinoa added from USDA SR Legacy/FDC reference in `9decd38855860500e1b449536bd608bd798b9555`.
+- Continue with the next important category using the same generic-first / hybrid policy: inspect existing runtime first, check semantic duplicates, fill meaningful gaps, improve aliases, and avoid low-value catalog inflation.
