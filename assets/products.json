@@ -12061,7 +12061,13 @@
     "glycemic_index_source_name": "Хліб ржано-пшеничний",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 40.3,
-    "glycemic_source_calories_100g": 193
+    "glycemic_source_calories_100g": 193,
+    "aliases": [
+      "хліб",
+      "житньо-пшеничний хліб",
+      "пшенично-житній хліб",
+      "сірий хліб"
+    ]
   },
   {
     "id": "p027",
@@ -12074,7 +12080,12 @@
     "calories": 245,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб",
+      "гречаний хліб",
+      "хліб з гречкою"
+    ]
   },
   {
     "id": "p028",
@@ -12087,7 +12098,13 @@
     "calories": 247,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб",
+      "цільнозерновий хліб",
+      "хліб цільнозерновий",
+      "хліб з цільного зерна"
+    ]
   },
   {
     "id": "p029",
@@ -12656,7 +12673,12 @@
     "calories": 245,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб",
+      "бездріжджовий хліб",
+      "хліб без дріжджів"
+    ]
   },
   {
     "id": "p066",
@@ -12669,7 +12691,12 @@
     "calories": 240,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хліб",
+      "кукурудзяний хліб",
+      "хліб з кукурудзяного борошна"
+    ]
   },
   {
     "id": "p068",
@@ -12681,7 +12708,13 @@
     "fiber": 2,
     "calories": 275,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "лаваш",
+      "лаваш пшеничний",
+      "вірменський лаваш",
+      "тонкий лаваш"
+    ]
   },
   {
     "id": "p069",
@@ -12699,7 +12732,13 @@
     "glycemic_index_source_name": "Батон",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 48.9,
-    "glycemic_source_calories_100g": 235
+    "glycemic_source_calories_100g": 235,
+    "aliases": [
+      "батон",
+      "нарізний батон",
+      "батон нарізний",
+      "білий батон"
+    ]
   },
   {
     "id": "p070",
@@ -12711,7 +12750,12 @@
     "fiber": 3,
     "calories": 350,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "сухарі",
+      "пшеничні сухарі",
+      "сухарі пшеничні"
+    ]
   },
   {
     "id": "p071",
@@ -13418,7 +13462,13 @@
     "state": "raw",
     "barcode": "",
     "gramsPerPiece": 10,
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "хлібець",
+      "хлібці",
+      "житній хлібець",
+      "житні хлібці"
+    ]
   },
   {
     "id": "p121",
