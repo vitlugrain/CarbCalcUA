@@ -23777,5 +23777,57 @@
       "лукас",
       "lukas"
     ]
+  },
+  {
+    "id": "ua_lukas_slavka_wafer_milk",
+    "name": "Цукерки Славка вафельні молочні Lukas",
+    "brand": "Lukas",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 62,
+    "protein": 5,
+    "fat": 26,
+    "calories": 502,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-lukas-ukrayina--04820182680247/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "вафельні цукерки",
+      "славка",
+      "молочні",
+      "лукас",
+      "lukas"
+    ]
+  },
+  {
+    "id": "ua_lukas_tuzya_chocolate",
+    "name": "Цукерки Тузя шоколадні Lukas",
+    "brand": "Lukas",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 61,
+    "protein": 5,
+    "fat": 27,
+    "calories": 507,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-lukas-ukrayina--04820182680346/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "тузя",
+      "тузя шоколад",
+      "шоколадні",
+      "лукас",
+      "lukas"
+    ]
   }
 ]
