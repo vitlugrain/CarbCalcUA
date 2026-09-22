@@ -212,6 +212,8 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing common dish, bug, or explicit user decision. Do not restart this category broadly in a later chat.
 
 
+- **Post-checkpoint cleanup:** by explicit user decision, both generic pea-soup recipe variants (`ua_znaimo_pea_soup` and `ua_prodiabet_pea_soup`) were removed from runtime because two recipe-dependent values presented as the same everyday dish were not useful for CarbCalc UA. Do not re-add generic pea soup without a new explicit decision or a clearly defined recipe/serving model. Removal commit `0173727c55f93e703e9b3dbfdd69e6b3d04d8611`. Runtime count after removal: **1098 products**.
+
 ## Small generic categories checkpoint — CLOSED FOR CURRENT PASS 2026-09-22
 - **Овочі / базова зелень: CLOSED FOR CURRENT PASS.** Broad vegetable pass was completed on 2026-09-22; do not restart it. Existing runtime already includes practical fresh dill, parsley, spinach and leaf lettuce; separate `Зелень` entries include sorrel, celery greens and beet greens. No additional greens were added in the closing review.
 - **Гриби: CLOSED FOR CURRENT PASS.** Practical generic base is champignons, oyster mushrooms and chanterelles. Added/normalized in commit `297191992a345aea007804a84bcb45fc7c111268`. Do not expand with rare mushroom species absent a concrete need.
