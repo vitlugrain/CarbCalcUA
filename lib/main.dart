@@ -71,7 +71,7 @@ class AppDb {
   static Future<Database> get db async {
     if(_db!=null)return _db!;
     final path=p.join(await getDatabasesPath(),'carbcalc_ua.db');
-    _db=await openDatabase(path,version:7,onCreate:(d,v)async{
+    _db=await openDatabase(path,version:8,onCreate:(d,v)async{
       await d.execute('CREATE TABLE recipes(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,finished_weight REAL NOT NULL)');
       await d.execute('CREATE TABLE recipe_ingredients(id INTEGER PRIMARY KEY AUTOINCREMENT,recipe_id INTEGER NOT NULL,product_id TEXT NOT NULL,grams REAL NOT NULL)');
       await d.execute("CREATE TABLE diary(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,meal TEXT NOT NULL,name TEXT NOT NULL,grams REAL NOT NULL,amount_value REAL NOT NULL DEFAULT 0,amount_unit TEXT NOT NULL DEFAULT 'г',carbs REAL NOT NULL,xe REAL NOT NULL,meal_group_id TEXT,meal_time TEXT,product_id TEXT)");
@@ -107,6 +107,16 @@ class AppDb {
         await d.execute('ALTER TABLE custom_products ADD COLUMN barcodes TEXT');
         await d.execute('ALTER TABLE custom_products ADD COLUMN nutrition_basis TEXT');
         await d.execute('ALTER TABLE custom_products ADD COLUMN quantity_units TEXT');
+      }
+      if(oldV<8){
+        // Remove the known stale legacy catalog copy seen after APK upgrades.
+        // Products explicitly created by the user carry source='Користувач' and
+        // must never be removed by this migration.
+        await d.delete(
+          'custom_products',
+          where: "name=? AND ABS(carbs-?)<0.0001 AND COALESCE(source,'')<>?",
+          whereArgs: ['Баклажан, сирий', 5.4, 'Користувач'],
+        );
       }
     });
     return _db!;
