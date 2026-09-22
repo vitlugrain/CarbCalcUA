@@ -230,3 +230,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Added generic `Сало свиняче` with 0 g carbohydrates/100 g and gram quantity unit; commit `9131bd68c95da92454486e792df9659281d44779`.
 - Runtime catalog after this addition: **1100 products**.
 - Broad catalog breadth expansion is considered complete for the current pass. Do not reopen categories or add the other rejected gap candidates unless the user explicitly requests them or reports a concrete missing-product need.
+
+## Yarych branded expansion — PART 1 2026-09-22
+- Started targeted branded expansion after the broad generic catalog pass; official Yarych product pages are the source of truth for nutrition.
+- Added **10 verified Yarych products** to runtime: four Maria variants (Original, Wholegrain, Milk+Calcium, Classic), Mriya biscuit, caramel sugar cookie, Tea & Coffee coconut cookie, and three crackers (Delicate, Mushrooms, Caramel+Salt).
+- Package-size-only duplicates are not modeled as separate foods; nutrition is stored per 100 g.
+- Added broad search aliases such as `печиво`, `марія`, `крекер`, `ярич` / `yarych` where relevant so branded items remain discoverable by natural generic queries.
+- Runtime count after this part: **1108 products**.
+- Commit: `a6d1760f547583c47ab88333a8f7ff4e8c8cb187`.
+- Continue Yarych only with current official products that have complete reliable nutrition; then move to ROSHEN → КОНТІ → Lukas. Do not add every pack size as a separate SKU.
