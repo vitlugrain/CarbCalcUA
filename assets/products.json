@@ -21092,5 +21092,105 @@
     "verification_level": "B",
     "verified": true,
     "audit_note": "Representative pepperoni-style frozen pizza and lower-carb/higher-fat profile within the compact pizza set. Exact consumer EAN 4820227764907; nutrition C29.7/P10.3/F14.4/289. Branch-specific assets/products.json checked by EAN and name: no runtime match found."
+  },
+  {
+    "id": "ua_generic_carrot_boiled",
+    "name": "Морква, варена",
+    "aliases": [
+      "морква варена",
+      "варена морква"
+    ],
+    "category": "Овочі",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 8.22,
+    "protein": 0.76,
+    "fat": 0.18,
+    "fiber": 3,
+    "calories": 35,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Carrots, cooked, boiled, drained, without salt",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_broccoli_boiled",
+    "name": "Броколі, варені",
+    "aliases": [
+      "броколі варені",
+      "варені броколі"
+    ],
+    "category": "Овочі",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.18,
+    "protein": 2.38,
+    "fat": 0.41,
+    "fiber": 3.3,
+    "calories": 35,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central FDC 169967 — Broccoli, cooked, boiled, drained, without salt",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_cauliflower_boiled",
+    "name": "Цвітна капуста, варена",
+    "aliases": [
+      "капуста цвітна варена",
+      "варена цвітна капуста"
+    ],
+    "category": "Овочі",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 4.11,
+    "protein": 1.84,
+    "fat": 0.45,
+    "fiber": 2.3,
+    "calories": 23,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central FDC 170397 — Cauliflower, cooked, boiled, drained, without salt",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_summer_squash_boiled",
+    "name": "Кабачок, варений",
+    "aliases": [
+      "кабачок варений",
+      "варений кабачок"
+    ],
+    "category": "Овочі",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 4.31,
+    "protein": 0.91,
+    "fat": 0.31,
+    "fiber": 1.4,
+    "calories": 20,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central FDC 170488 / SR Legacy NDB 11642 — Squash, summer, all varieties, cooked, boiled, drained, without salt",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
   }
 ]
