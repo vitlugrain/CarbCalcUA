@@ -155,28 +155,6 @@
     ]
   },
   {
-    "id": "ua_znaimo_pea_soup",
-    "name": "Суп гороховий",
-    "category": "Перші страви",
-    "state": "cooked",
-    "carbs": 9.78,
-    "protein": 2.895,
-    "fat": 2.265,
-    "calories": 71,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "ЗНАЇМО — технологічна карта",
-    "source_ref": "ТК 2.12 Суп гороховий; порція 200 г: Б 5.79, Ж 4.53, В 19.56, 142 ккал; нормалізовано до 100 г",
-    "verified": true,
-    "aliases": [
-      "гороховий суп",
-      "суп гороховий",
-      "суп з гороху"
-    ]
-  },
-  {
     "id": "ua_znaimo_minestrone",
     "name": "Мінестроне",
     "category": "Перші страви",
@@ -3361,28 +3339,6 @@
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
     "verified": true
-  },
-  {
-    "id": "ua_prodiabet_pea_soup",
-    "name": "Гороховий суп",
-    "category": "Готові страви",
-    "state": "prepared",
-    "carbs": 8.2,
-    "protein": 3.4,
-    "fat": 2.2,
-    "calories": 66,
-    "glycemic_index": 30,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true,
-    "aliases": [
-      "гороховий суп",
-      "суп гороховий",
-      "суп з гороху"
-    ]
   },
   {
     "id": "ua_prodiabet_potato_pasta_soup",
