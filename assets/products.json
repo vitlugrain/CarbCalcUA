@@ -756,7 +756,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "білуга",
+      "білуга бланшована",
+      "бланшована білуга"
+    ]
   },
   {
     "id": "ua_bonduelle_broad_beans",
@@ -868,7 +873,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "горбуша",
+      "горбуша варена",
+      "варена горбуша"
+    ]
   },
   {
     "id": "ua_bonduelle_dried_peas",
@@ -900,7 +910,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "зубатка",
+      "зубатка варена",
+      "варена зубатка"
+    ]
   },
   {
     "id": "ua_bonduelle_turkey_boiled",
@@ -964,7 +979,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "камбала",
+      "камбала варена",
+      "варена камбала"
+    ]
   },
   {
     "id": "ua_bonduelle_cabbage_fried",
@@ -1012,7 +1032,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "карась",
+      "карась варений",
+      "варений карась"
+    ]
   },
   {
     "id": "ua_bonduelle_white_beans_dry",
@@ -1130,7 +1155,13 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "короп",
+      "короп варений",
+      "варений короп",
+      "короп відварений"
+    ]
   },
   {
     "id": "ua_bonduelle_rabbit_boiled",
@@ -1239,7 +1270,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "лящ",
+      "лящ варений",
+      "варений лящ"
+    ]
   },
   {
     "id": "ua_bonduelle_mackerel_boiled",
@@ -1290,7 +1326,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "мінтай",
+      "мінтай варений",
+      "варений мінтай"
+    ]
   },
   {
     "id": "ua_bonduelle_milk_05",
@@ -1354,7 +1395,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "налим",
+      "налим варений",
+      "варений налим"
+    ]
   },
   {
     "id": "ua_bonduelle_olive_oil",
@@ -1402,7 +1448,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "осетер",
+      "осетер варений",
+      "варений осетер"
+    ]
   },
   {
     "id": "ua_bonduelle_halibut_boiled",
@@ -1418,7 +1469,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "палтус",
+      "палтус варений",
+      "варений палтус"
+    ]
   },
   {
     "id": "ua_bonduelle_pattypan_squash",
@@ -1623,7 +1679,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "сом",
+      "сом варений",
+      "варений сом"
+    ]
   },
   {
     "id": "ua_bonduelle_soybeans_dry",
@@ -1671,7 +1732,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "ставрида",
+      "ставрида варена",
+      "варена ставрида"
+    ]
   },
   {
     "id": "ua_bonduelle_pike_perch_boiled",
@@ -1687,7 +1753,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "судак",
+      "судак варений",
+      "варений судак"
+    ]
   },
   {
     "id": "ua_bonduelle_veal_boiled",
@@ -1719,7 +1790,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "тріска",
+      "тріска варена",
+      "варена тріска"
+    ]
   },
   {
     "id": "ua_bonduelle_horseradish",
@@ -1815,7 +1891,12 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "щука",
+      "щука варена",
+      "варена щука"
+    ]
   },
   {
     "id": "ua_bonduelle_product_03083680001663",
