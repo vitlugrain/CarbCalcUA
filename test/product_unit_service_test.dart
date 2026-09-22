@@ -53,4 +53,18 @@ void main() {
     );
     expect(ProductUnitService.unitsFor(p), [QuantityUnit.grams]);
   });
+  test('package weight does not become a serving', () {
+    final p = Product.fromJson({
+      'id': 'multi-package',
+      'name': 'Ваговий продукт',
+      'category': 'Тест',
+      'carbs': 20,
+      'package_g': 500,
+      'barcode': '4820000000001',
+      'barcodes': ['4820000000002'],
+    });
+    expect(p.servingGrams, isNull);
+    expect(ProductUnitService.unitsFor(p), [QuantityUnit.grams]);
+  });
+
 }
