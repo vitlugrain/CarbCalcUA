@@ -12,7 +12,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Категорія страви з кисломолочного сиру, ТК 6.1-6.23, стор. 3",
     "verified": true
@@ -30,7 +29,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Категорія страви з кисломолочного сиру, ТК 6.1-6.23, стор. 6",
     "verified": true
@@ -48,7 +46,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Категорія страви з кисломолочного сиру, ТК 6.1-6.23, стор. 4",
     "verified": true
@@ -66,7 +63,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Категорія страви з кисломолочного сиру, ТК 6.1-6.23, стор. 7",
     "verified": true
@@ -84,7 +80,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Категорія страви з кисломолочного сиру, ТК 6.1-6.23, стор. 10",
     "verified": true
@@ -102,7 +97,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 80,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 6.10 Сирники класичні; порція 80 г: Б 13.86, Ж 6.31, В 10.98, 156 ккал; нормалізовано до 100 г",
     "verified": true
@@ -120,7 +114,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.4 Зелений борщ зі шпинатом; порція 200 г: Б 3.69, Ж 6.72, В 10.81, 117 ккал; нормалізовано до 100 г",
     "verified": true
@@ -138,7 +131,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.12 Суп гороховий; порція 200 г: Б 5.79, Ж 4.53, В 19.56, 142 ккал; нормалізовано до 100 г",
     "verified": true
@@ -156,7 +148,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.6 Мінестроне; порція 200 г: Б 1.80, Ж 3.79, В 14.21, 96 ккал; нормалізовано до 100 г",
     "verified": true
@@ -174,7 +165,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.47 Суп квасолевий; порція 200 г: Б 8.41, Ж 2.26, В 26.07, 153 ккал; нормалізовано до 100 г",
     "verified": true
@@ -192,7 +182,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.2 Борщ з картоплею, українська кухня; порція 200/4 г: Б 2.29, Ж 4.93, В 18.91, 127 ккал; нормалізовано на 100 г готової страви",
     "verified": true
@@ -210,7 +199,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.20 Капусняк з гарбузом, українська кухня; порція 200 г: Б 2.33, Ж 5.31, В 13.12, 107 ккал; нормалізовано до 100 г; користувацька назва Капусняк",
     "verified": true
@@ -228,7 +216,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 2.21 Гречана юшка (без засмажки), українська кухня; порція 200 г: Б 2.20, Ж 2.47, В 14.98, 90 ккал; нормалізовано до 100 г; користувацька назва Суп з гречкою",
     "verified": true
@@ -246,7 +233,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.16 Кускус розсипчастий, марокканська кухня; поживна цінність на 100 г: Б 6.29, Ж 1.69, В 35.50, 196 ккал; користувацька назва Кускус",
     "verified": true
@@ -264,7 +250,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.20 Відварена картопля з вершковим маслом, українська кухня; поживна цінність на 100 г: Б 2.08, Ж 2.22, В 17.56, 98 ккал; користувацька назва Картопля відварена",
     "verified": true
@@ -282,7 +267,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.52 Перлова каша з овочами, українська кухня; поживна цінність на 100 г: Б 2.78, Ж 0.29, В 21.97, 100 ккал",
     "verified": true
@@ -300,7 +284,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.54 Булгур, українська кухня; готовий булгур з вершковим маслом; поживна цінність на 100 г: Б 4.25, Ж 2.55, В 29.51, 165 ккал; користувацька назва Булгур відварений",
     "verified": true
@@ -318,7 +301,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.12 Рис розсипчастий з орегано, азійська кухня; готовий рис із вершковим маслом та орегано; поживна цінність на 100 г: Б 2.49, Ж 2.20, В 25.19, 133 ккал; користувацька назва Рис відварений",
     "verified": true
@@ -336,7 +318,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Гарніри ТК 10.1-10.54; Крупа гречана з маслом вершковим: Б 5.88, Ж 3.35, В 29.42, 172 ккал на 100 г",
     "verified": true
@@ -354,7 +335,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.46 Вермішель з томатами; Б 3.83, Ж 0.39, В 26.58, 124 ккал на 100 г",
     "verified": true
@@ -372,7 +352,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 10.39 Пшенична каша класична; варіант з вершковим маслом: Б 3.65, Ж 2.24, В 26.36, 141 ккал на 100 г",
     "verified": true
@@ -393,7 +372,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "Мамалига з маслом вершковим; Б 3.04, Ж 2.60, В 15.20, 97 ккал на 100 г",
     "verified": true
@@ -411,7 +389,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 65,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 5.21; порція 65 г: Б 5.72, Ж 5.52, В 5.40, 94 ккал; нормалізовано до 100 г",
     "verified": true
@@ -429,7 +406,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 80,
     "source": "Конотопський ЗДО №13 — паспорт страви",
     "source_ref": "Порція 80 г: Б 3.64, Ж 4.98, В 11.80, 106.83 ккал; нормалізовано до 100 г",
     "verified": true
@@ -447,7 +423,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 1.45 Вінегрет; Б 1.98, Ж 3.53, В 11.75, 84 ккал на 100 г",
     "verified": true
@@ -465,7 +440,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 6.1 Вареники ліниві; Б 14.93, Ж 7.68, В 15.87, 197 ккал на 100 г",
     "verified": true
@@ -483,7 +457,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 14.19 Млинці безглютенові (безлактозні); Б 6.06, Ж 9.02, В 29.67, 223 ккал на 100 г",
     "verified": true
@@ -501,7 +474,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 3.21 Овочеве рагу з зеленим горошком; Б 2.76, Ж 3.30, В 15.69, 100 ккал на 100 г",
     "verified": true
@@ -519,7 +491,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 75,
     "source": "Конотопський ЗДО №12 — примірне меню",
     "source_ref": "Порція 75 г: Б 5.59, Ж 6.69, В 2.33, 91.06 ккал; нормалізовано до 100 г",
     "verified": true
@@ -537,7 +508,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 150,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 8.29 Гречаники зі свинини; порція 150 г: Б 16.72, Ж 19.70, В 25.21, 351 ккал; нормалізовано до 100 г",
     "verified": true
@@ -555,7 +525,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 48,
     "source": "Конотопський ЗДО №10 — рекомендоване меню",
     "source_ref": "Порція 48 г: Б 10.65, Ж 3.95, В 4.08, 96.56 ккал; нормалізовано до 100 г; для цієї ж страви є окрема сторінка технологічної карти ЗНАЇМО",
     "verified": true
@@ -573,7 +542,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "ЗНАЇМО — технологічна карта",
     "source_ref": "ТК 9.17 Печеня по-домашньому з куркою; Б 17.47, Ж 4.42, В 10.15, 148 ккал на 100 г",
     "verified": true
@@ -591,7 +559,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Сквирянка — маркування продукту",
     "source_ref": "Крупа ячмінна перлова №1, 800 г; харчова цінність на 100 г: Б 10.0, Ж 1.7, В 70.9, 351 ккал; значення підтверджені роздрібними картками товару для EAN 4820006011758",
     "verified": true
@@ -609,7 +576,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Сквирянка — маркування продукту",
     "source_ref": "Крупа гречана швидкорозварювана без глютену; харчова цінність на 100 г: Б 12.9, Ж 3.2, В 71.0; енергетичне значення не переносилось без окремої перевірки",
     "verified": true
@@ -627,7 +593,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Сквирянка — маркування продукту",
     "source_ref": "Крупа пшоно шліфоване; харчова цінність на 100 г: Б 9.8, Ж 1.5, В 73.9, 350 ккал",
     "verified": true
@@ -645,7 +610,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Сквирянка — маркування продукту",
     "source_ref": "Крупа кукурудзяна шліфована №5; харчова цінність на 100 г: Б 6.5, Ж 0.7, В 80.3, 354 ккал",
     "verified": true
@@ -663,7 +627,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Сквирянка — маркування продукту",
     "source_ref": "Пластівці вівсяні; харчова цінність на 100 г: Б 11.76, Ж 6.5, В 69.0, 381 ккал; це сухі пластівці до приготування",
     "verified": true
@@ -16327,7 +16290,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "package_g": 200,
     "barcode": "4820168882098",
     "brand": "Сто Пудів",
@@ -16350,7 +16312,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "package_g": 200,
     "barcode": "4820168883682",
     "brand": "Сто Пудів",
@@ -16378,7 +16339,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / Сто Пудів representative SKU",
     "source_url": "https://zakaz.ua/uk/products/krupa-sto-pudiv-700g-ukrayina--04820168880735/",
     "source_note": "Generic food entry. Representative retail label: wheat groats Poltavska No.2 from hard spring wheat. Same nutrition confirmed on current 700 g and 800 g Sto Pudiv listings and Silpo: P 12.7, F 1.1, C 70.6 per 100 g. Brand/package is verification evidence only, not runtime identity.",
@@ -16406,7 +16366,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / representative Poltavska No.4 SKU",
     "source_url": "https://zakaz.ua/uk/products/krupa-kozatskii-standart-900g--04820186250114/",
     "source_note": "Generic food entry. Current Zakaz composition explicitly identifies Poltavska No.4; nutrition P 11.5, F 1.3, C 62.1, 316 kcal per 100 g. This is materially different from Poltavska No.2 and Artek, so retained as a separate food type.",
@@ -16434,7 +16393,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Козуб Продукт / ТОВ Фірма Діамант ЛТД + Zakaz.ua",
     "source_url": "https://diamantltd.com.ua/krupa-vivsjana-cilnozernova-600/",
     "retail_source_url": "https://zakaz.ua/uk/products/krupa-kozub-produkt-600g--04820094537604/",
@@ -16463,7 +16421,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — representative retail product",
     "source_url": "https://winetime.zakaz.ua/uk/products/krupa--04820153600515/",
     "source_ref": "Екород квасоля Адзукі органічна 400 г; retail label used only as verification source. Generic food identity retained; brand/package/EAN omitted to avoid branded duplication.",
@@ -16555,7 +16512,6 @@
     "brand": "Metro Chef",
     "package_grams": 500,
     "ean": "4337182070597",
-    "serving_grams": 50,
     "nutrition_100g": {
       "protein": 8,
       "fat": 3.4,
@@ -17487,7 +17443,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 240,
     "barcode": "04750616001255",
     "verified": true,
     "source": "Brivais Vilnis official current mackerel range + current Ukrainian retail label data",
@@ -17507,7 +17462,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "barcode": "04750616001163",
     "source": "Brivais Vilnis official current product page + Silpo current product card + barcode/product passport cross-check",
     "source_ref": "Official Brivais Vilnis Large sprats 240 g: smoked Baltic herring 68%, rapeseed oil 31%, salt 1%; per 100 g В 0 / Б 16 / Ж 23 / 271 kcal. Silpo current 240 g Brivais Vilnis smoked herring card matches exactly. EAN 4750616001163 is confirmed by current product-passport sources. Barcode absent from current assets/products.json during audit.",
@@ -17592,7 +17546,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua exact-EAN + Auchan Ukraine + independent product passport",
     "source_ref": "EAN 8436024298925; 565 g; pineapple rings in syrup; sources agree on В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал per 100 g",
     "verified": true
@@ -17612,7 +17565,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Auchan Ukraine exact-EAN + Ukrainian verified product passport",
     "source_ref": "EAN 8436024298918; 565 g; pineapple pieces in syrup; product passport and retailer data identify same recipe and В 15.4 / Б 0.3 / Ж 0.1 / 64 ккал per 100 g",
     "verified": true
@@ -18187,7 +18139,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Barilla official — Spaghetti Integrale",
     "source_ref": "Whole-grain durum wheat semolina + water; 65.7 g carbohydrate/100 g",
     "verified": true,
@@ -18207,7 +18158,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Barilla official — Emiliane Farfalline/Filini",
     "source_ref": "Durum wheat semolina + fresh eggs; Zakaz.ua Ukrainian listings corroborate 67 g carbs, 14 g protein, 4 g fat for egg Filini/Fettuccine",
     "verified": true,
@@ -18227,7 +18177,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Barilla official + Zakaz.ua — Gluten Free Spaghetti №5",
     "source_ref": "White corn flour + yellow corn flour + rice flour + water; Zakaz EAN 8076809545440",
     "verified": true,
@@ -18247,7 +18196,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Akura локшина Соба гречана 300 г",
     "source_ref": "EAN 4820178461900; buckwheat flour + durum wheat flour + water + salt",
     "verified": true,
@@ -18268,7 +18216,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — Metro Chef Локшина Фунчоза 200 г",
     "source_ref": "EAN 4895197930904; pea starch 50% + corn starch 35% + mung bean starch 10% + water 5%",
     "verified": true,
@@ -18289,7 +18236,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — Metro Chef Локшина рисова 1 кг та плоска 600 г",
     "source_ref": "Rice 89% + drinking water 11%; same nutrition for regular and flat forms",
     "verified": true,
@@ -18309,7 +18255,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — JS Udon / Katana Udon / Wheatsun Udon",
     "source_ref": "Three current listings converge on 62.8 g carbs, 9.4 g protein, 1.3 g fat per 100 g; wheat flour + water + salt (JS additionally lists baking soda)",
     "verified": true,
@@ -18330,7 +18275,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Elovena без глютену 500 г",
     "source_ref": "EAN 6411200107163; whole-grain gluten-free oat flakes",
     "verified": true,
@@ -18351,7 +18295,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Muesli Mania гранола з фруктами 300 г",
     "source_ref": "EAN 4820217531298; oat flakes + honey + sunflower oil + dates 5% + coconut + freeze-dried strawberry 1%",
     "verified": true,
@@ -18372,7 +18315,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — NESTLÉ CORN FLAKES Honey Nut 250/450 г",
     "source_ref": "corn grits 70.1%, sugar, peanuts 7.5%, honey 2%; 79.0C/7.6P/4.4F per 100g",
     "verified": true,
@@ -18393,7 +18335,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — LION Карамель та шоколад 210 г",
     "source_ref": "EAN 5900020042927; whole-grain wheat flour 40.9%, wheat flour 30.6%, sugar, glucose syrup, sunflower oil, dark chocolate 3% and other ingredients",
     "verified": true,
@@ -18414,7 +18355,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — NESTLE LION Protein Caramel&Chocolate 340 г",
     "source_ref": "EAN 8445292269520; whole-grain wheat flour 37.5%, corn grits 12.3%, wheat gluten 11.3%, sugar/glucose syrup and other ingredients",
     "verified": true,
@@ -18435,7 +18375,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Пластівці кукурудзяні 270 г / 700 г",
     "verified": true,
     "runtime_merge": false
@@ -18454,7 +18393,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Пластівці кукурудзяні глазуровані 280 г",
     "verified": true,
     "runtime_merge": false
@@ -18473,7 +18411,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Пластівці кукурудзяні медові глазуровані 280 г / 700 г",
     "verified": true,
     "runtime_merge": false
@@ -18492,7 +18429,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Cocoa Balls 75/150/250/500 г",
     "verified": true,
     "runtime_merge": false
@@ -18511,7 +18447,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Подушечки з молочною начинкою 100 г",
     "verified": true,
     "runtime_merge": false
@@ -18530,7 +18465,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — AXA гранола з шоколадом і бананом 330 г",
     "verified": true,
     "runtime_merge": false
@@ -18549,7 +18483,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / NOVUS — NESTLÉ NESQUIK 460 г",
     "source_ref": "whole-grain wheat 51.4%, corn grits 17%, sugar, glucose syrup, cocoa; 74.6C/8.7P/3.0F per 100g",
     "verified": true,
@@ -18569,7 +18502,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — CINI-MINIS 250 г",
     "source_ref": "whole-grain wheat flour 33.7%, rice flour 30%, sugar, glucose syrup; 72.6C/5.8P/9.3F per 100g",
     "verified": true,
@@ -18590,7 +18522,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — CINI-MINIS Protein 340 г",
     "source_ref": "whole-grain wheat flour 45%, wheat gluten 11.4%, rice flour 10.2%, corn grits 9.1%; 64.5C/15.1P/9.6F per 100g",
     "verified": true,
@@ -18611,7 +18542,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — FITNESS Original 420 г",
     "source_ref": "grain products 91.7%: whole-grain wheat 55.7%, rice 29.3%, whole-grain oat flakes 6.7%; 73.6C/9.3P/2.6F per 100g",
     "verified": true,
@@ -18631,7 +18561,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / Epicentr FOOD — STRAWBERRY-MINIS 250 г",
     "source_ref": "whole-grain wheat flour 36.9%, rice flour 29.5%, sugar, sunflower oil, glucose syrup; 73.1C/6.1P/9.5F per 100g",
     "verified": true,
@@ -18650,7 +18579,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Кільця зі смаком полуниці та банану 250 г / 500 г",
     "source_ref": "Both package sizes show identical nutrition: 76.4 C / 7.3 P / 2.2 F per 100 g",
     "verified": true,
@@ -18670,7 +18598,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Start! Веселий Роджер 250 г / 500 г",
     "source_ref": "Both package sizes show identical nutrition: 75.3 C / 7.7 P / 2.0 F per 100 g",
     "verified": true,
@@ -18690,7 +18617,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — NESQUIK Mix 375 г",
     "source_ref": "METRO Zakaz listing: 74.3 C / 8.4 P / 4.1 F per 100 g; 200 g listing shows 74.4 C, consistent within rounding",
     "verified": true,
@@ -18710,7 +18636,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Doctor Benner Trio Mix 150 г",
     "source_ref": "Multiple Zakaz storefronts agree: 76.0 C / 7.0 P / 1.6 F per 100 g",
     "verified": true,
@@ -18730,7 +18655,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Muesli Mania Фрукти 350 г",
     "source_ref": "EAN 4820220140272; oats, wheat flakes, dates 11%, coconut 6%, freeze-dried banana 3%, strawberry 2%, extruded amaranth",
     "verified": true,
@@ -18751,7 +18675,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / Tavria V — Muesli Mania Низькокалорійна 70 г",
     "source_ref": "EAN 4820220140043; 3-cereal flakes, dried apricot, pumpkin seeds 9%, goji 6%, dried apple",
     "verified": true,
@@ -18771,7 +18694,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — Muesli Mania Манго чіа 70 г",
     "source_ref": "EAN 4820220140050; classic granola base, spelt wheat flakes, almonds, chia seeds 7%",
     "verified": true,
@@ -18791,7 +18713,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — Doctor Benner з горіхами та медом 40 г",
     "source_ref": "EAN 4820132582399; baked oat mixture with peanuts, walnuts, honey, seeds, almonds and dried cranberry",
     "verified": true,
@@ -18811,7 +18732,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / METRO — Doctor Benner Шоколад та мигдаль 300 г",
     "source_ref": "EAN 4820132580920; wholegrain oat flakes with chocolate mass and almond",
     "verified": true,
@@ -18831,7 +18751,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua / Auchan — Doctor Benner Тропік 400 г",
     "source_ref": "EAN 4820132581002; grain base 80% including wheat, barley and oat flakes",
     "verified": true,
@@ -18851,7 +18770,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "source": "Zakaz.ua — AXA Полуниця-чорниця 300 г",
     "source_ref": "EAN 4820237693136; oats 50.6%, multigrain flakes, maltitol 13.7%, freeze-dried strawberry and blueberry",
     "verified": true,
@@ -20600,7 +20518,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 200,
     "source": "METRO/Zakaz current exact EAN + Rozetka corroboration",
     "verification_level": "B",
     "verified": true,
@@ -20784,7 +20701,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "verified": true,
     "verification_level": "B",
     "source": "Silpo + Auchan/Zakaz + Listex exact-EAN identity",
@@ -20830,7 +20746,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "verified": true,
     "verification_level": "A",
     "source": "Три Ведмеді — офіційна сторінка продукту",
@@ -20852,7 +20767,6 @@
     "quantity_units": [
       "г"
     ],
-    "serving_grams": 100,
     "verified": true,
     "verification_level": "A",
     "source": "Три Ведмеді — офіційна сторінка продукту",
