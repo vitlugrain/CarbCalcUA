@@ -165,3 +165,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Current bundled catalog checkpoint before #380: **1100 products**; pre-APK structural validation passed with 0 duplicate IDs, 0 cross-product barcode collisions, 0 invalid/missing carbohydrate values, 0 forbidden quantity units, and 0 piece-unit products without valid `gramsPerPiece`.
 - Broad catalog breadth pass is closed. Do not restart closed category audits while testing #380. Prioritize concrete regressions/UX/search/catalog issues found on the installed APK.
 - Next session: begin from the user's concrete #380 test findings, reproduce each against current `dev-large-update`, fix in logical batches, and avoid creating an APK after every individual correction.
+
+
+## Persistent device-testing anti-repeat registry — 2026-09-22
+- `TESTING_ISSUES.md` is now the source-of-truth registry for concrete real-device APK bugs/regressions/UX/search/catalog observations.
+- At the start of every new CarbCalc UA development chat, read `PROJECT_STATUS.md`, `CATALOG_AUDIT_STATUS.md`, and `TESTING_ISSUES.md` before doing work.
+- Issue lifecycle: OPEN → IN PROGRESS → FIXED / AWAITING APK → VERIFIED → CLOSED; use REOPENED if a later APK reproduces a previously fixed/verified issue.
+- Never mark a device issue VERIFIED/CLOSED solely because a code commit exists; real-device user confirmation is required.
+- Before implementing a reported issue, check `TESTING_ISSUES.md` first to avoid repeating work from an ended chat.
+- During APK #380 testing, add each concrete user finding to this registry and accumulate fixes into meaningful APK batches rather than building after every small correction.
