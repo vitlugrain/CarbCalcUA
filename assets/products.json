@@ -1146,7 +1146,7 @@
     "name": "Короп, варений",
     "category": "Риба",
     "state": "cooked",
-    "carbs": 2,
+    "carbs": 0,
     "protein": 16,
     "fat": 3.7,
     "calories": 102,
@@ -1154,14 +1154,15 @@
     "quantity_units": [
       "г"
     ],
-    "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
+    "source": "USDA FoodData Central SR Legacy — Fish, carp, cooked, dry heat (FDC 174185); used as generic cooked-carp reference",
     "verified": true,
     "aliases": [
       "короп",
       "короп варений",
       "варений короп",
       "короп відварений"
-    ]
+    ],
+    "verification_level": "A reference"
   },
   {
     "id": "ua_bonduelle_rabbit_boiled",
@@ -21815,6 +21816,63 @@
       "г"
     ],
     "source": "USDA FoodData Central SR Legacy — Mollusks, mussel, blue, cooked, moist heat (FDC 174217 / NDB 15165)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_crab_cooked",
+    "name": "Крабове м'ясо, варене",
+    "aliases": [
+      "краб",
+      "крабове м'ясо",
+      "м'ясо краба",
+      "варений краб",
+      "краб варений",
+      "морепродукти краб"
+    ],
+    "category": "Риба",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 0,
+    "protein": 17.9,
+    "fat": 0.74,
+    "fiber": 0,
+    "calories": 83,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Crustaceans, crab, blue, cooked, moist heat (FDC 174205 / NDB 15140)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_octopus_cooked",
+    "name": "Восьминіг, варений",
+    "aliases": [
+      "восьминіг",
+      "восьминоги",
+      "варений восьминіг",
+      "восьминіг варений",
+      "морепродукти восьминіг"
+    ],
+    "category": "Риба",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 4.4,
+    "protein": 29.82,
+    "fat": 2.08,
+    "fiber": 0,
+    "calories": 164,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Mollusks, octopus, common, cooked, moist heat (FDC 174249 / NDB 15230)",
     "verification_level": "A reference",
     "verified": true,
     "catalog_policy": "generic_first"
