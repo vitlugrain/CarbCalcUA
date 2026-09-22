@@ -11500,7 +11500,12 @@
     "glycemic_index_source_name": "Яблука",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 9.8,
-    "glycemic_source_calories_100g": 45
+    "glycemic_source_calories_100g": 45,
+    "aliases": [
+      "яблуко",
+      "яблука",
+      "свіже яблуко"
+    ]
   },
   {
     "id": "p008",
@@ -11518,7 +11523,12 @@
     "glycemic_index_source_name": "Банани",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 21,
-    "glycemic_source_calories_100g": 89
+    "glycemic_source_calories_100g": 89,
+    "aliases": [
+      "банан",
+      "банани",
+      "свіжий банан"
+    ]
   },
   {
     "id": "p011",
@@ -11926,7 +11936,12 @@
     "glycemic_index_source_name": "Груша",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 9.5,
-    "glycemic_source_calories_100g": 42
+    "glycemic_source_calories_100g": 42,
+    "aliases": [
+      "груша",
+      "груші",
+      "свіжа груша"
+    ]
   },
   {
     "id": "p044",
@@ -11944,7 +11959,12 @@
     "glycemic_index_source_name": "Апельсин",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 8.1,
-    "glycemic_source_calories_100g": 40
+    "glycemic_source_calories_100g": 40,
+    "aliases": [
+      "апельсин",
+      "апельсини",
+      "свіжий апельсин"
+    ]
   },
   {
     "id": "p045",
@@ -11962,7 +11982,12 @@
     "glycemic_index_source_name": "Мандарин",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 8.1,
-    "glycemic_source_calories_100g": 40
+    "glycemic_source_calories_100g": 40,
+    "aliases": [
+      "мандарин",
+      "мандарини",
+      "свіжий мандарин"
+    ]
   },
   {
     "id": "p046",
@@ -11980,7 +12005,11 @@
     "glycemic_index_source_name": "Виноград",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 15,
-    "glycemic_source_calories_100g": 65
+    "glycemic_source_calories_100g": 65,
+    "aliases": [
+      "виноград",
+      "свіжий виноград"
+    ]
   },
   {
     "id": "p047",
@@ -11998,7 +12027,12 @@
     "glycemic_index_source_name": "Полуниця",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 6.3,
-    "glycemic_source_calories_100g": 34
+    "glycemic_source_calories_100g": 34,
+    "aliases": [
+      "полуниця",
+      "полуниці",
+      "свіжа полуниця"
+    ]
   },
   {
     "id": "p048",
@@ -12016,7 +12050,11 @@
     "glycemic_index_source_name": "Кавун без шкірки",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 8.8,
-    "glycemic_source_calories_100g": 38
+    "glycemic_source_calories_100g": 38,
+    "aliases": [
+      "кавун",
+      "свіжий кавун"
+    ]
   },
   {
     "id": "p049",
@@ -12034,7 +12072,12 @@
     "glycemic_index_source_name": "Персики",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 9.5,
-    "glycemic_source_calories_100g": 43
+    "glycemic_source_calories_100g": 43,
+    "aliases": [
+      "персик",
+      "персики",
+      "свіжий персик"
+    ]
   },
   {
     "id": "p050",
@@ -12052,7 +12095,12 @@
     "glycemic_index_source_name": "Слива",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 9.6,
-    "glycemic_source_calories_100g": 43
+    "glycemic_source_calories_100g": 43,
+    "aliases": [
+      "слива",
+      "сливи",
+      "свіжа слива"
+    ]
   },
   {
     "id": "p051",
@@ -12508,7 +12556,11 @@
     "calories": 160,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "авокадо",
+      "свіже авокадо"
+    ]
   },
   {
     "id": "p083",
@@ -12527,7 +12579,11 @@
     "glycemic_index_source_name": "Ківі",
     "glycemic_load_source_100g": 2,
     "glycemic_source_carbs_100g": 4,
-    "glycemic_source_calories_100g": 51
+    "glycemic_source_calories_100g": 51,
+    "aliases": [
+      "ківі",
+      "свіже ківі"
+    ]
   },
   {
     "id": "p084",
@@ -12546,7 +12602,11 @@
     "glycemic_index_source_name": "Грейпфрут",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 6.5,
-    "glycemic_source_calories_100g": 35
+    "glycemic_source_calories_100g": 35,
+    "aliases": [
+      "грейпфрут",
+      "свіжий грейпфрут"
+    ]
   },
   {
     "id": "p085",
@@ -12565,7 +12625,12 @@
     "glycemic_index_source_name": "Лимон",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 3,
-    "glycemic_source_calories_100g": 33
+    "glycemic_source_calories_100g": 33,
+    "aliases": [
+      "лимон",
+      "лимони",
+      "свіжий лимон"
+    ]
   },
   {
     "id": "p086",
@@ -12584,7 +12649,12 @@
     "glycemic_index_source_name": "Абрикоси свіжі",
     "glycemic_load_source_100g": 1.8,
     "glycemic_source_carbs_100g": 9,
-    "glycemic_source_calories_100g": 41
+    "glycemic_source_calories_100g": 41,
+    "aliases": [
+      "абрикос",
+      "абрикоси",
+      "свіжий абрикос"
+    ]
   },
   {
     "id": "p087",
@@ -12597,7 +12667,11 @@
     "calories": 57,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "чорниця",
+      "свіжа чорниця"
+    ]
   },
   {
     "id": "p088",
@@ -12616,7 +12690,11 @@
     "glycemic_index_source_name": "Малина",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 8.3,
-    "glycemic_source_calories_100g": 42
+    "glycemic_source_calories_100g": 42,
+    "aliases": [
+      "малина",
+      "свіжа малина"
+    ]
   },
   {
     "id": "p089",
@@ -12635,7 +12713,12 @@
     "glycemic_index_source_name": "Смородина чорна",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 7.3,
-    "glycemic_source_calories_100g": 38
+    "glycemic_source_calories_100g": 38,
+    "aliases": [
+      "смородина чорна",
+      "чорна смородина",
+      "свіжа чорна смородина"
+    ]
   },
   {
     "id": "p090",
