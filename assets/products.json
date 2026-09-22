@@ -21729,5 +21729,88 @@
     "verification_level": "A reference",
     "verified": true,
     "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_shrimp_cooked",
+    "name": "Креветки, варені",
+    "aliases": [
+      "креветки",
+      "креветка",
+      "варені креветки",
+      "креветки варені",
+      "морепродукти креветки"
+    ],
+    "category": "Риба",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 0.2,
+    "protein": 23.98,
+    "fat": 0.28,
+    "calories": 99,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA SR Legacy — Crustaceans, shrimp, cooked (NDB 15271)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_squid_raw",
+    "name": "Кальмар, сирий",
+    "aliases": [
+      "кальмар",
+      "кальмари",
+      "сирий кальмар",
+      "кальмар сирий",
+      "морепродукти кальмар"
+    ],
+    "category": "Риба",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 3.08,
+    "protein": 15.58,
+    "fat": 1.38,
+    "fiber": 0,
+    "calories": 92,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Mollusks, squid, mixed species, raw (FDC 174223 / NDB 15175)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_mussels_cooked",
+    "name": "Мідії, варені",
+    "aliases": [
+      "мідії",
+      "мідія",
+      "варені мідії",
+      "мідії варені",
+      "морепродукти мідії"
+    ],
+    "category": "Риба",
+    "state": "cooked",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.39,
+    "protein": 23.8,
+    "fat": 4.48,
+    "fiber": 0,
+    "calories": 172,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Mollusks, mussel, blue, cooked, moist heat (FDC 174217 / NDB 15165)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
   }
 ]
