@@ -21625,5 +21625,28 @@
     "verification_level": "B reference proxy",
     "verified": true,
     "catalog_policy": "gap_only_generic"
+  },
+  {
+    "id": "ua_generic_quinoa_raw",
+    "name": "Кіноа, суха",
+    "aliases": [
+      "кіноа суха",
+      "суха кіноа",
+      "кіноа сира"
+    ],
+    "category": "Крупи",
+    "state": "raw",
+    "carbs": 64.16,
+    "protein": 14.12,
+    "fat": 6.07,
+    "calories": 368,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Quinoa, uncooked (NDB 20035 / FDC 168874)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
   }
 ]
