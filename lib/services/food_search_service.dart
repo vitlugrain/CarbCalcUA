@@ -127,7 +127,7 @@ class FoodSearchService {
     return normalize(text).split(' ').where((x)=>x.length>=2&&!stop.contains(x)).map(stem).where((x)=>x.length>=2).toList();
   }
 
-  static List<FoodSearchResult> search(String query,List<Product> products,{int limit=10}){
+  static List<FoodSearchResult> search(String query,List<Product> products,{int limit=30}){
     final parsed=parseQuery(query); final q=normalize(parsed.productQuery); if(q.isEmpty)return [];
     final qTokens=_tokens(q); final translatedTokens=_translatedTokens(qTokens); final results=<FoodSearchResult>[];
     final candidates=_candidates(products,qTokens,translatedTokens);
