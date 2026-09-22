@@ -2126,7 +2126,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "консервовані абрикоси",
+      "абрикоси консервовані"
+    ]
   },
   {
     "id": "ua_prodiabet_pineapple",
@@ -2182,7 +2186,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "консервовані груші",
+      "груші консервовані"
+    ]
   },
   {
     "id": "ua_prodiabet_melon",
@@ -2256,7 +2264,13 @@
       "г"
     ],
     "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "фініки",
+      "фінік",
+      "фініки свіжі",
+      "свіжі фініки"
+    ]
   },
   {
     "id": "ua_prodiabet_dates_dried",
@@ -2816,7 +2830,12 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "черешня",
+      "черешня свіжа",
+      "свіжа черешня"
+    ]
   },
   {
     "id": "ua_prodiabet_red_currant",
@@ -2833,7 +2852,12 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "червона смородина",
+      "смородина червона свіжа",
+      "свіжа червона смородина"
+    ]
   },
   {
     "id": "ua_prodiabet_persimmon",
@@ -2850,7 +2874,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "хурма свіжа",
+      "свіжа хурма"
+    ]
   },
   {
     "id": "ua_prodiabet_cranberry",
@@ -2869,6 +2897,8 @@
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
     "verified": true,
     "aliases": [
+      "журавлина свіжа",
+      "свіжа журавлина",
       "клюква"
     ]
   },
@@ -2887,7 +2917,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "аґрус свіжий",
+      "свіжий аґрус"
+    ]
   },
   {
     "id": "ua_prodiabet_pomegranate",
@@ -2904,7 +2938,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "гранат свіжий",
+      "свіжий гранат"
+    ]
   },
   {
     "id": "ua_prodiabet_lingonberry",
@@ -2921,7 +2959,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "брусниця свіжа",
+      "свіжа брусниця"
+    ]
   },
   {
     "id": "ua_prodiabet_tomato_paste",
