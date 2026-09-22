@@ -154,3 +154,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Final selected everyday gap addition: generic `Сало свиняче`, commit `9131bd68c95da92454486e792df9659281d44779`.
 - Catalog audit registry closing checkpoint: `591d538eded3ee3b71f2eef2d2feef8cce4491d4`.
 - Next action: run Android APK CI on `dev-large-update`; if analyze/tests/build are green, use that artifact as the next Android test candidate.
+
+
+## APK #380 device-test checkpoint — 2026-09-22
+- GitHub Actions **Android APK #380** completed successfully from commit `180e4889b6fbecc8adde9c1dc9b434b5d42ad4b4`.
+- User installed APK #380 on Android successfully.
+- Existing food diary data was preserved after installation/upgrade.
+- User has started device testing. **APK #380 is a test checkpoint, not yet a confirmed stable baseline.**
+- User already reports that some previously discussed/fixed items still appear not to be fully corrected. No individual regression should be guessed or marked fixed until the user reports each observed case during testing.
+- Current bundled catalog checkpoint before #380: **1100 products**; pre-APK structural validation passed with 0 duplicate IDs, 0 cross-product barcode collisions, 0 invalid/missing carbohydrate values, 0 forbidden quantity units, and 0 piece-unit products without valid `gramsPerPiece`.
+- Broad catalog breadth pass is closed. Do not restart closed category audits while testing #380. Prioritize concrete regressions/UX/search/catalog issues found on the installed APK.
+- Next session: begin from the user's concrete #380 test findings, reproduce each against current `dev-large-update`, fix in logical batches, and avoid creating an APK after every individual correction.
