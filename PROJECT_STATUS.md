@@ -145,3 +145,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Added three high-value generic seafood references from USDA data: `Креветки, варені` (0.2 g carbs/100 g), `Кальмар, сирий` (3.08 g/100 g), and `Мідії, варені` (7.39 g/100 g); commit `036edf3f6943b68628778e1347bfefe99d3c9484`.
 - Post-change integrity check: 1088 unique product IDs, 0 duplicate IDs, 0 cross-product barcode collisions.
 - Continue the fish/seafood pass by checking remaining meaningful gaps and source quality; do not inflate the catalog with low-value near-duplicates.
+
+
+## Pre-APK catalog validation — 2026-09-22
+- Current runtime catalog: **1100 products**.
+- Final breadth pass and everyday-food gap check are complete for this checkpoint.
+- Structural validation before APK: **0 duplicate IDs; 0 cross-product barcode collisions; 0 invalid/missing carbohydrate values; 0 forbidden quantity units; 0 `шт` products missing valid `gramsPerPiece`**.
+- Final selected everyday gap addition: generic `Сало свиняче`, commit `9131bd68c95da92454486e792df9659281d44779`.
+- Catalog audit registry closing checkpoint: `591d538eded3ee3b71f2eef2d2feef8cce4491d4`.
+- Next action: run Android APK CI on `dev-large-update`; if analyze/tests/build are green, use that artifact as the next Android test candidate.
