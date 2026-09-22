@@ -22885,5 +22885,172 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_roshen_multicake_cocoa",
+    "name": "Печиво-сендвіч Multicake з какао Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 68.4,
+    "protein": 5,
+    "fat": 21.6,
+    "calories": 492,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/pechivo-roshen-180g-ukrayina--04823005308829/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "печиво сендвіч",
+      "multicake",
+      "мультикейк",
+      "multicake какао",
+      "печиво какао",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_konafetto_milk",
+    "name": "Вафельні трубочки Konafetto з молочною начинкою Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 64.4,
+    "protein": 4.3,
+    "fat": 27.5,
+    "calories": 525,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Auchan / Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/trubochka-roshen-156g-ukrayina--04823077618161/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафельні трубочки",
+      "трубочки",
+      "konafetto",
+      "конафетто",
+      "молочна начинка",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_johnny_krocker_milk",
+    "name": "Цукерки Johnny Krocker Milk Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 57.4,
+    "protein": 6.2,
+    "fat": 31.7,
+    "calories": 544,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/tsukerka-roshen-350g-ukrayina--04823077635519/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "вафельні цукерки",
+      "johnny krocker",
+      "джонні крокер",
+      "johnny krocker milk",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_johnny_krocker_choco",
+    "name": "Цукерки Johnny Krocker Choco Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 56.7,
+    "protein": 5.9,
+    "fat": 30.7,
+    "calories": 534,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/tsukerka-roshen-350g-ukrayina--04823077635557/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "вафельні цукерки",
+      "johnny krocker",
+      "джонні крокер",
+      "johnny krocker choco",
+      "шоколадні",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_johnny_krocker_coconut",
+    "name": "Вафлі Johnny Krocker Coconut Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 56.3,
+    "protein": 5,
+    "fat": 33.7,
+    "calories": 553,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "ULTRAMARKET / Zakaz.ua",
+    "source_url": "https://ultramarket.zakaz.ua/uk/products/vafli-roshen-ukrayina--ultramarket00000000319119/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "johnny krocker",
+      "джонні крокер",
+      "johnny krocker coconut",
+      "кокос",
+      "кокосові вафлі",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_krock_peanut_paste",
+    "name": "Цукерки Krock з арахісовою пастою Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 57.3,
+    "protein": 9,
+    "fat": 25.3,
+    "calories": 500,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Auchan / Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/tsukerka-ukrayina--auchan02532425000000/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "krock",
+      "крок",
+      "арахіс",
+      "арахісова паста",
+      "цукерки з арахісом",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
