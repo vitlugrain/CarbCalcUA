@@ -500,7 +500,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
         if(parsed.amount!=null)Text('З вашого запиту: ${parsed.amount!.toStringAsFixed(parsed.amount==parsed.amount!.roundToDouble()?0:2)} ${_mapParsedUnit(parsed.unit)?.label ?? ''}',style:const TextStyle(color:Colors.teal)),
         const SizedBox(height:8),
         Container(key:quantitySectionKey,child:Row(crossAxisAlignment:CrossAxisAlignment.start,children:[
-          Expanded(child:TextFormField(focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
+          Expanded(child:TextFormField(focusNode:amountFocusNode,controller:controller,keyboardType:const TextInputType.numberWithOptions(decimal:true),decoration:const InputDecoration(labelText:'Кількість',border:OutlineInputBorder()),onTap:(){controller.selection=TextSelection(baseOffset:0,extentOffset:controller.text.length);},onChanged:(v)=>setState(()=>amount=double.tryParse(v.replaceAll(',','.'))??0))),
           const SizedBox(width:10),
           Expanded(child:DropdownButtonFormField<QuantityUnit>(value:unit,decoration:const InputDecoration(labelText:'Одиниця',border:OutlineInputBorder()),items:units.map((u)=>DropdownMenuItem(value:u,child:Text(u.label))).toList(),onChanged:(u){if(u==null)return;setState((){unit=u;amount=_defaultAmount(u);controller.text=amount.toString();});})),
         ])),
