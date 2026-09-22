@@ -22200,5 +22200,29 @@
     "verification_level": "A reference",
     "verified": true,
     "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_znaimo_tertiukhy",
+    "name": "Деруни (тертюхи)",
+    "category": "Готові страви",
+    "state": "cooked",
+    "carbs": 21.49,
+    "protein": 2.42,
+    "fat": 1.73,
+    "calories": 109,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "ЗНАЇМО — технологічна карта",
+    "source_ref": "ТК 10.48 Тертюхи; 100 г: Б 2.42, Ж 1.73, В 21.49, 109 ккал",
+    "verified": true,
+    "aliases": [
+      "деруни",
+      "тертюхи",
+      "картопляні деруни",
+      "деруни картопляні",
+      "картопляні оладки"
+    ]
   }
 ]
