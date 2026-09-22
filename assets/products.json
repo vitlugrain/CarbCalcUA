@@ -2286,7 +2286,12 @@
       "г"
     ],
     "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "фініки сушені",
+      "сушені фініки",
+      "фінік сушений"
+    ]
   },
   {
     "id": "ua_prodiabet_halva_sunflower",
@@ -3031,7 +3036,11 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "родзинки",
+      "ізюм"
+    ]
   },
   {
     "id": "ua_prodiabet_dried_apricots",
@@ -3048,7 +3057,12 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "курага",
+      "абрикоси сушені",
+      "сушені абрикоси"
+    ]
   },
   {
     "id": "ua_prodiabet_peach_juice_no_sugar",
@@ -13025,7 +13039,14 @@
     "calories": 579,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "мигдаль",
+      "мигдальний горіх"
+    ],
+    "quantity_units": [
+      "г"
+    ]
   },
   {
     "id": "p116",
@@ -13038,7 +13059,15 @@
     "calories": 654,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "волоський горіх",
+      "волоські горіхи",
+      "грецький горіх"
+    ],
+    "quantity_units": [
+      "г"
+    ]
   },
   {
     "id": "p117",
@@ -13051,7 +13080,14 @@
     "calories": 567,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "арахіс",
+      "земляний горіх"
+    ],
+    "quantity_units": [
+      "г"
+    ]
   },
   {
     "id": "p118",
@@ -13064,7 +13100,15 @@
     "calories": 584,
     "state": "raw",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "насіння соняшнику",
+      "соняшникове насіння",
+      "насіння соняшника"
+    ],
+    "quantity_units": [
+      "г"
+    ]
   },
   {
     "id": "p120",
