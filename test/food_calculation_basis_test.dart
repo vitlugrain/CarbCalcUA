@@ -78,4 +78,42 @@ void main() {
     );
     expect(r, isNull);
   });
+  test('fixed-weight product converts pieces to grams for carb calculation', () {
+    final p = Product(
+      id: 'cookie',
+      name: 'Печиво Марія',
+      category: 'Печиво',
+      carbs: 70,
+      gramsPerPiece: 7,
+      quantityUnits: const ['г', 'шт'],
+    );
+    final r = FoodCalculationService.calculate(
+      product: p,
+      quantity: const Quantity(2, QuantityUnit.pieces),
+      xeGrams: 10,
+    );
+    expect(r, isNotNull);
+    expect(r!.grams, 14);
+    expect(r.nutritionAmount, 14);
+    expect(r.nutritionUnit, QuantityUnit.grams);
+    expect(r.carbs, closeTo(9.8, 0.001));
+    expect(r.xe, closeTo(0.98, 0.001));
+  });
+
+  test('pieces cannot be calculated without a piece weight', () {
+    final p = Product(
+      id: 'produce',
+      name: 'Помідор',
+      category: 'Овочі',
+      carbs: 4,
+      quantityUnits: const ['г'],
+    );
+    final r = FoodCalculationService.calculate(
+      product: p,
+      quantity: const Quantity(1, QuantityUnit.pieces),
+      xeGrams: 10,
+    );
+    expect(r, isNull);
+  });
+
 }
