@@ -23052,5 +23052,176 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_roshen_konafetto_coconut_tubes",
+    "name": "Вафельні трубочки Konafetto з кокосовою начинкою Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 65.7,
+    "protein": 3.3,
+    "fat": 27.7,
+    "calories": 528,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/trubochka-roshen-140g--04823077631856/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафельні трубочки",
+      "трубочки",
+      "konafetto",
+      "конафетто",
+      "кокос",
+      "кокосова начинка",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_konafetto_cocoa_tubes",
+    "name": "Вафельні трубочки Konafetto крем-какао Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 61.8,
+    "protein": 4.5,
+    "fat": 26.8,
+    "calories": 515,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Таврія В / Zakaz.ua",
+    "source_url": "https://tavriav.zakaz.ua/uk/products/trubochka-roshen-156g-ukrayina--04823077633034/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафельні трубочки",
+      "трубочки",
+      "konafetto",
+      "конафетто",
+      "какао",
+      "крем какао",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_konafetto_nut_tubes",
+    "name": "Вафельні трубочки Konafetto з горіховою начинкою Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 64,
+    "protein": 4.1,
+    "fat": 26.2,
+    "calories": 512,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/trubochka-roshen-156g-ukrayina--04823077618185/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафельні трубочки",
+      "трубочки",
+      "konafetto",
+      "конафетто",
+      "горіх",
+      "горіхова начинка",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_konafetto_bianco",
+    "name": "Цукерки Konafetto Bianco Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 61.2,
+    "protein": 3.9,
+    "fat": 30.2,
+    "calories": 537,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-roshen-ukrayina--04823006704644/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "konafetto",
+      "конафетто",
+      "konafetto bianco",
+      "біанко",
+      "вафельні цукерки",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_konafetto_nero",
+    "name": "Цукерки Konafetto Nero Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 60.4,
+    "protein": 4,
+    "fat": 28.8,
+    "calories": 525,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-roshen--04823077608841/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "konafetto",
+      "конафетто",
+      "konafetto nero",
+      "неро",
+      "вафельні цукерки",
+      "горіх",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_roshetto_milk_chocolate",
+    "name": "Вафлі Roshetto у молочному шоколаді Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 61.5,
+    "protein": 4.9,
+    "fat": 28.9,
+    "calories": 530,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/batonchik-roshen-32g-ukrayina--04823077607592/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "roshetto",
+      "рошетто",
+      "молочний шоколад",
+      "вафлі в шоколаді",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
