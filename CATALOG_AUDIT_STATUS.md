@@ -210,3 +210,13 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - **PLOV: SKIPPED by explicit user decision.** Do not add/research plov variants in the current pass; rice is already represented and recipe variability is high.
 - Current runtime catalog after this block: **1092 products**, 0 duplicate IDs in the closing check.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing common dish, bug, or explicit user decision. Do not restart this category broadly in a later chat.
+
+
+## Small generic categories checkpoint — CLOSED FOR CURRENT PASS 2026-09-22
+- **Овочі / базова зелень: CLOSED FOR CURRENT PASS.** Broad vegetable pass was completed on 2026-09-22; do not restart it. Existing runtime already includes practical fresh dill, parsley, spinach and leaf lettuce; separate `Зелень` entries include sorrel, celery greens and beet greens. No additional greens were added in the closing review.
+- **Гриби: CLOSED FOR CURRENT PASS.** Practical generic base is champignons, oyster mushrooms and chanterelles. Added/normalized in commit `297191992a345aea007804a84bcb45fc7c111268`. Do not expand with rare mushroom species absent a concrete need.
+- **Яйця: CLOSED FOR CURRENT PASS.** Existing raw and boiled chicken egg entries are sufficient for carb-counting baseline; prepared omelet/fried-egg dishes are recipe-dependent and were not added as new generic entries.
+- **Олії: CLOSED FOR CURRENT PASS.** Existing olive and soybean oils retained; generic sunflower oil added in commit `a4b52d09876f6448d06db6573a6dd093afd2c0b6`. Do not inflate with many interchangeable 0-carb pure oils absent a practical search need.
+- **Борошно: CLOSED FOR CURRENT PASS.** Existing wheat flour retained; rye, corn, buckwheat and rice flour generic references added in commit `634a884e611c916765f1d77d91df5ba9a471f408`.
+- Closing review of `Зелень` required no catalog change.
+- Runtime catalog at this checkpoint: **1099 products**.
