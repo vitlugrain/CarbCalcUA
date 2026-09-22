@@ -11712,7 +11712,11 @@
     "barcode": "",
     "gramsPerPiece": 7,
     "servingGrams": 28,
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "quantityUnits": [
+      "г",
+      "шт"
+    ]
   },
   {
     "id": "p025",
@@ -16571,7 +16575,10 @@
     "protein": 8,
     "fat": 3.4,
     "calories": 267,
-    "nutrition_basis": "100g"
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ]
   },
   {
     "id": "ua_kyivkhlib_super_toast_cereal_350",
