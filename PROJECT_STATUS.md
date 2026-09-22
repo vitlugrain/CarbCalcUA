@@ -123,3 +123,16 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Full structural audit of all **1079 products** passed: 1079 unique IDs, no cross-product barcode collisions, no invalid/missing carbohydrate values, no `шт` without a valid `gramsPerPiece`, no stale serving field on gram-only/non-piece/non-portion products, and no non-McDonald's/KFC explicit portions.
 - Explicit quantity-unit counts at this checkpoint: `г` 643, `мл` 134, `порція` 147, `шт` 22. Drinks remain intentionally unchanged per user decision.
 - Technical unit/serving cleanup is closed. Resume category-first catalog breadth/quality work; do not build/request a new user-test APK after every small change.
+
+
+## Catalog breadth checkpoint — 2026-09-22 (post-APK #356 work recovered)
+- GitHub branch state was rechecked after the lost chat context; repository commits are intact. Branch head before this checkpoint was `9decd38855860500e1b449536bd608bd798b9555` (`Add generic dry quinoa reference`).
+- User reports APK **#356** exists. Do not treat it as the new long-term control checkpoint solely from this note; current catalog work continues to accumulate before the next requested device-test checkpoint.
+- Runtime catalog is now **1085 products**.
+- Fruit/berry generic block is closed for this pass: **43 generic positions** total — `Фрукти` 20, `Фрукти та ягоди` 15, `Ягоди` 8; no obvious semantic duplicates and no missing search aliases in that reviewed block. Papaya remains one canonical position.
+- Added `Лохина свіжа` (14.49 g carbs/100 g, USDA level A), `Лайм свіжий` (10.54 g/100 g, USDA level A), and `Суниця свіжа` (7.68 g/100 g, level B reference proxy using the closest USDA strawberry reference rather than claiming a separately verified wild-strawberry value). Search aliases include лохина/голубика, лайм, суниця/лісова суниця. Commit: `713cfdcdabd4b8927a8ac4e28f9fa60424ac35bc`.
+- Dried fruit / nuts / seeds first-pass breadth: 7 dried fruits, 6 nuts, 5 seeds. Search aliases were improved for the older core positions; commit `782e7853035ff02871fa105c8c1282c8b8ba7c79`. Per user decision, do **not** add pecan or Brazil nut in this pass.
+- Grain/porridge/side-dish block is closed for this pass. Search aliases were completed for the reviewed 51-position block; commits `d43fb4802a45ca765d7d03c1c3b97e99ca0b0d2d` and `946e216f3d7d156925aa6d74d1dfa6aa2ab20d50`.
+- Removed dry spelt. Existing `p091` was clarified to `Кукурудза солодка, варена (зерна з початка)` with aliases for boiled corn/corn on the cob; quantity remains grams because cob size varies. Commit: `c1056f3a0452d294aa4ce4e65b857543d48fb5ff`.
+- Added generic `Кіноа, суха`: carbs 64.16 g/100 g, protein 14.12 g, fat 6.07 g, 368 kcal, grams; aliases `кіноа суха`, `суха кіноа`, `кіноа сира`; USDA SR Legacy / FDC 168874 reference. Commit: `9decd38855860500e1b449536bd608bd798b9555`.
+- Next work: continue category-first breadth/quality audit from the next important category. Before each repository continuation, reread both status files and refetch the current blob SHA before modifying an existing file.
