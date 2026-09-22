@@ -12915,7 +12915,7 @@
   },
   {
     "id": "p091",
-    "name": "Кукурудза солодка, варена",
+    "name": "Кукурудза солодка, варена (зерна з початка)",
     "category": "Овочі",
     "carbs": 21,
     "protein": 3.4,
@@ -12924,7 +12924,18 @@
     "calories": 96,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "USDA Standard Reference — sweet corn, yellow, cooked, boiled, drained, kernels on cob",
+    "aliases": [
+      "кукурудза варена",
+      "варена кукурудза",
+      "кукурудза в початках",
+      "варена кукурудза в початках",
+      "кукурудза солодка варена",
+      "качан кукурудзи"
+    ],
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
   },
   {
     "id": "p092",
@@ -16517,28 +16528,6 @@
     "source": "Zakaz.ua",
     "source_url": "https://auchan.zakaz.ua/uk/products/krupa-sto-pudov-1000g-ukrayina--04820235610463/",
     "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 12.29, Ж 1.33, В 75.90, 342 kcal.",
-    "verified": true
-  },
-  {
-    "id": "ua_zakaz_spelt_raw",
-    "name": "Спельта, суха",
-    "aliases": [
-      "спельта суха",
-      "антична пшениця"
-    ],
-    "category": "Крупи",
-    "state": "raw",
-    "carbs": 70,
-    "protein": 15,
-    "fat": 2.4,
-    "calories": 338,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "Zakaz.ua",
-    "source_url": "https://zakaz.ua/uk/products/krupa-sto-pudov-500g-ukrayina--04820235615154/",
-    "source_ref": "Generic food gap. Representative retail SKU used only as nutrition verification; brand/package/EAN intentionally not modeled as a separate food. 100 g: Б 15.0, Ж 2.4, В 70.0, 338 kcal.",
     "verified": true
   },
   {
