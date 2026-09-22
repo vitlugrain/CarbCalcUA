@@ -170,5 +170,14 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Runtime catalog: **1085 products** at branch head `9decd38855860500e1b449536bd608bd798b9555` before this status update.
 - **Fruit/berries: CLOSED FOR THIS PASS.** Reviewed generic block: 43 positions (Фрукти 20; Фрукти та ягоди 15; Ягоди 8), 0 obvious semantic duplicates, 0 reviewed positions missing aliases. Added blueberries, lime, and wild strawberry/reference-proxy entry in commit `713cfdcdabd4b8927a8ac4e28f9fa60424ac35bc`.
 - **Dried fruit / nuts / seeds: BASELINE PASS COMPLETE.** Current breadth reviewed as 7 dried fruits, 6 nuts, 5 seeds. Core missing aliases repaired in `782e7853035ff02871fa105c8c1282c8b8ba7c79`. Pecan and Brazil nut explicitly skipped by user for now.
-- **Grains / porridges / side dishes: CLOSED FOR THIS PASS.** Reviewed 51-position block has search aliases completed (`d43fb4802a45ca765d7d03c1c3b97e99ca0b0d2d`, `946e216f3d7d156925aa6d74d1dfa6aa2ab20d50`). Dry spelt removed; boiled sweet corn/corn-on-cob identity clarified in `c1056f3a045ca765d7d03c1c3b97e99ca0b0d2d`. Dry quinoa added from USDA SR Legacy/FDC reference in `9decd38855860500e1b449536bd608bd798b9555`.
+- **Grains / porridges / side dishes: CLOSED FOR THIS PASS.** Reviewed 51-position block has search aliases completed (`d43fb4802a45ca765d7d03c1c3b97e99ca0b0d2d`, `946e216f3d7d156925aa6d74d1dfa6aa2ab20d50`). Dry spelt removed; boiled sweet corn/corn-on-cob identity clarified in `c1056f3a0452d294aa4ce4e65b857543d48fb5ff`. Dry quinoa added from USDA SR Legacy/FDC reference in `9decd38855860500e1b449536bd608bd798b9555`.
 - Continue with the next important category using the same generic-first / hybrid policy: inspect existing runtime first, check semantic duplicates, fill meaningful gaps, improve aliases, and avoid low-value catalog inflation.
+
+
+## Fish / seafood breadth checkpoint — 2026-09-22
+- Runtime catalog: **1088 products**.
+- Fish/seafood pass started from the existing `Риба` runtime block. The block now has **28 positions**.
+- Added search aliases to all 16 older boiled/blanched fish entries that previously had none; commit `dd84126183ba2ae710c3c0e9024e6191249222ea`. After this change, no `Риба` position is missing aliases.
+- Added three high-value generic seafood references from USDA data: `Креветки, варені` (0.2 g carbs/100 g), `Кальмар, сирий` (3.08 g/100 g), and `Мідії, варені` (7.39 g/100 g); commit `036edf3f6943b68628778e1347bfefe99d3c9484`.
+- Post-change integrity check: 1088 unique product IDs, 0 duplicate IDs, 0 cross-product barcode collisions.
+- Continue the fish/seafood pass by checking remaining meaningful gaps and source quality; do not inflate the catalog with low-value near-duplicates.
