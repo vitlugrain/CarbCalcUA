@@ -62,7 +62,19 @@ Each new issue should record:
 
 ## Registered issues
 
-No concrete APK #380 issue has been entered yet. Add the user's next specific observation as `T-001`.
+### T-001 — Base query "картопля" omits "Картопля смажена"
+
+- **First reported APK:** #380 (also reported in an earlier chat before the persistent registry existed).
+- **Latest affected APK:** #380.
+- **Status:** FIXED / AWAITING APK.
+- **Observed:** searching for `картопля` does not show `Картопля смажена`, while searching for `смаж...` does show it.
+- **Expected:** a base-product query such as `картопля` should include relevant preparation variants, including fried potato.
+- **Root cause:** the catalog entry and aliases are correct, and the morphology/search mapping for `картопля` is present. The search service truncated ranked results to 10, so with the expanded catalog the fried variant could fall below the visible result cutoff even though it matched.
+- **Fix:** increased the default relevant-result limit from 10 to 30 so base-food searches can expose meaningful preparation variants; added a regression test with more than 10 potato matches.
+- **Fix commits:** `10510dd66872131beb813ea52d4edb35d26c184a`, `c36e18b9b87cc1a8139e90928dee31e5f854ab65`.
+- **APK containing fix:** not built yet; accumulate with other #380 fixes.
+- **Device verification:** pending.
+- **Related check:** `Картопля смажена` exists in runtime as `ua_prodiabet_fried_potatoes` with aliases `смажена картопля`, `картопля смажена`, `жарена картопля`; therefore no duplicate/new catalog product is needed.
 
 ## Build policy during testing
 
