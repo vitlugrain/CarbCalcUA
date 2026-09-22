@@ -1,9 +1,29 @@
 # CarbCalc UA — Catalog Audit Registry
 
-Updated: 2026-09-18
+Updated: 2026-09-22
 Branch: `dev-large-update`
 
 GitHub is the source of truth. Workflow: `discovery → existing-catalog gap check → A/B/C nutrition verification → pending only for material conflicts → dedup → explicit runtime whitelist → merge → parse/test → APK`.
+
+## Anti-repeat audit rule — mandatory
+
+Before starting **any** category-first catalog audit, first check the category/workstream status in this file. Do not start work merely because a category looks like a logical next step.
+
+Statuses used from now on:
+- **NOT STARTED** — category may be selected for a new audit.
+- **IN PROGRESS** — continue from its recorded checkpoint; do not restart from the beginning.
+- **CLOSED** / **CLOSED ... CHECKPOINT** — do **not** re-audit broadly. Reopen only for a concrete newly reported bug, a specific missing product/source, or an explicit user decision.
+- **SKIPPED** — do not revisit unless explicitly reopened by the user.
+
+A completed category remains closed across new chats/devices. New alias/search fixes discovered incidentally may be applied without reopening the whole category, but must not trigger another broad audit.
+
+**Known closed blocks that must not be repeated:**
+- Хліб та випічка — CLOSED CHECKPOINT (already integrated; semantic dedup/search work also performed 2026-09-21/22).
+- М'ясо та м'ясні продукти — CLOSED AUDIT CHECKPOINT 2026-09-21; runtime core was additionally reviewed on 2026-09-22. User decision: do not search for/add new raw-meat generics in the current breadth pass.
+- Фрукти/ягоди — CLOSED FOR CURRENT PASS.
+- Крупи/каші/гарніри — CLOSED FOR CURRENT PASS.
+- Риба/морепродукти — CLOSED FOR CURRENT PASS after runtime breadth completion on 2026-09-22; do not restart from the beginning.
+- Горіхи/насіння/сухофрукти — BASELINE PASS COMPLETE; pecan and Brazil nut explicitly skipped.
 
 ## Mandatory catalog identity rule
 
