@@ -136,3 +136,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Removed dry spelt. Existing `p091` was clarified to `Кукурудза солодка, варена (зерна з початка)` with aliases for boiled corn/corn on the cob; quantity remains grams because cob size varies. Commit: `c1056f3a0452d294aa4ce4e65b857543d48fb5ff`.
 - Added generic `Кіноа, суха`: carbs 64.16 g/100 g, protein 14.12 g, fat 6.07 g, 368 kcal, grams; aliases `кіноа суха`, `суха кіноа`, `кіноа сира`; USDA SR Legacy / FDC 168874 reference. Commit: `9decd38855860500e1b449536bd608bd798b9555`.
 - Next work: continue category-first breadth/quality audit from the next important category. Before each repository continuation, reread both status files and refetch the current blob SHA before modifying an existing file.
+
+
+## Fish / seafood breadth checkpoint — 2026-09-22
+- Runtime catalog: **1088 products**.
+- Fish/seafood pass started from the existing `Риба` runtime block. The block now has **28 positions**.
+- Added search aliases to all 16 older boiled/blanched fish entries that previously had none; commit `dd84126183ba2ae710c3c0e9024e6191249222ea`. After this change, no `Риба` position is missing aliases.
+- Added three high-value generic seafood references from USDA data: `Креветки, варені` (0.2 g carbs/100 g), `Кальмар, сирий` (3.08 g/100 g), and `Мідії, варені` (7.39 g/100 g); commit `036edf3f6943b68628778e1347bfefe99d3c9484`.
+- Post-change integrity check: 1088 unique product IDs, 0 duplicate IDs, 0 cross-product barcode collisions.
+- Continue the fish/seafood pass by checking remaining meaningful gaps and source quality; do not inflate the catalog with low-value near-duplicates.
