@@ -22359,5 +22359,286 @@
       "сало свиняче",
       "сало свіже"
     ]
+  },
+  {
+    "id": "ua_yarych_maria_original",
+    "name": "Печиво Марія оригінальна Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 70.5,
+    "protein": 7.7,
+    "fat": 12.5,
+    "fiber": 2.6,
+    "calories": 431,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/biscuits-maria-original-yarych",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "печиво марія",
+      "марія",
+      "марія оригінальна",
+      "марія ярич",
+      "марія yarych",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_maria_wholegrain",
+    "name": "Печиво Марія цільнозернове Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 71.1,
+    "protein": 9.2,
+    "fat": 14.2,
+    "fiber": 4.2,
+    "calories": 457,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/biscuits-maria-with-whole-grain-flour-yarych",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "печиво марія",
+      "марія",
+      "марія цільнозернова",
+      "марія цільнозернове",
+      "марія ярич",
+      "марія yarych",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_maria_milk_calcium",
+    "name": "Печиво Марія з молоком та кальцієм Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 68.9,
+    "protein": 8.5,
+    "fat": 11.3,
+    "fiber": 2.5,
+    "calories": 416,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/biscuits-maria-with-milk-and-calcium-yarych-76g",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "печиво марія",
+      "марія",
+      "марія молоко кальцій",
+      "марія з молоком",
+      "марія з кальцієм",
+      "марія ярич",
+      "марія yarych",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_maria_classic_sunflower",
+    "name": "Печиво Марія класична Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 72,
+    "protein": 7.8,
+    "fat": 9.2,
+    "fiber": 2.6,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/pechivo-zatyazhne-mariya-klasichna-yarych-z-sonyashnikovoyu-olieyu-",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "печиво марія",
+      "марія",
+      "марія класична",
+      "марія ярич",
+      "марія yarych",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_mriya",
+    "name": "Печиво Мрія Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 71.9,
+    "protein": 7.7,
+    "fat": 12.3,
+    "fiber": 2.6,
+    "calories": 434,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/ciastka-mrija-yarych",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "мрія",
+      "печиво мрія",
+      "мрія ярич",
+      "мрія yarych",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_cracker_delicate",
+    "name": "Крекер Ніжний Yarych",
+    "brand": "Yarych",
+    "category": "Снеки",
+    "state": "packaged",
+    "carbs": 64.1,
+    "protein": 8.4,
+    "fat": 18,
+    "fiber": 2.8,
+    "calories": 458,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/crackers-delicate-yarych",
+    "verified": true,
+    "aliases": [
+      "крекер",
+      "крекери",
+      "крекер ніжний",
+      "ніжний ярич",
+      "крекер ярич",
+      "крекер yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_cracker_mushrooms",
+    "name": "Крекер з грибами Yarych",
+    "brand": "Yarych",
+    "category": "Снеки",
+    "state": "packaged",
+    "carbs": 59.8,
+    "protein": 8.5,
+    "fat": 19.3,
+    "fiber": 3.2,
+    "calories": 453,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/krakers-z-grzybami-yarycz",
+    "verified": true,
+    "aliases": [
+      "крекер",
+      "крекери",
+      "крекер з грибами",
+      "грибний крекер",
+      "крекер ярич",
+      "крекер yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_cracker_caramel_salt",
+    "name": "Крекер з ароматом карамелі та сіллю Yarych",
+    "brand": "Yarych",
+    "category": "Снеки",
+    "state": "packaged",
+    "carbs": 70.2,
+    "protein": 7.9,
+    "fat": 13.7,
+    "fiber": 2.6,
+    "calories": 441,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/cracker-with-caramel-flavor-yarych-with-salt",
+    "verified": true,
+    "aliases": [
+      "крекер",
+      "крекери",
+      "крекер карамель",
+      "крекер з карамеллю",
+      "крекер ярич",
+      "крекер yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_cookie_caramel",
+    "name": "Печиво цукрове з ароматом карамелі Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 72,
+    "protein": 6.6,
+    "fat": 15,
+    "fiber": 2.3,
+    "calories": 449,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/cookies-with-caramel-flavor",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "цукрове печиво",
+      "печиво карамель",
+      "печиво з карамеллю",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_cookie_tea_coffee_coconut",
+    "name": "Печиво До чаю та кави з кокосом Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 70.2,
+    "protein": 7.2,
+    "fat": 15.2,
+    "fiber": 2.8,
+    "calories": 452,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://yarych.com/products/ciastka-z-kokosem-yarych-220g",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "до чаю та кави",
+      "печиво з кокосом",
+      "кокосове печиво",
+      "печиво ярич",
+      "печиво yarych"
+    ]
   }
 ]
