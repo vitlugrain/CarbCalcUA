@@ -16515,7 +16515,8 @@
     "source": "Zakaz.ua — representative classic wheat burger bun",
     "source_url": "https://zakaz.ua/uk/products/burger-300g-ukrayina--04820155742862/",
     "source_ref": "La Brio Burger 50 г: Б 7.7, Ж 2.5, В 58.6, 270.4 ккал. Cross-check current classic burger buns: Metro Chef 58.0 г В; Хлібо 59.3 г В; Кулиничі 60.3–62.0 г В. Brioche and rye/sesame variants are not collapsed into this generic record.",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 50
   },
   {
     "id": "ua_kyivkhlib_big_toast_original_500",
@@ -16743,7 +16744,8 @@
     "serving_grams": 300,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "source_url": "https://novus.zakaz.ua/uk/products/maistri-smaku-ukrayina--novus02842533000000/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 300
   },
   {
     "id": "ua_zakaz_maistry_wholegrain_baguette_270",
@@ -16764,7 +16766,8 @@
     "serving_grams": 270,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "source_url": "https://novus.zakaz.ua/uk/products/baget-maistri-smaku-270g-ukrayina--novus02842414000000/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 270
   },
   {
     "id": "ua_zakaz_auchan_ciabat_baguette_250",
@@ -16785,7 +16788,8 @@
     "serving_grams": 250,
     "source": "Auchan / Zakaz.ua — current retail nutrition",
     "source_url": "https://auchan.zakaz.ua/uk/products/baget-250g--auchan02000005197789/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 250
   },
   {
     "id": "ua_zakaz_metrochef_brioche_burger_bun_50",
@@ -16808,7 +16812,8 @@
     "source": "METRO / Zakaz.ua — current packaged-product nutrition",
     "source_url": "https://metro.zakaz.ua/uk/products/bulka-metro-shef-ukrayina--04820284561679/",
     "ean": "4820284561679",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 50
   },
   {
     "id": "ua_zakaz_metrochef_brioche_hotdog_bun_60",
@@ -16831,7 +16836,8 @@
     "source": "METRO / Zakaz.ua — current packaged-product nutrition",
     "source_url": "https://metro.zakaz.ua/uk/products/bulka-metro-shef-360g-ukrayina--04820293125329/",
     "ean": "4820293125329",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 60
   },
   {
     "id": "ua_zakaz_7days_croissant_cocoa_65",
@@ -16851,7 +16857,8 @@
     ],
     "serving_grams": 65,
     "source": "Auchan / Zakaz.ua — current retail nutrition",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 65
   },
   {
     "id": "ua_zakaz_7days_croissant_vanilla_65",
@@ -16871,7 +16878,8 @@
     ],
     "serving_grams": 65,
     "source": "METRO/Auchan / Zakaz.ua — current retail nutrition",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 65
   },
   {
     "id": "ua_zakaz_7days_croissant_strawberry_65",
@@ -16892,7 +16900,8 @@
     "serving_grams": 65,
     "source": "METRO/NOVUS / Zakaz.ua — current retail nutrition",
     "verified": true,
-    "note": "Materially different carbohydrate profile from cocoa/vanilla recipe."
+    "note": "Materially different carbohydrate profile from cocoa/vanilla recipe.",
+    "gramsPerPiece": 65
   },
   {
     "id": "ua_zakaz_7days_croissant_vanilla_cookie_60",
@@ -16912,7 +16921,8 @@
     ],
     "serving_grams": 60,
     "source": "Auchan / Zakaz.ua — retail nutrition",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 60
   },
   {
     "id": "ua_zakaz_chipicao_croissant_cocoa_60",
@@ -16932,7 +16942,8 @@
     ],
     "serving_grams": 60,
     "source": "Auchan / Zakaz.ua — retail nutrition",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 60
   },
   {
     "id": "ua_zakaz_brioche_burger_maysry_smaku_80",
@@ -16953,7 +16964,8 @@
     "serving_grams": 80,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "verified": true,
-    "note": "Distinct brioche recipe and materially lower carbohydrates than classic burger-bun cluster."
+    "note": "Distinct brioche recipe and materially lower carbohydrates than classic burger-bun cluster.",
+    "gramsPerPiece": 80
   },
   {
     "id": "ua_zakaz_maistry_vatrushka_cottage_cheese_100",
@@ -16974,7 +16986,8 @@
     "serving_grams": 100,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "source_url": "https://novus.zakaz.ua/uk/products/vatrushka-maistri-smaku-100g--novus02841296000000/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 100
   },
   {
     "id": "ua_zakaz_maistry_vatrushka_berries_100",
@@ -16995,7 +17008,8 @@
     "serving_grams": 100,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "source_url": "https://novus.zakaz.ua/uk/products/vatrushka-maistri-smaku-100g-ukrayina--novus02843599000000/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 100
   },
   {
     "id": "ua_zakaz_2go_croissant_vanilla_60",
@@ -17016,7 +17030,8 @@
     "serving_grams": 60,
     "source": "Auchan / Zakaz.ua — current packaged-product nutrition",
     "source_url": "https://auchan.zakaz.ua/uk/products/kruasan-tu-gou-60g--04820182334757/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 60
   },
   {
     "id": "ua_zakaz_agrobiznes_croissant_condensed_milk_75",
@@ -17037,7 +17052,8 @@
     "serving_grams": 75,
     "source": "Zakaz.ua — current packaged-product nutrition",
     "source_url": "https://zakaz.ua/uk/products/ukrayina--04820079872058/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 75
   },
   {
     "id": "ua_zakaz_auchan_croissant_pistachio_100",
@@ -17058,7 +17074,8 @@
     "serving_grams": 100,
     "source": "Auchan / Zakaz.ua — current retail nutrition",
     "source_url": "https://auchan.zakaz.ua/uk/products/kruasan-ashan-100g-ukrayina--auchan02000000842226/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 100
   },
   {
     "id": "ua_zakaz_maistry_croissant_almond_100",
@@ -17079,7 +17096,8 @@
     "serving_grams": 100,
     "source": "NOVUS / Zakaz.ua — current retail nutrition",
     "source_url": "https://novus.zakaz.ua/uk/products/kruasan-maistri-smaku-100g--novus02841297000000/",
-    "verified": true
+    "verified": true,
+    "gramsPerPiece": 100
   },
   {
     "id": "ua_schedro_ketchup_shashlik",
@@ -19385,8 +19403,7 @@
     "calories": 18,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard raw-vegetable reference",
     "verification_level": "A reference",
@@ -19410,8 +19427,7 @@
     "calories": 15,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central FDC 168409",
     "verification_level": "A reference",
@@ -19458,8 +19474,7 @@
     "calories": 31,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -19576,8 +19591,7 @@
     "calories": 16,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -19720,8 +19734,7 @@
     "calories": 44,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -19791,8 +19804,7 @@
     "calories": 97,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -19815,8 +19827,7 @@
     "calories": 57,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -20029,8 +20040,7 @@
     "calories": 240,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard dried prunes reference",
     "verification_level": "A reference",
@@ -20054,8 +20064,7 @@
     "calories": 249,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "USDA FoodData Central standard dried figs reference",
     "verification_level": "A reference",
@@ -20356,8 +20365,7 @@
     "calories": 296,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "Ятрань manufacturer current product page + Silpo corroboration",
     "verification_level": "A",
@@ -20378,8 +20386,7 @@
     "calories": 251,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "шт"
+      "г"
     ],
     "source": "Ятрань manufacturer current product page",
     "verification_level": "A",
@@ -20524,7 +20531,8 @@
     "verification_level": "B",
     "verified": true,
     "catalog_policy": "recipe_dependent_branded_variant",
-    "audit_note": "Representative classic glazed curd bar. Current Silpo card reports C36.7/P8.1/F27/422.4. Exact EAN not established in this pass, so barcode remains null."
+    "audit_note": "Representative classic glazed curd bar. Current Silpo card reports C36.7/P8.1/F27/422.4. Exact EAN not established in this pass, so barcode remains null.",
+    "gramsPerPiece": 40
   },
   {
     "id": "ua_zlagoda_glazed_curd_condensed_milk_36_4820202530183",
@@ -20548,7 +20556,8 @@
     "verification_level": "B",
     "verified": true,
     "catalog_policy": "recipe_dependent_branded_variant",
-    "audit_note": "Exact EAN 4820202530183 established by current Auchan/Zakaz card. Silpo reports coherent C34/P7.2/F22/364. Auchan/Zakaz metadata is internally inconsistent (carbs 24.8 while sugars 34), so its nutrition is not used; identity/EAN only."
+    "audit_note": "Exact EAN 4820202530183 established by current Auchan/Zakaz card. Silpo reports coherent C34/P7.2/F22/364. Auchan/Zakaz metadata is internally inconsistent (carbs 24.8 while sugars 34), so its nutrition is not used; identity/EAN only.",
+    "gramsPerPiece": 36
   },
   {
     "id": "ua_zlagoda_glazed_curd_caramel_coconut_43",
@@ -20572,7 +20581,8 @@
     "verification_level": "B",
     "verified": true,
     "catalog_policy": "recipe_dependent_branded_variant",
-    "audit_note": "Representative filled glazed curd profile C36/P8.9/F26/414. Kept as a compact filled variant; do not add every flavour with near-identical macros."
+    "audit_note": "Representative filled glazed curd profile C36/P8.9/F26/414. Kept as a compact filled variant; do not add every flavour with near-identical macros.",
+    "gramsPerPiece": 43
   },
   {
     "id": "ua_ehrmann_high_protein_pudding_caramel_200_4002971243901",
