@@ -22273,5 +22273,26 @@
       "лисички сирі",
       "гриби лисички"
     ]
+  },
+  {
+    "id": "generic_sunflower_oil",
+    "name": "Олія соняшникова",
+    "category": "Олії",
+    "state": "raw",
+    "carbs": 0,
+    "protein": 0,
+    "fat": 100,
+    "calories": 884,
+    "nutrition_basis": "100ml",
+    "quantity_units": [
+      "мл"
+    ],
+    "source": "Generic food reference — pure sunflower oil",
+    "verified": true,
+    "aliases": [
+      "соняшникова олія",
+      "олія соняшникова",
+      "олія з насіння соняшнику"
+    ]
   }
 ]
