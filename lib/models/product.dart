@@ -102,7 +102,7 @@ class Product {
       updatedAt: _stringOrNull(j['updatedAt'] ?? j['updated_at']),
       gramsPerPiece: _numberOrNull(j['gramsPerPiece'] ?? j['grams_per_piece']),
       gramsPerMl: _numberOrNull(j['gramsPerMl'] ?? j['grams_per_ml']),
-      servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams'] ?? j['package_g']),
+      servingGrams: _numberOrNull(j['servingGrams'] ?? j['serving_grams']),
       aliases: _stringList(j['aliases']),
       nutritionBasis: _stringOrNull(j['nutritionBasis'] ?? j['nutrition_basis']) ?? '100g',
       quantityUnits: _stringList(j['quantityUnits'] ?? j['quantity_units']),
