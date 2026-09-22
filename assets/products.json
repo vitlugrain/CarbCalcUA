@@ -21358,5 +21358,81 @@
     "verification_level": "A reference",
     "verified": true,
     "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_blueberries_raw",
+    "name": "Лохина свіжа",
+    "aliases": [
+      "лохина",
+      "лохина сира",
+      "голубика"
+    ],
+    "category": "Ягоди",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 14.49,
+    "protein": 0.74,
+    "fat": 0.33,
+    "calories": 57,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Blueberries, raw",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_lime_raw",
+    "name": "Лайм свіжий",
+    "aliases": [
+      "лайм",
+      "лайм свіжий",
+      "свіжий лайм"
+    ],
+    "category": "Фрукти",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 10.54,
+    "protein": 0.7,
+    "fat": 0.2,
+    "calories": 30,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Limes, raw",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_wild_strawberry_raw",
+    "name": "Суниця свіжа",
+    "aliases": [
+      "суниця",
+      "суниця лісова",
+      "лісова суниця",
+      "суниця свіжа"
+    ],
+    "category": "Ягоди",
+    "state": "raw",
+    "brand": null,
+    "barcode": null,
+    "carbs": 7.68,
+    "protein": 0.67,
+    "fat": 0.3,
+    "calories": 32,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Strawberries, raw; used as generic strawberry-family reference for fresh wild strawberry",
+    "verification_level": "B reference proxy",
+    "verified": true,
+    "catalog_policy": "gap_only_generic"
   }
 ]
