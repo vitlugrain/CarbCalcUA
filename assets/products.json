@@ -2243,25 +2243,6 @@
     "verified": true
   },
   {
-    "id": "ua_prodiabet_papaya",
-    "name": "Папайя, свіжа",
-    "category": "Фрукти та ягоди",
-    "state": "raw",
-    "carbs": 9.2,
-    "calories": 48,
-    "glycemic_index": 58,
-    "glycemic_load_100g": 5.3,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "aliases": [
-      "папайя"
-    ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
-  },
-  {
     "id": "ua_prodiabet_dates_fresh",
     "name": "Фініки свіжі",
     "category": "Фрукти та ягоди",
@@ -19740,9 +19721,13 @@
   },
   {
     "id": "ua_generic_papaya_raw",
-    "name": "Папая свіжа",
+    "name": "Папая, свіжа",
     "aliases": [
-      "папая"
+      "папая",
+      "папайя",
+      "папайя свіжа",
+      "свіжа папая",
+      "свіжа папайя"
     ],
     "category": "Фрукти",
     "state": "raw",
@@ -19759,7 +19744,7 @@
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
     "verified": true,
-    "catalog_policy": "gap_only_generic"
+    "catalog_policy": "generic_first"
   },
   {
     "id": "ua_generic_passionfruit_raw",
