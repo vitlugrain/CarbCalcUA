@@ -16485,8 +16485,7 @@
     "calories": 312.88,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "скибка"
+      "г"
     ],
     "source": "Zakaz.ua — current retail representative for Borodinsky custard bread",
     "source_url": "https://megamarket.zakaz.ua/uk/products/khlib--megamarket02136910000000/",
@@ -17468,8 +17467,7 @@
     "calories": 358,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "банка"
+      "г"
     ],
     "serving_grams": 240,
     "barcode": "04750616001255",
@@ -17613,8 +17611,7 @@
     "calories": 37,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "barcode": "05449000027368",
     "source": "Coca-Cola Україна + Zakaz.ua",
@@ -17634,8 +17631,7 @@
     "calories": 37,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "barcode": "05449000312105",
     "source": "Coca-Cola Україна + Zakaz.ua",
@@ -17697,8 +17693,7 @@
     "calories": 45,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "source": "PepsiCo Україна + Zakaz.ua/Auchan exact-EAN",
     "source_ref": "Current PepsiCo Ukraine catalog identifies Sadochok Multifruit drink 0.95 L as GTIN 4823063130318. Current exact-EAN Auchan/Zakaz retail card gives В 11.0 / Б 0 / Ж 0 / 45 kcal per 100 g and identifies manufacturer TOV Sandora. Exact EAN and Sadochok name were absent from current assets/products.json before audit-file creation.",
@@ -17718,8 +17713,7 @@
     "calories": 24,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "source": "PepsiCo Україна + verified product passport",
     "source_ref": "Current PepsiCo Ukraine assortment identifies Sadochok Tomato-Salt 0.95 L with GTIN 4823063107303. Current verified product passport for exact GTIN gives В 5.2 / Б 0.7 / Ж 0 / 24 kcal per 100 ml, manufacturer TOV Sandora.",
@@ -17740,8 +17734,7 @@
     "calories": 47,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "PepsiCo Україна product identity + exact-EAN retail/product-data card",
@@ -17763,8 +17756,7 @@
     "calories": 56,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "PepsiCo Україна product catalog + Listex verified exact-EAN passport",
@@ -17785,8 +17777,7 @@
     "calories": 46,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "PepsiCo Україна product catalog + Listex verified exact-EAN passport",
@@ -17807,8 +17798,7 @@
     "calories": 53,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "PepsiCo Україна product catalog + Listex verified exact-EAN passport",
@@ -17829,8 +17819,7 @@
     "calories": 43,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Jaffa official catalog + Auchan/Zakaz exact-EAN",
@@ -17851,8 +17840,7 @@
     "calories": 43,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "A",
     "source": "Jaffa official catalog",
@@ -17873,8 +17861,7 @@
     "calories": 43,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "A",
     "source": "Jaffa official catalog + Silpo",
@@ -17895,8 +17882,7 @@
     "calories": 20,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "A",
     "source": "Jaffa official catalog",
@@ -17917,8 +17903,7 @@
     "calories": 41,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "A",
     "source": "Jaffa official catalog",
@@ -17939,8 +17924,7 @@
     "calories": 42,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "A",
     "source": "Jaffa official catalog",
@@ -17959,8 +17943,7 @@
     "calories": 40,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "source": "Galicia + Сільпо + VARUS",
     "source_ref": "Level A/B/C: official Galicia identifies current apple-pear direct-pressed recipe as 50% apple + 50% pear, no added water/sugar/preservatives; current Silpo and VARUS 1 L cards agree on P 0.4 / F 0 / C 9.5 and 40 kcal per 100 g/ml. Package-size variants are treated as one nutrition identity.",
@@ -17980,8 +17963,7 @@
     "calories": 43,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "source": "Сільпо + VARUS + Listex exact-EAN",
     "source_ref": "Level B/C: current Silpo and VARUS cards for 0.95 L and 0.2 L agree on P 0.4 / F 0 / C 10.3 / 43 kcal; Listex exact EAN 4820192262651 independently matches the same nutrition. Package sizes share one recipe identity.",
@@ -18001,8 +17983,7 @@
     "calories": 45.1,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "source": "Сільпо + VARUS + Listex exact-EAN",
     "source_ref": "Level B/C: current Silpo and VARUS cards agree on P 0.2 / F 0.02 / C 11.1 / 45.1 kcal for Biola apple juice; Listex exact EAN 4820209111859 matches the same recipe and nutrition. Package-size variants are one nutrition identity.",
@@ -18023,8 +18004,7 @@
     "calories": 39,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Zakaz.ua exact-EAN",
@@ -18045,8 +18025,7 @@
     "calories": 58.3,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Auchan Ukraine exact-EAN",
@@ -18067,8 +18046,7 @@
     "calories": 43.4,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Auchan Ukraine exact-EAN",
@@ -18089,8 +18067,7 @@
     "calories": 43.5,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Auchan Ukraine exact-EAN",
@@ -18111,8 +18088,7 @@
     "calories": 20,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Rozetka exact-EAN + Silpo current recipe corroboration",
@@ -18132,8 +18108,7 @@
     "calories": 38,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "C",
     "source": "Silpo current multi-size cards + Listex recipe identity",
@@ -18152,8 +18127,7 @@
     "calories": null,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "C",
     "source": "Current Ukrainian retail cards across 0.2 L and 0.95 L package sizes",
@@ -18174,8 +18148,7 @@
     "calories": 18,
     "nutrition_basis": "100ml",
     "quantity_units": [
-      "мл",
-      "л"
+      "мл"
     ],
     "verification_level": "B",
     "source": "Current exact-EAN Ukrainian retail cards (Auchan, Zakaz) plus current Silpo/VARUS product cards",
@@ -18880,8 +18853,7 @@
     "nutrition_basis": "100g_dry",
     "package_g": 59.2,
     "quantity_units": [
-      "г",
-      "упаковка"
+      "г"
     ],
     "source": "Zakaz.ua",
     "verified": true,
@@ -18900,8 +18872,7 @@
     "nutrition_basis": "100g_dry",
     "package_g": 59.2,
     "quantity_units": [
-      "г",
-      "упаковка"
+      "г"
     ],
     "source": "Zakaz.ua",
     "verified": true,
@@ -18920,8 +18891,7 @@
     "nutrition_basis": "100g_dry",
     "package_g": 40,
     "quantity_units": [
-      "г",
-      "упаковка"
+      "г"
     ],
     "source": "Zakaz.ua",
     "verified": true,
@@ -19464,8 +19434,7 @@
     "calories": 149,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "зубчик"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -19632,8 +19601,7 @@
     "calories": 14,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "стебло"
+      "г"
     ],
     "source": "USDA FoodData Central standard reference",
     "verification_level": "A reference",
@@ -20159,8 +20127,7 @@
     "calories": 18,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product page; Silpo retailer cross-check",
     "verification_level": "A",
@@ -20206,8 +20173,7 @@
     "calories": 46,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product page",
     "verification_level": "A",
@@ -20227,8 +20193,7 @@
     "calories": 64,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product page",
     "verification_level": "A",
@@ -20248,8 +20213,7 @@
     "calories": 43,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product page",
     "verification_level": "A",
@@ -20269,8 +20233,7 @@
     "calories": 50,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "HiPP Ukraine official product sheet AL4233-02-U",
     "verification_level": "A",
@@ -20332,8 +20295,7 @@
     "calories": 49,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product reference",
     "verification_level": "A",
@@ -20353,8 +20315,7 @@
     "calories": 29,
     "nutrition_basis": "100g",
     "quantity_units": [
-      "г",
-      "баночка"
+      "г"
     ],
     "source": "Nestlé Baby Ukraine official product reference",
     "verification_level": "A",
