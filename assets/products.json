@@ -23447,5 +23447,61 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_roshen_batonchik_dark",
+    "name": "Батончик Roshen Dark",
+    "brand": "Roshen",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 53.7,
+    "protein": 6.4,
+    "fat": 32.8,
+    "calories": 545,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/batonchik-roshen-43g-ukrayina--04823077636714/",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "батончики",
+      "roshen dark",
+      "рошен дарк",
+      "темний шоколад",
+      "шоколадний батончик",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_batonchik_milk",
+    "name": "Батончик Roshen Milk",
+    "brand": "Roshen",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 55.8,
+    "protein": 6.7,
+    "fat": 31.5,
+    "calories": 541,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/batonchik-roshen-43g-ukrayina--04823077636738/",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "батончики",
+      "roshen milk",
+      "рошен мілк",
+      "молочний шоколад",
+      "шоколадний батончик",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
