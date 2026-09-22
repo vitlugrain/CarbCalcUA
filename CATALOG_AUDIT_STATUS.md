@@ -220,3 +220,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - **Борошно: CLOSED FOR CURRENT PASS.** Existing wheat flour retained; rye, corn, buckwheat and rice flour generic references added in commit `634a884e611c916765f1d77d91df5ba9a471f408`.
 - Closing review of `Зелень` required no catalog change.
 - Runtime catalog at this checkpoint: **1099 products**.
+
+
+## Final everyday-food gap check — 2026-09-22
+- Practical cross-category search-gap review completed after the category-first passes.
+- User explicitly chose to add **only pork salo** from the remaining candidate gaps; starch, tortilla, ginger, salt, baking soda, yeast and radish were not selected for addition in this pass.
+- Added generic `Сало свиняче` with 0 g carbohydrates/100 g and gram quantity unit; commit `9131bd68c95da92454486e792df9659281d44779`.
+- Runtime catalog after this addition: **1100 products**.
+- Broad catalog breadth expansion is considered complete for the current pass. Do not reopen categories or add the other rejected gap candidates unless the user explicitly requests them or reports a concrete missing-product need.
