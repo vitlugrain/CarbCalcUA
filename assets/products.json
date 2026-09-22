@@ -23587,5 +23587,117 @@
       "конті",
       "konti"
     ]
+  },
+  {
+    "id": "ua_konti_bonjour_classic",
+    "name": "Десерт Bonjour Classic КОНТІ",
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 54,
+    "protein": 4,
+    "fat": 33,
+    "calories": 530,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-konti-232g-ukrayina--04823014613417/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "десерт",
+      "bonjour",
+      "бонжур",
+      "bonjour classic",
+      "бонжур класік",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "id": "ua_konti_bonjour_lime",
+    "name": "Десерт Bonjour з лаймовою начинкою КОНТІ",
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 57,
+    "protein": 4,
+    "fat": 30,
+    "calories": 514,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-konti-232g-ukrayina--04823014613431/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "десерт",
+      "bonjour",
+      "бонжур",
+      "лайм",
+      "лаймова начинка",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "id": "ua_konti_bonjour_strawberry",
+    "name": "Десерт Bonjour з полуничною начинкою КОНТІ",
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 57,
+    "protein": 4,
+    "fat": 30,
+    "calories": 514,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-konti-232g-ukrayina--04823014613455/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "десерт",
+      "bonjour",
+      "бонжур",
+      "полуниця",
+      "полунична начинка",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "id": "ua_konti_jack_chocolate",
+    "name": "Вафлі Jack шоколад КОНТІ",
+    "brand": "КОНТІ",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 61,
+    "protein": 5,
+    "fat": 29,
+    "calories": 525,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/vafli-konti-72g-ukrayina--04823014615084/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "jack",
+      "джек",
+      "jack шоколад",
+      "джек шоколад",
+      "шоколадні вафлі",
+      "конті",
+      "konti"
+    ]
   }
 ]
