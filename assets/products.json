@@ -3298,7 +3298,12 @@
       "г"
     ],
     "source": "ProDiabet.ua — особистий кабінет, калькулятор продуктів (скріншот користувача)",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "картопля в мундирі",
+      "картопля варена в шкірці",
+      "варена картопля в шкірці"
+    ]
   },
   {
     "id": "ua_prodiabet_stewed_zucchini",
@@ -11411,7 +11416,12 @@
     "fiber": 2.2,
     "calories": 77,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "картопля",
+      "сира картопля",
+      "картопля сира"
+    ]
   },
   {
     "id": "p003",
@@ -11423,7 +11433,12 @@
     "fiber": 2.8,
     "calories": 41,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "морква",
+      "сира морква",
+      "морква сира"
+    ]
   },
   {
     "id": "p004",
@@ -11457,7 +11472,12 @@
     "glycemic_index_source_name": "Капуста білокачанна",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 4.7,
-    "glycemic_source_calories_100g": 27
+    "glycemic_source_calories_100g": 27,
+    "aliases": [
+      "капуста білокачанна",
+      "білокачанна капуста",
+      "капуста сира"
+    ]
   },
   {
     "id": "p006",
@@ -11475,7 +11495,13 @@
     "glycemic_index_source_name": "Цибуля",
     "glycemic_load_source_100g": null,
     "glycemic_source_carbs_100g": 9.1,
-    "glycemic_source_calories_100g": 41
+    "glycemic_source_calories_100g": 41,
+    "aliases": [
+      "цибуля",
+      "цибуля ріпчаста",
+      "ріпчаста цибуля",
+      "сира цибуля"
+    ]
   },
   {
     "id": "p007",
@@ -11788,7 +11814,12 @@
     "fiber": 1,
     "calories": 17,
     "state": "raw",
-    "barcode": ""
+    "barcode": "",
+    "aliases": [
+      "кабачок",
+      "сирий кабачок",
+      "кабачок сирий"
+    ]
   },
   {
     "id": "p035",
@@ -12662,7 +12693,11 @@
     "calories": 45,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "гарбуз запечений",
+      "запечений гарбуз"
+    ]
   },
   {
     "id": "p093",
@@ -12675,7 +12710,11 @@
     "calories": 35,
     "state": "cooked",
     "barcode": "",
-    "source": "Generic food data"
+    "source": "Generic food data",
+    "aliases": [
+      "баклажан запечений",
+      "запечений баклажан"
+    ]
   },
   {
     "id": "p096",
