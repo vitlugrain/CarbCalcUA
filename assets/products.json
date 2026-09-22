@@ -23503,5 +23503,89 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_konti_super_kontik_condensed_milk",
+    "name": "Печиво Super Kontik зі згущеним молоком",
+    "brand": "КОНТІ",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 62,
+    "protein": 5,
+    "fat": 24,
+    "calories": 490,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/pechivo-konti-100g-ukrayina--04823014614544/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "super kontik",
+      "супер контік",
+      "контік",
+      "згущене молоко",
+      "печиво зі згущеним молоком",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "id": "ua_konti_super_kontik_chocolate",
+    "name": "Печиво Super Kontik шоколад",
+    "brand": "КОНТІ",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 61,
+    "protein": 5,
+    "fat": 25,
+    "calories": 493,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/pechivo-konti-100g-ukrayina--04823014614520/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "super kontik",
+      "супер контік",
+      "контік",
+      "шоколад",
+      "шоколадне печиво",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "id": "ua_konti_super_kontik_vanilla",
+    "name": "Печиво Super Kontik ваніль",
+    "brand": "КОНТІ",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 62,
+    "protein": 5,
+    "fat": 24,
+    "calories": 490,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/pechivo-konti-100g-ukrayina--04823014614568/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "super kontik",
+      "супер контік",
+      "контік",
+      "ваніль",
+      "ванільне печиво",
+      "конті",
+      "konti"
+    ]
   }
 ]
