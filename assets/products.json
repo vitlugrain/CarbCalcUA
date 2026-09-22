@@ -22294,5 +22294,89 @@
       "олія соняшникова",
       "олія з насіння соняшнику"
     ]
+  },
+  {
+    "id": "generic_rye_flour_usda",
+    "name": "Борошно житнє",
+    "category": "Борошно",
+    "state": "raw",
+    "carbs": 77.2,
+    "protein": 8.4,
+    "fat": 1.91,
+    "calories": 359,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — Foundation, FDC 2512375",
+    "verified": true,
+    "aliases": [
+      "житнє борошно",
+      "борошно житнє",
+      "мука житня"
+    ]
+  },
+  {
+    "id": "generic_corn_flour_usda",
+    "name": "Борошно кукурудзяне",
+    "category": "Борошно",
+    "state": "raw",
+    "carbs": 76.8,
+    "protein": 6.93,
+    "fat": 3.86,
+    "calories": 361,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — SR Legacy, FDC 170290",
+    "verified": true,
+    "aliases": [
+      "кукурудзяне борошно",
+      "борошно кукурудзяне",
+      "мука кукурудзяна"
+    ]
+  },
+  {
+    "id": "generic_buckwheat_flour_usda",
+    "name": "Борошно гречане",
+    "category": "Борошно",
+    "state": "raw",
+    "carbs": 75,
+    "protein": 8.9,
+    "fat": 2.5,
+    "calories": 358,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — Foundation, FDC 2512374",
+    "verified": true,
+    "aliases": [
+      "гречане борошно",
+      "борошно гречане",
+      "мука гречана"
+    ]
+  },
+  {
+    "id": "generic_rice_flour_usda",
+    "name": "Борошно рисове",
+    "category": "Борошно",
+    "state": "raw",
+    "carbs": 80.13,
+    "protein": 5.95,
+    "fat": 1.42,
+    "calories": 366,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — SR Legacy, FDC 169714",
+    "verified": true,
+    "aliases": [
+      "рисове борошно",
+      "борошно рисове",
+      "мука рисова"
+    ]
   }
 ]
