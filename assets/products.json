@@ -21876,5 +21876,33 @@
     "verification_level": "A reference",
     "verified": true,
     "catalog_policy": "generic_first"
+  },
+  {
+    "id": "ua_generic_sardines_canned_oil",
+    "name": "Сардини, консервовані в олії",
+    "aliases": [
+      "сардини",
+      "сардина",
+      "сардини в олії",
+      "сардини консервовані",
+      "консервовані сардини"
+    ],
+    "category": "Риба",
+    "state": "prepared",
+    "brand": null,
+    "barcode": null,
+    "carbs": 0,
+    "protein": 24.62,
+    "fat": 11.45,
+    "fiber": 0,
+    "calories": 208,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central SR Legacy — Fish, sardine, Atlantic, canned in oil, drained solids with bone (NDB 15088)",
+    "verification_level": "A reference",
+    "verified": true,
+    "catalog_policy": "generic_first"
   }
 ]
