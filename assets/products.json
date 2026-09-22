@@ -22640,5 +22640,89 @@
       "печиво ярич",
       "печиво yarych"
     ]
+  },
+  {
+    "id": "ua_yarych_matusyne_cocoa",
+    "name": "Печиво Матусине з какао Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 70.6,
+    "protein": 8.4,
+    "fat": 12.6,
+    "fiber": 4,
+    "calories": 438,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/pechivo-zatyazhne-matusine-z-kakao-yarych",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "матусине",
+      "матусине з какао",
+      "печиво з какао",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_matusyne_coconut",
+    "name": "Печиво Матусине з кокосом Yarych",
+    "brand": "Yarych",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 70.3,
+    "protein": 7.9,
+    "fat": 13.2,
+    "fiber": 2.8,
+    "calories": 437,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/pechivo-zatyazhne-matusine-z-kokosom-yarych",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "матусине",
+      "матусине з кокосом",
+      "печиво з кокосом",
+      "кокосове печиво",
+      "печиво ярич",
+      "печиво yarych"
+    ]
+  },
+  {
+    "id": "ua_yarych_crunch_time_poppy",
+    "name": "Крекер Crunch Time з маком Yarych",
+    "brand": "Yarych",
+    "category": "Снеки",
+    "state": "packaged",
+    "carbs": 71.1,
+    "protein": 7.9,
+    "fat": 13.3,
+    "fiber": 2.8,
+    "calories": 441,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Yarych — офіційний сайт",
+    "source_url": "https://www.yarych.com/products/crunch-time-with-poppy-seeds",
+    "verified": true,
+    "aliases": [
+      "крекер",
+      "крекери",
+      "крекер з маком",
+      "крекери з маком",
+      "crunch time",
+      "crunch time з маком",
+      "крекер ярич",
+      "крекер yarych"
+    ]
   }
 ]
