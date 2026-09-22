@@ -1662,7 +1662,7 @@
   },
   {
     "id": "ua_bonduelle_champignons",
-    "name": "Печериці",
+    "name": "Печериці, сирі",
     "category": "Гриби",
     "state": "raw",
     "carbs": 0.5,
@@ -1674,7 +1674,13 @@
       "г"
     ],
     "source": "Bonduelle Україна — таблиця калорійності продуктів для осіб із цукровим діабетом",
-    "verified": true
+    "verified": true,
+    "aliases": [
+      "печериці",
+      "печериці сирі",
+      "шампіньйони",
+      "шампіньйони сирі"
+    ]
   },
   {
     "id": "ua_bonduelle_barley_flakes",
@@ -22223,6 +22229,49 @@
       "картопляні деруни",
       "деруни картопляні",
       "картопляні оладки"
+    ]
+  },
+  {
+    "id": "generic_oyster_mushrooms_raw_usda",
+    "name": "Гливи, сирі",
+    "category": "Гриби",
+    "state": "raw",
+    "carbs": 6.09,
+    "protein": 3.31,
+    "fat": 0.41,
+    "calories": 33,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — SR Legacy, FDC 168580",
+    "verified": true,
+    "aliases": [
+      "гливи",
+      "гливи сирі",
+      "гриби гливи",
+      "вішенки"
+    ]
+  },
+  {
+    "id": "generic_chanterelles_raw_usda",
+    "name": "Лисички, сирі",
+    "category": "Гриби",
+    "state": "raw",
+    "carbs": 6.86,
+    "protein": 1.49,
+    "fat": 0.53,
+    "calories": 32,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "USDA FoodData Central — SR Legacy, FDC 168422",
+    "verified": true,
+    "aliases": [
+      "лисички",
+      "лисички сирі",
+      "гриби лисички"
     ]
   }
 ]
