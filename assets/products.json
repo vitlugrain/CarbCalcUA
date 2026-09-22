@@ -23223,5 +23223,146 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_roshen_lovita_soft_milk",
+    "name": "Печиво Lovita Soft з молочною начинкою Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 63.6,
+    "protein": 5.4,
+    "fat": 18.6,
+    "calories": 447,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/pechivo-roshen-127g-ukrayina--04823077635892/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "lovita",
+      "ловіта",
+      "lovita soft",
+      "молочна начинка",
+      "печиво з молочною начинкою",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_lovita_soft_choco",
+    "name": "Печиво Lovita Soft з шоколадною начинкою Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 61.8,
+    "protein": 5.6,
+    "fat": 19.3,
+    "calories": 446,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/pechivo-roshen-127g-ukrayina--04823077635915/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "lovita",
+      "ловіта",
+      "lovita soft",
+      "шоколадна начинка",
+      "печиво шоколадне",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_lovita_jelly_choco",
+    "name": "Печиво Lovita Jelly з желейною начинкою в шоколаді Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 68.3,
+    "protein": 4.1,
+    "fat": 15.6,
+    "calories": 433,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/pechivo-roshen-135g-ukrayina--04823077635939/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "lovita",
+      "ловіта",
+      "lovita jelly",
+      "желейна начинка",
+      "желе",
+      "печиво в шоколаді",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_lovita_classic",
+    "name": "Печиво Lovita Classic Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 68.7,
+    "protein": 6.8,
+    "fat": 15.4,
+    "calories": 443,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/pechivo-roshen-150g-ukrayina--04823077635854/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "lovita",
+      "ловіта",
+      "lovita classic",
+      "ловіта класік",
+      "класичне печиво",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_lovita_tender_cream",
+    "name": "Печиво Lovita з ніжним кремом Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 65.4,
+    "protein": 5.3,
+    "fat": 21.1,
+    "calories": 474,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Auchan / Zakaz.ua",
+    "source_url": "https://auchan.zakaz.ua/uk/products/pechivo-roshen-150g-ukrayina--04823077635878/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "lovita",
+      "ловіта",
+      "кремове печиво",
+      "печиво з кремом",
+      "ніжний крем",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
