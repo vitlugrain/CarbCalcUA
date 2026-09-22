@@ -201,3 +201,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Added three high-value generic seafood references from USDA data: `Креветки, варені` (0.2 g carbs/100 g), `Кальмар, сирий` (3.08 g/100 g), and `Мідії, варені` (7.39 g/100 g); commit `036edf3f6943b68628778e1347bfefe99d3c9484`.
 - Post-change integrity check: 1088 unique product IDs, 0 duplicate IDs, 0 cross-product barcode collisions.
 - Continue the fish/seafood pass by checking remaining meaningful gaps and source quality; do not inflate the catalog with low-value near-duplicates.
+
+## Ready meals / first courses breadth checkpoint — CLOSED FOR CURRENT PASS 2026-09-22
+- Runtime block reviewed: **41 positions** total — `Готові страви` 34 and `Перші страви` 7.
+- All 41 reviewed positions now have search aliases. Core aliases commit `2514d65b0752c029c0199e940f96f31dfbcf21b2`; remaining aliases commit `151cda8e0e8630654507d859a1670549cc329a03`.
+- Similar recipe-dependent entries (cottage-cheese casseroles, syrnyky, pea soups, pancakes) were reviewed and intentionally kept separate where recipes/nutrition differ; do not average them into one value.
+- Added one practical generic/reference dish: `Деруни (тертюхи)` — 21.49 g carbs/100 g from ZNAIMO technology card; commit `666371bceb3ace939a705bbd3a1ef8147b19183e`.
+- **PLOV: SKIPPED by explicit user decision.** Do not add/research plov variants in the current pass; rice is already represented and recipe variability is high.
+- Current runtime catalog after this block: **1092 products**, 0 duplicate IDs in the closing check.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing common dish, bug, or explicit user decision. Do not restart this category broadly in a later chat.
