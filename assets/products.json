@@ -23364,5 +23364,88 @@
       "рошен",
       "roshen"
     ]
+  },
+  {
+    "id": "ua_roshen_romashka",
+    "name": "Цукерки Ромашка Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 69.3,
+    "protein": 3.8,
+    "fat": 15.7,
+    "calories": 442,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-roshen-ukrayina--04823077604485/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "ромашка",
+      "цукерки ромашка",
+      "ромашка рошен",
+      "romashka",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_lishchyna",
+    "name": "Цукерки Ліщина Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 52.4,
+    "protein": 5.6,
+    "fat": 32.9,
+    "calories": 544,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/tsukerka-roshen-1000g-ukrayina--04823077608933/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "ліщина",
+      "цукерки ліщина",
+      "ліщина рошен",
+      "фундук",
+      "горіхові цукерки",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_chervonyi_mak",
+    "name": "Цукерки Червоний мак Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 59.1,
+    "protein": 5.3,
+    "fat": 28,
+    "calories": 520,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/tsukerka-roshen-ukrayina--00482307760268/",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "червоний мак",
+      "цукерки червоний мак",
+      "червоний мак рошен",
+      "мак",
+      "праліне",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
