@@ -22724,5 +22724,166 @@
       "крекер ярич",
       "крекер yarych"
     ]
+  },
+  {
+    "id": "ua_roshen_do_kavy_baked_milk",
+    "name": "Печиво До кави, пряжене молоко Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 65.9,
+    "protein": 7.1,
+    "fat": 17.2,
+    "calories": 452,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/pechivo-roshen-370g-ukrayina--04823077623790/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "до кави",
+      "печиво до кави",
+      "до кави пряжене молоко",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_do_kavy_butter_vanilla",
+    "name": "Печиво До кави, масло-ваніль Roshen",
+    "brand": "Roshen",
+    "category": "Печиво",
+    "state": "packaged",
+    "carbs": 65.9,
+    "protein": 7.1,
+    "fat": 17.3,
+    "calories": 453,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "NOVUS / Zakaz.ua",
+    "source_url": "https://novus.zakaz.ua/uk/products/pechivo-roshen-185g-ukrayina--04823077614699/",
+    "verified": true,
+    "aliases": [
+      "печиво",
+      "до кави",
+      "печиво до кави",
+      "до кави ваніль",
+      "масло ваніль",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_wafers_lemon_cream",
+    "name": "Вафлі Wafers Lemon Cream Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 61.8,
+    "protein": 4.8,
+    "fat": 28.3,
+    "calories": 524,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/vafli-roshen-216g-ukrayina--04823077636172/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафлі рошен",
+      "roshen wafers",
+      "lemon cream",
+      "вафлі лимон",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_wafers_choco",
+    "name": "Вафлі Wafers Choco Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 59,
+    "protein": 7,
+    "fat": 25,
+    "calories": 506,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/vafli-roshen-216g-ukrayina--04823077625602/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафлі рошен",
+      "roshen wafers",
+      "choco",
+      "вафлі шоколадні",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_wafers_nut",
+    "name": "Вафлі Wafers Горіх Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 61.4,
+    "protein": 5.2,
+    "fat": 27.7,
+    "calories": 521,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/vafli-roshen-216g-ukrayina--04823077625626/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафлі рошен",
+      "roshen wafers",
+      "вафлі горіх",
+      "горіхові вафлі",
+      "рошен",
+      "roshen"
+    ]
+  },
+  {
+    "id": "ua_roshen_wafers_milk",
+    "name": "Вафлі Wafers Молоко Roshen",
+    "brand": "Roshen",
+    "category": "Вафлі",
+    "state": "packaged",
+    "carbs": 57.1,
+    "protein": 7.2,
+    "fat": 31.1,
+    "calories": 540,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/vafli-roshen-72g-ukrayina--04823077621635/",
+    "verified": true,
+    "aliases": [
+      "вафлі",
+      "вафлі рошен",
+      "roshen wafers",
+      "вафлі молочні",
+      "молочні вафлі",
+      "рошен",
+      "roshen"
+    ]
   }
 ]
