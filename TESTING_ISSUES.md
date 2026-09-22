@@ -76,6 +76,20 @@ Each new issue should record:
 - **Device verification:** pending.
 - **Related check:** `Картопля смажена` exists in runtime as `ua_prodiabet_fried_potatoes` with aliases `смажена картопля`, `картопля смажена`, `жарена картопля`; therefore no duplicate/new catalog product is needed.
 
+
+### T-002 — Default quantity should be immediately replaceable
+
+- **First reported APK:** #380.
+- **Latest affected APK:** #380.
+- **Status:** FIXED / AWAITING APK.
+- **Observed:** after selecting a product, the quantity field defaults to `100`; tapping the field places the cursor but makes replacing the default value unnecessarily cumbersome.
+- **Expected:** if the user leaves the field untouched, `100` remains the default; if the user taps the quantity field, the existing value should be selected so the next typed number replaces it immediately.
+- **Implementation:** tapping the main Add Food quantity field now selects the entire current text. This preserves the default value until the user actually types and also works for other current/default quantities, not only `100`.
+- **Fix commit:** `71c6e33a092e8bd2f2b4da9412c44e0a7c01fcc2`.
+- **APK containing fix:** not built yet; accumulate with other #380 fixes.
+- **Device verification:** pending.
+
+
 ## Build policy during testing
 
 Do not create a new APK after every small correction. Accumulate a meaningful logical batch of fixes, run appropriate validation/tests, then build the next Android test candidate. Every included issue remains **FIXED / AWAITING APK** until the user verifies it on the phone.
