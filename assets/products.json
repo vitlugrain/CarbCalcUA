@@ -25649,5 +25649,132 @@
       "зі стевією",
       "без цукру"
     ]
+  },
+  {
+    "brand": "Житомирські ласощі",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АТ «Житомирські ласощі»",
+    "verified": true,
+    "id": "ua_zhytomyrski_lasoshchi_romashka",
+    "name": "Цукерки Ромашка Житомирські ласощі",
+    "carbs": 62.4,
+    "protein": 3.8,
+    "fat": 28.3,
+    "calories": 519,
+    "source": "Current Ukrainian retail — Житомирські ласощі Ромашка",
+    "source_ref": "Verified per 100 g: 62.4 В / 3.8 Б / 28.3 Ж / 519 ккал.",
+    "aliases": [
+      "цукерки",
+      "ромашка",
+      "житомирські ласощі",
+      "жл"
+    ]
+  },
+  {
+    "brand": "Житомирські ласощі",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АТ «Житомирські ласощі»",
+    "verified": true,
+    "id": "ua_zhytomyrski_lasoshchi_chervonyi_mak",
+    "name": "Цукерки Червоний мак Житомирські ласощі",
+    "carbs": 56.7,
+    "protein": 5.2,
+    "fat": 32.6,
+    "calories": 541,
+    "source": "Current Ukrainian retail — Житомирські ласощі Червоний мак",
+    "source_ref": "Verified per 100 g: 56.7 В / 5.2 Б / 32.6 Ж / 541 ккал.",
+    "aliases": [
+      "цукерки",
+      "червоний мак",
+      "житомирські ласощі",
+      "жл"
+    ]
+  },
+  {
+    "brand": "Житомирські ласощі",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АТ «Житомирські ласощі»",
+    "verified": true,
+    "id": "ua_zhytomyrski_lasoshchi_batonchyk",
+    "name": "Цукерки Батончик Житомирські ласощі",
+    "carbs": 54.8,
+    "protein": 9.2,
+    "fat": 31.1,
+    "calories": 536,
+    "source": "Current Ukrainian retail — Житомирські ласощі Батончик",
+    "source_ref": "Verified per 100 g: 54.8 В / 9.2 Б / 31.1 Ж / 536 ккал.",
+    "aliases": [
+      "цукерки",
+      "батончик",
+      "батончик житомирські ласощі",
+      "житомирські ласощі",
+      "жл"
+    ]
+  },
+  {
+    "brand": "Житомирські ласощі",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АТ «Житомирські ласощі»",
+    "verified": true,
+    "id": "ua_zhytomyrski_lasoshchi_ptashyne_moloko",
+    "name": "Цукерки Пташине молоко Житомирські ласощі",
+    "carbs": 62.5,
+    "protein": 2.6,
+    "fat": 22.7,
+    "calories": 466,
+    "source": "Current Ukrainian retail — Житомирські ласощі Пташине молоко",
+    "source_ref": "Verified per 100 g: 62.5 В / 2.6 Б / 22.7 Ж / 466 ккал.",
+    "aliases": [
+      "цукерки",
+      "пташине молоко",
+      "житомирські ласощі",
+      "жл"
+    ]
+  },
+  {
+    "brand": "Житомирські ласощі",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АТ «Житомирські ласощі»",
+    "verified": true,
+    "id": "ua_zhytomyrski_lasoshchi_bilka",
+    "name": "Цукерки Білка Житомирські ласощі",
+    "carbs": 53.6,
+    "protein": 7.1,
+    "fat": 34.7,
+    "calories": 555,
+    "source": "Current Ukrainian retail — Житомирські ласощі Білка",
+    "source_ref": "Verified per 100 g: 53.6 В / 7.1 Б / 34.7 Ж / 555 ккал.",
+    "aliases": [
+      "цукерки",
+      "білка",
+      "белочка",
+      "житомирські ласощі",
+      "жл"
+    ]
   }
 ]
