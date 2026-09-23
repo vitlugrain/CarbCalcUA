@@ -23803,5 +23803,109 @@
       "лукас",
       "lukas"
     ]
+  },
+  {
+    "id": "ua_axa_granola_strawberry_330",
+    "name": "Гранола AXA хрустка з полуницею",
+    "brand": "AXA",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 70.6,
+    "protein": 7.8,
+    "fat": 10.7,
+    "fiber": 4.1,
+    "calories": 426,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237692542",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / METRO",
+    "source_url": "https://zakaz.ua/uk/products/granola-aksa-330g-ukrayina--04820237692542/",
+    "verified": true,
+    "aliases": [
+      "гранола полуниця",
+      "AXA полуниця",
+      "Акса гранола полуниця"
+    ]
+  },
+  {
+    "id": "ua_axa_granola_tropical_fruit_330",
+    "name": "Гранола AXA хрустка з тропічними фруктами",
+    "brand": "AXA",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 71.1,
+    "protein": 7.5,
+    "fat": 10.1,
+    "fiber": 7.5,
+    "calories": 420,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237692528",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/granola-aksa-330g--04820237692528/",
+    "verified": true,
+    "aliases": [
+      "гранола тропічні фрукти",
+      "AXA тропічні фрукти",
+      "Акса гранола тропічні фрукти"
+    ]
+  },
+  {
+    "id": "ua_axa_granola_chocolate_nuts_330",
+    "name": "Гранола AXA хрустка з шоколадом та горіхами",
+    "brand": "AXA",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 65.2,
+    "protein": 8.7,
+    "fat": 14.2,
+    "fiber": 8.2,
+    "calories": 439,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237692580",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "METRO / Zakaz.ua",
+    "source_url": "https://metro.zakaz.ua/uk/products/granola-aksa-330g-ukrayina--04820237692580/",
+    "verified": true,
+    "aliases": [
+      "гранола шоколад горіхи",
+      "AXA шоколад горіхи",
+      "Акса гранола шоколад горіхи"
+    ]
+  },
+  {
+    "id": "ua_axa_cereal_bar_yogurt_tropical_25",
+    "name": "Батончик AXA зерновий йогурт та тропічні фрукти",
+    "brand": "AXA",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 66.2,
+    "protein": 5.8,
+    "fat": 16.2,
+    "calories": 439,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820008129413",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua",
+    "source_url": "https://zakaz.ua/uk/products/batonchik-aksa-25g--04820008129413/",
+    "verified": true,
+    "aliases": [
+      "батончик AXA",
+      "зерновий батончик AXA",
+      "батончик йогурт тропічні фрукти",
+      "Акса батончик"
+    ]
   }
 ]
