@@ -309,3 +309,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Plombir was intentionally not added in this pass because current retailer sources expose conflicting nutrition versions (68 В / 4.8 Б / 22 Ж / 496 versus 67 В / 4.6 Б / 25 Ж / 516) and the exact current recipe could not be resolved safely.
 - Runtime catalog after Artek follow-up: **1211 products**.
 - Svitoch returns to **CLOSED FOR CURRENT PASS** after this concrete gap fix.
+
+
+## Millennium branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested one-pass Millennium confectionery review. Exact brand/manufacturer duplicate check found no pre-existing Millennium confectionery identities; the two existing RUD ice creams carrying MILLENNIUM in their product names remain separate RUD products and were not treated as duplicates.
+- Added 7 current identities with exact nutrition from official Millennium / Malbi Foods product pages in commit `982e5b8ed3d1d2bbb6c9d5b3b69f0b93869d0a24`: Air молочний (52.5 В), Air чорний (51.4 В), Gold чорний з фундуком (42.3 В), Gold молочний мигдаль+родзинки (52.4 В), Gold чорний мигдаль+журавлина (44.2 В), Gold молочний мигдаль+курага (48.6 В), молочний зі стевією (21.7 В), all per 100 g with full Б/Ж/В stored.
+- For stevia chocolate, the declared label carbohydrate value is stored as-is; the product contains maltitol/steviol glycosides and no medical interpretation is inferred.
+- Package-size variants were not duplicated. Other candidates were skipped where a distinct current recipe/nutrition identity could not be established confidently in the fast pass.
+- Runtime catalog at Millennium close: **1218 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Millennium product with reliable exact nutrition or explicit user request.
