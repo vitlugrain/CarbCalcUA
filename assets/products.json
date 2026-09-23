@@ -25462,5 +25462,192 @@
       "artek lemon",
       "світоч"
     ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_air_milk",
+    "name": "Шоколад Millennium Air пористий молочний",
+    "carbs": 52.5,
+    "protein": 6.4,
+    "fat": 34.3,
+    "calories": 549,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 85 g product page; nutrition per 100 g: 52.5 В / 6.4 Б / 34.3 Ж / 549 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium",
+      "мілленіум",
+      "air",
+      "пористий молочний"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_air_dark",
+    "name": "Шоколад Millennium Air пористий чорний",
+    "carbs": 51.4,
+    "protein": 5.8,
+    "fat": 35.3,
+    "calories": 561,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current product page; nutrition per 100 g: 51.4 В / 5.8 Б / 35.3 Ж / 561 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium",
+      "мілленіум",
+      "air",
+      "пористий чорний"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_gold_dark_hazelnut",
+    "name": "Шоколад Millennium Gold чорний з цілим фундуком",
+    "carbs": 42.3,
+    "protein": 8.7,
+    "fat": 41.4,
+    "calories": 576,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 100 g product page; nutrition per 100 g: 42.3 В / 8.7 Б / 41.4 Ж / 576 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium gold",
+      "мілленіум",
+      "чорний",
+      "фундук",
+      "лісовий горіх"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_gold_milk_almond_raisin",
+    "name": "Шоколад Millennium Gold молочний з цілим мигдалем та родзинками",
+    "carbs": 52.4,
+    "protein": 7.7,
+    "fat": 31.4,
+    "calories": 522,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 100 g product page; nutrition per 100 g: 52.4 В / 7.7 Б / 31.4 Ж / 522 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium gold",
+      "мілленіум",
+      "молочний",
+      "мигдаль",
+      "родзинки"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_gold_dark_almond_cranberry",
+    "name": "Шоколад Millennium Gold чорний з цілим мигдалем та журавлиною",
+    "carbs": 44.2,
+    "protein": 7.5,
+    "fat": 35.5,
+    "calories": 541,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 100 g product page; nutrition per 100 g: 44.2 В / 7.5 Б / 35.5 Ж / 541 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium gold",
+      "мілленіум",
+      "чорний",
+      "мигдаль",
+      "журавлина"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_gold_milk_almond_apricot",
+    "name": "Шоколад Millennium Gold молочний з цілим мигдалем та курагою",
+    "carbs": 48.6,
+    "protein": 8.7,
+    "fat": 34.6,
+    "calories": 545,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 100 g product page; nutrition per 100 g: 48.6 В / 8.7 Б / 34.6 Ж / 545 ккал.",
+    "aliases": [
+      "шоколад",
+      "millennium gold",
+      "мілленіум",
+      "молочний",
+      "мигдаль",
+      "курага"
+    ]
+  },
+  {
+    "brand": "Millennium",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «Малбі Фудс»",
+    "verified": true,
+    "id": "ua_millennium_stevia_milk",
+    "name": "Шоколад молочний Millennium зі стевією",
+    "carbs": 21.7,
+    "protein": 5.8,
+    "fat": 38.5,
+    "calories": 457,
+    "source": "Millennium Chocolate — official",
+    "source_ref": "Official current 100 g product page; nutrition per 100 g: 21.7 В / 5.8 Б / 38.5 Ж / 457 ккал. Product contains maltitol and steviol glycosides; database records label carbohydrates as declared.",
+    "aliases": [
+      "шоколад",
+      "millennium",
+      "мілленіум",
+      "стевія",
+      "зі стевією",
+      "без цукру"
+    ]
   }
 ]
