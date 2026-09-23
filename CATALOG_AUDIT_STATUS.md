@@ -245,3 +245,13 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Official category pages show many additional Maria, Petit Beurre and cracker variants, but category-list presence alone is not enough for runtime integration. Variants without a current official page exposing complete nutrition remain unadded until verified; do not infer nutrition from neighboring products.
 - Runtime count after Part 2: **1111 products**.
 - Commit: `98b157b544df51b93f7eaafe1dac68c3e2da2c5a`.
+
+
+## Start! dry breakfast expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- User selected **Start! only** for this dry-breakfast expansion; other breakfast brands are skipped for the current pass.
+- Existing Start! entries were reviewed first to avoid duplicate recipes and package-size duplicates.
+- Added verified missing Start! variants across commits `89686bf1a326f5d823b8a8ff982e9624f18be59c`, `25ed8166f2ecd83e0bc8ce9f3a5acbb8163dedda`, and `f544a3c105bdb79e0c32d1ea0d8c1f299dac38d8`: Duo balls, glazed 4-grain rings, cocoa-filled pillows, three protein-pillow flavors, blueberry-vanilla Smiles, caramel+cocoa balls, and grain stars.
+- Different package sizes with the same recipe are represented as one food identity; known EANs are attached to that identity instead of creating duplicate products.
+- Conflicting recipe/nutrition versions are not averaged; the caramel+cocoa balls entry records the observed recipe discrepancy.
+- Runtime catalog at close: **1163 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Start! unless a concrete missing current product is identified or the user explicitly requests it.
