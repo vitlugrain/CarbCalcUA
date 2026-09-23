@@ -24706,5 +24706,92 @@
       "roshen",
       "рошен"
     ]
+  },
+  {
+    "id": "ua_roshen_korivka",
+    "name": "Цукерки Корівка Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 81.5,
+    "protein": 2.8,
+    "fat": 4.1,
+    "calories": 375,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Кондитерська Корпорація ROSHEN",
+    "source": "Zakaz.ua — Roshen Корівка",
+    "source_ref": "Вагова та 205 г картки узгоджуються: 81.5 В / 2.8 Б / 4.1 Ж / 375 ккал на 100 г. Фасування не дублювати.",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "корівка",
+      "цукерки корівка",
+      "корівка рошен",
+      "korivka",
+      "roshen",
+      "рошен"
+    ]
+  },
+  {
+    "id": "ua_roshen_coffeelike",
+    "name": "Карамель CoffeeLike Roshen з молочно-кавовою начинкою",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 82.9,
+    "protein": 2.2,
+    "fat": 8.5,
+    "calories": 416,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Кондитерська Корпорація ROSHEN",
+    "source": "Zakaz.ua — Roshen CoffeeLike",
+    "source_ref": "Кілька актуальних карток узгоджуються на 82.9 В / 2.2 Б / 8.5 Ж / 416 ккал; NOVUS показує близьку оновлену версію 82.7/8.4/415, не усереднювати.",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "карамель",
+      "coffeelike",
+      "coffee like",
+      "кофі лайк",
+      "кава",
+      "кавова карамель",
+      "roshen",
+      "рошен"
+    ]
+  },
+  {
+    "id": "ua_roshen_toffelini_chocolate",
+    "name": "Цукерки Toffelini Roshen з шоколадною начинкою",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 59.2,
+    "protein": 3.8,
+    "fat": 27.2,
+    "calories": 501,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Кондитерська Корпорація ROSHEN",
+    "source": "Zakaz.ua — Roshen Toffelini шоколадна начинка",
+    "source_ref": "Кілька актуальних карток узгоджуються на 59.2 В / 3.8 Б / 27.2 Ж / 501 ккал; окрема NOVUS картка показує 59.0 В і не усереднюється.",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "toffelini",
+      "тоффеліні",
+      "тофеліні",
+      "шоколадне тофі",
+      "тофі з шоколадною начинкою",
+      "roshen",
+      "рошен"
+    ]
   }
 ]
