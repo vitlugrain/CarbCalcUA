@@ -334,3 +334,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Package-size-only variants were not duplicated. Candidates without sufficiently reliable exact current nutrition were skipped rather than inferred.
 - Runtime catalog at close: **1230 products**.
 - Status: **CLOSED FOR CURRENT PASS** for these Mondelez core lines. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
+
+
+## Oreo branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Concrete search/catalog gap from APK #419 addressed: verified `assets/products.json` contained no Oreo identity before this pass, even though runtime search could surface Oreo from secondary catalog sources.
+- Added 4 current verified identities in commit `f4033b7d90d5c4fe01e5e2a36072ab1b3d24ce1b`: Oreo Original (68 В / 4.7 Б / 21 Ж / 491 ккал), Oreo Golden (69 / 5.5 / 20 / 484), Oreo Double Creme (67 / 4.3 / 22 / 492), Oreo with vanilla filling in coating (69 / 5.2 / 25 / 530), all per 100 g.
+- Each identity includes Ukrainian and Latin search aliases plus generic `печиво` / `печиво орео`, specifically to make category/base-query retrieval possible from the verified local catalog.
+- Conflicting country/package recipe values for Oreo Original were not averaged; a current Ukraine-made retail identity was selected for the local generic Oreo Original record.
+- Runtime catalog after Oreo pass: **1234 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Device verification of the broader T-001 search issue remains pending until a later consolidated APK; this catalog commit alone does not mark the search issue VERIFIED.
