@@ -482,7 +482,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
       if(selected==null && q.trim().isNotEmpty && list.isNotEmpty)...[
         const SizedBox(height:8),
         Text(hasParsedAmount?'Знайдено для «${parsed.productQuery}»':'Оберіть продукт',style:const TextStyle(fontWeight:FontWeight.w600)),
-        ...list.take(10).map((p)=>Card(child:ListTile(
+        ...list.take(30).map((p)=>Card(child:ListTile(
           leading:Icon(p.state=='cooked'?Icons.restaurant:Icons.inventory_2_outlined),
           title:Text(p.name),
           subtitle:Text('${p.carbs.toStringAsFixed(1)} г вуглеводів / ${ProductUnitService.nutritionBasisLabel(p)}${p.manufacturer==null?'':' • ${p.manufacturer}'}'),
