@@ -24486,5 +24486,83 @@
       "picnic арахіс родзинки"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_kinder_bueno_white",
+    "name": "Батончик Kinder Bueno White",
+    "brand": "Kinder",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 49.5,
+    "protein": 8.8,
+    "fat": 37.8,
+    "calories": 576,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "source": "Zakaz.ua / Ferrero",
+    "source_ref": "Kinder Bueno White 39 г; окрема біла шоколадна рецептура",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіндер буено вайт",
+      "kinder bueno white",
+      "буено білий"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_lion_white_bar",
+    "name": "Батончик Lion White",
+    "brand": "Lion",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 64.1,
+    "protein": 5.7,
+    "fat": 24.3,
+    "calories": 493,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua",
+    "source_ref": "Lion White; біла глазур, окрема рецептура від Lion Classic",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "лайон вайт",
+      "lion white",
+      "lion білий"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_lion_peanut_bar",
+    "name": "Батончик Lion Peanut",
+    "brand": "Lion",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 61.5,
+    "protein": 8.2,
+    "fat": 27.3,
+    "calories": 522,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua",
+    "source_ref": "Lion Peanut; арахісова рецептура",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "лайон арахіс",
+      "lion peanut",
+      "lion з арахісом"
+    ],
+    "runtime_merge": false
   }
 ]
