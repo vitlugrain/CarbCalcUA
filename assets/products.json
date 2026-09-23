@@ -25137,5 +25137,86 @@
       "конті",
       "konti"
     ]
+  },
+  {
+    "brand": "АВК",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АВК",
+    "verified": true,
+    "id": "ua_avk_gulliver",
+    "name": "Цукерки Гулівер АВК",
+    "carbs": 50,
+    "protein": 6,
+    "fat": 36,
+    "calories": 560,
+    "source": "Сільпо — АВК Гулівер",
+    "source_ref": "Current retail nutrition per 100 g: 50 В / 6 Б / 36 Ж / 560 ккал; AVK current official assortment confirms Gulliver identity.",
+    "aliases": [
+      "цукерки",
+      "гулівер",
+      "gulliver",
+      "гулівер авк",
+      "авк",
+      "avk"
+    ]
+  },
+  {
+    "brand": "АВК",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АВК",
+    "verified": true,
+    "id": "ua_avk_trufalie",
+    "name": "Цукерки Trufalie АВК",
+    "carbs": 46,
+    "protein": 3.5,
+    "fat": 42,
+    "calories": 580,
+    "source": "Сільпо — АВК Труфальє",
+    "source_ref": "Current retail card per 100 g: 46 В / 3.5 Б / 42 Ж / 580 ккал; AVK current official assortment confirms Trufalie identity. A distinct/older 124 g card reports 49 В and is not averaged.",
+    "aliases": [
+      "цукерки",
+      "труфальє",
+      "trufalie",
+      "трюфельні цукерки",
+      "авк",
+      "avk"
+    ]
+  },
+  {
+    "brand": "АВК",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "АВК",
+    "verified": true,
+    "id": "ua_avk_truffle_original",
+    "name": "Цукерки Трюфель оригінальний АВК",
+    "carbs": 47,
+    "protein": 3.5,
+    "fat": 41,
+    "calories": 580,
+    "source": "Сільпо + АВК — Трюфель оригінальний",
+    "source_ref": "Current retail nutrition per 100 g: 47 В / 3.5 Б / 41 Ж / 580 ккал; exact current AVK official product page confirms product identity.",
+    "aliases": [
+      "цукерки",
+      "трюфель",
+      "трюфель оригінальний",
+      "truffle original",
+      "авк",
+      "avk"
+    ]
   }
 ]
