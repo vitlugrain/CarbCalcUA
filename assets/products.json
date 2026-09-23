@@ -26452,5 +26452,63 @@
       "бісквіт",
       "бісквіти"
     ]
+  },
+  {
+    "brand": "M&M's",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars",
+    "verified": true,
+    "id": "ua_mms_chocolate",
+    "name": "Драже M&M's Chocolate з молочним шоколадом",
+    "carbs": 70,
+    "protein": 4.8,
+    "fat": 19,
+    "calories": 480,
+    "source": "Current European M&M's label / Ukrainian retail",
+    "source_ref": "Current label per 100 g: 70 В / 4.8 Б / 19 Ж / 480 ккал. Package-size variants are not duplicated.",
+    "aliases": [
+      "m&m's",
+      "m&m",
+      "mms",
+      "ем енд емс",
+      "емендємс",
+      "драже",
+      "шоколадні драже",
+      "m&m chocolate"
+    ]
+  },
+  {
+    "brand": "M&M's",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars",
+    "verified": true,
+    "id": "ua_mms_peanut",
+    "name": "Драже M&M's Peanut з арахісом",
+    "carbs": 59,
+    "protein": 9.8,
+    "fat": 25,
+    "calories": 512,
+    "source": "Current European M&M's label / Ukrainian retail",
+    "source_ref": "Current label per 100 g: 59 В / 9.8 Б / 25 Ж / 512 ккал. Package-size variants are not duplicated.",
+    "aliases": [
+      "m&m's",
+      "m&m",
+      "mms",
+      "ем енд емс",
+      "емендємс",
+      "драже",
+      "арахіс",
+      "m&m peanut"
+    ]
   }
 ]
