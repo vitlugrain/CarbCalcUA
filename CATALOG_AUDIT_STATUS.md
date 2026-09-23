@@ -292,3 +292,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Conflicting nutrition versions were not averaged; e.g. a distinct/older 124 g Trufalie retail card reports 49 g carbs and was not merged into the selected current 46 g identity.
 - Runtime catalog at AVK close: **1202 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen AVK unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
+
+
+## Svitoch branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed the requested one-pass Світоч/Svitoch review. Exact runtime duplicate check found no existing Svitoch-branded identities; the only loose Артек text hit was wheat groats and was correctly ignored.
+- Added 4 practical current chocolate identities with verified per-100-g nutrition in commit `a8c087764f9a3ed6ab9305c3b6257617076fda54`: Світоч молочний (55.1 В / 7.1 Б / 32.3 Ж / 542 ккал), Авторський чорний 70% (34.6 / 9.2 / 44.8 / 579), Авторський молочний з горіхами (49.4 / 8.7 / 36.1 / 557), Exclusive чорний (41.5 / 8.8 / 41.5 / 569).
+- Other candidates without sufficiently reliable exact current Б/Ж/В were skipped immediately; no package-size-only duplicates or inferred nutrition were added.
+- Runtime catalog at Svitoch close: **1206 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Svitoch unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
