@@ -23997,5 +23997,83 @@
       "4820008125446"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_start_protein_pillows_cocoa",
+    "name": "Сухий сніданок Start! Подушечки протеїнові з какао",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 47.5,
+    "protein": 21.7,
+    "fat": 19.3,
+    "calories": 460,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237694713",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / NOVUS / ULTRAMARKET",
+    "source_url": "https://zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820237694713/",
+    "verified": true,
+    "aliases": [
+      "Start протеїнові подушечки какао",
+      "Старт протеїнові подушечки какао",
+      "протеїнові подушечки какао"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_protein_pillows_caramel",
+    "name": "Сухий сніданок Start! Подушечки протеїнові карамель",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 47.1,
+    "protein": 21.5,
+    "fat": 20.4,
+    "calories": 467,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237694720",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / NOVUS",
+    "source_url": "https://zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820237694720/",
+    "verified": true,
+    "aliases": [
+      "Start протеїнові подушечки карамель",
+      "Старт протеїнові подушечки карамель",
+      "протеїнові подушечки солона карамель"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_protein_pillows_blueberry",
+    "name": "Сухий сніданок Start! Подушечки протеїнові зі смаком чорниці",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 47,
+    "protein": 21.5,
+    "fat": 20.4,
+    "calories": 466,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "barcode": "4820237694737",
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / NOVUS / ULTRAMARKET",
+    "source_url": "https://zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820237694737/",
+    "verified": true,
+    "aliases": [
+      "Start протеїнові подушечки чорниця",
+      "Старт протеїнові подушечки чорниця",
+      "протеїнові подушечки чорниця ваніль"
+    ],
+    "runtime_merge": false
   }
 ]
