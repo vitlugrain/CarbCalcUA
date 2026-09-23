@@ -318,3 +318,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Package-size variants were not duplicated. Other candidates were skipped where a distinct current recipe/nutrition identity could not be established confidently in the fast pass.
 - Runtime catalog at Millennium close: **1218 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Millennium product with reliable exact nutrition or explicit user request.
+
+
+## Zhytomyrski Lasoshchi branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested one-pass Житомирські ласощі review. Exact duplicate check found no pre-existing products attributed to this manufacturer/brand.
+- Added 5 recognizable candy identities with exact per-100-g nutrition from current Ukrainian retail sources in commit `487c8a387cd549c3c6d649313624d58cc1b57308`: Ромашка (62.4 В / 3.8 Б / 28.3 Ж / 519 ккал), Червоний мак (56.7 / 5.2 / 32.6 / 541), Батончик (54.8 / 9.2 / 31.1 / 536), Пташине молоко (62.5 / 2.6 / 22.7 / 466), Білка (53.6 / 7.1 / 34.7 / 555).
+- Package-size-only variants were not duplicated; candidates without sufficiently reliable exact current Б/Ж/В were skipped rather than inferred.
+- Runtime catalog at close: **1223 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
