@@ -265,3 +265,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Clarified the existing ZNAIMO potato identity as `Картопля відварена з вершковим маслом` so it is distinguishable from plain boiled potato in runtime search; commit `c1048015802cdec80fccd2cd37da63fa67cbc939`.
 - Runtime catalog at ROSHEN close: **1186 products**.
 - Status: **CLOSED FOR CURRENT PASS**.
+
+
+## KONTI branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed one-pass KONTI review as explicitly requested by the user: check existing identities first, add current products only when exact nutrition is available, skip uncertain items, then close the brand.
+- Existing 7 KONTI products were retained and not duplicated: three Super Kontik variants, three Bonjour variants, and Jack chocolate wafers.
+- Added 13 verified missing identities in commit `c6c8c96d52d9044fcd10b38443cea6e34c1ffd9c`: Приємні моменти, М.А.К., Konti-mousse milk, Konti-mousse cappuccino, Золотий ключик Київ-Конті, Golden Konti, Стефанія, Frulatto смородина-м'ята, KONTI-Ромашка, MONE асорті, Jack молоко+вершки, Belissimo Classico крем-брюле, Золота лілія.
+- Manufacturer official nutrition was preferred; current Silpo nutrition was used for several current retail identities where exact Б/Ж/В was available. No package-size-only duplicates were created and no uncertain nutrition was inferred.
+- Runtime catalog at KONTI close: **1199 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen KONTI unless a concrete missing product is reported or the user explicitly requests it.
