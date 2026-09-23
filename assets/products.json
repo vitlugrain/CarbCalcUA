@@ -26075,5 +26075,193 @@
       "ванільна начинка",
       "печиво орео"
     ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_milk",
+    "name": "Шоколад молочний Milka",
+    "carbs": 57,
+    "protein": 6.5,
+    "fat": 31,
+    "calories": 539,
+    "source": "Сільпо — Milka молочний",
+    "source_ref": "Current retail per 100 g: 57 В / 6.5 Б / 31 Ж / 539 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "молочний шоколад"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_hazelnut",
+    "name": "Шоколад молочний Milka з горіхом",
+    "carbs": 55,
+    "protein": 7,
+    "fat": 32,
+    "calories": 545,
+    "source": "Сільпо — Milka з горіхом",
+    "source_ref": "Current Ukraine-made 90 g retail identity; per 100 g: 55 В / 7 Б / 32 Ж / 545 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "горіх",
+      "фундук",
+      "лісовий горіх"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_oreo_vanilla",
+    "name": "Шоколад молочний Milka з ванільною начинкою та печивом Oreo",
+    "carbs": 61,
+    "protein": 5.7,
+    "fat": 27,
+    "calories": 518,
+    "source": "Сільпо — Milka Oreo vanilla",
+    "source_ref": "Current 92 g retail identity; per 100 g: 61 В / 5.7 Б / 27 Ж / 518 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "oreo",
+      "орео",
+      "milka oreo"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_raspberry_cream",
+    "name": "Шоколад молочний Milka з малиною та кремом",
+    "carbs": 58,
+    "protein": 4.4,
+    "fat": 31,
+    "calories": 531,
+    "source": "Сільпо — Milka малина та крем",
+    "source_ref": "Current Ukraine-made 90 g retail identity; per 100 g: 58 В / 4.4 Б / 31 Ж / 531 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "малина",
+      "крем"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_cherry_cream",
+    "name": "Шоколад молочний Milka вишня та крем",
+    "carbs": 60,
+    "protein": 5.4,
+    "fat": 29,
+    "calories": 524,
+    "source": "Сільпо — Milka вишня та крем",
+    "source_ref": "Current Ukraine-made 90 g retail identity; per 100 g: 60 В / 5.4 Б / 29 Ж / 524 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "вишня",
+      "крем"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_extra_almond_cranberry_quinoa",
+    "name": "Шоколад молочний Milka Екстра мигдаль, журавлина та кіноа",
+    "carbs": 59,
+    "protein": 6.6,
+    "fat": 28,
+    "calories": 522,
+    "source": "Сільпо — Milka Екстра мигдаль журавлина кіноа",
+    "source_ref": "Current Ukraine-made 130 g retail identity; per 100 g: 59 В / 6.6 Б / 28 Ж / 522 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "екстра",
+      "мигдаль",
+      "журавлина",
+      "кіноа"
+    ]
+  },
+  {
+    "brand": "Milka",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_milka_nussini_hazelnut_wafer",
+    "name": "Шоколад молочний Milka Nussini з горіховою пастою, фундуком та вафлею",
+    "carbs": 54,
+    "protein": 5.7,
+    "fat": 34,
+    "calories": 556,
+    "source": "Сільпо — Milka Nussini",
+    "source_ref": "Current 270 g retail identity; per 100 g: 54 В / 5.7 Б / 34 Ж / 556 ккал.",
+    "aliases": [
+      "шоколад",
+      "milka",
+      "мілка",
+      "nussini",
+      "нуссіні",
+      "вафля",
+      "фундук",
+      "горіхова паста"
+    ]
   }
 ]
