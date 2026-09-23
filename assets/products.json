@@ -24165,5 +24165,144 @@
       "4820237692900"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_snickers_classic_bar",
+    "name": "Батончик Snickers з арахісом, карамеллю та нугою",
+    "brand": "Snickers",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 60,
+    "protein": 8.7,
+    "fat": 23,
+    "calories": 489,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — актуальна позиція Snickers 50 г",
+    "source_ref": "50 г; 60 В / 8.7 Б / 23 Ж на 100 г; більший формат 112.5 г має ті самі основні Б/Ж/В",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "снікерс",
+      "snickers",
+      "снікерс класичний"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_mars_classic_bar",
+    "name": "Батончик Mars з нугою та карамеллю",
+    "brand": "Mars",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 70,
+    "protein": 4.4,
+    "fat": 16,
+    "calories": 443,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — актуальна позиція Mars 51 г",
+    "source_ref": "51 г; 70 В / 4.4 Б / 16 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "марс",
+      "mars",
+      "марс батончик"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_twix_classic_bar",
+    "name": "Батончик Twix з печивом та карамеллю",
+    "brand": "Twix",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 65,
+    "protein": 4.6,
+    "fat": 24,
+    "calories": 493,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — актуальна позиція Twix 50 г",
+    "source_ref": "50 г; 65 В / 4.6 Б / 24 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "твікс",
+      "twix",
+      "твікс класичний"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_bounty_milk_classic_bar",
+    "name": "Батончик Bounty з кокосом у молочному шоколаді",
+    "brand": "Bounty",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 60,
+    "protein": 3.8,
+    "fat": 26,
+    "fiber": 1.6,
+    "calories": 487,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — актуальна позиція Bounty 57 г",
+    "source_ref": "57 г; 60 В / 3.8 Б / 26 Ж на 100 г. Bounty Trio 85 г має іншу заявлену рецептуру/59 г В, тому не об'єднувати.",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "баунті",
+      "bounty",
+      "баунті кокос"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_kitkat_finger_milk_bar",
+    "name": "Батончик KitKat Finger у молочному шоколаді",
+    "brand": "KitKat",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 61,
+    "protein": 6.7,
+    "fat": 26,
+    "fiber": 2.5,
+    "calories": 512,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle S.A.",
+    "source": "Zakaz.ua — актуальна позиція KitKat Finger 41.5 г",
+    "source_ref": "41.5 г; 61 В / 6.7 Б / 26 Ж на 100 г; різні EAN поточної 41.5 г рецептури не створюють окремі харчові позиції",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіткат",
+      "kitkat",
+      "kit kat",
+      "кіт кат",
+      "kitkat finger"
+    ],
+    "barcodes": [
+      "4600680001586",
+      "7613035662728",
+      "4607150081796"
+    ],
+    "runtime_merge": false
   }
 ]
