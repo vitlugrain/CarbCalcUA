@@ -150,7 +150,64 @@ class FoodSearchService {
       if(p.id.startsWith('ua_core_'))score+=65; else if(!p.id.startsWith('usda_')&&!p.id.startsWith('off_'))score+=28; else if(p.id.startsWith('usda_'))score-=12;
       score+=_contextScore(qTokens,nameTokens);
       if(p.source?.startsWith('USDA')==true){score+=_usdaContextScore(qTokens,nameTokens);score+=_usdaSimplicityScore(qTokens,nameTokens,p.name);}
-      final categoryOnlyMatch=category.contains(q)&&!name.contains(q)&&!normalize(aliasText).contains(q)&&!manufacturer.contains(q);\n      if(categoryOnlyMatch)score-=35;\n      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;
+      final categoryOnlyMatch=category.contains(q)&&!name.contains(q)&&!normalize(aliasText).contains(q)&&!manufacturer.contains(q);\n      if(categoryOnlyMatch)score-=35;\n      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;\n      // For Latin/brand-like queries (e.g. Oreo), require real textual evidence.\n      // Otherwise fuzzy matching against unrelated USDA English tokens can flood the list.\n      final brandLikeLatin=RegExp(r'^[a-z0-9 ]+
+      final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
+      if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
+    }
+    results.sort((a,b){final s=b.score.compareTo(a.score);if(s!=0)return s;return a.product.name.compareTo(b.product.name);});
+    final dedup=<String,FoodSearchResult>{};
+    for(final r in results){final key=_dedupKey(r.product);final existing=dedup[key];if(existing==null||r.score>existing.score)dedup[key]=r;}
+    final clean=dedup.values.toList()..sort((a,b){final s=b.score.compareTo(a.score);if(s!=0)return s;return a.product.name.compareTo(b.product.name);});
+    return clean.take(limit).toList();
+  }
+
+  static String _dedupKey(Product p){
+    var n=normalize(p.name).replaceAll('пепсі','pepsi').replaceAll('пепси','pepsi').replaceAll('кока кола','coca cola').replaceAll('кока-кола','coca cola');
+    n=n.replaceAll(RegExp(r'\b(напій|газований|безалкогольний|carbonated|drink|beverage)\b'),' ').replaceAll(RegExp(r'\s+'),' ').trim();
+    final m=normalize(p.manufacturer??'').replaceAll('пепсі','pepsi');
+    return '$n|$m|${p.carbs.toStringAsFixed(1)}';
+  }
+
+  static Future<Product?> findByBarcode(String barcode,{CustomProductLookup? customProductLookup})=>BarcodeService.find(barcode,customProductLookup:customProductLookup);
+
+  static double _contextScore(List<String> query,List<String> name){double score=0;bool has(String s)=>query.contains(s);bool ph(String s)=>name.contains(s);if(has('варен'))score+=ph('варен')?42:-35;if(has('сух'))score+=ph('сух')?42:-35;if(has('сирстан'))score+=ph('сирстан')?38:-30;if(has('свіж'))score+=ph('свіж')?32:-22;if(has('вод'))score+=ph('вод')?36:-12;if(has('молок'))score+=ph('молок')?36:-12;return score;}
+  static double _usdaSimplicityScore(List<String> query,List<String> nameTokens,String originalName){double score=0;final lower=originalName.toLowerCase();if(query.length<=2){if(nameTokens.length<=5)score+=22;if(nameTokens.length>=10)score-=18;const noisy=['applebee','burger king','mcdonald','restaurant','fast food','babyfood','platter','sandwich','biscuit','microwaveable','packaged mix','with cheese','with sauce','native','agutu'];for(final term in noisy){if(lower.contains(term))score-=38;}}return score;}
+  static double _usdaContextScore(List<String> query,List<String> name){double score=0;bool has(String s)=>query.contains(s);bool any(List<String> t)=>t.any(name.contains);if(has('варен'))score+=any(['cooked','boiled'])?34:0;if(has('смажен'))score+=any(['fried'])?34:0;if(has('запечен'))score+=any(['baked','roasted'])?34:0;if(has('сух'))score+=any(['dry','uncooked'])?28:0;if(has('свіж'))score+=any(['fresh'])?24:0;if(has('сирстан'))score+=any(['raw'])?28:0;if(has('молок'))score+=any(['milk'])?24:0;return score;}
+  static double _similar(String a,List<String> candidates){var best=0.0;for(final b in candidates){final maxLen=math.max(a.length,b.length);if(maxLen==0)continue;final d=_levenshtein(a,b);best=math.max(best,1-d/maxLen);}return best;}
+  static int _levenshtein(String a,String b){final prev=List<int>.generate(b.length+1,(i)=>i);for(var i=0;i<a.length;i++){var left=i+1;var diag=i;for(var j=0;j<b.length;j++){final up=prev[j+1];final cost=a.codeUnitAt(i)==b.codeUnitAt(j)?0:1;prev[j+1]=math.min(math.min(up+1,left+1),diag+cost);diag=up;left=prev[j+1];}prev[0]=i+1;}return prev[b.length];}
+}
+
+
+class _PreparedProduct {
+  final String name;
+  final List<String> nameTokens;
+  final String aliasText;
+  final String manufacturer;
+  final String category;
+  final List<String> searchableTokens;
+
+  const _PreparedProduct({required this.name,required this.nameTokens,required this.aliasText,required this.manufacturer,required this.category,required this.searchableTokens});
+
+  factory _PreparedProduct.fromProduct(Product p) {
+    final name=FoodSearchService.normalize(p.name);
+    final nameTokens=FoodSearchService._tokens(p.name);
+    final aliasText=p.aliases.join(' ');
+    final aliasTokens=FoodSearchService._tokens(aliasText);
+    final manufacturer=FoodSearchService.normalize(p.manufacturer??'');
+    final manufacturerTokens=FoodSearchService._tokens(p.manufacturer??'');
+    final category=FoodSearchService.normalize(p.category);
+    final categoryTokens=FoodSearchService._tokens(p.category);
+    return _PreparedProduct(
+      name:name,
+      nameTokens:nameTokens,
+      aliasText:aliasText,
+      manufacturer:manufacturer,
+      category:category,
+      searchableTokens:<String>{...nameTokens,...aliasTokens,...manufacturerTokens,...categoryTokens}.toList(growable:false),
+    );
+  }
+}
+).hasMatch(q) && q.length>=4;\n      final textualBrandEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q);\n      if(brandLikeLatin&&!textualBrandEvidence)continue;
       final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
       if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
     }
