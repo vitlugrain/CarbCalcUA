@@ -283,3 +283,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - No new Lukas runtime product was added in this closing pass.
 - Runtime catalog remains **1199 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Lukas unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
+
+
+## AVK branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed the requested one-pass AVK review. Exact runtime duplicate check was performed before additions; prior loose substring hits were confirmed to be false positives and were not treated as AVK products.
+- Current official AVK assortment was used to establish current product identities. Products without sufficiently reliable exact current Б/Ж/В were skipped immediately per user rule.
+- Added 3 high-value verified identities in commit `a34e1f911d91176e2c61596b02ff16144440f0f3`: Гулівер (50 В / 6 Б / 36 Ж / 560 ккал), Trufalie (46 В / 3.5 Б / 42 Ж / 580 ккал), Трюфель оригінальний (47 В / 3.5 Б / 41 Ж / 580 ккал), all per 100 g.
+- Conflicting nutrition versions were not averaged; e.g. a distinct/older 124 g Trufalie retail card reports 49 g carbs and was not merged into the selected current 46 g identity.
+- Runtime catalog at AVK close: **1202 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen AVK unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
