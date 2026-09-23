@@ -351,3 +351,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Country/recipe-specific identities were kept tied to the verified current retail card; package-size-only variants were not duplicated and conflicting recipes were not averaged.
 - Runtime catalog at close: **1241 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Milka product with reliable exact nutrition or explicit user request.
+
+
+## Barni branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested fast Barni pass. Exact duplicate check found no Barni/Барні identities in the verified local catalog before write.
+- Added 3 core current biscuit identities with exact per-100-g retail nutrition in commit `3e519e57c65d380570bfcb27d7a7a9a44b96f823`: молочна начинка (62 В / 6.1 Б / 15 Ж / 414 ккал), шоколадна начинка (61 / 6.2 / 16 / 419), бананово-йогуртова начинка (63 / 5.8 / 14 / 411).
+- Added Barni/Барні and generic бісквіт search aliases. Package-size-only variants were not duplicated; uncertain candidates were skipped rather than inferred.
+- Runtime catalog at close: **1244 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Barni product with reliable exact nutrition or explicit user request.
