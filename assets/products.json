@@ -24677,5 +24677,34 @@
     ],
     "barcode": "3387390325744",
     "runtime_merge": false
+  },
+  {
+    "id": "ua_roshen_shalena_bdzilka_frutti",
+    "name": "Цукерки Шалена бджілка Фрутті Roshen",
+    "brand": "Roshen",
+    "category": "Цукерки",
+    "state": "packaged",
+    "carbs": 79.7,
+    "protein": 0,
+    "fat": 0.2,
+    "calories": 319,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Кондитерська Корпорація ROSHEN",
+    "source": "Zakaz.ua / Сільпо — Шалена бджілка Фрутті",
+    "source_ref": "Актуальні картки 2026: 79.7 В / 0 Б / 0.2 Ж / 319 ккал на 100 г; 200 г і вагова форма — одна рецептура, не дублювати за фасуванням.",
+    "verified": true,
+    "aliases": [
+      "цукерки",
+      "шалена бджілка",
+      "шалена бджілка фрутті",
+      "бджілка",
+      "фрутті",
+      "shalena bdzhilka",
+      "roshen",
+      "рошен"
+    ]
   }
 ]
