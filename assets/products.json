@@ -25962,5 +25962,118 @@
       "чорний шоколад",
       "темний шоколад"
     ]
+  },
+  {
+    "brand": "Oreo",
+    "category": "Печиво",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_oreo_original",
+    "name": "Печиво Oreo Original з какао та ванільною начинкою",
+    "carbs": 68,
+    "protein": 4.7,
+    "fat": 21,
+    "calories": 491,
+    "source": "Сільпо — Oreo Original",
+    "source_ref": "Current Ukraine-made retail identity; per 100 g: 68 В / 4.7 Б / 21 Ж / 491 ккал. Other country/package recipes with differing values are not averaged.",
+    "aliases": [
+      "печиво",
+      "орео",
+      "oreo",
+      "oreo original",
+      "орео оригінал",
+      "печиво орео",
+      "печиво oreo"
+    ]
+  },
+  {
+    "brand": "Oreo",
+    "category": "Печиво",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_oreo_golden",
+    "name": "Печиво Oreo Golden з ванільною начинкою",
+    "carbs": 69,
+    "protein": 5.5,
+    "fat": 20,
+    "calories": 484,
+    "source": "Сільпо — Oreo Golden",
+    "source_ref": "Current 176 g retail identity; per 100 g: 69 В / 5.5 Б / 20 Ж / 484 ккал.",
+    "aliases": [
+      "печиво",
+      "орео",
+      "oreo",
+      "oreo golden",
+      "орео голден",
+      "golden oreo",
+      "печиво орео"
+    ]
+  },
+  {
+    "brand": "Oreo",
+    "category": "Печиво",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_oreo_double_creme",
+    "name": "Печиво Oreo з подвійною ванільною начинкою",
+    "carbs": 67,
+    "protein": 4.3,
+    "fat": 22,
+    "calories": 492,
+    "source": "Сільпо — Oreo Double Creme",
+    "source_ref": "Current 170 g retail identity; per 100 g: 67 В / 4.3 Б / 22 Ж / 492 ккал.",
+    "aliases": [
+      "печиво",
+      "орео",
+      "oreo",
+      "подвійна начинка",
+      "double creme",
+      "double cream",
+      "oreo double",
+      "печиво орео"
+    ]
+  },
+  {
+    "brand": "Oreo",
+    "category": "Печиво",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_oreo_enrobed_vanilla",
+    "name": "Печиво Oreo з ванільною начинкою в глазурі",
+    "carbs": 69,
+    "protein": 5.2,
+    "fat": 25,
+    "calories": 530,
+    "source": "Сільпо — Oreo в глазурі",
+    "source_ref": "Current 41 g retail identity; per 100 g: 69 В / 5.2 Б / 25 Ж / 530 ккал.",
+    "aliases": [
+      "печиво",
+      "орео",
+      "oreo",
+      "орео в глазурі",
+      "oreo enrobed",
+      "ванільна начинка",
+      "печиво орео"
+    ]
   }
 ]
