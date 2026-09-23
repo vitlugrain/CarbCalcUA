@@ -359,3 +359,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Added Barni/Барні and generic бісквіт search aliases. Package-size-only variants were not duplicated; uncertain candidates were skipped rather than inferred.
 - Runtime catalog at close: **1244 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Barni product with reliable exact nutrition or explicit user request.
+
+
+## Ferrero core lines — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested fast Ferrero pass. Existing Kinder Bueno, Kinder Chocolate, Kinder Bueno White and Kinder Country were detected beforehand and not duplicated.
+- Added 4 major missing identities in commit `38ec183cb9fe207c8663fb1f5b08c3a942e9f44e`: Nutella hazelnut/cocoa spread (57.5 В / 6.3 Б / 30.9 Ж / 539 ккал), Raffaello (38.3 / 7.4 / 48.6 / 628), Ferrero Rocher (44.4 / 8.2 / 42.7 / 603), Kinder Delice (59.6 / 5.9 / 29 / 521), all per 100 g.
+- Package-size variants were not duplicated; aliases include common Ukrainian spellings/transliterations. Uncertain recipe variants were skipped rather than inferred.
+- Runtime catalog at close: **1248 products**.
+- Status: **CLOSED FOR CURRENT PASS** for Ferrero core lines. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
