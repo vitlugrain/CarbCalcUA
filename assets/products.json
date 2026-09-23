@@ -25218,5 +25218,112 @@
       "авк",
       "avk"
     ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_milk_chocolate",
+    "name": "Шоколад молочний Світоч",
+    "carbs": 55.1,
+    "protein": 7.1,
+    "fat": 32.3,
+    "calories": 542,
+    "source": "Current Ukrainian retail — Світоч молочний шоколад",
+    "source_ref": "Verified per 100 g: 55.1 В / 7.1 Б / 32.3 Ж / 542 ккал.",
+    "aliases": [
+      "шоколад",
+      "молочний шоколад",
+      "світоч",
+      "svitoch"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_author_dark_70",
+    "name": "Шоколад чорний Світоч Авторський 70%",
+    "carbs": 34.6,
+    "protein": 9.2,
+    "fat": 44.8,
+    "calories": 579,
+    "source": "Current Ukrainian retail — Світоч Авторський чорний 70%",
+    "source_ref": "Verified per 100 g: 34.6 В / 9.2 Б / 44.8 Ж / 579 ккал.",
+    "aliases": [
+      "шоколад",
+      "чорний шоколад",
+      "темний шоколад",
+      "авторський",
+      "70%",
+      "світоч",
+      "svitoch"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_author_milk_nuts",
+    "name": "Шоколад молочний Світоч Авторський з горіхами",
+    "carbs": 49.4,
+    "protein": 8.7,
+    "fat": 36.1,
+    "calories": 557,
+    "source": "Current Ukrainian retail — Світоч Авторський молочний з горіхами",
+    "source_ref": "Verified per 100 g: 49.4 В / 8.7 Б / 36.1 Ж / 557 ккал.",
+    "aliases": [
+      "шоколад",
+      "молочний шоколад",
+      "горіхи",
+      "авторський",
+      "світоч",
+      "svitoch"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Шоколад",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_exclusive_dark",
+    "name": "Шоколад чорний Світоч Exclusive",
+    "carbs": 41.5,
+    "protein": 8.8,
+    "fat": 41.5,
+    "calories": 569,
+    "source": "Current Ukrainian retail — Світоч Exclusive чорний",
+    "source_ref": "Verified per 100 g: 41.5 В / 8.8 Б / 41.5 Ж / 569 ккал.",
+    "aliases": [
+      "шоколад",
+      "чорний шоколад",
+      "exclusive",
+      "ексклюзив",
+      "світоч",
+      "svitoch"
+    ]
   }
 ]
