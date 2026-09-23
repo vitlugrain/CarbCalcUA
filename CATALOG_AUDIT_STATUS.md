@@ -367,3 +367,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Package-size variants were not duplicated; aliases include common Ukrainian spellings/transliterations. Uncertain recipe variants were skipped rather than inferred.
 - Runtime catalog at close: **1248 products**.
 - Status: **CLOSED FOR CURRENT PASS** for Ferrero core lines. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
+
+
+### Mars/Wrigley follow-up — M&M's gap closed 2026-09-23
+- Confirmed existing Snickers, Mars, Twix, Bounty and Milky Way identities were already present and were not duplicated.
+- Concrete missing family was M&M's. Added 2 core verified identities in commit `f44150d28ef46010a7c9e5f52e862f21fc9177db`: M&M's Chocolate (70 В / 4.8 Б / 19 Ж / 480 ккал) and M&M's Peanut (59 В / 9.8 Б / 25 Ж / 512 ккал), per 100 g.
+- Added Latin and common Ukrainian phonetic aliases for search. Package-size variants were not duplicated.
+- Runtime catalog after follow-up: **1250 products**.
+- Mars/Wrigley core confectionery gap is **CLOSED FOR CURRENT PASS**.
