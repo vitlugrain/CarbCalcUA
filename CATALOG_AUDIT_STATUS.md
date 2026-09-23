@@ -274,3 +274,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Manufacturer official nutrition was preferred; current Silpo nutrition was used for several current retail identities where exact Б/Ж/В was available. No package-size-only duplicates were created and no uncertain nutrition was inferred.
 - Runtime catalog at KONTI close: **1199 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen KONTI unless a concrete missing product is reported or the user explicitly requests it.
+
+
+## Lukas branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed the requested fast one-pass Lukas review. Existing runtime identities were checked first: Славка condensed milk, Славка chocolate, Тузя milk and Тузя chocolate were already present and were not duplicated.
+- Current manufacturer assortment was reviewed. Lukas currently advertises a broad candy range and current/new identities including FLY variants, Lukasia, Bifesti lime, Lukabon, CocoVibe, SWIPE and others, but the accessible current manufacturer pages do not expose complete per-100-g Б/Ж/В for these products.
+- Per explicit user rule, products without sufficiently reliable exact current Б/Ж/В were skipped immediately rather than inferred from recipe descriptions or older/adjacent products.
+- No new Lukas runtime product was added in this closing pass.
+- Runtime catalog remains **1199 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Lukas unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
