@@ -24304,5 +24304,57 @@
       "4607150081796"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_kitkat_chunky_milk_bar",
+    "name": "Батончик KitKat Chunky у молочному шоколаді",
+    "brand": "KitKat",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 64.2,
+    "protein": 6.6,
+    "fat": 23.8,
+    "calories": 499,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua — KitKat Chunky 40 г",
+    "source_ref": "40 г; 64.2 В / 6.6 Б / 23.8 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіткат чанкі",
+      "kitkat chunky",
+      "kit kat chunky"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_bounty_trio_milk_bar",
+    "name": "Батончик Bounty Trio з кокосом у молочному шоколаді",
+    "brand": "Bounty",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 59,
+    "protein": 3.9,
+    "fat": 27,
+    "calories": 492,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — Bounty Trio 85 г",
+    "source_ref": "85 г; 59 В / 3.9 Б / 27 Ж на 100 г; відрізняється від класичного Bounty 57 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "баунті тріо",
+      "bounty trio",
+      "баунті 85"
+    ],
+    "runtime_merge": false
   }
 ]
