@@ -26263,5 +26263,87 @@
       "фундук",
       "горіхова паста"
     ]
+  },
+  {
+    "brand": "Barni",
+    "category": "Бісквіти",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_barni_milk",
+    "name": "Бісквіт Barni з молочною начинкою",
+    "carbs": 62,
+    "protein": 6.1,
+    "fat": 15,
+    "calories": 414,
+    "source": "Current Ukrainian retail — Barni milk",
+    "source_ref": "Verified current retail label per 100 g: 62 В / 6.1 Б / 15 Ж / 414 ккал.",
+    "aliases": [
+      "barni",
+      "барні",
+      "бісквіт",
+      "бісквіти",
+      "барні молочний",
+      "молочна начинка"
+    ]
+  },
+  {
+    "brand": "Barni",
+    "category": "Бісквіти",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_barni_chocolate",
+    "name": "Бісквіт Barni з шоколадною начинкою",
+    "carbs": 61,
+    "protein": 6.2,
+    "fat": 16,
+    "calories": 419,
+    "source": "Current Ukrainian retail — Barni chocolate",
+    "source_ref": "Verified current retail label per 100 g: 61 В / 6.2 Б / 16 Ж / 419 ккал.",
+    "aliases": [
+      "barni",
+      "барні",
+      "бісквіт",
+      "бісквіти",
+      "барні шоколад",
+      "шоколадна начинка"
+    ]
+  },
+  {
+    "brand": "Barni",
+    "category": "Бісквіти",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_barni_banana_yogurt",
+    "name": "Бісквіт Barni з бананово-йогуртовою начинкою",
+    "carbs": 63,
+    "protein": 5.8,
+    "fat": 14,
+    "calories": 411,
+    "source": "Current Ukrainian retail — Barni banana yogurt",
+    "source_ref": "Verified current retail label per 100 g: 63 В / 5.8 Б / 14 Ж / 411 ккал.",
+    "aliases": [
+      "barni",
+      "барні",
+      "бісквіт",
+      "бісквіти",
+      "банан",
+      "йогурт",
+      "бананово-йогуртова начинка"
+    ]
   }
 ]
