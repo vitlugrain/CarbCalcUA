@@ -24356,5 +24356,135 @@
       "баунті 85"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_kinder_bueno_classic",
+    "name": "Батончик Kinder Bueno",
+    "brand": "Kinder",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 49.5,
+    "protein": 8.6,
+    "fat": 37.3,
+    "calories": 572,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "source": "Zakaz.ua / Ferrero",
+    "source_ref": "Класичний Kinder Bueno, 43 г; харчова цінність на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіндер буено",
+      "kinder bueno",
+      "буено"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_kinder_chocolate",
+    "name": "Шоколад Kinder Chocolate",
+    "brand": "Kinder",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 53.5,
+    "protein": 8.7,
+    "fat": 35,
+    "calories": 566,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "source": "Zakaz.ua / Ferrero",
+    "source_ref": "Kinder Chocolate; харчова цінність на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіндер шоколад",
+      "kinder chocolate",
+      "шоколад кіндер"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_lion_classic_bar",
+    "name": "Батончик Lion з карамеллю та вафлею",
+    "brand": "Lion",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 65.1,
+    "protein": 5.3,
+    "fat": 23.3,
+    "calories": 482,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua",
+    "source_ref": "Lion Classic; харчова цінність на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "лайон",
+      "lion",
+      "lion classic"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_nuts_classic_bar",
+    "name": "Батончик Nuts з фундуком",
+    "brand": "Nuts",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 58.2,
+    "protein": 6.6,
+    "fat": 28.5,
+    "calories": 515,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua",
+    "source_ref": "Nuts з фундуком; харчова цінність на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "натс",
+      "nuts",
+      "nuts фундук"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_picnic_classic_bar",
+    "name": "Батончик Picnic з арахісом та родзинками",
+    "brand": "Picnic",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 59,
+    "protein": 8.1,
+    "fat": 25,
+    "calories": 498,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "source": "Zakaz.ua",
+    "source_ref": "Picnic класичний; харчова цінність на 100 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "пікнік",
+      "picnic",
+      "picnic арахіс родзинки"
+    ],
+    "runtime_merge": false
   }
 ]
