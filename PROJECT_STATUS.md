@@ -182,3 +182,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - T-001 remains **FIXED / AWAITING APK** until the user verifies on Android that base queries such as `картопля` show `Картопля смажена` and `печиво` shows Oreo.
 - This checkpoint commit intentionally triggers the normal Android APK workflow so the next build is a single unambiguous device-test candidate containing the accumulated changes.
 - Build policy remains unchanged: after this requested test candidate, resume accumulating meaningful batches rather than creating an APK after every small catalog change.
+
+
+## End-of-day checkpoint — 2026-09-23 (before next APK)
+- Work is intentionally stopped before APK build; user requested that the next consolidated Android APK be built **tomorrow**, not today.
+- Current verified local runtime catalog: **1250 products**.
+- Branded expansion completed/closed in the latest batch: ROSHEN, KONTI, Lukas, AVK, Світоч (including Артек follow-up), Millennium, Житомирські ласощі, Mondelez core (TUC/belVita/Корона), Oreo, Milka, Barni, Ferrero core, and Mars/Wrigley M&M's gap. Existing products were checked before writes to avoid duplication.
+- Latest product commit: `f44150d28ef46010a7c9e5f52e862f21fc9177db` (M&M's Chocolate + Peanut). Ferrero core product commit: `38ec183cb9fe207c8663fb1f5b08c3a942e9f44e`. Full detailed branded history is in `CATALOG_AUDIT_STATUS.md`.
+- APK #419 device result remains the current phone checkpoint: installed successfully; diary preserved; potato search case verified. Cookie/Oreo search remains pending verification on the **next consolidated APK**. Since #419, Oreo identities/aliases were added directly to the verified catalog and search code received stronger Latin brand-query filtering; these changes are committed but not device-verified.
+- Potato naming clarification is committed: `Картопля відварена з вершковим маслом` is distinct from plain boiled potato; do not collapse them as duplicates.
+- Tomorrow's first task: reread `PROJECT_STATUS.md`, `CATALOG_AUDIT_STATUS.md`, and `TESTING_ISSUES.md`; validate the accumulated branch (including catalog integrity and search/tests), then trigger **one consolidated Android APK** from `dev-large-update`. Do not make an APK per individual catalog change.
+- After installation, verify diary preservation and specifically retest T-001 with queries `картопля`, `печиво`, `Орео`, and Latin `Oreo`; only real-device confirmation can move the remaining search issue to VERIFIED/CLOSED.
