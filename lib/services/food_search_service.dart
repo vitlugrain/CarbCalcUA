@@ -150,7 +150,7 @@ class FoodSearchService {
       if(p.id.startsWith('ua_core_'))score+=65; else if(!p.id.startsWith('usda_')&&!p.id.startsWith('off_'))score+=28; else if(p.id.startsWith('usda_'))score-=12;
       score+=_contextScore(qTokens,nameTokens);
       if(p.source?.startsWith('USDA')==true){score+=_usdaContextScore(qTokens,nameTokens);score+=_usdaSimplicityScore(qTokens,nameTokens,p.name);}
-      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;
+      final categoryOnlyMatch=category.contains(q)&&!name.contains(q)&&!normalize(aliasText).contains(q)&&!manufacturer.contains(q);\n      if(categoryOnlyMatch)score-=35;\n      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;
       final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
       if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
     }
