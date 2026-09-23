@@ -24793,5 +24793,349 @@
       "roshen",
       "рошен"
     ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_good_moments",
+    "name": "Цукерки Приємні моменти КОНТІ",
+    "carbs": 74,
+    "protein": 1.5,
+    "fat": 13,
+    "calories": 420,
+    "source": "КОНТІ official — Приємні моменти",
+    "source_ref": "Verified nutrition per 100 g: 74 В / 1.5 Б / 13 Ж / 420 ккал.",
+    "aliases": [
+      "цукерки",
+      "приємні моменти",
+      "good moments",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_mak",
+    "name": "Цукерки М.А.К. КОНТІ",
+    "carbs": 52,
+    "protein": 3,
+    "fat": 37,
+    "calories": 550,
+    "source": "КОНТІ official — М.А.К.",
+    "source_ref": "Verified nutrition per 100 g: 52 В / 3 Б / 37 Ж / 550 ккал.",
+    "aliases": [
+      "цукерки",
+      "мак",
+      "м.а.к.",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_mousse_milk",
+    "name": "Цукерки Konti-mousse смак молоко",
+    "carbs": 74,
+    "protein": 1,
+    "fat": 12,
+    "calories": 410,
+    "source": "КОНТІ official — Konti-mousse milk",
+    "source_ref": "Verified nutrition per 100 g: 74 В / 1 Б / 12 Ж / 410 ккал.",
+    "aliases": [
+      "цукерки",
+      "konti mousse",
+      "конті мус",
+      "мус молоко",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_mousse_cappuccino",
+    "name": "Цукерки Konti-mousse смак капучино",
+    "carbs": 73,
+    "protein": 2,
+    "fat": 13,
+    "calories": 420,
+    "source": "КОНТІ official — Konti-mousse cappuccino",
+    "source_ref": "Verified nutrition per 100 g: 73 В / 2 Б / 13 Ж / 420 ккал.",
+    "aliases": [
+      "цукерки",
+      "konti mousse",
+      "конті мус",
+      "капучино",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_golden_key",
+    "name": "Цукерки Золотий ключик Київ-Конті",
+    "carbs": 65,
+    "protein": 2,
+    "fat": 25,
+    "calories": 490,
+    "source": "КОНТІ official — Золотий ключик Київ-Конті",
+    "source_ref": "Verified nutrition per 100 g: 65 В / 2 Б / 25 Ж / 490 ккал.",
+    "aliases": [
+      "цукерки",
+      "золотий ключик",
+      "київ конті",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_golden_konti",
+    "name": "Цукерки Golden Konti",
+    "carbs": 72,
+    "protein": 1,
+    "fat": 19,
+    "calories": 460,
+    "source": "КОНТІ official — Golden Konti",
+    "source_ref": "Verified nutrition per 100 g: 72 В / 1 Б / 19 Ж / 460 ккал.",
+    "aliases": [
+      "цукерки",
+      "golden konti",
+      "голден конті",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_stefania",
+    "name": "Цукерки Konti Стефанія",
+    "carbs": 73,
+    "protein": 1,
+    "fat": 14,
+    "calories": 420,
+    "source": "КОНТІ official — Стефанія",
+    "source_ref": "Verified nutrition per 100 g: 73 В / 1 Б / 14 Ж / 420 ккал.",
+    "aliases": [
+      "цукерки",
+      "стефанія",
+      "konti stefania",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_frulatto_currant_mint",
+    "name": "Цукерки Frulatto смородина-м'ята КОНТІ",
+    "carbs": 75,
+    "protein": 1,
+    "fat": 13,
+    "calories": 420,
+    "source": "КОНТІ official — Frulatto смородина-м'ята",
+    "source_ref": "Verified nutrition per 100 g: 75 В / 1 Б / 13 Ж / 420 ккал.",
+    "aliases": [
+      "цукерки",
+      "frulatto",
+      "фрулатто",
+      "смородина м'ята",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_romashka",
+    "name": "Цукерки KONTI-Ромашка",
+    "carbs": 72,
+    "protein": 3.5,
+    "fat": 15,
+    "calories": 440,
+    "source": "КОНТІ official — KONTI-Ромашка",
+    "source_ref": "Verified nutrition per 100 g: 72 В / 3.5 Б / 15 Ж / 440 ккал.",
+    "aliases": [
+      "цукерки",
+      "ромашка",
+      "конті ромашка",
+      "konti romashka",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_mone_assorti",
+    "name": "Цукерки MONE асорті КОНТІ",
+    "carbs": 47,
+    "protein": 6,
+    "fat": 39,
+    "calories": 560,
+    "source": "КОНТІ official — MONE асорті",
+    "source_ref": "Verified nutrition per 100 g: 47 В / 6 Б / 39 Ж / 560 ккал.",
+    "aliases": [
+      "цукерки",
+      "mone",
+      "моне",
+      "трюфель",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_jack_milk_cream",
+    "name": "Цукерки Jack з молоком та вершками КОНТІ",
+    "carbs": 60,
+    "protein": 4,
+    "fat": 32,
+    "calories": 544,
+    "source": "Сільпо — Konti Джек з молоком та вершками",
+    "source_ref": "Verified nutrition per 100 g: 60 В / 4 Б / 32 Ж / 544 ккал.",
+    "aliases": [
+      "цукерки",
+      "джек",
+      "jack",
+      "молоко вершки",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_belissimo_creme_brulee",
+    "name": "Цукерки Belissimo Classico крем-брюле КОНТІ",
+    "carbs": 73,
+    "protein": 1,
+    "fat": 16,
+    "calories": 440,
+    "source": "Сільпо — Konti Belissimo Classico крем-брюле",
+    "source_ref": "Verified nutrition per 100 g: 73 В / 1 Б / 16 Ж / 440 ккал.",
+    "aliases": [
+      "цукерки",
+      "belissimo",
+      "беліссімо",
+      "крем брюле",
+      "конті",
+      "konti"
+    ]
+  },
+  {
+    "brand": "КОНТІ",
+    "category": "Цукерки",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ТОВ «ТОРГІВЕЛЬНИЙ БУДИНОК «КОНТІ»",
+    "verified": true,
+    "id": "ua_konti_zolota_liliia",
+    "name": "Цукерки Золота лілія КОНТІ",
+    "carbs": 63,
+    "protein": 1,
+    "fat": 29,
+    "calories": 520,
+    "source": "Сільпо — Konti Золота лілія",
+    "source_ref": "Verified nutrition per 100 g: 63 В / 1 Б / 29 Ж / 520 ккал.",
+    "aliases": [
+      "цукерки",
+      "золота лілія",
+      "конті",
+      "konti"
+    ]
   }
 ]
