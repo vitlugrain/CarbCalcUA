@@ -25325,5 +25325,142 @@
       "світоч",
       "svitoch"
     ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Вафлі",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_artek_classic",
+    "name": "Вафлі Світоч Артек класичні",
+    "carbs": 67,
+    "protein": 4.5,
+    "fat": 24,
+    "calories": 504,
+    "source": "Сільпо / Auchan Zakaz — Світоч Артек класичні",
+    "source_ref": "Current 2026 retail nutrition per 100 g: 67 В / 4.5 Б / 24 Ж / 504 ккал. Package-size variants are not duplicated.",
+    "aliases": [
+      "вафлі",
+      "артек",
+      "артек класичні",
+      "світоч артек",
+      "artek",
+      "svitoch artek",
+      "світоч"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Вафлі",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_artek_chocolate",
+    "name": "Вафлі Світоч Артек зі смаком шоколаду",
+    "carbs": 71,
+    "protein": 3.7,
+    "fat": 21,
+    "calories": 489,
+    "source": "Сільпо / Auchan Zakaz — Світоч Артек шоколад",
+    "source_ref": "Current 2026 retail nutrition per 100 g: 71 В / 3.7 Б / 21 Ж / 489 ккал. Conflicting older/different retail card values were not averaged.",
+    "aliases": [
+      "вафлі",
+      "артек шоколад",
+      "артек зі смаком шоколаду",
+      "світоч артек шоколад",
+      "artek chocolate",
+      "світоч"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Вафлі",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_artek_nut",
+    "name": "Вафлі Світоч Артек зі смаком горіха",
+    "carbs": 68,
+    "protein": 4.7,
+    "fat": 23,
+    "calories": 500,
+    "source": "Сільпо — Світоч Артек горіховий смак",
+    "source_ref": "Current 2026 188 g retail card per 100 g: 68 В / 4.7 Б / 23 Ж / 500 ккал. Package-size variants are not duplicated.",
+    "aliases": [
+      "вафлі",
+      "артек горіх",
+      "артек горіховий",
+      "артек зі смаком горіха",
+      "світоч артек горіх",
+      "artek nut",
+      "світоч"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Вафлі",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_artek_strawberry",
+    "name": "Вафлі Світоч Артек зі смаком полуниці",
+    "carbs": 67,
+    "protein": 5,
+    "fat": 24,
+    "calories": 505,
+    "source": "Сільпо — Світоч Артек полуниця",
+    "source_ref": "Current 2026 retail nutrition per 100 g: 67 В / 5 Б / 24 Ж / 505 ккал.",
+    "aliases": [
+      "вафлі",
+      "артек полуниця",
+      "артек зі смаком полуниці",
+      "світоч артек полуниця",
+      "artek strawberry",
+      "світоч"
+    ]
+  },
+  {
+    "brand": "Світоч",
+    "category": "Вафлі",
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestlé Україна",
+    "verified": true,
+    "id": "ua_svitoch_artek_lemon",
+    "name": "Вафлі Світоч Артек зі смаком лимона",
+    "carbs": 71,
+    "protein": 3.8,
+    "fat": 22,
+    "calories": 497,
+    "source": "Сільпо — Світоч Артек лимон",
+    "source_ref": "Current 2026 retail nutrition per 100 g: 71 В / 3.8 Б / 22 Ж / 497 ккал.",
+    "aliases": [
+      "вафлі",
+      "артек лимон",
+      "артек зі смаком лимона",
+      "світоч артек лимон",
+      "artek lemon",
+      "світоч"
+    ]
   }
 ]
