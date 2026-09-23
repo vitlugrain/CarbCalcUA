@@ -300,3 +300,12 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Other candidates without sufficiently reliable exact current Б/Ж/В were skipped immediately; no package-size-only duplicates or inferred nutrition were added.
 - Runtime catalog at Svitoch close: **1206 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Svitoch unless a concrete missing product with reliable nutrition is identified or the user explicitly requests it.
+
+
+### Svitoch follow-up — Artek wafers 2026-09-23
+- User identified a concrete gap after Svitoch close: **вафлі Артек**. Reopened only for this specific missing family, as allowed by the closure rule.
+- Verified current retail nutrition and added 5 distinct flavor identities in commit `5e9d24a2ca4edbeba76dcd7847b413807c9366e5`: Артек класичні (67 В / 4.5 Б / 24 Ж / 504 ккал), шоколад (71 / 3.7 / 21 / 489), горіх (68 / 4.7 / 23 / 500), полуниця (67 / 5 / 24 / 505), лимон (71 / 3.8 / 22 / 497), all per 100 g.
+- Package-size variants were not duplicated. Conflicting nutrition versions were not averaged.
+- Plombir was intentionally not added in this pass because current retailer sources expose conflicting nutrition versions (68 В / 4.8 Б / 22 Ж / 496 versus 67 В / 4.6 Б / 25 Ж / 516) and the exact current recipe could not be resolved safely.
+- Runtime catalog after Artek follow-up: **1211 products**.
+- Svitoch returns to **CLOSED FOR CURRENT PASS** after this concrete gap fix.
