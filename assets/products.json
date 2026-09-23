@@ -23907,5 +23907,95 @@
       "батончик йогурт тропічні фрукти",
       "Акса батончик"
     ]
+  },
+  {
+    "id": "ua_start_duo_balls_cereal",
+    "name": "Сухий сніданок Start! Кульки Duo",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 75.6,
+    "protein": 7.7,
+    "fat": 2.2,
+    "calories": 365,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / Auchan / METRO",
+    "source_url": "https://auchan.zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820008126474/",
+    "source_ref": "250 г і 500 г: 75.6 В / 7.7 Б / 2.2 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "Start Duo",
+      "Старт Дуо",
+      "кульки дуо"
+    ],
+    "barcodes": [
+      "4820008126474",
+      "4820008126498"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_four_grain_rings_cereal",
+    "name": "Сухий сніданок Start! Кільця 4 злаки глазуровані",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 72.3,
+    "protein": 7.7,
+    "fat": 3.1,
+    "calories": 357,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / METRO",
+    "source_url": "https://metro.zakaz.ua/uk/products/sukhii-snidanok-start-500g--04820008122186/",
+    "source_ref": "75 г і 500 г: 72.3 В / 7.7 Б / 3.1 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "Start кільця 4 злаки",
+      "Старт кільця 4 злаки",
+      "кільця чотири злаки"
+    ],
+    "barcodes": [
+      "4820008120816",
+      "4820008122186"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_cocoa_filled_pillows_cereal",
+    "name": "Сухий сніданок Start! Подушечки з какао начинкою",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 60.3,
+    "protein": 7.6,
+    "fat": 16.1,
+    "calories": 429,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / NOVUS / METRO",
+    "source_url": "https://zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820008125439/",
+    "source_ref": "250 г і 500 г: 60.3 В / 7.6 Б / 16.1 Ж на 100 г",
+    "verified": true,
+    "aliases": [
+      "Start подушечки какао",
+      "Старт подушечки какао",
+      "подушечки шоколадні Start"
+    ],
+    "barcodes": [
+      "4820008125439",
+      "4820008125446"
+    ],
+    "runtime_merge": false
   }
 ]
