@@ -255,3 +255,13 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Conflicting recipe/nutrition versions are not averaged; the caramel+cocoa balls entry records the observed recipe discrepancy.
 - Runtime catalog at close: **1163 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Do not broadly reopen Start! unless a concrete missing current product is identified or the user explicitly requests it.
+
+
+## ROSHEN branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- User explicitly closed the ROSHEN pass after targeted expansion and duplicate review. Do not broadly reopen ROSHEN unless a concrete missing product is reported or the user explicitly requests it.
+- Duplicate policy was enforced: package-size-only variants are not separate foods; existing ROSHEN identities were checked before additions.
+- Existing verified block includes cookies/wafers/Konafetto/Johnny Krocker/Lovita plus Ромашка, Ліщина, Червоний мак and ROSHEN bars.
+- Latest additions in this closing pass: Шалена бджілка Фрутті (commit `3cc83e3235d84fe2bf883e8101bd2d0a9b352693`), Корівка, CoffeeLike and Toffelini with chocolate filling (commit `53a938518f5fa182207f826f4be7e088de053891`). Candidates without sufficiently reliable current Б/Ж/В were skipped rather than guessed.
+- Clarified the existing ZNAIMO potato identity as `Картопля відварена з вершковим маслом` so it is distinguishable from plain boiled potato in runtime search; commit `c1048015802cdec80fccd2cd37da63fa67cbc939`.
+- Runtime catalog at ROSHEN close: **1186 products**.
+- Status: **CLOSED FOR CURRENT PASS**.
