@@ -326,3 +326,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Package-size-only variants were not duplicated; candidates without sufficiently reliable exact current Б/Ж/В were skipped rather than inferred.
 - Runtime catalog at close: **1223 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
+
+
+## Mondelez Ukraine core lines — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested fast pass over the identified gaps: TUC, belVita and Корона. Existing Picnic identity was detected before write and was not duplicated.
+- Added 7 verified identities in commit `e8e075c0deaf1b6402c9814fcbf1c2e690759db0`: TUC Original (65 В), TUC Cheese (64 В), TUC Paprika (65 В), belVita Добрий ранок мед+горіхи (67 В), belVita Добрий ранок какао (67 В), Корона молочний (56 В), Корона чорний (50 В), all per 100 g with full Б/Ж/В stored.
+- Package-size-only variants were not duplicated. Candidates without sufficiently reliable exact current nutrition were skipped rather than inferred.
+- Runtime catalog at close: **1230 products**.
+- Status: **CLOSED FOR CURRENT PASS** for these Mondelez core lines. Reopen only for a concrete missing product with reliable exact nutrition or explicit user request.
