@@ -26345,5 +26345,112 @@
       "йогурт",
       "бананово-йогуртова начинка"
     ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "verified": true,
+    "id": "ua_nutella_hazelnut_cocoa_spread",
+    "name": "Паста горіхова Nutella з какао",
+    "brand": "Nutella",
+    "category": "Пасти та намазки",
+    "carbs": 57.5,
+    "protein": 6.3,
+    "fat": 30.9,
+    "calories": 539,
+    "source": "Ferrero / current European Nutella label",
+    "source_ref": "Current standard Nutella nutrition per 100 g: 57.5 В / 6.3 Б / 30.9 Ж / 539 ккал. Package sizes are not separate identities.",
+    "aliases": [
+      "nutella",
+      "нутелла",
+      "нутела",
+      "горіхова паста",
+      "шоколадна паста",
+      "паста з какао"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "verified": true,
+    "id": "ua_raffaello_coconut_almond",
+    "name": "Цукерки Raffaello з кокосом та мигдалем",
+    "brand": "Raffaello",
+    "category": "Цукерки",
+    "carbs": 38.3,
+    "protein": 7.4,
+    "fat": 48.6,
+    "calories": 628,
+    "source": "Ferrero / current Raffaello label",
+    "source_ref": "Current nutrition per 100 g: 38.3 В / 7.4 Б / 48.6 Ж / 628 ккал.",
+    "aliases": [
+      "raffaello",
+      "рафаелло",
+      "рафаело",
+      "цукерки",
+      "кокос",
+      "мигдаль"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "verified": true,
+    "id": "ua_ferrero_rocher",
+    "name": "Цукерки Ferrero Rocher",
+    "brand": "Ferrero Rocher",
+    "category": "Цукерки",
+    "carbs": 44.4,
+    "protein": 8.2,
+    "fat": 42.7,
+    "calories": 603,
+    "source": "Ferrero / current Ferrero Rocher label",
+    "source_ref": "Current nutrition per 100 g: 44.4 В / 8.2 Б / 42.7 Ж / 603 ккал.",
+    "aliases": [
+      "ferrero rocher",
+      "ферреро роше",
+      "фереро роше",
+      "цукерки",
+      "фундук"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero",
+    "verified": true,
+    "id": "ua_kinder_delice",
+    "name": "Бісквіт Kinder Delice",
+    "brand": "Kinder",
+    "category": "Бісквіти",
+    "carbs": 59.6,
+    "protein": 5.9,
+    "fat": 29,
+    "calories": 521,
+    "source": "Kinder / current Kinder Delice label",
+    "source_ref": "Current nutrition per 100 g: 59.6 В / 5.9 Б / 29 Ж / 521 ккал.",
+    "aliases": [
+      "kinder",
+      "кіндер",
+      "kinder delice",
+      "кіндер деліс",
+      "бісквіт",
+      "бісквіти"
+    ]
   }
 ]
