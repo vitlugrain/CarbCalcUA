@@ -174,3 +174,11 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Never mark a device issue VERIFIED/CLOSED solely because a code commit exists; real-device user confirmation is required.
 - Before implementing a reported issue, check `TESTING_ISSUES.md` first to avoid repeating work from an ended chat.
 - During APK #380 testing, add each concrete user finding to this registry and accumulate fixes into meaningful APK batches rather than building after every small correction.
+
+
+## Consolidated Android test candidate — 2026-09-23
+- User requested one consolidated APK after APK #418 to remove ambiguity about which accumulated changes are included.
+- Branch checkpoint before this trigger includes the final T-001 UI search-cap fix (`list.take(10)` → `list.take(30)`) and the accumulated branded bar additions through runtime catalog count **1182 products**.
+- T-001 remains **FIXED / AWAITING APK** until the user verifies on Android that base queries such as `картопля` show `Картопля смажена` and `печиво` shows Oreo.
+- This checkpoint commit intentionally triggers the normal Android APK workflow so the next build is a single unambiguous device-test candidate containing the accumulated changes.
+- Build policy remains unchanged: after this requested test candidate, resume accumulating meaningful batches rather than creating an APK after every small catalog change.
