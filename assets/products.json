@@ -24564,5 +24564,34 @@
       "lion з арахісом"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_nuts_duo_bar",
+    "name": "Батончик Nuts Duo з лісовими горіхами",
+    "brand": "Nuts",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 62,
+    "protein": 4.8,
+    "fat": 24,
+    "fiber": 1.7,
+    "calories": 488,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua — Nuts Duo 60 г",
+    "source_ref": "60 г; 62 В / 4.8 Б / 24 Ж на 100 г; лісові горіхи 10.8%; окрема рецептура/формат від класичного Nuts 42 г",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "натс дуо",
+      "nuts duo",
+      "натс 60",
+      "nuts з лісовими горіхами"
+    ],
+    "barcode": "8445291768673",
+    "runtime_merge": false
   }
 ]
