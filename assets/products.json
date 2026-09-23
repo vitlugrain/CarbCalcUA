@@ -25776,5 +25776,191 @@
       "житомирські ласощі",
       "жл"
     ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_tuc_original",
+    "name": "Крекер TUC Original",
+    "brand": "TUC",
+    "category": "Крекери",
+    "carbs": 65,
+    "protein": 8.3,
+    "fat": 21,
+    "calories": 489,
+    "source": "Current Ukrainian retail — TUC Original",
+    "source_ref": "Verified current label per 100 g: 65 В / 8.3 Б / 21 Ж / 489 ккал.",
+    "aliases": [
+      "крекер",
+      "крекери",
+      "tuc",
+      "тук",
+      "tuc original",
+      "тук оригінальний"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_tuc_cheese",
+    "name": "Крекер TUC зі смаком сиру",
+    "brand": "TUC",
+    "category": "Крекери",
+    "carbs": 64,
+    "protein": 8.1,
+    "fat": 22,
+    "calories": 494,
+    "source": "Current Ukrainian retail — TUC Cheese",
+    "source_ref": "Verified current label per 100 g: 64 В / 8.1 Б / 22 Ж / 494 ккал.",
+    "aliases": [
+      "крекер",
+      "крекери",
+      "tuc",
+      "тук",
+      "сир",
+      "tuc cheese",
+      "тук сир"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_tuc_paprika",
+    "name": "Крекер TUC зі смаком паприки",
+    "brand": "TUC",
+    "category": "Крекери",
+    "carbs": 65,
+    "protein": 7.8,
+    "fat": 21,
+    "calories": 487,
+    "source": "Current Ukrainian retail — TUC Paprika",
+    "source_ref": "Verified current label per 100 g: 65 В / 7.8 Б / 21 Ж / 487 ккал.",
+    "aliases": [
+      "крекер",
+      "крекери",
+      "tuc",
+      "тук",
+      "паприка",
+      "tuc paprika"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_belvita_morning_honey_nuts",
+    "name": "Печиво belVita Добрий ранок мед та горіхи",
+    "brand": "belVita",
+    "category": "Печиво",
+    "carbs": 67,
+    "protein": 7.4,
+    "fat": 15,
+    "calories": 443,
+    "source": "Current Ukrainian retail — belVita honey & nuts",
+    "source_ref": "Verified current label per 100 g: 67 В / 7.4 Б / 15 Ж / 443 ккал.",
+    "aliases": [
+      "печиво",
+      "belvita",
+      "бельвіта",
+      "добрий ранок",
+      "мед",
+      "горіхи"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_belvita_morning_cocoa",
+    "name": "Печиво belVita Добрий ранок какао",
+    "brand": "belVita",
+    "category": "Печиво",
+    "carbs": 67,
+    "protein": 7.1,
+    "fat": 15,
+    "calories": 442,
+    "source": "Current Ukrainian retail — belVita cocoa",
+    "source_ref": "Verified current label per 100 g: 67 В / 7.1 Б / 15 Ж / 442 ккал.",
+    "aliases": [
+      "печиво",
+      "belvita",
+      "бельвіта",
+      "добрий ранок",
+      "какао"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_korona_milk_chocolate",
+    "name": "Шоколад молочний Корона",
+    "brand": "Корона",
+    "category": "Шоколад",
+    "carbs": 56,
+    "protein": 6.5,
+    "fat": 31,
+    "calories": 530,
+    "source": "Current Ukrainian retail — Корона молочний",
+    "source_ref": "Verified current label per 100 g: 56 В / 6.5 Б / 31 Ж / 530 ккал.",
+    "aliases": [
+      "шоколад",
+      "корона",
+      "korona",
+      "молочний шоколад"
+    ]
+  },
+  {
+    "state": "packaged",
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mondelez",
+    "verified": true,
+    "id": "ua_korona_dark_chocolate",
+    "name": "Шоколад чорний Корона",
+    "brand": "Корона",
+    "category": "Шоколад",
+    "carbs": 50,
+    "protein": 6.2,
+    "fat": 35,
+    "calories": 545,
+    "source": "Current Ukrainian retail — Корона чорний",
+    "source_ref": "Verified current label per 100 g: 50 В / 6.2 Б / 35 Ж / 545 ккал.",
+    "aliases": [
+      "шоколад",
+      "корона",
+      "korona",
+      "чорний шоколад",
+      "темний шоколад"
+    ]
   }
 ]
