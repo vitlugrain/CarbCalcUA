@@ -24593,5 +24593,87 @@
     ],
     "barcode": "8445291768673",
     "runtime_merge": false
+  },
+  {
+    "id": "ua_milky_way_classic_bar",
+    "name": "Батончик Milky Way з суфле у молочному шоколаді",
+    "brand": "Milky Way",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 70.7,
+    "protein": 3.6,
+    "fat": 16.7,
+    "calories": 450,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Mars Inc.",
+    "source": "Zakaz.ua — Milky Way 21.5 г",
+    "source_ref": "21.5 г; 70.7 В / 3.6 Б / 16.7 Ж на 100 г; польська версія. Не усереднювати з іншою ринковою рецептурою 71 В.",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "мілкі вей",
+      "milky way",
+      "milkyway",
+      "мілківей"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_kinder_country_bar",
+    "name": "Kinder Country з молочною начинкою та злаками",
+    "brand": "Kinder",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 54.9,
+    "protein": 8.9,
+    "fat": 33.8,
+    "calories": 561,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Ferrero S.p.A.",
+    "source": "Zakaz.ua — Kinder Country 23.5 г",
+    "source_ref": "23.5 г; 54.9 г вуглеводів/100 г; окрема злакова рецептура",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "кіндер кантрі",
+      "kinder country",
+      "кіндер зі злаками"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_nesquik_wholegrain_cocoa_bar",
+    "name": "Батончик NESTLÉ NESQUIK з цільними злаками та какао",
+    "brand": "Nesquik",
+    "category": "Батончики",
+    "state": "packaged",
+    "carbs": 66.6,
+    "protein": 6.6,
+    "fat": 11.5,
+    "fiber": 5.2,
+    "calories": 395,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "Nestle",
+    "source": "Zakaz.ua — NESTLÉ NESQUIK 25 г",
+    "source_ref": "25 г; 66.6 В / 6.6 Б / 11.5 Ж / 5.2 клітковини на 100 г; злаковий батончик, не сухий сніданок NESQUIK",
+    "verified": true,
+    "aliases": [
+      "батончик",
+      "несквік батончик",
+      "nesquik bar",
+      "nesquik батончик",
+      "несквік злаковий"
+    ],
+    "barcode": "3387390325744",
+    "runtime_merge": false
   }
 ]
