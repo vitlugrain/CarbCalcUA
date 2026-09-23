@@ -343,3 +343,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Conflicting country/package recipe values for Oreo Original were not averaged; a current Ukraine-made retail identity was selected for the local generic Oreo Original record.
 - Runtime catalog after Oreo pass: **1234 products**.
 - Status: **CLOSED FOR CURRENT PASS**. Device verification of the broader T-001 search issue remains pending until a later consolidated APK; this catalog commit alone does not mark the search issue VERIFIED.
+
+
+## Milka branded expansion — CLOSED FOR CURRENT PASS 2026-09-23
+- Completed requested fast Milka pass. Exact duplicate check found no Milka identities in the verified local catalog before write.
+- Added 7 current identities with exact per-100-g retail nutrition in commit `2bd00b334fdd5aa17c3b5ba7e00055407db13af2`: молочний (57 В), з горіхом (55 В), Oreo vanilla (61 В), малина+крем (58 В), вишня+крем (60 В), Екстра мигдаль+журавлина+кіноа (59 В), Nussini фундук+вафля (54 В); full Б/Ж/В and calories stored.
+- Country/recipe-specific identities were kept tied to the verified current retail card; package-size-only variants were not duplicated and conflicting recipes were not averaged.
+- Runtime catalog at close: **1241 products**.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Milka product with reliable exact nutrition or explicit user request.
