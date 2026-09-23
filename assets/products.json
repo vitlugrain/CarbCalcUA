@@ -24075,5 +24075,95 @@
       "протеїнові подушечки чорниця ваніль"
     ],
     "runtime_merge": false
+  },
+  {
+    "id": "ua_start_smiles_blueberry_vanilla",
+    "name": "Сухий сніданок Start! Смайлики чорниця та ваніль",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 77.2,
+    "protein": 7.2,
+    "fat": 2.2,
+    "calories": 368,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua / METRO",
+    "source_url": "https://zakaz.ua/uk/products/sukhii-snidanok-start-250g-ukrayina--04820237693754/",
+    "verified": true,
+    "aliases": [
+      "Start смайлики",
+      "Старт смайлики",
+      "смайлики чорниця ваніль"
+    ],
+    "barcodes": [
+      "4820237693754",
+      "4820237693761"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_balls_caramel_cocoa",
+    "name": "Сухий сніданок Start! Кульки карамель та какао",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 75.6,
+    "protein": 7.6,
+    "fat": 2.1,
+    "calories": 362,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Zakaz.ua",
+    "source_url": "https://eko.zakaz.ua/uk/products/sukhii-snidanok-start-250g--04820237694386/",
+    "source_ref": "Поточні фасування 250 г і 500 г: 75.6 В / 7.6 Б / 2.1 Ж. Офіційний каталог 2025 показує іншу старішу/іншу рецептуру 76.6 В; не усереднювати.",
+    "verified": true,
+    "aliases": [
+      "Start карамель какао",
+      "Старт карамель какао",
+      "кульки карамель какао"
+    ],
+    "barcodes": [
+      "4820237694386",
+      "4820237694409"
+    ],
+    "runtime_merge": false
+  },
+  {
+    "id": "ua_start_grain_stars",
+    "name": "Сухий сніданок Start! Зірочки зернові",
+    "brand": "Start!",
+    "category": "Пластівці та сухі сніданки",
+    "state": "ready_to_eat",
+    "carbs": 74.1,
+    "protein": 7.8,
+    "fat": 2.5,
+    "calories": 361,
+    "nutrition_basis": "100g",
+    "quantity_units": [
+      "г"
+    ],
+    "manufacturer": "ПрАТ «Лантманнен АКСА»",
+    "source": "Auchan / Zakaz.ua / Rozetka",
+    "source_url": "https://auchan.zakaz.ua/uk/products/ukrayina--04820237690937/",
+    "verified": true,
+    "aliases": [
+      "Start зірочки",
+      "Старт зірочки",
+      "зернові зірочки"
+    ],
+    "barcodes": [
+      "4820237690937",
+      "4820237690739",
+      "4820237690944",
+      "4820237692900"
+    ],
+    "runtime_merge": false
   }
 ]
