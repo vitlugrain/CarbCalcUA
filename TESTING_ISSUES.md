@@ -1,6 +1,6 @@
 # CarbCalc UA — Device Testing Issues Registry
 
-Updated: 2026-09-23
+Updated: 2026-09-24
 Branch: `dev-large-update`
 Repository: `vitlugrain/CarbCalcUA`
 
@@ -35,13 +35,13 @@ A code commit alone is never sufficient to mark a device issue VERIFIED or CLOSE
 
 ## Current Android test cycle
 
-- Target under test: **APK #419**
+- Current USER-TESTED STABLE checkpoint: **APK #458**
 - APK #405 workflow: success.
 - APK #405 source commit: `9ac1ebec2d6ed7cd4e8152fa66eacffebc3e3e3e`.
 - Installed successfully on Android.
 - Existing diary data was preserved.
-- APK #419 is the current **device-test checkpoint**; installed successfully and existing diary data was preserved.
-- User has indicated that at least one previously discussed correction is still not behaving as agreed. Do not guess the identity of that issue; record it when the user reports the concrete case.
+- APK #458 installed successfully over the previous version and preserved existing diary data.
+- APK #458 device verification completed 2026-09-24: `картопля` includes `Картопля смажена`; `печиво` includes Oreo; `Орео` works; Latin `Oreo` no longer returns unrelated products.
 
 ## Issue record format
 
@@ -65,15 +65,15 @@ Each new issue should record:
 ### T-001 — Base query "картопля" omits "Картопля смажена"
 
 - **First reported APK:** #380 (also reported in an earlier chat before the persistent registry existed).
-- **Latest affected APK:** #419 (potato case fixed; cookie/Oreo case still incomplete).
-- **Status:** PARTIALLY VERIFIED / REOPENED FOR COOKIE SEARCH.
+- **Latest affected APK:** #419. Fully verified fixed on #458.
+- **Status:** CLOSED.
 - **Observed:** searching for `картопля` does not show `Картопля смажена`, while searching for `смаж...` does show it.
 - **Expected:** a base-product query such as `картопля` should include relevant preparation variants, including fried potato.
 - **Root cause:** the catalog entry and aliases are correct, and the search service was already expanded from 10 to 30 results. APK #405 exposed the remaining UI-level cap: `FoodSearchService.search()` returned the expanded list, but `lib/main.dart` still rendered only `list.take(10)`. Thus changing the service limit alone could not expand the visible suggestions.
 - **Fix:** service default remains 30; the Add Food UI cap was also changed from `list.take(10)` to `list.take(30)`, so the expanded ranked result set is actually visible. Existing regression test covers a fried-potato result beyond the first 10.
 - **Fix commits:** `10510dd66872131beb813ea52d4edb35d26c184a`, `c36e18b9b87cc1a8139e90928dee31e5f854ab65`, `885f0ee0fa91e6e76b4a97cc4c020f325466f877`.
-- **APK containing latest fix:** #419.
-- **Device verification:** APK #419 installed successfully and preserved diary data. `картопля` now shows `Картопля смажена` — potato case VERIFIED. `печиво` still does not show Oreo; `Орео` finds it, while Latin `Oreo` shows a broader/noisier result set. Keep the cookie/Oreo search case open.
+- **APK containing latest fix:** #458.
+- **Device verification:** APK #458 installed successfully on 2026-09-24 and preserved diary data. User confirmed: `картопля` shows `Картопля смажена`; `печиво` shows Oreo; `Орео` works; Latin `Oreo` returns no unrelated products. T-001 is VERIFIED and CLOSED.
 - **Related check:** `Картопля смажена` exists in runtime as `ua_prodiabet_fried_potatoes` with aliases `смажена картопля`, `картопля смажена`, `жарена картопля`; therefore no duplicate/new catalog product is needed.
 
 
