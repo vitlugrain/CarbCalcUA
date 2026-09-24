@@ -1,6 +1,6 @@
 # CarbCalc UA — Project Status
 
-Updated: 2026-09-21
+Updated: 2026-09-24
 Branch: `dev-large-update`
 Repository: `vitlugrain/CarbCalcUA`
 
@@ -193,3 +193,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Potato naming clarification is committed: `Картопля відварена з вершковим маслом` is distinct from plain boiled potato; do not collapse them as duplicates.
 - Tomorrow's first task: reread `PROJECT_STATUS.md`, `CATALOG_AUDIT_STATUS.md`, and `TESTING_ISSUES.md`; validate the accumulated branch (including catalog integrity and search/tests), then trigger **one consolidated Android APK** from `dev-large-update`. Do not make an APK per individual catalog change.
 - After installation, verify diary preservation and specifically retest T-001 with queries `картопля`, `печиво`, `Орео`, and Latin `Oreo`; only real-device confirmation can move the remaining search issue to VERIFIED/CLOSED.
+
+
+## Android stable checkpoint — APK #458 USER VERIFIED — 2026-09-24
+- GitHub Actions Android APK **#458** completed successfully from commit `b5b95ccff2e8811b1f7d9910c11a60b0263e1ea8`; run ID `35977984567`; artifact `CarbCalcUA-0.6.0-build-458`.
+- Analyze, tests, release APK build and artifact publication all passed.
+- User installed #458 over the previous app; existing diary entries were preserved.
+- Real-device search verification passed: `картопля` includes `Картопля смажена`; `печиво` includes Oreo; `Орео` works; Latin `Oreo` no longer produces unrelated results.
+- T-001 is VERIFIED/CLOSED. APK #458 is the new USER-TESTED STABLE Android checkpoint.
+- Runtime verified local catalog remains **1250 products** at this checkpoint, with 0 duplicate IDs and 0 cross-product barcode collisions from the pre-build integrity check.
+- Search-service CI repair sequence ended with commit `b5b95ccff2e8811b1f7d9910c11a60b0263e1ea8`, which removed duplicated/corrupted trailing source while preserving the intended Latin brand-query filter.
+- Next work: resume category-first / branded catalog expansion from the next not-yet-closed block. Do not reopen ROSHEN, KONTI, Lukas, AVK, Svitoch/Artek, Millennium, Zhytomyrski Lasoshchi, Mondelez core, Oreo, Milka, Barni, Ferrero core or M&M's without a concrete gap or explicit request.
