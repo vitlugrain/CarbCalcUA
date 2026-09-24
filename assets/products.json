@@ -26510,5 +26510,47 @@
       "арахіс",
       "m&m peanut"
     ]
+  },
+  {
+    "id": "ua_lion_brownie_style_bar",
+    "name": "Батончик Lion Brownie Style",
+    "category": "Солодощі",
+    "carbs": 66.3,
+    "protein": 5.2,
+    "fat": 21.5,
+    "kcal": 484,
+    "manufacturer": "Nestle",
+    "source": "Сільпо / NOVUS, перевірено 2026-09-24",
+    "aliases": [
+      "батончик",
+      "лайон брауні",
+      "lion brownie",
+      "lion brownie style",
+      "lion брауні"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_lion_black_white_brownie_bar",
+    "name": "Батончик Lion Black&White зі смаком брауні",
+    "category": "Солодощі",
+    "carbs": 65.3,
+    "protein": 5.5,
+    "fat": 22.9,
+    "kcal": 492,
+    "manufacturer": "Nestle",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "батончик",
+      "лайон black white",
+      "lion black white",
+      "lion black&white",
+      "lion брауні black white"
+    ],
+    "units": [
+      "г"
+    ]
   }
 ]
