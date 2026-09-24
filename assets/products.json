@@ -26729,5 +26729,82 @@
     "units": [
       "г"
     ]
+  },
+  {
+    "id": "ua_chumak_sauce_bbq",
+    "name": "Соус Чумак BBQ",
+    "category": "Соуси",
+    "carbs": 28,
+    "protein": 1.2,
+    "fat": 0.3,
+    "kcal": 121,
+    "manufacturer": "Чумак",
+    "source": "актуальна роздрібна картка, перевірено 2026-09-24",
+    "aliases": [
+      "чумак bbq",
+      "чумак барбекю",
+      "соус bbq",
+      "соус барбекю"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_chumak_sauce_burger",
+    "name": "Соус Чумак Бургер",
+    "category": "Соуси",
+    "carbs": 12,
+    "protein": 1,
+    "fat": 30,
+    "kcal": 325,
+    "manufacturer": "Чумак",
+    "source": "актуальна роздрібна картка, перевірено 2026-09-24",
+    "aliases": [
+      "чумак бургер",
+      "соус бургер",
+      "burger sauce chumak"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_chumak_sauce_garlic",
+    "name": "Соус Чумак Часниковий",
+    "category": "Соуси",
+    "carbs": 9,
+    "protein": 1,
+    "fat": 30,
+    "kcal": 310,
+    "manufacturer": "Чумак",
+    "source": "актуальна роздрібна картка, перевірено 2026-09-24",
+    "aliases": [
+      "чумак часниковий",
+      "часниковий соус",
+      "соус з часником"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_chumak_sauce_tartar",
+    "name": "Соус Чумак Тартар",
+    "category": "Соуси",
+    "carbs": 10,
+    "protein": 1,
+    "fat": 30,
+    "kcal": 315,
+    "manufacturer": "Чумак",
+    "source": "актуальна роздрібна картка, перевірено 2026-09-24",
+    "aliases": [
+      "чумак тартар",
+      "соус тартар",
+      "tartar chumak"
+    ],
+    "units": [
+      "г"
+    ]
   }
 ]
