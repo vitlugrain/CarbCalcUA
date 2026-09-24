@@ -383,3 +383,15 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Verified search behavior: `картопля` finds fried potato; `печиво` finds Oreo; Cyrillic `Орео` works; Latin `Oreo` is no longer polluted by unrelated fuzzy/USDA results.
 - Recently completed branded blocks remain CLOSED FOR CURRENT PASS: ROSHEN, KONTI, Lukas, AVK, Svitoch/Artek, Millennium, Zhytomyrski Lasoshchi, Mondelez core, Oreo, Milka, Barni, Ferrero core and M&M's.
 - Continue with a genuinely unreviewed/high-value catalog block; preserve the hybrid generic+branded policy and skip products without reliable exact nutrition rather than guessing.
+
+
+## Chumak branded expansion — CLOSED FOR CURRENT PASS 2026-09-24
+- Full current runtime was checked before and during the pass to avoid duplicate work.
+- Pre-existing Chumak identities retained: `Кетчуп Чумак Лагідний для дітей` and `Кетчуп Чумак Чилі`.
+- Added 4 core ketchups in commit `7dd8028dd49a8c6a42706482230922996d440efa`: Лагідний, Томатний, До шашлику, Чумацький шлях.
+- Added tomato products in commit `8154f0b46b0afc8e39d7618478e562c96b058b8a`: Томатна паста Чумак 25%, Соус томатний Чумак Краснодарський.
+- Added 4 ready sauces in commit `6ee1c4a0f3dd77206996d601763ac5ceaba84943`: BBQ, Бургер, Часниковий, Тартар.
+- Runtime catalog after Chumak close: **1265 products**.
+- User explicitly requested Chumak be closed and the work persisted before moving to a new chat.
+- Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Chumak product with reliable exact nutrition or explicit user request.
+- Anti-repeat rule strengthened: before proposing/starting any next branded block, inspect the full current `assets/products.json` first. Do not use conversation memory alone to decide what has or has not been processed.
