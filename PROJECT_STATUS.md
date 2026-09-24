@@ -222,3 +222,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - User explicitly skipped Veres mustard/horseradish and AVK for the current pass. Danone/Activia/Actimel was checked against the full catalog and closed for the current pass without additions; existing Activia entries were retained.
 - Full catalog inspection confirmed already broad coverage in bread/bakery, cereals/dry breakfasts, pasta/noodles, porridges, dairy, sauces, confectionery and frozen foods. Do not restart those broad audits without a concrete gap.
 - Next action requested by user: preserve this checkpoint and build **one consolidated Android APK** from `dev-large-update` for real-device testing. No additional catalog expansion should be inserted before that build unless required to fix validation/build failure.
+
+
+## Android stable checkpoint — APK #475 USER VERIFIED — 2026-09-24
+- GitHub Actions Android APK **#475** completed successfully and was installed over APK #458.
+- User confirmed the app launches normally and the existing diary is preserved.
+- User confirmed search works for the requested new catalog checks, including Runa, Heinz, Veres green peas and Veres sweet corn; no problems were found in this test pass.
+- Runtime catalog for this checkpoint: **1312 products**.
+- APK #475 is now the current **USER-TESTED STABLE Android checkpoint**.
+- Next phase: prepare CarbCalc UA for Google Play publication while preserving the tested application behavior and catalog.
