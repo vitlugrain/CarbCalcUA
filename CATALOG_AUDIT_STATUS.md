@@ -407,3 +407,9 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - **Danone/Activia/Actimel:** checked against full catalog; no expansion requested, CLOSED FOR CURRENT PASS. **AVK:** explicitly skipped by user.
 - Existing package-size variants were not intentionally duplicated. Continue exact-nutrition-only policy; do not guess conflicting recipes.
 - Catalog expansion is paused for a consolidated APK build and Android verification.
+
+
+## Release freeze checkpoint — APK #478 USER VERIFIED — 2026-09-24
+- Runtime catalog remains **1312 products** and is frozen for CarbCalc UA 1.0 release preparation unless a concrete release-blocking catalog defect is found.
+- APK #478 is the current USER-TESTED STABLE checkpoint. Diary preservation and removal of glucose import/history UI were verified on Android.
+- Do not restart broad category/brand expansion during pre-release work. Prioritize Google Play production readiness.
