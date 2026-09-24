@@ -395,3 +395,15 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - User explicitly requested Chumak be closed and the work persisted before moving to a new chat.
 - Status: **CLOSED FOR CURRENT PASS**. Reopen only for a concrete missing Chumak product with reliable exact nutrition or explicit user request.
 - Anti-repeat rule strengthened: before proposing/starting any next branded block, inspect the full current `assets/products.json` first. Do not use conversation memory alone to decide what has or has not been processed.
+
+
+## Rapid branded expansion checkpoint — CLOSED FOR APK BUILD 2026-09-24
+- Full current `assets/products.json` was repeatedly checked before each block; runtime catalog is now **1312 products**.
+- **Runa CLOSED:** +10 core sauces/tomato paste, commit `7d64b48890b0892a7a481c07068ed811b4236dc4`.
+- **Korolivskyi Smak CLOSED:** +12 core ketchup/sauce/mayonnaise/mustard identities, commit `77300c9ac43847d4ef1658a609b9b7cce3211f8c`.
+- **Shchedro CLOSED:** +7 core mayonnaise/ketchup/sauce identities, commit `00bddee1160a93d8e5972d1d3db3dac6a4310849`.
+- **Heinz CLOSED:** +11 core ketchup/sauce/mayonnaise identities, commit `1a155233102b3d64cf13a395f105b4bdbd36a5bf`.
+- **Veres core CLOSED:** +7 high-value canned identities (green peas, sweet corn, white/red beans and prepared bean variants), commit `f38171b617edbac8850c38f99ad2c5bb734c5951`. User explicitly skipped mustard/horseradish.
+- **Danone/Activia/Actimel:** checked against full catalog; no expansion requested, CLOSED FOR CURRENT PASS. **AVK:** explicitly skipped by user.
+- Existing package-size variants were not intentionally duplicated. Continue exact-nutrition-only policy; do not guess conflicting recipes.
+- Catalog expansion is paused for a consolidated APK build and Android verification.
