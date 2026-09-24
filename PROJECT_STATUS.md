@@ -204,3 +204,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Runtime verified local catalog remains **1250 products** at this checkpoint, with 0 duplicate IDs and 0 cross-product barcode collisions from the pre-build integrity check.
 - Search-service CI repair sequence ended with commit `b5b95ccff2e8811b1f7d9910c11a60b0263e1ea8`, which removed duplicated/corrupted trailing source while preserving the intended Latin brand-query filter.
 - Next work: resume category-first / branded catalog expansion from the next not-yet-closed block. Do not reopen ROSHEN, KONTI, Lukas, AVK, Svitoch/Artek, Millennium, Zhytomyrski Lasoshchi, Mondelez core, Oreo, Milka, Barni, Ferrero core or M&M's without a concrete gap or explicit request.
+
+
+## Catalog continuation checkpoint — Chumak CLOSED — 2026-09-24
+- Current USER-TESTED STABLE Android checkpoint remains **APK #458**; T-001 is CLOSED after real-device verification.
+- Runtime catalog after the current catalog-expansion session: **1265 products**.
+- Added after APK #458 catalog checkpoint: Lion Brownie Style + Lion Black&White brownie (commit `53892ff4a1b99746498a8045bbf9ca3692b7bf08`); Nesquik Opti-Start cocoa drink mix + Nesquik cocoa candies + Nesquik cocoa/milk-cream cake (commit `c63f3bd00a161616f521641b7f83e301e5d04888`); Chumak additions described below.
+- Nestlé duplicate-prevention check confirmed existing KitKat Finger/Chunky, Lion core, Nuts Classic/Duo, Nesquik cereals/bar, CINI-MINIS, Fitness Original, Strawberry Minis, Corn Flakes Honey Nut, Gerber, and previously closed Svitoch/Artek. Do not re-audit these merely because they are suggested as a next brand.
+- **Chumak is CLOSED FOR CURRENT PASS.** Existing Chumak before pass: Kids Mild ketchup and Chili ketchup. Added core ketchups (Lagidnyi, Tomato, Shashlik, Chumatskyi Shliakh) in `7dd8028dd49a8c6a42706482230922996d440efa`; tomato paste 25% + Krasnodarskyi tomato sauce in `8154f0b46b0afc8e39d7618478e562c96b058b8a`; BBQ, Burger, Garlic, Tartar sauces in `6ee1c4a0f3dd77206996d601763ac5ceaba84943`.
+- Next session must first read PROJECT_STATUS.md, CATALOG_AUDIT_STATUS.md and TESTING_ISSUES.md, then inspect the full current `assets/products.json` before choosing the next block. Choose a genuinely missing/high-value block; do not repeat already present/closed products. Continue rule: exact reliable Б/Ж/В -> add; duplicate -> skip; uncertain/conflicting nutrition -> skip; no package-size-only duplicates.
