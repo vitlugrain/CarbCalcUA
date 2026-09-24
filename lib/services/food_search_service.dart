@@ -214,11 +214,6 @@ class _PreparedProduct {
     );
   }
 }
-).hasMatch(q) && q.length>=4;
-      final textualBrandEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q);
-      if(brandLikeLatin&&!textualBrandEvidence)continue;
-      final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
-      if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
     }
     results.sort((a,b){final s=b.score.compareTo(a.score);if(s!=0)return s;return a.product.name.compareTo(b.product.name);});
     final dedup=<String,FoodSearchResult>{};
