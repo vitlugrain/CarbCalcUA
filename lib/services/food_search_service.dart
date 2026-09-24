@@ -150,8 +150,12 @@ class FoodSearchService {
       if(p.id.startsWith('ua_core_'))score+=65; else if(!p.id.startsWith('usda_')&&!p.id.startsWith('off_'))score+=28; else if(p.id.startsWith('usda_'))score-=12;
       score+=_contextScore(qTokens,nameTokens);
       if(p.source?.startsWith('USDA')==true){score+=_usdaContextScore(qTokens,nameTokens);score+=_usdaSimplicityScore(qTokens,nameTokens,p.name);}
-      final categoryOnlyMatch=category.contains(q)&&!name.contains(q)&&!normalize(aliasText).contains(q)&&!manufacturer.contains(q);\n      if(categoryOnlyMatch)score-=35;\n      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;
-      // Latin brand-like queries (for example Oreo) must have direct textual evidence.\n      // This prevents unrelated fuzzy/USDA matches from flooding brand searches.\n      final brandLikeLatin=RegExp(r'^[a-z0-9 ]+      if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
+      final categoryOnlyMatch=category.contains(q)&&!name.contains(q)&&!normalize(aliasText).contains(q)&&!manufacturer.contains(q);
+      if(categoryOnlyMatch)score-=35;
+      final directEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q)||category.contains(q)||matched>0;
+      // Latin brand-like queries (for example Oreo) must have direct textual evidence.
+      // This prevents unrelated fuzzy/USDA matches from flooding brand searches.
+      final brandLikeLatin=RegExp(r'^[a-z0-9 ]+      if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
     }
     results.sort((a,b){final s=b.score.compareTo(a.score);if(s!=0)return s;return a.product.name.compareTo(b.product.name);});
     final dedup=<String,FoodSearchResult>{};
@@ -206,7 +210,10 @@ class _PreparedProduct {
     );
   }
 }
-).hasMatch(q) && q.length>=4;\n      final textualBrandEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q);\n      if(brandLikeLatin&&!textualBrandEvidence)continue;\n      final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
+).hasMatch(q) && q.length>=4;
+      final textualBrandEvidence=name.contains(q)||normalize(aliasText).contains(q)||manufacturer.contains(q);
+      if(brandLikeLatin&&!textualBrandEvidence)continue;
+      final translatedEvidence=translatedTokens.any((t)=>nameTokens.any((n)=>n==t||n.startsWith(t)||t.startsWith(n)));
       if((directEvidence||translatedEvidence)&&score>=45)results.add(FoodSearchResult(p,score));
     }
     results.sort((a,b){final s=b.score.compareTo(a.score);if(s!=0)return s;return a.product.name.compareTo(b.product.name);});
