@@ -26552,5 +26552,67 @@
     "units": [
       "г"
     ]
+  },
+  {
+    "id": "ua_nesquik_opti_start_cocoa_drink_mix",
+    "name": "Какао-напій Nesquik Opti-Start швидкорозчинний",
+    "category": "Напої",
+    "carbs": 78.9,
+    "protein": 5.1,
+    "fat": 3.6,
+    "kcal": 386,
+    "manufacturer": "Nestle",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "nesquik",
+      "несквік",
+      "несквик",
+      "какао несквік",
+      "nesquik opti start",
+      "какао напій"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_nesquik_cocoa_classic_candies",
+    "name": "Цукерки Nesquik Какао класичний",
+    "category": "Солодощі",
+    "carbs": 62.5,
+    "protein": 4.4,
+    "fat": 28.3,
+    "kcal": 525,
+    "manufacturer": "Nestle",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "nesquik",
+      "несквік",
+      "цукерки несквік",
+      "nesquik какао"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_nesquik_cocoa_milk_cream_cake",
+    "name": "Тістечко бісквітне Nesquik з какао і молочним кремом",
+    "category": "Солодощі",
+    "carbs": 44.2,
+    "protein": 7.6,
+    "fat": 21.5,
+    "kcal": 404,
+    "manufacturer": "Nestle",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "nesquik",
+      "несквік",
+      "тістечко несквік",
+      "бісквіт nesquik"
+    ],
+    "units": [
+      "г"
+    ]
   }
 ]
