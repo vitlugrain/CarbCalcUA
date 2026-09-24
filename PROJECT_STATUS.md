@@ -231,3 +231,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Runtime catalog for this checkpoint: **1312 products**.
 - APK #475 is now the current **USER-TESTED STABLE Android checkpoint**.
 - Next phase: prepare CarbCalc UA for Google Play publication while preserving the tested application behavior and catalog.
+
+
+## CarbCalc UA 1.0 production scope — glucose features removed from UI — 2026-09-24
+- Release positioning: carbohydrate/nutrition tracker and food diary for the initial Google Play release.
+- Removed production access to **Імпорт глюкози (CSV/PDF)** and **Історія глюкози** from Settings; removed their page implementations and runtime glucose DB helper methods/import dependencies from `lib/main.dart` in commit `93879905a6c50f59e8c146aa9da4e76041bd815e`.
+- Existing SQLite glucose table creation/migration is intentionally retained for upgrade compatibility and to avoid destructive migration risk for users upgrading from older test builds; there is no production UI/runtime path to import or view glucose data.
+- Historical glucose import service source remains in Git history/repository for possible future development but is no longer imported by the production app entrypoint.
+- Food diary, products, dishes, quantities (g/ml/pieces), carbohydrate calculations, reports and the 1312-product catalog remain in scope.
+- Previous USER-TESTED STABLE checkpoint remains APK #475 until a new APK containing this scope change is built and verified on Android.
