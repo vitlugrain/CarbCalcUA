@@ -240,3 +240,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Historical glucose import service source remains in Git history/repository for possible future development but is no longer imported by the production app entrypoint.
 - Food diary, products, dishes, quantities (g/ml/pieces), carbohydrate calculations, reports and the 1312-product catalog remain in scope.
 - Previous USER-TESTED STABLE checkpoint remains APK #475 until a new APK containing this scope change is built and verified on Android.
+
+
+## CarbCalc UA 1.0 release checkpoint — APK #478 USER VERIFIED — 2026-09-24
+- APK **#478** completed successfully, was installed over APK #475, and is now the current **USER-TESTED STABLE Android checkpoint**.
+- User confirmed normal launch and preservation of the existing food diary after upgrade.
+- User confirmed that **Імпорт глюкози** and **Історія глюкози** are absent from the production UI and the rest of the tested application continues to work normally.
+- Production 1.0 positioning is now fixed as a **carbohydrate/nutrition tracker and food diary**: products, dishes, portions, grams/ml/pieces, carbohydrate calculations, meal history/reports. Glucose import/history is out of the 1.0 production scope.
+- Glucose UI/runtime removal commit: `93879905a6c50f59e8c146aa9da4e76041bd815e`; scope/status commit: `3e2d753f3ad79961ce0f33a971577939cd93b051`.
+- Existing SQLite glucose table/migration remains intentionally for non-destructive upgrade compatibility; it has no production UI/runtime access in 1.0.
+- Runtime food catalog remains **1312 products**. Catalog expansion is paused for release preparation.
+- Next phase: Google Play / production pre-release preparation from this verified checkpoint. Preserve APK #478 behavior while auditing release configuration, package/versioning, target SDK, permissions, signing/AAB, privacy/data-safety declarations, store assets/text, and required testing/release steps.
