@@ -375,3 +375,11 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Added Latin and common Ukrainian phonetic aliases for search. Package-size variants were not duplicated.
 - Runtime catalog after follow-up: **1250 products**.
 - Mars/Wrigley core confectionery gap is **CLOSED FOR CURRENT PASS**.
+
+
+## APK #458 catalog/search checkpoint — 2026-09-24
+- Runtime verified local catalog checkpoint: **1250 products**.
+- APK #458 is USER-TESTED STABLE; diary persistence and the T-001 search cases were verified on Android.
+- Verified search behavior: `картопля` finds fried potato; `печиво` finds Oreo; Cyrillic `Орео` works; Latin `Oreo` is no longer polluted by unrelated fuzzy/USDA results.
+- Recently completed branded blocks remain CLOSED FOR CURRENT PASS: ROSHEN, KONTI, Lukas, AVK, Svitoch/Artek, Millennium, Zhytomyrski Lasoshchi, Mondelez core, Oreo, Milka, Barni, Ferrero core and M&M's.
+- Continue with a genuinely unreviewed/high-value catalog block; preserve the hybrid generic+branded policy and skip products without reliable exact nutrition rather than guessing.
