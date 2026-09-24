@@ -27215,5 +27215,132 @@
     "units": [
       "г"
     ]
+  },
+  {
+    "id": "ua_shchedro_mayo_provansal_67",
+    "name": "Майонез Щедро Провансаль 67%",
+    "category": "Соуси",
+    "carbs": 2.9,
+    "protein": 0.5,
+    "fat": 67,
+    "kcal": 616,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро провансаль",
+      "майонез щедро",
+      "провансаль 67"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_mayo_domashnii_dytiachyi_67",
+    "name": "Майонез Щедро Домашній дитячий 67%",
+    "category": "Соуси",
+    "carbs": 4,
+    "protein": 0.5,
+    "fat": 67,
+    "kcal": 620,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро домашній дитячий",
+      "дитячий майонез щедро"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_ketchup_mild",
+    "name": "Кетчуп Щедро Лагідний",
+    "category": "Соуси",
+    "carbs": 26,
+    "protein": 1,
+    "fat": 0,
+    "kcal": 108,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро лагідний",
+      "лагідний кетчуп щедро"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_ketchup_mild_red_paprika",
+    "name": "Кетчуп Щедро Лагідний з червоною паприкою",
+    "category": "Соуси",
+    "carbs": 26,
+    "protein": 1,
+    "fat": 0,
+    "kcal": 108,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро з червоною паприкою",
+      "кетчуп з паприкою щедро"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_ketchup_chili",
+    "name": "Кетчуп Щедро Чилі",
+    "category": "Соуси",
+    "carbs": 21,
+    "protein": 1.1,
+    "fat": 0,
+    "kcal": 88,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро чилі",
+      "кетчуп чилі щедро"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_sauce_tartar",
+    "name": "Соус Щедро Тартар",
+    "category": "Соуси",
+    "carbs": 10,
+    "protein": 0.7,
+    "fat": 30,
+    "kcal": 313,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро тартар",
+      "тартар щедро"
+    ],
+    "units": [
+      "г"
+    ]
+  },
+  {
+    "id": "ua_shchedro_sauce_firmovyi_garlic",
+    "name": "Соус Щедро Фірмовий з часником",
+    "category": "Соуси",
+    "carbs": 21,
+    "protein": 1.3,
+    "fat": 0,
+    "kcal": 89,
+    "manufacturer": "Щедро",
+    "source": "Сільпо, перевірено 2026-09-24",
+    "aliases": [
+      "щедро фірмовий з часником",
+      "часниковий соус щедро"
+    ],
+    "units": [
+      "г"
+    ]
   }
 ]
