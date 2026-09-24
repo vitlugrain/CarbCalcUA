@@ -93,3 +93,11 @@ Each new issue should record:
 ## Build policy during testing
 
 Do not create a new APK after every small correction. Accumulate a meaningful logical batch of fixes, run appropriate validation/tests, then build the next Android test candidate. Every included issue remains **FIXED / AWAITING APK** until the user verifies it on the phone.
+
+
+## CarbCalc UA 1.0 release verification — APK #478 — 2026-09-24
+- Current USER-TESTED STABLE checkpoint: **APK #478**.
+- Installed successfully over APK #475; existing food diary preserved.
+- Release-scope verification passed: **Імпорт глюкози** and **Історія глюкози** are no longer present in the production UI.
+- User reported the application otherwise works normally after the change.
+- No regression issue opened from this test cycle.
