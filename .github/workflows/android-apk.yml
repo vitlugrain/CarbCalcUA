@@ -60,7 +60,7 @@ jobs:
 
       - name: Generate Android project
         run: |
-          flutter create --platforms=android --project-name carbcalc_ua --org ua.carbcalc .
+          flutter create --platforms=android --project-name carbcalc_ua .
           rm -f test/widget_test.dart
           python3 - <<'PY'
           from pathlib import Path
