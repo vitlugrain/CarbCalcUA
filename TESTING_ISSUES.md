@@ -101,3 +101,26 @@ Do not create a new APK after every small correction. Accumulate a meaningful lo
 - Release-scope verification passed: **Імпорт глюкози** and **Історія глюкози** are no longer present in the production UI.
 - User reported the application otherwise works normally after the change.
 - No regression issue opened from this test cycle.
+
+
+## CarbCalc UA 1.0 pre-release preparation checkpoint — 2026-09-25
+- Source branch: `dev-large-update`. GitHub remains source of truth.
+- Current USER-TESTED STABLE baseline remains **APK #478**. Do not replace this stable checkpoint until the next release-candidate APK is installed and verified on the user's Android phone.
+- Release positioning remains a Ukrainian **carbohydrate/nutrition tracker and food diary**. Glucose import/history remains out of the production 1.0 UI/runtime scope; legacy SQLite glucose schema remains only for non-destructive upgrade compatibility.
+- Runtime food catalog remains **1312 products** and broad catalog expansion remains frozen for 1.0.
+- Pre-release Android work completed after #478:
+  - `7cf0b08c56a5e456be765a98b4a2eb8b390a35ac`: API 36/app-label preparation. A later compatibility correction intentionally reverted the temporary `--org ua.carbcalc` change.
+  - `98159110542c1439f0470c16a1ca6d95c868d92d`: pubspec version set to **1.0.0+1** and unused legacy glucose-import dependencies `file_picker`, `csv`, `syncfusion_flutter_pdf` removed.
+  - `90407c09af27886769ad68a34f352f3fdff93df9`: CI aligned to CarbCalc UA 1.0; artifact naming updated and workflow permission reduced to `contents: read`.
+  - `eb4da941babcd0b1e913e206addf012b57abee4e`: release manifest generation explicitly includes only required app permissions **INTERNET** (Open Food Facts) and **CAMERA** (barcode scanner); signed release **AAB** build/upload added alongside APK.
+  - `1e9bc2e259bb3ea0fb82fa38d88471938499610f`: restored the historical `flutter create --platforms=android --project-name carbcalc_ua .` generation command used by the #478 line, avoiding an application-ID change that could break in-place upgrades/local diary continuity. Do not re-add `--org ua.carbcalc` without an explicit migration/release decision.
+  - User approved the second generated CarbCalc UA app icon (plate/vegetables + calculator + blue/yellow arc) and uploaded it to `assets/carbcalc_ua_icon.png` on `dev-large-update` (blob SHA `b8712895960e4d76a62c688592d26fa9975606ad`).
+  - `1abe9ba430aa57958c931b0d7daa0dc80d94d352`: CI generates Android launcher PNGs for mdpi/hdpi/xhdpi/xxhdpi/xxxhdpi from the approved icon.
+  - `a60ded00fc57037aec4e6e073d0843cf96ba8e66`: final known Ukrainian lexical cleanup in `assets/products.json`: removed alias `жарена картопля`, replaced `кешью` with `кеш’ю` while retaining `кеш'ю`, renamed `Творожні маси та сирки` to `Сиркові маси та сирки`.
+- Known remaining pre-release work before the next device APK is considered a release candidate:
+  1. Run a control CI pass: dependency resolution, `flutter analyze`, tests, signed APK and signed AAB build with the new icon/API 36/version 1.0.0 configuration.
+  2. Inspect any CI failure and fix before asking for device testing.
+  3. Install the resulting APK over #478 and verify: in-place upgrade, diary preservation, launch, new icon, search, barcode/camera permission flow, online Open Food Facts fallback, Add/Diary basics, and absence of glucose UI.
+  4. Only after user verification, mark the new APK as USER-TESTED STABLE / 1.0 release candidate and proceed with the signed AAB / Google Play Console work.
+  5. Update stale documentation such as `BUILD_APK.md` if still inconsistent with Flutter 3.35.7/release signing/1.0 artifact naming.
+- Important build policy: do not create APKs after individual micro-fixes. The next build should be the consolidated 1.0 release-candidate test build.
