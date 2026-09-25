@@ -124,3 +124,15 @@ Do not create a new APK after every small correction. Accumulate a meaningful lo
   4. Only after user verification, mark the new APK as USER-TESTED STABLE / 1.0 release candidate and proceed with the signed AAB / Google Play Console work.
   5. Update stale documentation such as `BUILD_APK.md` if still inconsistent with Flutter 3.35.7/release signing/1.0 artifact naming.
 - Important build policy: do not create APKs after individual micro-fixes. The next build should be the consolidated 1.0 release-candidate test build.
+
+## CarbCalc UA 1.0 release-candidate verification — APK #498 — 2026-09-25
+- **Current USER-TESTED STABLE checkpoint: APK #498.** This supersedes #478 and is the CarbCalc UA 1.0 release candidate.
+- GitHub Actions run #498 completed fully green from commit `0035ca0ffcf612eb6562486d70767c036d888b46`; analyze, tests, signed APK and signed AAB all passed.
+- Installed successfully over #478 without uninstalling; existing diary data was preserved.
+- User verified the new launcher icon and confirmed glucose import/history UI remains absent.
+- Search verified on device: `картопля`, `печиво`, and `Орео/Oreo` work correctly.
+- Add-to-diary flow verified on device.
+- Barcode scanner/camera verified on device; online Open Food Facts lookup responded successfully. A non-food barcode returned an unrelated external food record, reinforcing the intentional rule that Open Food Facts results are not automatically added to the verified local catalog.
+- No release-blocking regression was reported in this verification cycle.
+- Release artifacts: `CarbCalcUA-1.0.0-build-498` (APK) and `CarbCalcUA-1.0.0-AAB-build-498` (signed AAB).
+- Next action: proceed to Google Play Console preparation with AAB #498. Any later code/catalog change requires a new CI build and another appropriate verification cycle before replacing this release candidate.
