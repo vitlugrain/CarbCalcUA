@@ -274,3 +274,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
   4. Only after user verification, mark the new APK as USER-TESTED STABLE / 1.0 release candidate and proceed with the signed AAB / Google Play Console work.
   5. Update stale documentation such as `BUILD_APK.md` if still inconsistent with Flutter 3.35.7/release signing/1.0 artifact naming.
 - Important build policy: do not create APKs after individual micro-fixes. The next build should be the consolidated 1.0 release-candidate test build.
+
+## CarbCalc UA 1.0 release candidate — APK #498 USER VERIFIED — 2026-09-25
+- GitHub Actions Android APK run **#498** (run ID `36142523869`) completed successfully from commit `0035ca0ffcf612eb6562486d70767c036d888b46`.
+- Full release pipeline passed: Android project/icon generation, release signing, dependency resolution, `flutter analyze`, tests, signed release APK, signed release AAB and artifact publication.
+- Release artifacts: `CarbCalcUA-1.0.0-build-498` and `CarbCalcUA-1.0.0-AAB-build-498`.
+- User installed APK #498 **over #478 without uninstalling**; upgrade succeeded and the existing food diary was preserved.
+- Real-device verification passed for the new launcher icon, absence of glucose import/history UI, search queries `картопля`, `печиво`, `Орео/Oreo`, Add-to-diary flow, barcode scanner and camera access.
+- Barcode scanning successfully exercised the online Open Food Facts fallback. Open Food Facts results remain external/online lookup results and are **not automatically added to the controlled local catalog**; they may be added to the diary. This avoids polluting the verified local catalog with unverified third-party records.
+- Runtime local food catalog remains frozen at **1312 products** for 1.0.
+- APK **#498 is now USER-TESTED STABLE and the CarbCalc UA 1.0 RELEASE CANDIDATE**. It supersedes #478 as the current stable Android checkpoint.
+- Next phase: use the already-built signed AAB `CarbCalcUA-1.0.0-AAB-build-498` for Google Play Console release preparation. Do not rebuild merely to change the build number unless a release-blocking change is required.
