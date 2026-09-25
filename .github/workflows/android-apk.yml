@@ -79,6 +79,22 @@ jobs:
           if 'android.permission.CAMERA' not in m:
               m = m.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">', '<manifest xmlns:android="http://schemas.android.com/apk/res/android">\\n    <uses-permission android:name="android.permission.CAMERA"/>')
           manifest.write_text(m)
+
+          # Generate Android launcher icons from the approved CarbCalc UA icon.
+          # Pillow is available on the GitHub Ubuntu runner.
+          from PIL import Image
+          src = Image.open('assets/carbcalc_ua_icon.png').convert('RGBA')
+          sizes = {
+              'mipmap-mdpi': 48,
+              'mipmap-hdpi': 72,
+              'mipmap-xhdpi': 96,
+              'mipmap-xxhdpi': 144,
+              'mipmap-xxxhdpi': 192,
+          }
+          for folder, size in sizes.items():
+              out = Path('android/app/src/main/res') / folder / 'ic_launcher.png'
+              out.parent.mkdir(parents=True, exist_ok=True)
+              src.resize((size, size), Image.Resampling.LANCZOS).save(out)
           PY
 
       - name: Configure release signing
