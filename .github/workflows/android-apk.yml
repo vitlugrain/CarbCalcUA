@@ -60,8 +60,19 @@ jobs:
 
       - name: Generate Android project
         run: |
-          flutter create --platforms=android --project-name carbcalc_ua .
+          flutter create --platforms=android --project-name carbcalc_ua --org ua.carbcalc .
           rm -f test/widget_test.dart
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/build.gradle.kts')
+          s = p.read_text()
+          s = s.replace('compileSdk = flutter.compileSdkVersion', 'compileSdk = 36')
+          s = s.replace('targetSdk = flutter.targetSdkVersion', 'targetSdk = 36')
+          p.write_text(s)
+          manifest = Path('android/app/src/main/AndroidManifest.xml')
+          m = manifest.read_text().replace('android:label="carbcalc_ua"', 'android:label="CarbCalc UA"')
+          manifest.write_text(m)
+          PY
 
       - name: Configure release signing
         env:
