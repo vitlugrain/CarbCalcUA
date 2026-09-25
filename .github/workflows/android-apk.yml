@@ -81,21 +81,16 @@ jobs:
           manifest.write_text(m)
 
           # Generate Android launcher icons from the approved CarbCalc UA icon.
-          # Pillow is available on the GitHub Ubuntu runner.
-          from PIL import Image
-          src = Image.open('assets/carbcalc_ua_icon.png').convert('RGBA')
-          sizes = {
-              'mipmap-mdpi': 48,
-              'mipmap-hdpi': 72,
-              'mipmap-xhdpi': 96,
-              'mipmap-xxhdpi': 144,
-              'mipmap-xxxhdpi': 192,
-          }
-          for folder, size in sizes.items():
-              out = Path('android/app/src/main/res') / folder / 'ic_launcher.png'
-              out.parent.mkdir(parents=True, exist_ok=True)
-              src.resize((size, size), Image.Resampling.LANCZOS).save(out)
           PY
+          # ImageMagick is preinstalled on the Ubuntu runner; use it instead of
+          # assuming the Python Pillow package is available.
+          for spec in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
+            density="${spec%%:*}"
+            size="${spec##*:}"
+            out="android/app/src/main/res/mipmap-${density}/ic_launcher.png"
+            mkdir -p "$(dirname "$out")"
+            magick assets/carbcalc_ua_icon.png -resize "${size}x${size}" "$out"
+          done
 
       - name: Configure release signing
         env:
