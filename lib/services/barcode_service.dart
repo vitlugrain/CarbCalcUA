@@ -88,7 +88,7 @@ class BarcodeService {
     if (data['status'] != 1 || data['product'] is! Map) return null;
     final p = data['product'] as Map<String, dynamic>;
     final n = p['nutriments'] is Map ? p['nutriments'] as Map<String, dynamic> : <String, dynamic>{};
-    final name = _firstNonEmpty([cleanName(p['product_name_uk']),cleanName(p['product_name'])]);
+    final name = _externalDisplayName(p);
     if (name == null) return null;
     final category = _firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null]) ?? 'Зовнішні дані';
     final beverage = _isLikelyBeverage(name, category);
@@ -140,7 +140,7 @@ class BarcodeService {
     for(final item in products){
       if(item is! Map) continue;
       final p=item.cast<String,dynamic>(); final n=p['nutriments'] is Map ? (p['nutriments'] as Map).cast<String,dynamic>() : <String,dynamic>{};
-      final name=_firstNonEmpty([cleanName(p['product_name_uk']),cleanName(p['product_name'])]); if(name==null)continue;
+      final name=_externalDisplayName(p); if(name==null)continue;
       final carbs=_number(n['carbohydrates_100g']);
       final code=_firstNonEmpty([cleanName(p['code'])]);
       final category=_firstNonEmpty([p['categories_tags'] is List ? cleanName((p['categories_tags'] as List).firstOrNull) : null])??'Онлайн-база';
@@ -164,6 +164,35 @@ class BarcodeService {
       ));
     }
     return out;
+  }
+
+  static String? _externalDisplayName(Map<String, dynamic> product) {
+    // Open Food Facts is community-maintained. Prefer an explicitly Ukrainian
+    // name. If it is missing, allow only neutral Latin-script names; do not
+    // surface Russian/Cyrillic fallback names in the Ukrainian catalogue.
+    final uk = cleanName(product['product_name_uk']);
+    if (uk != null && !_looksRussian(uk)) return uk;
+
+    final fallback = cleanName(product['product_name']);
+    if (fallback == null || _looksRussian(fallback)) return null;
+
+    final hasCyrillic = RegExp(r'[А-Яа-яІіЇїЄєҐґ]').hasMatch(fallback);
+    return hasCyrillic ? null : fallback;
+  }
+
+  static bool _looksRussian(String value) {
+    final text = value.toLowerCase();
+    if (RegExp(r'[ыэёъ]').hasMatch(text)) return true;
+
+    // Common Russian food words that contain only letters shared with
+    // Ukrainian. Word boundaries avoid matching fragments inside brand names.
+    return RegExp(
+      r'(^|[^а-яіїєґ])(сыр|творог|сливочн(?:ый|ая|ое|ые)|плавлен(?:ый|ая|ое|ые)|'
+      r'молочн(?:ый|ая|ое|ые)|варен(?:ый|ая|ое|ые)|жарен(?:ый|ая|ое|ые)|'
+      r'копчен(?:ый|ая|ое|ые)|сладк(?:ий|ая|ое|ие)|свеж(?:ий|ая|ее|ие)|'
+      r'курин(?:ый|ая|ое|ые)|говяж(?:ий|ья|ье|ьи)|свинин(?:а|ы)|'
+      r'картофел(?:ь|я)|морков(?:ь|и)|свекл(?:а|ы)|лук)([^а-яіїєґ]|$)',
+    ).hasMatch(text);
   }
 
   static bool _isLikelyBeverage(String name, String category) {
