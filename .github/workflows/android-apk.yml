@@ -71,6 +71,13 @@ jobs:
           p.write_text(s)
           manifest = Path('android/app/src/main/AndroidManifest.xml')
           m = manifest.read_text().replace('android:label="carbcalc_ua"', 'android:label="CarbCalc UA"')
+          # CarbCalc UA needs network access for Open Food Facts and camera
+          # access for the user-invoked barcode scanner. No storage/location
+          # permissions are requested by the app.
+          if 'android.permission.INTERNET' not in m:
+              m = m.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">', '<manifest xmlns:android="http://schemas.android.com/apk/res/android">\\n    <uses-permission android:name="android.permission.INTERNET"/>')
+          if 'android.permission.CAMERA' not in m:
+              m = m.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">', '<manifest xmlns:android="http://schemas.android.com/apk/res/android">\\n    <uses-permission android:name="android.permission.CAMERA"/>')
           manifest.write_text(m)
           PY
 
@@ -115,10 +122,20 @@ jobs:
         run: flutter test
       - name: Build release APK
         run: flutter build apk --release --build-name=1.0.0 --build-number=${{ github.run_number }}
+      - name: Build release AAB
+        run: flutter build appbundle --release --build-name=1.0.0 --build-number=${{ github.run_number }}
       - name: Publish APK
         uses: actions/upload-artifact@v4
         with:
           name: CarbCalcUA-1.0.0-build-${{ github.run_number }}
           path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: CarbCalcUA-1.0.0-AAB-build-${{ github.run_number }}
+          path: build/app/outputs/bundle/release/app-release.aab
           if-no-files-found: error
           retention-days: 30
