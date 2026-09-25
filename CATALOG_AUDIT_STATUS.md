@@ -436,3 +436,10 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
   4. Only after user verification, mark the new APK as USER-TESTED STABLE / 1.0 release candidate and proceed with the signed AAB / Google Play Console work.
   5. Update stale documentation such as `BUILD_APK.md` if still inconsistent with Flutter 3.35.7/release signing/1.0 artifact naming.
 - Important build policy: do not create APKs after individual micro-fixes. The next build should be the consolidated 1.0 release-candidate test build.
+
+## CarbCalc UA 1.0 release candidate catalog freeze — APK #498 — 2026-09-25
+- APK **#498** is USER-TESTED STABLE and the CarbCalc UA 1.0 release candidate.
+- Runtime local catalog remains frozen at **1312 products**; no broad catalog expansion should be started before 1.0 release unless a concrete release-blocking defect is found.
+- Device search checks passed for `картопля`, `печиво`, and `Орео/Oreo`.
+- Barcode scanner works on the release candidate. Products returned by Open Food Facts are treated as external online lookup results and are **not automatically persisted into the controlled local catalog**; they can be used for diary entries. This is intentional because third-party barcode data can be incorrect or mismatched.
+- Current release artifacts from successful CI run #498: `CarbCalcUA-1.0.0-build-498` and signed `CarbCalcUA-1.0.0-AAB-build-498`.
