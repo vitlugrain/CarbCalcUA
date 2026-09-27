@@ -912,7 +912,27 @@ class _DiaryPageState extends State<DiaryPage> {
                           (row) => ListTile(
                             contentPadding: EdgeInsets.zero,
                             title: Text(row['name'] as String),
-                            subtitle: Text(_displayDiaryAmount(row)),
+                            subtitle: FutureBuilder<Product?>(
+                              future:_productForDiaryRow(row),
+                              builder:(context,productSnapshot){
+                                final product=productSnapshot.data;
+                                if(product==null)return Text(_displayDiaryAmount(row));
+                                final quantity=Quantity(
+                                  (row['amount_value'] as num?)?.toDouble()??(row['grams'] as num).toDouble(),
+                                  _unitFromLabel((row['amount_unit'] as String?)??'г'),
+                                );
+                                final result=FoodCalculationService.calculate(product:product,quantity:quantity,xeGrams:10);
+                                final secondary=<String>[
+                                  if(result?.calories!=null) '${result!.calories!.toStringAsFixed(0)} ккал',
+                                  if(result?.protein!=null) 'Б ${result!.protein!.toStringAsFixed(1)} г',
+                                  if(result?.fat!=null) 'Ж ${result!.fat!.toStringAsFixed(1)} г',
+                                ];
+                                return Column(crossAxisAlignment:CrossAxisAlignment.start,mainAxisSize:MainAxisSize.min,children:[
+                                  Text(_displayDiaryAmount(row)),
+                                  if(secondary.isNotEmpty) Text(secondary.join(' · '),style:TextStyle(fontSize:12,color:Theme.of(context).colorScheme.onSurfaceVariant)),
+                                ]);
+                              },
+                            ),
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -1125,10 +1145,10 @@ class _ProductReviewDialogState extends State<ProductReviewDialog> {
     name = TextEditingController(text: x.name);
     manufacturer = TextEditingController(text: x.manufacturer ?? '');
     carbs = TextEditingController(text: _n(x.carbs));
-    protein = TextEditingController(text: _n(x.protein));
-    fat = TextEditingController(text: _n(x.fat));
+    protein = TextEditingController(text: x.protein == null ? '' : _n(x.protein!));
+    fat = TextEditingController(text: x.fat == null ? '' : _n(x.fat!));
     fiber = TextEditingController(text: _n(x.fiber));
-    calories = TextEditingController(text: _n(x.calories));
+    calories = TextEditingController(text: x.calories == null ? '' : _n(x.calories!));
     gramsPerPiece = TextEditingController(text: x.gramsPerPiece == null ? '' : _n(x.gramsPerPiece!));
     gramsPerMl = TextEditingController(text: x.gramsPerMl == null ? '' : _n(x.gramsPerMl!));
     servingGrams = TextEditingController(text: x.servingGrams == null ? '' : _n(x.servingGrams!));
@@ -1284,6 +1304,14 @@ class _CustomProductDialogState extends State<CustomProductDialog> {
 
 class ReportsPage extends StatefulWidget{const ReportsPage({super.key});@override State<ReportsPage> createState()=>_ReportsPageState();}
 class _ReportsPageState extends State<ReportsPage>{int days=1;DateTime end=DateTime.now();DateTime get start=>DateTime(end.year,end.month,end.day).subtract(Duration(days:days-1));Future<List<Map<String,dynamic>>> load()async=> (await AppDb.db).query('diary',where:'date>=? AND date<?',whereArgs:[_dateKey(start),_dateKey(end.add(const Duration(days:1)))],orderBy:'date ASC,id ASC');@override Widget build(BuildContext context){return Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<List<Map<String,dynamic>>>(future:load(),builder:(context,s){if(!s.hasData)return const Center(child:CircularProgressIndicator());final rows=s.data!;final total=rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());return ListView(padding:const EdgeInsets.all(16),children:[DropdownButtonFormField<int>(value:days,decoration:const InputDecoration(labelText:'Період',border:OutlineInputBorder()),items:const[DropdownMenuItem(value:1,child:Text('День')),DropdownMenuItem(value:7,child:Text('7 днів')),DropdownMenuItem(value:30,child:Text('30 днів'))],onChanged:(v){if(v!=null){setState(()=>days=v);}}),const SizedBox(height:10),Text('${_prettyDate(start)} — ${_prettyDate(end)}'),Card(child:ListTile(title:const Text('Всього вуглеводів'),trailing:Text('${total.toStringAsFixed(1)} г',style:const TextStyle(fontSize:22,fontWeight:FontWeight.bold)))),if(rows.isNotEmpty)SingleChildScrollView(scrollDirection:Axis.horizontal,child:DataTable(columns:const[DataColumn(label:Text('Дата')),DataColumn(label:Text('Прийом')),DataColumn(label:Text('Час')),DataColumn(label:Text('Продукт')),DataColumn(label:Text('Кількість')),DataColumn(label:Text('Вуглеводи'))],rows:rows.map((r)=>DataRow(cells:[DataCell(Text(_prettyDate(DateTime.parse(r['date'] as String)))),DataCell(Text((r['meal'] as String?)??'')),DataCell(Text((r['meal_time'] as String?)??'')),DataCell(Text(r['name'] as String)),DataCell(Text(_displayDiaryAmount(r))),DataCell(Text('${(r['carbs'] as num).toStringAsFixed(1)} г'))])).toList()))else const Card(child:Padding(padding:EdgeInsets.all(18),child:Text('За вибраний період записів немає.'))),const SizedBox(height:10),Text('Середнє за день: ${(total/days).toStringAsFixed(1)} г')]);}));}
+}
+
+Future<Product?> _productForDiaryRow(Map<String,dynamic> row) async {
+  final id=(row['product_id'] as String?)?.trim();
+  if(id==null || id.isEmpty)return null;
+  final products=await loadAllProducts();
+  for(final product in products){if(product.id==id)return product;}
+  return null;
 }
 
 String _prettyDateTime(DateTime d)=>'${_prettyDate(d)} ${d.hour.toString().padLeft(2,'0')}:${d.minute.toString().padLeft(2,'0')}';
