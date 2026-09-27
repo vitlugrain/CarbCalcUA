@@ -505,7 +505,19 @@ class _AddFoodPageState extends State<AddFoodPage>{
           final result=selected==null?null:FoodCalculationService.calculate(product:selected!,quantity:Quantity(amount,unit),xeGrams:xeGrams);
           final displayCarbs=result?.carbs??carbs;
           final displayXe=result?.xe??0;
-          return Card(child:ListTile(title:const Text('Вуглеводи'),subtitle:Text('${displayXe.toStringAsFixed(2)} ХО'),trailing:Text('${displayCarbs.toStringAsFixed(1)} г',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold))));
+          final secondary=<String>[
+            if(result?.calories!=null) '${result!.calories!.toStringAsFixed(0)} ккал',
+            if(result?.protein!=null) 'Б ${result!.protein!.toStringAsFixed(1)} г',
+            if(result?.fat!=null) 'Ж ${result!.fat!.toStringAsFixed(1)} г',
+          ];
+          return Card(child:ListTile(
+            title:const Text('Вуглеводи'),
+            subtitle:Column(crossAxisAlignment:CrossAxisAlignment.start,mainAxisSize:MainAxisSize.min,children:[
+              Text('${displayXe.toStringAsFixed(2)} ХО'),
+              if(secondary.isNotEmpty) Text(secondary.join(' · '),style:TextStyle(fontSize:12,color:Theme.of(context).colorScheme.onSurfaceVariant)),
+            ]),
+            trailing:Text('${displayCarbs.toStringAsFixed(1)} г',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold)),
+          ));
         }),
         FilledButton(onPressed:amount>0&&preview!=null?()async{
           // Close the numeric keyboard immediately on submit, before any I/O.
