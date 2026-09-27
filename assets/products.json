@@ -709,7 +709,7 @@
     "carbs": 71,
     "protein": 12.9,
     "fat": 3.2,
-    "calories": null,
+    "calories": 365,
     "nutrition_basis": "100g",
     "quantity_units": [
       "г"
@@ -19792,7 +19792,7 @@
     "carbs": 62,
     "protein": 9.4,
     "fat": 16,
-    "calories": null,
+    "calories": 440,
     "nutrition_basis": "100g_dry",
     "package_g": 73.5,
     "verified": true,
@@ -22685,7 +22685,8 @@
       "марія yarych",
       "печиво ярич",
       "печиво yarych"
-    ]
+    ],
+    "calories": 407
   },
   {
     "id": "ua_yarych_mriya",
