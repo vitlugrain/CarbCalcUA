@@ -454,3 +454,14 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Nutrition completion commits in this audit: `35e5c9cb9a41b296ab85fcf126143114e5f69d7d`, `1366ac62feced1c51b921f40dd01fccf29903c1b`, `dd39ab9820fb96d6854d3140cea449c0bb645889`, `b3e55e97fa6e35d0c02536460428ce0995b5a0bf`, `c37660982b9cc04fa808846da7afe1aaa7842b4e`, `64bcc260e2e80ef5a68d717839df9dcbcbf888f5`.
 - APK #498 is **not rebuilt** as part of this data audit. Decide separately whether these catalog improvements are included before Play release or in a later update.
 
+## Nutrition completeness audit CLOSED — 2026-09-27
+- Audit is **closed** for the CarbCalc UA 1.0 catalog checkpoint.
+- Final catalog size after removing two ambiguous generic canned-fruit records: **1310 products**.
+- **1277 / 1310 (97.48%)** have a complete carbohydrate / protein / fat / energy set.
+- **33** records intentionally remain incomplete: 32 Galychyna/GoKarpaty/YOMMY/Molokija records without sufficiently reliable exact nutrition data, plus `Наш Сік Апельсиновий нектар` where current retail sources conflict on protein and kcal.
+- Removed as too recipe-dependent without a specific brand: `Абрикоси консервовані`, `Груші консервовані`.
+- Legacy incomplete ProDiabet nutrition values for fresh fig, fresh mango, dates and dried dates were replaced with complete coherent reference nutrition sets; legacy glycemic-index fields were retained separately.
+- Final completion commits include `01fa5795255e5e35f548334991de811133d9ba13` and `9e265f9a09c402fd0db22e5174d0e3707957e5eb`.
+- Policy: never invent missing B/F/C/kcal values or fill them by analogy. Incomplete exact branded records may remain incomplete.
+- Next product workstream: decide how secondary nutrition data (kcal, protein, fat) should be displayed in product selection and diary while keeping carbohydrates as the primary CarbCalc UA metric.
+
