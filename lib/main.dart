@@ -506,9 +506,9 @@ class _AddFoodPageState extends State<AddFoodPage>{
           final displayCarbs=result?.carbs??carbs;
           final displayXe=result?.xe??0;
           final secondary=<String>[
-            if(result?.calories!=null) '${result!.calories!.toStringAsFixed(0)} ккал',
-            if(result?.protein!=null) 'Б ${result!.protein!.toStringAsFixed(1)} г',
-            if(result?.fat!=null) 'Ж ${result!.fat!.toStringAsFixed(1)} г',
+            if(result?.calories case final calories?) '${calories.toStringAsFixed(0)} ккал',
+            if(result?.protein case final protein?) 'Б ${protein.toStringAsFixed(1)} г',
+            if(result?.fat case final fat?) 'Ж ${fat.toStringAsFixed(1)} г',
           ];
           return Card(child:ListTile(
             title:const Text('Вуглеводи'),
@@ -935,9 +935,9 @@ class _DiaryPageState extends State<DiaryPage> {
                                 );
                                 final result=FoodCalculationService.calculate(product:product,quantity:quantity,xeGrams:10);
                                 final secondary=<String>[
-                                  if(result?.calories!=null) '${result!.calories!.toStringAsFixed(0)} ккал',
-                                  if(result?.protein!=null) 'Б ${result!.protein!.toStringAsFixed(1)} г',
-                                  if(result?.fat!=null) 'Ж ${result!.fat!.toStringAsFixed(1)} г',
+                                  if(result?.calories case final calories?) '${calories.toStringAsFixed(0)} ккал',
+                                  if(result?.protein case final protein?) 'Б ${protein.toStringAsFixed(1)} г',
+                                  if(result?.fat case final fat?) 'Ж ${fat.toStringAsFixed(1)} г',
                                 ];
                                 return Column(crossAxisAlignment:CrossAxisAlignment.start,mainAxisSize:MainAxisSize.min,children:[
                                   Text(_displayDiaryAmount(row)),
@@ -1348,9 +1348,12 @@ Future<_NutritionSummary> _nutritionSummaryForDiaryRows(List<Map<String,dynamic>
     final legacy=saved==null||saved<=0;
     final quantity=Quantity(legacy?(row['grams'] as num).toDouble():saved,legacy?QuantityUnit.grams:_unitFromLabel((row['amount_unit'] as String?)??'г'));
     final result=FoodCalculationService.calculate(product:product,quantity:quantity,xeGrams:10);
-    if(result?.calories==null)caloriesComplete=false;else calories+=result!.calories!;
-    if(result?.protein==null)proteinComplete=false;else protein+=result!.protein!;
-    if(result?.fat==null)fatComplete=false;else fat+=result!.fat!;
+    final resultCalories=result?.calories;
+    final resultProtein=result?.protein;
+    final resultFat=result?.fat;
+    if(resultCalories==null)caloriesComplete=false;else calories+=resultCalories;
+    if(resultProtein==null)proteinComplete=false;else protein+=resultProtein;
+    if(resultFat==null)fatComplete=false;else fat+=resultFat;
   }
   return _NutritionSummary(calories,protein,fat,caloriesComplete,proteinComplete,fatComplete);
 }
