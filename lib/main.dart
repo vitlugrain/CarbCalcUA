@@ -164,7 +164,7 @@ class AppDb {
   }
   static Future<void> saveCustomProduct(Product x)async {
     await (await db).insert('custom_products',{
-    'id':x.id,'name':x.name,'category':x.category,'carbs':x.carbs,'protein':x.protein,'fat':x.fat,'fiber':x.fiber,'calories':x.calories,'barcode':x.barcode,'manufacturer':x.manufacturer,'source':x.source,'updated_at':x.updatedAt,'grams_per_piece':x.gramsPerPiece,'grams_per_ml':x.gramsPerMl,'serving_grams':x.servingGrams,'barcodes':x.allBarcodes.join(','),'nutrition_basis':x.nutritionBasis,'quantity_units':x.quantityUnits.join(',')},
+    'id':x.id,'name':x.name,'category':x.category,'carbs':x.carbs,'protein':x.protein??0,'fat':x.fat??0,'fiber':x.fiber,'calories':x.calories??0,'barcode':x.barcode,'manufacturer':x.manufacturer,'source':x.source,'updated_at':x.updatedAt,'grams_per_piece':x.gramsPerPiece,'grams_per_ml':x.gramsPerMl,'serving_grams':x.servingGrams,'barcodes':x.allBarcodes.join(','),'nutrition_basis':x.nutritionBasis,'quantity_units':x.quantityUnits.join(',')},
     conflictAlgorithm:ConflictAlgorithm.replace);
     invalidateAllProductsCache();
   }
@@ -927,9 +927,11 @@ class _DiaryPageState extends State<DiaryPage> {
                               builder:(context,productSnapshot){
                                 final product=productSnapshot.data;
                                 if(product==null)return Text(_displayDiaryAmount(row));
+                                final savedAmount=(row['amount_value'] as num?)?.toDouble();
+                                final legacyAmount=savedAmount==null||savedAmount<=0;
                                 final quantity=Quantity(
-                                  (row['amount_value'] as num?)?.toDouble()??(row['grams'] as num).toDouble(),
-                                  _unitFromLabel((row['amount_unit'] as String?)??'г'),
+                                  legacyAmount?(row['grams'] as num).toDouble():savedAmount,
+                                  legacyAmount?QuantityUnit.grams:_unitFromLabel((row['amount_unit'] as String?)??'г'),
                                 );
                                 final result=FoodCalculationService.calculate(product:product,quantity:quantity,xeGrams:10);
                                 final secondary=<String>[
@@ -1363,7 +1365,7 @@ Future<Product?> _productForDiaryRow(Map<String,dynamic> row) async {
 
 String _prettyDateTime(DateTime d)=>'${_prettyDate(d)} ${d.hour.toString().padLeft(2,'0')}:${d.minute.toString().padLeft(2,'0')}';
 String _n(double v)=>v%1==0?v.toStringAsFixed(0):v.toStringAsFixed(2);
-String _displayDiaryAmount(Map<String,dynamic> x){final v=(x['amount_value'] as num?)?.toDouble()??(x['grams'] as num).toDouble();final u=(x['amount_unit'] as String?)??'г';return Quantity(v,_unitFromLabel(u)).display;}
+String _displayDiaryAmount(Map<String,dynamic> x){final saved=(x['amount_value'] as num?)?.toDouble();final legacy=saved==null||saved<=0;final v=legacy?(x['grams'] as num).toDouble():saved;final u=legacy?'г':((x['amount_unit'] as String?)??'г');return Quantity(v,_unitFromLabel(u)).display;}
 QuantityUnit _unitFromLabel(String u){switch(u){case 'мл':return QuantityUnit.milliliters;case 'шт':return QuantityUnit.pieces;case 'порція':return QuantityUnit.portion;default:return QuantityUnit.grams;}}
 String _dateKey(DateTime d)=>'${d.year.toString().padLeft(4,'0')}-${d.month.toString().padLeft(2,'0')}-${d.day.toString().padLeft(2,'0')}';
 String _prettyDate(DateTime d)=>'${d.day.toString().padLeft(2,'0')}.${d.month.toString().padLeft(2,'0')}.${d.year}';
