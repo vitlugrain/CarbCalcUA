@@ -60,7 +60,9 @@ class ProductIdentityService {
     // Nutrient tolerance prevents e.g. regular Pepsi and a materially different
     // formulation from being silently merged.
     if ((a.carbs - b.carbs).abs() > 1.5) return false;
-    if ((a.calories - b.calories).abs() > 12 && a.calories > 0 && b.calories > 0) return false;
+    final caloriesA=a.calories;
+    final caloriesB=b.calories;
+    if (caloriesA != null && caloriesB != null && caloriesA > 0 && caloriesB > 0 && (caloriesA - caloriesB).abs() > 12) return false;
     return true;
   }
 
