@@ -7182,7 +7182,11 @@
         "source": "https://silpo.ua/product/vershky-molokiia-10-500g",
         "source_catalog": "https://molokija.com/storage/files/produkciya-onovlena-1.pdf"
       }
-    ]
+    ],
+    "carbs": 4,
+    "protein": 3,
+    "fat": 10,
+    "calories": 118
   },
   {
     "id": "ua_galychyna_lactose_free_sour_cream_15",
@@ -7196,7 +7200,11 @@
     "package_g": 300,
     "lactose_free": true,
     "source": "https://galychyna.com.ua/products/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 3,
+    "protein": 3,
+    "fat": 15,
+    "calories": 159
   },
   {
     "id": "ua_galychyna_cream_for_sauce_15",
@@ -7212,7 +7220,11 @@
       500
     ],
     "source": "https://galychyna.com.ua/production/galychyna/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 4.4,
+    "protein": 2.9,
+    "fat": 15,
+    "calories": 164
   },
   {
     "id": "ua_galychyna_yogurt_strawberry_wild_strawberry_22",
@@ -7477,7 +7489,11 @@
     "kcal_100g": 179,
     "package_g": 300,
     "source": "https://galychyna.com.ua/products/сир-кисломолочний-12/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 2,
+    "protein": 15.8,
+    "fat": 12,
+    "calories": 179
   },
   {
     "id": "ua_galychyna_cottage_cheese_lactose_free_5",
@@ -7567,7 +7583,11 @@
     "kcal_100g": 161,
     "package_g": 200,
     "source": "https://dostavka.galychyna.com.ua/vershky-15-200h-halychyna/",
-    "source_type": "official_manufacturer_store"
+    "source_type": "official_manufacturer_store",
+    "carbs": 3.7,
+    "protein": 2.9,
+    "fat": 15,
+    "calories": 161
   },
   {
     "id": "ua_galychyna_yogurt_spoon_prune_cereals_22",
