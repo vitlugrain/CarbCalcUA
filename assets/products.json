@@ -8036,7 +8036,11 @@
     ],
     "source": "https://horeca.molokija.com/products/22",
     "nutrition_source": "https://silpo.ua/product/moloko-pasteryzovane-molokiia-2-5-pliashka-917218",
-    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+    "source_type": "official_manufacturer_identity_plus_current_retail_label",
+    "carbs": 4.7,
+    "protein": 2.9,
+    "fat": 2.5,
+    "calories": 53
   },
   {
     "id": "ua_molokija_milk_uht_25",
@@ -8098,7 +8102,11 @@
         "kcal_100g": 50,
         "source_catalog": "https://horeca.molokija.com/products/34"
       }
-    ]
+    ],
+    "carbs": 3.9,
+    "protein": 2.9,
+    "fat": 2.5,
+    "calories": 50
   },
   {
     "id": "ua_molokija_yogurt_white_thick_16",
@@ -8113,7 +8121,11 @@
     "no_added_sugar": true,
     "source": "https://www.molokija.com/storage/files/produkciya-nova1.pdf",
     "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-gustyi-1-6-stakan-839328",
-    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+    "source_type": "official_manufacturer_identity_plus_current_retail_label",
+    "carbs": 4.7,
+    "protein": 4,
+    "fat": 1.6,
+    "calories": 49
   },
   {
     "id": "ua_molokija_yogurt_white_drinking_16",
@@ -8133,7 +8145,11 @@
     "no_added_sugar": true,
     "source": "https://www.molokija.com/storage/files/produkciya-nova1.pdf",
     "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-pytnyi-1-6-p-p-823883",
-    "source_type": "official_manufacturer_identity_plus_current_retail_label"
+    "source_type": "official_manufacturer_identity_plus_current_retail_label",
+    "carbs": 4.9,
+    "protein": 3.7,
+    "fat": 1.6,
+    "calories": 49
   },
   {
     "id": "ua_molokija_kefir_1",
@@ -8150,7 +8166,11 @@
     ],
     "source": "https://horeca.molokija.com/products/34",
     "nutrition_source": "https://silpo.ua/product/kefir-molokiia-1-0-p-e-702983",
-    "source_type": "official_catalog_plus_current_retail_label"
+    "source_type": "official_catalog_plus_current_retail_label",
+    "carbs": 3.9,
+    "protein": 3.2,
+    "fat": 1,
+    "calories": 37
   },
   {
     "id": "ua_molokija_yogurt_white_thick_3",
@@ -8165,7 +8185,11 @@
     "no_added_sugar": true,
     "source": "https://horeca.molokija.com/products/21",
     "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-gustyi-3-939585",
-    "source_type": "official_catalog_plus_current_retail_label"
+    "source_type": "official_catalog_plus_current_retail_label",
+    "carbs": 4.7,
+    "protein": 4.8,
+    "fat": 3,
+    "calories": 65
   },
   {
     "id": "ua_molokija_yogurt_greek_8",
@@ -8180,7 +8204,11 @@
     "no_added_sugar": true,
     "source": "https://horeca.molokija.com/products/21",
     "nutrition_source": "https://silpo.ua/product/yogurt-molokiia-bilyi-po-gretsky-gustyi-8-stakan-839326",
-    "source_type": "official_catalog_plus_current_retail_label"
+    "source_type": "official_catalog_plus_current_retail_label",
+    "carbs": 4.7,
+    "protein": 4,
+    "fat": 8,
+    "calories": 107
   },
   {
     "id": "ua_molokija_sour_cream_15",
@@ -8197,7 +8225,11 @@
     ],
     "source": "https://horeca.molokija.com/products/2",
     "nutrition_source": "https://silpo.ua/product/smetana-molokiia-15-838948",
-    "source_type": "official_catalog_plus_current_retail_label"
+    "source_type": "official_catalog_plus_current_retail_label",
+    "carbs": 3,
+    "protein": 2.7,
+    "fat": 15,
+    "calories": 158
   },
   {
     "id": "ua_molokija_sour_cream_20",
@@ -8211,7 +8243,11 @@
     "package_g": 370,
     "source": "https://horeca.molokija.com/products/2",
     "nutrition_source": "https://silpo.ua/product/smetana-molokiia-20-838947",
-    "source_type": "official_catalog_plus_current_retail_label"
+    "source_type": "official_catalog_plus_current_retail_label",
+    "carbs": 3.1,
+    "protein": 2.7,
+    "fat": 20,
+    "calories": 203
   },
   {
     "id": "ua_molokija_ayran_white_18",
@@ -8282,7 +8318,11 @@
     ],
     "source": "https://silpo.ua/product/syr-kyslomolochnyi-molokiia-5-838497",
     "source_type": "current_retail_nutrition",
-    "source_note": "Профіль 350 г підтверджено актуальною карткою; 200 г еколін має той самий Б/Ж/В і 116 ккал."
+    "source_note": "Профіль 350 г підтверджено актуальною карткою; 200 г еколін має той самий Б/Ж/В і 116 ккал.",
+    "carbs": 1.8,
+    "protein": 16,
+    "fat": 5,
+    "calories": 116
   },
   {
     "id": "ua_molokija_cottage_cheese_lactose_free_5",
@@ -8418,7 +8458,11 @@
     "source": "https://silpo.ua/product/maslo-solodkovershkove-molokiia-ekstra-82-878789",
     "source_catalog": "https://horeca.molokija.com/products/25",
     "source_type": "official_catalog_plus_current_retail_nutrition",
-    "source_note": "Офіційна HoReCa-сторінка підтверджує актуальний продукт 82% у фользі 180 г; точний Б/Ж/В та енергію підтверджено актуальною карткою Сільпо і Zakaz."
+    "source_note": "Офіційна HoReCa-сторінка підтверджує актуальний продукт 82% у фользі 180 г; точний Б/Ж/В та енергію підтверджено актуальною карткою Сільпо і Zakaz.",
+    "carbs": 0.8,
+    "protein": 0.5,
+    "fat": 82,
+    "calories": 742
   },
   {
     "id": "ua_molokija_butter_sandwich_62",
@@ -8472,7 +8516,11 @@
     "source_secondary": "https://auchan.zakaz.ua/uk/products/sir-molokiia-350g--04820045704543/",
     "source_catalog": "https://horeca.molokija.com/products/20",
     "source_type": "official_catalog_plus_current_retail_nutrition",
-    "verified": true
+    "verified": true,
+    "carbs": 1.8,
+    "protein": 16,
+    "fat": 0.2,
+    "calories": 72.8
   },
   {
     "id": "ua_molokija_cottage_cheese_9",
