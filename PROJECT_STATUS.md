@@ -285,3 +285,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Runtime local food catalog remains frozen at **1312 products** for 1.0.
 - APK **#498 is now USER-TESTED STABLE and the CarbCalc UA 1.0 RELEASE CANDIDATE**. It supersedes #478 as the current stable Android checkpoint.
 - Next phase: use the already-built signed AAB `CarbCalcUA-1.0.0-AAB-build-498` for Google Play Console release preparation. Do not rebuild merely to change the build number unless a release-blocking change is required.
+
+## Catalog nutrition audit checkpoint — 2026-09-27
+- Nutrition completeness audit is closed.
+- Current runtime catalog: **1310 products**.
+- **1277 (97.48%)** have complete carbs/protein/fat/energy; **33** intentionally remain incomplete where exact values could not be reliably verified.
+- Generic canned apricots and canned pears were removed because nutrition varies materially by recipe/syrup and no specific brand was represented.
+- CarbCalc UA remains carbohydrate-first. Next UX task is to add kcal/protein/fat as secondary information in product selection and diary without weakening carbohydrate prominence.
+- Do not rebuild an APK for the completed data audit alone; accumulate the upcoming nutrition-display UX changes and make one consolidated test build.
+
