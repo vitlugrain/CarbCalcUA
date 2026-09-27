@@ -7279,7 +7279,11 @@
     "kcal_100g": 87,
     "package_g": 260,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 14,
+    "protein": 2.8,
+    "fat": 2.2,
+    "calories": 87
   },
   {
     "id": "ua_galychyna_yogurt_mango_papaya_22",
@@ -7292,7 +7296,11 @@
     "kcal_100g": 73,
     "package_g": 300,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 11,
+    "protein": 2.2,
+    "fat": 2.2,
+    "calories": 73
   },
   {
     "id": "ua_galychyna_carpathian_kefir_25",
@@ -7308,7 +7316,11 @@
       870
     ],
     "source": "https://galychyna.com.ua/production/kefirs/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 3.8,
+    "protein": 2.9,
+    "fat": 2.5,
+    "calories": 49
   },
   {
     "id": "ua_galychyna_carpathian_kefir_1",
@@ -7321,7 +7333,11 @@
     "kcal_100g": 36,
     "package_g": 250,
     "source": "https://galychyna.com.ua/production/kefir_carpathian/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 3.9,
+    "protein": 2.9,
+    "fat": 1,
+    "calories": 36
   },
   {
     "id": "ua_galychyna_carpathian_kefir_lowfat",
@@ -7337,7 +7353,11 @@
       870
     ],
     "source": "https://galychyna.com.ua/production/kefirs/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 4,
+    "protein": 3,
+    "fat": 0.1,
+    "calories": 29
   },
   {
     "id": "ua_galychyna_milk_uht_1",
@@ -7394,7 +7414,11 @@
     ],
     "lactose_free": true,
     "source": "https://galychyna.com.ua/products/%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE-%D0%BF%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B5-%D0%B1%D0%B5%D0%B7%D0%BB%D0%B0%D0%BA%D1%82%D0%BE%D0%B7%D0%BD%D0%B5-25-%D0%B6%D0%B8/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 4.7,
+    "protein": 2.8,
+    "fat": 2.5,
+    "calories": 52.5
   },
   {
     "id": "ua_galychyna_ryazhanka_4",
@@ -7713,7 +7737,11 @@
     "package_g": 260,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
     "source_type": "official_manufacturer",
-    "note": "Official page reverses kcal/kJ order in text; 350 kJ corresponds to about 83 kcal."
+    "note": "Official page reverses kcal/kJ order in text; 350 kJ corresponds to about 83 kcal.",
+    "carbs": 13,
+    "protein": 2.8,
+    "fat": 2.2,
+    "calories": 83
   },
   {
     "id": "ua_galychyna_exotic_yogurt_mango_passionfruit_22",
@@ -7727,7 +7755,11 @@
     "package_g": 260,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
     "source_type": "official_manufacturer",
-    "note": "Official page reverses kcal/kJ order in text; 350 kJ corresponds to about 83 kcal."
+    "note": "Official page reverses kcal/kJ order in text; 350 kJ corresponds to about 83 kcal.",
+    "carbs": 13,
+    "protein": 2.8,
+    "fat": 2.2,
+    "calories": 83
   },
   {
     "id": "ua_galychyna_exotic_yogurt_mango_22",
@@ -7741,7 +7773,11 @@
     "package_g": 300,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
     "source_type": "official_manufacturer",
-    "note": "Official page reverses kcal/kJ order in text; 323 kJ corresponds to about 77 kcal."
+    "note": "Official page reverses kcal/kJ order in text; 323 kJ corresponds to about 77 kcal.",
+    "carbs": 12,
+    "protein": 2.2,
+    "fat": 2.2,
+    "calories": 77
   },
   {
     "id": "ua_galychyna_exotic_yogurt_pineapple_22_300",
@@ -7755,7 +7791,11 @@
     "package_g": 300,
     "source": "https://galychyna.com.ua/production/exotic-yogurts/",
     "source_type": "official_manufacturer",
-    "note": "Different recipe/nutrition from 260 g pineapple variant."
+    "note": "Different recipe/nutrition from 260 g pineapple variant.",
+    "carbs": 12,
+    "protein": 2.2,
+    "fat": 2.2,
+    "calories": 77
   },
   {
     "id": "ua_gokarpaty_spoon_kefir_22",
