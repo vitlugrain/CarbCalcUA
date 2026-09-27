@@ -11,6 +11,9 @@ class FoodCalculationResult {
   final double nutritionAmount;
   final QuantityUnit nutritionUnit;
   final double carbs;
+  final double? protein;
+  final double? fat;
+  final double? calories;
   final double xe;
 
   const FoodCalculationResult({
@@ -18,6 +21,9 @@ class FoodCalculationResult {
     required this.nutritionAmount,
     required this.nutritionUnit,
     required this.carbs,
+    required this.protein,
+    required this.fat,
+    required this.calories,
     required this.xe,
   });
 }
@@ -75,6 +81,9 @@ class FoodCalculationService {
     }
 
     final carbs = (nutritionAmount * product.carbs / 100).toDouble();
+    final protein = product.protein == null ? null : (nutritionAmount * product.protein! / 100).toDouble();
+    final fat = product.fat == null ? null : (nutritionAmount * product.fat! / 100).toDouble();
+    final calories = product.calories == null ? null : (nutritionAmount * product.calories! / 100).toDouble();
     final xe = xeGrams > 0 ? (carbs / xeGrams).toDouble() : 0.0;
 
     return FoodCalculationResult(
@@ -82,6 +91,9 @@ class FoodCalculationService {
       nutritionAmount: nutritionAmount,
       nutritionUnit: nutritionUnit,
       carbs: carbs,
+      protein: protein,
+      fat: fat,
+      calories: calories,
       xe: xe,
     );
   }
