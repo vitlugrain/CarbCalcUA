@@ -7115,7 +7115,11 @@
     "kcal_100g": 70,
     "package_g": 235,
     "source": "https://galychyna.com.ua/products/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 10,
+    "protein": 2.9,
+    "fat": 2,
+    "calories": 70
   },
   {
     "id": "ua_galychyna_milkshake_strawberry_2",
@@ -7128,7 +7132,11 @@
     "kcal_100g": 70,
     "package_g": 235,
     "source": "https://galychyna.com.ua/products/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 10,
+    "protein": 2.9,
+    "fat": 2,
+    "calories": 70
   },
   {
     "id": "ua_galychyna_milkshake_pistachio_2",
@@ -7141,7 +7149,11 @@
     "kcal_100g": 69,
     "package_g": 235,
     "source": "https://galychyna.com.ua/products/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 9.8,
+    "protein": 2.9,
+    "fat": 2,
+    "calories": 69
   },
   {
     "id": "ua_galychyna_lactose_free_cream_10",
@@ -7431,7 +7443,11 @@
     "kcal_100g": 66,
     "package_g": 800,
     "source": "https://dostavka.galychyna.com.ua/riazhanka-pet-4-800h-halychyna/",
-    "source_type": "official_manufacturer_store"
+    "source_type": "official_manufacturer_store",
+    "carbs": 3.5,
+    "protein": 3,
+    "fat": 4,
+    "calories": 66
   },
   {
     "id": "ua_galychyna_cottage_cheese_5",
@@ -7444,7 +7460,11 @@
     "kcal_100g": 120.2,
     "package_g": 300,
     "source": "https://dostavka.galychyna.com.ua/syr-kyslomolochnyi-5-300-h-halychyna/",
-    "source_type": "official_manufacturer_store"
+    "source_type": "official_manufacturer_store",
+    "carbs": 1.8,
+    "protein": 17,
+    "fat": 5,
+    "calories": 120.2
   },
   {
     "id": "ua_galychyna_cottage_cheese_12",
@@ -7471,7 +7491,11 @@
     "package_g": 300,
     "lactose_free": true,
     "source": "https://galychyna.com.ua/production/bezlaktozni-prodyktu/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 1.8,
+    "protein": 17,
+    "fat": 5,
+    "calories": 120.2
   },
   {
     "id": "ua_galychyna_glazed_curd_vanilla_15",
@@ -7526,7 +7550,11 @@
       500
     ],
     "source": "https://dostavka.galychyna.com.ua/vershky-do-kavy-halychyna-8-zhyru-tga-500-h/",
-    "source_type": "official_manufacturer_store"
+    "source_type": "official_manufacturer_store",
+    "carbs": 4,
+    "protein": 3,
+    "fat": 8,
+    "calories": 100
   },
   {
     "id": "ua_galychyna_cream_15",
