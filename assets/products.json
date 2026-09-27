@@ -7273,7 +7273,11 @@
     "package_g": 280,
     "no_added_sugar": true,
     "source": "https://galychyna.com.ua/production/yogurts_no_sugar/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 3.4,
+    "protein": 3.8,
+    "fat": 8,
+    "calories": 101
   },
   {
     "id": "ua_galychyna_carpathian_yogurt_3",
@@ -7290,7 +7294,11 @@
     ],
     "no_added_sugar": true,
     "source": "https://galychyna.com.ua/production/yogurts_no_sugar/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 3.7,
+    "protein": 4.1,
+    "fat": 3,
+    "calories": 58.2
   },
   {
     "id": "ua_galychyna_yogurt_mango_chia_22",
@@ -7735,7 +7743,11 @@
     "kcal_100g": 83.8,
     "package_g": 300,
     "source": "https://galychyna.com.ua/production/yogurts_potable/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 12,
+    "protein": 2.2,
+    "fat": 2.2,
+    "calories": 77
   },
   {
     "id": "ua_galychyna_yogurt_drink_strawberry_22",
@@ -7751,7 +7763,11 @@
       800
     ],
     "source": "https://galychyna.com.ua/production/yogurts_potable/",
-    "source_type": "official_manufacturer"
+    "source_type": "official_manufacturer",
+    "carbs": 14.9,
+    "protein": 2.2,
+    "fat": 2.2,
+    "calories": 88.2
   },
   {
     "id": "ua_galychyna_yogurt_drink_forest_berries_22",
@@ -8354,7 +8370,11 @@
     "source": "https://silpo.ua/product/yogurt-molokiia-polunytsia-1-4-pliashka-905468",
     "source_catalog": "https://horeca.molokija.com/products/21",
     "source_type": "official_current_catalog_plus_current_retail_nutrition",
-    "source_note": "Актуальні пляшки 250 г і PET 770 г мають однаковий профіль. Старіша плівка 400 г має іншу рецептуру 9.7/2.8/1.4 і не об'єднана з поточним записом."
+    "source_note": "Актуальні пляшки 250 г і PET 770 г мають однаковий профіль. Старіша плівка 400 г має іншу рецептуру 9.7/2.8/1.4 і не об'єднана з поточним записом.",
+    "carbs": 10.5,
+    "protein": 2.6,
+    "fat": 1.4,
+    "calories": 65
   },
   {
     "id": "ua_molokija_yogurt_apricot_14_current",
@@ -8540,7 +8560,11 @@
     "source_secondary": "https://metro.zakaz.ua/uk/products/sir-molokiia-350g-ukrayina--04820045704536/",
     "source_catalog": "https://horeca.molokija.com/products/20",
     "source_type": "official_catalog_plus_current_retail_nutrition",
-    "verified": true
+    "verified": true,
+    "carbs": 1.8,
+    "protein": 16,
+    "fat": 9,
+    "calories": 152
   },
   {
     "id": "ua_molokija_milk_kazkove_lactose_free_pasteurized_25",
