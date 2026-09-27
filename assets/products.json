@@ -2414,26 +2414,6 @@
     "verified": true
   },
   {
-    "id": "ua_prodiabet_apricots_canned",
-    "name": "Абрикоси консервовані",
-    "category": "Фрукти та ягоди",
-    "state": "prepared",
-    "carbs": 21,
-    "calories": 85,
-    "glycemic_index": 91,
-    "glycemic_load_100g": 19.1,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true,
-    "aliases": [
-      "консервовані абрикоси",
-      "абрикоси консервовані"
-    ]
-  },
-  {
     "id": "ua_prodiabet_pineapple",
     "name": "Ананас, свіжий",
     "category": "Фрукти та ягоди",
@@ -2474,26 +2454,6 @@
     "verified": true
   },
   {
-    "id": "ua_prodiabet_pears_canned",
-    "name": "Груші консервовані",
-    "category": "Фрукти та ягоди",
-    "state": "prepared",
-    "carbs": 18.2,
-    "calories": 70,
-    "glycemic_index": 44,
-    "glycemic_load_100g": 8,
-    "nutrition_basis": "100g",
-    "quantity_units": [
-      "г"
-    ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true,
-    "aliases": [
-      "консервовані груші",
-      "груші консервовані"
-    ]
-  },
-  {
     "id": "ua_prodiabet_melon",
     "name": "Диня, свіжа",
     "category": "Фрукти та ягоди",
@@ -2518,8 +2478,8 @@
     "name": "Інжир, свіжий",
     "category": "Фрукти та ягоди",
     "state": "raw",
-    "carbs": 11.2,
-    "calories": 49,
+    "carbs": 19.18,
+    "calories": 74,
     "glycemic_index": 35,
     "glycemic_load_100g": 3.9,
     "nutrition_basis": "100g",
@@ -2529,16 +2489,19 @@
     "aliases": [
       "інжир"
     ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "source": "USDA FoodData Central — standard reference nutrition data",
+    "verified": true,
+    "protein": 0.75,
+    "fat": 0.3,
+    "source_ref": "Complete macro and energy set per 100 g; replaces legacy mixed ProDiabet nutrition values. Glycemic-index fields retained separately from prior source."
   },
   {
     "id": "ua_prodiabet_mango",
     "name": "Манго, свіже",
     "category": "Фрукти та ягоди",
     "state": "raw",
-    "carbs": 11.5,
-    "calories": 67,
+    "carbs": 14.98,
+    "calories": 60,
     "glycemic_index": 55,
     "glycemic_load_100g": 6.3,
     "nutrition_basis": "100g",
@@ -2548,51 +2511,60 @@
     "aliases": [
       "манго"
     ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
-    "verified": true
+    "source": "USDA FoodData Central — standard reference nutrition data",
+    "verified": true,
+    "protein": 0.82,
+    "fat": 0.38,
+    "source_ref": "Complete macro and energy set per 100 g; replaces legacy mixed ProDiabet nutrition values. Glycemic-index fields retained separately from prior source."
   },
   {
     "id": "ua_prodiabet_dates_fresh",
     "name": "Фініки свіжі",
     "category": "Фрукти та ягоди",
     "state": "raw",
-    "carbs": 68.5,
-    "calories": 271,
+    "carbs": 74.97,
+    "calories": 277,
     "glycemic_index": 102,
     "glycemic_load_100g": 69.9,
     "nutrition_basis": "100g",
     "quantity_units": [
       "г"
     ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
+    "source": "USDA FoodData Central — standard reference nutrition data",
     "verified": true,
     "aliases": [
       "фініки",
       "фінік",
       "фініки свіжі",
       "свіжі фініки"
-    ]
+    ],
+    "protein": 1.81,
+    "fat": 0.15,
+    "source_ref": "Complete macro and energy set per 100 g; replaces legacy mixed ProDiabet nutrition values. Glycemic-index fields retained separately from prior source."
   },
   {
     "id": "ua_prodiabet_dates_dried",
     "name": "Фініки сушені",
     "category": "Сухофрукти",
     "state": "prepared",
-    "carbs": 72.3,
-    "calories": 306,
+    "carbs": 75.03,
+    "calories": 282,
     "glycemic_index": 103,
     "glycemic_load_100g": 74.5,
     "nutrition_basis": "100g",
     "quantity_units": [
       "г"
     ],
-    "source": "ProDiabet.ua — Таблиця глікемічного індексу продуктів",
+    "source": "USDA FoodData Central — standard reference nutrition data",
     "verified": true,
     "aliases": [
       "фініки сушені",
       "сушені фініки",
       "фінік сушений"
-    ]
+    ],
+    "protein": 2.45,
+    "fat": 0.39,
+    "source_ref": "Complete macro and energy set per 100 g; replaces legacy mixed ProDiabet nutrition values. Glycemic-index fields retained separately from prior source."
   },
   {
     "id": "ua_prodiabet_halva_sunflower",
