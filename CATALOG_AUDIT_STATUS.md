@@ -443,3 +443,14 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Device search checks passed for `картопля`, `печиво`, and `Орео/Oreo`.
 - Barcode scanner works on the release candidate. Products returned by Open Food Facts are treated as external online lookup results and are **not automatically persisted into the controlled local catalog**; they can be used for diary entries. This is intentional because third-party barcode data can be incorrect or mismatched.
 - Current release artifacts from successful CI run #498: `CarbCalcUA-1.0.0-build-498` and signed `CarbCalcUA-1.0.0-AAB-build-498`.
+
+## Nutrition completeness audit — Galychyna / Molokija — 2026-09-27
+- Runtime catalog remains **1312 products**; this pass did not add or remove products.
+- Audit scope: completeness of `carbs`, `protein`, `fat`, and energy (`calories` or legacy `kcal`).
+- After verified nutrition-data completion work, **1270 / 1312 products (96.80%)** have a complete B/F/C + kcal set; **42** records remain incomplete.
+- Galychyna / GoKarpaty / YOMMY and Molokija review is considered **closed for this pass**.
+- **32** records from those brand families remain incomplete because a sufficiently reliable exact nutrition set for the specific product/version was not confirmed. They are intentionally left incomplete rather than filled by analogy or estimation.
+- Only values confirmed for the exact product were added. No missing nutrient values were inferred from similar flavors, fat percentages, recipes, or macro-to-energy calculations.
+- Nutrition completion commits in this audit: `35e5c9cb9a41b296ab85fcf126143114e5f69d7d`, `1366ac62feced1c51b921f40dd01fccf29903c1b`, `dd39ab9820fb96d6854d3140cea449c0bb645889`, `b3e55e97fa6e35d0c02536460428ce0995b5a0bf`, `c37660982b9cc04fa808846da7afe1aaa7842b4e`, `64bcc260e2e80ef5a68d717839df9dcbcbf888f5`.
+- APK #498 is **not rebuilt** as part of this data audit. Decide separately whether these catalog improvements are included before Play release or in a later update.
+
