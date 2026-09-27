@@ -4,10 +4,10 @@ class Product {
   final String category;
   final String state;
   final double carbs;
-  final double protein;
-  final double fat;
+  final double? protein;
+  final double? fat;
   final double fiber;
-  final double calories;
+  final double? calories;
   final String? barcode;
   final List<String> barcodes;
   final String? manufacturer;
@@ -25,10 +25,10 @@ class Product {
     required this.name,
     required this.category,
     required this.carbs,
-    this.protein = 0,
-    this.fat = 0,
+    this.protein,
+    this.fat,
     this.fiber = 0,
-    this.calories = 0,
+    this.calories,
     this.state = 'raw',
     this.barcode,
     this.barcodes = const [],
@@ -74,12 +74,12 @@ class Product {
         field: 'carbs',
         productId: id,
       ),
-      protein: _numberOrZero(
+      protein: _numberOrNull(
         pick(const ['protein', 'protein_100g'], const ['protein_g', 'protein']),
         field: 'protein',
         productId: id,
       ),
-      fat: _numberOrZero(
+      fat: _numberOrNull(
         pick(const ['fat', 'fat_100g'], const ['fat_g', 'fat']),
         field: 'fat',
         productId: id,
@@ -89,7 +89,7 @@ class Product {
         field: 'fiber',
         productId: id,
       ),
-      calories: _numberOrZero(
+      calories: _numberOrNull(
         pick(const ['calories', 'kcal_100g'], const ['kcal', 'calories']),
         field: 'calories',
         productId: id,
