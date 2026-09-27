@@ -513,7 +513,7 @@ class _AddFoodPageState extends State<AddFoodPage>{
           return Card(child:ListTile(
             title:const Text('Вуглеводи'),
             subtitle:Column(crossAxisAlignment:CrossAxisAlignment.start,mainAxisSize:MainAxisSize.min,children:[
-              Text('${displayXe.toStringAsFixed(2)} ХО'),
+              Text('${displayXe.toStringAsFixed(2)} ХО',style:const TextStyle(fontSize:18,fontWeight:FontWeight.bold)),
               if(secondary.isNotEmpty) Text(secondary.join(' · '),style:TextStyle(fontSize:12,color:Theme.of(context).colorScheme.onSurfaceVariant)),
             ]),
             trailing:Text('${displayCarbs.toStringAsFixed(1)} г',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold)),
@@ -937,7 +937,9 @@ class _DiaryPageState extends State<DiaryPage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  '${(row['carbs'] as num).toStringAsFixed(1)} г',
+                                  '${(row['carbs'] as num).toStringAsFixed(1)} г\n${(row['xe'] as num).toStringAsFixed(2)} ХО',
+                                  textAlign:TextAlign.right,
+                                  style:const TextStyle(fontWeight:FontWeight.bold),
                                 ),
                                 PopupMenuButton<String>(
                                   onSelected: (value) async {
