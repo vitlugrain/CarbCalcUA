@@ -76,13 +76,9 @@ class Product {
       ),
       protein: _numberOrNull(
         pick(const ['protein', 'protein_100g'], const ['protein_g', 'protein']),
-        field: 'protein',
-        productId: id,
       ),
       fat: _numberOrNull(
         pick(const ['fat', 'fat_100g'], const ['fat_g', 'fat']),
-        field: 'fat',
-        productId: id,
       ),
       fiber: _numberOrZero(
         pick(const ['fiber', 'fiber_100g'], const ['fiber_g', 'fiber']),
@@ -91,8 +87,6 @@ class Product {
       ),
       calories: _numberOrNull(
         pick(const ['calories', 'kcal_100g'], const ['kcal', 'calories']),
-        field: 'calories',
-        productId: id,
       ),
       state: j['state'] ?? 'raw',
       barcode: _stringOrNull(j['barcode'] ?? j['ean']),
