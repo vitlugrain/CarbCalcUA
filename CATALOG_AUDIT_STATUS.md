@@ -472,3 +472,15 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Next catalog task: first inventory the current bakery/bun entries to avoid duplicates, then identify useful missing common items.
 - For generic bakery foods, verified standard recipe/reference nutrition may be considered when the item is explicitly represented as a generic recipe-based food. For branded bakery products, continue requiring exact product nutrition; do not infer values from similar products.
 - Preserve the agreed piece-unit rule: pieces are allowed for approved bakery/cookie items only when a reliable grams-per-piece value is defined; grams remain available.
+
+
+## Bakery / buns audit CLOSED — 2026-09-28
+- Follow-up bakery audit requested after APK #522 is **closed for this pass**.
+- Catalog size after the bakery expansion: **1333 products** (from 1310 at the prior nutrition-audit checkpoint).
+- Added **23 verified bakery products** across the pass, focused on common buns and bakery rather than indiscriminate catalog growth.
+- Coverage added includes Kyivkhlib buns; Auchan poppy, cheese and custard bakery; Silpo poppy buns, cheese baguettes, custard items, cinnamon/raisin items and brioche; plus a Boulangerie raisin/candied-fruit puff item.
+- Every new branded record has exact carbohydrate/protein/fat/kcal data from a product-specific retail/manufacturer source. No nutrition was inferred by analogy.
+- Piece units were enabled only when exact product/piece weight was reliable. Package-only or variable-weight products remain grams-only.
+- Known low-value package-size duplicates and candidates without a complete reliable nutrition set were skipped.
+- Final data commit: `90f4c8a2e9f1050fa55373860617a273c0009caf`.
+- Next action is **not more bakery auditing**: include the accumulated catalog changes in the next consolidated control APK when appropriate, then verify search/add-to-diary behavior and diary preservation on the real device.
