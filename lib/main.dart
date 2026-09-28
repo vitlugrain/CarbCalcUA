@@ -1328,10 +1328,50 @@ class _CustomProductDialogState extends State<CustomProductDialog> {
   ])),actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('Скасувати')),FilledButton(onPressed:n.text.trim().isNotEmpty&&c.text.isNotEmpty?()=>Navigator.pop(context,Product(id:'custom_${DateTime.now().microsecondsSinceEpoch}',name:n.text.trim(),category:cat.text.trim(),carbs:_num(c)??0,protein:_num(p)??0,fat:_num(f)??0,fiber:_num(fi)??0,calories:_num(cal)??0,barcode:barcode.text.trim().isEmpty?null:barcode.text.trim(),source:'Користувач',gramsPerPiece:_num(gramsPerPiece),gramsPerMl:_num(gramsPerMl),servingGrams:_num(servingGrams))):null,child:const Text('Зберегти'))]);}
 }
 
-class ReportsPage extends StatefulWidget{const ReportsPage({super.key});@override State<ReportsPage> createState()=>_ReportsPageState();}
-class _ReportsPageState extends State<ReportsPage>{int days=1;DateTime end=DateTime.now();DateTime get start=>DateTime(end.year,end.month,end.day).subtract(Duration(days:days-1));Future<List<Map<String,dynamic>>> load()async=> (await AppDb.db).query('diary',where:'date>=? AND date<?',whereArgs:[_dateKey(start),_dateKey(end.add(const Duration(days:1)))],orderBy:'date ASC,id ASC');@override Widget build(BuildContext context){return Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<List<Map<String,dynamic>>>(future:load(),builder:(context,s){if(!s.hasData)return const Center(child:CircularProgressIndicator());final rows=s.data!;final total=rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());return ListView(padding:const EdgeInsets.all(16),children:[DropdownButtonFormField<int>(value:days,decoration:const InputDecoration(labelText:'Період',border:OutlineInputBorder()),items:const[DropdownMenuItem(value:1,child:Text('День')),DropdownMenuItem(value:7,child:Text('7 днів')),DropdownMenuItem(value:30,child:Text('30 днів'))],onChanged:(v){if(v!=null){setState(()=>days=v);}}),const SizedBox(height:10),Text('${_prettyDate(start)} — ${_prettyDate(end)}'),FutureBuilder<_NutritionSummary>(future:_nutritionSummaryForDiaryRows(rows),builder:(context,nutritionSnapshot){final n=nutritionSnapshot.data;return Card(child:ListTile(title:const Text('Підсумок за період'),subtitle:n==null?null:Text(n.secondaryText,style:TextStyle(fontSize:12,color:Theme.of(context).colorScheme.onSurfaceVariant)),trailing:Text('${total.toStringAsFixed(1)} г',style:const TextStyle(fontSize:22,fontWeight:FontWeight.bold))));}),if(rows.isNotEmpty)SingleChildScrollView(scrollDirection:Axis.horizontal,child:DataTable(columns:const[DataColumn(label:Text('Дата')),DataColumn(label:Text('Прийом')),DataColumn(label:Text('Час')),DataColumn(label:Text('Продукт')),DataColumn(label:Text('Кількість')),DataColumn(label:Text('Вуглеводи'))],rows:rows.map((r)=>DataRow(cells:[DataCell(Text(_prettyDate(DateTime.parse(r['date'] as String)))),DataCell(Text((r['meal'] as String?)??'')),DataCell(Text((r['meal_time'] as String?)??'')),DataCell(Text(r['name'] as String)),DataCell(Text(_displayDiaryAmount(r))),DataCell(Text('${(r['carbs'] as num).toStringAsFixed(1)} г'))])).toList()))else const Card(child:Padding(padding:EdgeInsets.all(18),child:Text('За вибраний період записів немає.'))),const SizedBox(height:10),Text('Середнє за день: ${(total/days).toStringAsFixed(1)} г')]);}));}
-}
 
+class ReportsPage extends StatefulWidget{const ReportsPage({super.key});@override State<ReportsPage> createState()=>_ReportsPageState();}
+class _ReportDay{final DateTime date;final List<Map<String,dynamic>> rows;final double carbs,xe;final _NutritionSummary nutrition;const _ReportDay(this.date,this.rows,this.carbs,this.xe,this.nutrition);}
+class _ReportData{final List<_ReportDay> days;final double carbs,xe;final _NutritionSummary nutrition;const _ReportData(this.days,this.carbs,this.xe,this.nutrition);}
+class _ReportsPageState extends State<ReportsPage>{
+ int days=7;DateTime end=DateTime.now();String metric='Вуглеводи';bool exporting=false;
+ DateTime get start=>DateTime(end.year,end.month,end.day).subtract(Duration(days:days-1));
+ Future<_ReportData> load()async{
+  final rows=await (await AppDb.db).query('diary',where:'date>=? AND date<?',whereArgs:[_dateKey(start),_dateKey(end.add(const Duration(days:1)))],orderBy:'date ASC,id ASC');
+  final products=await loadAllProducts();final byId={for(final p in products)p.id:p};final out=<_ReportDay>[];
+  for(var i=0;i<days;i++){final d=start.add(Duration(days:i));final rr=rows.where((x)=>x['date']==_dateKey(d)).toList();final c=rr.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble());final xe=rr.fold<double>(0,(a,x)=>a+(x['xe'] as num).toDouble());out.add(_ReportDay(d,rr,c,xe,_nutritionSummaryForRowsAndProducts(rr,byId)));}
+  return _ReportData(out,rows.fold<double>(0,(a,x)=>a+(x['carbs'] as num).toDouble()),rows.fold<double>(0,(a,x)=>a+(x['xe'] as num).toDouble()),_nutritionSummaryForRowsAndProducts(rows,byId));
+ }
+ double value(_ReportDay d){if(metric=='Білки')return d.nutrition.protein;if(metric=='Жири')return d.nutrition.fat;if(metric=='Ккал')return d.nutrition.calories;return d.carbs;}
+ Future<void> export(_ReportData data)async{
+  if(exporting)return;setState(()=>exporting=true);
+  try{final book=xl.Excel.createExcel();final sh=book['Звіт'];final def=book.getDefaultSheet();if(def!=null&&def!='Звіт')book.delete(def);
+   sh.appendRow(['Дата','Вуглеводи, г','ХО','Білки, г','Жири, г','Ккал'].map(xl.TextCellValue.new).toList());
+   for(final d in data.days){sh.appendRow([xl.TextCellValue(_prettyDate(d.date)),xl.DoubleCellValue(d.carbs),xl.DoubleCellValue(d.xe),xl.DoubleCellValue(d.nutrition.protein),xl.DoubleCellValue(d.nutrition.fat),xl.DoubleCellValue(d.nutrition.calories)]);}
+   sh.appendRow([xl.TextCellValue('Разом'),xl.DoubleCellValue(data.carbs),xl.DoubleCellValue(data.xe),xl.DoubleCellValue(data.nutrition.protein),xl.DoubleCellValue(data.nutrition.fat),xl.DoubleCellValue(data.nutrition.calories)]);
+   final bytes=book.encode();if(bytes==null)throw StateError('Excel');final dir=await getTemporaryDirectory();final file=File(p.join(dir.path,'CarbCalcUA_'+_dateKey(start)+'_'+_dateKey(end)+'.xlsx'));await file.writeAsBytes(bytes,flush:true);
+   await SharePlus.instance.share(ShareParams(files:[XFile(file.path)],subject:'CarbCalc UA — звіт',text:'Звіт CarbCalc UA: '+_prettyDate(start)+' — '+_prettyDate(end)));
+  }catch(e){if(mounted)ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Не вдалося експортувати звіт: '+e.toString())));}finally{if(mounted)setState(()=>exporting=false);}
+ }
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<_ReportData>(future:load(),builder:(context,s){
+  if(!s.hasData)return const Center(child:CircularProgressIndicator());final d=s.data!;
+  return ListView(padding:const EdgeInsets.all(16),children:[
+   DropdownButtonFormField<int>(value:days,decoration:const InputDecoration(labelText:'Період',border:OutlineInputBorder()),items:const[DropdownMenuItem(value:1,child:Text('День')),DropdownMenuItem(value:7,child:Text('7 днів')),DropdownMenuItem(value:30,child:Text('30 днів'))],onChanged:(v){if(v!=null)setState(()=>days=v);}),
+   const SizedBox(height:10),Text(_prettyDate(start)+' — '+_prettyDate(end)),
+   Card(child:Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[const Text('Підсумок за період',style:TextStyle(fontSize:17,fontWeight:FontWeight.w600)),const SizedBox(height:8),Text(d.carbs.toStringAsFixed(1)+' г вуглеводів',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold)),Text(d.xe.toStringAsFixed(2)+' ХО'),Text(d.nutrition.secondaryText)]))),
+   const SizedBox(height:8),const Text('По днях',style:TextStyle(fontSize:18,fontWeight:FontWeight.w600)),
+   ...d.days.reversed.map((x)=>Card(child:ListTile(onTap:()=>Navigator.of(context).push(MaterialPageRoute(builder:(_)=>Scaffold(appBar:AppBar(),body:SafeArea(child:DiaryPage(onChanged:(){},initialDate:x.date))))),title:Text(_prettyDate(x.date),style:const TextStyle(fontWeight:FontWeight.w600)),subtitle:Text(x.nutrition.secondaryText),trailing:Text(x.carbs.toStringAsFixed(1)+' г\n'+x.xe.toStringAsFixed(2)+' ХО',textAlign:TextAlign.right)))),
+   const SizedBox(height:12),const Text('Графік',style:TextStyle(fontSize:18,fontWeight:FontWeight.w600)),
+   DropdownButtonFormField<String>(value:metric,items:['Вуглеводи','Білки','Жири','Ккал'].map((x)=>DropdownMenuItem(value:x,child:Text(x))).toList(),onChanged:(v){if(v!=null)setState(()=>metric=v);}),
+   const SizedBox(height:8),Card(child:Padding(padding:const EdgeInsets.all(12),child:SizedBox(height:190,child:_ReportBars(days:d.days,value:value)))),
+   Text('Середнє за день: '+(d.carbs/days).toStringAsFixed(1)+' г вуглеводів'),const SizedBox(height:12),
+   FilledButton.icon(onPressed:exporting?null:()=>export(d),icon:const Icon(Icons.ios_share),label:Text(exporting?'Створення Excel…':'Експорт Excel / Поділитися')),
+  ]);
+ }));
+}
+class _ReportBars extends StatelessWidget{
+ final List<_ReportDay> days;final double Function(_ReportDay) value;const _ReportBars({required this.days,required this.value});
+ @override Widget build(BuildContext context){final max=days.fold<double>(0,(m,d)=>value(d)>m?value(d):m);return SingleChildScrollView(scrollDirection:Axis.horizontal,child:Row(crossAxisAlignment:CrossAxisAlignment.end,children:days.map((d){final v=value(d);final h=max<=0?0.0:130*v/max;return SizedBox(width:days.length>7?34:46,child:Column(mainAxisAlignment:MainAxisAlignment.end,children:[Text(v.toStringAsFixed(0),style:const TextStyle(fontSize:10)),Container(width:18,height:h,decoration:BoxDecoration(color:Theme.of(context).colorScheme.primary,borderRadius:const BorderRadius.vertical(top:Radius.circular(4)))),const SizedBox(height:4),Text(d.date.day.toString(),style:const TextStyle(fontSize:10))]));}).toList()));}
+}
 class _NutritionSummary{
   final double calories,protein,fat;
   final bool caloriesComplete,proteinComplete,fatComplete;
