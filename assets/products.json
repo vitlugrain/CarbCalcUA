@@ -27999,5 +27999,67 @@
     "units": [
       "г"
     ]
+  },
+  {
+    "id": "ua_auchan_cheese_stick_100",
+    "name": "Сирна паличка Auchan",
+    "category": "Хліб та випічка",
+    "carbs": 44.3,
+    "protein": 9,
+    "fat": 5.8,
+    "kcal": 257,
+    "manufacturer": "Auchan",
+    "source": "Auchan / Zakaz.ua, перевірено 2026-09-28",
+    "aliases": [
+      "auchan сирна паличка",
+      "ашан сирна паличка",
+      "сирна паличка"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 100
+  },
+  {
+    "id": "ua_silpo_poppy_bun_100",
+    "name": "Булочка Сільпо з маком",
+    "category": "Хліб та випічка",
+    "carbs": 59,
+    "protein": 9.6,
+    "fat": 15.2,
+    "kcal": 411,
+    "manufacturer": "Сільпо",
+    "source": "Сільпо, перевірено 2026-09-28",
+    "aliases": [
+      "сільпо булочка з маком",
+      "булочка з маком сільпо"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 100
+  },
+  {
+    "id": "ua_silpo_poppy_fondant_bun_100",
+    "name": "Булка Сільпо з маком та помадкою",
+    "category": "Хліб та випічка",
+    "carbs": 68.6,
+    "protein": 8.8,
+    "fat": 12.1,
+    "kcal": 419,
+    "manufacturer": "Сільпо",
+    "source": "Сільпо, перевірено 2026-09-28",
+    "aliases": [
+      "сільпо з маком та помадкою",
+      "булка з маком і помадкою",
+      "булочка з маком та помадкою"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 100
   }
 ]
