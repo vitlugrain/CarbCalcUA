@@ -144,3 +144,22 @@ Do not create a new APK after every small correction. Accumulate a meaningful lo
 - Verified on device: kcal/protein/fat display works in Add Food, diary, and reports; carbohydrate/XE functionality remains present.
 - Reports are functional but UX/content should be reviewed in a later pass; this is a follow-up, not a reported crash/regression.
 - Content follow-up: bakery/bun selection feels too limited. Audit/expand bakery data separately; accumulate changes before the next APK rather than rebuilding for each catalog item.
+
+
+## Control APK #537 — Reports redesign — 2026-09-28
+Status: **CI GREEN / AWAITING REAL-DEVICE TEST**.
+
+Source under test: `5a76c93890702637edd94702ef6e24127ab9d7ac`.
+Artifact: `CarbCalcUA-1.0.0-build-537`.
+
+Real-device checklist (install over #522; do not uninstall):
+- existing diary/history is preserved;
+- Reports: Day / 7 days / 30 days show correct period totals for carbohydrates/XE and kcal/protein/fat;
+- daily cards show correct date totals and are ordered newest first;
+- tapping a daily card opens Diary on that exact date;
+- chart switches between Carbohydrates / Protein / Fat / kcal and remains readable for 7 and 30 days;
+- Excel export opens the Android Share sheet and creates a readable .xlsx with Date, Carbohydrates, XE, Protein, Fat, kcal;
+- bakery products added after #522 are searchable and can be added normally;
+- existing Add Food / Diary behavior and quantity overwrite remain unchanged.
+
+Do not mark #537 USER-TESTED STABLE until this checklist is confirmed on the user's phone.
