@@ -6,6 +6,10 @@ import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:excel/excel.dart' as xl;
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'dart:io';
 import 'models/product.dart';
 import 'models/quantity.dart';
 import 'services/food_search_service.dart';
@@ -619,13 +623,15 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
 
 class DiaryPage extends StatefulWidget {
   final VoidCallback onChanged;
-  const DiaryPage({super.key, required this.onChanged});
+  final DateTime? initialDate;
+  const DiaryPage({super.key, required this.onChanged, this.initialDate});
   @override
   State<DiaryPage> createState() => _DiaryPageState();
 }
 
 class _DiaryPageState extends State<DiaryPage> {
-  DateTime date = DateTime.now();
+  late DateTime date;
+  @override void initState(){super.initState();final d=widget.initialDate??DateTime.now();date=DateTime(d.year,d.month,d.day);}
 
   String get key => _dateKey(date);
 
