@@ -294,3 +294,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - CarbCalc UA remains carbohydrate-first. Next UX task is to add kcal/protein/fat as secondary information in product selection and diary without weakening carbohydrate prominence.
 - Do not rebuild an APK for the completed data audit alone; accumulate the upcoming nutrition-display UX changes and make one consolidated test build.
 
+
+
+## Nutrition UI checkpoint — APK #522 USER VERIFIED — 2026-09-28
+- GitHub Actions run **#522** completed successfully from commit `7dddbdae295f6fd99a900b332bfd6bccc4ee5cce` after nullable nutrition/parser fixes.
+- User installed APK #522 over the existing app without uninstalling; the existing food diary was preserved.
+- Real-device verification: kcal, protein and fat are shown when adding food, in diary entries/totals, and in reports. Carbohydrates and XE remain the primary metrics.
+- Nutrition aggregation preserves missing-data semantics: missing catalog nutrition is not intentionally invented; incomplete aggregate nutrition is marked approximate where applicable.
+- APK **#522 is the current USER-TESTED STABLE checkpoint**, superseding #498 for the post-nutrition-UI code line.
+- Reports work is not considered final UX; user wants to revisit/report design separately before release finalization.
+- New catalog/content follow-up: the user reports too few buns/bakery items in Add Food. Next chat should audit existing bakery/bun coverage first, then expand it. Reliable recipe-derived nutrition may be used for clearly generic recipe-based bakery items when appropriate, while branded products still require exact product data and missing values must not be invented by analogy.
+- Keep the existing unit policy: grams for solids; ml for drinks; pieces only for explicitly agreed bakery/cookie items with a defined piece weight. Avoid broad catalog expansion unrelated to this bakery task.
