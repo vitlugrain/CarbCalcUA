@@ -1354,7 +1354,7 @@ class _ReportsPageState extends State<ReportsPage>{
  }
  @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<_ReportData>(future:load(),builder:(context,s){
   if(!s.hasData)return const Center(child:CircularProgressIndicator());final d=s.data!;
-  return ListView(padding:const EdgeInsets.all(16),children:[
+  return SafeArea(top:false,child:ListView(padding:const EdgeInsets.fromLTRB(16,16,16,24),children:[
    DropdownButtonFormField<int>(value:days,decoration:const InputDecoration(labelText:'Період',border:OutlineInputBorder()),items:const[DropdownMenuItem(value:1,child:Text('День')),DropdownMenuItem(value:7,child:Text('7 днів')),DropdownMenuItem(value:30,child:Text('30 днів'))],onChanged:(v){if(v!=null)setState(()=>days=v);}),
    const SizedBox(height:10),Text(_prettyDate(start)+' — '+_prettyDate(end)),
    Card(child:Padding(padding:const EdgeInsets.all(16),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[const Text('Підсумок за період',style:TextStyle(fontSize:17,fontWeight:FontWeight.w600)),const SizedBox(height:8),Text(d.carbs.toStringAsFixed(1)+' г вуглеводів',style:const TextStyle(fontSize:24,fontWeight:FontWeight.bold)),Text(d.xe.toStringAsFixed(2)+' ХО'),Text(d.nutrition.secondaryText)]))),
@@ -1365,7 +1365,7 @@ class _ReportsPageState extends State<ReportsPage>{
    const SizedBox(height:8),Card(child:Padding(padding:const EdgeInsets.all(12),child:SizedBox(height:190,child:_ReportBars(days:d.days,value:value)))),
    Text('Середнє за день: '+(d.carbs/days).toStringAsFixed(1)+' г вуглеводів'),const SizedBox(height:12),
    FilledButton.icon(onPressed:exporting?null:()=>export(d),icon:const Icon(Icons.ios_share),label:Text(exporting?'Створення Excel…':'Експорт Excel / Поділитися')),
-  ]);
+  ]));
  }));
 }
 class _ReportBars extends StatelessWidget{
