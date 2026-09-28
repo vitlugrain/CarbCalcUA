@@ -27857,5 +27857,87 @@
     "units": [
       "г"
     ]
+  },
+  {
+    "id": "ua_kyivkhlib_maliatko_buns",
+    "name": "Булочки Київхліб Малятко",
+    "category": "Хліб та випічка",
+    "carbs": 59,
+    "protein": 8.1,
+    "fat": 7.2,
+    "kcal": 338,
+    "manufacturer": "Київхліб",
+    "source": "Офіційний сайт Київхліб, перевірено 2026-09-28",
+    "aliases": [
+      "київхліб малятко",
+      "булочка малятко",
+      "малятко київхліб"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 50
+  },
+  {
+    "id": "ua_kyivkhlib_kyivska_cherry_bun_100",
+    "name": "Булочка Київхліб Київська здобна з вишнею",
+    "category": "Хліб та випічка",
+    "carbs": 54.6,
+    "protein": 7.9,
+    "fat": 12,
+    "kcal": 356,
+    "manufacturer": "Київхліб",
+    "source": "VARUS / Listex, перевірено 2026-09-28",
+    "aliases": [
+      "київська здобна з вишнею",
+      "булочка з вишнею київхліб",
+      "київхліб з вишнею"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 100
+  },
+  {
+    "id": "ua_auchan_sweet_poppy_bun_100",
+    "name": "Булочка Auchan здобна з маком",
+    "category": "Хліб та випічка",
+    "carbs": 64.2,
+    "protein": 10.78,
+    "fat": 10.78,
+    "kcal": 403.31,
+    "manufacturer": "Auchan",
+    "source": "Auchan / Zakaz.ua, перевірено 2026-09-28",
+    "aliases": [
+      "ашан булочка з маком",
+      "auchan булочка з маком",
+      "здобна з маком"
+    ],
+    "units": [
+      "г",
+      "шт"
+    ],
+    "gramsPerPiece": 100
+  },
+  {
+    "id": "ua_agrola_hotdog_bun_frozen",
+    "name": "Булочка Agrola для хот-дога з отвором, заморожена",
+    "category": "Хліб та випічка",
+    "carbs": 53.2,
+    "protein": 7.8,
+    "fat": 4.4,
+    "kcal": 284,
+    "manufacturer": "Agrola",
+    "source": "Auchan / Zakaz.ua, перевірено 2026-09-28",
+    "aliases": [
+      "agrola хот-дог",
+      "агрола булочка для хот-дога",
+      "булочка хот-дог з отвором"
+    ],
+    "units": [
+      "г"
+    ]
   }
 ]
