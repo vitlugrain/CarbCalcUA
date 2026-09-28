@@ -305,3 +305,14 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Reports work is not considered final UX; user wants to revisit/report design separately before release finalization.
 - New catalog/content follow-up: the user reports too few buns/bakery items in Add Food. Next chat should audit existing bakery/bun coverage first, then expand it. Reliable recipe-derived nutrition may be used for clearly generic recipe-based bakery items when appropriate, while branded products still require exact product data and missing values must not be invented by analogy.
 - Keep the existing unit policy: grams for solids; ml for drinks; pieces only for explicitly agreed bakery/cookie items with a defined piece weight. Avoid broad catalog expansion unrelated to this bakery task.
+
+
+## Bakery / buns expansion CLOSED — 2026-09-28
+- Bakery/buns follow-up after APK #522 is complete for this pass.
+- Runtime catalog expanded from **1310 to 1333 products** with verified everyday bakery items; no approximate branded nutrition was introduced.
+- Added coverage includes Kyivkhlib sweet/burger buns, Auchan poppy/cheese/custard bakery, Silpo poppy buns, cheese baguettes, custard bakery, cinnamon/raisin bakery, brioche, and Boulangerie puff pastry.
+- Exact B/F/C/kcal were required for every added branded item. Piece units were added only where a reliable per-piece weight was confirmed; otherwise grams only.
+- Duplicate/near-duplicate variants were intentionally skipped where they added little catalog value (for example the same baguette in another package size).
+- Final bakery data commit for this pass: `90f4c8a2e9f1050fa55373860617a273c0009caf`.
+- **Do not continue broad bakery expansion now.** Treat this workstream as closed unless real-device testing reveals a specific missing common product or data problem.
+- APK #522 remains the latest USER-TESTED STABLE build. Bakery changes are accumulated after #522 and have **not yet been included in a new control APK**.
