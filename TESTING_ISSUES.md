@@ -136,3 +136,11 @@ Do not create a new APK after every small correction. Accumulate a meaningful lo
 - No release-blocking regression was reported in this verification cycle.
 - Release artifacts: `CarbCalcUA-1.0.0-build-498` (APK) and `CarbCalcUA-1.0.0-AAB-build-498` (signed AAB).
 - Next action: proceed to Google Play Console preparation with AAB #498. Any later code/catalog change requires a new CI build and another appropriate verification cycle before replacing this release candidate.
+
+
+## APK #522 verification — 2026-09-28
+- **USER-TESTED STABLE:** APK #522, source commit `7dddbdae295f6fd99a900b332bfd6bccc4ee5cce`.
+- Installed over the previous version successfully; existing diary preserved.
+- Verified on device: kcal/protein/fat display works in Add Food, diary, and reports; carbohydrate/XE functionality remains present.
+- Reports are functional but UX/content should be reviewed in a later pass; this is a follow-up, not a reported crash/regression.
+- Content follow-up: bakery/bun selection feels too limited. Audit/expand bakery data separately; accumulate changes before the next APK rather than rebuilding for each catalog item.
