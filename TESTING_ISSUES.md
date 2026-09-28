@@ -163,3 +163,7 @@ Real-device checklist (install over #522; do not uninstall):
 - existing Add Food / Diary behavior and quantity overwrite remain unchanged.
 
 Do not mark #537 USER-TESTED STABLE until this checklist is confirmed on the user's phone.
+
+
+## APK #540 — USER-TESTED STABLE — 2026-09-28
+Real-device verification completed successfully. Diary preserved; Reports daily summaries, date navigation, metric graphs, 30-day horizontal scrolling, Excel export/system Share all verified. The Android bottom-system-navigation overlap of the export button is fixed and verified. No open release-blocking issue is known from this test pass. #540 is the current stable release-candidate checkpoint.
