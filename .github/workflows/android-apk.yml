@@ -144,6 +144,54 @@ jobs:
         run: flutter build apk --release --build-name=1.0.0 --build-number=${{ github.run_number }}
       - name: Build release AAB
         run: flutter build appbundle --release --build-name=1.0.0 --build-number=${{ github.run_number }}
+      - name: Audit release package and permissions
+        run: |
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          AAPT2=$(find "$ANDROID_HOME/build-tools" -type f -name aapt2 | sort -V | tail -1)
+          if [ -z "$AAPT2" ]; then
+            echo "aapt2 not found"
+            exit 1
+          fi
+          BADGING=$("$AAPT2" dump badging "$APK")
+          echo "$BADGING" | head -20
+          echo "$BADGING" | grep -q "package: name='ua.carbcalc.carbcalc_ua'" || {
+            echo "Unexpected Android applicationId"
+            exit 1
+          }
+          PERMISSIONS=$("$AAPT2" dump permissions "$APK")
+          echo "$PERMISSIONS"
+          python3 - <<'PY'
+          import os, subprocess
+          apk = "build/app/outputs/flutter-apk/app-release.apk"
+          aapt2 = subprocess.check_output(
+              "find \"$ANDROID_HOME/build-tools\" -type f -name aapt2 | sort -V | tail -1",
+              shell=True, text=True).strip()
+          out = subprocess.check_output([aapt2, "dump", "permissions", apk], text=True)
+          allowed = {
+              "android.permission.INTERNET",
+              "android.permission.CAMERA",
+              "android.permission.VIBRATE",
+          }
+          found = set()
+          for line in out.splitlines():
+              if "uses-permission:" in line and "name='" in line:
+                  found.add(line.split("name='",1)[1].split("'",1)[0])
+          unexpected = sorted(found - allowed)
+          print("Permissions:", sorted(found))
+          if unexpected:
+              raise SystemExit("Unexpected Android permissions: " + ", ".join(unexpected))
+          PY
+
+      - name: Verify 16 KB native library alignment
+        run: |
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          ALIGN=$(find "$ANDROID_HOME/build-tools" -type f -name zipalign | sort -V | tail -1)
+          if [ -z "$ALIGN" ]; then
+            echo "zipalign not found"
+            exit 1
+          fi
+          "$ALIGN" -c -P 16 -v 4 "$APK"
+
       - name: Publish APK
         uses: actions/upload-artifact@v4
         with:
