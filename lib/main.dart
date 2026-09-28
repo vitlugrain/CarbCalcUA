@@ -1381,9 +1381,7 @@ class _NutritionSummary{
     return [value('',calories,caloriesComplete,kcal:true),value('Б ',protein,proteinComplete),value('Ж ',fat,fatComplete)].join(' · ');
   }
 }
-Future<_NutritionSummary> _nutritionSummaryForDiaryRows(List<Map<String,dynamic>> rows) async{
-  final products=await loadAllProducts();
-  final byId={for(final p in products)p.id:p};
+_NutritionSummary _nutritionSummaryForRowsAndProducts(List<Map<String,dynamic>> rows,Map<String,Product> byId){
   var calories=0.0,protein=0.0,fat=0.0;
   var caloriesComplete=true,proteinComplete=true,fatComplete=true;
   for(final row in rows){
@@ -1402,6 +1400,10 @@ Future<_NutritionSummary> _nutritionSummaryForDiaryRows(List<Map<String,dynamic>
     if(resultFat==null)fatComplete=false;else fat+=resultFat;
   }
   return _NutritionSummary(calories,protein,fat,caloriesComplete,proteinComplete,fatComplete);
+}
+Future<_NutritionSummary> _nutritionSummaryForDiaryRows(List<Map<String,dynamic>> rows) async{
+  final products=await loadAllProducts();
+  return _nutritionSummaryForRowsAndProducts(rows,{for(final p in products)p.id:p});
 }
 
 Future<Product?> _productForDiaryRow(Map<String,dynamic> row) async {
