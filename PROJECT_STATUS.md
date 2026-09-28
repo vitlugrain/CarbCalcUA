@@ -331,3 +331,12 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - APK artifact: `CarbCalcUA-1.0.0-build-537`, artifact SHA-256 `2f1902f5a9450cb3084ff40416d42c71b003f315fb96cb5cdc3724be148631a7`.
 - AAB artifact: `CarbCalcUA-1.0.0-AAB-build-537`.
 - #537 is a **control/test candidate**, not USER-TESTED STABLE yet. Install over #522 without uninstalling and verify diary preservation, reports, date navigation, chart switching, Excel export/share, and new bakery search.
+
+
+## USER-TESTED STABLE — APK #540 — 2026-09-28
+- Installed successfully over previous stable build; existing diary/history preserved.
+- Reports redesign verified on a real Android phone: period totals, daily cards, navigation from a report day to the matching Diary date, metric graphs, and Excel/system Share all work.
+- 30-day graph is horizontally scrollable and readable.
+- Android system-navigation overlap affecting the Excel/Share button was fixed in commit `fc6c7260847694ad2a6ee8d0e062b21589c04fe3` and verified in #540: button is no longer obscured.
+- **APK #540 is USER-TESTED STABLE.** This is the current release-candidate checkpoint for Google Play pre-release work.
+- Do not add new features before Google Play submission unless a release-blocking issue is found.
