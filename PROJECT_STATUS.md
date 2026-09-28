@@ -316,3 +316,18 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Final bakery data commit for this pass: `90f4c8a2e9f1050fa55373860617a273c0009caf`.
 - **Do not continue broad bakery expansion now.** Treat this workstream as closed unless real-device testing reveals a specific missing common product or data problem.
 - APK #522 remains the latest USER-TESTED STABLE build. Bakery changes are accumulated after #522 and have **not yet been included in a new control APK**.
+
+
+## Reports redesign — control build #537 (2026-09-28)
+- Reports UX redesigned after bakery audit and before the next user-tested release checkpoint.
+- Period summary remains at the top and now shows carbohydrates/XE plus kcal/protein/fat.
+- Entries below are grouped by calendar day. Each day shows its own carbohydrates/XE and kcal/protein/fat totals.
+- Tapping a day opens Diary directly on that selected date via the new DiaryPage.initialDate flow.
+- Added a simple daily chart with selectable metric: carbohydrates, protein, fat, or kcal.
+- Added Excel (.xlsx) export with columns Date / Carbohydrates / XE / Protein / Fat / kcal and system Share sheet for saving or sending the report.
+- No health targets, normal ranges, warnings, or nutrition recommendations are added; reports display factual diary totals only.
+- Report implementation head: `5a76c93890702637edd94702ef6e24127ab9d7ac`.
+- GitHub Actions **Android APK run #537 SUCCESS**: package resolution, analyze, tests, release APK and AAB completed successfully.
+- APK artifact: `CarbCalcUA-1.0.0-build-537`, artifact SHA-256 `2f1902f5a9450cb3084ff40416d42c71b003f315fb96cb5cdc3724be148631a7`.
+- AAB artifact: `CarbCalcUA-1.0.0-AAB-build-537`.
+- #537 is a **control/test candidate**, not USER-TESTED STABLE yet. Install over #522 without uninstalling and verify diary preservation, reports, date navigation, chart switching, Excel export/share, and new bakery search.
