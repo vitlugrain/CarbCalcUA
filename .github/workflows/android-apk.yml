@@ -170,7 +170,8 @@ jobs:
           allowed = {
               "android.permission.INTERNET",
               "android.permission.CAMERA",
-              "android.permission.VIBRATE",
+              "android.permission.ACCESS_NETWORK_STATE",
+              "ua.carbcalc.carbcalc_ua.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
           }
           found = set()
           for line in out.splitlines():
