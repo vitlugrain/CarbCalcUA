@@ -71,6 +71,13 @@ jobs:
           p.write_text(s)
           manifest = Path('android/app/src/main/AndroidManifest.xml')
           m = manifest.read_text().replace('android:label="carbcalc_ua"', 'android:label="CarbCalc UA"')
+          # Keep the food diary and user-created data local to the device. The
+          # app does not opt into Android cloud backup of its private app data.
+          if 'android:allowBackup=' not in m:
+              m = m.replace('<application', '<application\n        android:allowBackup="false"', 1)
+          else:
+              import re
+              m = re.sub(r'android:allowBackup="[^"]*"', 'android:allowBackup="false"', m, count=1)
           # CarbCalc UA needs network access for Open Food Facts and camera
           # access for the user-invoked barcode scanner. No storage/location
           # permissions are requested by the app.
