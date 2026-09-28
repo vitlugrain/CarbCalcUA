@@ -465,3 +465,10 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Policy: never invent missing B/F/C/kcal values or fill them by analogy. Incomplete exact branded records may remain incomplete.
 - Next product workstream: decide how secondary nutrition data (kcal, protein, fat) should be displayed in product selection and diary while keeping carbohydrates as the primary CarbCalc UA metric.
 
+
+
+## Bakery / buns follow-up queued — 2026-09-28
+- After installing and verifying APK #522, user reported that Add Food has too few **булочки / buns and bakery options**.
+- Next catalog task: first inventory the current bakery/bun entries to avoid duplicates, then identify useful missing common items.
+- For generic bakery foods, verified standard recipe/reference nutrition may be considered when the item is explicitly represented as a generic recipe-based food. For branded bakery products, continue requiring exact product nutrition; do not infer values from similar products.
+- Preserve the agreed piece-unit rule: pieces are allowed for approved bakery/cookie items only when a reliable grams-per-piece value is defined; grams remain available.
