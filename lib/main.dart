@@ -13,6 +13,7 @@ import 'dart:io';
 import 'models/product.dart';
 import 'models/quantity.dart';
 import 'services/food_search_service.dart';
+import 'services/barcode_service.dart';
 import 'services/food_calculation_service.dart';
 import 'services/product_unit_service.dart';
 import 'services/meal_group_service.dart';
