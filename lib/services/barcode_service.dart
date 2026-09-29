@@ -6,6 +6,13 @@ import 'barcode_alias_store.dart';
 import 'product_identity_service.dart';
 typedef CustomProductLookup = Future<Map<String, dynamic>?> Function(String barcode);
 
+class ExternalLookupException implements Exception {
+  final String message;
+  const ExternalLookupException(this.message);
+  @override
+  String toString() => message;
+}
+
 class BarcodeService {
   static final http.Client _client = http.Client();
   static Future<List<Product>>? _bundledBarcodeProductsFuture;
@@ -82,9 +89,23 @@ class BarcodeService {
     final barcode = normalize(rawBarcode);
     if (barcode.isEmpty) return null;
     final uri = Uri.https('world.openfoodfacts.org','/api/v2/product/$barcode',{'fields':'code,product_name,product_name_uk,brands,categories_tags,nutriments'});
-    final response = await _client.get(uri, headers:{'User-Agent':'CarbCalcUA/0.6 (mobile app)'}).timeout(const Duration(seconds:8));
-    if (response.statusCode != 200) return null;
-    final data = jsonDecode(response.body) as Map<String, dynamic>;
+    late final http.Response response;
+    try {
+      response = await _client.get(uri, headers:{'User-Agent':'CarbCalcUA/1.0 (mobile app)'}).timeout(const Duration(seconds:8));
+    } catch (_) {
+      throw const ExternalLookupException('Не вдалося підключитися до онлайн-бази. Перевірте інтернет і спробуйте ще раз.');
+    }
+    if (response.statusCode != 200) {
+      throw const ExternalLookupException('Онлайн-база тимчасово недоступна. Спробуйте ще раз пізніше.');
+    }
+    late final Map<String, dynamic> data;
+    try {
+      final decoded = jsonDecode(response.body);
+      if (decoded is! Map<String, dynamic>) throw const FormatException();
+      data = decoded;
+    } catch (_) {
+      throw const ExternalLookupException('Онлайн-база повернула некоректну відповідь. Спробуйте ще раз пізніше.');
+    }
     if (data['status'] != 1 || data['product'] is! Map) return null;
     final p = data['product'] as Map<String, dynamic>;
     final n = p['nutriments'] is Map ? p['nutriments'] as Map<String, dynamic> : <String, dynamic>{};
@@ -133,9 +154,24 @@ class BarcodeService {
   static Future<List<Product>> searchExternalByName(String query, {int pageSize=8}) async {
     final q=query.trim(); if(q.isEmpty)return [];
     final uri=Uri.https('world.openfoodfacts.org','/api/v2/search',{'search_terms':q,'page_size':'$pageSize','fields':'code,product_name,product_name_uk,brands,categories_tags,nutriments','lc':'uk','cc':'ua'});
-    final response=await _client.get(uri,headers:{'User-Agent':'CarbCalcUA/0.6 (mobile app)'}).timeout(const Duration(seconds:8));
-    if(response.statusCode!=200)return [];
-    final data=jsonDecode(response.body) as Map<String,dynamic>; final products=data['products']; if(products is! List)return [];
+    late final http.Response response;
+    try {
+      response=await _client.get(uri,headers:{'User-Agent':'CarbCalcUA/1.0 (mobile app)'}).timeout(const Duration(seconds:8));
+    } catch (_) {
+      throw const ExternalLookupException('Не вдалося підключитися до онлайн-бази. Перевірте інтернет і спробуйте ще раз.');
+    }
+    if(response.statusCode!=200) {
+      throw const ExternalLookupException('Онлайн-база тимчасово недоступна. Спробуйте ще раз пізніше.');
+    }
+    late final Map<String,dynamic> data;
+    try {
+      final decoded=jsonDecode(response.body);
+      if(decoded is! Map<String,dynamic>)throw const FormatException();
+      data=decoded;
+    } catch (_) {
+      throw const ExternalLookupException('Онлайн-база повернула некоректну відповідь. Спробуйте ще раз пізніше.');
+    }
+    final products=data['products']; if(products is! List)return [];
     final out=<Product>[];
     for(final item in products){
       if(item is! Map) continue;

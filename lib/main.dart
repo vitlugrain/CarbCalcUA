@@ -411,9 +411,16 @@ class _AddFoodPageState extends State<AddFoodPage>{
         controller.text = amount.toString();
       });
       _focusQuantitySection();
-    } catch (e) {
+    } on ExternalLookupException catch (e) {
       if (mounted) Navigator.of(context, rootNavigator: true).pop();
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Помилка пошуку за штрихкодом: $e')));
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.message)));
+    } catch (_) {
+      if (mounted) Navigator.of(context, rootNavigator: true).pop();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Не вдалося виконати пошук за штрихкодом. Спробуйте ще раз.')),
+        );
+      }
     }
   }
 
@@ -603,6 +610,18 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     appBar: AppBar(title: const Text('Сканувати штрихкод')),
     body: Stack(children: [
       MobileScanner(
+        errorBuilder: (context, error) => Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              error.errorCode == MobileScannerErrorCode.permissionDenied
+                  ? 'Немає доступу до камери. Дозвольте доступ до камери в налаштуваннях Android і спробуйте ще раз.'
+                  : 'Не вдалося запустити камеру. Закрийте сканер і спробуйте ще раз.',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        onDetectError: (_, __) {},
         onDetect: (capture) {
           if (handled) return;
           for (final code in capture.barcodes) {
@@ -1350,7 +1369,7 @@ class _ReportsPageState extends State<ReportsPage>{
    sh.appendRow([xl.TextCellValue('Разом'),xl.DoubleCellValue(data.carbs),xl.DoubleCellValue(data.xe),xl.DoubleCellValue(data.nutrition.protein),xl.DoubleCellValue(data.nutrition.fat),xl.DoubleCellValue(data.nutrition.calories)]);
    final bytes=book.encode();if(bytes==null)throw StateError('Excel');final dir=await getTemporaryDirectory();final file=File(p.join(dir.path,'CarbCalcUA_'+_dateKey(start)+'_'+_dateKey(end)+'.xlsx'));await file.writeAsBytes(bytes,flush:true);
    await SharePlus.instance.share(ShareParams(files:[XFile(file.path)],subject:'CarbCalc UA — звіт',text:'Звіт CarbCalc UA: '+_prettyDate(start)+' — '+_prettyDate(end)));
-  }catch(e){if(mounted)ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('Не вдалося експортувати звіт: '+e.toString())));}finally{if(mounted)setState(()=>exporting=false);}
+  }catch(_){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Не вдалося створити або поділитися звітом. Спробуйте ще раз.')));}finally{if(mounted)setState(()=>exporting=false);}
  }
  @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('Звіти')),body:FutureBuilder<_ReportData>(future:load(),builder:(context,s){
   if(!s.hasData)return const Center(child:CircularProgressIndicator());final d=s.data!;
