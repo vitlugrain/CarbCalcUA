@@ -178,3 +178,13 @@ Real-device verification completed successfully. Diary preserved; Reports daily 
 - Privacy/network review found no ads/analytics/accounts/Firebase; user diary and created data remain local to the app. Open Food Facts requests use HTTPS and do not include diary/history/report data.
 - OPEN, non-blocking cleanup to batch later: change Open Food Facts User-Agent from `CarbCalcUA/0.6 (mobile app)` to a 1.0 identifier.
 - NEXT TEST/AUDIT: offline/error robustness for Open Food Facts barcode/name lookup, timeout/malformed responses, scanner failure path, and Excel export/share errors. Do not start a new APK merely for the User-Agent string; batch any required fixes first.
+
+
+## APK #551 — FINAL USER-TESTED STABLE — 2026-09-29
+- Installed over #550 successfully; diary preserved.
+- Search and Add Food verified on the user's Android phone.
+- #550 immediately before it verified barcode scanning online and offline for the tested barcode, Reports, Excel generation and system Share.
+- #551 CI: fully GREEN — analyze, tests, release APK, release AAB, package/permission audit, and 16 KB alignment.
+- Remaining `Гречка варена` search entry is accepted by the user for 1.0; no further buckwheat/catalog fix is requested before release.
+- **No open release-blocking test issue. CarbCalc UA 1.0 technical pre-release testing is CLOSED.**
+- Next action: proceed to Google Play Console / signed AAB release preparation.
