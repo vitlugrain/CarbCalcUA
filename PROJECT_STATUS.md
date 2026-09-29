@@ -356,3 +356,13 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Legacy SQLite `glucose` table remains only for non-destructive database compatibility; glucose UI/runtime functionality remains removed. Do not reintroduce glucose functionality for 1.0.
 - Deferred small pre-release cleanup: Open Food Facts User-Agent still says `CarbCalcUA/0.6 (mobile app)`; update it to a 1.0 identifier as part of a consolidated final cleanup, not as a standalone build.
 - NEXT AUDIT BLOCK: error/offline robustness — verify no-network and Open Food Facts timeout/error/malformed-response handling, barcode failure paths, and Excel creation/share failure handling. After that, decide whether any code fix is release-blocking and batch final cleanup changes before another build.
+
+
+## FINAL 1.0 technical pre-release checkpoint — APK #551 — 2026-09-29
+- **APK #551 is USER-TESTED STABLE** on a real Android phone. It was installed over #550; the existing diary was preserved; search and Add Food work normally.
+- CI run #551 is fully green from commit `bbbbb8b3e00931d442dddd8db292e840b5259f10`: source analysis, tests, release APK, release AAB, package/permission audit, and 16 KB native-library alignment all passed.
+- The preceding #550 device pass additionally verified barcode scanning both online and offline for the tested barcode, report generation, and Android system Share.
+- Offline/error hardening is included: Open Food Facts requests use friendly network/service/invalid-response errors, scanner startup failures have user-facing messages, report/share failures no longer expose raw exceptions, and the Open Food Facts User-Agent is updated to CarbCalcUA/1.0.
+- A duplicate-looking search result `Гречка варена` remains visible on the user's upgraded installation. The canonical bundled catalog contains `Гречка варена на воді` and `Гречка варена на молоці`; the user explicitly accepted the remaining extra entry for 1.0. **Do not make further buckwheat changes before release.**
+- **Technical pre-release audit for CarbCalc UA 1.0 is CLOSED.** No known release-blocking issue remains from this audit. Do not add features or expand the catalog before first Play submission unless a release-blocking defect is found.
+- Next phase: Google Play Console preparation/submission using the final signed AAB from the current release candidate.
