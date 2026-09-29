@@ -52,7 +52,14 @@ Future<List<Product>> loadAllProducts() {
 Future<List<Product>> _loadAllProductsUncached() async {
   final base = await loadProducts();
   final customRows = await AppDb.customProducts();
-  final custom = customRows.map(Product.fromCustomDb).toList();
+  final custom = customRows.map(Product.fromCustomDb).where((product) {
+    // Legacy catalog duplicate from older installs. The canonical entries are
+    // "Гречка варена на воді" and "Гречка варена на молоці".
+    final normalizedName = product.name.trim().toLowerCase();
+    final isLegacyBuckwheat = normalizedName == 'гречка варена' &&
+        (product.carbs - 19.9).abs() < 0.01;
+    return !isLegacyBuckwheat;
+  }).toList();
   final byId = <String, Product>{for (final x in base) x.id: x};
   for (final x in custom) { byId[x.id] = x; }
   return List<Product>.unmodifiable(byId.values);
