@@ -484,3 +484,10 @@ Status: **CATALOG AUDIT COMPLETE FOR THIS APK / RUNTIME INTEGRATED**
 - Known low-value package-size duplicates and candidates without a complete reliable nutrition set were skipped.
 - Final data commit: `90f4c8a2e9f1050fa55373860617a273c0009caf`.
 - Next action is **not more bakery auditing**: include the accumulated catalog changes in the next consolidated control APK when appropriate, then verify search/add-to-diary behavior and diary preservation on the real device.
+
+
+## CarbCalc UA 1.0 catalog freeze — 2026-09-29
+- Catalog expansion is frozen for the first Google Play release.
+- APK #551 is USER-TESTED STABLE for search/Add Food and is the final technical release-candidate checkpoint.
+- User observed an additional `Гречка варена` entry alongside `Гречка варена на воді` and `Гречка варена на молоці`. The remaining entry is explicitly accepted for 1.0; **do not spend further pre-release work on it**.
+- Do not add products or perform new catalog cleanup before first publication unless a catalog defect is release-blocking.
