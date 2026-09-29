@@ -340,3 +340,19 @@ At the start of every new chat, first read `PROJECT_STATUS.md` and `CATALOG_AUDI
 - Android system-navigation overlap affecting the Excel/Share button was fixed in commit `fc6c7260847694ad2a6ee8d0e062b21589c04fe3` and verified in #540: button is no longer obscured.
 - **APK #540 is USER-TESTED STABLE.** This is the current release-candidate checkpoint for Google Play pre-release work.
 - Do not add new features before Google Play submission unless a release-blocking issue is found.
+
+
+## Google Play technical pre-release audit checkpoint — 2026-09-29
+- Permanent Android application ID is now `ua.carbcalc.carbcalc_ua` (workflow commit `2c2b57e9875f386f01bbe1295a67246db495e5a5`). This intentionally breaks in-place upgrade compatibility with the old test package; user accepted a clean install before first Play publication. Do not change this application ID after publication.
+- APK #543 was installed and USER-TESTED STABLE on a real Android phone: launch, search, Add Food, diary persistence after restart, Reports, barcode scanner, and absence of glucose UI were verified.
+- Release audit CI added package/permission validation and 16 KB APK native-library alignment checks. Initial #544 failure was only an overly strict permission allowlist; expected merged permissions were corrected in commit `43dc37a4089aab67123ce210393bf6dc0197ffd7`.
+- #545 passed release APK/AAB build, package/permission audit, 16 KB alignment check, and artifact publishing.
+- Android cloud backup was explicitly disabled in generated release manifest with `android:allowBackup="false"` in commit `727dcdccdc8e064dedf77dfb62c23c65c7619583`.
+- #546 (run 36439903307) is fully green from that commit. APK/AAB build, release audit, 16 KB alignment and artifact publication all succeeded. APK artifact `CarbCalcUA-1.0.0-build-546`, SHA-256 `3cbb33326e83db38da98f340c548e92a303cc4663240292365ce904ff3ce53bf`; AAB artifact `CarbCalcUA-1.0.0-AAB-build-546`, SHA-256 `3cdb476d17a63be5c5f9d31cd55c165d0cf29e9b8bd5d64c46f88e5e3d0441da`.
+- #546 release metadata verified: versionName 1.0.0, versionCode 546, targetSdk 36, minSdk 24, app label CarbCalc UA. Release signing is configured with the dedicated keystore; missing signing secrets fail CI.
+- Merged release permissions are limited to CAMERA, INTERNET, ACCESS_NETWORK_STATE and the app-scoped AndroidX DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION. No storage, location, contacts, microphone, phone/SMS or advertising-ID permission was observed.
+- Privacy/code audit: diary, recipes, custom products, barcode aliases and XE preference are stored locally (SQLite/SharedPreferences). No accounts, Firebase, ads, analytics or crash-reporting SDK are present in current dependencies/code. Excel report is created locally in temporary storage and shared only after explicit user action.
+- Network audit: external product lookup uses HTTPS to Open Food Facts. Barcode lookup sends the barcode; external name search sends the search text plus search parameters. Diary/history/portion/XE/report data are not included in those requests. Requests use an 8-second timeout. No intentional HTTP/cleartext endpoint or custom cleartext network-security configuration was found.
+- Legacy SQLite `glucose` table remains only for non-destructive database compatibility; glucose UI/runtime functionality remains removed. Do not reintroduce glucose functionality for 1.0.
+- Deferred small pre-release cleanup: Open Food Facts User-Agent still says `CarbCalcUA/0.6 (mobile app)`; update it to a 1.0 identifier as part of a consolidated final cleanup, not as a standalone build.
+- NEXT AUDIT BLOCK: error/offline robustness — verify no-network and Open Food Facts timeout/error/malformed-response handling, barcode failure paths, and Excel creation/share failure handling. After that, decide whether any code fix is release-blocking and batch final cleanup changes before another build.
