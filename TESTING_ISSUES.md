@@ -167,3 +167,14 @@ Do not mark #537 USER-TESTED STABLE until this checklist is confirmed on the use
 
 ## APK #540 — USER-TESTED STABLE — 2026-09-28
 Real-device verification completed successfully. Diary preserved; Reports daily summaries, date navigation, metric graphs, 30-day horizontal scrolling, Excel export/system Share all verified. The Android bottom-system-navigation overlap of the export button is fixed and verified. No open release-blocking issue is known from this test pass. #540 is the current stable release-candidate checkpoint.
+
+
+## Google Play technical audit checkpoint — #543–#546 — 2026-09-29
+- Permanent package ID: `ua.carbcalc.carbcalc_ua`. User accepted clean install before first Play publication; do not revert to the old test package ID.
+- #543: USER-TESTED STABLE on real Android device. Launch/search/Add Food/diary persistence/Reports/barcode scanner verified; glucose UI absent.
+- #545: CI GREEN after correcting the release permission-audit allowlist.
+- #546: CI GREEN after setting `android:allowBackup="false"`; release APK/AAB, permission/package audit, 16 KB alignment and artifact publication all passed.
+- #546 release permissions observed: CAMERA, INTERNET, ACCESS_NETWORK_STATE, and app-scoped AndroidX DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION. No unexpected sensitive permissions observed.
+- Privacy/network review found no ads/analytics/accounts/Firebase; user diary and created data remain local to the app. Open Food Facts requests use HTTPS and do not include diary/history/report data.
+- OPEN, non-blocking cleanup to batch later: change Open Food Facts User-Agent from `CarbCalcUA/0.6 (mobile app)` to a 1.0 identifier.
+- NEXT TEST/AUDIT: offline/error robustness for Open Food Facts barcode/name lookup, timeout/malformed responses, scanner failure path, and Excel export/share errors. Do not start a new APK merely for the User-Agent string; batch any required fixes first.
